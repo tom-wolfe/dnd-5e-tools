@@ -1,0 +1,24 @@
+{
+  "name": "dnd-5e-npc-gen",
+  "version": "1.0.0",
+  "description": "D&D 5th Edition NPC Generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trwolfe13/dnd-5e-npc-gen.git"
+  },
+  "keywords": [
+    "D&D",
+    "DnD",
+    "5e"
+  ],
+  "author": "Thomas R. Wolfe",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/trwolfe13/dnd-5e-npc-gen/issues"
+  },
+  "homepage": "https://github.com/trwolfe13/dnd-5e-npc-gen#readme"
+}
