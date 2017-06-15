@@ -1,6 +1,5 @@
 import { Race, Subrace } from "./race";
 import { AbilityScores } from "./ability-scores";
-import { Alignment } from "./alignment";
 import * as Data from "../data/";
 
 export class Character {

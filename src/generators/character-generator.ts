@@ -39,6 +39,6 @@ export class CharacterGenerator {
     randomizeAlignment(character: Character) {
         const alignments = Object.keys(Data.Alignments);
         const alignmentNum = this.numGen.rollDie(alignments.length) - 1;
-        character.alignment = Data.Alignments[alignmentNum];
+        character.alignment = alignments[alignmentNum]
     }
 };
