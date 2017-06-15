@@ -12,5 +12,10 @@
     .ability-score {
         text-align: center;
         font-size: 20px;
+        font-weight: bolder;
+        .ability-modifier {
+            &:before { content: "("; }
+            &:after { content: ")"; }
+        }
     }
 }
