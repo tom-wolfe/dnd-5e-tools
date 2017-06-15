@@ -8,4 +8,11 @@ import { AbilityScores } from "../../models/ability-scores";
 })
 export class AbilityScoreListComponent {
   @Input() abilities: AbilityScores;
+  get abilitySum(): number {
+    const a: AbilityScores = this.abilities;
+    return a.strength + a.dexterity + a.constitution + a.wisdom + a.intelligence + a.charisma;
+  }
+  get abilityPercentile(): string {
+    return (this.abilitySum / 108.0 * 100).toFixed(0);
+  }
 };
