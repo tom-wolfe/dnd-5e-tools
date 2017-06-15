@@ -1,0 +1,13 @@
+@import "../styles/variables.scss";
+
+.npc-header {
+    .npc-subline {
+        font-style: italic;
+        .sub-race {
+            &:before { content: "("; }
+            &:after { content: ")"; }
+        }
+    }
+    // border-bottom: 2px solid $brand-primary;
+    padding-bottom: 8px;
+}

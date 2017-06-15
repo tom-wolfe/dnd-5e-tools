@@ -1,0 +1,11 @@
+<sup class="source-reference">
+    <i class="fa fa-book" [ngbTooltip]="refContent" triggers="click"></i>
+    <span class="sr-only">Reference</span>
+</sup>
+<ng-template #refContent>
+    <div class="source-tip">
+        <a class="source-url" [href]="reference.url">
+            {{sourceName}}, Page {{reference.page}}
+        </a>
+    </div>
+</ng-template>
