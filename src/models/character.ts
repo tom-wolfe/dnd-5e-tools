@@ -4,9 +4,9 @@ import * as Data from "../data/";
 
 export class Character {
     abilities: AbilityScores = new AbilityScores();
-    race: Race = Data.Races[0];
-    subrace: Subrace = Data.Races[0].subraces[0];
-    alignment = "LG";
+    race: Race;
+    subrace: Subrace;
+    alignment: string;
     get alignmentDescription() {
         return Data.Alignments[this.alignment];
     }

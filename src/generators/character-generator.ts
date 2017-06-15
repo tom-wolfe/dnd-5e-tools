@@ -28,11 +28,11 @@ export class CharacterGenerator {
         const raceNum = this.numGen.rollDie(Data.Races.length) - 1;
         character.race = Data.Races[raceNum];
 
-        if (character.race.subraces) {
+        if (character.race.subraces && character.race.subraces.length > 0) {
             const subraceNum = this.numGen.rollDie(character.race.subraces.length) - 1;
             character.subrace = character.race.subraces[subraceNum];
         } else {
-            character.subrace = null;
+            character.subrace = undefined;
         }
     }
 

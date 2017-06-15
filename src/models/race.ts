@@ -11,4 +11,5 @@ export class Race {
 
 export class Subrace {
     name: string;
+    reference: Reference
 };
