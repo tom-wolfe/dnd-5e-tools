@@ -1,11 +1,15 @@
 <sup class="source-reference">
-    <i class="fa fa-book" [ngbTooltip]="refContent" triggers="click:blur" tabindex="0"></i>
-    <span class="sr-only">Reference</span>
+    <a *ngIf="reference.url" [href]="reference.url" target="_blank">
+        <ng-container *ngTemplateOutlet="linkTpl"></ng-container>
+    </a>
+    <span *ngIf="!reference.url">
+        <ng-container *ngTemplateOutlet="linkTpl"></ng-container>
+    </span>    
 </sup>
 <ng-template #refContent>
-    <div class="source-tip">
-        <a class="source-url" [href]="reference.url" target="_blank">
-            {{sourceName}} | Page {{reference.page}}
-        </a>
-    </div>
+    <div class="source-tip">{{sourceName}} | Page {{reference.page}}</div>
+</ng-template>
+<ng-template #linkTpl>
+    <i class="fa fa-book" [ngbTooltip]="refContent" triggers="hover"></i>
+    <span class="sr-only">Reference</span>
 </ng-template>

@@ -14,3 +14,5 @@ export class Subrace {
     name: string;
     reference: Reference
 };
+
+// TODO: Allow racial stat bonuses.
