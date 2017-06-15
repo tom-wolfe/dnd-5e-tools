@@ -18,7 +18,7 @@
     <div class="text-muted npc-subline">
       <span class="size">{{character.race.size}}</span>
       <span class="race">{{character.race.name}}</span><source-reference [reference]="character.race.reference"></source-reference>
-      <span class="sub-race" *ngIf="character.subrace">{{character.subrace.name}}</span>,
+      <span class="sub-race" *ngIf="character.subrace">{{character.subrace.name}}<source-reference [reference]="character.subrace.reference"></source-reference></span>,
       <span class="npc-alignment">{{character.alignmentDescription}}</span>
     </div>
   </div>
