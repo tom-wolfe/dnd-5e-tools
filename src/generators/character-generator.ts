@@ -16,12 +16,12 @@ export class CharacterGenerator {
     }
 
     randomizeAbilities(character: Character) {
-        character.abilities.strength = this.abGen.generateScore();
-        character.abilities.dexterity = this.abGen.generateScore();
-        character.abilities.constitution = this.abGen.generateScore();
-        character.abilities.wisdom = this.abGen.generateScore();
-        character.abilities.intelligence = this.abGen.generateScore();
-        character.abilities.charisma = this.abGen.generateScore();
+        character.baseAbilities.strength = this.abGen.generateScore();
+        character.baseAbilities.dexterity = this.abGen.generateScore();
+        character.baseAbilities.constitution = this.abGen.generateScore();
+        character.baseAbilities.wisdom = this.abGen.generateScore();
+        character.baseAbilities.intelligence = this.abGen.generateScore();
+        character.baseAbilities.charisma = this.abGen.generateScore();
     }
 
     randomizeRace(character: Character) {
@@ -39,6 +39,6 @@ export class CharacterGenerator {
     randomizeAlignment(character: Character) {
         const alignments = Object.keys(Data.Alignments);
         const alignmentNum = this.numGen.rollDie(alignments.length) - 1;
-        character.alignment = alignments[alignmentNum]
+        character.alignment = alignments[alignmentNum];
     }
 };
