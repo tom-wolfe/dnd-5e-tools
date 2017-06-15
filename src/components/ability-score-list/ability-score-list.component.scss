@@ -6,10 +6,11 @@
         border-top: 2px solid $brand-primary;
     }
     .ability-score-info {
-        font-variant: small-caps;
+        font-size: 14px;
         font-weight: bold;
-        text-align: right;
         padding: 6px;
+        text-align: right;
+        text-transform: uppercase;
         .ability-sum, .ability-percentile {
             display: inline-block;
         }

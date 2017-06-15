@@ -5,6 +5,7 @@ import { AppComponent } from "./app.component";
 import { AbilityScoreComponent } from "../components/ability-score/ability-score.component";
 import { AbilityScoreListComponent } from "../components/ability-score-list/ability-score-list.component";
 import { SourceReferenceComponent } from "../components/source-reference/source-reference.component";
+import { SpeedDisplayComponent } from "../components/speed-display/speed-display.component";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
@@ -12,7 +13,8 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
     AppComponent,
     AbilityScoreComponent,
     AbilityScoreListComponent,
-    SourceReferenceComponent
+    SourceReferenceComponent,
+    SpeedDisplayComponent
   ],
   imports: [
     BrowserModule, NgbModule.forRoot()

@@ -1,22 +1,22 @@
 @import "../../styles/variables.scss";
 
-.ability {
+.speed-list {
     padding: 12px;
     text-align: center;
 
-    .ability-name {
+    border-bottom: 2px solid $brand-primary;
+
+    .speed-type {
         display: block;
         font-size: 14px;
         font-weight: bold;
         text-transform: uppercase;
     }
-    
-    .ability-score {
-        font-size: 24px;
+    .speed-value {
+        font-size: 28px;
         font-family: $font-family-secondary;
-        .ability-modifier {
-            &:before { content: "("; }
-            &:after { content: ")"; }
+        &:after {
+            content: " ft.";
         }
     }
 }
