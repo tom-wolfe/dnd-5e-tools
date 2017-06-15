@@ -1,10 +1,17 @@
-<!--The whole content below can be removed with the new code.-->
+<nav class="navbar navbar-inverse bg-inverse">
+  <div class="container">
+    <a class="navbar-brand" href="#">{{title}}</a>
+  </div>
+</nav>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <p class="lead">This is a simple tool for generating NPC character statistics based on the 5th edition Dungeons &amp; Dragons ruleset.
+      <br/>To begin, click the button below.</p>
+    <p><button type="button" class="btn btn-primary btn-lg" (click)="onGenerateClick()">Generate NPC</button>
+      <p>
+  </div>
+</div>
 <div class="container">
-  <div style="text-align:center">
-    <h1>{{title}}</h1>
-  </div>
-  <div class="footer">
-    <button class="btn btn-primary" (click)="onGenerateClick()">Generate</button>
-  </div>
   <ability-score-list [abilities]="character.abilities"></ability-score-list>
 </div>

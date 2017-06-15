@@ -1,9 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import "../../node_modules/bootstrap/dist/css/bootstrap.css";
-@import "../../node_modules/font-awesome/css/font-awesome.css";
-@import "variables.scss";
 
-.btn {
-    font-variant: small-caps;
-}
+@import "variables.scss";
+@import "bootstrap.scss";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";

@@ -5,8 +5,8 @@
         margin: 0;
         padding: 0;
         overflow: hidden;
-        border-bottom: 2px solid $accent-color;
-        border-top: 2px solid $accent-color;
+        border-bottom: 2px solid $brand-primary;
+        border-top: 2px solid $brand-primary;
         li {
             float: left;
             width: calc(100% / 6);
@@ -21,7 +21,7 @@
             display: inline-block;
         }
         .ability-sum {
-            border-right: 1px solid $accent-color;
+            border-right: 1px solid $brand-primary;
             padding-right: 6px;
         }
     }
