@@ -1,17 +1,13 @@
 import { Alignment } from "../models/alignment";
 
-export const Alignments: Alignment[] = [
-    "Chaotic Good",
-    "Chaotic Neutral",
-    "Chaotic Evil",
-    "Neutral Good",
-    "True Neutral",
-    "Neutral Evil",
-    "Lawful Good",
-    "Lawful Neutral",
-    "Lawful Evil"
-];
-
-// TODO: Change to KVP.
-
-// TODO: Add abilities as KVPS!
+export const Alignments: { [index: string]: string } = {
+    "CG": "Chaotic Good",
+    "CN": "Chaotic Neutral",
+    "CE": "Chaotic Evil",
+    "NG": "Neutral Good",
+    "TN": "True Neutral",
+    "NE": "Neutral Evil",
+    "LG": "Lawful Good",
+    "LN": "Lawful Neutral",
+    "LE": "Lawful Evil"
+};

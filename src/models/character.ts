@@ -7,5 +7,8 @@ export class Character {
     abilities: AbilityScores = new AbilityScores();
     race: Race = Data.Races[0];
     subrace: Subrace = Data.Races[0].subraces[0];
-    alignment: Alignment = "Lawful Good";
+    alignment = "LG";
+    get alignmentDescription() {
+        return Data.Alignments[this.alignment];
+    }
 };
