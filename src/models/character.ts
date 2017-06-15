@@ -1,8 +1,8 @@
+import { AbilityScores } from "./ability-scores";
+
 export class Character {
-    strength = 10;
-    dexterity = 10;
-    constitution = 10;
-    wisdom = 10;
-    intelligence = 10;
-    charisma = 10;
+    abilities: AbilityScores;
+    constructor() {
+        this.abilities = new AbilityScores();
+    }
 };

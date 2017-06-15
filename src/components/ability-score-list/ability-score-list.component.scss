@@ -1,0 +1,28 @@
+@import "../../styles/variables.scss";
+.ability-score-list {
+    .ability-list {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        border-bottom: 2px solid $brand-primary;
+        border-top: 2px solid $brand-primary;
+        li {
+            float: left;
+            width: calc(100% / 6);
+        }
+    }
+    .ability-score-info {
+        font-variant: small-caps;
+        font-weight: bold;
+        text-align: right;
+        padding: 6px;
+        .ability-sum, .ability-percentile {
+            display: inline-block;
+        }
+        .ability-sum {
+            border-right: 1px solid $brand-primary;
+            padding-right: 6px;
+        }
+    }
+}

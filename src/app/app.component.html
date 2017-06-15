@@ -1,15 +1,17 @@
-<!--The whole content below can be removed with the new code.-->
-<div style="text-align:center">
-  <h1>{{title}}</h1>
-</div>
-<h2>Abilities</h2>
-<ul>
-    <li><ability-score ability="Strength" [score]="character.strength"></ability-score></li>
-    <li><ability-score ability="Dexterity" [score]="character.dexterity"></ability-score></li>
-    <li><ability-score ability="Constitution" [score]="character.constitution"></ability-score></li>
-    <li><ability-score ability="Wisdom" [score]="character.wisdom"></ability-score></li>
-    <li><ability-score ability="Intelligence" [score]="character.intelligence"></ability-score></li>
-    <li><ability-score ability="Charisma" [score]="character.charisma"></ability-score></li>
-</ul>
+<nav class="navbar navbar-inverse bg-inverse">
+  <div class="container">
+    <a class="navbar-brand" href="#">{{title}}</a>
+  </div>
+</nav>
 
-<button (click)="onGenerateClick()">Generate</button>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <p class="lead">This is a simple tool for generating NPC character statistics based on the 5th edition Dungeons &amp; Dragons ruleset.
+      <br/>To begin, click the button below.</p>
+    <p><button type="button" class="btn btn-primary btn-lg" (click)="onGenerateClick()">Generate NPC</button>
+      <p>
+  </div>
+</div>
+<div class="container">
+  <ability-score-list [abilities]="character.abilities"></ability-score-list>
+</div>
