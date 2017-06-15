@@ -2,7 +2,7 @@
 
 .source-reference {
     padding-left: 2px;
-    a:hover {
+    a:hover, a:active, a:focus {
         text-decoration: none;
     }
 }

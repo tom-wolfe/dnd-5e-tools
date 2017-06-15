@@ -4,7 +4,7 @@ import { Component, Input, Output } from "@angular/core";
   selector: "ability-score",
   templateUrl: "./ability-score.component.html",
   styleUrls: ["./ability-score.component.scss"],
-  host: {"class": "col-md-2 col-sm-4"}
+  host: {"class": "col-md-2 col-sm-4 col-6"}
 })
 export class AbilityScoreComponent {
   @Input() ability: string;
