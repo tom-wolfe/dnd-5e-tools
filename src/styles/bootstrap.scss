@@ -1,4 +1,9 @@
 .btn {
     cursor: pointer;
-    font-variant: small-caps;
+    text-transform: uppercase;
+}
+
+.btn-lg {
+    font-size: 0.8rem;
+    font-weight: bold;
 }

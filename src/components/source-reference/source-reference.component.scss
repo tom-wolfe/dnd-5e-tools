@@ -1,3 +1,5 @@
+@import "../../styles/variables.scss";
+
 .source-reference {
     padding-left: 2px;
 }
@@ -6,6 +8,7 @@
     clear: both;
     overflow: hidden;
     white-space: nowrap;
+    font-family: $font-family-secondary;
 
     a {
         color: white;
