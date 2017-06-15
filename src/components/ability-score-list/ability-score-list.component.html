@@ -1,26 +1,16 @@
 <div class="ability-score-list">
-    <ul class="ability-list">
-        <li>
-            <ability-score ability="Strength" [score]="abilities.strength"></ability-score>
-        </li>
-        <li>
-            <ability-score ability="Dexterity" [score]="abilities.dexterity"></ability-score>
-        </li>
-        <li>
-            <ability-score ability="Constitution" [score]="abilities.constitution"></ability-score>
-        </li>
-        <li>
-            <ability-score ability="Wisdom" [score]="abilities.wisdom"></ability-score>
-        </li>
-        <li>
-            <ability-score ability="Intelligence" [score]="abilities.intelligence"></ability-score>
-        </li>
-        <li>
-            <ability-score ability="Charisma" [score]="abilities.charisma"></ability-score>
-        </li>
-    </ul>
-    <div class="ability-score-info">
-        <span class="ability-sum">Total: {{abilitySum}}</span>
-        <span class="ability-percentile">{{abilityPercentile}}% Percentile</span>
+    <div class="row ability-list">
+        <ability-score ability="Strength" [score]="abilities.strength"></ability-score>
+        <ability-score ability="Dexterity" [score]="abilities.dexterity"></ability-score>
+        <ability-score ability="Constitution" [score]="abilities.constitution"></ability-score>
+        <ability-score ability="Wisdom" [score]="abilities.wisdom"></ability-score>
+        <ability-score ability="Intelligence" [score]="abilities.intelligence"></ability-score>
+        <ability-score ability="Charisma" [score]="abilities.charisma"></ability-score>
+    </div>
+    <div class="row ">
+        <div class="col-sm-12 ability-score-info">
+            <span class="ability-sum">Total: {{abilitySum}}</span>
+            <span class="ability-percentile">{{abilityPercentile}}% Percentile</span>
+        </div>
     </div>
 </div>
