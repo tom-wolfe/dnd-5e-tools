@@ -7,6 +7,7 @@ const Hobgoblin: RaceModels.Race = {
     name: "Hobgoblin",
     size: "Medium",
     speed: { walk: 30 },
+    senses: { darkvision: 60 },
     statMods: { constitution: +2, intelligence: +1 },
     features: [
         {

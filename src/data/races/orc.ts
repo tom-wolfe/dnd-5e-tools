@@ -6,6 +6,7 @@ import * as RaceModels from "../../models/races";
 const Orc: RaceModels.Race = {
     name: "Orc",
     size: "Medium",
+    senses: { darkvision: 60 },
     statMods: { strength: +2, constitution: +1 },
     speed: { walk: 30 },
     features: [

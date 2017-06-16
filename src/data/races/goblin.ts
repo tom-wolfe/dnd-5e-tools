@@ -7,6 +7,7 @@ const Goblin: RaceModels.Race = {
     name: "Goblin",
     size: "Small",
     speed: { walk: 30 },
+    senses: { darkvision: 60 },
     statMods: { dexterity: +2, constitution: +1 },
     features: [
         {

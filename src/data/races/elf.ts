@@ -7,6 +7,7 @@ const Elf: RaceModels.Race = {
     name: "Elf",
     size: "Medium",
     speed: { walk: 30 },
+    senses: { darkvision: 60 },
     statMods: { dexterity: +2 },
     features: [
         {
@@ -61,6 +62,7 @@ const Elf: RaceModels.Race = {
         }, {
             name: "Drow",
             statMods: { charisma: +1 },
+            senses: { darkvision: 120 },
             features: [
                 CommonFeatures.sunlightSensitivity,
                 {

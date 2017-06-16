@@ -2,11 +2,8 @@
 
 .ability-score-list {
     .ability-info {
-        font-size: 14px;
-        font-weight: bold;
         padding: 6px;
         text-align: right;
-        text-transform: uppercase;
         .ability-sum, .ability-percentile {
             display: inline-block;
         }

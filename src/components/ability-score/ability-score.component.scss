@@ -1,16 +1,8 @@
 @import "../../styles/variables.scss";
 
 .ability {
-    padding: 12px;
     text-align: center;
 
-    .ability-name {
-        display: block;
-        font-size: 14px;
-        font-weight: bold;
-        text-transform: uppercase;
-    }
-    
     .ability-score {
         font-size: 24px;
         font-family: $font-family-secondary;

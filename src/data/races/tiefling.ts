@@ -7,6 +7,7 @@ const Tiefling: RaceModels.Race = {
     name: "Tiefling",
     size: "Medium",
     speed: { walk: 30 },
+    senses: { darkvision: 60 },
     statMods: { intelligence: +1, charisma: +2 },
     features: [
         {

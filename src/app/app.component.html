@@ -25,5 +25,24 @@
   </div>
   <ability-score-list [abilities]="character.abilities"></ability-score-list>
   <speed-display [speed]="character.speed"></speed-display>
+  <div class="character-block-minor">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="character-sub-block">
+          <h3 class="sub-block-title">Languages</h3>
+          Common, Elvish, Sylvan
+        </div>
+      </div>
+      <div class="col-md-4">
+        <senses-display [senses]="character.senses"></senses-display>
+      </div>
+      <div class="col-md-4">
+        <div class="character-sub-block">
+          <h3 class="sub-block-title">Skills</h3>
+          History +3, Perception +10
+        </div>
+      </div>
+    </div>
+  </div>
   <feature-display-list [features]="character.racialFeatures"></feature-display-list>
 </div>

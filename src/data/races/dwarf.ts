@@ -7,6 +7,7 @@ const Dwarf: RaceModels.Race = {
     name: "Dwarf",
     size: "Medium",
     speed: { walk: 25 },
+    senses: { darkvision: 60 },
     statMods: { constitution: +2 },
     features: [
         {

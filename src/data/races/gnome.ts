@@ -7,6 +7,7 @@ const Gnome: RaceModels.Race = {
     name: "Gnome",
     size: "Small",
     speed: { walk: 25 },
+    senses: { darkvision: 60 },
     statMods: { intelligence: +2 },
     features: [
         {
@@ -67,6 +68,7 @@ const Gnome: RaceModels.Race = {
         }, {
             name: "Deep",
             statMods: { dexterity: +1 },
+            senses: { darkvision: 120 },
             features: [
                 {
                     name: "Stone Camouflage", type: "passive",

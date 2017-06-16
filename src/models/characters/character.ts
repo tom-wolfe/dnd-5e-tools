@@ -12,8 +12,9 @@ export class Character {
     race: Races.Race;
     subrace: Races.Subrace;
     speed: Attributes.Speed = new Attributes.CharacterSpeed(this);
+    senses: Attributes.Senses = new Attributes.CharacterSenses(this);
     get racialFeatures(): Features.Feature[] {
-        if (this.subrace && this.subrace.features)  {
+        if (this.subrace && this.subrace.features) {
             return _.union(this.race.features, this.subrace.features);
         } else {
             return this.race.features;

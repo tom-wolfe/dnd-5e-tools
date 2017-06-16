@@ -49,6 +49,7 @@ const Genasi: RaceModels.Race = {
         }, {
             name: "Fire",
             statMods: { intelligence: +1 },
+            senses: { darkvision: 60 },
             features: [
                 {
                     name: "Fire Resistance", type: "passive",

@@ -7,6 +7,7 @@ const Kobold: RaceModels.Race = {
     name: "Kobold",
     size: "Small",
     speed: { walk: 30 },
+    senses: { darkvision: 60 },
     statMods: { dexterity: +2, strength: -2 },
     features: [
         {

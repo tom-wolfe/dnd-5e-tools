@@ -6,6 +6,7 @@ import * as RaceModels from "../../models/races";
 const YuanTiPureblood: RaceModels.Race = {
     name: "Yuan-ti Pureblood",
     size: "Medium",
+    senses: { darkvision: 60 },
     statMods: { charisma: +2, intelligence: +1 },
     speed: { walk: 30 },
     features: [

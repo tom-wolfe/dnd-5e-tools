@@ -7,6 +7,7 @@ const Bugbear: RaceModels.Race = {
     name: "Bugbear",
     size: "Medium",
     speed: { walk: 30 },
+    senses: { darkvision: 60 },
     statMods: { strength: +2, dexterity: +1 },
     features: [
         {

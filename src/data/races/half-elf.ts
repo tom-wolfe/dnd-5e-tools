@@ -7,6 +7,7 @@ const HalfElf: RaceModels.Race = {
     name: "Half-elf",
     size: "Medium",
     speed: { walk: 30 },
+    senses: { darkvision: 60 },
     statMods: { charisma: +2, additionalPoints: 2 },
     features: [
         CommonFeatures.feyAncestry,

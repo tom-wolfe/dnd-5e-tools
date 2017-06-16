@@ -5,6 +5,7 @@ const Aasimar: RaceModels.Race = {
     name: "Aasimar",
     size: "Medium",
     speed: { walk: 30 },
+    senses: { darkvision: 60 },
     statMods: { charisma: +2 },
     features: [
         {

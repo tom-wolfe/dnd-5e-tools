@@ -2,6 +2,8 @@
     "words": [
         "aarakocra",
         "aasimar",
+        "blindsight",
+        "darkvision",
         "dragonborn",
         "firbolg",
         "genasi",
@@ -13,6 +15,8 @@
         "spellcasting",
         "tabaxi",
         "thaumaturgy",
-        "tiefling"
+        "tiefling",
+        "tremorsense",
+        "truesight"
     ]
 }

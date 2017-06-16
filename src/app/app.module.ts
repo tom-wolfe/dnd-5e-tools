@@ -6,6 +6,7 @@ import { AbilityScoreComponent } from "../components/ability-score/ability-score
 import { AbilityScoreListComponent } from "../components/ability-score-list/ability-score-list.component";
 import { FeatureDisplayComponent } from "../components/feature-display/feature-display.component";
 import { FeatureDisplayListComponent } from "../components/feature-display-list/feature-display-list.component";
+import { SensesDisplayComponent } from "../components/senses-display/senses-display.component";
 import { SourceReferenceComponent } from "../components/source-reference/source-reference.component";
 import { SpeedDisplayComponent } from "../components/speed-display/speed-display.component";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
@@ -17,6 +18,7 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
     AbilityScoreListComponent,
     FeatureDisplayComponent,
     FeatureDisplayListComponent,
+    SensesDisplayComponent,
     SourceReferenceComponent,
     SpeedDisplayComponent
   ],

@@ -10,6 +10,7 @@ export class Race {
     name: string;
     size: Attributes.Size;
     speed: Attributes.Speed;
+    senses?: Attributes.Senses;
     statMods?: Abilities.StatMods;
     features?: Features.Feature[];
     reference?: Reference;

@@ -7,6 +7,7 @@ const Tabaxi: RaceModels.Race = {
     name: "Tabaxi",
     size: "Medium",
     speed: { walk: 30, climb: 20 },
+    senses: { darkvision: 60 },
     statMods: { dexterity: +2, charisma: +1 },
     features: [
         {
