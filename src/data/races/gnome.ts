@@ -1,3 +1,4 @@
+import * as Languages from "../../data/languages";
 import { Races } from "./races";
 import { CommonFeatures } from "../common-features";
 
@@ -8,6 +9,7 @@ const Gnome: RaceModels.Race = {
     size: "Small",
     speed: { walk: 25 },
     senses: { darkvision: 60 },
+    languages: { known: [ Languages.Common, Languages.Gnomish ] },
     statMods: { intelligence: +2 },
     features: [
         {
@@ -68,6 +70,7 @@ const Gnome: RaceModels.Race = {
         }, {
             name: "Deep",
             statMods: { dexterity: +1 },
+            languages: { known: [ Languages.Undercommon ] },
             senses: { darkvision: 120 },
             features: [
                 {

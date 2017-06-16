@@ -1,3 +1,4 @@
+import * as Languages from "../../data/languages";
 import { Races } from "./races";
 import { CommonFeatures } from "../common-features";
 
@@ -8,6 +9,7 @@ const Hobgoblin: RaceModels.Race = {
     size: "Medium",
     speed: { walk: 30 },
     senses: { darkvision: 60 },
+    languages: { known: [ Languages.Common, Languages.Goblin ] },
     statMods: { constitution: +2, intelligence: +1 },
     features: [
         {

@@ -1,3 +1,4 @@
+import * as Languages from "../../data/languages";
 import { Races } from "./races";
 import * as RaceModels from "../../models/races";
 
@@ -6,6 +7,7 @@ const Aasimar: RaceModels.Race = {
     size: "Medium",
     speed: { walk: 30 },
     senses: { darkvision: 60 },
+    languages: { known: [ Languages.Common, Languages.Celestial ] },
     statMods: { charisma: +2 },
     features: [
         {

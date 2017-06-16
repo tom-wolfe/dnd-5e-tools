@@ -2,9 +2,11 @@
     "words": [
         "aarakocra",
         "aasimar",
+        "auran",
         "blindsight",
         "darkvision",
         "dragonborn",
+        "dwarvish",
         "firbolg",
         "genasi",
         "halfling",
@@ -17,6 +19,7 @@
         "thaumaturgy",
         "tiefling",
         "tremorsense",
-        "truesight"
+        "truesight",
+        "undercommon"
     ]
 }

@@ -1,3 +1,4 @@
+import * as Languages from "../../data/languages";
 import { Races } from "./races";
 import { CommonFeatures } from "../common-features";
 
@@ -7,6 +8,7 @@ const Kenku: RaceModels.Race = {
     name: "Kenku",
     size: "Medium",
     speed: { walk: 30 },
+    languages: { known: [ Languages.Common, Languages.Primordial ] },
     statMods: { dexterity: +2, wisdom: +1 },
     features: [
         {

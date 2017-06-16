@@ -1,3 +1,4 @@
+import * as Languages from "../../data/languages";
 import { Races } from "./races";
 import { CommonFeatures } from "../common-features";
 
@@ -8,6 +9,7 @@ const Tabaxi: RaceModels.Race = {
     size: "Medium",
     speed: { walk: 30, climb: 20 },
     senses: { darkvision: 60 },
+    languages: { known: [ Languages.Common ], other: 1 },
     statMods: { dexterity: +2, charisma: +1 },
     features: [
         {

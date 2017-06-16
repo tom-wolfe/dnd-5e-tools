@@ -1,10 +1,13 @@
+import * as Languages from "../../data/languages";
 import { Races } from "./races";
+
 import * as RaceModels from "../../models/races";
 
 const Aarakocra: RaceModels.Race = {
     name: "Aarakocra",
     size: "Medium",
     speed: { walk: 25, fly: 50 },
+    languages: { known: [ Languages.Common, Languages.Aarakocra, Languages.Primordial ] },
     statMods: { dexterity: +2, wisdom: +1 },
     features: [
         {

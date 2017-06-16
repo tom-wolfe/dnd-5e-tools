@@ -1,8 +1,9 @@
 import * as Data from "../../data/";
-import * as Races from "../races";
 import * as Abilities from "../abilities";
 import * as Attributes from "../attributes";
 import * as Features from "../features";
+import * as Languages from "../languages";
+import * as Races from "../races";
 
 import * as _ from "lodash";
 
@@ -18,6 +19,13 @@ export class Character {
             return _.union(this.race.features, this.subrace.features);
         } else {
             return this.race.features;
+        }
+    };
+    get languages(): Languages.Language[] {
+        if (this.subrace && this.subrace.languages) {
+            return _.union(this.race.languages.known, this.subrace.languages.known);
+        } else {
+            return this.race.languages.known;
         }
     };
     alignment: string;

@@ -4,7 +4,10 @@ import { NumberGenerator } from "./number-generator";
 import * as Abilities from "../models/abilities";
 import * as Characters from "../models/characters";
 import * as Data from "../data/";
+import * as Languages from "../models/languages";
 import * as Races from "../models/races";
+
+import * as _ from "lodash";
 
 export class CharacterGenerator {
     abGen = new AbilityScoreGenerator();
@@ -15,6 +18,7 @@ export class CharacterGenerator {
         this.randomizeAbilities(character);
         this.randomizeRace(character);
         this.randomizeRaceBonuses(character);
+        this.randomizeLanguages(character);
         this.randomizeAlignment(character);
         return character;
     }
@@ -68,8 +72,30 @@ export class CharacterGenerator {
             statList.splice(statIndex, 1);
             statMods.additionalPoints -= 1;
         }
+    }
 
-        console.log(character.race.statMods);
+    randomizeLanguages(character: Characters.Character) {
+        // Get other languages.
+        let otherLanguages = (character.race.languages.other || 0)
+        let knownSubLanguages: Languages.Language[] = [];
+        if (character.subrace && character.subrace.languages) {
+            otherLanguages += character.subrace.languages.other || 0;
+            knownSubLanguages = character.subrace.languages.known;
+        }
+
+        if (otherLanguages === 0) { return; }
+
+        const knownLanguages = _.union(character.race.languages.known, knownSubLanguages).map((lang) => lang.name);
+        const availableLanguages = _.difference(Object.keys(Data.Languages), knownLanguages);
+
+        // Increment random stats.
+        while (otherLanguages > 0) {
+            const langIndex = this.numGen.rollDie(availableLanguages.length) - 1;
+            const lang = availableLanguages[langIndex];
+            character.race.languages.known.push(Data.Languages[lang]);
+            knownLanguages.splice(langIndex, 1);
+            otherLanguages -= 1;
+        }
     }
 
     randomizeAlignment(character: Characters.Character) {

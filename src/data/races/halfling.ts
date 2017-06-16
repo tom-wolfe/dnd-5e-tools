@@ -1,3 +1,4 @@
+import * as Languages from "../../data/languages";
 import { Races } from "./races";
 import { CommonFeatures } from "../common-features";
 
@@ -7,6 +8,7 @@ const Halfling: RaceModels.Race = {
     name: "Halfling",
     size: "Small",
     statMods: { dexterity: +2 },
+    languages: { known: [ Languages.Common, Languages.Halfling ] },
     speed: { walk: 25 },
     features: [
         {

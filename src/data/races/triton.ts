@@ -1,3 +1,4 @@
+import * as Languages from "../../data/languages";
 import { Races } from "./races";
 import { CommonFeatures } from "../common-features";
 
@@ -7,6 +8,7 @@ const Triton: RaceModels.Race = {
     name: "Triton",
     size: "Medium",
     speed: { walk: 30, swim: 30 },
+    languages: { known: [ Languages.Common, Languages.Primordial ] },
     statMods: { strength: +1, constitution: +1, charisma: +1 },
     features: [
         {

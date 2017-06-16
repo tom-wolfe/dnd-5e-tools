@@ -1,3 +1,4 @@
+import * as Languages from "../../data/languages";
 import { Races } from "./races";
 import { CommonFeatures } from "../common-features";
 
@@ -7,6 +8,7 @@ const Lizardfolk: RaceModels.Race = {
     name: "Lizardfolk",
     size: "Medium",
     speed: { walk: 30 },
+    languages: { known: [ Languages.Common, Languages.Draconic ] },
     statMods: { constitution: +2, wisdom: +1 },
     features: [
         {

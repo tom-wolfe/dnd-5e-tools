@@ -28,10 +28,7 @@
   <div class="character-block-minor">
     <div class="row">
       <div class="col-md-4">
-        <div class="character-sub-block">
-          <h3 class="sub-block-title">Languages</h3>
-          Common, Elvish, Sylvan
-        </div>
+        <languages-display [languages]="character.languages"></languages-display>
       </div>
       <div class="col-md-4">
         <senses-display [senses]="character.senses"></senses-display>

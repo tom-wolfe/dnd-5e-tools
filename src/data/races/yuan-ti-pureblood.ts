@@ -1,3 +1,4 @@
+import * as Languages from "../../data/languages";
 import { Races } from "./races";
 import { CommonFeatures } from "../common-features";
 
@@ -7,6 +8,7 @@ const YuanTiPureblood: RaceModels.Race = {
     name: "Yuan-ti Pureblood",
     size: "Medium",
     senses: { darkvision: 60 },
+    languages: { known: [ Languages.Common, Languages.Abyssal, Languages.Draconic ] },
     statMods: { charisma: +2, intelligence: +1 },
     speed: { walk: 30 },
     features: [

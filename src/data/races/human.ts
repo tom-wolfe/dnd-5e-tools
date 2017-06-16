@@ -1,3 +1,4 @@
+import * as Languages from "../../data/languages";
 import { Races } from "./races";
 import { CommonFeatures } from "../common-features";
 
@@ -7,6 +8,7 @@ const Human: RaceModels.Race = {
     name: "Human",
     size: "Medium",
     speed: { walk: 30 },
+    languages: { known: [ Languages.Common ], other: 1 },
     statMods: {},
     reference: {
         source: "PHB",

@@ -1,3 +1,4 @@
+import * as Languages from "../../data/languages";
 import { Races } from "./races";
 import { CommonFeatures } from "../common-features";
 
@@ -7,6 +8,7 @@ const Dragonborn: RaceModels.Race = {
     name: "Dragonborn",
     size: "Medium",
     speed: { walk: 30 },
+    languages: { known: [ Languages.Common, Languages.Draconic ] },
     statMods: { strength: +2, charisma: +1 },
     features: [
         {

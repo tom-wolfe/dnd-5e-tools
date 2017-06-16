@@ -1,3 +1,4 @@
+import * as Languages from "../../data/languages";
 import { Races } from "./races";
 import { CommonFeatures } from "../common-features";
 
@@ -8,6 +9,7 @@ const Goblin: RaceModels.Race = {
     size: "Small",
     speed: { walk: 30 },
     senses: { darkvision: 60 },
+    languages: { known: [ Languages.Common, Languages.Goblin ] },
     statMods: { dexterity: +2, constitution: +1 },
     features: [
         {

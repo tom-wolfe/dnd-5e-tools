@@ -1,3 +1,4 @@
+import * as Languages from "../../data/languages";
 import { Races } from "./races";
 import { CommonFeatures } from "../common-features";
 
@@ -8,6 +9,7 @@ const HalfOrc: RaceModels.Race = {
     size: "Medium",
     speed: { walk: 30 },
     statMods: { strength: +2, constitution: +1 },
+    languages: { known: [ Languages.Common, Languages.Orc ] },
     features: [
         CommonFeatures.menacing,
         {

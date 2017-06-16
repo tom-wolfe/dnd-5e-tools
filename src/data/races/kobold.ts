@@ -1,3 +1,4 @@
+import * as Languages from "../../data/languages";
 import { Races } from "./races";
 import { CommonFeatures } from "../common-features";
 
@@ -8,6 +9,7 @@ const Kobold: RaceModels.Race = {
     size: "Small",
     speed: { walk: 30 },
     senses: { darkvision: 60 },
+    languages: { known: [ Languages.Common, Languages.Draconic ] },
     statMods: { dexterity: +2, strength: -2 },
     features: [
         {

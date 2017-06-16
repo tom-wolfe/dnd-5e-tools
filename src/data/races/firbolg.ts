@@ -1,3 +1,4 @@
+import * as Languages from "../../data/languages";
 import { Races } from "./races";
 import { CommonFeatures } from "../common-features";
 
@@ -7,6 +8,7 @@ const Firbolg: RaceModels.Race = {
     name: "Firbolg",
     size: "Medium",
     speed: { walk: 30 },
+    languages: { known: [ Languages.Common, Languages.Elvish, Languages.Giant ] },
     statMods: { strength: +1, wisdom: +2 },
     features: [
         {

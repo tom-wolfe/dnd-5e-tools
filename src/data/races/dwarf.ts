@@ -1,4 +1,5 @@
 import { Races } from "./races";
+import * as Languages from "../../data/languages";
 import { CommonFeatures } from "../common-features";
 
 import * as RaceModels from "../../models/races";
@@ -8,6 +9,7 @@ const Dwarf: RaceModels.Race = {
     size: "Medium",
     speed: { walk: 25 },
     senses: { darkvision: 60 },
+    languages: { known: [ Languages.Common, Languages.Dwarvish ] },
     statMods: { constitution: +2 },
     features: [
         {
@@ -56,6 +58,7 @@ const Dwarf: RaceModels.Race = {
         }, {
             name: "Duergar",
             statMods: { strength: +1 },
+            languages: { known: [ Languages.Undercommon ] },
             features: [
                 {
                     name: "Duergar Resilience", type: "passive",

@@ -1,3 +1,4 @@
+import * as Languages from "../../data/languages";
 import { Races } from "./races";
 import { CommonFeatures } from "../common-features";
 
@@ -7,6 +8,7 @@ const Goliath: RaceModels.Race = {
     name: "Goliath",
     size: "Medium",
     speed: { walk: 30 },
+    languages: { known: [ Languages.Common, Languages.Giant ] },
     statMods: { strength: +2, constitution: +1 },
     features: [
         {
