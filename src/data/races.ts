@@ -4,39 +4,48 @@ export const Races: RaceModels.Race[] = [
     {
         name: "Aarakocra",
         size: "Medium",
-        speed: { walk: 25, fly: 50, climb: 0, swim: 0 },
+        speed: { walk: 25, fly: 50 },
         statMods: { dexterity: +2, wisdom: +1 },
+        features: [
+            {
+                name: "Flight", type: "passive",
+                description: "You have a flying speed of 50 feet. To use this speed, you can’t be wearing medium or heavy armor."
+            }, {
+                name: "Talons", type: "active",
+                description: "You are proficient with your unarmed strikes, which deal 1d4 slashing damage on a hit."
+            }
+        ],
         reference: { source: "EE", page: 2, url: "https://www.dndbeyond.com/characters/races/aarakocra" },
         subraces: null
     }, {
         name: "Aasimar",
         size: "Medium",
-        speed: { walk: 30, fly: 0, climb: 0, swim: 0 },
+        speed: { walk: 30 },
         statMods: { charisma: +2 },
-        reference: { source: "VGM", page: 104, url: "" },
+        reference: { source: "VGM", page: 104 },
         subraces: [
             {
                 name: "Protector", statMods: { wisdom: +1 },
-                reference: { source: "VGM", page: 105, url: "" }
+                reference: { source: "VGM", page: 105 }
             }, {
                 name: "Scourge", statMods: { constitution: +1 },
-                reference: { source: "VGM", page: 105, url: "" }
+                reference: { source: "VGM", page: 105 }
             }, {
                 name: "Fallen", statMods: { strength: +1 },
-                reference: { source: "VGM", page: 105, url: "" }
+                reference: { source: "VGM", page: 105 }
             }
         ]
     }, {
         name: "Bugbear",
         size: "Medium",
-        speed: { walk: 30, fly: 0, climb: 0, swim: 0 },
+        speed: { walk: 30 },
         statMods: { strength: +2, dexterity: +1 },
-        reference: { source: "VGM", page: 119, url: "" },
+        reference: { source: "VGM", page: 119 },
         subraces: null
     }, {
         name: "Dragonborn",
         size: "Medium",
-        speed: { walk: 30, fly: 0, climb: 0, swim: 0 },
+        speed: { walk: 30 },
         statMods: { strength: +2, charisma: +1 },
         reference: {
             source: "PHB",
@@ -47,7 +56,7 @@ export const Races: RaceModels.Race[] = [
     }, {
         name: "Dwarf",
         size: "Medium",
-        speed: { walk: 25, fly: 0, climb: 0, swim: 0 },
+        speed: { walk: 25 },
         statMods: { constitution: +2 },
         features: [
             {
@@ -69,7 +78,7 @@ export const Races: RaceModels.Race[] = [
                     proficient in the History skill and add double your proficiency bonus to the check, instead of your
                     normal proficiency bonus.
                 `
-            },
+            }
         ],
         reference: { source: "PHB", page: 18, url: "https://www.dndbeyond.com/characters/races/dwarf" },
         subraces: [
@@ -118,13 +127,13 @@ export const Races: RaceModels.Race[] = [
                         `
                     }
                 ],
-                reference: { source: "SCG", page: 104, url: "" }
+                reference: { source: "SCG", page: 104 }
             }
         ]
     }, {
         name: "Elf",
         size: "Medium",
-        speed: { walk: 30, fly: 0, climb: 0, swim: 0 },
+        speed: { walk: 30 },
         statMods: { dexterity: +2 },
         reference: { source: "PHB", page: 21, url: "https://www.dndbeyond.com/characters/races/elf" },
         subraces: [
@@ -139,56 +148,122 @@ export const Races: RaceModels.Race[] = [
             }, {
                 name: "Drow",
                 statMods: { charisma: +1 },
-                reference: { source: "PHB", page: 24, url: "" }
+                reference: { source: "PHB", page: 24 }
             }, {
                 name: "Eladrin",
                 statMods: { intelligence: +1 },
-                reference: { source: "DMG", page: 286, url: "" }
+                reference: { source: "DMG", page: 286 }
             }
         ]
     }, {
         name: "Firbolg",
         size: "Medium",
-        speed: { walk: 30, fly: 0, climb: 0, swim: 0 },
+        speed: { walk: 30 },
         statMods: { strength: +1, wisdom: +2 },
-        reference: { source: "VGM", page: 106, url: "" },
+        reference: { source: "VGM", page: 106 },
         subraces: null
     }, {
         name: "Genasi",
         size: "Medium",
-        speed: { walk: 30, fly: 0, climb: 0, swim: 0 },
+        speed: { walk: 30 },
         statMods: { constitution: +2 },
         reference: { source: "EE", page: 6, url: "https://www.dndbeyond.com/characters/races/genasi" },
         subraces: [
             {
                 name: "Air",
                 statMods: { dexterity: +1 },
+                features: [
+                    {
+                        name: "Unending Breath", type: "passive",
+                        description: "You can hold your breath indefinitely while you’re not incapacitated."
+                    }, {
+                        name: "Mingle with the Wind", type: "active",
+                        usage: { times: 1, timeUnit: "longRest" },
+                        description: `
+                            You can cast the levitate spell once with this trait, requiring no material components, and you regain the
+                            ability to cast it this way when you finish a long rest. Constitution is your spellcasting ability for this
+                            spell.
+                        `
+                    }
+                ],
                 reference: { source: "EE", page: 8, url: "https://www.dndbeyond.com/characters/races/genasi#AirGenasi" }
             }, {
                 name: "Earth",
                 statMods: { strength: +1 },
+                features: [
+                    {
+                        name: "Earth Walk", type: "passive",
+                        description: "You can move across difficult terrain made of earth or stone without expending extra movement."
+                    }, {
+                        name: "Mingle with Stone", type: "active",
+                        usage: { times: 1, timeUnit: "longRest" },
+                        description: `
+                            You can cast the pass without trace spell once with this trait, requiring no material components, and you
+                            regain the ability to cast it this way when you finish a long rest. Constitution is your spellcasting
+                            ability for this spell.
+                        `
+                    }
+                ],
                 reference: { source: "EE", page: 8, url: "https://www.dndbeyond.com/characters/races/genasi#EarthGenasi" }
             }, {
                 name: "Fire",
                 statMods: { intelligence: +1 },
+                features: [
+                    {
+                        name: "Fire Resistance", type: "passive",
+                        description: "You have resistance to fire damage."
+                    }, {
+                        name: "Reach to the Blaze", type: "active",
+                        usage: { times: 1, timeUnit: "longRest" },
+                        description: `
+                            You know the produce flame cantrip. Once you reach 3rd level, you can cast the burning hands spell once with
+                            this trait as a 1st-level spell, and you regain the ability to cast it this way when you finish a long rest.
+                            Constitution is your spellcasting ability for these spells.
+                        `
+                    }
+                ],
                 reference: { source: "EE", page: 8, url: "https://www.dndbeyond.com/characters/races/genasi#FireGenasi" }
             }, {
                 name: "Water",
+                speed: { swim: 30 },
                 statMods: { wisdom: +1 },
+                features: [
+                    {
+                        name: "Acid Resistance", type: "passive",
+                        description: "You have resistance to acid damage."
+                    }, {
+                        name: "Amphibious", type: "passive",
+                        description: "You can breathe air and water."
+                    }, {
+                        name: "Call to the Wave", type: "active",
+                        usage: { times: 1, timeUnit: "longRest" },
+                        description: `
+                            You know the shape water cantrip (see chapter 2). When you reach 3rd level, you can cast the create or destroy
+                            water spell as a 2nd-level spell once with this trait, and you regain the ability to cast it this way when you
+                            finish a long rest. Constitution is your spellcasting ability for these spells.
+                        `
+                    }
+                ],
                 reference: { source: "EE", page: 9, url: "https://www.dndbeyond.com/characters/races/genasi#WaterGenasi" }
             },
         ]
     }, {
         name: "Gnome",
         size: "Small",
-        speed: { walk: 25, fly: 0, climb: 0, swim: 0 },
+        speed: { walk: 25 },
         statMods: { intelligence: +2 },
+        features: [
+            {
+                name: "Gnome Cunning", type: "passive",
+                description: "You have advantage on all Intelligence, Wisdom, and Charisma saving throws against magic."
+            }
+        ],
         reference: { source: "PHB", page: 35, url: "https://www.dndbeyond.com/characters/races/gnome" },
         subraces: [
             {
                 name: "Forest",
                 statMods: { dexterity: +1 },
-                reference: { source: "PHB", page: 37, url: "" }
+                reference: { source: "PHB", page: 37 }
             }, {
                 name: "Rock",
                 statMods: { constitution: +1 },
@@ -196,34 +271,40 @@ export const Races: RaceModels.Race[] = [
             }, {
                 name: "Deep",
                 statMods: { dexterity: +1 },
+                features: [
+                    {
+                        name: "Stone Camouflage", type: "passive",
+                        description: "You have advantage on Dexterity (stealth) checks to hide in rocky terrain."
+                    }
+                ],
                 reference: { source: "EE", page: 4, url: "https://www.dndbeyond.com/characters/races/gnome#DeepGnome" }
             }
         ]
     }, {
         name: "Goblin",
         size: "Small",
-        speed: { walk: 30, fly: 0, climb: 0, swim: 0 },
+        speed: { walk: 30 },
         statMods: { dexterity: +2, constitution: +1 },
-        reference: { source: "VGM", page: 119, url: "" },
+        reference: { source: "VGM", page: 119 },
         subraces: null
     }, {
         name: "Goliath",
         size: "Medium",
-        speed: { walk: 30, fly: 0, climb: 0, swim: 0 },
+        speed: { walk: 30 },
         statMods: { strength: +2, constitution: +1 },
         reference: { source: "VGM", page: 108, url: "https://www.dndbeyond.com/characters/races/goliath" },
         subraces: null
     }, {
         name: "Half-elf",
         size: "Medium",
-        speed: { walk: 30, fly: 0, climb: 0, swim: 0 },
+        speed: { walk: 30 },
         statMods: { charisma: +2, additionalPoints: 2 },
         reference: { source: "PHB", page: 38, url: "https://www.dndbeyond.com/characters/races/half-elf" },
         subraces: null
     }, {
         name: "Half-orc",
         size: "Medium",
-        speed: { walk: 30, fly: 0, climb: 0, swim: 0 },
+        speed: { walk: 30 },
         statMods: { strength: +2, constitution: +1 },
         reference: { source: "PHB", page: 40, url: "https://www.dndbeyond.com/characters/races/half-orc" },
         subraces: null
@@ -231,7 +312,7 @@ export const Races: RaceModels.Race[] = [
         name: "Halfling",
         size: "Small",
         statMods: { dexterity: +2 },
-        speed: { walk: 25, fly: 0, climb: 0, swim: 0 },
+        speed: { walk: 25 },
         reference: { source: "PHB", page: 26, url: "https://www.dndbeyond.com/characters/races/halfling" },
         subraces: [
             {
@@ -247,14 +328,14 @@ export const Races: RaceModels.Race[] = [
     }, {
         name: "Hobgoblin",
         size: "Medium",
-        speed: { walk: 30, fly: 0, climb: 0, swim: 0 },
+        speed: { walk: 30 },
         statMods: { constitution: +2, intelligence: +1 },
-        reference: { source: "VGM", page: 119, url: "" },
+        reference: { source: "VGM", page: 119 },
         subraces: null
     }, {
         name: "Human",
         size: "Medium",
-        speed: { walk: 30, fly: 0, climb: 0, swim: 0 },
+        speed: { walk: 30 },
         statMods: {},
         reference: {
             source: "PHB",
@@ -275,49 +356,49 @@ export const Races: RaceModels.Race[] = [
     }, {
         name: "Kenku",
         size: "Medium",
-        speed: { walk: 30, fly: 0, climb: 0, swim: 0 },
+        speed: { walk: 30 },
         statMods: { dexterity: +2, wisdom: +1 },
-        reference: { source: "VGM", page: 110, url: "" },
+        reference: { source: "VGM", page: 110 },
         subraces: null
     }, {
         name: "Kobold",
         size: "Small",
-        speed: { walk: 30, fly: 0, climb: 0, swim: 0 },
+        speed: { walk: 30 },
         statMods: { dexterity: +2, strength: -2 },
-        reference: { source: "VGM", page: 119, url: "" },
+        reference: { source: "VGM", page: 119 },
         subraces: null
     }, {
         name: "Lizardfolk",
         size: "Medium",
-        speed: { walk: 30, fly: 0, climb: 0, swim: 0 },
+        speed: { walk: 30 },
         statMods: { constitution: +2, wisdom: +1 },
-        reference: { source: "VGM", page: 111, url: "" },
+        reference: { source: "VGM", page: 111 },
         subraces: null
     }, {
         name: "Orc",
         size: "Medium",
         statMods: { strength: +2, constitution: +1 },
-        speed: { walk: 30, fly: 0, climb: 0, swim: 0 },
-        reference: { source: "VGM", page: 120, url: "" },
+        speed: { walk: 30 },
+        reference: { source: "VGM", page: 120 },
         subraces: null
     }, {
         name: "Tabaxi",
         size: "Medium",
-        speed: { walk: 30, fly: 0, climb: 20, swim: 0 },
+        speed: { walk: 30, climb: 20 },
         statMods: { dexterity: +2, charisma: +1 },
-        reference: { source: "VGM", page: 113, url: "" },
+        reference: { source: "VGM", page: 113 },
         subraces: null
     }, {
         name: "Triton",
         size: "Medium",
-        speed: { walk: 30, fly: 0, climb: 0, swim: 30 },
+        speed: { walk: 30, swim: 30 },
         statMods: { strength: +1, constitution: +1, charisma: +1 },
-        reference: { source: "VGM", page: 113, url: "" },
+        reference: { source: "VGM", page: 113 },
         subraces: null
     }, {
         name: "Tiefling",
         size: "Medium",
-        speed: { walk: 30, fly: 0, climb: 0, swim: 0 },
+        speed: { walk: 30 },
         statMods: { intelligence: +1, charisma: +2 },
         reference: { source: "PHB", page: 42, url: "https://www.dndbeyond.com/characters/races/tiefling" },
         subraces: null
@@ -325,8 +406,8 @@ export const Races: RaceModels.Race[] = [
         name: "Yuan-ti Pureblood",
         size: "Medium",
         statMods: { charisma: +2, intelligence: +1 },
-        speed: { walk: 30, fly: 0, climb: 0, swim: 0 },
-        reference: { source: "VGM", page: 120, url: "" },
+        speed: { walk: 30 },
+        reference: { source: "VGM", page: 120 },
         subraces: null
     }
 ];

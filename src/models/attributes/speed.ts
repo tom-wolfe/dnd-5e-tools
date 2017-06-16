@@ -1,6 +1,6 @@
-export class Speed {
-    walk = 30;
-    fly = 0;
-    swim = 0;
-    climb = 0;
+export interface Speed {
+    walk?: number;
+    fly?: number;
+    swim?: number;
+    climb?: number;
 };
