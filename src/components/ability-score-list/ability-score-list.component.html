@@ -1,14 +1,14 @@
-<div class="ability-score-list">
-    <div class="row ability-list">
+<div class="ability-score-list character-block-major">
+    <div class="ability-list row">
         <ability-score ability="Strength" [score]="abilities.strength"></ability-score>
         <ability-score ability="Dexterity" [score]="abilities.dexterity"></ability-score>
         <ability-score ability="Constitution" [score]="abilities.constitution"></ability-score>
         <ability-score ability="Wisdom" [score]="abilities.wisdom"></ability-score>
         <ability-score ability="Intelligence" [score]="abilities.intelligence"></ability-score>
         <ability-score ability="Charisma" [score]="abilities.charisma"></ability-score>
-            <div class="col-sm-12 ability-score-info">
-                <span class="ability-sum">Total: {{abilitySum}}</span>
-                <span class="ability-percentile">{{abilityPercentile}}% Percentile</span>
-            </div>
+    </div>
+    <div class="ability-info">
+        <span class="ability-sum">Total: {{abilitySum}}</span>
+        <span class="ability-percentile">{{abilityPercentile}}% Percentile</span>
     </div>
 </div>

@@ -1,11 +1,7 @@
 @import "../../styles/variables.scss";
 
 .ability-score-list {
-    .ability-list {
-        border-bottom: 1px solid $brand-primary;
-        border-top: 2px solid $brand-primary;
-    }
-    .ability-score-info {
+    .ability-info {
         font-size: 14px;
         font-weight: bold;
         padding: 6px;
