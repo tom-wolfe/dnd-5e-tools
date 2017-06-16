@@ -26,6 +26,4 @@ const Tiefling: RaceModels.Race = {
     subraces: null
 };
 
-// TODO: Features.
-
 Races[Tiefling.name] = Tiefling;
