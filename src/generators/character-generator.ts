@@ -29,8 +29,9 @@ export class CharacterGenerator {
     }
 
     randomizeRace(character: Characters.Character) {
-        const raceNum = this.numGen.rollDie(Data.Races.length) - 1;
-        character.race = Data.Races[raceNum];
+        const raceKeys = Object.keys(Data.Races);
+        const raceNum = this.numGen.rollDie(raceKeys.length) - 1;
+        character.race = Data.Races[raceKeys[raceNum]];
 
         if (character.race.subraces && character.race.subraces.length > 0) {
             const subraceNum = this.numGen.rollDie(character.race.subraces.length) - 1;
