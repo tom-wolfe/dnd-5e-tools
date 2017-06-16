@@ -1,15 +1,17 @@
 import { AbilityScoreGenerator } from "./ability-score-generator";
 import { NumberGenerator } from "./number-generator";
-import { Character } from "../models/character";
-import { StatMods } from "../models/race";
+
+import * as Abilities from "../models/abilities";
+import * as Characters from "../models/characters";
 import * as Data from "../data/";
+import * as Races from "../models/races";
 
 export class CharacterGenerator {
     abGen = new AbilityScoreGenerator();
     numGen = new NumberGenerator();
 
-    generateCharacter(): Character {
-        const character = new Character();
+    generateCharacter(): Characters.Character {
+        const character = new Characters.Character();
         this.randomizeAbilities(character);
         this.randomizeRace(character);
         this.randomizeRaceBonuses(character);
@@ -17,7 +19,7 @@ export class CharacterGenerator {
         return character;
     }
 
-    randomizeAbilities(character: Character) {
+    randomizeAbilities(character: Characters.Character) {
         character.baseAbilities.strength = this.abGen.generateScore();
         character.baseAbilities.dexterity = this.abGen.generateScore();
         character.baseAbilities.constitution = this.abGen.generateScore();
@@ -26,7 +28,7 @@ export class CharacterGenerator {
         character.baseAbilities.charisma = this.abGen.generateScore();
     }
 
-    randomizeRace(character: Character) {
+    randomizeRace(character: Characters.Character) {
         const raceNum = this.numGen.rollDie(Data.Races.length) - 1;
         character.race = Data.Races[raceNum];
 
@@ -38,9 +40,9 @@ export class CharacterGenerator {
         }
     }
 
-    randomizeRaceBonuses(character: Character) {
+    randomizeRaceBonuses(character: Characters.Character) {
         // Figure out the combined stat bonuses of the race and sub race.
-        const statMods: StatMods = {};
+        const statMods: Abilities.StatMods = {};
         Object.assign(statMods, character.race.statMods);
 
         statMods.additionalPoints = (character.race.statMods.additionalPoints || 0);
@@ -69,7 +71,7 @@ export class CharacterGenerator {
         console.log(character.race.statMods);
     }
 
-    randomizeAlignment(character: Character) {
+    randomizeAlignment(character: Characters.Character) {
         const alignments = Object.keys(Data.Alignments);
         const alignmentNum = this.numGen.rollDie(alignments.length) - 1;
         character.alignment = alignments[alignmentNum];

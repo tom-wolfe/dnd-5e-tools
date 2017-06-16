@@ -1,5 +1,5 @@
 import { Component, Input } from "@angular/core";
-import { Speed } from "../../models/speed";
+import * as Attributes from "../../models/attributes";
 
 @Component({
   selector: "speed-display",
@@ -7,5 +7,5 @@ import { Speed } from "../../models/speed";
   styleUrls: ["./speed-display.component.scss"]
 })
 export class SpeedDisplayComponent {
-  @Input() speed: Speed;
+  @Input() speed: Attributes.Speed;
 };

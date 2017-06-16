@@ -1,21 +1,8 @@
-import { Race, Subrace } from "./race";
 import { AbilityScores } from "./ability-scores";
-import { BasicAbilityScores } from "./basic-ability-scores";
-import * as Data from "../data/";
+import * as Characters from "../characters";
 
-export class Character {
-    baseAbilities: AbilityScores = new BasicAbilityScores();
-    abilities: AbilityScores = new CharacterAbilityScores(this);
-    race: Race;
-    subrace: Subrace;
-    alignment: string;
-    get alignmentDescription() {
-        return Data.Alignments[this.alignment];
-    }
-};
-
-class CharacterAbilityScores implements AbilityScores {
-    character: Character;
+export class CharacterAbilityScores implements AbilityScores {
+    character: Characters.Character;
 
     get strength(): number {
         return this.getScore("strength");
@@ -48,7 +35,7 @@ class CharacterAbilityScores implements AbilityScores {
         return mod;
     }
 
-    constructor(character: Character) {
+    constructor(character: Characters.Character) {
         this.character = character;
     }
 }

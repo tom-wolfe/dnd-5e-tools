@@ -1,6 +1,6 @@
-import { Race, Subrace } from "../models/race";
+import * as RaceModels from "../models/races";
 
-export const Races: Race[] = [
+export const Races: RaceModels.Race[] = [
      {
         name: "Aarakocra",
         size: "Medium",
