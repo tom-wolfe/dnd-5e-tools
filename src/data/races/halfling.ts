@@ -8,7 +8,9 @@ const Halfling: RaceModels.Race = {
     name: "Halfling",
     size: "Small",
     statMods: { dexterity: +2 },
-    languages: { known: [ Languages.Common, Languages.Halfling ] },
+    languages: { known: [Languages.Common, Languages.Halfling] },
+    height: { base: 31, modifier: 8 },
+    weight: { base: 35, modifier: 1 },
     speed: { walk: 25 },
     features: [
         {

@@ -9,7 +9,9 @@ const Elf: RaceModels.Race = {
     size: "Medium",
     speed: { walk: 30 },
     senses: { darkvision: 60 },
-    languages: { known: [ Languages.Common, Languages.Elvish ] },
+    height: { base: 54, modifier: 20 },
+    weight: { base: 90, modifier: 4 },
+    languages: { known: [Languages.Common, Languages.Elvish] },
     statMods: { dexterity: +2 },
     features: [
         {
@@ -47,6 +49,7 @@ const Elf: RaceModels.Race = {
             name: "Wood",
             speed: { walk: 35 },
             statMods: { wisdom: +1 },
+            weight: { base: 100, modifier: 4 },
             features: [
                 CommonFeatures.elfWeaponTraining,
                 {
@@ -65,6 +68,8 @@ const Elf: RaceModels.Race = {
             name: "Drow",
             statMods: { charisma: +1 },
             senses: { darkvision: 120 },
+            height: { base: 53, modifier: 12 },
+            weight: { base: 75, modifier: 6 },
             features: [
                 CommonFeatures.sunlightSensitivity,
                 {

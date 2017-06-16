@@ -9,6 +9,8 @@ const Tabaxi: RaceModels.Race = {
     size: "Medium",
     speed: { walk: 30, climb: 20 },
     senses: { darkvision: 60 },
+    height: { base: 62, modifier: 24 },
+    weight: { base: 100, modifier: 8 },
     languages: { known: [ Languages.Common ], other: 1 },
     statMods: { dexterity: +2, charisma: +1 },
     features: [

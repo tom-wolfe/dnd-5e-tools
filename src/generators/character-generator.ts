@@ -19,6 +19,7 @@ export class CharacterGenerator {
         this.randomizeRace(character);
         this.randomizeRaceBonuses(character);
         this.randomizeLanguages(character);
+        this.randomizeHeightAndWeight(character);
         this.randomizeAlignment(character);
         return character;
     }
@@ -96,6 +97,27 @@ export class CharacterGenerator {
             knownLanguages.splice(langIndex, 1);
             otherLanguages -= 1;
         }
+    }
+
+    randomizeHeightAndWeight(character: Characters.Character) {
+        let heightMod = character.race.height.modifier;
+        let heightBase = character.race.height.base;
+        if (character.subrace && character.subrace.height) {
+            heightMod = character.subrace.height.modifier;
+            heightBase = character.subrace.height.base;
+        }
+        const height = this.numGen.rollDie(heightMod);
+        character.height = heightBase + height;
+
+        let weightMod = character.race.weight.modifier;
+        let weightBase = character.race.weight.base;
+        if (character.subrace && character.subrace.weight) {
+            weightMod = character.subrace.weight.modifier;
+            weightBase = character.subrace.weight.base;
+        }
+
+        const weight = this.numGen.rollDie(weightMod);
+        character.weight = weightBase + (height * weight);
     }
 
     randomizeAlignment(character: Characters.Character) {

@@ -9,6 +9,8 @@ const HalfElf: RaceModels.Race = {
     size: "Medium",
     speed: { walk: 30 },
     senses: { darkvision: 60 },
+    height: { base: 57, modifier: 16 },
+    weight: { base: 110, modifier: 8 },
     languages: { known: [ Languages.Common, Languages.Elvish ], other: 1 },
     statMods: { charisma: +2, additionalPoints: 2 },
     features: [

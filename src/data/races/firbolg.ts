@@ -8,6 +8,8 @@ const Firbolg: RaceModels.Race = {
     name: "Firbolg",
     size: "Medium",
     speed: { walk: 30 },
+    height: { base: 84, modifier: 12 },
+    weight: { base: 240, modifier: 5 },
     languages: { known: [ Languages.Common, Languages.Elvish, Languages.Giant ] },
     statMods: { strength: +1, wisdom: +2 },
     features: [

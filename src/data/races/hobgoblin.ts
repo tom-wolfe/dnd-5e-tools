@@ -9,6 +9,8 @@ const Hobgoblin: RaceModels.Race = {
     size: "Medium",
     speed: { walk: 30 },
     senses: { darkvision: 60 },
+    height: { base: 60, modifier: 12 },
+    weight: { base: 150, modifier: 4 },
     languages: { known: [ Languages.Common, Languages.Goblin ] },
     statMods: { constitution: +2, intelligence: +1 },
     features: [

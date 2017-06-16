@@ -8,6 +8,8 @@ const Kenku: RaceModels.Race = {
     name: "Kenku",
     size: "Medium",
     speed: { walk: 30 },
+    height: { base: 54, modifier: 12 },
+    weight: { base: 90, modifier: 3 },
     languages: { known: [ Languages.Common, Languages.Primordial ] },
     statMods: { dexterity: +2, wisdom: +1 },
     features: [

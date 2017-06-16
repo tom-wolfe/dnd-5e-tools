@@ -8,6 +8,8 @@ const Genasi: RaceModels.Race = {
     name: "Genasi",
     size: "Medium",
     speed: { walk: 30 },
+    height: { base: 56, modifier: 20 },
+    weight: { base: 110, modifier: 8 },
     languages: { known: [ Languages.Common, Languages.Primordial ] },
     statMods: { constitution: +2 },
     reference: { source: "EE", page: 6, url: "https://www.dndbeyond.com/characters/races/genasi" },

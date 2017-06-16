@@ -8,6 +8,8 @@ const YuanTiPureblood: RaceModels.Race = {
     name: "Yuan-ti Pureblood",
     size: "Medium",
     senses: { darkvision: 60 },
+    height: { base: 56, modifier: 20 },
+    weight: { base: 110, modifier: 8 },
     languages: { known: [ Languages.Common, Languages.Abyssal, Languages.Draconic ] },
     statMods: { charisma: +2, intelligence: +1 },
     speed: { walk: 30 },

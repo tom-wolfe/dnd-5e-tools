@@ -12,8 +12,16 @@ export class Character {
     abilities: Abilities.AbilityScores = new Abilities.CharacterAbilityScores(this);
     race: Races.Race;
     subrace: Races.Subrace;
+    height: number;
+    weight: number;
     speed: Attributes.Speed = new Attributes.CharacterSpeed(this);
     senses: Attributes.Senses = new Attributes.CharacterSenses(this);
+    get heightString(): string {
+        const h = (this.height || 0);
+        const inches = h % 12;
+        const feet = (h - inches) / 12;
+        return `${feet}'${inches}"`;
+    }
     get racialFeatures(): Features.Feature[] {
         if (this.subrace && this.subrace.features) {
             return _.union(this.race.features, this.subrace.features);

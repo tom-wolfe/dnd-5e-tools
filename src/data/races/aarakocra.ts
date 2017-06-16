@@ -7,6 +7,8 @@ const Aarakocra: RaceModels.Race = {
     name: "Aarakocra",
     size: "Medium",
     speed: { walk: 25, fly: 50 },
+    height: { base: 54, modifier: 12 },
+    weight: { base: 80, modifier: 2 },
     languages: { known: [ Languages.Common, Languages.Aarakocra, Languages.Primordial ] },
     statMods: { dexterity: +2, wisdom: +1 },
     features: [

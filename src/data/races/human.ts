@@ -8,6 +8,8 @@ const Human: RaceModels.Race = {
     name: "Human",
     size: "Medium",
     speed: { walk: 30 },
+    height: { base: 56, modifier: 20 },
+    weight: { base: 110, modifier: 8 },
     languages: { known: [ Languages.Common ], other: 1 },
     statMods: {},
     reference: {

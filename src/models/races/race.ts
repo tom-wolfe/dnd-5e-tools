@@ -1,5 +1,7 @@
 import { Subrace } from "./subrace";
 import { Reference } from "../reference";
+import { Height } from "./height";
+import { Weight } from "./weight";
 
 import * as Abilities from "../abilities";
 import * as Attributes from "../attributes";
@@ -13,6 +15,8 @@ export class Race {
     senses?: Attributes.Senses;
     statMods?: Abilities.StatMods;
     languages: Languages.KnownLanguages;
+    height: Height;
+    weight: Height;
     features?: Features.Feature[];
     reference?: Reference;
     subraces?: Subrace[];

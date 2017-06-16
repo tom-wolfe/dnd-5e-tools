@@ -7,6 +7,8 @@ const Aasimar: RaceModels.Race = {
     size: "Medium",
     speed: { walk: 30 },
     senses: { darkvision: 60 },
+    height: { base: 56, modifier: 20 },
+    weight: { base: 110, modifier: 8 },
     languages: { known: [ Languages.Common, Languages.Celestial ] },
     statMods: { charisma: +2 },
     features: [

@@ -9,7 +9,9 @@ const Dwarf: RaceModels.Race = {
     size: "Medium",
     speed: { walk: 25 },
     senses: { darkvision: 60 },
-    languages: { known: [ Languages.Common, Languages.Dwarvish ] },
+    height: { base: 48, modifier: 8 },
+    weight: { base: 130, modifier: 12 },
+    languages: { known: [Languages.Common, Languages.Dwarvish] },
     statMods: { constitution: +2 },
     features: [
         {
@@ -38,6 +40,8 @@ const Dwarf: RaceModels.Race = {
         {
             name: "Hill",
             statMods: { wisdom: +1 },
+            height: { base: 44, modifier: 8 },
+            weight: { base: 115, modifier: 12 },
             features: [
                 {
                     name: "Dwarven Toughness", type: "onLevelMod",
@@ -58,7 +62,7 @@ const Dwarf: RaceModels.Race = {
         }, {
             name: "Duergar",
             statMods: { strength: +1 },
-            languages: { known: [ Languages.Undercommon ] },
+            languages: { known: [Languages.Undercommon] },
             features: [
                 {
                     name: "Duergar Resilience", type: "passive",

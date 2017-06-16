@@ -8,6 +8,8 @@ const Orc: RaceModels.Race = {
     name: "Orc",
     size: "Medium",
     senses: { darkvision: 60 },
+    height: { base: 68, modifier: 12 },
+    weight: { base: 230, modifier: 4 },
     languages: { known: [ Languages.Common, Languages.Orc ] },
     statMods: { strength: +2, constitution: +1 },
     speed: { walk: 30 },
