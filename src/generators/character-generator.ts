@@ -20,6 +20,7 @@ export class CharacterGenerator {
         this.randomizeRaceBonuses(character);
         this.randomizeLanguages(character);
         this.randomizeHeightAndWeight(character);
+        this.randomizeGender(character);
         this.randomizeAlignment(character);
         return character;
     }
@@ -118,6 +119,12 @@ export class CharacterGenerator {
 
         const weight = this.numGen.rollDie(weightMod);
         character.weight = weightBase + (height * weight);
+    }
+
+    randomizeGender(character: Characters.Character) {
+        const genders = Object.keys(Data.Genders);
+        const genderIndex = this.numGen.rollDie(genders.length) - 1;
+        character.gender = genders[genderIndex];
     }
 
     randomizeAlignment(character: Characters.Character) {

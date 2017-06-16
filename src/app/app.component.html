@@ -16,10 +16,11 @@
   <div class="npc-header">
     <h1 class="npc-name">John Smith</h1>
     <div class="text-muted npc-subline">
-      <span class="size">{{character.race.size}}</span>
-      <span class="race">{{character.race.name}}</span>
+      <span class="gender">{{character.genderDescription}}</span>,
+      <span class="race">{{character.race.name}}</span>,
       <source-reference [reference]="character.race.reference"></source-reference>
       <span class="sub-race" *ngIf="character.subrace">{{character.subrace.name}}<source-reference [reference]="character.subrace.reference"></source-reference></span>,
+      <span class="size">{{character.race.size}}</span>,
       <span class="npc-alignment">{{character.alignmentDescription}}</span>
     </div>
     <div class="text-muted npc-subline">

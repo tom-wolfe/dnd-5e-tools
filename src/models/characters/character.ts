@@ -11,6 +11,11 @@ export class Character {
     baseAbilities: Abilities.AbilityScores = new Abilities.BasicAbilityScores();
     abilities: Abilities.AbilityScores = new Abilities.CharacterAbilityScores(this);
     race: Races.Race;
+    gender: string;
+    get genderDescription(): string {
+        if (!this.gender) { return "Unknown"; }
+        return Data.Genders[this.gender] || "Unknown";
+    }
     subrace: Races.Subrace;
     height: number;
     weight: number;
@@ -40,4 +45,5 @@ export class Character {
     get alignmentDescription() {
         return Data.Alignments[this.alignment];
     };
+
 };
