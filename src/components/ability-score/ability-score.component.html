@@ -1,6 +1,6 @@
-<div class="ability">
-    <span class="ability-name">{{ability}}</span>
+<div class="ability character-sub-block">
+    <span class="ability-name attribute-title">{{ability}}</span>
     <div class="ability-score">
-        <span class="ability-value">{{score}}</span> <span class="ability-modifier">({{modifier}})</span>
+        <span class="ability-value">{{score}}</span> <span class="ability-modifier" [ngClass]="(modifier > 0) ? 'text-success' : modifier === 0 ? '' : 'text-danger'">{{modifierText}}</span>
     </div>
 </div>

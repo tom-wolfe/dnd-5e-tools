@@ -1,5 +1,5 @@
 import { Component, Input } from "@angular/core";
-import { AbilityScores } from "../../models/ability-scores";
+import * as Abilities from "../../models/abilities";
 
 @Component({
   selector: "ability-score-list",
@@ -7,9 +7,9 @@ import { AbilityScores } from "../../models/ability-scores";
   styleUrls: ["./ability-score-list.component.scss"]
 })
 export class AbilityScoreListComponent {
-  @Input() abilities: AbilityScores;
+  @Input() abilities: Abilities.AbilityScores;
   get abilitySum(): number {
-    const a: AbilityScores = this.abilities;
+    const a: Abilities.AbilityScores = this.abilities;
     return a.strength + a.dexterity + a.constitution + a.wisdom + a.intelligence + a.charisma;
   }
   get abilityPercentile(): string {

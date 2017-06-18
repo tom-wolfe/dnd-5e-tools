@@ -1,16 +1,14 @@
-.ability {
-    padding: 12px;
+@import "../../styles/variables.scss";
 
-    .ability-name {
-        display: block;
-        font-size: 14px;
-        font-variant: small-caps;
-        font-weight: bold;
-        text-align: center;
-    }
-    
+.ability {
+    text-align: center;
+
     .ability-score {
-        text-align: center;
-        font-size: 20px;
+        font-size: 24px;
+        font-family: $font-family-secondary;
+        .ability-modifier {
+            &:before { content: "("; }
+            &:after { content: ")"; }
+        }
     }
 }

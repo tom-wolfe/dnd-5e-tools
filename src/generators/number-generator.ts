@@ -1,6 +1,6 @@
 export class NumberGenerator {
     rollDie(sides: number): number {
-        return this.generateNumberBetween(1, sides);
+        return this.numberBetween(1, sides);
     }
 
     rollDice(sides: number, times: number): number[] {
@@ -11,7 +11,7 @@ export class NumberGenerator {
         return retVal;
     }
 
-    private generateNumberBetween(min: number, max: number): number {
+    public numberBetween(min: number, max: number): number {
         return Math.floor(Math.random() * (max - min + 1) + min);
     }
 };

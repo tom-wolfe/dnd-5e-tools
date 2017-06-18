@@ -13,5 +13,39 @@
   </div>
 </div>
 <div class="container">
+  <div class="npc-header">
+    <h1 class="npc-name">John Smith</h1>
+    <div class="text-muted npc-subline">
+      <span class="race">{{character.race.name}}</span>,
+      <source-reference [reference]="character.race.reference"></source-reference>
+      <span class="sub-race" *ngIf="character.subrace">{{character.subrace.name}}<source-reference [reference]="character.subrace.reference"></source-reference></span>,
+      <span class="size">{{character.race.size}}</span>,
+      <span class="npc-alignment">{{character.alignmentDescription}}</span>
+    </div>
+    <div class="text-muted npc-subline">
+      <span class="gender">{{character.genderDescription}}</span>,
+      <span class="height">{{character.heightString || 0}}</span>,
+      <span class="weight">{{(character.weight || 0) + " lbs."}}</span>, 
+      <span class="weight">{{(character.age || 0) + " years old"}}</span>
+    </div>
+  </div>
   <ability-score-list [abilities]="character.abilities"></ability-score-list>
+  <speed-display [speed]="character.speed"></speed-display>
+  <div class="character-block-minor">
+    <div class="row">
+      <div class="col-md-4">
+        <languages-display [languages]="character.languages"></languages-display>
+      </div>
+      <div class="col-md-4">
+        <senses-display [senses]="character.senses"></senses-display>
+      </div>
+      <div class="col-md-4">
+        <div class="character-sub-block">
+          <h3 class="sub-block-title">Skills</h3>
+          History +3, Perception +10
+        </div>
+      </div>
+    </div>
+  </div>
+  <feature-display-list [features]="character.racialFeatures"></feature-display-list>
 </div>

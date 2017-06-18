@@ -1,0 +1,8 @@
+@import "../../styles/variables.scss";
+
+.source-reference {
+    padding-left: 2px;
+    a:hover, a:active, a:focus {
+        text-decoration: none;
+    }
+}

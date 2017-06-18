@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { Character } from "../models/character";
+import * as Characters from "../models/characters";
 import { CharacterGenerator } from "../generators/character-generator";
 
 @Component({
@@ -9,14 +9,13 @@ import { CharacterGenerator } from "../generators/character-generator";
 })
 export class AppComponent {
   title = "D&D 5th Edition NPC Generator";
-  character: Character;
+  generator = new CharacterGenerator();
+  character: Characters.Character;
   constructor() {
-    this.character = new Character();
+    this.character = this.generator.generateCharacter();
   };
 
   onGenerateClick() {
-    const generator = new CharacterGenerator();
-    this.character = generator.generateCharacter();
+    this.character = this.generator.generateCharacter();
   };
-
 };

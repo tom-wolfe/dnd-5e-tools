@@ -1,4 +1,17 @@
 .btn {
     cursor: pointer;
-    font-variant: small-caps;
+    text-transform: uppercase;
+}
+
+.btn-lg {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.tooltip-inner {
+    clear: both;
+    font-family: $font-family-secondary;
+    max-width: 300px;
+    overflow: hidden;
+    white-space: nowrap;    
 }

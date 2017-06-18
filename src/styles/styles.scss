@@ -1,6 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
-
-
+@import "fonts.scss";
 @import "variables.scss";
+
+$fa-font-path: "~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome";
+@import "~bootstrap/scss/bootstrap";
+
 @import "bootstrap.scss";
-@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "theme.scss";

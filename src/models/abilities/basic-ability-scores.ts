@@ -1,4 +1,6 @@
-export class AbilityScores {
+import { AbilityScores } from "./ability-scores";
+
+export class BasicAbilityScores implements AbilityScores {
     strength = 10;
     dexterity = 10;
     constitution = 10;
