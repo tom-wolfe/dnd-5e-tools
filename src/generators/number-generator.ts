@@ -12,6 +12,7 @@ export class NumberGenerator {
     }
 
     public numberBetween(min: number, max: number): number {
-        return Math.floor(Math.random() * (max - min + 1) + min);
+        min = Number(min); max = Number(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 };

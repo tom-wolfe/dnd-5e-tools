@@ -70,7 +70,7 @@ export class Character {
         if (this.subrace && this.subrace.features) {
             return _.union(this.race.features, this.subrace.features);
         } else {
-            return this.race.features;
+            return this.race.features || [];
         }
     };
 

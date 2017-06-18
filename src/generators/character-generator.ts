@@ -98,7 +98,7 @@ export class CharacterGenerator {
     }
 
     randomizeLevel(character: Characters.Character) {
-        character.level = this.numGen.rollDie(20);
+        character.level = this.numGen.numberBetween(this.config.minLevel, this.config.maxLevel);
     }
 
     randomizeHitPoints(character: Characters.Character) {

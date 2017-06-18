@@ -7,6 +7,7 @@ import { AbilityScoreComponent } from "../components/ability-score/ability-score
 import { AbilityScoreListComponent } from "../components/ability-score-list/ability-score-list.component";
 import { FeatureDisplayComponent } from "../components/feature-display/feature-display.component";
 import { FeatureDisplayListComponent } from "../components/feature-display-list/feature-display-list.component";
+import { GeneratorConfigComponent } from "../components/generator-config/generator-config.component";
 import { LanguagesDisplayComponent } from "../components/languages-display/languages-display.component";
 import { SensesDisplayComponent } from "../components/senses-display/senses-display.component";
 import { SkillsDisplayComponent } from "../components/skills-display/skills-display.component";
@@ -21,6 +22,7 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
     AbilityScoreListComponent,
     FeatureDisplayComponent,
     FeatureDisplayListComponent,
+    GeneratorConfigComponent,
     LanguagesDisplayComponent,
     SensesDisplayComponent,
     SkillsDisplayComponent,

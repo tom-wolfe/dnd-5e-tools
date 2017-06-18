@@ -6,17 +6,7 @@
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <p class="lead">A simple tool for generating NPC character statistics based on the 5th edition Dungeons &amp; Dragons ruleset.</p>
-    <form class="form-inline">
-      <label class="sr-only" for="race">Race</label>
-      <select class="custom-select mb-2 mr-sm-2 mb-sm-0" name="race" [(ngModel)]="config.race" (input)="config.subrace = null">
-        <option [value]="null" selected>Any Race</option>
-        <option *ngFor="let race of races" [ngValue]="race">{{race.name}}</option>
-      </select>
-      <select class="custom-select mb-2 mr-sm-2 mb-sm-0" name="race" [(ngModel)]="config.subrace" *ngIf="config.race && config.race.subraces">
-        <option [value]="null" selected>Any Subrace</option>
-        <option *ngFor="let subrace of config.race.subraces" [ngValue]="subrace">{{subrace.name}}</option>
-      </select>
-    </form>
+    <generator-config [config]="config"></generator-config>
     <div class="row">
       <div class="col-12 text-right">
         <button type="button" class="btn btn-primary btn-lg" (click)="onGenerateClick()">Generate NPC</button>
@@ -44,27 +34,27 @@
   <ability-score-list [character]="character"></ability-score-list>
   <div class="character-block-minor">
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-md-3 col-sm-6">
         <div class="attribute-block">
           <div class="attribute-title">Level</div>
           <span class="primary">{{character.level}}</span>
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-3 col-sm-6">
         <div class="attribute-block">
           <div class="attribute-title">Armor Class</div>
           <span class="primary">{{character.armorClass}}</span>
           <span class="secondary">({{character.equippedArmor}})</span>
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-3 col-sm-6">
         <div class="attribute-block">
           <div class="attribute-title">Hit Points</div>
           <span class="primary">{{character.hitPoints}}</span>
           <span class="secondary">({{character.hitPointFormula}})</span>
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-3 col-sm-6">
         <speed-display [speed]="character.speed"></speed-display>
       </div>
     </div>
