@@ -6,17 +6,24 @@ import * as Characters from "../models/characters";
 import * as Data from "../data/";
 import * as Languages from "../models/languages";
 import * as Races from "../models/races";
+import { GeneratorConfig } from "../models/generator-config";
 
 import * as _ from "lodash";
 
 export class CharacterGenerator {
     abGen = new AbilityScoreGenerator();
     numGen = new NumberGenerator();
+    config: GeneratorConfig;
+
+    constructor(config: GeneratorConfig) {
+        this.config = config;
+    }
 
     generateCharacter(): Characters.Character {
         const character = new Characters.Character();
         this.randomizeAbilities(character);
         this.randomizeRace(character);
+        this.randomizeSubrace(character);
         this.randomizeRaceBonuses(character);
         this.randomizeSkillProficiencies(character);
         this.randomizeLanguages(character);
@@ -35,16 +42,28 @@ export class CharacterGenerator {
     }
 
     randomizeRace(character: Characters.Character) {
-        const raceKeys = Object.keys(Data.Races.RaceList);
-        const raceNum = this.numGen.rollDie(raceKeys.length) - 1;
-        character.race = Data.Races.RaceList[raceKeys[raceNum]];
-
-        if (character.race.subraces && character.race.subraces.length > 0) {
-            const subraceNum = this.numGen.rollDie(character.race.subraces.length) - 1;
-            character.subrace = character.race.subraces[subraceNum];
+        if (this.config.race) {
+            character.race = this.config.race;
+            character.subrace = this.config.subrace;
         } else {
-            character.subrace = undefined;
+            const raceKeys = Object.keys(Data.Races.RaceList);
+            const raceNum = this.numGen.rollDie(raceKeys.length) - 1;
+            character.race = Data.Races.RaceList[raceKeys[raceNum]];
         }
+    }
+
+    randomizeSubrace(character: Characters.Character) {
+        if (this.config.subrace) {
+            character.subrace = this.config.subrace;
+        } else {
+            if (character.race.subraces && character.race.subraces.length > 0) {
+                const subraceNum = this.numGen.rollDie(character.race.subraces.length) - 1;
+                character.subrace = character.race.subraces[subraceNum];
+            } else {
+                character.subrace = undefined;
+            }
+        }
+
     }
 
     randomizeRaceBonuses(character: Characters.Character) {
