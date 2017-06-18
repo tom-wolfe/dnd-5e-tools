@@ -19,7 +19,7 @@ namespace Races {
             {
                 name: "Keen Senses", type: "passive",
                 skillProficiencies: [ Skills.Perception ],
-                skillProficiencyCount: 1,
+                proficiencyCount: 1, proficiencyType: "proficient",
                 description: "You have proficiency in the Perception skill."
             },
             CommonFeatures.feyAncestry,

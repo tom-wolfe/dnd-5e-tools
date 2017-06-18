@@ -37,7 +37,7 @@ namespace Races {
             }, {
                 name: "Hunter's Lore", type: "passive",
                 skillProficiencies: [ Skills.Nature, Skills.Perception, Skills.Stealth, Skills.Survival ],
-                skillProficiencyCount: 2,
+                proficiencyCount: 2, proficiencyType: "proficient",
                 description: `
                     You gain proficiency with two of the following skills of your choice:
                     Animal Handling, Nature, Perception, Stealth, and Survival.

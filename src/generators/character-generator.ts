@@ -77,14 +77,35 @@ export class CharacterGenerator {
     }
 
     randomizeSkillProficiencies(character: Characters.Character) {
+        const getCharProfs = () => character.skillProficiencies.map(s => s.skill.name);
+        const availableProfs = _.difference(Object.keys(Data.Skills.SkillList), getCharProfs());
+
+        // Enumerate the proficiency-based features.
         const proficiencyFeats = character.racialFeatures.filter(feature => feature.skillProficiencies);
-        // TODO: Only assign 2 proficiencies.
-        // TODO: Don't duplicate proficiencies.
-        proficiencyFeats.forEach((feat) => {
-            const profs = feat.skillProficiencies.map((skill) => ({ skill: skill, proficiencyType: "proficient" as ProficiencyType }));
-            profs.forEach((prof) => {
-                character.skillProficiencies.push(prof);
-            });
+        proficiencyFeats.forEach(feat => {
+            for (let x = 0; x < feat.proficiencyCount; x++) {
+                // Get the offered proficiencies, excluding those already attained.
+                const featProfs = _.difference(feat.skillProficiencies.map(s => s.name), getCharProfs());
+
+                let index: number;
+                let chosenProfName: string;
+                if (featProfs.length > 0) {
+                    // Choose one at random from the feature list.
+                    index = this.numGen.rollDie(featProfs.length) - 1;
+                    chosenProfName = featProfs[index];
+                } else {
+                    // Character already has all these proficiencies, so choose one at random.
+                    index = this.numGen.rollDie(availableProfs.length) - 1;
+                    chosenProfName = availableProfs[index];
+                }
+
+                // Grant it to the character and remove it from the available list.
+                availableProfs.splice(availableProfs.indexOf(chosenProfName), 1);
+                character.skillProficiencies.push({
+                    skill: Data.Skills.SkillList[chosenProfName],
+                    proficiencyType: feat.proficiencyType
+                });
+            }
         });
     }
 

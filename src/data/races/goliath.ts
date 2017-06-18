@@ -18,7 +18,7 @@ namespace Races {
             {
                 name: "Natural Athlete", type: "passive",
                 skillProficiencies: [ Skills.Athletics ],
-                skillProficiencyCount: 1,
+                proficiencyCount: 1, proficiencyType: "proficient",
                 description: "You have proficiency in the Athletics skill."
             }, {
                 name: "Stone's Endurance", type: "active",

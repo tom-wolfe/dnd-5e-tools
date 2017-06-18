@@ -34,7 +34,7 @@ namespace Races {
             }, {
                 name: "Cat's Talent", type: "passive",
                 skillProficiencies: [ Skills.Perception, Skills.Stealth ],
-                skillProficiencyCount: 2,
+                proficiencyCount: 2, proficiencyType: "proficient",
                 description: "You have proficiency in the Perception and Stealth skills."
             }
         ],

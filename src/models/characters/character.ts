@@ -57,13 +57,16 @@ export class Character {
         let retVal = 0;
 
         // TODO: Set proficiency bonus.
+        const proficiencyBonus = 5;
 
         retVal += this.abilities.getModifier(skill.ability.code);
         const prof = this.skillProficiencies.filter((sp) => sp.skill === skill);
         if (prof.length > 0) {
-            if (prof[0].proficiencyType === "proficient") {
-                retVal += 5; 
-            };
+            switch (prof[0].proficiencyType) {
+                case "proficient": retVal += proficiencyBonus; break;
+                case "jackOfAllTrades": retVal += Math.floor(proficiencyBonus / 2); break;
+                case "expert": retVal += proficiencyBonus * 2; break;
+            }
         }
         return retVal;
     }

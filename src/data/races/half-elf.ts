@@ -20,7 +20,7 @@ namespace Races {
             {
                 name: "Skill Versatility", type: "passive",
                 skillProficiencies: Object.keys(Skills.SkillList).map((skill) => Skills.SkillList[skill]),
-                skillProficiencyCount: 2,
+                proficiencyCount: 2, proficiencyType: "proficient",
                 description: "You gain proficiency in two skills of your choice."
             }
         ],

@@ -1,5 +1,6 @@
 import { Character } from "../characters";
 import { Skill } from "../abilities";
+import { ProficiencyType } from "../abilities/proficiency-type";
 import { FeatureType } from "./feature-type";
 import { UsageFrequency } from "./usage-frequency";
 
@@ -9,6 +10,7 @@ export class Feature {
     usage?: UsageFrequency;
     type: FeatureType;
     skillProficiencies?: Skill[];
-    skillProficiencyCount?: number;
+    proficiencyCount?: number;
+    proficiencyType?: ProficiencyType;
     apply?: (character: Character) => void;
 };
