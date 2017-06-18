@@ -42,7 +42,34 @@
     </div>
   </div>
   <ability-score-list [character]="character"></ability-score-list>
-  <speed-display [speed]="character.speed"></speed-display>
+  <div class="character-block-minor">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="attribute-block">
+          <div class="attribute-title">Challenge</div>
+          <span class="primary">1/8</span>
+          <span class="secondary">(50 XP)</span>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="attribute-block">
+          <div class="attribute-title">Armor Class</div>
+          <span class="primary">10</span>
+          <span class="secondary">(natural armor)</span>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="attribute-block">
+          <div class="attribute-title">Hit Points</div>
+          <span class="primary">10</span>
+          <span class="secondary">(2d10 + 0)</span>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <speed-display [speed]="character.speed"></speed-display>
+      </div>
+    </div>
+  </div>
   <div class="character-block-minor">
     <div class="row">
       <div class="col-md-4">
