@@ -1,4 +1,4 @@
-export * from "./races";
+export * from "./race-list";
 
 export * from "./aarakocra";
 export * from "./aasimar";

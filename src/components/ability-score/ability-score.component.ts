@@ -13,7 +13,7 @@ export class AbilityScoreComponent {
   @Input() score = 10;
 
   get abilityName(): string {
-    return Data.Abilities[this.ability].name;
+    return Data.Abilities.AbilityList[this.ability].name;
   }
   get modifier(): number {
     return Math.floor((this.score - 10) / 2);

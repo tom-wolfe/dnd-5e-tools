@@ -1,0 +1,43 @@
+import * as AbilityModels from "../models/abilities";
+import { Abilities } from "./abilities";
+
+export namespace Skills {
+    export const SkillList: { [index: string]: AbilityModels.Skill } = {};
+    export const Acrobatics: AbilityModels.Skill = { name: "Acrobatics", ability: Abilities.Dexterity };
+    export const AnimalHandling: AbilityModels.Skill = { name: "Animal Handling", ability: Abilities.Wisdom };
+    export const Arcana: AbilityModels.Skill = { name: "Arcana", ability: Abilities.Intelligence };
+    export const Athletics: AbilityModels.Skill = { name: "Athletics", ability: Abilities.Strength };
+    export const Deception: AbilityModels.Skill = { name: "Deception", ability: Abilities.Charisma };
+    export const History: AbilityModels.Skill = { name: "History", ability: Abilities.Intelligence };
+    export const Insight: AbilityModels.Skill = { name: "Insight", ability: Abilities.Wisdom };
+    export const Intimidation: AbilityModels.Skill = { name: "Intimidation", ability: Abilities.Intelligence };
+    export const Investigation: AbilityModels.Skill = { name: "Investigation", ability: Abilities.Intelligence };
+    export const Medicine: AbilityModels.Skill = { name: "Medicine", ability: Abilities.Intelligence };
+    export const Nature: AbilityModels.Skill = { name: "Nature", ability: Abilities.Dexterity };
+    export const Perception: AbilityModels.Skill = { name: "Perception", ability: Abilities.Wisdom };
+    export const Performance: AbilityModels.Skill = { name: "Performance", ability: Abilities.Charisma };
+    export const Persuasion: AbilityModels.Skill = { name: "Persuasion", ability: Abilities.Charisma };
+    export const Religion: AbilityModels.Skill = { name: "Religion", ability: Abilities.Intelligence };
+    export const SleightOfHand: AbilityModels.Skill = { name: "Sleight of Hand", ability: Abilities.Dexterity };
+    export const Stealth: AbilityModels.Skill = { name: "Stealth", ability: Abilities.Dexterity };
+    export const Survival: AbilityModels.Skill = { name: "Survival", ability: Abilities.Wisdom };
+
+    SkillList[Acrobatics.name] = Acrobatics;
+    SkillList[AnimalHandling.name] = AnimalHandling;
+    SkillList[Arcana.name] = Arcana;
+    SkillList[Athletics.name] = Athletics;
+    SkillList[Deception.name] = Deception;
+    SkillList[History.name] = History;
+    SkillList[Insight.name] = Insight;
+    SkillList[Intimidation.name] = Intimidation;
+    SkillList[Investigation.name] = Investigation;
+    SkillList[Medicine.name] = Medicine;
+    SkillList[Nature.name] = Nature;
+    SkillList[Perception.name] = Perception;
+    SkillList[Performance.name] = Performance;
+    SkillList[Persuasion.name] = Persuasion;
+    SkillList[Religion.name] = Religion;
+    SkillList[SleightOfHand.name] = SleightOfHand;
+    SkillList[Stealth.name] = Stealth;
+    SkillList[Survival.name] = Survival;
+};

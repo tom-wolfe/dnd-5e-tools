@@ -28,15 +28,15 @@ export class CharacterGenerator {
     }
 
     randomizeAbilities(character: Characters.Character) {
-        Object.keys(Data.Abilities).forEach((value) => {
+        Object.keys(Data.Abilities.AbilityList).forEach((value) => {
             character.baseAbilities.set(value, this.abGen.generateScore());
         });
     }
 
     randomizeRace(character: Characters.Character) {
-        const raceKeys = Object.keys(Data.Races);
+        const raceKeys = Object.keys(Data.Races.RaceList);
         const raceNum = this.numGen.rollDie(raceKeys.length) - 1;
-        character.race = Data.Races[raceKeys[raceNum]];
+        character.race = Data.Races.RaceList[raceKeys[raceNum]];
 
         if (character.race.subraces && character.race.subraces.length > 0) {
             const subraceNum = this.numGen.rollDie(character.race.subraces.length) - 1;

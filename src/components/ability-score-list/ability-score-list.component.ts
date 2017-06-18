@@ -11,11 +11,12 @@ import * as _ from "lodash";
 })
 export class AbilityScoreListComponent {
   @Input() abilities: Abilities.AbilityScores;
+
   get abilityList(): string[] {
-    return Object.keys(Data.Abilities);
+    return Object.keys(Data.Abilities.AbilityList);
   }
   get abilitySum(): number {
-    const scores = Object.keys(Data.Abilities).map((val) => this.abilities.get(val) || 0);
+    const scores = Object.keys(Data.Abilities.AbilityList).map((val) => this.abilities.get(val) || 0);
     return _.sum(scores);
   }
   get abilityPercentile(): string {
