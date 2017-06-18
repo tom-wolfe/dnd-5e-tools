@@ -1,4 +1,4 @@
-import * as Languages from "../../data/languages";
+import { Skills, Languages } from "../../data";
 import { Races as RacesImport } from "./race-list";
 import { CommonFeatures } from "../common-features";
 
@@ -32,7 +32,9 @@ namespace Races {
                     instead of the bludgeoning damage normal for an unarmed strike.
                 `
             }, {
-                name: "Cat's Talent", type: "singleMod",
+                name: "Cat's Talent", type: "passive",
+                skillProficiencies: [ Skills.Perception, Skills.Stealth ],
+                skillProficiencyCount: 2,
                 description: "You have proficiency in the Perception and Stealth skills."
             }
         ],

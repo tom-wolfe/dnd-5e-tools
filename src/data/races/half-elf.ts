@@ -1,4 +1,4 @@
-import * as Languages from "../../data/languages";
+import { Languages, Skills } from "../../data";
 import { Races as RacesImport } from "./race-list";
 import { CommonFeatures } from "../common-features";
 
@@ -18,7 +18,9 @@ namespace Races {
         features: [
             CommonFeatures.feyAncestry,
             {
-                name: "Skill Versatility", type: "singleMod",
+                name: "Skill Versatility", type: "passive",
+                skillProficiencies: Object.keys(Skills.SkillList).map((skill) => Skills.SkillList[skill]),
+                skillProficiencyCount: 2,
                 description: "You gain proficiency in two skills of your choice."
             }
         ],

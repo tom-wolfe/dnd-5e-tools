@@ -1,4 +1,4 @@
-import * as Languages from "../../data/languages";
+import { Languages, Skills } from "../../data";
 import { Races as RacesImport } from "./race-list";
 import { CommonFeatures } from "../common-features";
 
@@ -18,7 +18,9 @@ namespace Races {
         features: [
             {
                 name: "Keen Senses", type: "passive",
-                description: "Keen Senses.Vou have proficiency io the Perception skill."
+                skillProficiencies: [ Skills.Perception ],
+                skillProficiencyCount: 1,
+                description: "You have proficiency in the Perception skill."
             },
             CommonFeatures.feyAncestry,
             {

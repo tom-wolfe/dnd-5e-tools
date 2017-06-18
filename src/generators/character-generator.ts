@@ -1,6 +1,6 @@
 import { AbilityScoreGenerator } from "./ability-score-generator";
 import { NumberGenerator } from "./number-generator";
-
+import { ProficiencyType } from "../models/abilities/proficiency-type";
 import * as Abilities from "../models/abilities";
 import * as Characters from "../models/characters";
 import * as Data from "../data/";
@@ -18,6 +18,7 @@ export class CharacterGenerator {
         this.randomizeAbilities(character);
         this.randomizeRace(character);
         this.randomizeRaceBonuses(character);
+        this.randomizeSkillProficiencies(character);
         this.randomizeLanguages(character);
         this.randomizeHeightAndWeight(character);
         this.randomizeGender(character);
@@ -73,6 +74,18 @@ export class CharacterGenerator {
             statList.splice(statIndex, 1);
             statMods.additionalPoints -= 1;
         }
+    }
+
+    randomizeSkillProficiencies(character: Characters.Character) {
+        const proficiencyFeats = character.racialFeatures.filter(feature => feature.skillProficiencies);
+        // TODO: Only assign 2 proficiencies.
+        // TODO: Don't duplicate proficiencies.
+        proficiencyFeats.forEach((feat) => {
+            const profs = feat.skillProficiencies.map((skill) => ({ skill: skill, proficiencyType: "proficient" as ProficiencyType }));
+            profs.forEach((prof) => {
+                character.skillProficiencies.push(prof);
+            });
+        });
     }
 
     randomizeLanguages(character: Characters.Character) {

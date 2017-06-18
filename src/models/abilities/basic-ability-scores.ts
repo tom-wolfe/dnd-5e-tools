@@ -1,6 +1,6 @@
 import { AbilityScores } from "./ability-scores";
 
-export class BasicAbilityScores implements AbilityScores {
+export class BasicAbilityScores extends AbilityScores {
     scores: { [index: string]: number } = {};
     get(ability: string): number {
         return this.scores[ability];

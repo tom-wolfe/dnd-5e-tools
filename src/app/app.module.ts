@@ -8,6 +8,7 @@ import { FeatureDisplayComponent } from "../components/feature-display/feature-d
 import { FeatureDisplayListComponent } from "../components/feature-display-list/feature-display-list.component";
 import { LanguagesDisplayComponent } from "../components/languages-display/languages-display.component";
 import { SensesDisplayComponent } from "../components/senses-display/senses-display.component";
+import { SkillsDisplayComponent } from "../components/skills-display/skills-display.component";
 import { SourceReferenceComponent } from "../components/source-reference/source-reference.component";
 import { SpeedDisplayComponent } from "../components/speed-display/speed-display.component";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
@@ -21,6 +22,7 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
     FeatureDisplayListComponent,
     LanguagesDisplayComponent,
     SensesDisplayComponent,
+    SkillsDisplayComponent,
     SourceReferenceComponent,
     SpeedDisplayComponent
   ],

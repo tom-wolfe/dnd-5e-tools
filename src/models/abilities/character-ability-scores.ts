@@ -1,7 +1,7 @@
 import { AbilityScores } from "./ability-scores";
 import * as Characters from "../characters";
 
-export class CharacterAbilityScores implements AbilityScores {
+export class CharacterAbilityScores extends AbilityScores {
     character: Characters.Character;
 
     get(ability: string): number {
@@ -21,6 +21,7 @@ export class CharacterAbilityScores implements AbilityScores {
     }
 
     constructor(character: Characters.Character) {
+        super();
         this.character = character;
     }
 }

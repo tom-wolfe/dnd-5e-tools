@@ -1,4 +1,4 @@
-import * as Languages from "../../data/languages";
+import { Languages, Skills } from "../../data";
 import { Races as RacesImport } from "./race-list";
 import { CommonFeatures } from "../common-features";
 
@@ -16,7 +16,9 @@ namespace Races {
         statMods: { "STR": +2, "CON": +1 },
         features: [
             {
-                name: "Natural Athlete", type: "singleMod",
+                name: "Natural Athlete", type: "passive",
+                skillProficiencies: [ Skills.Athletics ],
+                skillProficiencyCount: 1,
                 description: "You have proficiency in the Athletics skill."
             }, {
                 name: "Stone's Endurance", type: "active",

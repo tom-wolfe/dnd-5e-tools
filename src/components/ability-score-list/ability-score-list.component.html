@@ -1,6 +1,6 @@
 <div class="ability-score-list character-block-major">
     <div class="ability-list row">
-        <ability-score [ability]="ability" [score]="abilities.get(ability)" *ngFor="let ability of abilityList"></ability-score>
+        <ability-score [ability]="ability" [character]="character" *ngFor="let ability of abilityList"></ability-score>
     </div>
     <div class="ability-info attribute-title">
         <span class="ability-sum">Total: {{abilitySum}}</span>
