@@ -12,8 +12,11 @@ export class Character {
     age: number;
     alignment: string;
     baseAbilities: Abilities.AbilityScores = new Abilities.BasicAbilityScores();
+    baseHitPoints = 10;
     gender: string;
     height: number;
+    hitDie = 8;
+    level = 1;
     race: Races.Race;
     senses: Attributes.Senses = new Attributes.CharacterSenses(this);
     skillProficiencies: Abilities.SkillProficiency[] = [];
@@ -21,8 +24,16 @@ export class Character {
     subrace: Races.Subrace;
     weight: number;
 
-    get alignmentDescription() {
+    get alignmentDescription(): string {
         return Data.Alignments[this.alignment];
+    }
+
+    get equippedArmor(): string {
+        return "natural armor";
+    }
+
+    get armorClass(): number {
+        return 10 + this.abilities.getModifier("DEX");
     }
 
     get genderDescription(): string {
@@ -35,6 +46,16 @@ export class Character {
         const inches = h % 12;
         const feet = (h - inches) / 12;
         return `${feet}'${inches}"`;
+    }
+
+    get hitPoints(): number {
+        return (this.baseHitPoints || 0) + (this.abilities.getModifier("CON") * this.level);
+    }
+
+    get hitPointFormula(): string {
+        const conBonus = this.abilities.getModifier("CON") * this.level;
+        const conSign = (conBonus >= 0) ? "+" : "-";
+        return `${this.level}d${this.hitDie} ${conSign} ${Math.abs(conBonus)}`;
     }
 
     get languages(): Languages.Language[] {

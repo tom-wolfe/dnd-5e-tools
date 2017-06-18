@@ -46,23 +46,22 @@
     <div class="row">
       <div class="col-md-3">
         <div class="attribute-block">
-          <div class="attribute-title">Challenge</div>
-          <span class="primary">1/8</span>
-          <span class="secondary">(50 XP)</span>
+          <div class="attribute-title">Level</div>
+          <span class="primary">{{character.level}}</span>
         </div>
       </div>
       <div class="col-md-3">
         <div class="attribute-block">
           <div class="attribute-title">Armor Class</div>
-          <span class="primary">10</span>
-          <span class="secondary">(natural armor)</span>
+          <span class="primary">{{character.armorClass}}</span>
+          <span class="secondary">({{character.equippedArmor}})</span>
         </div>
       </div>
       <div class="col-md-3">
         <div class="attribute-block">
           <div class="attribute-title">Hit Points</div>
-          <span class="primary">10</span>
-          <span class="secondary">(2d10 + 0)</span>
+          <span class="primary">{{character.hitPoints}}</span>
+          <span class="secondary">({{character.hitPointFormula}})</span>
         </div>
       </div>
       <div class="col-md-3">

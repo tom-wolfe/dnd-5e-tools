@@ -25,6 +25,8 @@ export class CharacterGenerator {
         this.randomizeRace(character);
         this.randomizeSubrace(character);
         this.randomizeRaceBonuses(character);
+        this.randomizeLevel(character);
+        this.randomizeHitPoints(character);
         this.randomizeSkillProficiencies(character);
         this.randomizeLanguages(character);
         this.randomizeHeightAndWeight(character);
@@ -93,6 +95,15 @@ export class CharacterGenerator {
             statList.splice(statIndex, 1);
             statMods.additionalPoints -= 1;
         }
+    }
+
+    randomizeLevel(character: Characters.Character) {
+        character.level = this.numGen.rollDie(20);
+    }
+
+    randomizeHitPoints(character: Characters.Character) {
+        const hitDice = this.numGen.rollDice(character.hitDie, character.level);
+        character.baseHitPoints = _.sum(hitDice);
     }
 
     randomizeSkillProficiencies(character: Characters.Character) {
