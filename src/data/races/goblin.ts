@@ -13,7 +13,7 @@ const Goblin: RaceModels.Race = {
     height: { base: 33, modifier: 8 },
     weight: { base: 40, modifier: 3 },
     languages: { known: [ Languages.Common, Languages.Goblin ] },
-    statMods: { dexterity: +2, constitution: +1 },
+    statMods: { "DEX": +2, "CON": +1 },
     features: [
         {
             name: "Fury of the Small", type: "active",

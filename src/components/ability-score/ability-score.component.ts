@@ -1,5 +1,7 @@
 import { Component, Input, Output } from "@angular/core";
 
+import * as Data from "../../data";
+
 @Component({
   selector: "ability-score",
   templateUrl: "./ability-score.component.html",
@@ -9,6 +11,10 @@ import { Component, Input, Output } from "@angular/core";
 export class AbilityScoreComponent {
   @Input() ability: string;
   @Input() score = 10;
+
+  get abilityName(): string {
+    return Data.Abilities[this.ability].name;
+  }
   get modifier(): number {
     return Math.floor((this.score - 10) / 2);
   }

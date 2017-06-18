@@ -13,7 +13,7 @@ const Elf: RaceModels.Race = {
     height: { base: 54, modifier: 20 },
     weight: { base: 90, modifier: 4 },
     languages: { known: [Languages.Common, Languages.Elvish] },
-    statMods: { dexterity: +2 },
+    statMods: { "DEX": +2 },
     features: [
         {
             name: "Keen Senses", type: "passive",
@@ -34,7 +34,7 @@ const Elf: RaceModels.Race = {
     subraces: [
         {
             name: "High",
-            statMods: { intelligence: +1 },
+            statMods: { "INT": +1 },
             features: [
                 CommonFeatures.elfWeaponTraining,
                 {
@@ -49,7 +49,7 @@ const Elf: RaceModels.Race = {
         }, {
             name: "Wood",
             speed: { walk: 35 },
-            statMods: { wisdom: +1 },
+            statMods: { "WIS": +1 },
             weight: { base: 100, modifier: 4 },
             features: [
                 CommonFeatures.elfWeaponTraining,
@@ -67,7 +67,7 @@ const Elf: RaceModels.Race = {
             reference: { source: "PHB", page: 24, url: "https://www.dndbeyond.com/characters/races/elf#WoodElf" }
         }, {
             name: "Drow",
-            statMods: { charisma: +1 },
+            statMods: { "CHA": +1 },
             senses: { darkvision: 120 },
             height: { base: 53, modifier: 12 },
             weight: { base: 75, modifier: 6 },
@@ -89,7 +89,7 @@ const Elf: RaceModels.Race = {
             reference: { source: "PHB", page: 24 }
         }, {
             name: "Eladrin",
-            statMods: { intelligence: +1 },
+            statMods: { "INT": +1 },
             features: [
                 CommonFeatures.elfWeaponTraining,
                 {

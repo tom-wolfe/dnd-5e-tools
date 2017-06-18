@@ -13,7 +13,7 @@ const Dwarf: RaceModels.Race = {
     height: { base: 48, modifier: 8 },
     weight: { base: 130, modifier: 12 },
     languages: { known: [Languages.Common, Languages.Dwarvish] },
-    statMods: { constitution: +2 },
+    statMods: { "CON": +2 },
     features: [
         {
             name: "Dwarven Resilience", type: "passive",
@@ -40,7 +40,7 @@ const Dwarf: RaceModels.Race = {
     subraces: [
         {
             name: "Hill",
-            statMods: { wisdom: +1 },
+            statMods: { "WIS": +1 },
             height: { base: 44, modifier: 8 },
             weight: { base: 115, modifier: 12 },
             features: [
@@ -52,7 +52,7 @@ const Dwarf: RaceModels.Race = {
             reference: { source: "PHB", page: 20, url: "https://www.dndbeyond.com/characters/races/dwarf#HillDwarf" }
         }, {
             name: "Mountain",
-            statMods: { strength: +2 },
+            statMods: { "STR": +2 },
             features: [
                 {
                     name: "Dwarven Armor Training", type: "singleMod",
@@ -62,7 +62,7 @@ const Dwarf: RaceModels.Race = {
             reference: { source: "PHB", page: 20, url: "https://www.dndbeyond.com/characters/races/dwarf#MountainDwarf" }
         }, {
             name: "Duergar",
-            statMods: { strength: +1 },
+            statMods: { "STR": +1 },
             languages: { known: [Languages.Undercommon] },
             features: [
                 {

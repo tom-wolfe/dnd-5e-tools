@@ -12,7 +12,7 @@ const Goliath: RaceModels.Race = {
     height: { base: 84, modifier: 12 },
     weight: { base: 280, modifier: 5 },
     languages: { known: [ Languages.Common, Languages.Giant ] },
-    statMods: { strength: +2, constitution: +1 },
+    statMods: { "STR": +2, "CON": +1 },
     features: [
         {
             name: "Natural Athlete", type: "singleMod",

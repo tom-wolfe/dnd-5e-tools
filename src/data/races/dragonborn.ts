@@ -12,7 +12,7 @@ const Dragonborn: RaceModels.Race = {
     height: { base: 66, modifier: 16 },
     weight: { base: 175, modifier: 12 },
     languages: { known: [ Languages.Common, Languages.Draconic ] },
-    statMods: { strength: +2, charisma: +1 },
+    statMods: { "STR": +2, "CHA": +1 },
     features: [
         {
             name: "Draconic Ancestry", type: "passive",

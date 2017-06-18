@@ -11,7 +11,7 @@ const Aarakocra: RaceModels.Race = {
     height: { base: 54, modifier: 12 },
     weight: { base: 80, modifier: 2 },
     languages: { known: [ Languages.Common, Languages.Aarakocra, Languages.Primordial ] },
-    statMods: { dexterity: +2, wisdom: +1 },
+    statMods: { "DEX": +2, "WIS": +1 },
     features: [
         {
             name: "Flight", type: "passive",

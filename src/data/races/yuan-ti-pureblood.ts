@@ -12,7 +12,7 @@ const YuanTiPureblood: RaceModels.Race = {
     height: { base: 56, modifier: 20 },
     weight: { base: 110, modifier: 8 },
     languages: { known: [ Languages.Common, Languages.Abyssal, Languages.Draconic ] },
-    statMods: { charisma: +2, intelligence: +1 },
+    statMods: { "CHA": +2, "INT": +1 },
     speed: { walk: 30 },
     features: [
         {

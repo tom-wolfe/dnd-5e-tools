@@ -7,7 +7,7 @@ import * as RaceModels from "../../models/races";
 const Halfling: RaceModels.Race = {
     name: "Halfling",
     size: "Small",
-    statMods: { dexterity: +2 },
+    statMods: { "DEX": +2 },
     languages: { known: [Languages.Common, Languages.Halfling] },
     age: { maturity: 20, max: 105 },
     height: { base: 31, modifier: 8 },
@@ -33,7 +33,7 @@ const Halfling: RaceModels.Race = {
     subraces: [
         {
             name: "Lightfoot",
-            statMods: { charisma: +1 },
+            statMods: { "CHA": +1 },
             features: [
                 {
                     name: "Naturally Stealthy", type: "passive",
@@ -45,7 +45,7 @@ const Halfling: RaceModels.Race = {
             reference: { source: "PHB", page: 28, url: "https://www.dndbeyond.com/characters/races/halfling#Stout" }
         }, {
             name: "Stout",
-            statMods: { constitution: +1 },
+            statMods: { "CON": +1 },
             features: [
                 {
                     name: "Stout Resilience", type: "passive",

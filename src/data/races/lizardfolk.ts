@@ -12,7 +12,7 @@ const Lizardfolk: RaceModels.Race = {
     height: { base: 60, modifier: 20 },
     weight: { base: 120, modifier: 8 },
     languages: { known: [ Languages.Common, Languages.Draconic ] },
-    statMods: { constitution: +2, wisdom: +1 },
+    statMods: { "CON": +2, "WIS": +1 },
     features: [
         {
             name: "Bite", type: "active",

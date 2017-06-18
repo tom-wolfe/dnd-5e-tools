@@ -12,12 +12,12 @@ const Genasi: RaceModels.Race = {
     height: { base: 56, modifier: 20 },
     weight: { base: 110, modifier: 8 },
     languages: { known: [ Languages.Common, Languages.Primordial ] },
-    statMods: { constitution: +2 },
+    statMods: { "CON": +2 },
     reference: { source: "EE", page: 6, url: "https://www.dndbeyond.com/characters/races/genasi" },
     subraces: [
         {
             name: "Air",
-            statMods: { dexterity: +1 },
+            statMods: { "DEX": +1 },
             features: [
                 {
                     name: "Unending Breath", type: "passive",
@@ -35,7 +35,7 @@ const Genasi: RaceModels.Race = {
             reference: { source: "EE", page: 8, url: "https://www.dndbeyond.com/characters/races/genasi#AirGenasi" }
         }, {
             name: "Earth",
-            statMods: { strength: +1 },
+            statMods: { "STR": +1 },
             features: [
                 {
                     name: "Earth Walk", type: "passive",
@@ -53,7 +53,7 @@ const Genasi: RaceModels.Race = {
             reference: { source: "EE", page: 8, url: "https://www.dndbeyond.com/characters/races/genasi#EarthGenasi" }
         }, {
             name: "Fire",
-            statMods: { intelligence: +1 },
+            statMods: { "INT": +1 },
             senses: { darkvision: 60 },
             features: [
                 {
@@ -73,7 +73,7 @@ const Genasi: RaceModels.Race = {
         }, {
             name: "Water",
             speed: { swim: 30 },
-            statMods: { wisdom: +1 },
+            statMods: { "WIS": +1 },
             features: [
                 {
                     name: "Acid Resistance", type: "passive",

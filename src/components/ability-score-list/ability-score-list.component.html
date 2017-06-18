@@ -1,11 +1,6 @@
 <div class="ability-score-list character-block-major">
     <div class="ability-list row">
-        <ability-score ability="Strength" [score]="abilities.strength"></ability-score>
-        <ability-score ability="Dexterity" [score]="abilities.dexterity"></ability-score>
-        <ability-score ability="Constitution" [score]="abilities.constitution"></ability-score>
-        <ability-score ability="Wisdom" [score]="abilities.wisdom"></ability-score>
-        <ability-score ability="Intelligence" [score]="abilities.intelligence"></ability-score>
-        <ability-score ability="Charisma" [score]="abilities.charisma"></ability-score>
+        <ability-score [ability]="ability" [score]="abilities.get(ability)" *ngFor="let ability of abilityList"></ability-score>
     </div>
     <div class="ability-info attribute-title">
         <span class="ability-sum">Total: {{abilitySum}}</span>

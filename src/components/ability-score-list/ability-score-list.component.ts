@@ -1,5 +1,8 @@
 import { Component, Input } from "@angular/core";
 import * as Abilities from "../../models/abilities";
+import * as Data from "../../data";
+
+import * as _ from "lodash";
 
 @Component({
   selector: "ability-score-list",
@@ -8,9 +11,12 @@ import * as Abilities from "../../models/abilities";
 })
 export class AbilityScoreListComponent {
   @Input() abilities: Abilities.AbilityScores;
+  get abilityList(): string[] {
+    return Object.keys(Data.Abilities);
+  }
   get abilitySum(): number {
-    const a: Abilities.AbilityScores = this.abilities;
-    return a.strength + a.dexterity + a.constitution + a.wisdom + a.intelligence + a.charisma;
+    const scores = Object.keys(Data.Abilities).map((val) => this.abilities.get(val) || 0);
+    return _.sum(scores);
   }
   get abilityPercentile(): string {
     return (this.abilitySum / 108.0 * 100).toFixed(0);

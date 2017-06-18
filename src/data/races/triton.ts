@@ -12,7 +12,7 @@ const Triton: RaceModels.Race = {
     height: { base: 50, modifier: 20 },
     weight: { base: 120, modifier: 8 },
     languages: { known: [ Languages.Common, Languages.Primordial ] },
-    statMods: { strength: +1, constitution: +1, charisma: +1 },
+    statMods: { "STR": +1, "CON": +1, "CHA": +1 },
     features: [
         {
             name: "Amphibious", type: "passive",

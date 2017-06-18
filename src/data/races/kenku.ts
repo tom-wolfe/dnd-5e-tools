@@ -12,7 +12,7 @@ const Kenku: RaceModels.Race = {
     height: { base: 54, modifier: 12 },
     weight: { base: 90, modifier: 3 },
     languages: { known: [ Languages.Common, Languages.Primordial ] },
-    statMods: { dexterity: +2, wisdom: +1 },
+    statMods: { "DEX": +2, "WIS": +1 },
     features: [
         {
             name: "Export Forgery", type: "passive",

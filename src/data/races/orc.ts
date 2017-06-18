@@ -12,7 +12,7 @@ const Orc: RaceModels.Race = {
     height: { base: 68, modifier: 12 },
     weight: { base: 230, modifier: 4 },
     languages: { known: [ Languages.Common, Languages.Orc ] },
-    statMods: { strength: +2, constitution: +1 },
+    statMods: { "STR": +2, "CON": +1 },
     speed: { walk: 30 },
     features: [
         {

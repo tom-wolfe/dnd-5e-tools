@@ -23,16 +23,14 @@ export class CharacterGenerator {
         this.randomizeGender(character);
         this.randomizeAge(character);
         this.randomizeAlignment(character);
+
         return character;
     }
 
     randomizeAbilities(character: Characters.Character) {
-        character.baseAbilities.strength = this.abGen.generateScore();
-        character.baseAbilities.dexterity = this.abGen.generateScore();
-        character.baseAbilities.constitution = this.abGen.generateScore();
-        character.baseAbilities.wisdom = this.abGen.generateScore();
-        character.baseAbilities.intelligence = this.abGen.generateScore();
-        character.baseAbilities.charisma = this.abGen.generateScore();
+        Object.keys(Data.Abilities).forEach((value) => {
+            character.baseAbilities.set(value, this.abGen.generateScore());
+        });
     }
 
     randomizeRace(character: Characters.Character) {

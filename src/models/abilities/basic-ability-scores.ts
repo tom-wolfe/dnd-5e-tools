@@ -1,10 +1,11 @@
 import { AbilityScores } from "./ability-scores";
 
 export class BasicAbilityScores implements AbilityScores {
-    strength = 10;
-    dexterity = 10;
-    constitution = 10;
-    wisdom = 10;
-    intelligence = 10;
-    charisma = 10;
+    scores: { [index: string]: number } = {};
+    get(ability: string): number {
+        return this.scores[ability];
+    }
+    set(ability: string, value: number): void {
+        this.scores[ability] = value;
+    }
 };

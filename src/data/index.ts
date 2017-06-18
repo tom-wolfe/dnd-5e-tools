@@ -1,3 +1,4 @@
+export { Abilities } from "./abilities";
 export { Alignments } from "./alignments";
 export { Genders } from "./genders";
 export { Languages } from "./languages";

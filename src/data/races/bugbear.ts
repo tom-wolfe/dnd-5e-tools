@@ -13,7 +13,7 @@ const Bugbear: RaceModels.Race = {
     height: { base: 72, modifier: 24 },
     weight: { base: 250, modifier: 4 },
     languages: { known: [ Languages.Common, Languages.Goblin ] },
-    statMods: { strength: +2, dexterity: +1 },
+    statMods: { "STR": +2, "DEX": +1 },
     features: [
         {
             name: "Long-Limbed", type: "passive",

@@ -13,7 +13,7 @@ const Kobold: RaceModels.Race = {
     height: { base: 31, modifier: 8 },
     weight: { base: 35, modifier: 1 },
     languages: { known: [ Languages.Common, Languages.Draconic ] },
-    statMods: { dexterity: +2, strength: -2 },
+    statMods: { "DEX": +2, "STR": -2 },
     features: [
         {
             name: "Pack Tactics", type: "passive",

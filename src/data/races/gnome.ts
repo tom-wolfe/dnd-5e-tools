@@ -13,7 +13,7 @@ const Gnome: RaceModels.Race = {
     height: { base: 35, modifier: 8 },
     weight: { base: 35, modifier: 1 },
     languages: { known: [ Languages.Common, Languages.Gnomish ] },
-    statMods: { intelligence: +2 },
+    statMods: { "INT": +2 },
     features: [
         {
             name: "Gnome Cunning", type: "passive",
@@ -24,7 +24,7 @@ const Gnome: RaceModels.Race = {
     subraces: [
         {
             name: "Forest",
-            statMods: { dexterity: +1 },
+            statMods: { "DEX": +1 },
             features: [
                 {
                     name: "Natural Illusionist", type: "active",
@@ -40,7 +40,7 @@ const Gnome: RaceModels.Race = {
             reference: { source: "PHB", page: 37 }
         }, {
             name: "Rock",
-            statMods: { constitution: +1 },
+            statMods: { "CON": +1 },
             features: [
                 {
                     name: "Artificer's Lore", type: "passive",
@@ -72,7 +72,7 @@ const Gnome: RaceModels.Race = {
             reference: { source: "PHB", page: 37, url: "https://www.dndbeyond.com/characters/races/gnome#RockGnome" }
         }, {
             name: "Deep",
-            statMods: { dexterity: +1 },
+            statMods: { "DEX": +1 },
             languages: { known: [ Languages.Undercommon ] },
             senses: { darkvision: 120 },
             features: [

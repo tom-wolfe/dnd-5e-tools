@@ -11,7 +11,7 @@ const Aasimar: RaceModels.Race = {
     height: { base: 56, modifier: 20 },
     weight: { base: 110, modifier: 8 },
     languages: { known: [ Languages.Common, Languages.Celestial ] },
-    statMods: { charisma: +2 },
+    statMods: { "CHA": +2 },
     features: [
         {
             name: "Celestial Resistance", type: "passive",
@@ -31,7 +31,7 @@ const Aasimar: RaceModels.Race = {
     reference: { source: "VGM", page: 104 },
     subraces: [
         {
-            name: "Protector", statMods: { wisdom: +1 },
+            name: "Protector", statMods: { "WIS": +1 },
             features: [
                 {
                     name: "Radiant Soul", type: "active",
@@ -50,7 +50,7 @@ const Aasimar: RaceModels.Race = {
             ],
             reference: { source: "VGM", page: 105 }
         }, {
-            name: "Scourge", statMods: { constitution: +1 },
+            name: "Scourge", statMods: { "CON": +1 },
             features: [
                 {
                     name: "Radiant Consumption", type: "active",
@@ -71,7 +71,7 @@ const Aasimar: RaceModels.Race = {
             ],
             reference: { source: "VGM", page: 105 }
         }, {
-            name: "Fallen", statMods: { strength: +1 },
+            name: "Fallen", statMods: { "STR": +1 },
             features: [
                 {
                     name: "Necrotic Shroud", type: "active",

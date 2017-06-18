@@ -21,7 +21,7 @@ const Human: RaceModels.Race = {
     subraces: [
         {
             name: "Normal",
-            statMods: { strength: +1, dexterity: +1, constitution: +1, wisdom: +1, intelligence: +1, charisma: +1 },
+            statMods: { "STR": +1, "DEX": +1, "CON": +1, "WIS": +1, "INT": +1, "CHA": +1 },
             reference: { source: "PHB", page: 29, url: "https://www.dndbeyond.com/characters/races/human" }
         }, {
             name: "Variant",
