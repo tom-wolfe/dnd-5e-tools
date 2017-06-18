@@ -9,6 +9,7 @@ const Gnome: RaceModels.Race = {
     size: "Small",
     speed: { walk: 25 },
     senses: { darkvision: 60 },
+    age: { maturity: 18, max: 450 },
     height: { base: 35, modifier: 8 },
     weight: { base: 35, modifier: 1 },
     languages: { known: [ Languages.Common, Languages.Gnomish ] },

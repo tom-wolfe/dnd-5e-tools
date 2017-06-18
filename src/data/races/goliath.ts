@@ -8,6 +8,7 @@ const Goliath: RaceModels.Race = {
     name: "Goliath",
     size: "Medium",
     speed: { walk: 30 },
+    age: { maturity: 18, max: 90 },
     height: { base: 84, modifier: 12 },
     weight: { base: 280, modifier: 5 },
     languages: { known: [ Languages.Common, Languages.Giant ] },

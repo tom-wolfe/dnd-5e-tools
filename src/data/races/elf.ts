@@ -9,6 +9,7 @@ const Elf: RaceModels.Race = {
     size: "Medium",
     speed: { walk: 30 },
     senses: { darkvision: 60 },
+    age: { maturity: 18, max: 750 },
     height: { base: 54, modifier: 20 },
     weight: { base: 90, modifier: 4 },
     languages: { known: [Languages.Common, Languages.Elvish] },

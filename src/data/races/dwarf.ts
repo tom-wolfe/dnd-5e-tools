@@ -8,6 +8,7 @@ const Dwarf: RaceModels.Race = {
     name: "Dwarf",
     size: "Medium",
     speed: { walk: 25 },
+    age: { maturity: 18, max: 350 },
     senses: { darkvision: 60 },
     height: { base: 48, modifier: 8 },
     weight: { base: 130, modifier: 12 },

@@ -8,6 +8,7 @@ const Lizardfolk: RaceModels.Race = {
     name: "Lizardfolk",
     size: "Medium",
     speed: { walk: 30 },
+    age: { maturity: 14, max: 65 },
     height: { base: 60, modifier: 20 },
     weight: { base: 120, modifier: 8 },
     languages: { known: [ Languages.Common, Languages.Draconic ] },

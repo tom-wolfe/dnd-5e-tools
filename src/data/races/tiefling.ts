@@ -9,6 +9,7 @@ const Tiefling: RaceModels.Race = {
     size: "Medium",
     speed: { walk: 30 },
     senses: { darkvision: 60 },
+    age: { maturity: 18, max: 90 },
     height: { base: 57, modifier: 16 },
     weight: { base: 110, modifier: 8 },
     languages: { known: [ Languages.Common, Languages.Infernal ] },

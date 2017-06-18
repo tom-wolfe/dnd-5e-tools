@@ -16,7 +16,6 @@
   <div class="npc-header">
     <h1 class="npc-name">John Smith</h1>
     <div class="text-muted npc-subline">
-      <span class="gender">{{character.genderDescription}}</span>,
       <span class="race">{{character.race.name}}</span>,
       <source-reference [reference]="character.race.reference"></source-reference>
       <span class="sub-race" *ngIf="character.subrace">{{character.subrace.name}}<source-reference [reference]="character.subrace.reference"></source-reference></span>,
@@ -24,8 +23,10 @@
       <span class="npc-alignment">{{character.alignmentDescription}}</span>
     </div>
     <div class="text-muted npc-subline">
+      <span class="gender">{{character.genderDescription}}</span>,
       <span class="height">{{character.heightString || 0}}</span>,
-      <span class="weight">{{(character.weight || 0) + " lbs."}}</span>
+      <span class="weight">{{(character.weight || 0) + " lbs."}}</span>, 
+      <span class="weight">{{(character.age || 0) + " years old"}}</span>
     </div>
   </div>
   <ability-score-list [abilities]="character.abilities"></ability-score-list>

@@ -19,6 +19,7 @@ export class Character {
     subrace: Races.Subrace;
     height: number;
     weight: number;
+    age: number;
     speed: Attributes.Speed = new Attributes.CharacterSpeed(this);
     senses: Attributes.Senses = new Attributes.CharacterSenses(this);
     get heightString(): string {

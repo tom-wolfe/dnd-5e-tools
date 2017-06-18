@@ -8,6 +8,7 @@ const Orc: RaceModels.Race = {
     name: "Orc",
     size: "Medium",
     senses: { darkvision: 60 },
+    age: { maturity: 12, max: 50 },
     height: { base: 68, modifier: 12 },
     weight: { base: 230, modifier: 4 },
     languages: { known: [ Languages.Common, Languages.Orc ] },

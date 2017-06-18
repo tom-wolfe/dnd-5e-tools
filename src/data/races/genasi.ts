@@ -8,6 +8,7 @@ const Genasi: RaceModels.Race = {
     name: "Genasi",
     size: "Medium",
     speed: { walk: 30 },
+    age: { maturity: 18, max: 120 },
     height: { base: 56, modifier: 20 },
     weight: { base: 110, modifier: 8 },
     languages: { known: [ Languages.Common, Languages.Primordial ] },

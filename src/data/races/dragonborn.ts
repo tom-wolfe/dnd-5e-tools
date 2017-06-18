@@ -8,6 +8,7 @@ const Dragonborn: RaceModels.Race = {
     name: "Dragonborn",
     size: "Medium",
     speed: { walk: 30 },
+    age: { maturity: 15, max: 80 },
     height: { base: 66, modifier: 16 },
     weight: { base: 175, modifier: 12 },
     languages: { known: [ Languages.Common, Languages.Draconic ] },

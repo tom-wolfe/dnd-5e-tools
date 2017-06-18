@@ -21,6 +21,7 @@ export class CharacterGenerator {
         this.randomizeLanguages(character);
         this.randomizeHeightAndWeight(character);
         this.randomizeGender(character);
+        this.randomizeAge(character);
         this.randomizeAlignment(character);
         return character;
     }
@@ -125,6 +126,11 @@ export class CharacterGenerator {
         const genders = Object.keys(Data.Genders);
         const genderIndex = this.numGen.rollDie(genders.length) - 1;
         character.gender = genders[genderIndex];
+    }
+
+    randomizeAge(character: Characters.Character) {
+        const age = character.race.age;
+        character.age = this.numGen.numberBetween(age.maturity, age.max);
     }
 
     randomizeAlignment(character: Characters.Character) {

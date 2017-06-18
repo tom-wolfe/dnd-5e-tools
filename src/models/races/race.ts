@@ -1,5 +1,6 @@
 import { Subrace } from "./subrace";
 import { Reference } from "../reference";
+import { Age } from "./age";
 import { Height } from "./height";
 import { Weight } from "./weight";
 
@@ -12,6 +13,7 @@ export class Race {
     name: string;
     size: Attributes.Size;
     speed: Attributes.Speed;
+    age: Age;
     senses?: Attributes.Senses;
     statMods?: Abilities.StatMods;
     languages: Languages.KnownLanguages;

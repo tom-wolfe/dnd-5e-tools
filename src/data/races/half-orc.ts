@@ -8,6 +8,7 @@ const HalfOrc: RaceModels.Race = {
     name: "Half-orc",
     size: "Medium",
     speed: { walk: 30 },
+    age: { maturity: 14, max: 75 },
     height: { base: 58, modifier: 20 },
     weight: { base: 140, modifier: 12 },
     statMods: { strength: +2, constitution: +1 },

@@ -8,6 +8,7 @@ const Human: RaceModels.Race = {
     name: "Human",
     size: "Medium",
     speed: { walk: 30 },
+    age: { maturity: 18, max: 80 },
     height: { base: 56, modifier: 20 },
     weight: { base: 110, modifier: 8 },
     languages: { known: [ Languages.Common ], other: 1 },

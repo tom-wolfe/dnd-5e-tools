@@ -9,6 +9,7 @@ const Kobold: RaceModels.Race = {
     size: "Small",
     speed: { walk: 30 },
     senses: { darkvision: 60 },
+    age: { maturity: 6, max: 120 },
     height: { base: 31, modifier: 8 },
     weight: { base: 35, modifier: 1 },
     languages: { known: [ Languages.Common, Languages.Draconic ] },

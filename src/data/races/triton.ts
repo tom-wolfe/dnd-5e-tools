@@ -8,6 +8,7 @@ const Triton: RaceModels.Race = {
     name: "Triton",
     size: "Medium",
     speed: { walk: 30, swim: 30 },
+    age: { maturity: 15, max: 200 },
     height: { base: 50, modifier: 20 },
     weight: { base: 120, modifier: 8 },
     languages: { known: [ Languages.Common, Languages.Primordial ] },

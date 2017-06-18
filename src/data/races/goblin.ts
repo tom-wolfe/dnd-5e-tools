@@ -9,6 +9,7 @@ const Goblin: RaceModels.Race = {
     size: "Small",
     speed: { walk: 30 },
     senses: { darkvision: 60 },
+    age: { maturity: 8, max: 60 },
     height: { base: 33, modifier: 8 },
     weight: { base: 40, modifier: 3 },
     languages: { known: [ Languages.Common, Languages.Goblin ] },

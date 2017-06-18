@@ -9,6 +9,7 @@ const Bugbear: RaceModels.Race = {
     size: "Medium",
     speed: { walk: 30 },
     senses: { darkvision: 60 },
+    age: { maturity: 16, max: 80 },
     height: { base: 72, modifier: 24 },
     weight: { base: 250, modifier: 4 },
     languages: { known: [ Languages.Common, Languages.Goblin ] },
