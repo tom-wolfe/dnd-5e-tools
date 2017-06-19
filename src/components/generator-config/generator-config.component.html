@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-3 form-group">
+  <div class="col-lg-3 col-md-4 col-sm-6 form-group">
     <label for="race">Race</label>
     <select class="form-control" name="race" [(ngModel)]="config.race" (input)="config.subrace = null">
         <option [ngValue]="null" selected>Any Race</option>
@@ -13,7 +13,7 @@
         </ng-template>
     </select>
   </div>
-  <div class="col-md-3 form-group">
+  <div class="col-lg-3 col-md-4 col-sm-6 form-group">
     <label for="race">Class</label>
     <select class="form-control" name="class" [(ngModel)]="config.class" (input)="config.classArchetype = null">
         <option [ngValue]="null" selected>Any Class</option>
@@ -27,7 +27,7 @@
         </ng-template>
     </select>
   </div>
-  <div class="col-md-3 form-group">
+  <div class="col-lg-3 col-md-4 col-sm-6 form-group">
     <label for="race">Background</label>
     <select class="form-control" name="background" [(ngModel)]="config.background">
         <option [ngValue]="null" selected>Any Background</option>
@@ -36,67 +36,76 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-md-3 form-group">
+  <div class="col-lg-3 col-md-4 col-sm-6 form-group">
     <label for="minLevel">Level</label>
     <div>
-      <select class="custom-select mr-2" name="minLevel" [(ngModel)]="config.minLevel">
-        <option value="1" selected>1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-        <option value="11">11</option>
-        <option value="12">12</option>
-        <option value="13">13</option>
-        <option value="14">15</option>
-        <option value="15">15</option>
-        <option value="16">16</option>
-        <option value="17">17</option>
-        <option value="18">18</option>
-        <option value="19">19</option>
-        <option value="20">20</option>
-      </select> &ndash;&ndash;
-      <select class="custom-select ml-2" name="maxLevel" [(ngModel)]="config.maxLevel">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5" selected>5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-        <option value="11">11</option>
-        <option value="12">12</option>
-        <option value="13">13</option>
-        <option value="14">15</option>
-        <option value="15">15</option>
-        <option value="16">16</option>
-        <option value="17">17</option>
-        <option value="18">18</option>
-        <option value="19">19</option>
-        <option value="20">20</option>
-      </select>
+      <div class="row">
+        <div class="col-5">
+          <select class="form-control" name="minLevel" [(ngModel)]="config.minLevel">
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">15</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+          </select>
+        </div>
+        <div class="col-2 text-center">
+          &ndash;&ndash;
+        </div>
+        <div class="col-5">
+          <select class=" form-control " name="maxLevel " [(ngModel)]="config.maxLevel ">
+            <option value="1 ">1</option>
+            <option value="2 ">2</option>
+            <option value="3 ">3</option>
+            <option value="4 ">4</option>
+            <option value="5 " selected>5</option>
+            <option value="6 ">6</option>
+            <option value="7 ">7</option>
+            <option value="8 ">8</option>
+            <option value="9 ">9</option>
+            <option value="10 ">10</option>
+            <option value="11 ">11</option>
+            <option value="12 ">12</option>
+            <option value="13 ">13</option>
+            <option value="14 ">15</option>
+            <option value="15 ">15</option>
+            <option value="16 ">16</option>
+            <option value="17 ">17</option>
+            <option value="18 ">18</option>
+            <option value="19 ">19</option>
+            <option value="20 ">20</option>
+          </select>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="col-md-3 form-group">
-    <label for="primaryAbility">Abilities</label>
-    <select class="form-control" name="primaryAbility" [(ngModel)]="config.primaryAbility">
-        <option [ngValue]="null" selected>Any Ability</option>
-        <option *ngFor="let ability of abilities" [ngValue]="ability">{{ability.name}}</option>
+  <div class="col-lg-3 col-md-4 col-sm-6 form-group ">
+    <label for="primaryAbility ">Abilities</label>
+    <select class="form-control " name="primaryAbility " [(ngModel)]="config.primaryAbility ">
+        <option [ngValue]="null " selected>Any Ability</option>
+        <option *ngFor="let ability of abilities " [ngValue]="ability ">{{ability.name}}</option>
     </select>
-    <select class="form-control mt-2" name="secondaryAbility" [(ngModel)]="config.secondaryAbility">
-        <option [ngValue]="null" selected>Any Ability</option>
-        <option *ngFor="let ability of abilities" [ngValue]="ability">{{ability.name}}</option>
+    <select class="form-control mt-2 " name="secondaryAbility " [(ngModel)]="config.secondaryAbility ">
+        <option [ngValue]="null " selected>Any Ability</option>
+        <option *ngFor="let ability of abilities " [ngValue]="ability ">{{ability.name}}</option>
     </select>
   </div>
-  <div class="col-md-3 form-group">
+  <div class="col-lg-3 col-md-4 col-sm-4 form-group ">
 
   </div>
 </div>
