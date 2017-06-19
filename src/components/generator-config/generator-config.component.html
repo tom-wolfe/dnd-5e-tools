@@ -2,13 +2,13 @@
   <div class="col-md-3 form-group">
     <label for="race">Race</label>
     <select class="form-control" name="race" [(ngModel)]="config.race" (input)="config.subrace = null">
-        <option [value]="null" selected>Any Race</option>
+        <option [ngValue]="null" selected>Any Race</option>
         <option *ngFor="let race of races" [ngValue]="race">{{race.name}}</option>
       </select>
     <select class="form-control mt-2" name="subrace" [(ngModel)]="config.subrace" [disabled]="!config.race || !config.race.subraces">
-        <option *ngIf="!config.race || config.race.subraces" [value]="null" selected>Any Subrace</option>
+        <option *ngIf="!config.race || config.race.subraces" [ngValue]="null" selected>Any Subrace</option>
         <ng-template [ngIf]="config.race != null">
-          <option *ngIf="!config.race.subraces" [value]="null" selected>No Subraces</option>
+          <option *ngIf="!config.race.subraces" [ngValue]="null" selected>No Subraces</option>
           <option *ngFor="let subrace of (config.race.subraces || [])" [ngValue]="subrace">{{subrace.name}}</option>
         </ng-template>
     </select>
@@ -16,11 +16,11 @@
   <div class="col-md-3 form-group">
     <label for="race">Class</label>
     <select class="form-control" name="class" [(ngModel)]="config.class" (input)="config.classArchetype = null">
-        <option [value]="null" selected>Any Class</option>
+        <option [ngValue]="null" selected>Any Class</option>
         <option *ngFor="let class of classes" [ngValue]="class">{{class.name}}</option>
     </select>
     <select class="form-control mt-2" name="classArchetype" [(ngModel)]="config.classArchetype" [disabled]="!config.class || !config.class.archetypes">
-        <option *ngIf="!config.class || config.class.archetypes" [value]="null" selected>Any Archetype</option>
+        <option *ngIf="!config.class || config.class.archetypes" [ngValue]="null" selected>Any Archetype</option>
         <ng-template [ngIf]="config.class != null">
           <option *ngIf="!config.class.archetypes" [value]="null" selected>No Archetypes</option>
           <option *ngFor="let archetype of (config.class.archetypes || [])" [ngValue]="archetype">{{archetype.name}}</option>
@@ -30,7 +30,7 @@
   <div class="col-md-3 form-group">
     <label for="race">Background</label>
     <select class="form-control" name="background" [(ngModel)]="config.background">
-        <option [value]="null" selected>Any Background</option>
+        <option [ngValue]="null" selected>Any Background</option>
         <option *ngFor="let background of backgrounds" [ngValue]="background">{{background.name}}</option>
     </select>
   </div>
@@ -88,11 +88,11 @@
   <div class="col-md-3 form-group">
     <label for="primaryAbility">Abilities</label>
     <select class="form-control" name="primaryAbility" [(ngModel)]="config.primaryAbility">
-        <option [value]="null" selected>Any Ability</option>
+        <option [ngValue]="null" selected>Any Ability</option>
         <option *ngFor="let ability of abilities" [ngValue]="ability">{{ability.name}}</option>
     </select>
     <select class="form-control mt-2" name="secondaryAbility" [(ngModel)]="config.secondaryAbility">
-        <option [value]="null" selected>Any Ability</option>
+        <option [ngValue]="null" selected>Any Ability</option>
         <option *ngFor="let ability of abilities" [ngValue]="ability">{{ability.name}}</option>
     </select>
   </div>
