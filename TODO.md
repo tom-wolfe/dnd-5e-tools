@@ -4,7 +4,9 @@ This is just a list of development tasks and ideas that I keep track of that eit
 
 ## Things Needing Code
 
-* Generate a random age based on the race.
+* Add the ability to export to markdown.
+* Allow certain personality traits/bonds to be determined by alignment.
+* Save last filter settings to local storage and re-populate on load.
 
 ## Ideas
 

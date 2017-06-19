@@ -2,6 +2,7 @@ import { Languages } from "../../data/languages";
 import { Races as RacesImport } from "./race-list";
 import { CommonFeatures } from "../common-features";
 
+import * as Characters from "../../models/characters";
 import * as RaceModels from "../../models/races";
 
 namespace Races {
@@ -21,13 +22,19 @@ namespace Races {
                 description: "You have advantage on saving throws against poison, and you have resistance against poison damage."
             }, {
                 name: "Dwarven Combat Training", type: "singleMod",
-                description: "You have proficiency with the battleaxe, handaxe, light hammer, and warhammer."
+                description: "You have proficiency with the battleaxe, handaxe, light hammer, and warhammer.",
+                apply(character: Characters.Character) {
+                    // TODO: Apply weapon proficiencies.
+                }
             }, {
                 name: "Tool Proficiency", type: "singleMod",
                 description: `
                     You gain proficiency with the artisan's tool of your choice:
                     smith's tools, brewer's supplies, or mason's tools.
-                `
+                `,
+                apply(character: Characters.Character) {
+                    // TODO: Apply tool proficiencies.
+                }
             }, {
                 name: "Stonecunning", type: "passive",
                 description: `
@@ -57,7 +64,10 @@ namespace Races {
                 features: [
                     {
                         name: "Dwarven Armor Training", type: "singleMod",
-                        description: "You have proficiency with light and medium armor."
+                        description: "You have proficiency with light and medium armor.",
+                        apply(character: Characters.Character) {
+                            // TODO: Apply armor proficiencies.
+                        }
                     }
                 ],
                 reference: { source: "PHB", page: 20, url: "https://www.dndbeyond.com/characters/races/dwarf#MountainDwarf" }

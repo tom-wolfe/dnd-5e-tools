@@ -16,7 +16,10 @@
 </div>
 <div class="container">
   <div class="npc-header">
-    <h1 class="npc-name">John Smith</h1>
+    <h1 class="npc-name">
+      John Smith
+      <small class="text-muted">{{character.background.name}} {{character.class.name}}</small>
+    </h1>
     <div class="text-muted npc-subline">
       <span class="race">{{character.race.name}}</span>,
       <source-reference [reference]="character.race.reference"></source-reference>
@@ -29,6 +32,20 @@
       <span class="height">{{character.heightString || 0}}</span>,
       <span class="weight">{{(character.weight || 0) + " lbs."}}</span>,
       <span class="weight">{{(character.age || 0) + " years old"}}</span>
+    </div>
+  </div>
+  <div class="character-block-first">
+    <div class="feature">
+      <h3 class="feature-name">Trait.</h3><span class="feature-description">{{character.personalityTrait}}</span>
+    </div>
+    <div class="feature">
+      <h3 class="feature-name">Ideal.</h3><span class="feature-description">{{character.ideal}}</span>
+    </div>
+    <div class="feature">
+      <h3 class="feature-name">Bond.</h3><span class="feature-description">{{character.bond}}</span>
+    </div>
+    <div class="feature">
+      <h3 class="feature-name">Flaw.</h3><span class="feature-description">{{character.flaw}}</span>
     </div>
   </div>
   <ability-score-list [character]="character"></ability-score-list>
@@ -72,5 +89,5 @@
       </div>
     </div>
   </div>
-  <feature-display-list [features]="character.racialFeatures"></feature-display-list>
+  <feature-display-list [features]="character.features"></feature-display-list>
 </div>

@@ -1,4 +1,4 @@
-import { Languages } from "../../data/languages";
+import { Languages, Skills } from "../../data";
 import { Races as RacesImport } from "./race-list";
 import { CommonFeatures } from "../common-features";
 
@@ -13,7 +13,7 @@ namespace Races {
         age: { maturity: 16, max: 80 },
         height: { base: 72, modifier: 24 },
         weight: { base: 250, modifier: 4 },
-        languages: { known: [ Languages.Common, Languages.Goblin ] },
+        languages: { known: [Languages.Common, Languages.Goblin] },
         abilityMods: { "STR": +2, "DEX": +1 },
         features: [
             {
@@ -22,10 +22,8 @@ namespace Races {
             },
             CommonFeatures.powerfulBuild,
             {
-                name: "Sneaky", type: "singleMod",
-                description: `
-                    You are proficient in the Stealth skill.
-                `
+                name: "Sneaky", type: "passive", skillProficiencies: [Skills.Intimidation],
+                description: "You are proficient in the Stealth skill."
             }, {
                 name: "Surprise Attack", type: "passive",
                 description: `

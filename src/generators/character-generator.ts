@@ -24,7 +24,11 @@ export class CharacterGenerator {
         this.randomizeAbilities(character);
         this.randomizeRace(character);
         this.randomizeSubrace(character);
-        this.randomizeRaceBonuses(character);
+        this.randomizeRaceAbilities(character);
+        this.applyRaceBonuses(character);
+        this.randomizeBackground(character);
+        this.randomizePersonality(character);
+        this.randomizeClass(character);
         this.randomizeLevel(character);
         this.randomizeHitPoints(character);
         this.randomizeSkillProficiencies(character);
@@ -86,7 +90,7 @@ export class CharacterGenerator {
 
     }
 
-    randomizeRaceBonuses(character: Characters.Character) {
+    randomizeRaceAbilities(character: Characters.Character) {
         // Figure out the combined stat bonuses of the race and sub race.
         const abilityMods: Abilities.AbilityMods = {};
         Object.assign(abilityMods, character.race.abilityMods);
@@ -127,6 +131,45 @@ export class CharacterGenerator {
         }
     }
 
+    applyRaceBonuses(character: Characters.Character) {
+        character.race.features.filter(feat => feat.type === "singleMod").forEach(feat => {
+            feat.apply(character);
+        });
+        if (character.subrace) {
+            character.subrace.features.filter(feat => feat.type === "singleMod").forEach(feat => {
+                feat.apply(character);
+            });
+        }
+    }
+
+    randomizeBackground(character: Characters.Character) {
+        if (this.config.background) {
+            character.background = this.config.background;
+        } else {
+            const bgKeys = Object.keys(Data.Backgrounds.BackgroundList);
+            const bgNum = this.numGen.rollDie(bgKeys.length) - 1;
+            character.background = Data.Backgrounds.BackgroundList[bgKeys[bgNum]];
+        }
+    }
+
+    randomizePersonality(character: Characters.Character) {
+        const bg = character.background;
+        character.personalityTrait = bg.personalityTraits[this.numGen.rollDie(bg.personalityTraits.length) - 1];
+        character.ideal = bg.ideals[this.numGen.rollDie(bg.ideals.length) - 1];
+        character.bond = bg.bonds[this.numGen.rollDie(bg.bonds.length) - 1];
+        character.flaw = bg.ideals[this.numGen.rollDie(bg.flaws.length) - 1];
+    }
+
+    randomizeClass(character: Characters.Character) {
+        if (this.config.class) {
+            character.class = this.config.class;
+        } else {
+            const classKeys = Object.keys(Data.Classes.ClassList);
+            const classNum = this.numGen.rollDie(classKeys.length) - 1;
+            character.class = Data.Classes.ClassList[classKeys[classNum]];
+        }
+    }
+
     randomizeLevel(character: Characters.Character) {
         character.level = Data.Levels[this.numGen.numberBetween(this.config.minLevel, this.config.maxLevel)];
     }
@@ -137,34 +180,19 @@ export class CharacterGenerator {
     }
 
     randomizeSkillProficiencies(character: Characters.Character) {
-        const getCharProfs = () => character.skillProficiencies.map(s => s.skill.name);
-        const availableProfs = _.difference(Object.keys(Data.Skills.SkillList), getCharProfs());
+        // Apply background features.
+        const bgProficiencies = character.background.skillProficiencies.forEach(skill => {
+            character.skillProficiencies.push({
+                skill: skill,
+                proficiencyType: "proficient"
+            });
+        });
 
         // Enumerate the proficiency-based features.
         const proficiencyFeats = character.racialFeatures.filter(feature => feature.skillProficiencies);
         proficiencyFeats.forEach(feat => {
             for (let x = 0; x < feat.proficiencyCount; x++) {
-                // Get the offered proficiencies, excluding those already attained.
-                const featProfs = _.difference(feat.skillProficiencies.map(s => s.name), getCharProfs());
-
-                let index: number;
-                let chosenProfName: string;
-                if (featProfs.length > 0) {
-                    // Choose one at random from the feature list.
-                    index = this.numGen.rollDie(featProfs.length) - 1;
-                    chosenProfName = featProfs[index];
-                } else {
-                    // Character already has all these proficiencies, so choose one at random.
-                    index = this.numGen.rollDie(availableProfs.length) - 1;
-                    chosenProfName = availableProfs[index];
-                }
-
-                // Grant it to the character and remove it from the available list.
-                availableProfs.splice(availableProfs.indexOf(chosenProfName), 1);
-                character.skillProficiencies.push({
-                    skill: Data.Skills.SkillList[chosenProfName],
-                    proficiencyType: feat.proficiencyType
-                });
+                this.grantRandomSkillProficiency(character, feat.skillProficiencies, feat.proficiencyType);
             }
         });
     }
@@ -178,16 +206,18 @@ export class CharacterGenerator {
             knownSubLanguages = character.subrace.languages.known;
         }
 
+        otherLanguages += character.background.languages.other || 0;
+
         if (otherLanguages === 0) { return; }
 
         const knownLanguages = _.union(character.race.languages.known, knownSubLanguages).map((lang) => lang.name);
-        const availableLanguages = _.difference(Object.keys(Data.Languages), knownLanguages);
+        const availableLanguages = _.difference(Object.keys(Data.Languages.LanguageList), knownLanguages);
 
         // Increment random stats.
         while (otherLanguages > 0) {
             const langIndex = this.numGen.rollDie(availableLanguages.length) - 1;
             const lang = availableLanguages[langIndex];
-            character.otherLanguages.push(Data.Languages[lang]);
+            character.otherLanguages.push(Data.Languages.LanguageList[lang]);
             knownLanguages.splice(langIndex, 1);
             otherLanguages -= 1;
         }
@@ -229,5 +259,30 @@ export class CharacterGenerator {
         const alignments = Object.keys(Data.Alignments);
         const alignmentNum = this.numGen.rollDie(alignments.length) - 1;
         character.alignment = alignments[alignmentNum];
+    }
+
+    grantRandomSkillProficiency(character: Characters.Character, skills: Abilities.Skill[], proficiencyType: ProficiencyType) {
+        const charProfs = character.skillProficiencies.map(s => s.skill.name);
+        const availableProfs = _.difference(Object.keys(Data.Skills.SkillList), charProfs);
+
+        // Get the offered proficiencies, excluding those already attained.
+        const featProfs = _.difference(skills.map(s => s.name), charProfs);
+
+        let chosenProfName: string;
+        if (featProfs.length > 0) {
+            // Choose one at random from the feature list.
+            const index = this.numGen.rollDie(featProfs.length) - 1;
+            chosenProfName = featProfs[index];
+        } else {
+            // Character already has all these proficiencies, so choose one at random.
+            const index = this.numGen.rollDie(availableProfs.length) - 1;
+            chosenProfName = availableProfs[index];
+        }
+
+        // Grant it to the character and remove it from the available list.
+        character.skillProficiencies.push({
+            skill: Data.Skills.SkillList[chosenProfName],
+            proficiencyType: proficiencyType
+        });
     }
 };

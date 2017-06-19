@@ -1,10 +1,13 @@
+import { Background } from "./background";
+import { Level } from "./level";
+
 import * as Data from "../../data/";
 import * as Abilities from "../abilities";
 import * as Attributes from "../attributes";
+import * as Classes from "../classes";
 import * as Features from "../features";
 import * as Languages from "../languages";
 import * as Races from "../races";
-import { Level } from "./level";
 
 import * as _ from "lodash";
 
@@ -12,13 +15,20 @@ export class Character {
     abilities: Abilities.AbilityScores = new Abilities.CharacterAbilityScores(this);
     age: number;
     alignment: string;
+    background: Background;
     baseAbilities: Abilities.AbilityScores = new Abilities.BasicAbilityScores();
+    baseArmorClass = 10;
     baseHitPoints = 10;
+    bond: string;
+    class: Classes.Class;
+    flaw: string;
     gender: string;
     height: number;
     hitDie = 8;
+    ideal: string;
     level: Level;
     otherLanguages: Languages.Language[] = [];
+    personalityTrait: string;
     race: Races.Race;
     senses: Attributes.Senses = new Attributes.CharacterSenses(this);
     skillProficiencies: Abilities.SkillProficiency[] = [];
@@ -35,7 +45,7 @@ export class Character {
     }
 
     get armorClass(): number {
-        return 10 + this.abilities.getModifier("DEX");
+        return this.baseArmorClass + this.abilities.getModifier("DEX");
     }
 
     get genderDescription(): string {
@@ -48,6 +58,11 @@ export class Character {
         const inches = h % 12;
         const feet = (h - inches) / 12;
         return `${feet}'${inches}"`;
+    }
+
+    get features(): Features.Feature[] {
+        // TODO: Add background features.
+        return this.racialFeatures;
     }
 
     get hitPoints(): number {

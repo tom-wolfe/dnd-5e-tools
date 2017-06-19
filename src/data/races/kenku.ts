@@ -1,4 +1,4 @@
-import { Languages } from "../../data/languages";
+import { Languages, Skills } from "../../data";
 import { Races as RacesImport } from "./race-list";
 import { CommonFeatures } from "../common-features";
 
@@ -22,7 +22,9 @@ namespace Races {
                     forgeries or duplicates of existing objects.
                 `
             }, {
-                name: "Kenku Training", type: "singleMod",
+                name: "Kenku Training", type: "passive",
+                skillProficiencies: [Skills.Acrobatics, Skills.Deception, Skills.Stealth, Skills.SleightOfHand],
+                proficiencyCount: 2, proficiencyType: "proficient",
                 description: `
                     You are proficient in your choice of two of the following skills: Acrobatics, Deception, Stealth, and Sleight of Hand.
                 `

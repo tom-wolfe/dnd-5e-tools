@@ -20,6 +20,6 @@ export class Race {
     height: Height;
     weight: Height;
     features?: Features.Feature[];
-    reference?: Reference;
+    reference: Reference;
     subraces?: Subrace[];
 };
