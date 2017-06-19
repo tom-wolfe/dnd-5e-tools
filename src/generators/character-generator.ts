@@ -5,6 +5,7 @@ import * as Abilities from "../models/abilities";
 import * as Characters from "../models/characters";
 import * as Data from "../data/";
 import * as Languages from "../models/languages";
+import * as Markov from "../markov";
 import * as Races from "../models/races";
 import { GeneratorConfig } from "../models/generator-config";
 
@@ -35,6 +36,7 @@ export class CharacterGenerator {
         this.randomizeLanguages(character);
         this.randomizeHeightAndWeight(character);
         this.randomizeGender(character);
+        this.randomizeName(character);
         this.randomizeAge(character);
         this.randomizeAlignment(character);
 
@@ -264,6 +266,28 @@ export class CharacterGenerator {
         const genders = Object.keys(Data.Genders);
         const genderIndex = this.numGen.rollDie(genders.length) - 1;
         character.gender = genders[genderIndex];
+    }
+
+    randomizeName(character: Characters.Character) {
+        const chain = new Markov.MarkovChain<string>(2);
+
+        const names = [
+            "Wilcome",
+            "Waldolanus",
+            "Engilbert",
+            "Cyr",
+            "Leodegar",
+            "Gilbert",
+            "Arbitio",
+            "Merimas",
+            "Doderic"
+        ]
+
+        names.forEach(name => {
+            chain.add(name.split(""));
+        });
+
+        character.name = chain.walk().join("");
     }
 
     randomizeAge(character: Characters.Character) {

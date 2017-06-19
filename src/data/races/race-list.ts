@@ -1,5 +1,3 @@
-import { Store } from "../store";
-
 import * as RaceModels from "../../models/races";
 
 export namespace Races {

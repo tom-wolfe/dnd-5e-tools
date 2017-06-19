@@ -28,6 +28,7 @@ export class Character {
     hitDie = 8;
     ideal: string;
     level: Level;
+    name: string;
     otherLanguages: Languages.Language[] = [];
     personalityTrait: string;
     race: Races.Race;
