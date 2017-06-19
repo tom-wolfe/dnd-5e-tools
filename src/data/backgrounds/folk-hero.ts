@@ -6,7 +6,7 @@ namespace Backgrounds {
     export const FolkHero: Characters.Background = {
         name: "Folk Hero",
         reference: { source: "PHB", page: 131, url: "https://www.dndbeyond.com/characters/backgrounds/folk-hero" },
-        languages: { other: 2 },
+        languages: { },
         skillProficiencies: [ Skills.AnimalHandling, Skills.Survival ],
         proficiencyCount: 2,
         personalityTraits: [

@@ -38,7 +38,6 @@ export class AppComponent {
   };
 
   onExportClick() {
-    // TODO: Export markdown.
     this.mdlExport.open();
   };
 };

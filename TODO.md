@@ -13,8 +13,6 @@ This is just a list of development tasks and ideas that I keep track of that eit
 * Add background equipment.
 * Add background features.
 
-* Look at Angular services for providing data.
-
 ## Ideas
 
 * Patterned name generators for books, meals, wands, etc.

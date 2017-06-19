@@ -17,6 +17,6 @@ export class GeneratorConfigComponent {
   races: Races.Race[] = Object.keys(Data.Races.RaceList).sort().map(name => Data.Races.RaceList[name]);
   abilities: Abilities.Ability[] = Object.keys(Data.Abilities.AbilityList).map(name => Data.Abilities.AbilityList[name]);
   backgrounds: Characters.Background[] = Object.keys(Data.Backgrounds.BackgroundList)
-                                          .sort().map(name => Data.Backgrounds.BackgroundList[name]);
+                .sort().map(name => Data.Backgrounds.BackgroundList[name]);
   classes: Classes.Class[] = Object.keys(Data.Classes.ClassList).sort().map(name => Data.Classes.ClassList[name]);
 };

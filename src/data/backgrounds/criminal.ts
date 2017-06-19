@@ -5,7 +5,7 @@ import * as Characters from "../../models/characters";
 namespace Backgrounds {
     export const Criminal: Characters.Background = {
         name: "Criminal",
-        reference: { source: "PHB", page: 129, url: "https://www.dndbeyond.com/characters/backgrounds/criminal" },
+        reference: { source: "PHB", page: 129, url: "" },
         languages: { },
         skillProficiencies: [ Skills.Deception, Skills.Stealth ],
         proficiencyCount: 2,
