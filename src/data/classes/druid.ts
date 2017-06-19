@@ -5,6 +5,7 @@ import * as ClassModels from "../../models/classes";
 namespace Classes {
     export const Druid: ClassModels.Class = {
         name: "Druid",
+        primaryStat: "WIS",
         reference: { source: "PHB", page: 64, url: "https://www.dndbeyond.com/characters/classes/druid" },
         archetypes: [
             {

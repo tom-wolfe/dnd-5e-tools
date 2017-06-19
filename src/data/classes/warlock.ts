@@ -5,6 +5,7 @@ import * as ClassModels from "../../models/classes";
 namespace Classes {
     export const Warlock: ClassModels.Class = {
         name: "Warlock",
+        primaryStat: "CHA",
         reference: { source: "PHB", page: 105, url: "https://www.dndbeyond.com/characters/classes/warlock" },
         archetypes: [
             {

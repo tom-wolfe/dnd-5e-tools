@@ -5,6 +5,7 @@ import * as ClassModels from "../../models/classes";
 namespace Classes {
     export const Barbarian: ClassModels.Class = {
         name: "Barbarian",
+        primaryStat: "STR",
         reference: { source: "PHB", page: 46, url: "https://www.dndbeyond.com/characters/classes/barbarian" },
         archetypes: [
             {

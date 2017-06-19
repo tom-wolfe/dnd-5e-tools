@@ -5,6 +5,7 @@ import * as ClassModels from "../../models/classes";
 namespace Classes {
     export const Wizard: ClassModels.Class = {
         name: "Wizard",
+        primaryStat: "INT",
         reference: { source: "PHB", page: 112, url: "https://www.dndbeyond.com/characters/classes/wizard" },
         archetypes: [
             {

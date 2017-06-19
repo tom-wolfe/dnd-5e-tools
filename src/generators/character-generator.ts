@@ -21,14 +21,14 @@ export class CharacterGenerator {
 
     generateCharacter(): Characters.Character {
         const character = new Characters.Character();
-        this.randomizeAbilities(character);
         this.randomizeRace(character);
         this.randomizeSubrace(character);
+        this.randomizeBackground(character);
+        this.randomizeClass(character);
+        this.randomizeAbilities(character);
         this.randomizeRaceAbilities(character);
         this.applyRaceBonuses(character);
-        this.randomizeBackground(character);
         this.randomizePersonality(character);
-        this.randomizeClass(character);
         this.randomizeLevel(character);
         this.randomizeHitPoints(character);
         this.randomizeSkillProficiencies(character);
@@ -55,6 +55,8 @@ export class CharacterGenerator {
 
         if (this.config.primaryAbility) { pushAbility(abilityList.indexOf(this.config.primaryAbility.code)); }
         if (this.config.secondaryAbility) { pushAbility(abilityList.indexOf(this.config.secondaryAbility.code)); }
+
+        pushAbility(abilityList.indexOf(character.class.primaryStat));
 
         while (abilityList.length > 0) {
             pushAbility(this.numGen.rollDie(abilityList.length) - 1);
