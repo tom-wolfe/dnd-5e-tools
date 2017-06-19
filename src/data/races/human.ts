@@ -1,4 +1,4 @@
-import * as Languages from "../../data/languages";
+import { Languages, Skills } from "../../data";
 import { Races as RacesImport } from "./race-list";
 import { CommonFeatures } from "../common-features";
 
@@ -27,6 +27,14 @@ namespace Races {
             }, {
                 name: "Variant",
                 abilityMods: { additionalPoints: 2 },
+                features: [
+                    {
+                        name: "Skill Proficiency", type: "passive",
+                        skillProficiencies: Object.keys(Skills.SkillList).map((skill) => Skills.SkillList[skill]),
+                        proficiencyCount: 1, proficiencyType: "proficient",
+                        description: "You gain proficiency in one skill of your choice."
+                    }
+                ],
                 reference: { source: "PHB", page: 31, url: "https://www.dndbeyond.com/characters/races/human#VariantHuman" }
             }
         ]

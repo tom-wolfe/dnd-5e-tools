@@ -1,4 +1,4 @@
-import * as Languages from "../../data/languages";
+import { Languages } from "../../data/languages";
 import { Races as RacesImport } from "./race-list";
 import { CommonFeatures } from "../common-features";
 
