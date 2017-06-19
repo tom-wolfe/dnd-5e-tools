@@ -17,6 +17,7 @@ export class Character {
     height: number;
     hitDie = 8;
     level = 1;
+    otherLanguages: Languages.Language[] = [];
     race: Races.Race;
     senses: Attributes.Senses = new Attributes.CharacterSenses(this);
     skillProficiencies: Abilities.SkillProficiency[] = [];
@@ -60,9 +61,9 @@ export class Character {
 
     get languages(): Languages.Language[] {
         if (this.subrace && this.subrace.languages) {
-            return _.union(this.race.languages.known, this.subrace.languages.known);
+            return _.union(this.race.languages.known, this.subrace.languages.known, this.otherLanguages);
         } else {
-            return this.race.languages.known;
+            return _.union(this.race.languages.known, this.otherLanguages);
         }
     };
 

@@ -187,7 +187,7 @@ export class CharacterGenerator {
         while (otherLanguages > 0) {
             const langIndex = this.numGen.rollDie(availableLanguages.length) - 1;
             const lang = availableLanguages[langIndex];
-            character.race.languages.known.push(Data.Languages[lang]);
+            character.otherLanguages.push(Data.Languages[lang]);
             knownLanguages.splice(langIndex, 1);
             otherLanguages -= 1;
         }
