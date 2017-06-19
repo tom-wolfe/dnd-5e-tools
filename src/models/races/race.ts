@@ -19,7 +19,7 @@ export class Race {
     languages: Languages.KnownLanguages;
     height: Height;
     weight: Height;
-    features?: Features.Feature[];
+    features: Features.Feature[];
     reference: Reference;
     subraces?: Subrace[];
 };

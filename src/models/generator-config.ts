@@ -6,6 +6,7 @@ import * as Characters from "./characters";
 export class GeneratorConfig {
     background: Characters.Background = null;
     class: Classes.Class = null;
+    classArchetype: Classes.Archetype = null;
     minLevel = 1;
     maxLevel = 5;
     primaryAbility: Abilities.Ability = null;

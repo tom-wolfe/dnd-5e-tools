@@ -132,10 +132,12 @@ export class CharacterGenerator {
     }
 
     applyRaceBonuses(character: Characters.Character) {
-        character.race.features.filter(feat => feat.type === "singleMod").forEach(feat => {
-            feat.apply(character);
-        });
-        if (character.subrace) {
+        if (character.race.features) {
+            character.race.features.filter(feat => feat.type === "singleMod").forEach(feat => {
+                feat.apply(character);
+            });
+        }
+        if (character.subrace && character.subrace.features) {
             character.subrace.features.filter(feat => feat.type === "singleMod").forEach(feat => {
                 feat.apply(character);
             });
@@ -168,6 +170,18 @@ export class CharacterGenerator {
             const classNum = this.numGen.rollDie(classKeys.length) - 1;
             character.class = Data.Classes.ClassList[classKeys[classNum]];
         }
+
+        if (character.class.archetypes) {
+            if (this.config.classArchetype) {
+                character.classArchetype = this.config.classArchetype;
+            } else {
+                const archNum = this.numGen.rollDie(character.class.archetypes.length) - 1;
+                character.classArchetype = character.class.archetypes[archNum];
+            }
+        } else {
+            character.classArchetype = null;
+        }
+
     }
 
     randomizeLevel(character: Characters.Character) {

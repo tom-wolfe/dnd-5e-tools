@@ -14,6 +14,7 @@ namespace Races {
         weight: { base: 110, modifier: 8 },
         languages: { known: [Languages.Common, Languages.Primordial] },
         abilityMods: { "CON": +2 },
+        features: [],
         reference: { source: "EE", page: 6, url: "https://www.dndbeyond.com/characters/races/genasi" },
         subraces: [
             {

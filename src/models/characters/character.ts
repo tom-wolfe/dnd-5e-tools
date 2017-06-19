@@ -21,6 +21,7 @@ export class Character {
     baseHitPoints = 10;
     bond: string;
     class: Classes.Class;
+    classArchetype: Classes.Archetype;
     flaw: string;
     gender: string;
     height: number;

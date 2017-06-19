@@ -18,7 +18,7 @@
   <div class="npc-header">
     <h1 class="npc-name">
       John Smith
-      <small class="text-muted">{{character.background.name}} {{character.class.name}}</small>
+      <small class="text-muted">{{character.background.name}} {{character.class.name}} <span *ngIf="character.classArchetype">({{character.classArchetype.name}})</span></small>
     </h1>
     <div class="text-muted npc-subline">
       <span class="race">{{character.race.name}}</span>,

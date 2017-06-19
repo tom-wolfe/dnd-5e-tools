@@ -13,6 +13,7 @@ namespace Races {
         height: { base: 56, modifier: 20 },
         weight: { base: 110, modifier: 8 },
         languages: { known: [Languages.Common], other: 1 },
+        features: [],
         abilityMods: {},
         reference: {
             source: "PHB",
