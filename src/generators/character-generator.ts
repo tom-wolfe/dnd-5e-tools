@@ -38,9 +38,27 @@ export class CharacterGenerator {
     }
 
     randomizeAbilities(character: Characters.Character) {
-        Object.keys(Data.Abilities.AbilityList).forEach((value) => {
-            character.baseAbilities.set(value, this.abGen.generateScore());
-        });
+        const abilityList = Object.keys(Data.Abilities.AbilityList);
+        let statList = abilityList.map((ability) => this.abGen.generateScore())
+        statList = statList.sort((a, b) => a - b).reverse();
+
+        const assignOrder: string[] = [];
+
+        const pushAbility = (index) => {
+            assignOrder.push(abilityList[index]);
+            abilityList.splice(index, 1);
+        }
+
+        if (this.config.primaryAbility) { pushAbility(abilityList.indexOf(this.config.primaryAbility.code)); }
+        if (this.config.secondaryAbility) { pushAbility(abilityList.indexOf(this.config.secondaryAbility.code)); }
+
+        while (abilityList.length > 0) {
+            pushAbility(this.numGen.rollDie(abilityList.length) - 1);
+        }
+
+        for (let index = 0; index < assignOrder.length; index++) {
+            character.baseAbilities.set(assignOrder[index], statList[index]);
+        }
     }
 
     randomizeRace(character: Characters.Character) {
@@ -89,30 +107,23 @@ export class CharacterGenerator {
             return !abilityMods[value] || abilityMods[value] < 1;
         });
 
-        // TODO: Make this more tidy.
-        // Increment priority stats.
-        let tempAbility = this.config.primaryAbility.code;
-        let tempIndex = 0;
-        if (tempAbility && (tempIndex = abilityList.indexOf(tempAbility)) > -1)  {
-            character.baseAbilities[tempAbility] += 1;
-            abilityList.splice(tempIndex, 1);
-            abilityPoints -= 1;
-        }
+        const addAbility = (ability, index?) => {
+            index = index || abilityList.indexOf(ability);
+            if (ability && index > -1) {
+                character.baseAbilities[ability] += 1;
+                abilityList.splice(index, 1);
+                abilityPoints -= 1;
+            }
+        };
 
-        tempAbility = this.config.secondaryAbility.code
-        if (abilityPoints > 0 && tempAbility && (tempIndex = abilityList.indexOf(tempAbility)) > -1)  {
-            character.baseAbilities[tempAbility] += 1;
-            abilityList.splice(tempIndex, 1);
-            abilityPoints -= 1;
-        }
+        // Increment priority stats.
+        if (this.config.primaryAbility) { addAbility(this.config.primaryAbility.code); }
+        if (this.config.secondaryAbility) { addAbility(this.config.secondaryAbility.code); }
 
         // Increment random stats.
         while (abilityPoints > 0) {
-            tempIndex = this.numGen.rollDie(abilityList.length) - 1;
-            tempAbility = abilityList[tempIndex];
-            character.baseAbilities[tempAbility] += 1;
-            abilityList.splice(tempIndex, 1);
-            abilityPoints -= 1;
+            const tempIndex = this.numGen.rollDie(abilityList.length) - 1;
+            addAbility(abilityList[tempIndex], tempIndex);
         }
     }
 
