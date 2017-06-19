@@ -10,3 +10,4 @@ export * from "./languages";
 export * from "./levels";
 export * from "./races";
 export * from "./sources";
+export * from "./export-template";

@@ -1,11 +1,15 @@
-import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { BrowserModule } from "@angular/platform-browser";
+import { JsonpModule } from "@angular/http";
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { CodemirrorModule } from "ng2-codemirror";
 
 import { AppComponent } from "./app.component";
 import { AbilityScoreComponent } from "../components/ability-score/ability-score.component";
 import { AbilityScoreListComponent } from "../components/ability-score-list/ability-score-list.component";
 import { BackgroundDisplayComponent } from "../components/background-display/background-display.component";
+import { ExportModalComponent } from "../components/export-modal/export-modal.component";
 import { FeatureDisplayComponent } from "../components/feature-display/feature-display.component";
 import { FeatureDisplayListComponent } from "../components/feature-display-list/feature-display-list.component";
 import { GeneratorConfigComponent } from "../components/generator-config/generator-config.component";
@@ -16,7 +20,6 @@ import { SkillsDisplayComponent } from "../components/skills-display/skills-disp
 import { SourceReferenceComponent } from "../components/source-reference/source-reference.component";
 import { SpeedDisplayComponent } from "../components/speed-display/speed-display.component";
 import { StatsDisplayComponent } from "../components/stats-display/stats-display.component";
-import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
   declarations: [
@@ -24,6 +27,7 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
     AbilityScoreComponent,
     AbilityScoreListComponent,
     BackgroundDisplayComponent,
+    ExportModalComponent,
     FeatureDisplayComponent,
     FeatureDisplayListComponent,
     GeneratorConfigComponent,
@@ -36,7 +40,7 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
     StatsDisplayComponent
   ],
   imports: [
-    BrowserModule, FormsModule, NgbModule.forRoot()
+    BrowserModule, CodemirrorModule, FormsModule, ReactiveFormsModule, JsonpModule, NgbModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

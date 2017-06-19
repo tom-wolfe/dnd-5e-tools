@@ -1,7 +1,7 @@
-import { Component } from "@angular/core";
+import { Component, ViewChild } from "@angular/core";
 import { GeneratorConfig } from "../models/generator-config";
 import { CharacterGenerator } from "../generators/character-generator";
-
+import { ExportModalComponent } from "../components/export-modal/export-modal.component";
 import * as Characters from "../models/characters";
 
 @Component({
@@ -14,6 +14,8 @@ export class AppComponent {
   character: Characters.Character;
   config: GeneratorConfig = new GeneratorConfig();
   generator = new CharacterGenerator(this.config);
+
+  @ViewChild("mdlExport") mdlExport: ExportModalComponent
 
   constructor() {
     this.character = this.generator.generateCharacter();
@@ -33,5 +35,10 @@ export class AppComponent {
     this.config.race = null;
     this.config.secondaryAbility = null;
     this.config.subrace = null;
-  }
+  };
+
+  onExportClick() {
+    // TODO: Export markdown.
+    this.mdlExport.open();
+  };
 };

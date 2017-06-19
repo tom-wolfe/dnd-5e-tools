@@ -1,0 +1,14 @@
+<ng-template #content>
+  <div class="modal-header">
+    <h4 class="modal-title">Markdown Code</h4>
+    <button type="button" class="close" aria-label="Close" (click)="dismiss()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <codemirror [(ngModel)]="code" [config]="config"></codemirror>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-lg btn-secondary" (click)="close()">Close</button>
+  </div>
+</ng-template>

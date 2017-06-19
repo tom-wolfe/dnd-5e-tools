@@ -4,7 +4,6 @@ This is just a list of development tasks and ideas that I keep track of that eit
 
 ## Things Needing Code
 
-* Add the ability to export to markdown.
 * Allow certain personality traits/bonds to be determined by alignment.
 * Save last filter settings to local storage and re-populate on load.
 * Implement weapon, armor and tool proficiencies.
@@ -13,6 +12,8 @@ This is just a list of development tasks and ideas that I keep track of that eit
 * Add background tool proficiencies.
 * Add background equipment.
 * Add background features.
+
+* Look at Angular services for providing data.
 
 ## Ideas
 
