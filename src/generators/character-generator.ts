@@ -159,7 +159,7 @@ export class CharacterGenerator {
         character.personalityTrait = bg.personalityTraits[this.numGen.rollDie(bg.personalityTraits.length) - 1];
         character.ideal = bg.ideals[this.numGen.rollDie(bg.ideals.length) - 1];
         character.bond = bg.bonds[this.numGen.rollDie(bg.bonds.length) - 1];
-        character.flaw = bg.ideals[this.numGen.rollDie(bg.flaws.length) - 1];
+        character.flaw = bg.flaws[this.numGen.rollDie(bg.flaws.length) - 1];
     }
 
     randomizeClass(character: Characters.Character) {
