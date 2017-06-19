@@ -43,6 +43,12 @@
     }
 }
 
+.character-block-title {
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 8px;
+}
+
 .form-group {
     label {
         display: block;
@@ -51,7 +57,8 @@
         text-transform: uppercase;
     }
 
-    .form-control, .custom-select {
+    .form-control,
+    .custom-select {
         font-size: 14px;
         font-family: $font-family-secondary;
     }
@@ -59,7 +66,7 @@
 
 .feature {
     padding: 4px 0 4px 0;
-    
+
     .feature-name {
         display: inline;
         font-size: 16px;

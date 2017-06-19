@@ -18,7 +18,10 @@
   <div class="npc-header">
     <h1 class="npc-name">
       John Smith
-      <small class="text-muted">{{character.background.name}} {{character.class.name}} <span *ngIf="character.classArchetype">({{character.classArchetype.name}})</span></small>
+      <small class="text-muted">
+        {{character.class.name}}<source-reference [reference]="character.class.reference"></source-reference>
+        <span *ngIf="character.classArchetype">({{character.classArchetype.name}}<source-reference [reference]="character.classArchetype.reference"></source-reference>)</span>
+      </small>
     </h1>
     <div class="text-muted npc-subline">
       <span class="race">{{character.race.name}}</span>,
@@ -35,6 +38,7 @@
     </div>
   </div>
   <div class="character-block-first">
+    <h2 class="character-block-title">{{character.background.name}}<source-reference [reference]="character.background.reference"></source-reference></h2>
     <div class="feature">
       <h3 class="feature-name">Trait.</h3><span class="feature-description">{{character.personalityTrait}}</span>
     </div>
