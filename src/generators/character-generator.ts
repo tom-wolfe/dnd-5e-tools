@@ -128,11 +128,11 @@ export class CharacterGenerator {
     }
 
     randomizeLevel(character: Characters.Character) {
-        character.level = this.numGen.numberBetween(this.config.minLevel, this.config.maxLevel);
+        character.level = Data.Levels[this.numGen.numberBetween(this.config.minLevel, this.config.maxLevel)];
     }
 
     randomizeHitPoints(character: Characters.Character) {
-        const hitDice = this.numGen.rollDice(character.hitDie, character.level);
+        const hitDice = this.numGen.rollDice(character.hitDie, character.level.number);
         character.baseHitPoints = _.sum(hitDice);
     }
 

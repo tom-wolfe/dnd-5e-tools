@@ -4,6 +4,7 @@ import * as Attributes from "../attributes";
 import * as Features from "../features";
 import * as Languages from "../languages";
 import * as Races from "../races";
+import { Level } from "./level";
 
 import * as _ from "lodash";
 
@@ -16,7 +17,7 @@ export class Character {
     gender: string;
     height: number;
     hitDie = 8;
-    level = 1;
+    level: Level;
     otherLanguages: Languages.Language[] = [];
     race: Races.Race;
     senses: Attributes.Senses = new Attributes.CharacterSenses(this);
@@ -50,13 +51,13 @@ export class Character {
     }
 
     get hitPoints(): number {
-        return (this.baseHitPoints || 0) + (this.abilities.getModifier("CON") * this.level);
+        return (this.baseHitPoints || 0) + (this.abilities.getModifier("CON") * this.level.number);
     }
 
     get hitPointFormula(): string {
-        const conBonus = this.abilities.getModifier("CON") * this.level;
+        const conBonus = this.abilities.getModifier("CON") * this.level.number;
         const conSign = (conBonus >= 0) ? "+" : "-";
-        return `${this.level}d${this.hitDie} ${conSign} ${Math.abs(conBonus)}`;
+        return `${this.level.number}d${this.hitDie} ${conSign} ${Math.abs(conBonus)}`;
     }
 
     get languages(): Languages.Language[] {
@@ -78,8 +79,7 @@ export class Character {
     getSkillModifier(skill: Abilities.Skill): number {
         let retVal = 0;
 
-        // TODO: Set proficiency bonus.
-        const proficiencyBonus = 5;
+        const proficiencyBonus = this.level.proficiencyBonus;
 
         retVal += this.abilities.getModifier(skill.ability.code);
         const prof = this.skillProficiencies.filter((sp) => sp.skill === skill);
