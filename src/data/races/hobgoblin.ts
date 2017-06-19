@@ -14,7 +14,7 @@ namespace Races {
         height: { base: 60, modifier: 12 },
         weight: { base: 150, modifier: 4 },
         languages: { known: [Languages.Common, Languages.Goblin] },
-        statMods: { "CON": +2, "INT": +1 },
+        abilityMods: { "CON": +2, "INT": +1 },
         features: [
             {
                 name: "Martial Training", type: "singleMod",

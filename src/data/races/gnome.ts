@@ -14,7 +14,7 @@ namespace Races {
         height: { base: 35, modifier: 8 },
         weight: { base: 35, modifier: 1 },
         languages: { known: [Languages.Common, Languages.Gnomish] },
-        statMods: { "INT": +2 },
+        abilityMods: { "INT": +2 },
         features: [
             {
                 name: "Gnome Cunning", type: "passive",
@@ -25,7 +25,7 @@ namespace Races {
         subraces: [
             {
                 name: "Forest",
-                statMods: { "DEX": +1 },
+                abilityMods: { "DEX": +1 },
                 features: [
                     {
                         name: "Natural Illusionist", type: "active",
@@ -42,7 +42,7 @@ namespace Races {
                 reference: { source: "PHB", page: 37 }
             }, {
                 name: "Rock",
-                statMods: { "CON": +1 },
+                abilityMods: { "CON": +1 },
                 features: [
                     {
                         name: "Artificer's Lore", type: "passive",
@@ -74,7 +74,7 @@ namespace Races {
                 reference: { source: "PHB", page: 37, url: "https://www.dndbeyond.com/characters/races/gnome#RockGnome" }
             }, {
                 name: "Deep",
-                statMods: { "DEX": +1 },
+                abilityMods: { "DEX": +1 },
                 languages: { known: [Languages.Undercommon] },
                 senses: { darkvision: 120 },
                 features: [

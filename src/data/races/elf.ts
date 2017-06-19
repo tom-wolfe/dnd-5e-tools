@@ -14,7 +14,7 @@ namespace Races {
         height: { base: 54, modifier: 20 },
         weight: { base: 90, modifier: 4 },
         languages: { known: [Languages.Common, Languages.Elvish] },
-        statMods: { "DEX": +2 },
+        abilityMods: { "DEX": +2 },
         features: [
             {
                 name: "Keen Senses", type: "passive",
@@ -37,7 +37,7 @@ namespace Races {
         subraces: [
             {
                 name: "High",
-                statMods: { "INT": +1 },
+                abilityMods: { "INT": +1 },
                 features: [
                     CommonFeatures.elfWeaponTraining,
                     {
@@ -52,7 +52,7 @@ namespace Races {
             }, {
                 name: "Wood",
                 speed: { walk: 35 },
-                statMods: { "WIS": +1 },
+                abilityMods: { "WIS": +1 },
                 weight: { base: 100, modifier: 4 },
                 features: [
                     CommonFeatures.elfWeaponTraining,
@@ -70,7 +70,7 @@ namespace Races {
                 reference: { source: "PHB", page: 24, url: "https://www.dndbeyond.com/characters/races/elf#WoodElf" }
             }, {
                 name: "Drow",
-                statMods: { "CHA": +1 },
+                abilityMods: { "CHA": +1 },
                 senses: { darkvision: 120 },
                 height: { base: 53, modifier: 12 },
                 weight: { base: 75, modifier: 6 },
@@ -92,7 +92,7 @@ namespace Races {
                 reference: { source: "PHB", page: 24 }
             }, {
                 name: "Eladrin",
-                statMods: { "INT": +1 },
+                abilityMods: { "INT": +1 },
                 features: [
                     CommonFeatures.elfWeaponTraining,
                     {

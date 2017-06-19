@@ -14,7 +14,7 @@ namespace Races {
         height: { base: 57, modifier: 16 },
         weight: { base: 110, modifier: 8 },
         languages: { known: [Languages.Common, Languages.Elvish], other: 1 },
-        statMods: { "CHA": +2, additionalPoints: 2 },
+        abilityMods: { "CHA": +2, additionalPoints: 2 },
         features: [
             CommonFeatures.feyAncestry,
             {

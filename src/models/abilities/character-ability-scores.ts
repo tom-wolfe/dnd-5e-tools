@@ -7,10 +7,10 @@ export class CharacterAbilityScores extends AbilityScores {
     get(ability: string): number {
         let mod = this.character.baseAbilities.get(ability);
         let temp: number;
-        if (temp = this.character.race.statMods[ability]) {
+        if (temp = this.character.race.abilityMods[ability]) {
             mod += temp;
         }
-        if (this.character.subrace && (temp = this.character.subrace.statMods[ability])) {
+        if (this.character.subrace && (temp = this.character.subrace.abilityMods[ability])) {
             mod += temp;
         }
         return mod;

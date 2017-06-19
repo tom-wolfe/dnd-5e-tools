@@ -14,7 +14,7 @@ namespace Races {
         height: { base: 48, modifier: 8 },
         weight: { base: 130, modifier: 12 },
         languages: { known: [Languages.Common, Languages.Dwarvish] },
-        statMods: { "CON": +2 },
+        abilityMods: { "CON": +2 },
         features: [
             {
                 name: "Dwarven Resilience", type: "passive",
@@ -41,7 +41,7 @@ namespace Races {
         subraces: [
             {
                 name: "Hill",
-                statMods: { "WIS": +1 },
+                abilityMods: { "WIS": +1 },
                 height: { base: 44, modifier: 8 },
                 weight: { base: 115, modifier: 12 },
                 features: [
@@ -53,7 +53,7 @@ namespace Races {
                 reference: { source: "PHB", page: 20, url: "https://www.dndbeyond.com/characters/races/dwarf#HillDwarf" }
             }, {
                 name: "Mountain",
-                statMods: { "STR": +2 },
+                abilityMods: { "STR": +2 },
                 features: [
                     {
                         name: "Dwarven Armor Training", type: "singleMod",
@@ -63,7 +63,7 @@ namespace Races {
                 reference: { source: "PHB", page: 20, url: "https://www.dndbeyond.com/characters/races/dwarf#MountainDwarf" }
             }, {
                 name: "Duergar",
-                statMods: { "STR": +1 },
+                abilityMods: { "STR": +1 },
                 languages: { known: [Languages.Undercommon] },
                 features: [
                     {

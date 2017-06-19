@@ -13,7 +13,7 @@ namespace Races {
         height: { base: 56, modifier: 20 },
         weight: { base: 110, modifier: 8 },
         languages: { known: [ Languages.Common, Languages.Celestial ] },
-        statMods: { "CHA": +2 },
+        abilityMods: { "CHA": +2 },
         features: [
             {
                 name: "Celestial Resistance", type: "passive",
@@ -33,7 +33,7 @@ namespace Races {
         reference: { source: "VGM", page: 104 },
         subraces: [
             {
-                name: "Protector", statMods: { "WIS": +1 },
+                name: "Protector", abilityMods: { "WIS": +1 },
                 features: [
                     {
                         name: "Radiant Soul", type: "active",
@@ -52,7 +52,7 @@ namespace Races {
                 ],
                 reference: { source: "VGM", page: 105 }
             }, {
-                name: "Scourge", statMods: { "CON": +1 },
+                name: "Scourge", abilityMods: { "CON": +1 },
                 features: [
                     {
                         name: "Radiant Consumption", type: "active",
@@ -73,7 +73,7 @@ namespace Races {
                 ],
                 reference: { source: "VGM", page: 105 }
             }, {
-                name: "Fallen", statMods: { "STR": +1 },
+                name: "Fallen", abilityMods: { "STR": +1 },
                 features: [
                     {
                         name: "Necrotic Shroud", type: "active",

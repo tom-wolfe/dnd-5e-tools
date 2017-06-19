@@ -8,7 +8,7 @@ namespace Races {
     export const Halfling: RaceModels.Race = {
         name: "Halfling",
         size: "Small",
-        statMods: { "DEX": +2 },
+        abilityMods: { "DEX": +2 },
         languages: { known: [Languages.Common, Languages.Halfling] },
         age: { maturity: 20, max: 105 },
         height: { base: 31, modifier: 8 },
@@ -34,7 +34,7 @@ namespace Races {
         subraces: [
             {
                 name: "Lightfoot",
-                statMods: { "CHA": +1 },
+                abilityMods: { "CHA": +1 },
                 features: [
                     {
                         name: "Naturally Stealthy", type: "passive",
@@ -46,7 +46,7 @@ namespace Races {
                 reference: { source: "PHB", page: 28, url: "https://www.dndbeyond.com/characters/races/halfling#Stout" }
             }, {
                 name: "Stout",
-                statMods: { "CON": +1 },
+                abilityMods: { "CON": +1 },
                 features: [
                     {
                         name: "Stout Resilience", type: "passive",

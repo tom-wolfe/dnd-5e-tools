@@ -13,7 +13,7 @@ namespace Races {
         height: { base: 54, modifier: 12 },
         weight: { base: 90, modifier: 3 },
         languages: { known: [Languages.Common, Languages.Primordial] },
-        statMods: { "DEX": +2, "WIS": +1 },
+        abilityMods: { "DEX": +2, "WIS": +1 },
         features: [
             {
                 name: "Export Forgery", type: "passive",

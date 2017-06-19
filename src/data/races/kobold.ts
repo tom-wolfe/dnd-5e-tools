@@ -14,7 +14,7 @@ namespace Races {
         height: { base: 31, modifier: 8 },
         weight: { base: 35, modifier: 1 },
         languages: { known: [Languages.Common, Languages.Draconic] },
-        statMods: { "DEX": +2, "STR": -2 },
+        abilityMods: { "DEX": +2, "STR": -2 },
         features: [
             {
                 name: "Pack Tactics", type: "passive",

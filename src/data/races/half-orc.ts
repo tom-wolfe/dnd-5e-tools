@@ -12,7 +12,7 @@ namespace Races {
         age: { maturity: 14, max: 75 },
         height: { base: 58, modifier: 20 },
         weight: { base: 140, modifier: 12 },
-        statMods: { "STR": +2, "CON": +1 },
+        abilityMods: { "STR": +2, "CON": +1 },
         languages: { known: [Languages.Common, Languages.Orc] },
         features: [
             CommonFeatures.menacing,

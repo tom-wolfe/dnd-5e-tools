@@ -13,7 +13,7 @@ namespace Races {
         height: { base: 84, modifier: 12 },
         weight: { base: 240, modifier: 5 },
         languages: { known: [Languages.Common, Languages.Elvish, Languages.Giant] },
-        statMods: { "STR": +1, "WIS": +2 },
+        abilityMods: { "STR": +1, "WIS": +2 },
         features: [
             {
                 name: "Firbolg Magic", type: "active",

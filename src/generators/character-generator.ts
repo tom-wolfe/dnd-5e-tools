@@ -70,30 +70,49 @@ export class CharacterGenerator {
 
     randomizeRaceBonuses(character: Characters.Character) {
         // Figure out the combined stat bonuses of the race and sub race.
-        const statMods: Abilities.StatMods = {};
-        Object.assign(statMods, character.race.statMods);
+        const abilityMods: Abilities.AbilityMods = {};
+        Object.assign(abilityMods, character.race.abilityMods);
 
-        statMods.additionalPoints = (character.race.statMods.additionalPoints || 0);
+        abilityMods.additionalPoints = (character.race.abilityMods.additionalPoints || 0);
         if (character.subrace) {
-            const addPoints = statMods.additionalPoints + (character.subrace.statMods.additionalPoints || 0);
-            Object.assign(statMods, character.subrace.statMods);
-            statMods.additionalPoints = addPoints;
+            const addPoints = abilityMods.additionalPoints + (character.subrace.abilityMods.additionalPoints || 0);
+            Object.assign(abilityMods, character.subrace.abilityMods);
+            abilityMods.additionalPoints = addPoints;
         }
 
-        if (statMods.additionalPoints === 0) { return; }
+        if (abilityMods.additionalPoints === 0) { return; }
+
+        let abilityPoints = abilityMods.additionalPoints;
 
         // Remove stats that already have bonuses.
-        const statList = ["strength", "dexterity", "constitution", "wisdom", "intelligence", "charisma"].filter((value) => {
-            return !statMods[value] || statMods[value] < 1;
+        const abilityList = Object.keys(Data.Abilities.AbilityList).filter(value => {
+            return !abilityMods[value] || abilityMods[value] < 1;
         });
 
+        // TODO: Make this more tidy.
+        // Increment priority stats.
+        let tempAbility = this.config.primaryAbility.code;
+        let tempIndex = 0;
+        if (tempAbility && (tempIndex = abilityList.indexOf(tempAbility)) > -1)  {
+            character.baseAbilities[tempAbility] += 1;
+            abilityList.splice(tempIndex, 1);
+            abilityPoints -= 1;
+        }
+
+        tempAbility = this.config.secondaryAbility.code
+        if (abilityPoints > 0 && tempAbility && (tempIndex = abilityList.indexOf(tempAbility)) > -1)  {
+            character.baseAbilities[tempAbility] += 1;
+            abilityList.splice(tempIndex, 1);
+            abilityPoints -= 1;
+        }
+
         // Increment random stats.
-        while (statMods.additionalPoints > 0) {
-            const statIndex = this.numGen.rollDie(statList.length) - 1;
-            const stat = statList[statIndex];
-            character.race.statMods[stat] = (character.race.statMods[stat] || 0) + 1;
-            statList.splice(statIndex, 1);
-            statMods.additionalPoints -= 1;
+        while (abilityPoints > 0) {
+            tempIndex = this.numGen.rollDie(abilityList.length) - 1;
+            tempAbility = abilityList[tempIndex];
+            character.baseAbilities[tempAbility] += 1;
+            abilityList.splice(tempIndex, 1);
+            abilityPoints -= 1;
         }
     }
 

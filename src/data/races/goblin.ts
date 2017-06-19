@@ -14,7 +14,7 @@ namespace Races {
         height: { base: 33, modifier: 8 },
         weight: { base: 40, modifier: 3 },
         languages: { known: [Languages.Common, Languages.Goblin] },
-        statMods: { "DEX": +2, "CON": +1 },
+        abilityMods: { "DEX": +2, "CON": +1 },
         features: [
             {
                 name: "Fury of the Small", type: "active",

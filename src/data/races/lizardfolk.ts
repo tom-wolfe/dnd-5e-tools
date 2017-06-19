@@ -14,7 +14,7 @@ namespace Races {
         height: { base: 60, modifier: 20 },
         weight: { base: 120, modifier: 8 },
         languages: { known: [Languages.Common, Languages.Draconic] },
-        statMods: { "CON": +2, "WIS": +1 },
+        abilityMods: { "CON": +2, "WIS": +1 },
         features: [
             {
                 name: "Bite", type: "active",

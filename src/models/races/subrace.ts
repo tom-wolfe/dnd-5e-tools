@@ -14,7 +14,7 @@ export class Subrace {
     languages?: Languages.KnownLanguages;
     height?: Height;
     weight?: Height;
-    statMods?: Abilities.StatMods;
+    abilityMods?: Abilities.AbilityMods;
     features?: Features.Feature[];
     reference?: Reference;
 };

@@ -14,7 +14,7 @@ namespace Races {
         height: { base: 62, modifier: 24 },
         weight: { base: 100, modifier: 8 },
         languages: { known: [Languages.Common], other: 1 },
-        statMods: { "DEX": +2, "CHA": +1 },
+        abilityMods: { "DEX": +2, "CHA": +1 },
         features: [
             {
                 name: "Feline Agility", type: "active",

@@ -13,7 +13,7 @@ namespace Races {
         height: { base: 84, modifier: 12 },
         weight: { base: 280, modifier: 5 },
         languages: { known: [Languages.Common, Languages.Giant] },
-        statMods: { "STR": +2, "CON": +1 },
+        abilityMods: { "STR": +2, "CON": +1 },
         features: [
             {
                 name: "Natural Athlete", type: "passive",

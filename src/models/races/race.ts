@@ -15,7 +15,7 @@ export class Race {
     speed: Attributes.Speed;
     age: Age;
     senses?: Attributes.Senses;
-    statMods?: Abilities.StatMods;
+    abilityMods?: Abilities.AbilityMods;
     languages: Languages.KnownLanguages;
     height: Height;
     weight: Height;

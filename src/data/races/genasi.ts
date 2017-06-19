@@ -13,12 +13,12 @@ namespace Races {
         height: { base: 56, modifier: 20 },
         weight: { base: 110, modifier: 8 },
         languages: { known: [Languages.Common, Languages.Primordial] },
-        statMods: { "CON": +2 },
+        abilityMods: { "CON": +2 },
         reference: { source: "EE", page: 6, url: "https://www.dndbeyond.com/characters/races/genasi" },
         subraces: [
             {
                 name: "Air",
-                statMods: { "DEX": +1 },
+                abilityMods: { "DEX": +1 },
                 features: [
                     {
                         name: "Unending Breath", type: "passive",
@@ -36,7 +36,7 @@ namespace Races {
                 reference: { source: "EE", page: 8, url: "https://www.dndbeyond.com/characters/races/genasi#AirGenasi" }
             }, {
                 name: "Earth",
-                statMods: { "STR": +1 },
+                abilityMods: { "STR": +1 },
                 features: [
                     {
                         name: "Earth Walk", type: "passive",
@@ -54,7 +54,7 @@ namespace Races {
                 reference: { source: "EE", page: 8, url: "https://www.dndbeyond.com/characters/races/genasi#EarthGenasi" }
             }, {
                 name: "Fire",
-                statMods: { "INT": +1 },
+                abilityMods: { "INT": +1 },
                 senses: { darkvision: 60 },
                 features: [
                     {
@@ -74,7 +74,7 @@ namespace Races {
             }, {
                 name: "Water",
                 speed: { swim: 30 },
-                statMods: { "WIS": +1 },
+                abilityMods: { "WIS": +1 },
                 features: [
                     {
                         name: "Acid Resistance", type: "passive",

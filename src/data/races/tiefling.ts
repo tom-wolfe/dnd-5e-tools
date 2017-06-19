@@ -14,7 +14,7 @@ namespace Races {
         height: { base: 57, modifier: 16 },
         weight: { base: 110, modifier: 8 },
         languages: { known: [Languages.Common, Languages.Infernal] },
-        statMods: { "INT": +1, "CHA": +2 },
+        abilityMods: { "INT": +1, "CHA": +2 },
         features: [
             {
                 name: "Hellish Resistance", type: "passive",

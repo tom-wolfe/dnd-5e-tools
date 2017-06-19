@@ -13,7 +13,7 @@ namespace Races {
         height: { base: 50, modifier: 20 },
         weight: { base: 120, modifier: 8 },
         languages: { known: [Languages.Common, Languages.Primordial] },
-        statMods: { "STR": +1, "CON": +1, "CHA": +1 },
+        abilityMods: { "STR": +1, "CON": +1, "CHA": +1 },
         features: [
             {
                 name: "Amphibious", type: "passive",

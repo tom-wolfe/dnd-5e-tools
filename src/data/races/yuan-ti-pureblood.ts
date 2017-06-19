@@ -13,7 +13,7 @@ namespace Races {
         height: { base: 56, modifier: 20 },
         weight: { base: 110, modifier: 8 },
         languages: { known: [Languages.Common, Languages.Abyssal, Languages.Draconic] },
-        statMods: { "CHA": +2, "INT": +1 },
+        abilityMods: { "CHA": +2, "INT": +1 },
         speed: { walk: 30 },
         features: [
             {

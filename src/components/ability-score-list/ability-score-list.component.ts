@@ -17,7 +17,7 @@ export class AbilityScoreListComponent {
     return Object.keys(Data.Abilities.AbilityList);
   }
   get abilitySum(): number {
-    const scores = Object.keys(Data.Abilities.AbilityList).map((val) => this.character.abilities.get(val) || 0);
+    const scores = Object.keys(Data.Abilities.AbilityList).map(val => this.character.abilities.get(val) || 0);
     return _.sum(scores);
   }
   get abilityPercentile(): string {

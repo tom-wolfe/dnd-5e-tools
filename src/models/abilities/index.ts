@@ -5,4 +5,4 @@ export * from "./character-ability-scores";
 export * from "./proficiency-type";
 export * from "./skill";
 export * from "./skill-proficiency";
-export * from "./stat-mods";
+export * from "./ability-mods";
