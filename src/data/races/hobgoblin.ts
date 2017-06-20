@@ -1,10 +1,11 @@
-import * as Languages from "../../data/languages";
-import { Races } from "./races";
+import { Languages } from "../../data/languages";
+import { RaceList } from "./race-list";
 import { CommonFeatures } from "../common-features";
 
+import * as Characters from "../../models/characters";
 import * as RaceModels from "../../models/races";
 
-const Hobgoblin: RaceModels.Race = {
+export const Hobgoblin: RaceModels.Race = {
     name: "Hobgoblin",
     size: "Medium",
     speed: { walk: 30 },
@@ -12,12 +13,15 @@ const Hobgoblin: RaceModels.Race = {
     age: { maturity: 18, max: 80 },
     height: { base: 60, modifier: 12 },
     weight: { base: 150, modifier: 4 },
-    languages: { known: [ Languages.Common, Languages.Goblin ] },
-    statMods: { constitution: +2, intelligence: +1 },
+    languages: { known: [Languages.Common, Languages.Goblin] },
+    abilityMods: { "CON": +2, "INT": +1 },
     features: [
         {
             name: "Martial Training", type: "singleMod",
-            description: "You are proficient with two martial weapons of your choice and with light armor."
+            description: "You are proficient with two martial weapons of your choice and with light armor.",
+            apply(character: Characters.Character) {
+                // TODO: Apply random proficiencies.
+            }
         }, {
             name: "Saving Face", type: "active",
             usage: { times: 1, timeUnit: "shortRest" },
@@ -33,4 +37,4 @@ const Hobgoblin: RaceModels.Race = {
     subraces: null
 };
 
-Races[Hobgoblin.name] = Hobgoblin;
+RaceList[Hobgoblin.name] = Hobgoblin;

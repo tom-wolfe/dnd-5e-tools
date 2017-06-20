@@ -1,21 +1,23 @@
-import * as Languages from "../../data/languages";
-import { Races } from "./races";
+import { Languages, Skills } from "../../data";
+import { RaceList } from "./race-list";
 import { CommonFeatures } from "../common-features";
 
 import * as RaceModels from "../../models/races";
 
-const Goliath: RaceModels.Race = {
+export const Goliath: RaceModels.Race = {
     name: "Goliath",
     size: "Medium",
     speed: { walk: 30 },
     age: { maturity: 18, max: 90 },
     height: { base: 84, modifier: 12 },
     weight: { base: 280, modifier: 5 },
-    languages: { known: [ Languages.Common, Languages.Giant ] },
-    statMods: { strength: +2, constitution: +1 },
+    languages: { known: [Languages.Common, Languages.Giant] },
+    abilityMods: { "STR": +2, "CON": +1 },
     features: [
         {
-            name: "Natural Athlete", type: "singleMod",
+            name: "Natural Athlete", type: "passive",
+            skillProficiencies: [Skills.Athletics],
+            proficiencyCount: 1, proficiencyType: "proficient",
             description: "You have proficiency in the Athletics skill."
         }, {
             name: "Stone's Endurance", type: "active",
@@ -39,4 +41,4 @@ const Goliath: RaceModels.Race = {
     subraces: null
 };
 
-Races[Goliath.name] = Goliath;
+RaceList[Goliath.name] = Goliath;

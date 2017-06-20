@@ -7,18 +7,73 @@
     border-bottom: 1px solid $brand-primary;
 }
 
+.character-block-first {
+    border-bottom: 1px solid $brand-primary;
+    border-top: 1px solid $brand-primary;
+}
+
+.attribute-block {
+    padding: 12px;
+    text-align: center;
+
+    .attribute-title {
+        display: block;
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .primary {
+        font-size: 24px;
+        font-family: $font-family-secondary;
+    }
+
+    .secondary {
+        font-size: 12px;
+        font-family: $font-family-secondary;
+        vertical-align: top;
+    }
+}
+
 .character-sub-block {
     padding: 12px;
+    .sub-block-title {
+        font-size: 16px;
+        font-weight: bold;
+    }
 }
 
-.sub-block-title {
-    font-size: 16px;
+.character-block-title {
+    font-size: 18px;
     font-weight: bold;
+    padding-top: 8px;
 }
 
-.attribute-title {
-    display: block;
-    font-size: 14px;
-    font-weight: bold;
-    text-transform: uppercase;
+.form-group {
+    label {
+        display: block;
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .form-control,
+    .custom-select {
+        font-size: 14px;
+        font-family: $font-family-secondary;
+    }
 }
+
+.feature {
+    padding: 4px 0 4px 0;
+
+    .feature-name {
+        display: inline;
+        font-size: 16px;
+        font-style: italic;
+        font-weight: bold;
+        padding-right: 4px;
+    }
+}
+
+// TODO: MakeButton(secondary) with

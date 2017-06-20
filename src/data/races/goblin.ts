@@ -1,10 +1,10 @@
-import * as Languages from "../../data/languages";
-import { Races } from "./races";
+import { Languages } from "../../data/languages";
+import { RaceList } from "./race-list";
 import { CommonFeatures } from "../common-features";
 
 import * as RaceModels from "../../models/races";
 
-const Goblin: RaceModels.Race = {
+export const Goblin: RaceModels.Race = {
     name: "Goblin",
     size: "Small",
     speed: { walk: 30 },
@@ -12,8 +12,8 @@ const Goblin: RaceModels.Race = {
     age: { maturity: 8, max: 60 },
     height: { base: 33, modifier: 8 },
     weight: { base: 40, modifier: 3 },
-    languages: { known: [ Languages.Common, Languages.Goblin ] },
-    statMods: { dexterity: +2, constitution: +1 },
+    languages: { known: [Languages.Common, Languages.Goblin] },
+    abilityMods: { "DEX": +2, "CON": +1 },
     features: [
         {
             name: "Fury of the Small", type: "active",
@@ -32,4 +32,4 @@ const Goblin: RaceModels.Race = {
     subraces: null
 };
 
-Races[Goblin.name] = Goblin;
+RaceList[Goblin.name] = Goblin;

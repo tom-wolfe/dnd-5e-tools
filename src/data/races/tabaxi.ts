@@ -1,10 +1,10 @@
-import * as Languages from "../../data/languages";
-import { Races } from "./races";
+import { Skills, Languages } from "../../data";
+import { RaceList } from "./race-list";
 import { CommonFeatures } from "../common-features";
 
 import * as RaceModels from "../../models/races";
 
-const Tabaxi: RaceModels.Race = {
+export const Tabaxi: RaceModels.Race = {
     name: "Tabaxi",
     size: "Medium",
     speed: { walk: 30, climb: 20 },
@@ -12,8 +12,8 @@ const Tabaxi: RaceModels.Race = {
     age: { maturity: 18, max: 80 },
     height: { base: 62, modifier: 24 },
     weight: { base: 100, modifier: 8 },
-    languages: { known: [ Languages.Common ], other: 1 },
-    statMods: { dexterity: +2, charisma: +1 },
+    languages: { known: [Languages.Common], other: 1 },
+    abilityMods: { "DEX": +2, "CHA": +1 },
     features: [
         {
             name: "Feline Agility", type: "active",
@@ -31,7 +31,9 @@ const Tabaxi: RaceModels.Race = {
                     instead of the bludgeoning damage normal for an unarmed strike.
                 `
         }, {
-            name: "Cat's Talent", type: "singleMod",
+            name: "Cat's Talent", type: "passive",
+            skillProficiencies: [Skills.Perception, Skills.Stealth],
+            proficiencyCount: 2, proficiencyType: "proficient",
             description: "You have proficiency in the Perception and Stealth skills."
         }
     ],
@@ -39,4 +41,4 @@ const Tabaxi: RaceModels.Race = {
     subraces: null
 };
 
-Races[Tabaxi.name] = Tabaxi;
+RaceList[Tabaxi.name] = Tabaxi;

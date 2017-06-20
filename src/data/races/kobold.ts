@@ -1,10 +1,10 @@
-import * as Languages from "../../data/languages";
-import { Races } from "./races";
+import { Languages } from "../../data/languages";
+import { RaceList } from "./race-list";
 import { CommonFeatures } from "../common-features";
 
 import * as RaceModels from "../../models/races";
 
-const Kobold: RaceModels.Race = {
+export const Kobold: RaceModels.Race = {
     name: "Kobold",
     size: "Small",
     speed: { walk: 30 },
@@ -12,8 +12,8 @@ const Kobold: RaceModels.Race = {
     age: { maturity: 6, max: 120 },
     height: { base: 31, modifier: 8 },
     weight: { base: 35, modifier: 1 },
-    languages: { known: [ Languages.Common, Languages.Draconic ] },
-    statMods: { dexterity: +2, strength: -2 },
+    languages: { known: [Languages.Common, Languages.Draconic] },
+    abilityMods: { "DEX": +2, "STR": -2 },
     features: [
         {
             name: "Pack Tactics", type: "passive",
@@ -36,4 +36,4 @@ const Kobold: RaceModels.Race = {
     subraces: null
 };
 
-Races[Kobold.name] = Kobold;
+RaceList[Kobold.name] = Kobold;

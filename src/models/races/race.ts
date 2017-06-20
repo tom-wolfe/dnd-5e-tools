@@ -1,7 +1,8 @@
-import { Subrace } from "./subrace";
-import { Reference } from "../reference";
 import { Age } from "./age";
 import { Height } from "./height";
+import { NameDefinition } from "./name-definition";
+import { Reference } from "../reference";
+import { Subrace } from "./subrace";
 import { Weight } from "./weight";
 
 import * as Abilities from "../abilities";
@@ -15,11 +16,12 @@ export class Race {
     speed: Attributes.Speed;
     age: Age;
     senses?: Attributes.Senses;
-    statMods?: Abilities.StatMods;
+    abilityMods?: Abilities.AbilityMods;
     languages: Languages.KnownLanguages;
+    nameDefinition?: NameDefinition;
     height: Height;
     weight: Height;
-    features?: Features.Feature[];
-    reference?: Reference;
+    features: Features.Feature[];
+    reference: Reference;
     subraces?: Subrace[];
 };

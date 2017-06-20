@@ -1,10 +1,10 @@
-import * as Languages from "../../data/languages";
-import { Races } from "./races";
+import { Languages } from "../../data/languages";
+import { RaceList } from "./race-list";
 import { CommonFeatures } from "../common-features";
 
 import * as RaceModels from "../../models/races";
 
-const Tiefling: RaceModels.Race = {
+export const Tiefling: RaceModels.Race = {
     name: "Tiefling",
     size: "Medium",
     speed: { walk: 30 },
@@ -12,8 +12,8 @@ const Tiefling: RaceModels.Race = {
     age: { maturity: 18, max: 90 },
     height: { base: 57, modifier: 16 },
     weight: { base: 110, modifier: 8 },
-    languages: { known: [ Languages.Common, Languages.Infernal ] },
-    statMods: { intelligence: +1, charisma: +2 },
+    languages: { known: [Languages.Common, Languages.Infernal] },
+    abilityMods: { "INT": +1, "CHA": +2 },
     features: [
         {
             name: "Hellish Resistance", type: "passive",
@@ -32,4 +32,4 @@ const Tiefling: RaceModels.Race = {
     subraces: null
 };
 
-Races[Tiefling.name] = Tiefling;
+RaceList[Tiefling.name] = Tiefling;

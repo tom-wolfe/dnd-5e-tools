@@ -1,7 +1,8 @@
-export * from "./races";
+export * from "./race-list";
 
 export * from "./aarakocra";
 export * from "./aasimar";
+export * from "./changeling";
 export * from "./bugbear";
 export * from "./dragonborn";
 export * from "./dwarf";
@@ -20,7 +21,9 @@ export * from "./kenku";
 export * from "./kobold";
 export * from "./lizardfolk";
 export * from "./orc";
+export * from "./shifter";
 export * from "./tabaxi";
 export * from "./tiefling";
 export * from "./triton";
+export * from "./warforged";
 export * from "./yuan-ti-pureblood";

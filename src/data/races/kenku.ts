@@ -1,18 +1,18 @@
-import * as Languages from "../../data/languages";
-import { Races } from "./races";
+import { Languages, Skills } from "../../data";
+import { RaceList } from "./race-list";
 import { CommonFeatures } from "../common-features";
 
 import * as RaceModels from "../../models/races";
 
-const Kenku: RaceModels.Race = {
+export const Kenku: RaceModels.Race = {
     name: "Kenku",
     size: "Medium",
     speed: { walk: 30 },
     age: { maturity: 12, max: 60 },
     height: { base: 54, modifier: 12 },
     weight: { base: 90, modifier: 3 },
-    languages: { known: [ Languages.Common, Languages.Primordial ] },
-    statMods: { dexterity: +2, wisdom: +1 },
+    languages: { known: [Languages.Common, Languages.Primordial] },
+    abilityMods: { "DEX": +2, "WIS": +1 },
     features: [
         {
             name: "Export Forgery", type: "passive",
@@ -21,7 +21,9 @@ const Kenku: RaceModels.Race = {
                     forgeries or duplicates of existing objects.
                 `
         }, {
-            name: "Kenku Training", type: "singleMod",
+            name: "Kenku Training", type: "passive",
+            skillProficiencies: [Skills.Acrobatics, Skills.Deception, Skills.Stealth, Skills.SleightOfHand],
+            proficiencyCount: 2, proficiencyType: "proficient",
             description: `
                     You are proficient in your choice of two of the following skills: Acrobatics, Deception, Stealth, and Sleight of Hand.
                 `
@@ -37,4 +39,5 @@ const Kenku: RaceModels.Race = {
     subraces: null
 };
 
-Races[Kenku.name] = Kenku;
+RaceList[Kenku.name] = Kenku;
+

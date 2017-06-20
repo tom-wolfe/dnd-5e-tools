@@ -1,3 +1,4 @@
+import { Skills } from "../data";
 import * as Features from "../models/features";
 
 export const CommonFeatures: { [index: string]: Features.Feature } = {
@@ -10,7 +11,8 @@ export const CommonFeatures: { [index: string]: Features.Feature } = {
         description: "You have advantage on saving throws against being charmed, and magic can't put you to sleep."
     },
     "menacing": {
-        name: "Menacing", type: "singleMod",
+        name: "Menacing", type: "passive", skillProficiencies: [Skills.Intimidation],
+        proficiencyCount: 1, proficiencyType: "proficient",
         description: "You are trained in the Intimidation skill."
     },
     "powerfulBuild": {

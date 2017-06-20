@@ -1,6 +1,8 @@
-import { Component } from "@angular/core";
-import * as Characters from "../models/characters";
+import { Component, ViewChild } from "@angular/core";
+import { GeneratorConfig } from "../models/generator-config";
 import { CharacterGenerator } from "../generators/character-generator";
+import { ExportModalComponent } from "../components/export-modal/export-modal.component";
+import * as Characters from "../models/characters";
 
 @Component({
   selector: "app-root",
@@ -9,13 +11,33 @@ import { CharacterGenerator } from "../generators/character-generator";
 })
 export class AppComponent {
   title = "D&D 5th Edition NPC Generator";
-  generator = new CharacterGenerator();
   character: Characters.Character;
+  config: GeneratorConfig = new GeneratorConfig();
+  generator = new CharacterGenerator(this.config);
+
+  @ViewChild("mdlExport") mdlExport: ExportModalComponent
+
   constructor() {
     this.character = this.generator.generateCharacter();
   };
 
   onGenerateClick() {
     this.character = this.generator.generateCharacter();
+  };
+
+  onClearClick() {
+    this.config.background = null;
+    this.config.class = null;
+    this.config.classArchetype = null;
+    this.config.maxLevel = 5;
+    this.config.minLevel = 1;
+    this.config.primaryAbility = null;
+    this.config.race = null;
+    this.config.secondaryAbility = null;
+    this.config.subrace = null;
+  };
+
+  onExportClick() {
+    this.mdlExport.open();
   };
 };

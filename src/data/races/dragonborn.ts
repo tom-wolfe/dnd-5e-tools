@@ -1,18 +1,17 @@
-import * as Languages from "../../data/languages";
-import { Races } from "./races";
-import { CommonFeatures } from "../common-features";
+import { Languages } from "../../data/languages";
+import { RaceList } from "./race-list";
 
 import * as RaceModels from "../../models/races";
 
-const Dragonborn: RaceModels.Race = {
+export const Dragonborn: RaceModels.Race = {
     name: "Dragonborn",
     size: "Medium",
     speed: { walk: 30 },
     age: { maturity: 15, max: 80 },
     height: { base: 66, modifier: 16 },
     weight: { base: 175, modifier: 12 },
-    languages: { known: [ Languages.Common, Languages.Draconic ] },
-    statMods: { strength: +2, charisma: +1 },
+    languages: { known: [Languages.Common, Languages.Draconic] },
+    abilityMods: { "STR": +2, "CHA": +1 },
     features: [
         {
             name: "Draconic Ancestry", type: "passive",
@@ -44,4 +43,4 @@ const Dragonborn: RaceModels.Race = {
     subraces: null
 };
 
-Races[Dragonborn.name] = Dragonborn;
+RaceList[Dragonborn.name] = Dragonborn;

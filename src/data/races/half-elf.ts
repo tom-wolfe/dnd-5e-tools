@@ -1,10 +1,10 @@
-import * as Languages from "../../data/languages";
-import { Races } from "./races";
+import { Languages, Skills } from "../../data";
+import { RaceList } from "./race-list";
 import { CommonFeatures } from "../common-features";
 
 import * as RaceModels from "../../models/races";
 
-const HalfElf: RaceModels.Race = {
+export const HalfElf: RaceModels.Race = {
     name: "Half-elf",
     size: "Medium",
     speed: { walk: 30 },
@@ -12,12 +12,14 @@ const HalfElf: RaceModels.Race = {
     age: { maturity: 18, max: 200 },
     height: { base: 57, modifier: 16 },
     weight: { base: 110, modifier: 8 },
-    languages: { known: [ Languages.Common, Languages.Elvish ], other: 1 },
-    statMods: { charisma: +2, additionalPoints: 2 },
+    languages: { known: [Languages.Common, Languages.Elvish], other: 1 },
+    abilityMods: { "CHA": +2, additionalPoints: 2 },
     features: [
         CommonFeatures.feyAncestry,
         {
-            name: "Skill Versatility", type: "singleMod",
+            name: "Skill Versatility", type: "passive",
+            skillProficiencies: Object.keys(Skills.SkillList).map((skill) => Skills.SkillList[skill]),
+            proficiencyCount: 2, proficiencyType: "proficient",
             description: "You gain proficiency in two skills of your choice."
         }
     ],
@@ -25,4 +27,4 @@ const HalfElf: RaceModels.Race = {
     subraces: null
 };
 
-Races[HalfElf.name] = HalfElf;
+RaceList[HalfElf.name] = HalfElf;

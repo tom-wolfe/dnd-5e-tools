@@ -4,7 +4,14 @@ This is just a list of development tasks and ideas that I keep track of that eit
 
 ## Things Needing Code
 
-* Generate a random age based on the race.
+* Allow certain personality traits/bonds to be determined by alignment.
+* Save last filter settings to local storage and re-populate on load.
+* Implement weapon, armor and tool proficiencies.
+* Add source links to features.
+* Add option for disabling some sources.
+* Add background tool proficiencies.
+* Add background equipment.
+* Add background features.
 
 ## Ideas
 

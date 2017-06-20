@@ -1,10 +1,11 @@
-import { Races } from "./races";
-import * as Languages from "../../data/languages";
+import { Languages } from "../../data/languages";
+import { RaceList } from "./race-list";
 import { CommonFeatures } from "../common-features";
 
+import * as Characters from "../../models/characters";
 import * as RaceModels from "../../models/races";
 
-const Dwarf: RaceModels.Race = {
+export const Dwarf: RaceModels.Race = {
     name: "Dwarf",
     size: "Medium",
     speed: { walk: 25 },
@@ -13,20 +14,26 @@ const Dwarf: RaceModels.Race = {
     height: { base: 48, modifier: 8 },
     weight: { base: 130, modifier: 12 },
     languages: { known: [Languages.Common, Languages.Dwarvish] },
-    statMods: { constitution: +2 },
+    abilityMods: { "CON": +2 },
     features: [
         {
             name: "Dwarven Resilience", type: "passive",
             description: "You have advantage on saving throws against poison, and you have resistance against poison damage."
         }, {
             name: "Dwarven Combat Training", type: "singleMod",
-            description: "You have proficiency with the battleaxe, handaxe, light hammer, and warhammer."
+            description: "You have proficiency with the battleaxe, handaxe, light hammer, and warhammer.",
+            apply(character: Characters.Character) {
+                // TODO: Apply weapon proficiencies.
+            }
         }, {
             name: "Tool Proficiency", type: "singleMod",
             description: `
                     You gain proficiency with the artisan's tool of your choice:
                     smith's tools, brewer's supplies, or mason's tools.
-                `
+                `,
+            apply(character: Characters.Character) {
+                // TODO: Apply tool proficiencies.
+            }
         }, {
             name: "Stonecunning", type: "passive",
             description: `
@@ -40,7 +47,7 @@ const Dwarf: RaceModels.Race = {
     subraces: [
         {
             name: "Hill",
-            statMods: { wisdom: +1 },
+            abilityMods: { "WIS": +1 },
             height: { base: 44, modifier: 8 },
             weight: { base: 115, modifier: 12 },
             features: [
@@ -52,17 +59,20 @@ const Dwarf: RaceModels.Race = {
             reference: { source: "PHB", page: 20, url: "https://www.dndbeyond.com/characters/races/dwarf#HillDwarf" }
         }, {
             name: "Mountain",
-            statMods: { strength: +2 },
+            abilityMods: { "STR": +2 },
             features: [
                 {
                     name: "Dwarven Armor Training", type: "singleMod",
-                    description: "You have proficiency with light and medium armor."
+                    description: "You have proficiency with light and medium armor.",
+                    apply(character: Characters.Character) {
+                        // TODO: Apply armor proficiencies.
+                    }
                 }
             ],
             reference: { source: "PHB", page: 20, url: "https://www.dndbeyond.com/characters/races/dwarf#MountainDwarf" }
         }, {
             name: "Duergar",
-            statMods: { strength: +1 },
+            abilityMods: { "STR": +1 },
             languages: { known: [Languages.Undercommon] },
             features: [
                 {
@@ -86,4 +96,4 @@ const Dwarf: RaceModels.Race = {
     ]
 };
 
-Races[Dwarf.name] = Dwarf;
+RaceList[Dwarf.name] = Dwarf;

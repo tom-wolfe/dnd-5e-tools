@@ -1,10 +1,10 @@
-import * as Languages from "../../data/languages";
-import { Races } from "./races";
+import { Languages, Skills } from "../../data";
+import { RaceList } from "./race-list";
 import { CommonFeatures } from "../common-features";
 
 import * as RaceModels from "../../models/races";
 
-const Bugbear: RaceModels.Race = {
+export const Bugbear: RaceModels.Race = {
     name: "Bugbear",
     size: "Medium",
     speed: { walk: 30 },
@@ -12,8 +12,8 @@ const Bugbear: RaceModels.Race = {
     age: { maturity: 16, max: 80 },
     height: { base: 72, modifier: 24 },
     weight: { base: 250, modifier: 4 },
-    languages: { known: [ Languages.Common, Languages.Goblin ] },
-    statMods: { strength: +2, dexterity: +1 },
+    languages: { known: [Languages.Common, Languages.Goblin] },
+    abilityMods: { "STR": +2, "DEX": +1 },
     features: [
         {
             name: "Long-Limbed", type: "passive",
@@ -21,20 +21,18 @@ const Bugbear: RaceModels.Race = {
         },
         CommonFeatures.powerfulBuild,
         {
-            name: "Sneaky", type: "singleMod",
-            description: `
-                You are proficient in the Stealth skill.
-            `
+            name: "Sneaky", type: "passive", skillProficiencies: [Skills.Intimidation],
+            description: "You are proficient in the Stealth skill."
         }, {
             name: "Surprise Attack", type: "passive",
             description: `
-                If you surprise a creature and hit it with an attack on your first turn in combat, the attack deals an extra 2d6
-                damage to it. You can use this trait only once per combat.
-            `
+                    If you surprise a creature and hit it with an attack on your first turn in combat, the attack deals an extra 2d6
+                    damage to it. You can use this trait only once per combat.
+                `
         }
     ],
     reference: { source: "VGM", page: 119 },
     subraces: null
 };
 
-Races[Bugbear.name] = Bugbear;
+RaceList[Bugbear.name] = Bugbear;

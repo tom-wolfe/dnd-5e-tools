@@ -1,18 +1,18 @@
-import * as Languages from "../../data/languages";
-import { Races } from "./races";
+import { Languages } from "../../data/languages";
+import { RaceList } from "./race-list";
 import { CommonFeatures } from "../common-features";
 
 import * as RaceModels from "../../models/races";
 
-const Orc: RaceModels.Race = {
+export const Orc: RaceModels.Race = {
     name: "Orc",
     size: "Medium",
     senses: { darkvision: 60 },
     age: { maturity: 12, max: 50 },
     height: { base: 68, modifier: 12 },
     weight: { base: 230, modifier: 4 },
-    languages: { known: [ Languages.Common, Languages.Orc ] },
-    statMods: { strength: +2, constitution: +1 },
+    languages: { known: [Languages.Common, Languages.Orc] },
+    abilityMods: { "STR": +2, "CON": +1 },
     speed: { walk: 30 },
     features: [
         {
@@ -44,4 +44,4 @@ const Orc: RaceModels.Race = {
     subraces: null
 };
 
-Races[Orc.name] = Orc;
+RaceList[Orc.name] = Orc;

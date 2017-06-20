@@ -1,18 +1,18 @@
-import * as Languages from "../../data/languages";
-import { Races } from "./races";
+import { Languages } from "../../data/languages";
+import { RaceList } from "./race-list";
 import { CommonFeatures } from "../common-features";
 
 import * as RaceModels from "../../models/races";
 
-const Firbolg: RaceModels.Race = {
+export const Firbolg: RaceModels.Race = {
     name: "Firbolg",
     size: "Medium",
     speed: { walk: 30 },
     age: { maturity: 30, max: 500 },
     height: { base: 84, modifier: 12 },
     weight: { base: 240, modifier: 5 },
-    languages: { known: [ Languages.Common, Languages.Elvish, Languages.Giant ] },
-    statMods: { strength: +1, wisdom: +2 },
+    languages: { known: [Languages.Common, Languages.Elvish, Languages.Giant] },
+    abilityMods: { "STR": +1, "WIS": +2 },
     features: [
         {
             name: "Firbolg Magic", type: "active",
@@ -46,4 +46,4 @@ const Firbolg: RaceModels.Race = {
     subraces: null
 };
 
-Races[Firbolg.name] = Firbolg;
+RaceList[Firbolg.name] = Firbolg;

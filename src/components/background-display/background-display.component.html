@@ -1,0 +1,15 @@
+  <div class="character-block-first">
+    <h2 class="character-block-title">{{character.background.name}}<source-reference [reference]="character.background.reference"></source-reference></h2>
+    <div class="feature">
+      <h3 class="feature-name">Trait.</h3><span class="feature-description" [innerHTML]="character.personalityTrait"></span>
+    </div>
+    <div class="feature">
+      <h3 class="feature-name">Ideal.</h3><span class="feature-description" [innerHTML]="character.ideal"></span>
+    </div>
+    <div class="feature">
+      <h3 class="feature-name">Bond.</h3><span class="feature-description" [innerHTML]="character.bond"></span>
+    </div>
+    <div class="feature">
+      <h3 class="feature-name">Flaw.</h3><span class="feature-description" [innerHTML]="character.flaw"></span>
+    </div>
+  </div>

@@ -3,49 +3,28 @@
     <a class="navbar-brand" href="#">{{title}}</a>
   </div>
 </nav>
-
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <p class="lead">This is a simple tool for generating NPC character statistics based on the 5th edition Dungeons &amp; Dragons ruleset.
-      <br/>To begin, click the button below.</p>
-    <p><button type="button" class="btn btn-primary btn-lg" (click)="onGenerateClick()">Generate NPC</button>
-      <p>
+    <p class="lead">A simple tool for generating NPC character statistics based on the 5th edition Dungeons &amp; Dragons ruleset.</p>
+    <generator-config [config]="config"></generator-config>
+    <div class="row">
+      <div class="col-12 text-right">
+        <button type="button" class="btn btn-secondary btn-lg" (click)="onClearClick()">Clear</button>
+        <button type="button" class="btn btn-primary btn-lg" (click)="onGenerateClick()">Generate NPC</button>
+      </div>
+    </div>
   </div>
 </div>
 <div class="container">
-  <div class="npc-header">
-    <h1 class="npc-name">John Smith</h1>
-    <div class="text-muted npc-subline">
-      <span class="race">{{character.race.name}}</span>,
-      <source-reference [reference]="character.race.reference"></source-reference>
-      <span class="sub-race" *ngIf="character.subrace">{{character.subrace.name}}<source-reference [reference]="character.subrace.reference"></source-reference></span>,
-      <span class="size">{{character.race.size}}</span>,
-      <span class="npc-alignment">{{character.alignmentDescription}}</span>
-    </div>
-    <div class="text-muted npc-subline">
-      <span class="gender">{{character.genderDescription}}</span>,
-      <span class="height">{{character.heightString || 0}}</span>,
-      <span class="weight">{{(character.weight || 0) + " lbs."}}</span>, 
-      <span class="weight">{{(character.age || 0) + " years old"}}</span>
+  <header-display [character]="character"></header-display>
+  <background-display [character]="character"></background-display>
+  <ability-score-list [character]="character"></ability-score-list>
+  <stats-display [character]="character"></stats-display>
+  <feature-display-list [features]="character.features"></feature-display-list>
+  <div class="row mt-2 mb-2">
+    <div class="col-12 text-right">
+      <button type="button" class="btn btn-primary btn-lg" (click)="onExportClick()">Export</button>
+      <export-modal [character]="character" #mdlExport></export-modal>
     </div>
   </div>
-  <ability-score-list [abilities]="character.abilities"></ability-score-list>
-  <speed-display [speed]="character.speed"></speed-display>
-  <div class="character-block-minor">
-    <div class="row">
-      <div class="col-md-4">
-        <languages-display [languages]="character.languages"></languages-display>
-      </div>
-      <div class="col-md-4">
-        <senses-display [senses]="character.senses"></senses-display>
-      </div>
-      <div class="col-md-4">
-        <div class="character-sub-block">
-          <h3 class="sub-block-title">Skills</h3>
-          History +3, Perception +10
-        </div>
-      </div>
-    </div>
-  </div>
-  <feature-display-list [features]="character.racialFeatures"></feature-display-list>
 </div>

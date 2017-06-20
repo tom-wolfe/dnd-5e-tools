@@ -1,12 +1,15 @@
 export const Sources: { [index: string]: string } = {
-    "PHB": "Player Handbook",
-    "DMG": "Dungeon Master's Guide",
-    "VGM": "Volo's Guide to Monsters",
-    "EE": "Elemental Evil",
-    "SCG": "Sword Cost Adventurer's Guide",
-    "XGE": "Xanathar's Guide to Everything",
-    "UA": "Unearthed Arcana",
     "COS": "Curse of Strahd",
-    "SKT": "Storm King's Thunder",
+    "DMG": "Dungeon Master's Guide",
+    "EE": "Elemental Evil",
+    "HDQ": "Tyranny of Dragons: Hoard of the Dragon Queen",
+    "OOA": "Out of the Abyss",
+    "PHB": "Player Handbook",
     "POA": "Princes of the Apocalypse",
+    "ROT": "Tyranny of Dragons: The Rise of Tiamat",
+    "SCG": "Sword Cost Adventurer's Guide",
+    "SKT": "Storm King's Thunder",
+    "UA": "Unearthed Arcana",
+    "VGM": "Volo's Guide to Monsters",
+    "XGE": "Xanathar's Guide to Everything"
 };

@@ -1,18 +1,18 @@
-import * as Languages from "../../data/languages";
-import { Races } from "./races";
+import { Languages } from "../../data/languages";
+import { RaceList } from "./race-list";
 import { CommonFeatures } from "../common-features";
 
 import * as RaceModels from "../../models/races";
 
-const Triton: RaceModels.Race = {
+export const Triton: RaceModels.Race = {
     name: "Triton",
     size: "Medium",
     speed: { walk: 30, swim: 30 },
     age: { maturity: 15, max: 200 },
     height: { base: 50, modifier: 20 },
     weight: { base: 120, modifier: 8 },
-    languages: { known: [ Languages.Common, Languages.Primordial ] },
-    statMods: { strength: +1, constitution: +1, charisma: +1 },
+    languages: { known: [Languages.Common, Languages.Primordial] },
+    abilityMods: { "STR": +1, "CON": +1, "CHA": +1 },
     features: [
         {
             name: "Amphibious", type: "passive",
@@ -45,4 +45,4 @@ const Triton: RaceModels.Race = {
     subraces: null
 };
 
-Races[Triton.name] = Triton;
+RaceList[Triton.name] = Triton;

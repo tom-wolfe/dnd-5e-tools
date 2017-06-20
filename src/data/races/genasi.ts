@@ -1,23 +1,24 @@
-import * as Languages from "../../data/languages";
-import { Races } from "./races";
+import { Languages } from "../../data/languages";
+import { RaceList } from "./race-list";
 import { CommonFeatures } from "../common-features";
 
 import * as RaceModels from "../../models/races";
 
-const Genasi: RaceModels.Race = {
+export const Genasi: RaceModels.Race = {
     name: "Genasi",
     size: "Medium",
     speed: { walk: 30 },
     age: { maturity: 18, max: 120 },
     height: { base: 56, modifier: 20 },
     weight: { base: 110, modifier: 8 },
-    languages: { known: [ Languages.Common, Languages.Primordial ] },
-    statMods: { constitution: +2 },
+    languages: { known: [Languages.Common, Languages.Primordial] },
+    abilityMods: { "CON": +2 },
+    features: [],
     reference: { source: "EE", page: 6, url: "https://www.dndbeyond.com/characters/races/genasi" },
     subraces: [
         {
             name: "Air",
-            statMods: { dexterity: +1 },
+            abilityMods: { "DEX": +1 },
             features: [
                 {
                     name: "Unending Breath", type: "passive",
@@ -35,7 +36,7 @@ const Genasi: RaceModels.Race = {
             reference: { source: "EE", page: 8, url: "https://www.dndbeyond.com/characters/races/genasi#AirGenasi" }
         }, {
             name: "Earth",
-            statMods: { strength: +1 },
+            abilityMods: { "STR": +1 },
             features: [
                 {
                     name: "Earth Walk", type: "passive",
@@ -53,7 +54,7 @@ const Genasi: RaceModels.Race = {
             reference: { source: "EE", page: 8, url: "https://www.dndbeyond.com/characters/races/genasi#EarthGenasi" }
         }, {
             name: "Fire",
-            statMods: { intelligence: +1 },
+            abilityMods: { "INT": +1 },
             senses: { darkvision: 60 },
             features: [
                 {
@@ -73,7 +74,7 @@ const Genasi: RaceModels.Race = {
         }, {
             name: "Water",
             speed: { swim: 30 },
-            statMods: { wisdom: +1 },
+            abilityMods: { "WIS": +1 },
             features: [
                 {
                     name: "Acid Resistance", type: "passive",
@@ -96,4 +97,4 @@ const Genasi: RaceModels.Race = {
     ]
 };
 
-Races[Genasi.name] = Genasi;
+RaceList[Genasi.name] = Genasi;

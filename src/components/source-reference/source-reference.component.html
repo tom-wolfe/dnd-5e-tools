@@ -7,7 +7,11 @@
     </span>    
 </sup>
 <ng-template #refContent>
-    <div class="source-tip">{{sourceName}} | Page {{reference.page}}</div>
+    <div class="source-tip">
+        {{sourceName}}
+        <ng-template [ngIf]="reference.document">({{reference.document}})</ng-template>
+        | Page {{reference.page}}
+    </div>
 </ng-template>
 <ng-template #linkTpl>
     <i class="fa fa-book" [ngbTooltip]="refContent" triggers="hover"></i>

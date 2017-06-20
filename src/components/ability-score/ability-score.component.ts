@@ -1,4 +1,8 @@
 import { Component, Input, Output } from "@angular/core";
+import * as Abilities from "../../models/abilities";
+import * as Characters from "../../models/characters";
+
+import * as Data from "../../data";
 
 @Component({
   selector: "ability-score",
@@ -8,10 +12,16 @@ import { Component, Input, Output } from "@angular/core";
 })
 export class AbilityScoreComponent {
   @Input() ability: string;
-  @Input() score = 10;
-  get modifier(): number {
-    return Math.floor((this.score - 10) / 2);
+  @Input() character: Characters.Character;
+
+  get abilityName(): string {
+    return Data.Abilities.AbilityList[this.ability].name;
   }
+
+  get modifier(): number {
+    return this.character.abilities.getModifier(this.ability);
+  }
+
   get modifierText(): string {
     const mod = this.modifier;
     return (mod >= 0) ? "+" + mod : mod.toString();
