@@ -17,9 +17,10 @@ import * as RaceData from "../../data/races";
 })
 export class GeneratorConfigComponent {
   @Input() config: GeneratorConfig;
+
   races: Races.Race[] = Object.keys(RaceData.RaceList).sort().map(name => RaceData.RaceList[name]);
   abilities: Abilities.Ability[] = Object.keys(Data.Abilities.AbilityList).map(name => Data.Abilities.AbilityList[name]);
   backgrounds: Characters.Background[] = Object.keys(BackgroundData.BackgroundList)
-                .sort().map(name => BackgroundData.BackgroundList[name]);
+    .sort().map(name => BackgroundData.BackgroundList[name]);
   classes: Classes.Class[] = Object.keys(ClassData.ClassList).sort().map(name => ClassData.ClassList[name]);
 };

@@ -1,4 +1,4 @@
-import { Component, ViewChild } from "@angular/core";
+import { Component, Input, ViewChild } from "@angular/core";
 import { GeneratorConfig } from "../models/generator-config";
 import { CharacterGenerator } from "../generators/character-generator";
 import { ExportModalComponent } from "../components/export-modal/export-modal.component";
@@ -10,12 +10,13 @@ import * as Characters from "../models/characters";
   styleUrls: ["./app.component.scss"]
 })
 export class AppComponent {
+  @Input() advancedMode: boolean = false;
+  @ViewChild("mdlExport") mdlExport: ExportModalComponent
+
   title = "D&D 5th Edition NPC Generator";
   character: Characters.Character;
   config: GeneratorConfig = new GeneratorConfig();
   generator = new CharacterGenerator(this.config);
-
-  @ViewChild("mdlExport") mdlExport: ExportModalComponent
 
   constructor() {
     this.character = this.generator.generateCharacter();

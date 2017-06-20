@@ -20,6 +20,7 @@ import { SkillsDisplayComponent } from "../components/skills-display/skills-disp
 import { SourceReferenceComponent } from "../components/source-reference/source-reference.component";
 import { SpeedDisplayComponent } from "../components/speed-display/speed-display.component";
 import { StatsDisplayComponent } from "../components/stats-display/stats-display.component";
+import { CollapseDirective } from "../directives/collapse.directive";
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { StatsDisplayComponent } from "../components/stats-display/stats-display
     SkillsDisplayComponent,
     SourceReferenceComponent,
     SpeedDisplayComponent,
-    StatsDisplayComponent
+    StatsDisplayComponent,
+    CollapseDirective
   ],
   imports: [
     BrowserModule, CodemirrorModule, FormsModule, ReactiveFormsModule, JsonpModule, NgbModule.forRoot()
