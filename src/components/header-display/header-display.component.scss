@@ -1,11 +1,22 @@
 @import "../../styles/variables.scss";
+@import "~bootstrap/scss/bootstrap";
 
 .npc-header {
+    @include media-breakpoint-up(sm) {
+        .npc-class {
+            display: inline-block;
+        }
+    }
+
     .npc-subline {
         font-style: italic;
         .sub-race {
-            &:before { content: "("; }
-            &:after { content: ")"; }
+            &:before {
+                content: "(";
+            }
+            &:after {
+                content: ")";
+            }
         }
     }
     padding-bottom: 8px;
