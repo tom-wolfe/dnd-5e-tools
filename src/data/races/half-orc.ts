@@ -1,39 +1,37 @@
 import { Languages } from "../../data/languages";
-import { Races as RacesImport } from "./race-list";
+import { RaceList } from "./race-list";
 import { CommonFeatures } from "../common-features";
 
 import * as RaceModels from "../../models/races";
 
-namespace Races {
-    export const HalfOrc: RaceModels.Race = {
-        name: "Half-orc",
-        size: "Medium",
-        speed: { walk: 30 },
-        age: { maturity: 14, max: 75 },
-        height: { base: 58, modifier: 20 },
-        weight: { base: 140, modifier: 12 },
-        abilityMods: { "STR": +2, "CON": +1 },
-        languages: { known: [Languages.Common, Languages.Orc] },
-        features: [
-            CommonFeatures.menacing,
-            {
-                name: "Relentless Endurance", type: "active",
-                usage: { times: 1, timeUnit: "longRest" },
-                description: `
+export const HalfOrc: RaceModels.Race = {
+    name: "Half-orc",
+    size: "Medium",
+    speed: { walk: 30 },
+    age: { maturity: 14, max: 75 },
+    height: { base: 58, modifier: 20 },
+    weight: { base: 140, modifier: 12 },
+    abilityMods: { "STR": +2, "CON": +1 },
+    languages: { known: [Languages.Common, Languages.Orc] },
+    features: [
+        CommonFeatures.menacing,
+        {
+            name: "Relentless Endurance", type: "active",
+            usage: { times: 1, timeUnit: "longRest" },
+            description: `
                 When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead.
                 You can't use this feature again until you finish a long rest.
             `
-            }, {
-                name: "Savage Attacks", type: "passive",
-                description: `
+        }, {
+            name: "Savage Attacks", type: "passive",
+            description: `
                 When you score a critical hit with a melee weapon attack,
                 you can roll one of thc weapon's damage dice one additional time and add it to the extra damage of the critical hit.
             `
-            }
-        ],
-        reference: { source: "PHB", page: 40, url: "https://www.dndbeyond.com/characters/races/half-orc" },
-        subraces: null
-    };
-
-    RacesImport.RaceList[HalfOrc.name] = HalfOrc;
+        }
+    ],
+    reference: { source: "PHB", page: 40, url: "https://www.dndbeyond.com/characters/races/half-orc" },
+    subraces: null
 };
+
+RaceList[HalfOrc.name] = HalfOrc;

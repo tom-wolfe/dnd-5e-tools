@@ -1,44 +1,43 @@
 import { Languages } from "../../data/languages";
-import { Races as RacesImport } from "./race-list";
+import { RaceList } from "./race-list";
 
 import * as RaceModels from "../../models/races";
 
-namespace Races {
-    export const Aasimar: RaceModels.Race = {
-        name: "Aasimar",
-        size: "Medium",
-        speed: { walk: 30 },
-        senses: { darkvision: 60 },
-        age: { maturity: 18, max: 160 },
-        height: { base: 56, modifier: 20 },
-        weight: { base: 110, modifier: 8 },
-        languages: { known: [ Languages.Common, Languages.Celestial ] },
-        abilityMods: { "CHA": +2 },
-        features: [
-            {
-                name: "Celestial Resistance", type: "passive",
-                description: "You have resistance to necrotic damage and radiant damage."
-            }, {
-                name: "Healing Hands", type: "active",
-                usage: { times: 1, timeUnit: "longRest" },
-                description: `
+export const Aasimar: RaceModels.Race = {
+    name: "Aasimar",
+    size: "Medium",
+    speed: { walk: 30 },
+    senses: { darkvision: 60 },
+    age: { maturity: 18, max: 160 },
+    height: { base: 56, modifier: 20 },
+    weight: { base: 110, modifier: 8 },
+    languages: { known: [Languages.Common, Languages.Celestial] },
+    abilityMods: { "CHA": +2 },
+    features: [
+        {
+            name: "Celestial Resistance", type: "passive",
+            description: "You have resistance to necrotic damage and radiant damage."
+        }, {
+            name: "Healing Hands", type: "active",
+            usage: { times: 1, timeUnit: "longRest" },
+            description: `
                     As an action, you can touch a creature and cause it to regain a number of hit points equal to your level.
                     Once you use this trait, you can't use it again until you finish a long rest.
                 `
-            }, {
-                name: "Light Bearer", type: "active",
-                description: "You know the light cantrip. Charisma is your spellcasting ability for it."
-            }
-        ],
-        reference: { source: "VGM", page: 104 },
-        subraces: [
-            {
-                name: "Protector", abilityMods: { "WIS": +1 },
-                features: [
-                    {
-                        name: "Radiant Soul", type: "active",
-                        usage: { times: 1, timeUnit: "longRest" },
-                        description: `
+        }, {
+            name: "Light Bearer", type: "active",
+            description: "You know the light cantrip. Charisma is your spellcasting ability for it."
+        }
+    ],
+    reference: { source: "VGM", page: 104 },
+    subraces: [
+        {
+            name: "Protector", abilityMods: { "WIS": +1 },
+            features: [
+                {
+                    name: "Radiant Soul", type: "active",
+                    usage: { times: 1, timeUnit: "longRest" },
+                    description: `
                             Starting at 3rd level, you can use your action to unleash the divine energy within yourself, causing your eyes
                             to glimmer and two luminous, incorporeal wings to sprout from your back.
 
@@ -48,16 +47,16 @@ namespace Races {
 
                             Once you use this trait, you can't use it again until you finish a long rest.
                         `
-                    },
-                ],
-                reference: { source: "VGM", page: 105 }
-            }, {
-                name: "Scourge", abilityMods: { "CON": +1 },
-                features: [
-                    {
-                        name: "Radiant Consumption", type: "active",
-                        usage: { times: 1, timeUnit: "longRest" },
-                        description: `
+                },
+            ],
+            reference: { source: "VGM", page: 105 }
+        }, {
+            name: "Scourge", abilityMods: { "CON": +1 },
+            features: [
+                {
+                    name: "Radiant Consumption", type: "active",
+                    usage: { times: 1, timeUnit: "longRest" },
+                    description: `
                             Starting at 3rd level, you can use your action to unleash the divine energy within yourself, causing a searing
                             light to radiate from you, pour out of your eyes and mouth, and threaten to char you.
 
@@ -69,16 +68,16 @@ namespace Races {
 
                             Once you use this trait, you can't use it again until you finish a long rest.
                         `
-                    },
-                ],
-                reference: { source: "VGM", page: 105 }
-            }, {
-                name: "Fallen", abilityMods: { "STR": +1 },
-                features: [
-                    {
-                        name: "Necrotic Shroud", type: "active",
-                        usage: { times: 1, timeUnit: "longRest" },
-                        description: `
+                },
+            ],
+            reference: { source: "VGM", page: 105 }
+        }, {
+            name: "Fallen", abilityMods: { "STR": +1 },
+            features: [
+                {
+                    name: "Necrotic Shroud", type: "active",
+                    usage: { times: 1, timeUnit: "longRest" },
+                    description: `
                             Starting at 3rd level, you can use your action to unleash the divine energy within yourself, causing your eyes
                             to turn into pools of darkness and two skeletal, ghostly, flightless wings to sprout from your back. The instant
                             you transform, other creatures within 10 feet of you that can see you must each succeed on a Charisma saving
@@ -91,12 +90,11 @@ namespace Races {
 
                             Once you use this trait, you can't use it again until you finish a long rest.
                         `
-                    },
-                ],
-                reference: { source: "VGM", page: 105 }
-            }
-        ]
-    };
-
-    RacesImport.RaceList[Aasimar.name] = Aasimar;
+                },
+            ],
+            reference: { source: "VGM", page: 105 }
+        }
+    ]
 };
+
+RaceList[Aasimar.name] = Aasimar;

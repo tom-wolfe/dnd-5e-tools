@@ -1,9 +1,14 @@
 import { AbilityScoreGenerator } from "./ability-score-generator";
+import { NameGenerator } from "./name-generator";
 import { NumberGenerator } from "./number-generator";
 import { ProficiencyType } from "../models/abilities/proficiency-type";
+import * as BackgroundData from "../data/backgrounds/";
+import * as ClassData from "../data/classes/";
+import * as RaceData from "../data/races/";
 import * as Abilities from "../models/abilities";
 import * as Characters from "../models/characters";
 import * as Data from "../data/";
+import * as Names from "../data/names";
 import * as Languages from "../models/languages";
 import * as Markov from "../markov";
 import * as Races from "../models/races";
@@ -74,9 +79,9 @@ export class CharacterGenerator {
             character.race = this.config.race;
             character.subrace = this.config.subrace;
         } else {
-            const raceKeys = Object.keys(Data.Races.RaceList);
+            const raceKeys = Object.keys(RaceData.RaceList);
             const raceNum = this.numGen.rollDie(raceKeys.length) - 1;
-            character.race = Data.Races.RaceList[raceKeys[raceNum]];
+            character.race = RaceData.RaceList[raceKeys[raceNum]];
         }
     }
 
@@ -152,9 +157,9 @@ export class CharacterGenerator {
         if (this.config.background) {
             character.background = this.config.background;
         } else {
-            const bgKeys = Object.keys(Data.Backgrounds.BackgroundList);
+            const bgKeys = Object.keys(BackgroundData.BackgroundList);
             const bgNum = this.numGen.rollDie(bgKeys.length) - 1;
-            character.background = Data.Backgrounds.BackgroundList[bgKeys[bgNum]];
+            character.background = BackgroundData.BackgroundList[bgKeys[bgNum]];
         }
     }
 
@@ -170,9 +175,9 @@ export class CharacterGenerator {
         if (this.config.class) {
             character.class = this.config.class;
         } else {
-            const classKeys = Object.keys(Data.Classes.ClassList);
+            const classKeys = Object.keys(ClassData.ClassList);
             const classNum = this.numGen.rollDie(classKeys.length) - 1;
-            character.class = Data.Classes.ClassList[classKeys[classNum]];
+            character.class = ClassData.ClassList[classKeys[classNum]];
         }
 
         if (character.class.archetypes) {
@@ -269,25 +274,8 @@ export class CharacterGenerator {
     }
 
     randomizeName(character: Characters.Character) {
-        const chain = new Markov.MarkovChain<string>(2);
-
-        const names = [
-            "Wilcome",
-            "Waldolanus",
-            "Engilbert",
-            "Cyr",
-            "Leodegar",
-            "Gilbert",
-            "Arbitio",
-            "Merimas",
-            "Doderic"
-        ]
-
-        names.forEach(name => {
-            chain.add(name.split(""));
-        });
-
-        character.name = chain.walk().join("");
+        const generator = new NameGenerator(Names.Tabaxi, character.gender);
+        character.name = generator.getForename() + " " + generator.getSurname();
     }
 
     randomizeAge(character: Characters.Character) {
