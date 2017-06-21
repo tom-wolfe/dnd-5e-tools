@@ -36,7 +36,7 @@ export const Kenku: RaceModels.Race = {
         }
     ],
     reference: { source: "VGM", page: 110 },
-    subraces: null
+    subraces: []
 };
 
 RaceList[Kenku.name] = Kenku;

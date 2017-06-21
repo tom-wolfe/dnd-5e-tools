@@ -5,6 +5,7 @@ import * as ClassModels from "../../models/classes";
 export const Druid: ClassModels.Class = {
     name: "Druid",
     primaryStat: "WIS",
+    archetypeName: { singular: "Druid Circle", plural: "Druid Circles" },
     reference: { source: "PHB", page: 64, url: "https://www.dndbeyond.com/characters/classes/druid" },
     archetypes: [
         {

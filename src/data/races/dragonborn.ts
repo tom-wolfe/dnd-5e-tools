@@ -40,7 +40,7 @@ export const Dragonborn: RaceModels.Race = {
         page: 32,
         url: "https://www.dndbeyond.com/characters/races/dragonborn"
     },
-    subraces: null
+    subraces: []
 };
 
 RaceList[Dragonborn.name] = Dragonborn;

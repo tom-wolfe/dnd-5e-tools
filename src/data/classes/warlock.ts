@@ -5,6 +5,7 @@ import * as ClassModels from "../../models/classes";
 export const Warlock: ClassModels.Class = {
     name: "Warlock",
     primaryStat: "CHA",
+    archetypeName: { singular: "Otherworldly Patron", plural: "Otherworldly Patrons" },
     reference: { source: "PHB", page: 105, url: "https://www.dndbeyond.com/characters/classes/warlock" },
     archetypes: [
         {

@@ -5,6 +5,7 @@ import * as ClassModels from "../../models/classes";
 export const Artificer: ClassModels.Class = {
     name: "Artificer",
     primaryStat: "INT",
+    archetypeName: { singular: "Artificer Specialist", plural: "Artificer Specialties" },
     reference: { source: "UA", page: 1, url: "https://media.wizards.com/2016/dnd/downloads/1_UA_Artificer_20170109.pdf#page=1" },
     archetypes: [
         {

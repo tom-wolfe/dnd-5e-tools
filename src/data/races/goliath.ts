@@ -38,7 +38,7 @@ export const Goliath: RaceModels.Race = {
         }
     ],
     reference: { source: "VGM", page: 108, url: "https://www.dndbeyond.com/characters/races/goliath" },
-    subraces: null
+    subraces: []
 };
 
 RaceList[Goliath.name] = Goliath;

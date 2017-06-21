@@ -22,7 +22,7 @@ export const Aarakocra: RaceModels.Race = {
         }
     ],
     reference: { source: "EE", page: 2, url: "https://www.dndbeyond.com/characters/races/aarakocra" },
-    subraces: null
+    subraces: []
 };
 
 RaceList[Aarakocra.name] = Aarakocra;

@@ -42,7 +42,7 @@ export const Triton: RaceModels.Race = {
         }
     ],
     reference: { source: "VGM", page: 113 },
-    subraces: null
+    subraces: []
 };
 
 RaceList[Triton.name] = Triton;

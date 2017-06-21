@@ -43,7 +43,7 @@ export const Firbolg: RaceModels.Race = {
         }
     ],
     reference: { source: "VGM", page: 106 },
-    subraces: null
+    subraces: []
 };
 
 RaceList[Firbolg.name] = Firbolg;

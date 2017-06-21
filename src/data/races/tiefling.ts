@@ -29,7 +29,7 @@ export const Tiefling: RaceModels.Race = {
         }
     ],
     reference: { source: "PHB", page: 42, url: "https://www.dndbeyond.com/characters/races/tiefling" },
-    subraces: null
+    subraces: []
 };
 
 RaceList[Tiefling.name] = Tiefling;

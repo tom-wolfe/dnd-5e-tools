@@ -40,7 +40,7 @@ export const Tabaxi: RaceModels.Race = {
         }
     ],
     reference: { source: "VGM", page: 113 },
-    subraces: null
+    subraces: []
 };
 
 RaceList[Tabaxi.name] = Tabaxi;

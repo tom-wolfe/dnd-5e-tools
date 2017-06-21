@@ -58,7 +58,7 @@ export const Lizardfolk: RaceModels.Race = {
         }
     ],
     reference: { source: "VGM", page: 111 },
-    subraces: null
+    subraces: []
 };
 
 RaceList[Lizardfolk.name] = Lizardfolk;

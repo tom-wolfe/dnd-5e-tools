@@ -23,5 +23,5 @@ export class Race {
     weight: Height;
     features: Features.Feature[];
     reference: Reference;
-    subraces?: Subrace[];
+    subraces: Subrace[];
 };

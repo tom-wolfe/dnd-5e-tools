@@ -5,6 +5,7 @@ import * as ClassModels from "../../models/classes";
 export const Paladin: ClassModels.Class = {
     name: "Paladin",
     primaryStat: "STR",
+    archetypeName: { singular: "Sacred Oath", plural: "Sacred Oaths" },
     reference: { source: "PHB", page: 82, url: "https://www.dndbeyond.com/characters/classes/paladin" },
     archetypes: [
         {

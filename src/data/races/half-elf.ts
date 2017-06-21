@@ -24,7 +24,7 @@ export const HalfElf: RaceModels.Race = {
         }
     ],
     reference: { source: "PHB", page: 38, url: "https://www.dndbeyond.com/characters/races/half-elf" },
-    subraces: null
+    subraces: []
 };
 
 RaceList[HalfElf.name] = HalfElf;

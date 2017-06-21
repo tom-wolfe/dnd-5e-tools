@@ -6,10 +6,10 @@
         <option [ngValue]="null" selected>Any Race</option>
         <option *ngFor="let race of races" [ngValue]="race">{{race.name}}</option>
       </select>
-      <select class="form-control mt-2" name="subrace" [(ngModel)]="config.subrace" [disabled]="!config.race || !config.race.subraces">
-        <option *ngIf="(config.race !== undefined) || (config.race.subraces !== undefined && config.race.subraces.length > 0)" [ngValue]="null" selected>Any Subrace</option>
-        <ng-template [ngIf]="config.race != null">
-          <option *ngIf="!config.race.subraces" [ngValue]="null" selected>No Subraces</option>
+      <select class="form-control mt-2" name="subrace" [(ngModel)]="config.subrace" [disabled]="!config.race || config.race.subraces.length === 0">
+        <option *ngIf="(config.race === null) || (config.race.subraces.length > 0)" [ngValue]="null" selected>Any Subrace</option>
+        <ng-template [ngIf]="config.race !== null">
+          <option *ngIf="config.race.subraces.length === 0" [ngValue]="null" selected>No Subraces</option>
           <option *ngFor="let subrace of (config.race.subraces || [])" [ngValue]="subrace">{{subrace.name}}</option>
         </ng-template>
     </select>
@@ -20,10 +20,10 @@
         <option [ngValue]="null" selected>Any Class</option>
         <option *ngFor="let class of classes" [ngValue]="class">{{class.name}}</option>
     </select>
-      <select class="form-control mt-2" name="classArchetype" [(ngModel)]="config.classArchetype" [disabled]="!config.class || !config.class.archetypes">
-        <option *ngIf="(config.class !== undefined) || (config.class.archetypes !== undefined && config.class.archetypes.length > 0)" [ngValue]="null" selected>Any Archetype</option>
+      <select class="form-control mt-2" name="classArchetype" [(ngModel)]="config.classArchetype" [disabled]="!config.class || config.class.archetypes.length === 0">
+        <option *ngIf="(config.class === null) || (config.class.archetypes.length > 0)" [ngValue]="null" selected>Any {{config.class === null ? "Archetype": config.class.archetypeName.singular}}</option>
         <ng-template [ngIf]="config.class != null">
-          <option *ngIf="!config.class.archetypes" [value]="null" selected>No Archetypes</option>
+          <option *ngIf="config.class.archetypes.length === 0" [value]="null" selected>No {{config.class === null ? "Archetypes": config.class.archetypeName.plural}}</option>
           <option *ngFor="let archetype of (config.class.archetypes || [])" [ngValue]="archetype">{{archetype.name}}</option>
         </ng-template>
     </select>

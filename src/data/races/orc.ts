@@ -41,7 +41,7 @@ export const Orc: RaceModels.Race = {
         }
     ],
     reference: { source: "VGM", page: 120 },
-    subraces: null
+    subraces: []
 };
 
 RaceList[Orc.name] = Orc;

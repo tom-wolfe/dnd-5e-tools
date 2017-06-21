@@ -31,7 +31,7 @@ export const HalfOrc: RaceModels.Race = {
         }
     ],
     reference: { source: "PHB", page: 40, url: "https://www.dndbeyond.com/characters/races/half-orc" },
-    subraces: null
+    subraces: []
 };
 
 RaceList[HalfOrc.name] = HalfOrc;

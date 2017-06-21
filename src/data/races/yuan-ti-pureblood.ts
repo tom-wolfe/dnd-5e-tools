@@ -32,7 +32,7 @@ export const YuanTiPureblood: RaceModels.Race = {
         }
     ],
     reference: { source: "VGM", page: 120 },
-    subraces: null
+    subraces: []
 }
 
 RaceList[YuanTiPureblood.name] = YuanTiPureblood;

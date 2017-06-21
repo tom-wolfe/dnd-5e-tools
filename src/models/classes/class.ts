@@ -5,5 +5,6 @@ export class Class {
     name: string;
     reference: Reference;
     primaryStat: string;
-    archetypes?: Archetype[]
+    archetypeName: { singular: string, plural: string };
+    archetypes?: Archetype[];
 };

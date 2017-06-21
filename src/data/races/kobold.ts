@@ -33,7 +33,7 @@ export const Kobold: RaceModels.Race = {
         CommonFeatures.sunlightSensitivity
     ],
     reference: { source: "VGM", page: 119 },
-    subraces: null
+    subraces: []
 };
 
 RaceList[Kobold.name] = Kobold;

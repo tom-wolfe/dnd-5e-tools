@@ -29,7 +29,7 @@ export const Goblin: RaceModels.Race = {
         }
     ],
     reference: { source: "VGM", page: 119 },
-    subraces: null
+    subraces: []
 };
 
 RaceList[Goblin.name] = Goblin;

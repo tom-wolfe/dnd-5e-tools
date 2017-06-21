@@ -34,7 +34,7 @@ export const Hobgoblin: RaceModels.Race = {
         }
     ],
     reference: { source: "VGM", page: 119 },
-    subraces: null
+    subraces: []
 };
 
 RaceList[Hobgoblin.name] = Hobgoblin;

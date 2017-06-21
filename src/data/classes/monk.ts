@@ -5,6 +5,7 @@ import * as ClassModels from "../../models/classes";
 export const Monk: ClassModels.Class = {
     name: "Monk",
     primaryStat: "DEX",
+    archetypeName: { singular: "Monastic Tradition", plural: "Monastic Traditions" },
     reference: { source: "PHB", page: 76, url: "https://www.dndbeyond.com/characters/classes/monk" },
     archetypes: [
         {

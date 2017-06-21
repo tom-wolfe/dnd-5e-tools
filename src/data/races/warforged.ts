@@ -34,7 +34,7 @@ export const Warforged: RaceModels.Race = {
         source: "UA", page: 2,
         document: "Eberron", url: "http://media.wizards.com/2015/downloads/dnd/UA_Eberron_v1.1.pdf#page=2"
     },
-    subraces: null
+    subraces: []
 };
 
 RaceList[Warforged.name] = Warforged;
