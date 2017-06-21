@@ -15,7 +15,7 @@
     </select>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 form-group">
-      <label for="race">Class</label>
+      <label for="class">Class</label>
       <select class="form-control" name="class" [(ngModel)]="config.class" (input)="config.classArchetype = null">
         <option [ngValue]="null" selected>Any Class</option>
         <option *ngFor="let class of classes" [ngValue]="class">{{class.name}}</option>
@@ -29,11 +29,18 @@
     </select>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 form-group">
-      <label for="race">Background</label>
+      <label for="background">Background</label>
       <select class="form-control" name="background" [(ngModel)]="config.background">
         <option [ngValue]="null" selected>Any Background</option>
         <option *ngFor="let background of backgrounds" [ngValue]="background">{{background.name}}</option>
-    </select>
+      </select>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 form-group">
+      <label for="name">Name Generator</label>
+      <select class="form-control" name="name" [(ngModel)]="config.name">
+        <option [ngValue]="null" selected>Race Default</option>
+        <option *ngFor="let name of names" [ngValue]="name">{{name.name}}</option>
+      </select>
     </div>
   </div>
   <div class="row">

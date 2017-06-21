@@ -1,6 +1,6 @@
 /* cSpell:disable */
 
-import { Names } from "./name-list";
+import { NameList } from "./name-list";
 
 import * as Races from "../../models/races";
 
@@ -41,4 +41,4 @@ export const Elf: Races.NameDefinition = {
     }
 };
 
-Names.NameList[Elf.name] = Elf;
+NameList[Elf.name] = Elf;

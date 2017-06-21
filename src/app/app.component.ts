@@ -32,6 +32,7 @@ export class AppComponent {
     this.config.classArchetype = null;
     this.config.maxLevel = 5;
     this.config.minLevel = 1;
+    this.config.name = null;
     this.config.primaryAbility = null;
     this.config.race = null;
     this.config.secondaryAbility = null;

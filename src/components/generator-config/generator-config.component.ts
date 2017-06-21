@@ -8,6 +8,7 @@ import * as Races from "../../models/races";
 import * as Data from "../../data";
 import * as BackgroundData from "../../data/backgrounds";
 import * as ClassData from "../../data/classes";
+import * as NameData from "../../data/names";
 import * as RaceData from "../../data/races";
 
 @Component({
@@ -19,6 +20,7 @@ export class GeneratorConfigComponent {
   @Input() config: GeneratorConfig;
 
   races: Races.Race[] = Object.keys(RaceData.RaceList).sort().map(name => RaceData.RaceList[name]);
+  names: Races.NameDefinition[] = Object.keys(NameData.NameList).sort().map(name => NameData.NameList[name]);
   abilities: Abilities.Ability[] = Object.keys(Data.Abilities.AbilityList).map(name => Data.Abilities.AbilityList[name]);
   backgrounds: Characters.Background[] = Object.keys(BackgroundData.BackgroundList)
     .sort().map(name => BackgroundData.BackgroundList[name]);

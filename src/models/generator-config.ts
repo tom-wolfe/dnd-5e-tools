@@ -9,6 +9,7 @@ export class GeneratorConfig {
     classArchetype: Classes.Archetype = null;
     minLevel = 1;
     maxLevel = 5;
+    name: Races.NameDefinition = null;
     primaryAbility: Abilities.Ability = null;
     race: Races.Race = null;
     secondaryAbility: Abilities.Ability = null;
