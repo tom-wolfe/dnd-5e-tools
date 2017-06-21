@@ -7,9 +7,21 @@ import * as Races from "../../models/races";
 export const Human: Races.NameDefinition = {
     name: "Human",
     formats: [
-        "{surnamePrefix}{surnameSuffix}"
+        "{forename} {surnamePrefix}{surnameSuffix}"
     ],
     parts: {
+        forename: {
+            markovOrder: 2,
+            mode: "item",
+            source: {
+                "M": [
+                    "aaron", "adam", "aidan", "aiden", "alex", "alexander", "alfie", "andrew", "anthony", "archie", "arthur", "ashton", "bailey", "ben", "benjamin", "billy", "blake", "bobby", "bradley", "brandon", "caleb", "callum", "cameron", "charles", "charlie", "christopher", "cody", "connor", "corey", "daniel", "david", "declan", "dexter", "dominic", "dylan", "edward", "elliot", "ellis", "ethan", "evan", "ewan", "finlay", "finley", "frankie", "freddie", "frederick", "gabriel", "george", "harley", "harrison", "harry", "harvey", "hayden", "henry", "isaac", "jack", "jackson", "jacob", "jake", "james", "jamie", "jay", "jayden", "jenson", "joe", "joel", "john", "jonathan", "jordan", "joseph", "josh", "joshua", "jude", "kai", "kayden", "kian", "kieran", "kyle", "leo", "leon", "lewis", "liam", "logan", "louie", "louis", "luca", "lucas", "luke", "mason", "matthew", "max", "michael", "morgan", "nathan", "nicholas", "noah", "oliver", "ollie", "oscar", "owen", "patrick", "peter", "reece", "reuben", "rhys", "riley", "robert", "rory", "ryan", "sam", "samuel", "scott", "sean", "sebastian", "spencer", "stanley", "taylor", "theo", "thomas", "toby", "tom", "tommy", "tyler", "william", "zac", "zachary", "zak"
+                ],
+                "F": [
+                    "abbie", "abby", "abigail", "aimee", "alex", "alexandra", "alice", "alicia", "alisha", "amber", "amelia", "amelie", "amy", "anna", "ava", "bella", "bethany", "brooke", "caitlin", "cerys", "charlie", "charlotte", "chelsea", "chloe", "courtney", "daisy", "danielle", "demi", "eleanor", "eliza", "elizabeth", "ella", "ellie", "eloise", "elsie", "emilia", "emily", "emma", "erin", "esme", "eva", "eve", "evelyn", "evie", "faith", "freya", "georgia", "georgina", "grace", "gracie", "hannah", "harriet", "heidi", "hollie", "holly", "imogen", "isabel", "isabella", "isabelle", "isla", "isobel", "jade", "jasmine", "jennifer", "jessica", "jodie", "julia", "kate", "katherine", "katie", "kayla", "kayleigh", "keira", "lacey", "lara", "laura", "lauren", "layla", "leah", "lexi", "lexie", "libby", "lilly", "lily", "lola", "louise", "lucy", "lydia", "maddison", "madeleine", "madison", "maisie", "maisy", "maria", "martha", "matilda", "maya", "megan", "melissa", "mia", "millie", "mollie", "molly", "morgan", "mya", "naomi", "natasha", "niamh", "nicole", "olivia", "paige", "phoebe", "poppy", "rachel", "rebecca", "rose", "rosie", "ruby", "samantha", "sara", "sarah", "scarlett", "shannon", "sienna", "skye", "sofia", "sophia", "sophie", "summer", "tegan", "tia", "tilly", "victoria", "willow", "yasmin", "zara", "zoe"
+                ]
+            },
+        },
         surnamePrefix: {
             markovOrder: 2,
             mode: "item",
