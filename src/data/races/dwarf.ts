@@ -3,6 +3,7 @@ import { RaceList } from "./race-list";
 import { CommonFeatures } from "../common-features";
 
 import * as Characters from "../../models/characters";
+import * as Names from "../names";
 import * as RaceModels from "../../models/races";
 
 export const Dwarf: RaceModels.Race = {
@@ -13,6 +14,7 @@ export const Dwarf: RaceModels.Race = {
     senses: { darkvision: 60 },
     height: { base: 48, modifier: 8 },
     weight: { base: 130, modifier: 12 },
+    nameDefinition: Names.DwarfTolkien,
     languages: { known: [Languages.Common, Languages.Dwarvish] },
     abilityMods: { "CON": +2 },
     features: [

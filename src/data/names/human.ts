@@ -22,6 +22,8 @@ export const Human: Races.NameDefinition = {
                 ]
             },
         },
+
+        // TODO: Union these with the dwarf ones. 
         surnamePrefix: {
             markovOrder: 2,
             mode: "item",
