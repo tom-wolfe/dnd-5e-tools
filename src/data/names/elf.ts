@@ -1,111 +1,44 @@
+/* cSpell:disable */
+
 import { Names } from "./name-list";
 
 import * as Races from "../../models/races";
 
 export const Elf: Races.NameDefinition = {
     name: "Elf",
-    markovOrder: 2,
-    forenames: {
-        "M": [
-            "Aiwin",
-            "Ettrian",
-            "Elidyr",
-            "Elaith",
-            "Ardryll",
-            "Inialos",
-            "Morthil",
-            "Mirthal",
-            "Ellisar",
-            "Eldrin",
-            "Aegnor",
-            "Amdir",
-            "Amras",
-            "Amrod",
-            "Amroth",
-            "Angrod",
-            "Argon",
-            "Beleg",
-            "Caranthir",
-            "Celeborn",
-            "Celebrimbor",
-            "Celegorm",
-            "Cirdan",
-            "Curufin",
-            "Daeron",
-            "Denethor",
-            "Duilin",
-            "Eärendil",
-            "Ecthelion",
-            "Edrahil",
-            "Egalmoth",
-            "Elemmakil",
-            "Elmo",
-            "Elu",
-            "Elrond",
-            "Enel",
-            "Enerdhil",
-            "Eol",
-            "Fëanor",
-            "Finarfin",
-            "Fingolfin",
-            "Fingon",
-            "Finrod",
-            "Galadhon",
-            "Galathil",
-            "Galdor",
-            "Galion",
-            "Gildor",
-            "Gil-galad",
-            "Glorfindel",
-            "Gwindor",
-            "Haldir",
-            "Ingwë",
-            "Ingwion",
-            "Legolas",
-            "Lindir",
-            "Olwë",
-            "Orodreth",
-            "Oropher",
-            "Orophin",
-            "Rúmil",
-            "Saeros",
-            "Thranduil",
-        ],
-        "F": [
-            "Rothana",
-            "Amairë",
-            "Anairë",
-            "Annael",
-            "Aredhel",
-            "Celebrian",
-            "Eärwen",
-            "Eldalótë",
-            "Elenwë",
-            "Elemmírë",
-            "Enelyë",
-            "Findis",
-            "Finduilas",
-            "Galadriel",
-            "Idril",
-            "Imin",
-            "Iminyë",
-            "Indis",
-            "Irimë",
-            "Lúthien",
-            "Míriel",
-            "Mithrellas",
-            "Nellas",
-            "Nerdanel",
-            "Nimrodel",
-        ]
-    },
-    surnames: [
-        "Helvaris",
-        "Heleneth",
-        "Hermenor",
-        "Tormaer",
-        "Ulalynn",
-    ]
+    formats: ["{forename} {surname}"],
+    parts: {
+        forename: {
+            markovOrder: 2,
+            mode: "markov",
+            source: {
+                "M": [
+                    "adorellan", "aegnor", "aiwin", "amdir", "amras", "amrod", "amroth", "angrod", "aolis", "ardryll", "argon", "beleg",
+                    "caranthir", "celeborn", "celebrimbor", "celegorm", "cirdan", "curufin", "daeron", "denethor", "duilin", "eärendil",
+                    "ecthelion", "edrahil", "egalmoth", "elaith", "eldrin", "elemmakil", "elidyr", "elidyr", "ellisar", "elmo",
+                    "elrond", "elu", "enel", "enerdhil", "eol", "erolith", "ettrian", "fëanor", "filarion", "finarfin", "fingolfin",
+                    "fingon", "finrod", "galadhon", "galathil", "galdor", "galion", "gil-galad", "gildor", "glorfindel", "gwindor",
+                    "haldir", "ingwë", "ingwion", "inialos", "lashul", "legolas", "lindir", "mirthal", "morthil", "nasir", "olwë",
+                    "orodreth", "oropher", "orophin", "rúmil", "saeros", "tehlmar", "thranduil"
+                ],
+                "F": [
+                    "aerith", "aleesia", "amairë", "anairë", "annael", "aredhel", "arlayna", "arwen", "celaena", "celebrian", "eärwen",
+                    "eldalótë", "elemmírë", "elenaril", "elenwë", "enelyë", "findis", "finduilas", "galadriel", "idril", "ilyana",
+                    "imin", "iminyë", "imra", "indis", "irien", "irimë", "lúthien", "míriel", "mithrellas", "nellas", "nerdanel",
+                    "nimrodel", "rothana", "shyael", "thalia", "tinesia"
+                ]
+            },
+        },
+        "surname": {
+            markovOrder: 2,
+            mode: "markov",
+            source: {
+                "N": [
+                    "heleneth", "helvaris", "hermenor", "talindar", "tormaer", "ulalynn", "undomiel"
+                ]
+            },
+        }
+    }
 };
 
 Names.NameList[Elf.name] = Elf;

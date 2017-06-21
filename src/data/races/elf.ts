@@ -3,7 +3,9 @@ import { RaceList } from "./race-list";
 import { CommonFeatures } from "../common-features";
 
 import * as Characters from "../../models/characters";
+import * as Names from "../names";
 import * as RaceModels from "../../models/races";
+
 
 export const Elf: RaceModels.Race = {
     name: "Elf",
@@ -13,6 +15,7 @@ export const Elf: RaceModels.Race = {
     age: { maturity: 18, max: 750 },
     height: { base: 54, modifier: 20 },
     weight: { base: 90, modifier: 4 },
+    nameDefinition: Names.Elf,
     languages: { known: [Languages.Common, Languages.Elvish] },
     abilityMods: { "DEX": +2 },
     features: [

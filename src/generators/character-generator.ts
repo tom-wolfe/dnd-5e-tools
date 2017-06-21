@@ -274,8 +274,10 @@ export class CharacterGenerator {
     }
 
     randomizeName(character: Characters.Character) {
-        const generator = new NameGenerator(Names.Tabaxi, character.gender);
-        character.name = generator.getForename() + " " + generator.getSurname();
+        let nameDef = character.race.nameDefinition;
+        if (!nameDef) { nameDef = Names.Elf };
+        const generator = new NameGenerator(nameDef, character.gender);
+        character.name = generator.getName();
     }
 
     randomizeAge(character: Characters.Character) {

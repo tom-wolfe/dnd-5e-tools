@@ -2,6 +2,7 @@ import { Skills, Languages } from "../../data";
 import { RaceList } from "./race-list";
 import { CommonFeatures } from "../common-features";
 
+import * as Names from "../names";
 import * as RaceModels from "../../models/races";
 
 export const Tabaxi: RaceModels.Race = {
@@ -12,6 +13,7 @@ export const Tabaxi: RaceModels.Race = {
     age: { maturity: 18, max: 80 },
     height: { base: 62, modifier: 24 },
     weight: { base: 100, modifier: 8 },
+    nameDefinition: Names.Tabaxi,
     languages: { known: [Languages.Common], other: 1 },
     abilityMods: { "DEX": +2, "CHA": +1 },
     features: [
