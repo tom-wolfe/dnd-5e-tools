@@ -275,7 +275,7 @@ export class CharacterGenerator {
 
     randomizeName(character: Characters.Character) {
         let nameDef = character.race.nameDefinition;
-        if (!nameDef) { nameDef = Names.Elf };
+        if (!nameDef) { nameDef = Names.ElfAlternate };
         const generator = new NameGenerator(nameDef, character.gender);
         character.name = generator.getName();
     }
