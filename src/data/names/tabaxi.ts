@@ -26,7 +26,7 @@ export const Tabaxi: Races.NameDefinition = {
             markovOrder: 2,
             mode: "item",
             source: {
-                "M": ["dar", "do", "dro", "ja", "ji", "ra", "ri"],
+                "M": ["dar", "do", "dro", "ji", "ra", "ri"],
                 "F": ["dra", "daro", "ko"],
                 "N": ["do", "ma", "qa"]
             },
@@ -52,7 +52,7 @@ export const Tabaxi: Races.NameDefinition = {
         },
         forename: {
             markovOrder: 2,
-            mode: "markov",
+            mode: "item",
             source: {
                 "M": [
                     "aiq", "baasha", "bakha", "barri", "bassa", "dar", "darr", "dato", "dhannar", "dirr", "drassa", "farahn", "fazir",
