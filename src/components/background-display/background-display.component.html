@@ -1,4 +1,5 @@
-  <div class="block bb-thin">
+  <div class="block pb-1">
+    <div class="refresh pull-right"><a href="" (click)="onRefreshBackgroundClick($event)"><i class="fa fa-refresh"></i><span class="sr-only">Random Background</span></a></div>
     <h2 class="block-title">{{character.background.name}}<source-reference [reference]="character.background.reference"></source-reference></h2>
     <div class="feature">
       <h3 class="feature-name">Trait.</h3><span class="feature-description" [innerHTML]="character.personalityTrait"></span>

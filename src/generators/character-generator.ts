@@ -74,7 +74,7 @@ export class CharacterGenerator {
         }
     }
 
-    randomizeRace(character: Characters.Character) {
+    private randomizeRace(character: Characters.Character) {
         if (this.config.race) {
             character.race = this.config.race;
             character.subrace = this.config.subrace;
@@ -85,7 +85,7 @@ export class CharacterGenerator {
         }
     }
 
-    randomizeSubrace(character: Characters.Character) {
+    private randomizeSubrace(character: Characters.Character) {
         if (this.config.subrace) {
             character.subrace = this.config.subrace;
         } else {
@@ -99,7 +99,7 @@ export class CharacterGenerator {
 
     }
 
-    randomizeRaceAbilities(character: Characters.Character) {
+    private randomizeRaceAbilities(character: Characters.Character) {
         // Figure out the combined stat bonuses of the race and sub race.
         const abilityMods: Abilities.AbilityMods = {};
         Object.assign(abilityMods, character.race.abilityMods);
@@ -140,7 +140,7 @@ export class CharacterGenerator {
         }
     }
 
-    applyRaceBonuses(character: Characters.Character) {
+    private applyRaceBonuses(character: Characters.Character) {
         if (character.race.features) {
             character.race.features.filter(feat => feat.type === "singleMod").forEach(feat => {
                 feat.apply(character);
@@ -161,6 +161,13 @@ export class CharacterGenerator {
             const bgNum = this.numGen.rollDie(bgKeys.length) - 1;
             character.background = BackgroundData.BackgroundList[bgKeys[bgNum]];
         }
+
+        const bgProficiencies = character.background.skillProficiencies.forEach(skill => {
+            character.skillProficiencies.push({
+                skill: skill,
+                proficiencyType: "proficient"
+            });
+        });
     }
 
     randomizePersonality(character: Characters.Character) {
@@ -204,12 +211,6 @@ export class CharacterGenerator {
 
     randomizeSkillProficiencies(character: Characters.Character) {
         // Apply background features.
-        const bgProficiencies = character.background.skillProficiencies.forEach(skill => {
-            character.skillProficiencies.push({
-                skill: skill,
-                proficiencyType: "proficient"
-            });
-        });
 
         // Enumerate the proficiency-based features.
         const proficiencyFeats = character.racialFeatures.filter(feature => feature.skillProficiencies);
@@ -280,7 +281,7 @@ export class CharacterGenerator {
         } else {
             nameDef = character.race.nameDefinition;
         }
-        
+
         if (!nameDef) { nameDef = Names.ElfAlternate };
         const generator = new NameGenerator(nameDef, character.gender);
         character.name = generator.getName();

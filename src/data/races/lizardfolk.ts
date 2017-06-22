@@ -3,6 +3,7 @@ import { RaceList } from "./race-list";
 import { CommonFeatures } from "../common-features";
 import { Skills } from "../../data/skills";
 
+import * as Characters from "../../models/characters";
 import * as RaceModels from "../../models/races";
 
 export const Lizardfolk: RaceModels.Race = {
@@ -42,12 +43,15 @@ export const Lizardfolk: RaceModels.Race = {
                     Animal Handling, Nature, Perception, Stealth, and Survival.
                 `
         }, {
-            name: "Natural Armor", type: "passive",
+            name: "Natural Armor", type: "singleMod",
             description: `
                     You have tough, scaly skin. When you aren't wearing armor, your AC is 13 + your Dexterity modifier. You can use your
                     natural armor to determine your AC if the armor you wear would leave you with a lower AC. A shield's benefits apply
                     as normal while you use your natural armor.
-                `
+                `,
+            apply(character: Characters.Character) {
+                character.baseArmorClass = 13;
+            }
         }, {
             name: "Hungry Jaws", type: "active",
             description: `

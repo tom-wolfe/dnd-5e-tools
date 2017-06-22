@@ -23,4 +23,13 @@ export class HeaderDisplayComponent {
     e.preventDefault();
     return false;
   };
+
+  onRefreshPhysicalityClick(e) {
+    this.generator.randomizeHeightAndWeight(this.character);
+    this.generator.randomizeGender(this.character);
+    this.generator.randomizeAge(this.character);
+    this.generator.randomizeAlignment(this.character);
+    e.preventDefault();
+    return false;
+  }
 };
