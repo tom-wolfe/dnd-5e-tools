@@ -16,6 +16,7 @@ export const DwarfNorse: Races.NameDefinition = {
         forename: {
             markovOrder: 2,
             mode: "markov",
+            maxLength: 12,
             source: {
                 "F": [
                     "alfhild",
