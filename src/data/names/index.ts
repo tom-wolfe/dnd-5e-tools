@@ -8,5 +8,6 @@ export * from "./genasi-earth";
 export * from "./genasi-fire";
 export * from "./genasi-water";
 export * from "./human";
+export * from "./lizardfolk";
 export * from "./shifter";
 export * from "./tabaxi";

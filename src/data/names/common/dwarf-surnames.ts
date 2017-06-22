@@ -1,5 +1,7 @@
 /* cSpell:disable */
 
+/* Surnames adapted from: http://www.fantasynamegenerators.com/dwarf_names.php */
+
 import * as Races from "../../../models/races";
 
 export const DwarfSurnames: { [index: string]: Races.NamePartDefinition } = {

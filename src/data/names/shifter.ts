@@ -1,5 +1,7 @@
 /* cSpell:disable */
 
+/* Adapted from: http://www.fantasynamegenerators.com/dnd-shifter-names.php */
+
 import { NameList } from "./name-list";
 
 import * as Races from "../../models/races";

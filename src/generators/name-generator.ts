@@ -47,19 +47,19 @@ export class NameGenerator {
         } else {
             const generator = new Markov.MarkovChain<string>(partDef.markovOrder);
             partDef.source[gender].forEach(n => {
-                generator.add(n.split(""));
+                generator.add(n.split(partDef.markovSplitChar || ""));
             });
 
+            let replacement = "";
             // Try 10 times for a reasonable length.
             for (let x = 0; x < 10; x++) {
-                const replacement = generator.walk().join("");
+                replacement = generator.walk().join(partDef.markovJoinChar || "")
                 if (replacement.length < (partDef.maxLength || 10) && replacement.length > 2) {
-                    return replacement;
+                    break;
                 }
             }
 
-            // Return whatever.
-            return generator.walk().join("");
+            return replacement;
         }
     }
 };

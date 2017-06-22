@@ -4,6 +4,7 @@ import { CommonFeatures } from "../common-features";
 import { Skills } from "../../data/skills";
 
 import * as Characters from "../../models/characters";
+import * as Names from "../names";
 import * as RaceModels from "../../models/races";
 
 export const Lizardfolk: RaceModels.Race = {
@@ -13,6 +14,7 @@ export const Lizardfolk: RaceModels.Race = {
     age: { maturity: 14, max: 65 },
     height: { base: 60, modifier: 20 },
     weight: { base: 120, modifier: 8 },
+    nameDefinition: Names.Lizardfolk,
     languages: { known: [Languages.Common, Languages.Draconic] },
     abilityMods: { "CON": +2, "WIS": +1 },
     features: [
