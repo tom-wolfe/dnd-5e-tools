@@ -3,6 +3,7 @@ import { RaceList } from "./race-list";
 import { CommonFeatures } from "../common-features";
 
 import * as Characters from "../../models/characters";
+import * as Names from "../names";
 import * as RaceModels from "../../models/races";
 
 export const Hobgoblin: RaceModels.Race = {
@@ -13,6 +14,7 @@ export const Hobgoblin: RaceModels.Race = {
     age: { maturity: 18, max: 80 },
     height: { base: 60, modifier: 12 },
     weight: { base: 150, modifier: 4 },
+    nameDefinition: Names.Goblin,
     languages: { known: [Languages.Common, Languages.Goblin] },
     abilityMods: { "CON": +2, "INT": +1 },
     features: [
