@@ -2,6 +2,7 @@ import { Languages, Skills } from "../../data";
 import { RaceList } from "./race-list";
 import { CommonFeatures } from "../common-features";
 
+import * as Names from "../names";
 import * as RaceModels from "../../models/races";
 
 export const Bugbear: RaceModels.Race = {
@@ -9,6 +10,7 @@ export const Bugbear: RaceModels.Race = {
     size: "Medium",
     speed: { walk: 30 },
     senses: { darkvision: 60 },
+    nameDefinition: Names.Goblin
     age: { maturity: 16, max: 80 },
     height: { base: 72, modifier: 24 },
     weight: { base: 250, modifier: 4 },
