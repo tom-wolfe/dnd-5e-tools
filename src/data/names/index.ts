@@ -3,6 +3,7 @@ export * from "./name-list";
 export * from "./aarakocra";
 export * from "./changeling";
 export * from "./dragonborn";
+export * from "./drow";
 export * from "./dwarf-norse";
 export * from "./dwarf-tolkien";
 export * from "./elf";

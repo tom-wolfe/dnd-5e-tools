@@ -75,6 +75,7 @@ export const Elf: RaceModels.Race = {
             reference: { source: "PHB", page: 24, url: "https://www.dndbeyond.com/characters/races/elf#WoodElf" }
         }, {
             name: "Drow",
+            nameDefinition: Names.Drow,
             abilityMods: { "CHA": +1 },
             senses: { darkvision: 120 },
             height: { base: 53, modifier: 12 },
