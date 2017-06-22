@@ -9,8 +9,8 @@ import { DwarfSurnames } from "./common/dwarf-surnames";
 export const DwarfNorse: Races.NameDefinition = {
     name: "Dwarf (Norse)",
     formats: [
-        "{forename} {prefixAdjëctive}{suffixNoun}",
-        "{forename} {prefixNoun}{suffixAdjëctive}",
+        "{forename} {prefixAdjective}{suffixNoun}",
+        "{forename} {prefixNoun}{suffixAdjective}",
     ],
     parts: {
         forename: {
@@ -41,10 +41,10 @@ export const DwarfNorse: Races.NameDefinition = {
                 ]
             },
         },
-        prefixAdjëctive: DwarfSurnames.prefixAdjëctive,
+        prefixAdjective: DwarfSurnames.prefixAdjective,
         suffixNoun: DwarfSurnames.suffixNoun,
         prefixNoun: DwarfSurnames.prefixNoun,
-        suffixAdjëctive: DwarfSurnames.suffixAdjëctive
+        suffixAdjective: DwarfSurnames.suffixAdjective
     }
 };
 

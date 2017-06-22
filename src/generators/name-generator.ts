@@ -29,7 +29,7 @@ export class NameGenerator {
             }
             return this.getNamePart(part, partDef);
         });
-        return _.capitalize(name).replace(/[ \*'\-]./g, match => {
+        return _.capitalize(name).replace(/[\(\) \*'\-]\w/g, match => {
             return match.toUpperCase();
         });
     }

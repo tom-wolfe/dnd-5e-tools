@@ -13,6 +13,7 @@ export * from "./half-elf";
 export * from "./half-orc";
 export * from "./human";
 export * from "./kenku";
+export * from "./khajiit";
 export * from "./kobold";
 export * from "./lizardfolk";
 export * from "./orc";
