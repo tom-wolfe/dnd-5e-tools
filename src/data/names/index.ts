@@ -7,6 +7,7 @@ export * from "./genasi-air";
 export * from "./genasi-earth";
 export * from "./genasi-fire";
 export * from "./genasi-water";
+export * from "./half-elf";
 export * from "./human";
 export * from "./kenku";
 export * from "./lizardfolk";

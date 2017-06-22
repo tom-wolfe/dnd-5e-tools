@@ -2,6 +2,7 @@ import { Languages, Skills } from "../../data";
 import { RaceList } from "./race-list";
 import { CommonFeatures } from "../common-features";
 
+import * as Names from "../names";
 import * as RaceModels from "../../models/races";
 
 export const HalfElf: RaceModels.Race = {
@@ -9,6 +10,7 @@ export const HalfElf: RaceModels.Race = {
     size: "Medium",
     speed: { walk: 30 },
     senses: { darkvision: 60 },
+    nameDefinition: Names.HalfElf,
     age: { maturity: 18, max: 200 },
     height: { base: 57, modifier: 16 },
     weight: { base: 110, modifier: 8 },
