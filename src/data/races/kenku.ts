@@ -2,6 +2,7 @@ import { Languages, Skills } from "../../data";
 import { RaceList } from "./race-list";
 import { CommonFeatures } from "../common-features";
 
+import * as Names from "../names";
 import * as RaceModels from "../../models/races";
 
 export const Kenku: RaceModels.Race = {
@@ -11,6 +12,7 @@ export const Kenku: RaceModels.Race = {
     age: { maturity: 12, max: 60 },
     height: { base: 54, modifier: 12 },
     weight: { base: 90, modifier: 3 },
+    nameDefinition: Names.Human,
     languages: { known: [Languages.Common, Languages.Primordial] },
     abilityMods: { "DEX": +2, "WIS": +1 },
     features: [

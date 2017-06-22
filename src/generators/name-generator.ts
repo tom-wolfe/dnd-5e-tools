@@ -29,7 +29,7 @@ export class NameGenerator {
             }
             return this.getNamePart(part, partDef);
         });
-        return _.capitalize(name).replace(/[ -']./g, match => {
+        return _.capitalize(name).replace(/[ \*'\-]./g, match => {
             return match.toUpperCase();
         });
     }
@@ -65,6 +65,7 @@ export class NameGenerator {
             partDef.source[gender].forEach(n => {
                 generator.add(n.split(partDef.markovSplitChar || ""));
             });
+            this.markovGenerators.setValue(name, generator);
         }
         return this.markovGenerators.getValue(name);
     }
