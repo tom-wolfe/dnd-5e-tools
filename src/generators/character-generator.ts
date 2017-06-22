@@ -286,7 +286,7 @@ export class CharacterGenerator {
             }
         }
 
-        if (!nameDef) { nameDef = Names.ElfAlternate };
+        if (!nameDef) { nameDef = Names.Elf };
         const generator = new NameGenerator(nameDef, character.gender);
         character.name = generator.getName();
     }

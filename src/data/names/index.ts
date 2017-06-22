@@ -3,7 +3,6 @@ export * from "./name-list";
 export * from "./dwarf-norse";
 export * from "./dwarf-tolkien";
 export * from "./elf";
-export * from "./elf-alternate";
 export * from "./genasi-air";
 export * from "./genasi-earth";
 export * from "./genasi-fire";
