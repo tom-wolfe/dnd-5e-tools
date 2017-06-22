@@ -2,6 +2,7 @@ import { Languages, Skills } from "../../data";
 import { RaceList } from "./race-list";
 import { CommonFeatures } from "../common-features";
 
+import * as Names from "../names";
 import * as RaceModels from "../../models/races";
 
 export const Goliath: RaceModels.Race = {
@@ -11,6 +12,7 @@ export const Goliath: RaceModels.Race = {
     age: { maturity: 18, max: 90 },
     height: { base: 84, modifier: 12 },
     weight: { base: 280, modifier: 5 },
+    nameDefinition: Names.Goliath,
     languages: { known: [Languages.Common, Languages.Giant] },
     abilityMods: { "STR": +2, "CON": +1 },
     features: [
