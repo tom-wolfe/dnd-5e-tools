@@ -10,7 +10,7 @@ export const Bugbear: RaceModels.Race = {
     size: "Medium",
     speed: { walk: 30 },
     senses: { darkvision: 60 },
-    nameDefinition: Names.Goblin
+    nameDefinition: Names.Goblin,
     age: { maturity: 16, max: 80 },
     height: { base: 72, modifier: 24 },
     weight: { base: 250, modifier: 4 },
