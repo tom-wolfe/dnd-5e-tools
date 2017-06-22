@@ -279,7 +279,11 @@ export class CharacterGenerator {
         if (this.config.name) {
             nameDef = this.config.name;
         } else {
-            nameDef = character.race.nameDefinition;
+            if (character.subrace && character.subrace.nameDefinition) {
+                nameDef = character.subrace.nameDefinition;
+            } else {
+                nameDef = character.race.nameDefinition;
+            }
         }
 
         if (!nameDef) { nameDef = Names.ElfAlternate };

@@ -20,6 +20,7 @@ export const Genasi: RaceModels.Race = {
     subraces: [
         {
             name: "Air",
+            nameDefinition: Names.GenasiAir,
             abilityMods: { "DEX": +1 },
             features: [
                 {
@@ -38,6 +39,7 @@ export const Genasi: RaceModels.Race = {
             reference: { source: "EE", page: 8, url: "https://www.dndbeyond.com/characters/races/genasi#AirGenasi" }
         }, {
             name: "Earth",
+            nameDefinition: Names.GenasiEarth,
             abilityMods: { "STR": +1 },
             features: [
                 {
@@ -56,6 +58,7 @@ export const Genasi: RaceModels.Race = {
             reference: { source: "EE", page: 8, url: "https://www.dndbeyond.com/characters/races/genasi#EarthGenasi" }
         }, {
             name: "Fire",
+            nameDefinition: Names.GenasiFire,
             abilityMods: { "INT": +1 },
             senses: { darkvision: 60 },
             features: [
@@ -75,6 +78,7 @@ export const Genasi: RaceModels.Race = {
             reference: { source: "EE", page: 8, url: "https://www.dndbeyond.com/characters/races/genasi#FireGenasi" }
         }, {
             name: "Water",
+            nameDefinition: Names.GenasiWater,
             speed: { swim: 30 },
             abilityMods: { "WIS": +1 },
             features: [
