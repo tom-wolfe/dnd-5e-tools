@@ -1,6 +1,7 @@
 import { Languages, Skills } from "../../data";
 import { RaceList } from "./race-list";
 
+import * as Names from "../names";
 import * as RaceModels from "../../models/races";
 
 export const Shifter: RaceModels.Race = {
@@ -10,6 +11,7 @@ export const Shifter: RaceModels.Race = {
     age: { maturity: 18, max: 80 },
     height: { base: 56, modifier: 20 },
     weight: { base: 110, modifier: 8 },
+    nameDefinition: Names.Shifter,
     senses: { darkvision: 60 },
     languages: { known: [Languages.Common, Languages.Sylvan] },
     abilityMods: { "DEX": +1 },
