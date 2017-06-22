@@ -1,40 +1,40 @@
-<div class="character-block-minor">
-    <div class="row">
-      <div class="col-md-3 col-sm-6">
-        <div class="attribute-block">
-          <div class="attribute-title">Level</div>
-          <span class="primary">{{character.level.number}}</span>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="attribute-block">
-          <div class="attribute-title">Armor Class</div>
-          <span class="primary">{{character.armorClass}}</span>
-          <span class="secondary">({{character.equippedArmor}})</span>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="attribute-block">
-          <div class="attribute-title">Hit Points</div>
-          <span class="primary">{{character.hitPoints}}</span>
-          <span class="secondary">({{character.hitPointFormula}})</span>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <speed-display [speed]="character.speed"></speed-display>
+<div class="bb-thin">
+  <div class="row">
+    <div class="col-md-3 col-sm-6">
+      <div class="attribute-block">
+        <div class="attribute-title">Level</div>
+        <span class="primary">{{character.level.number}}</span>
       </div>
     </div>
-  </div>
-  <div class="character-block-minor">
-    <div class="row">
-      <div class="col-md-4">
-        <languages-display [languages]="character.languages"></languages-display>
-      </div>
-      <div class="col-md-4">
-        <senses-display [senses]="character.senses"></senses-display>
-      </div>
-      <div class="col-md-4">
-        <skills-display [character]="character"></skills-display>
+    <div class="col-md-3 col-sm-6">
+      <div class="attribute-block">
+        <div class="attribute-title">Armor Class</div>
+        <span class="primary">{{character.armorClass}}</span>
+        <span class="secondary">({{character.equippedArmor}})</span>
       </div>
     </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="attribute-block">
+        <div class="attribute-title">Hit Points</div>
+        <span class="primary">{{character.hitPoints}}</span>
+        <span class="secondary">({{character.hitPointFormula}})</span>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <speed-display [speed]="character.speed"></speed-display>
+    </div>
   </div>
+</div>
+<div class="bb-thin">
+  <div class="row">
+    <div class="col-md-4">
+      <languages-display [languages]="character.languages"></languages-display>
+    </div>
+    <div class="col-md-4">
+      <senses-display [senses]="character.senses"></senses-display>
+    </div>
+    <div class="col-md-4">
+      <skills-display [character]="character"></skills-display>
+    </div>
+  </div>
+</div>

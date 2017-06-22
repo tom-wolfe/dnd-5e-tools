@@ -1,3 +1,14 @@
+.bt-thick { border-top: 2px solid $brand-primary; }
+.bb-thick { border-bottom: 2px solid $brand-primary; }
+.bt-thin { border-top: 1px solid $brand-primary; }
+.bb-thin { border-bottom: 1px solid $brand-primary; }
+
+.block-title {
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 8px;
+}
+
 .attribute-block {
     padding: 12px;
     text-align: center;
@@ -21,25 +32,10 @@
     }
 }
 
-.form-group {
-    label {
-        display: block;
-        font-size: 14px;
+.character-sub-block {
+    padding: 12px;
+    .sub-block-title {
+        font-size: 16px;
         font-weight: bold;
-        text-transform: uppercase;
-    }
-
-    .form-control,
-    .custom-select {
-        font-size: 14px;
-        font-family: $font-family-secondary;
     }
 }
-
-sub.refresh {
-    margin-left: 0.5rem;
-    font-size: 60% !important;
-    // vertical-align: top;
-}
-
-// TODO: MakeButton(secondary) with

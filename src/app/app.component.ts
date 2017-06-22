@@ -10,13 +10,13 @@ import * as Characters from "../models/characters";
   styleUrls: ["./app.component.scss"]
 })
 export class AppComponent {
-  @Input() advancedMode: boolean = false;
+  @Input() advancedMode = false;
   @ViewChild("mdlExport") mdlExport: ExportModalComponent
 
   title = "D&D 5th Edition NPC Generator";
   character: Characters.Character;
   config: GeneratorConfig = new GeneratorConfig();
-  generator = new CharacterGenerator(this.config);
+  generator: CharacterGenerator = new CharacterGenerator(this.config);
 
   constructor() {
     this.character = this.generator.generateCharacter();

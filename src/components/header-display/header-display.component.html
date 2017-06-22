@@ -1,24 +1,27 @@
 <div class="npc-header">
-  <h1 class="npc-name">
+  <h1 class="npc-name bb-thick">
     {{character.name}}
-    <div class="npc-class">
-      <small class="text-muted">
+    <div class="pull-right" style="font-size: 24px"><a href="" (click)="onRefreshNameClick($event)"><i class="fa fa-refresh"></i><span class="sr-only">Random Name</span></a></div>
+  </h1>
+  <div class="npc-class bb-thin">
+    <small class="text-muted">
         {{character.class.name}}<source-reference [reference]="character.class.reference"></source-reference>
         <span *ngIf="character.classArchetype">({{character.classArchetype.name}}<source-reference [reference]="character.classArchetype.reference"></source-reference>)</span>
       </small>
-    </div>
-  </h1>
-  <div class="text-muted npc-subline">
-    <span class="gender">{{character.genderDescription}}</span>
-    <span class="race">{{character.race.name}}</span>
-    <source-reference [reference]="character.race.reference"></source-reference>
-    <span class="sub-race" *ngIf="character.subrace">{{character.subrace.name}}<source-reference [reference]="character.subrace.reference"></source-reference></span>,
-    <span class="size">{{character.race.size}}</span>,
-    <span class="npc-alignment">{{character.alignmentDescription}}</span>
   </div>
-  <div class="text-muted npc-subline">
-    <span class="height">{{character.heightString || 0}} <span class="font-weight-bold">({{heightDescriptor.describe(character)}})</span></span>,
-    <span class="weight">{{(character.weight || 0) + " lbs."}} <span class="font-weight-bold">({{weightDescriptor.describe(character)}})</span></span>,
-    <span class="weight">{{(character.age || 0) + " years old"}} <span class="font-weight-bold">({{ageDescriptor.describe(character)}})</span></span>
+  <div class="bb-thin pt-2 pb-2">
+    <div class="text-muted npc-subline">
+      <span class="gender">{{character.genderDescription}}</span>
+      <span class="race">{{character.race.name}}</span>
+      <source-reference [reference]="character.race.reference"></source-reference>
+      <span class="sub-race" *ngIf="character.subrace">{{character.subrace.name}}<source-reference [reference]="character.subrace.reference"></source-reference></span>,
+      <span class="size">{{character.race.size}}</span>,
+      <span class="npc-alignment">{{character.alignmentDescription}}</span>
+    </div>
+    <div class="text-muted npc-subline">
+      <span class="height">{{character.heightString || 0}} <span class="font-weight-bold">({{heightDescriptor.describe(character)}})</span></span>,
+      <span class="weight">{{(character.weight || 0) + " lbs."}} <span class="font-weight-bold">({{weightDescriptor.describe(character)}})</span></span>,
+      <span class="weight">{{(character.age || 0) + " years old"}} <span class="font-weight-bold">({{ageDescriptor.describe(character)}})</span></span>
+    </div>
   </div>
 </div>
