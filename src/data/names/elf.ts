@@ -7,8 +7,8 @@ import * as Races from "../../models/races";
 export const Elf: Races.NameDefinition = {
     name: "Elf",
     formats: [
-        "{forenamePrefixConsonant}{forenameSuffixVowel} {surnamePrefix}{surnameSuffix}",
-        "{forenamePrefixVowel}{forenameSuffixConsonant} {surnamePrefix}{surnameSuffix}"
+        "{forenamePrefixConsonant}{forenameSuffixVowel} {surname}",
+        "{forenamePrefixVowel}{forenameSuffixConsonant} {surname}"
     ],
     parts: {
         forenamePrefixConsonant: {
@@ -365,25 +365,17 @@ export const Elf: Races.NameDefinition = {
                 ]
             },
         },
-        "surnamePrefix": {
+        "surname": {
             markovOrder: 2,
-            mode: "item",
+            mode: "markov",
+            maxLength: 12,
             source: {
                 "N": [
-                    "alean", "alea", "arabi", "arkenea", "auvrea", "baequi", "banni", "cygreen", "dirth", "dryear", "dwin'", "eyllis",
-                    "eyther", "freani", "heasi", "hlae", "hunith", "kennyr", "kille", "maern", "melith", "myrth", "norre", "orle", "oussea",
-                    "rilynn", "teasen'", "tyr", "tyrnea"
-                ]
-            },
-        },
-        "surnameSuffix": {
-            markovOrder: 2,
-            mode: "item",
-            source: {
-                "N": [
-                    "altin", "anea", "annia", "aear", "arnith", "atear", "athem", "dlues", "elrvis", "eplith", "ettln", "ghymn", "itryn",
-                    "lylth", "nddare", "neldth", "rae", "raheal", "rretyn", "sithek", "thym", "tlarn", "tlithar", "tylar", "undlin",
-                    "urdrenn", "valsa", "virrea", "zea"
+                    "aldanae", "augendil", "auglothir", "augmirial", "celetanas", "cromlond", "cromvathar", "ealodiir", "elervathar",
+                    "falaelon", "gaereial", "galadiir", "galaelenil", "galondiir", "haalvaar", "haemin", "haeval", "isilbrinar",
+                    "landirthar", "lanlithil", "lassraias", "lithvir", "mataas", "mayamae", "mithantinu", "mithrandir", "mithtanellyn",
+                    "nellond", "nelvandal", "ondomiel", "ondorina", "rhuielon", "rhuios", "rhuiviel", "rhuvien", "roloeth", "ruviel",
+                    "ruvien", "talindar", "talithdar", "telathion", "tinuren", "tinuviel", "undomiel", "undomin", "undotaur", "vanvathar"
                 ]
             },
         }

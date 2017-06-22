@@ -50,11 +50,10 @@ export class NameGenerator {
                 generator.add(n.split(""));
             });
 
-            // TODO: Allow these to be configured.
             // Try 10 times for a reasonable length.
             for (let x = 0; x < 10; x++) {
                 const replacement = generator.walk().join("");
-                if (replacement.length < 16 && replacement.length > 2) {
+                if (replacement.length < (partDef.maxLength || 10) && replacement.length > 2) {
                     return replacement;
                 }
             }
