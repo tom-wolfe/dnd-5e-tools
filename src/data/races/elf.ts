@@ -6,7 +6,6 @@ import * as Characters from "../../models/characters";
 import * as Names from "../names";
 import * as RaceModels from "../../models/races";
 
-
 export const Elf: RaceModels.Race = {
     name: "Elf",
     size: "Medium",

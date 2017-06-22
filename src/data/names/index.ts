@@ -4,6 +4,7 @@ export * from "./dragonborn";
 export * from "./dwarf-norse";
 export * from "./dwarf-tolkien";
 export * from "./elf";
+export * from "./firbolg";
 export * from "./genasi-air";
 export * from "./genasi-earth";
 export * from "./genasi-fire";
