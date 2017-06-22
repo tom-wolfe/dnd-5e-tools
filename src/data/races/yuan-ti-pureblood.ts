@@ -2,6 +2,7 @@ import { Languages } from "../../data/languages";
 import { RaceList } from "./race-list";
 import { CommonFeatures } from "../common-features";
 
+import * as Names from "../names";
 import * as RaceModels from "../../models/races";
 
 export const YuanTiPureblood: RaceModels.Race = {
@@ -11,6 +12,7 @@ export const YuanTiPureblood: RaceModels.Race = {
     age: { maturity: 18, max: 80 },
     height: { base: 56, modifier: 20 },
     weight: { base: 110, modifier: 8 },
+    nameDefinition: Names.YuanTi,
     languages: { known: [Languages.Common, Languages.Abyssal, Languages.Draconic] },
     abilityMods: { "CHA": +2, "INT": +1 },
     speed: { walk: 30 },

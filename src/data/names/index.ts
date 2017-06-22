@@ -22,3 +22,4 @@ export * from "./orc";
 export * from "./shifter";
 export * from "./tabaxi";
 export * from "./warforged";
+export * from "./yuan-ti";
