@@ -12,7 +12,7 @@ export const Kenku: RaceModels.Race = {
     age: { maturity: 12, max: 60 },
     height: { base: 54, modifier: 12 },
     weight: { base: 90, modifier: 3 },
-    nameDefinition: Names.Human,
+    nameDefinition: Names.Kenku,
     languages: { known: [Languages.Common, Languages.Primordial] },
     abilityMods: { "DEX": +2, "WIS": +1 },
     features: [

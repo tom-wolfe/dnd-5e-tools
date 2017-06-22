@@ -1,6 +1,7 @@
 import { Languages } from "../../data/languages";
 import { RaceList } from "./race-list";
 
+import * as Names from "../names";
 import * as RaceModels from "../../models/races";
 
 export const Dragonborn: RaceModels.Race = {
@@ -10,6 +11,7 @@ export const Dragonborn: RaceModels.Race = {
     age: { maturity: 15, max: 80 },
     height: { base: 66, modifier: 16 },
     weight: { base: 175, modifier: 12 },
+    nameDefinition: Names.Dragonborn,
     languages: { known: [Languages.Common, Languages.Draconic] },
     abilityMods: { "STR": +2, "CHA": +1 },
     features: [
