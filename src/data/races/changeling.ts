@@ -11,7 +11,7 @@ export const Changeling: RaceModels.Race = {
     age: { maturity: 18, max: 80 },
     height: { base: 56, modifier: 20 },
     weight: { base: 110, modifier: 8 },
-    nameDefinition: Names.Human,
+    nameDefinition: Names.Changeling,
     languages: { known: [Languages.Common], other: 2 },
     abilityMods: { "DEX": +1, "CHA": +1 },
     features: [

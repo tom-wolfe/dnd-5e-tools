@@ -1,5 +1,6 @@
 export * from "./name-list";
 
+export * from "./changeling";
 export * from "./dragonborn";
 export * from "./dwarf-norse";
 export * from "./dwarf-tolkien";
