@@ -1,15 +1,15 @@
 <div class="npc-header">
-  <h1 class="npc-name bb-thick">
+  <h1 class="npc-name">
     {{character.name}}
     <div class="pull-right" style="font-size: 24px"><a href="" (click)="onRefreshNameClick($event)"><i class="fa fa-refresh"></i><span class="sr-only">Random Name</span></a></div>
-  </h1>
-  <div class="npc-class bb-thin">
-    <small class="text-muted">
+    <div class="npc-class bt-light bb-thick pb-2">
+      <small class="text-muted">
         {{character.class.name}}<source-reference [reference]="character.class.reference"></source-reference>
         <span *ngIf="character.classArchetype">({{character.classArchetype.name}}<source-reference [reference]="character.classArchetype.reference"></source-reference>)</span>
       </small>
-  </div>
-  <div class="bb-thin pt-2 pb-2">
+    </div>
+  </h1>
+  <div class="bb-thin pt-2 pb-3">
     <div class="text-muted npc-subline">
       <span class="gender">{{character.genderDescription}}</span>
       <span class="race">{{character.race.name}}</span>

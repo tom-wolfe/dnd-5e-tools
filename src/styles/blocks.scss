@@ -3,6 +3,15 @@
 .bt-thin { border-top: 1px solid $brand-primary; }
 .bb-thin { border-bottom: 1px solid $brand-primary; }
 
+
+.bb-light {
+    border-bottom: 1px solid darken($gray-lighter, 5%);
+}
+.bt-light {
+    border-top: 1px solid darken($gray-lighter, 5%);
+}
+
+
 .block-title {
     font-size: 18px;
     font-weight: bold;
