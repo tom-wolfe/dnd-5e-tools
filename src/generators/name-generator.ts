@@ -1,17 +1,16 @@
 import { NumberGenerator } from "./number-generator";
 
+import * as Collections from "typescript-collections";
 import * as Markov from "../markov";
 import * as Races from "../models/races"
 import * as _ from "lodash";
 
 export class NameGenerator {
     private numGen: NumberGenerator = new NumberGenerator();
+    private markovGenerators: Collections.Dictionary<string, Markov.MarkovChain<string>>;
 
     constructor(private definition: Races.NameDefinition, private gender: string) {
-        // // TODO: Fix this.
-        if (this.gender === "N") { this.gender = "M"; }
-
-        // TODO: Cache pre-populate Markov generators.
+        this.markovGenerators = new Collections.Dictionary<string, Markov.MarkovChain<string>>();
     }
 
     getName(): string {
@@ -28,14 +27,14 @@ export class NameGenerator {
             if (!partDef) {
                 throw new RangeError(`Name part ${part} has no definition.`);
             }
-            return this.getNamePart(partDef);
+            return this.getNamePart(part, partDef);
         });
         return _.capitalize(name).replace(/[ -']./g, match => {
             return match.toUpperCase();
         });
     }
 
-    getNamePart(partDef: Races.NamePartDefinition): string {
+    getNamePart(name: string, partDef: Races.NamePartDefinition): string {
         // For surnames.
         let gender = this.gender;
         const availableGenders = Object.keys(partDef.source);
@@ -45,15 +44,12 @@ export class NameGenerator {
             const index = this.numGen.rollDie(partDef.source[gender].length) - 1;
             return partDef.source[gender][index];
         } else {
-            const generator = new Markov.MarkovChain<string>(partDef.markovOrder);
-            partDef.source[gender].forEach(n => {
-                generator.add(n.split(partDef.markovSplitChar || ""));
-            });
+            const chain = this.getChain(name, partDef, gender);
 
             let replacement = "";
             // Try 10 times for a reasonable length.
             for (let x = 0; x < 10; x++) {
-                replacement = generator.walk().join(partDef.markovJoinChar || "")
+                replacement = chain.walk().join(partDef.markovJoinChar || "")
                 if (replacement.length < (partDef.maxLength || 10) && replacement.length > 2) {
                     break;
                 }
@@ -61,5 +57,15 @@ export class NameGenerator {
 
             return replacement;
         }
+    }
+
+    private getChain(name: string, partDef: Races.NamePartDefinition, gender: string): Markov.MarkovChain<string> {
+        if (!this.markovGenerators.containsKey(name)) {
+            const generator = new Markov.MarkovChain<string>(partDef.markovOrder);
+            partDef.source[gender].forEach(n => {
+                generator.add(n.split(partDef.markovSplitChar || ""));
+            });
+        }
+        return this.markovGenerators.getValue(name);
     }
 };
