@@ -19,3 +19,4 @@ export * from "./lizardfolk";
 export * from "./orc";
 export * from "./shifter";
 export * from "./tabaxi";
+export * from "./warforged";

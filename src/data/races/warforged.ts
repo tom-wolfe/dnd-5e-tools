@@ -2,6 +2,7 @@ import { Languages, Skills } from "../../data";
 import { RaceList } from "./race-list";
 
 import * as Characters from "../../models/characters";
+import * as Names from "../names";
 import * as RaceModels from "../../models/races";
 
 export const Warforged: RaceModels.Race = {
@@ -11,6 +12,7 @@ export const Warforged: RaceModels.Race = {
     age: { maturity: 1, max: 500 },
     height: { base: 56, modifier: 20 },
     weight: { base: 180, modifier: 8 },
+    nameDefinition: Names.Warforged,
     languages: { known: [Languages.Common], other: 1 },
     abilityMods: { "STR": +1, "CON": +1 },
     features: [
