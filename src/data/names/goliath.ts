@@ -67,7 +67,7 @@ export const Goliath: Races.NameDefinition = {
         },
         surname: {
             markovOrder: 3,
-            mode: "markov",
+            mode: "markovOrItem",
             source: {
                 "N": [
                     "achebe", "ademola", "adeoye", "adesida", "adesina", "adeyemi", "aguda", "akenzua", "akerele", "akiloye", "akinjide",

@@ -14,7 +14,7 @@ export const Kobold: Races.NameDefinition = {
     parts: {
         name: {
             markovOrder: 2,
-            mode: "markov",
+            mode: "markovOrItem",
             source: {
                 "N": [
                     "crelk", "gholk", "droop", "arix", "aks", "galax", "garu", "hagnar", "hox", "irtos", "keshak", "meepo", "molo",

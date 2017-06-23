@@ -1,6 +1,6 @@
 export class NamePartDefinition {
     source: { [gender: string]: string[] }
-    mode: "markov" | "item";
+    mode: "markov" | "item" | "markovOrItem";
     maxLength?: number;
     markovMode?: "letter" | "word";
     markovSplitChar?: string;

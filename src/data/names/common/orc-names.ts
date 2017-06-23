@@ -7,7 +7,7 @@ import * as Races from "../../../models/races";
 export const OrcNames: { [index: string]: Races.NamePartDefinition } = {
     forename: {
         markovOrder: 2,
-        mode: "markov",
+        mode: "markovOrItem",
         source: {
             "M": [
                 "abzag", "abzrolg", "abzug", "agganor", "aghurz", "agnar", "agrakh", "agrobal", "agronak", "agstarg", "ahzug",
@@ -133,7 +133,7 @@ export const OrcNames: { [index: string]: Races.NamePartDefinition } = {
     },
     surname: {
         markovOrder: 2,
-        mode: "markov",
+        mode: "markovOrItem",
         source: {
             "N": [
                 "agadbu", "agamph", "agdur", "aglakh", "agum", "arzug", "atumph", "azorku", "badbu", "badbul", "bagol", "bagrat", "bagul",

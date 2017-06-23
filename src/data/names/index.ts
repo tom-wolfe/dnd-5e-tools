@@ -1,6 +1,7 @@
 export * from "./name-list";
 
 export * from "./aarakocra";
+export * from "./aasimar";
 export * from "./changeling";
 export * from "./dragonborn";
 export * from "./drow";

@@ -40,22 +40,28 @@ export class NameGenerator {
         const availableGenders = Object.keys(partDef.source);
         if (availableGenders.indexOf(gender) < 0) { gender = availableGenders[0]; }
 
-        if (partDef.mode === "item") {
-            const index = this.numGen.rollDie(partDef.source[gender].length) - 1;
-            return partDef.source[gender][index];
-        } else {
-            const chain = this.getChain(name, partDef, gender);
+        let selectedMode = partDef.mode as string;
+        if (selectedMode === "markovOrItem") {
+            selectedMode = ["markov", "item"][this.numGen.rollDie(2) - 1];
+        }
 
-            let replacement = "";
-            // Try 10 times for a reasonable length.
-            for (let x = 0; x < 10; x++) {
-                replacement = chain.walk().join(partDef.markovJoinChar || "")
-                if (replacement.length < (partDef.maxLength || 10) && replacement.length > 2) {
-                    break;
+        switch (selectedMode) {
+            case "item":
+                const index = this.numGen.rollDie(partDef.source[gender].length) - 1;
+                return partDef.source[gender][index];
+            case "markov":
+                const chain = this.getChain(name, partDef, gender);
+
+                let replacement = "";
+                // Try 10 times for a reasonable length.
+                for (let x = 0; x < 10; x++) {
+                    replacement = chain.walk().join(partDef.markovJoinChar || "")
+                    if (replacement.length < (partDef.maxLength || 10) && replacement.length > 2) {
+                        break;
+                    }
                 }
-            }
 
-            return replacement;
+                return replacement;
         }
     }
 

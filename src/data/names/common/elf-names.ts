@@ -60,7 +60,7 @@ export const ElfNames: { [index: string]: Races.NamePartDefinition } = {
     },
     surname: {
         markovOrder: 2,
-        mode: "markov",
+        mode: "markovOrItem",
         maxLength: 12,
         source: {
             "N": [

@@ -14,7 +14,7 @@ export const Changeling: Races.NameDefinition = {
     parts: {
         name: {
             markovOrder: 2,
-            mode: "markov",
+            mode: "markovOrItem",
             source: {
                 "N": [
                     "nirx", "daks", "hits", "vuks", "meec", "yot", "weeg", "mars", "yeac", "tourt", "lag", "suk", "borx", "purx", "iez",

@@ -14,7 +14,7 @@ export const Aarakocra: Races.NameDefinition = {
     parts: {
         name: {
             markovOrder: 2,
-            mode: "markov",
+            mode: "markovOrItem",
             source: {
                 "N": [
                     "rharc", "guie", "krourk", "rhurk", "sac", "qrullaar", "kruallarc", "alli", "qrulli", "ekec", "gi", "cluck", "grass",

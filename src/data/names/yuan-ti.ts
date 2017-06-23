@@ -12,7 +12,7 @@ export const YuanTi: Races.NameDefinition = {
     parts: {
         name: {
             markovOrder: 2,
-            mode: "markov",
+            mode: "markovOrItem",
             source: {
                 "N": [
                     "acalan", "acamapichtli", "ahuiliztli", "ahuiliztli", "atl", "centehua", "centeotl", "chalchiuhtlicue", "chalchiuitl",

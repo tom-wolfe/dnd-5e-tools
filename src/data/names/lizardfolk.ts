@@ -74,7 +74,7 @@ export const Lizardfolk: Races.NameDefinition = {
         },
         forename: {
             markovOrder: 2,
-            mode: "markov",
+            mode: "markovOrItem",
             source: {
                 "M": [
                     "amusei", "aseepa", "asheeus", "ashgar", "asum", "azeenus", "azinar", "bahrei", "banka", "barnaxi", "batuus",
@@ -123,7 +123,7 @@ export const Lizardfolk: Races.NameDefinition = {
         },
         commonTongueName: {
             markovOrder: 2,
-            mode: "markov",
+            mode: "markovOrItem",
             markovSplitChar: "-",
             markovJoinChar: "-",
             maxLength: 25,

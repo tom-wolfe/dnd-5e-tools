@@ -12,7 +12,7 @@ export const Aasimar: RaceModels.Race = {
     age: { maturity: 18, max: 160 },
     height: { base: 56, modifier: 20 },
     weight: { base: 110, modifier: 8 },
-    nameDefinition: Names.Human,
+    nameDefinition: Names.Aasimar,
     languages: { known: [Languages.Common, Languages.Celestial] },
     abilityMods: { "CHA": +2 },
     features: [

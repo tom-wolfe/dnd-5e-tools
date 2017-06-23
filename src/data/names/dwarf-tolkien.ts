@@ -15,7 +15,7 @@ export const DwarfTolkien: Races.NameDefinition = {
     parts: {
         forename: {
             markovOrder: 2,
-            mode: "markov",
+            mode: "markovOrItem",
             source: {
                 "N": [
                     "dagrik", "thaugnit", "utror", "vagnok", "ikekut ", "radivis", "donik", "krazimir", "darbek", "balkom", "egrak",
