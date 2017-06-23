@@ -1,5 +1,5 @@
-import { Senses } from "./senses";
 import * as Characters from "../characters";
+import { Senses } from "./senses";
 
 export class CharacterSenses implements Senses {
     character: Characters.Character;

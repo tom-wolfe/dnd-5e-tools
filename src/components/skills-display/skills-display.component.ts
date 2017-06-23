@@ -1,7 +1,7 @@
 import { Component, Input } from "@angular/core";
-import * as Characters from "../../models/characters";
-
 import * as _ from "lodash";
+
+import * as Characters from "../../models/characters";
 
 @Component({
   selector: "skills-display",

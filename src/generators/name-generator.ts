@@ -1,9 +1,9 @@
-import { NumberGenerator } from "./number-generator";
-
-import * as Collections from "typescript-collections";
-import * as Markov from "../markov";
-import * as Races from "../models/races"
 import * as _ from "lodash";
+import * as Collections from "typescript-collections";
+
+import * as Markov from "../markov";
+import * as Races from "../models/races";
+import { NumberGenerator } from "./number-generator";
 
 export class NameGenerator {
     private numGen: NumberGenerator = new NumberGenerator();

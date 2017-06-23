@@ -1,3 +1,4 @@
+
 export const Alignments: { [index: string]: string } = {
     "CG": "Chaotic Good",
     "CN": "Chaotic Neutral",

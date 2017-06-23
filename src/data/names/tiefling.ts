@@ -1,8 +1,7 @@
-/* cSpell:disable */
-
+import * as Races from "../../models/races";
 import { NameList } from "./name-list";
 
-import * as Races from "../../models/races";
+/* cSpell:disable */
 
 export const Tiefling: Races.NameDefinition = {
     name: "Tiefling",

@@ -1,5 +1,4 @@
-import { Background } from "./background";
-import { Level } from "./level";
+import * as _ from "lodash";
 
 import * as Data from "../../data/";
 import * as Abilities from "../abilities";
@@ -8,8 +7,8 @@ import * as Classes from "../classes";
 import * as Features from "../features";
 import * as Languages from "../languages";
 import * as Races from "../races";
-
-import * as _ from "lodash";
+import { Background } from "./background";
+import { Level } from "./level";
 
 export class Character {
     abilities: Abilities.AbilityScores = new Abilities.CharacterAbilityScores(this);

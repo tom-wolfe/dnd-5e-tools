@@ -1,9 +1,8 @@
-import { Languages, Skills } from "../../data";
-import { RaceList } from "./race-list";
-
+import { Languages } from "../../data";
 import * as Characters from "../../models/characters";
-import * as Names from "../names";
 import * as RaceModels from "../../models/races";
+import * as Names from "../names";
+import { RaceList } from "./race-list";
 
 export const Warforged: RaceModels.Race = {
     name: "Warforged",

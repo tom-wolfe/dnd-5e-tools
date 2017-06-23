@@ -1,10 +1,8 @@
-/* cSpell:disable */
-
+import * as Races from "../../models/races";
+import { DwarfSurnames } from "./common/dwarf-surnames";
 import { NameList } from "./name-list";
 
-import * as Races from "../../models/races";
-
-import { DwarfSurnames } from "./common/dwarf-surnames";
+/* cSpell:disable */
 
 export const DwarfNorse: Races.NameDefinition = {
     name: "Dwarf (Norse)",

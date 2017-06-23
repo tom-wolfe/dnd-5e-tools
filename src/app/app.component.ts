@@ -1,8 +1,9 @@
 import { Component, Input, ViewChild } from "@angular/core";
-import { GeneratorConfig } from "../models/generator-config";
-import { CharacterGenerator } from "../generators/character-generator";
+
 import { ExportModalComponent } from "../components/export-modal/export-modal.component";
+import { CharacterGenerator } from "../generators/character-generator";
 import * as Characters from "../models/characters";
+import { GeneratorConfig } from "../models/generator-config";
 
 @Component({
   selector: "app-root",

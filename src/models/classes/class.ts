@@ -1,5 +1,5 @@
-import { Archetype } from "./archetype";
 import { Reference } from "../reference";
+import { Archetype } from "./archetype";
 
 export class Class {
     name: string;

@@ -1,8 +1,8 @@
+import * as Races from "../../../models/races";
+
 /* cSpell:disable */
 
 /* Partially adapted from http://www.angelfire.com/rpg2/vortexshadow/names.html */
-
-import * as Races from "../../../models/races";
 
 export const ElfNames: { [index: string]: Races.NamePartDefinition } = {
     forenamePrefixConsonant: {

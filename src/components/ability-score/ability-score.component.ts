@@ -1,8 +1,7 @@
-import { Component, Input, Output } from "@angular/core";
-import * as Abilities from "../../models/abilities";
-import * as Characters from "../../models/characters";
+import { Component, Input } from "@angular/core";
 
 import * as Data from "../../data";
+import * as Characters from "../../models/characters";
 
 @Component({
   selector: "ability-score",

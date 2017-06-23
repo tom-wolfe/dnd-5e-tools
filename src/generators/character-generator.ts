@@ -1,20 +1,19 @@
+import * as _ from "lodash";
+
+import * as Data from "../data/";
+import * as BackgroundData from "../data/backgrounds/";
+import * as ClassData from "../data/classes/";
+import * as Names from "../data/names";
+import * as RaceData from "../data/races/";
+import * as Abilities from "../models/abilities";
+import { ProficiencyType } from "../models/abilities/proficiency-type";
+import * as Characters from "../models/characters";
+import { GeneratorConfig } from "../models/generator-config";
+import * as Languages from "../models/languages";
+import * as Races from "../models/races";
 import { AbilityScoreGenerator } from "./ability-score-generator";
 import { NameGenerator } from "./name-generator";
 import { NumberGenerator } from "./number-generator";
-import { ProficiencyType } from "../models/abilities/proficiency-type";
-import * as BackgroundData from "../data/backgrounds/";
-import * as ClassData from "../data/classes/";
-import * as RaceData from "../data/races/";
-import * as Abilities from "../models/abilities";
-import * as Characters from "../models/characters";
-import * as Data from "../data/";
-import * as Names from "../data/names";
-import * as Languages from "../models/languages";
-import * as Markov from "../markov";
-import * as Races from "../models/races";
-import { GeneratorConfig } from "../models/generator-config";
-
-import * as _ from "lodash";
 
 export class CharacterGenerator {
     abGen = new AbilityScoreGenerator();

@@ -1,3 +1,4 @@
+
 export class NumberGenerator {
     rollDie(sides: number): number {
         return this.numberBetween(1, sides);

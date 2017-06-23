@@ -1,10 +1,8 @@
 import { Component, Input } from "@angular/core";
-import { CharacterGenerator } from "../../generators/character-generator";
 
-import * as Characters from "../../models/characters";
 import * as Descriptors from "../../descriptors";
-
-import * as _ from "lodash";
+import { CharacterGenerator } from "../../generators/character-generator";
+import * as Characters from "../../models/characters";
 
 @Component({
   selector: "header-display",

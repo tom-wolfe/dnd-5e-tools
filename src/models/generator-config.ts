@@ -1,7 +1,7 @@
 import * as Abilities from "./abilities";
+import * as Characters from "./characters";
 import * as Classes from "./classes";
 import * as Races from "./races";
-import * as Characters from "./characters";
 
 export class GeneratorConfig {
     background: Characters.Background = null;

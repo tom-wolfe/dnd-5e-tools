@@ -1,8 +1,8 @@
+import * as Races from "../../../models/races";
+
 /* cSpell:disable */
 
 /* Adapted from http://en.uesp.net/wiki/Lore:Orc_Names */
-
-import * as Races from "../../../models/races";
 
 export const OrcNames: { [index: string]: Races.NamePartDefinition } = {
     forename: {

@@ -1,5 +1,5 @@
-import { Speed } from "./speed";
 import * as Characters from "../characters";
+import { Speed } from "./speed";
 
 export class CharacterSpeed implements Speed {
     character: Characters.Character;

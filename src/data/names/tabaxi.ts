@@ -1,10 +1,9 @@
+import * as Races from "../../models/races";
+import { NameList } from "./name-list";
+
 /* cSpell:disable */
 
 /* Based on names from http://www.fantasynamegenerators.com/dnd-tabaxi-names.php */
-
-import { NameList } from "./name-list";
-
-import * as Races from "../../models/races";
 
 export const Tabaxi: Races.NameDefinition = {
     name: "Tabaxi",

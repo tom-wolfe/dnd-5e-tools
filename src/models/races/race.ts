@@ -1,14 +1,12 @@
-import { Age } from "./age";
-import { Height } from "./height";
-import { NameDefinition } from "./name-definition";
-import { Reference } from "../reference";
-import { Subrace } from "./subrace";
-import { Weight } from "./weight";
-
 import * as Abilities from "../abilities";
 import * as Attributes from "../attributes";
 import * as Features from "../features";
 import * as Languages from "../languages";
+import { Reference } from "../reference";
+import { Age } from "./age";
+import { Height } from "./height";
+import { NameDefinition } from "./name-definition";
+import { Subrace } from "./subrace";
 
 export class Race {
     name: string;

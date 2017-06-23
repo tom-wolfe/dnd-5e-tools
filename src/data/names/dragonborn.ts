@@ -1,9 +1,8 @@
-/* cSpell:disable */
-
+import * as Races from "../../models/races";
 import { DragonSyllables } from "./common/dragon-syllables";
 import { NameList } from "./name-list";
 
-import * as Races from "../../models/races";
+/* cSpell:disable */
 
 export const Dragonborn: Races.NameDefinition = {
     name: "Dragonborn",

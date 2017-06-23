@@ -1,15 +1,15 @@
-import { Component, Input, Output } from "@angular/core";
-import { GeneratorConfig } from "../../models/generator-config";
+import { Component, Input } from "@angular/core";
 
-import * as Characters from "../../models/characters";
-import * as Classes from "../../models/classes";
-import * as Abilities from "../../models/abilities";
-import * as Races from "../../models/races";
 import * as Data from "../../data";
 import * as BackgroundData from "../../data/backgrounds";
 import * as ClassData from "../../data/classes";
 import * as NameData from "../../data/names";
 import * as RaceData from "../../data/races";
+import * as Abilities from "../../models/abilities";
+import * as Characters from "../../models/characters";
+import * as Classes from "../../models/classes";
+import { GeneratorConfig } from "../../models/generator-config";
+import * as Races from "../../models/races";
 
 @Component({
   selector: "generator-config",

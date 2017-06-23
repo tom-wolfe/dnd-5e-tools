@@ -1,7 +1,7 @@
 import { Component, Input } from "@angular/core";
-import * as Attributes from "../../models/attributes";
-
 import * as _ from "lodash";
+
+import * as Attributes from "../../models/attributes";
 
 @Component({
   selector: "speed-display",

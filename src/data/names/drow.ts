@@ -1,11 +1,9 @@
+import * as Races from "../../models/races";
+import { NameList } from "./name-list";
+
 /* cSpell:disable */
 
 /* Partially adapted from http://www.angelfire.com/rpg2/vortexshadow/names.html */
-
-import { ElfNames } from "./common/elf-names";
-import { NameList } from "./name-list";
-
-import * as Races from "../../models/races";
 
 export const Drow: Races.NameDefinition = {
     name: "Elf (Drow)",

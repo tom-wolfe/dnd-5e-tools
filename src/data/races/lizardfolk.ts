@@ -1,11 +1,9 @@
 import { Languages } from "../../data/languages";
-import { RaceList } from "./race-list";
-import { CommonFeatures } from "../common-features";
 import { Skills } from "../../data/skills";
-
 import * as Characters from "../../models/characters";
-import * as Names from "../names";
 import * as RaceModels from "../../models/races";
+import * as Names from "../names";
+import { RaceList } from "./race-list";
 
 export const Lizardfolk: RaceModels.Race = {
     name: "Lizardfolk",

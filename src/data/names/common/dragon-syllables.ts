@@ -1,8 +1,8 @@
+import * as Races from "../../../models/races";
+
 /* cSpell:disable */
 
 /* adapted from: http://www.fantasynamegenerators.com/dragon-names.php */
-
-import * as Races from "../../../models/races";
 
 export const DragonSyllables: { [index: string]: Races.NamePartDefinition } = {
     syllable: {

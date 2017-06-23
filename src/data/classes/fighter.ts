@@ -1,6 +1,5 @@
-import { Languages, Skills } from "../../data";
-import { ClassList } from "./class-list";
 import * as ClassModels from "../../models/classes";
+import { ClassList } from "./class-list";
 
 export const Fighter: ClassModels.Class = {
     name: "Fighter",

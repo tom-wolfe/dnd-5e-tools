@@ -1,10 +1,9 @@
+import * as Races from "../../models/races";
+import { NameList } from "./name-list";
+
 /* cSpell:disable */
 
 /* Adapted from http://www.fantasynamegenerators.com/dnd-changeling-names.php */
-
-import { NameList } from "./name-list";
-
-import * as Races from "../../models/races";
 
 export const Changeling: Races.NameDefinition = {
     name: "Changeling",

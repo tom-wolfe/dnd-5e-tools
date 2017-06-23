@@ -1,4 +1,4 @@
-import { Directive, Input, HostBinding, ElementRef } from "@angular/core";
+import { Directive, ElementRef, HostBinding, Input } from "@angular/core";
 
 @Directive({ selector: "[collapse]" })
 export class CollapseDirective {

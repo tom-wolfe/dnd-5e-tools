@@ -1,10 +1,9 @@
-/* cSpell:disable */
-
-import { OrcNames } from "./common/orc-names";
+import * as Races from "../../models/races";
 import { HumanNames } from "./common/human-names";
+import { OrcNames } from "./common/orc-names";
 import { NameList } from "./name-list";
 
-import * as Races from "../../models/races";
+/* cSpell:disable */
 
 export const HalfOrc: Races.NameDefinition = {
     name: "Half-Orc",

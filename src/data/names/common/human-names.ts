@@ -1,9 +1,9 @@
+import * as Races from "../../../models/races";
+
 /* cSpell:disable */
 
 /** Forenames adapted from http://www.fantasynamegenerators.com/english_names.php **/
 /* Surnames adapted from http://www.fantasynamegenerators.com/fantasy-surnames.php */
-
-import * as Races from "../../../models/races";
 
 export const HumanNames: { [index: string]: Races.NamePartDefinition } = {
     forename: {

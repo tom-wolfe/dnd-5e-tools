@@ -1,12 +1,10 @@
-import { Reference } from "../reference";
-import { Height } from "./height";
-import { NameDefinition } from "./name-definition";
-import { Weight } from "./weight";
-
 import * as Abilities from "../abilities";
 import * as Attributes from "../attributes";
 import * as Features from "../features";
 import * as Languages from "../languages";
+import { Reference } from "../reference";
+import { Height } from "./height";
+import { NameDefinition } from "./name-definition";
 
 
 export class Subrace {

@@ -1,5 +1,5 @@
-import { AbilityScores } from "./ability-scores";
 import * as Characters from "../characters";
+import { AbilityScores } from "./ability-scores";
 
 export class CharacterAbilityScores extends AbilityScores {
     character: Characters.Character;

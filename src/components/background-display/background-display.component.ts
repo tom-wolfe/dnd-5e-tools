@@ -1,9 +1,7 @@
 import { Component, Input } from "@angular/core";
+
 import { CharacterGenerator } from "../../generators/character-generator";
-
 import * as Characters from "../../models/characters";
-
-import * as _ from "lodash";
 
 @Component({
   selector: "background-display",

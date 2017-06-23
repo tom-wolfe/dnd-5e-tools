@@ -1,11 +1,9 @@
 import { Component, Input } from "@angular/core";
-import { CharacterGenerator } from "../../generators/character-generator";
-
-import * as Abilities from "../../models/abilities";
-import * as Characters from "../../models/characters";
-import * as Data from "../../data";
-
 import * as _ from "lodash";
+
+import * as Data from "../../data";
+import { CharacterGenerator } from "../../generators/character-generator";
+import * as Characters from "../../models/characters";
 
 @Component({
   selector: "ability-score-list",

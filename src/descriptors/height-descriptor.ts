@@ -1,5 +1,5 @@
-import { Descriptor } from "./descriptor";
 import * as Characters from "../models/characters";
+import { Descriptor } from "./descriptor";
 
 export class HeightDescriptor extends Descriptor {
     describe(character: Characters.Character): string {

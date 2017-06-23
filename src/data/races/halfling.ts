@@ -1,8 +1,6 @@
 import { Languages } from "../../data/languages";
-import { RaceList } from "./race-list";
-import { CommonFeatures } from "../common-features";
-
 import * as RaceModels from "../../models/races";
+import { RaceList } from "./race-list";
 
 export const Halfling: RaceModels.Race = {
     name: "Halfling",
