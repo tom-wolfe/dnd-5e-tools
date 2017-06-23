@@ -1,6 +1,9 @@
-# D&amp;D 5th Edition NPC Generator
+# D&amp;D 5th Edition Tools
 
-This is a simple tool for generating NPC character statistics based on the 5th edition Dungeons & Dragons ruleset.
+This is (eventually) going to be a set of simple tools for running or playing D&D 5th edition.
+
+Currently, the toolset includes an NPC generator for statistics based on the 5th edition Dungeons & Dragons ruleset.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.1.
 
 ## Development server
