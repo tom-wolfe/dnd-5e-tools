@@ -1,10 +1,10 @@
-import { Languages, Skills } from "../../data";
-import { ClassList } from "./class-list";
 import * as ClassModels from "../../models/classes";
+import { ClassList } from "./class-list";
 
 export const Paladin: ClassModels.Class = {
     name: "Paladin",
     primaryStat: "STR",
+    archetypeName: { singular: "Sacred Oath", plural: "Sacred Oaths" },
     reference: { source: "PHB", page: 82, url: "https://www.dndbeyond.com/characters/classes/paladin" },
     archetypes: [
         {

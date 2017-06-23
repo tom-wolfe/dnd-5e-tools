@@ -1,8 +1,7 @@
 import { Component, Input } from "@angular/core";
-import * as Attributes from "../../models/attributes";
-import * as Languages from "../../models/languages";
-
 import * as _ from "lodash";
+
+import * as Languages from "../../models/languages";
 
 @Component({
   selector: "languages-display",

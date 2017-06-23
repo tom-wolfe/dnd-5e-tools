@@ -1,7 +1,7 @@
 import { Languages } from "../../data/languages";
-import { RaceList } from "./race-list";
-
 import * as RaceModels from "../../models/races";
+import * as Names from "../names";
+import { RaceList } from "./race-list";
 
 export const Aasimar: RaceModels.Race = {
     name: "Aasimar",
@@ -11,6 +11,7 @@ export const Aasimar: RaceModels.Race = {
     age: { maturity: 18, max: 160 },
     height: { base: 56, modifier: 20 },
     weight: { base: 110, modifier: 8 },
+    nameDefinition: Names.Aasimar,
     languages: { known: [Languages.Common, Languages.Celestial] },
     abilityMods: { "CHA": +2 },
     features: [

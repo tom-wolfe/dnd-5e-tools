@@ -1,3 +1,4 @@
+
 export const Sources: { [index: string]: string } = {
     "COS": "Curse of Strahd",
     "DMG": "Dungeon Master's Guide",

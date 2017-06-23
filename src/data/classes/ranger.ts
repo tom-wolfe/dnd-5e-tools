@@ -1,10 +1,10 @@
-import { Languages, Skills } from "../../data";
-import { ClassList } from "./class-list";
 import * as ClassModels from "../../models/classes";
+import { ClassList } from "./class-list";
 
 export const Ranger: ClassModels.Class = {
     name: "Ranger",
     primaryStat: "DEX",
+    archetypeName: { singular: "Ranger Archetype", plural: "Ranger Archetypes" },
     reference: { source: "PHB", page: 89, url: "https://www.dndbeyond.com/characters/classes/ranger" },
     archetypes: [
         {

@@ -1,20 +1,19 @@
+import * as _ from "lodash";
+
+import * as Data from "../data/";
+import * as BackgroundData from "../data/backgrounds/";
+import * as ClassData from "../data/classes/";
+import * as Names from "../data/names";
+import * as RaceData from "../data/races/";
+import * as Abilities from "../models/abilities";
+import { ProficiencyType } from "../models/abilities/proficiency-type";
+import * as Characters from "../models/characters";
+import { GeneratorConfig } from "../models/generator-config";
+import * as Languages from "../models/languages";
+import * as Races from "../models/races";
 import { AbilityScoreGenerator } from "./ability-score-generator";
 import { NameGenerator } from "./name-generator";
 import { NumberGenerator } from "./number-generator";
-import { ProficiencyType } from "../models/abilities/proficiency-type";
-import * as BackgroundData from "../data/backgrounds/";
-import * as ClassData from "../data/classes/";
-import * as RaceData from "../data/races/";
-import * as Abilities from "../models/abilities";
-import * as Characters from "../models/characters";
-import * as Data from "../data/";
-import * as Names from "../data/names";
-import * as Languages from "../models/languages";
-import * as Markov from "../markov";
-import * as Races from "../models/races";
-import { GeneratorConfig } from "../models/generator-config";
-
-import * as _ from "lodash";
 
 export class CharacterGenerator {
     abGen = new AbilityScoreGenerator();
@@ -74,7 +73,7 @@ export class CharacterGenerator {
         }
     }
 
-    randomizeRace(character: Characters.Character) {
+    private randomizeRace(character: Characters.Character) {
         if (this.config.race) {
             character.race = this.config.race;
             character.subrace = this.config.subrace;
@@ -85,7 +84,7 @@ export class CharacterGenerator {
         }
     }
 
-    randomizeSubrace(character: Characters.Character) {
+    private randomizeSubrace(character: Characters.Character) {
         if (this.config.subrace) {
             character.subrace = this.config.subrace;
         } else {
@@ -99,7 +98,7 @@ export class CharacterGenerator {
 
     }
 
-    randomizeRaceAbilities(character: Characters.Character) {
+    private randomizeRaceAbilities(character: Characters.Character) {
         // Figure out the combined stat bonuses of the race and sub race.
         const abilityMods: Abilities.AbilityMods = {};
         Object.assign(abilityMods, character.race.abilityMods);
@@ -140,7 +139,7 @@ export class CharacterGenerator {
         }
     }
 
-    applyRaceBonuses(character: Characters.Character) {
+    private applyRaceBonuses(character: Characters.Character) {
         if (character.race.features) {
             character.race.features.filter(feat => feat.type === "singleMod").forEach(feat => {
                 feat.apply(character);
@@ -161,6 +160,13 @@ export class CharacterGenerator {
             const bgNum = this.numGen.rollDie(bgKeys.length) - 1;
             character.background = BackgroundData.BackgroundList[bgKeys[bgNum]];
         }
+
+        const bgProficiencies = character.background.skillProficiencies.forEach(skill => {
+            character.skillProficiencies.push({
+                skill: skill,
+                proficiencyType: "proficient"
+            });
+        });
     }
 
     randomizePersonality(character: Characters.Character) {
@@ -204,12 +210,6 @@ export class CharacterGenerator {
 
     randomizeSkillProficiencies(character: Characters.Character) {
         // Apply background features.
-        const bgProficiencies = character.background.skillProficiencies.forEach(skill => {
-            character.skillProficiencies.push({
-                skill: skill,
-                proficiencyType: "proficient"
-            });
-        });
 
         // Enumerate the proficiency-based features.
         const proficiencyFeats = character.racialFeatures.filter(feature => feature.skillProficiencies);
@@ -274,8 +274,20 @@ export class CharacterGenerator {
     }
 
     randomizeName(character: Characters.Character) {
-        const generator = new NameGenerator(Names.Tabaxi, character.gender);
-        character.name = generator.getForename() + " " + generator.getSurname();
+        let nameDef: Races.NameDefinition;
+        if (this.config.name) {
+            nameDef = this.config.name;
+        } else {
+            if (character.subrace && character.subrace.nameDefinition) {
+                nameDef = character.subrace.nameDefinition;
+            } else {
+                nameDef = character.race.nameDefinition;
+            }
+        }
+
+        if (!nameDef) { nameDef = Names.Elf };
+        const generator = new NameGenerator(nameDef, character.gender);
+        character.name = generator.getName();
     }
 
     randomizeAge(character: Characters.Character) {

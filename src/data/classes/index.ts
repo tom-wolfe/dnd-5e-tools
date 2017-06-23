@@ -1,3 +1,4 @@
+
 export * from "./class-list";
 
 export * from "./artificer";
@@ -12,3 +13,4 @@ export * from "./ranger";
 export * from "./rogue";
 export * from "./sorcerer";
 export * from "./warlock";
+export * from "./wizard";

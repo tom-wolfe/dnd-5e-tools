@@ -1,6 +1,6 @@
-import { Languages, Skills } from "../../data";
-import { BackgroundList } from "./background-list";
+import { Skills } from "../../data";
 import * as Characters from "../../models/characters";
+import { BackgroundList } from "./background-list";
 
 export const Outlander: Characters.Background = {
     name: "Outlander",
@@ -19,7 +19,7 @@ export const Outlander: Characters.Background = {
         "I was, in fact, raised by wolves.",
     ],
     ideals: [
-        "Change. Life is like the seasons, in constant change, and we must change with il. (Chaotic)",
+        "Change. Life is like the seasons, in constant change, and we must change with it. (Chaotic)",
         "Greater Good. It is each person's responsibility to make the most happiness for the whole tribe. (Good)",
         "Honor. If I dishonor myself, I dishonor my whole clan. (Lawful)",
         "Might. The strongest are meant to rule. (Evil)",

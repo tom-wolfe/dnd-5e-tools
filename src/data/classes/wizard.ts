@@ -1,10 +1,10 @@
-import { Languages, Skills } from "../../data";
-import { ClassList } from "./class-list";
 import * as ClassModels from "../../models/classes";
+import { ClassList } from "./class-list";
 
 export const Wizard: ClassModels.Class = {
     name: "Wizard",
     primaryStat: "INT",
+    archetypeName: { singular: "Arcane Tradition", plural: "Arcane Traditions" },
     reference: { source: "PHB", page: 112, url: "https://www.dndbeyond.com/characters/classes/wizard" },
     archetypes: [
         {

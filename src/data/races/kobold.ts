@@ -1,8 +1,8 @@
 import { Languages } from "../../data/languages";
-import { RaceList } from "./race-list";
-import { CommonFeatures } from "../common-features";
-
 import * as RaceModels from "../../models/races";
+import { CommonFeatures } from "../common-features";
+import * as Names from "../names";
+import { RaceList } from "./race-list";
 
 export const Kobold: RaceModels.Race = {
     name: "Kobold",
@@ -12,6 +12,7 @@ export const Kobold: RaceModels.Race = {
     age: { maturity: 6, max: 120 },
     height: { base: 31, modifier: 8 },
     weight: { base: 35, modifier: 1 },
+    nameDefinition: Names.Kobold,
     languages: { known: [Languages.Common, Languages.Draconic] },
     abilityMods: { "DEX": +2, "STR": -2 },
     features: [
@@ -33,7 +34,7 @@ export const Kobold: RaceModels.Race = {
         CommonFeatures.sunlightSensitivity
     ],
     reference: { source: "VGM", page: 119 },
-    subraces: null
+    subraces: []
 };
 
 RaceList[Kobold.name] = Kobold;

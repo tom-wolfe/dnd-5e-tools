@@ -1,8 +1,8 @@
 import { Languages } from "../../data/languages";
-import { RaceList } from "./race-list";
-import { CommonFeatures } from "../common-features";
-
 import * as RaceModels from "../../models/races";
+import { CommonFeatures } from "../common-features";
+import * as Names from "../names";
+import { RaceList } from "./race-list";
 
 export const HalfOrc: RaceModels.Race = {
     name: "Half-orc",
@@ -12,6 +12,7 @@ export const HalfOrc: RaceModels.Race = {
     height: { base: 58, modifier: 20 },
     weight: { base: 140, modifier: 12 },
     abilityMods: { "STR": +2, "CON": +1 },
+    nameDefinition: Names.HalfOrc,
     languages: { known: [Languages.Common, Languages.Orc] },
     features: [
         CommonFeatures.menacing,
@@ -31,7 +32,7 @@ export const HalfOrc: RaceModels.Race = {
         }
     ],
     reference: { source: "PHB", page: 40, url: "https://www.dndbeyond.com/characters/races/half-orc" },
-    subraces: null
+    subraces: []
 };
 
 RaceList[HalfOrc.name] = HalfOrc;

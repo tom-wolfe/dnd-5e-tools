@@ -1,6 +1,6 @@
-import { Languages, Skills } from "../../data";
-import { BackgroundList } from "./background-list";
+import { Skills } from "../../data";
 import * as Characters from "../../models/characters";
+import { BackgroundList } from "./background-list";
 
 export const Entertainer: Characters.Background = {
     name: "Entertainer",

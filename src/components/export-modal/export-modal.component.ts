@@ -1,9 +1,8 @@
 import { Component, Input, ViewChild } from "@angular/core";
 import { TemplateRef } from "@angular/core";
+import { ModalDismissReasons, NgbModal, NgbModalOptions, NgbModalRef } from "@ng-bootstrap/ng-bootstrap";
+
 import { Exporter } from "../../export/exporter";
-
-import { NgbModal, NgbModalOptions, NgbModalRef, ModalDismissReasons } from "@ng-bootstrap/ng-bootstrap";
-
 import * as Characters from "../../models/characters";
 
 @Component({

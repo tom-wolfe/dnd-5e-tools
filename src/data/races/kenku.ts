@@ -1,8 +1,7 @@
 import { Languages, Skills } from "../../data";
-import { RaceList } from "./race-list";
-import { CommonFeatures } from "../common-features";
-
 import * as RaceModels from "../../models/races";
+import * as Names from "../names";
+import { RaceList } from "./race-list";
 
 export const Kenku: RaceModels.Race = {
     name: "Kenku",
@@ -11,6 +10,7 @@ export const Kenku: RaceModels.Race = {
     age: { maturity: 12, max: 60 },
     height: { base: 54, modifier: 12 },
     weight: { base: 90, modifier: 3 },
+    nameDefinition: Names.Kenku,
     languages: { known: [Languages.Common, Languages.Primordial] },
     abilityMods: { "DEX": +2, "WIS": +1 },
     features: [
@@ -36,7 +36,7 @@ export const Kenku: RaceModels.Race = {
         }
     ],
     reference: { source: "VGM", page: 110 },
-    subraces: null
+    subraces: []
 };
 
 RaceList[Kenku.name] = Kenku;

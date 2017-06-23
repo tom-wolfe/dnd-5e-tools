@@ -1,9 +1,9 @@
 import { Languages } from "../../data/languages";
-import { RaceList } from "./race-list";
-import { CommonFeatures } from "../common-features";
 import { Skills } from "../../data/skills";
-
+import * as Characters from "../../models/characters";
 import * as RaceModels from "../../models/races";
+import * as Names from "../names";
+import { RaceList } from "./race-list";
 
 export const Lizardfolk: RaceModels.Race = {
     name: "Lizardfolk",
@@ -12,6 +12,7 @@ export const Lizardfolk: RaceModels.Race = {
     age: { maturity: 14, max: 65 },
     height: { base: 60, modifier: 20 },
     weight: { base: 120, modifier: 8 },
+    nameDefinition: Names.Lizardfolk,
     languages: { known: [Languages.Common, Languages.Draconic] },
     abilityMods: { "CON": +2, "WIS": +1 },
     features: [
@@ -42,12 +43,15 @@ export const Lizardfolk: RaceModels.Race = {
                     Animal Handling, Nature, Perception, Stealth, and Survival.
                 `
         }, {
-            name: "Natural Armor", type: "passive",
+            name: "Natural Armor", type: "singleMod",
             description: `
                     You have tough, scaly skin. When you aren't wearing armor, your AC is 13 + your Dexterity modifier. You can use your
                     natural armor to determine your AC if the armor you wear would leave you with a lower AC. A shield's benefits apply
                     as normal while you use your natural armor.
-                `
+                `,
+            apply(character: Characters.Character) {
+                character.baseArmorClass = 13;
+            }
         }, {
             name: "Hungry Jaws", type: "active",
             description: `
@@ -58,7 +62,7 @@ export const Lizardfolk: RaceModels.Race = {
         }
     ],
     reference: { source: "VGM", page: 111 },
-    subraces: null
+    subraces: []
 };
 
 RaceList[Lizardfolk.name] = Lizardfolk;

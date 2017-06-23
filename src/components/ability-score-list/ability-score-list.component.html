@@ -1,4 +1,5 @@
-<div class="ability-score-list character-block-major">
+<div class="ability-score-list bt-thick bb-thick">
+    <div class="refresh pull-right"><a href="" (click)="onRefreshAbilitiesClick($event)"><i class="fa fa-refresh"></i><span class="sr-only">Random Abilities</span></a></div>
     <div class="ability-list row">
         <ability-score [ability]="ability" [character]="character" *ngFor="let ability of abilityList"></ability-score>
     </div>

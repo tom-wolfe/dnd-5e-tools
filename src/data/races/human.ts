@@ -1,8 +1,7 @@
 import { Languages, Skills } from "../../data";
-import { RaceList } from "./race-list";
-import { CommonFeatures } from "../common-features";
-
 import * as RaceModels from "../../models/races";
+import * as Names from "../names";
+import { RaceList } from "./race-list";
 
 export const Human: RaceModels.Race = {
     name: "Human",
@@ -11,6 +10,7 @@ export const Human: RaceModels.Race = {
     age: { maturity: 18, max: 80 },
     height: { base: 56, modifier: 20 },
     weight: { base: 110, modifier: 8 },
+    nameDefinition: Names.Human,
     languages: { known: [Languages.Common], other: 1 },
     features: [],
     abilityMods: {},

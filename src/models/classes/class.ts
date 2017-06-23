@@ -1,9 +1,10 @@
-import { Archetype } from "./archetype";
 import { Reference } from "../reference";
+import { Archetype } from "./archetype";
 
 export class Class {
     name: string;
     reference: Reference;
     primaryStat: string;
-    archetypes?: Archetype[]
+    archetypeName: { singular: string, plural: string };
+    archetypes?: Archetype[];
 };

@@ -1,8 +1,7 @@
-import { Skills, Languages } from "../../data";
-import { RaceList } from "./race-list";
-import { CommonFeatures } from "../common-features";
-
+import { Languages, Skills } from "../../data";
 import * as RaceModels from "../../models/races";
+import * as Names from "../names";
+import { RaceList } from "./race-list";
 
 export const Tabaxi: RaceModels.Race = {
     name: "Tabaxi",
@@ -12,6 +11,7 @@ export const Tabaxi: RaceModels.Race = {
     age: { maturity: 18, max: 80 },
     height: { base: 62, modifier: 24 },
     weight: { base: 100, modifier: 8 },
+    nameDefinition: Names.Tabaxi,
     languages: { known: [Languages.Common], other: 1 },
     abilityMods: { "DEX": +2, "CHA": +1 },
     features: [
@@ -38,7 +38,7 @@ export const Tabaxi: RaceModels.Race = {
         }
     ],
     reference: { source: "VGM", page: 113 },
-    subraces: null
+    subraces: []
 };
 
 RaceList[Tabaxi.name] = Tabaxi;

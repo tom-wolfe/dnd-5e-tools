@@ -1,8 +1,8 @@
 import { Languages, Skills } from "../../data";
-import { RaceList } from "./race-list";
-import { CommonFeatures } from "../common-features";
-
 import * as RaceModels from "../../models/races";
+import { CommonFeatures } from "../common-features";
+import * as Names from "../names";
+import { RaceList } from "./race-list";
 
 export const Goliath: RaceModels.Race = {
     name: "Goliath",
@@ -11,6 +11,7 @@ export const Goliath: RaceModels.Race = {
     age: { maturity: 18, max: 90 },
     height: { base: 84, modifier: 12 },
     weight: { base: 280, modifier: 5 },
+    nameDefinition: Names.Goliath,
     languages: { known: [Languages.Common, Languages.Giant] },
     abilityMods: { "STR": +2, "CON": +1 },
     features: [
@@ -38,7 +39,7 @@ export const Goliath: RaceModels.Race = {
         }
     ],
     reference: { source: "VGM", page: 108, url: "https://www.dndbeyond.com/characters/races/goliath" },
-    subraces: null
+    subraces: []
 };
 
 RaceList[Goliath.name] = Goliath;

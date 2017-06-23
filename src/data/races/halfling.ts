@@ -1,13 +1,13 @@
 import { Languages } from "../../data/languages";
-import { RaceList } from "./race-list";
-import { CommonFeatures } from "../common-features";
-
 import * as RaceModels from "../../models/races";
+import * as Names from "../names";
+import { RaceList } from "./race-list";
 
 export const Halfling: RaceModels.Race = {
     name: "Halfling",
     size: "Small",
     abilityMods: { "DEX": +2 },
+    nameDefinition: Names.Halfling,
     languages: { known: [Languages.Common, Languages.Halfling] },
     age: { maturity: 20, max: 105 },
     height: { base: 31, modifier: 8 },

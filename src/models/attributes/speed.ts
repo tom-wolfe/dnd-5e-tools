@@ -1,3 +1,4 @@
+
 export interface Speed {
     walk?: number;
     fly?: number;

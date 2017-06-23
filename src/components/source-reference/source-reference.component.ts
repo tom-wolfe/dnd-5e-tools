@@ -1,6 +1,7 @@
 import { Component, Input } from "@angular/core";
-import { Reference } from "../../models/reference";
+
 import * as Data from "../../data";
+import { Reference } from "../../models/reference";
 
 @Component({
   selector: "source-reference",

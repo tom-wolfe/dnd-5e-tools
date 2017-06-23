@@ -1,3 +1,4 @@
+
 export abstract class AbilityScores {
     abstract get(ability: string): number;
     abstract set(ability: string, value: number): void;

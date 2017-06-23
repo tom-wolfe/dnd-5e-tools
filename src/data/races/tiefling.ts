@@ -1,14 +1,14 @@
 import { Languages } from "../../data/languages";
-import { RaceList } from "./race-list";
-import { CommonFeatures } from "../common-features";
-
 import * as RaceModels from "../../models/races";
+import * as Names from "../names";
+import { RaceList } from "./race-list";
 
 export const Tiefling: RaceModels.Race = {
     name: "Tiefling",
     size: "Medium",
     speed: { walk: 30 },
     senses: { darkvision: 60 },
+    nameDefinition: Names.Tiefling,
     age: { maturity: 18, max: 90 },
     height: { base: 57, modifier: 16 },
     weight: { base: 110, modifier: 8 },
@@ -29,7 +29,7 @@ export const Tiefling: RaceModels.Race = {
         }
     ],
     reference: { source: "PHB", page: 42, url: "https://www.dndbeyond.com/characters/races/tiefling" },
-    subraces: null
+    subraces: []
 };
 
 RaceList[Tiefling.name] = Tiefling;

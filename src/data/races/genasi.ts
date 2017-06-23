@@ -1,8 +1,7 @@
 import { Languages } from "../../data/languages";
-import { RaceList } from "./race-list";
-import { CommonFeatures } from "../common-features";
-
 import * as RaceModels from "../../models/races";
+import * as Names from "../names";
+import { RaceList } from "./race-list";
 
 export const Genasi: RaceModels.Race = {
     name: "Genasi",
@@ -11,6 +10,7 @@ export const Genasi: RaceModels.Race = {
     age: { maturity: 18, max: 120 },
     height: { base: 56, modifier: 20 },
     weight: { base: 110, modifier: 8 },
+    nameDefinition: Names.Human,
     languages: { known: [Languages.Common, Languages.Primordial] },
     abilityMods: { "CON": +2 },
     features: [],
@@ -18,6 +18,7 @@ export const Genasi: RaceModels.Race = {
     subraces: [
         {
             name: "Air",
+            nameDefinition: Names.GenasiAir,
             abilityMods: { "DEX": +1 },
             features: [
                 {
@@ -36,6 +37,7 @@ export const Genasi: RaceModels.Race = {
             reference: { source: "EE", page: 8, url: "https://www.dndbeyond.com/characters/races/genasi#AirGenasi" }
         }, {
             name: "Earth",
+            nameDefinition: Names.GenasiEarth,
             abilityMods: { "STR": +1 },
             features: [
                 {
@@ -54,6 +56,7 @@ export const Genasi: RaceModels.Race = {
             reference: { source: "EE", page: 8, url: "https://www.dndbeyond.com/characters/races/genasi#EarthGenasi" }
         }, {
             name: "Fire",
+            nameDefinition: Names.GenasiFire,
             abilityMods: { "INT": +1 },
             senses: { darkvision: 60 },
             features: [
@@ -73,6 +76,7 @@ export const Genasi: RaceModels.Race = {
             reference: { source: "EE", page: 8, url: "https://www.dndbeyond.com/characters/races/genasi#FireGenasi" }
         }, {
             name: "Water",
+            nameDefinition: Names.GenasiWater,
             speed: { swim: 30 },
             abilityMods: { "WIS": +1 },
             features: [

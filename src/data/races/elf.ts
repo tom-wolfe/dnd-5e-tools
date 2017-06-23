@@ -1,9 +1,9 @@
 import { Languages, Skills } from "../../data";
-import { RaceList } from "./race-list";
-import { CommonFeatures } from "../common-features";
-
 import * as Characters from "../../models/characters";
 import * as RaceModels from "../../models/races";
+import { CommonFeatures } from "../common-features";
+import * as Names from "../names";
+import { RaceList } from "./race-list";
 
 export const Elf: RaceModels.Race = {
     name: "Elf",
@@ -13,6 +13,7 @@ export const Elf: RaceModels.Race = {
     age: { maturity: 18, max: 750 },
     height: { base: 54, modifier: 20 },
     weight: { base: 90, modifier: 4 },
+    nameDefinition: Names.Elf,
     languages: { known: [Languages.Common, Languages.Elvish] },
     abilityMods: { "DEX": +2 },
     features: [
@@ -73,6 +74,7 @@ export const Elf: RaceModels.Race = {
             reference: { source: "PHB", page: 24, url: "https://www.dndbeyond.com/characters/races/elf#WoodElf" }
         }, {
             name: "Drow",
+            nameDefinition: Names.Drow,
             abilityMods: { "CHA": +1 },
             senses: { darkvision: 120 },
             height: { base: 53, modifier: 12 },

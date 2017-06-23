@@ -1,14 +1,15 @@
 import { Languages, Skills } from "../../data";
-import { RaceList } from "./race-list";
-import { CommonFeatures } from "../common-features";
-
 import * as RaceModels from "../../models/races";
+import { CommonFeatures } from "../common-features";
+import * as Names from "../names";
+import { RaceList } from "./race-list";
 
 export const Bugbear: RaceModels.Race = {
     name: "Bugbear",
     size: "Medium",
     speed: { walk: 30 },
     senses: { darkvision: 60 },
+    nameDefinition: Names.Goblin,
     age: { maturity: 16, max: 80 },
     height: { base: 72, modifier: 24 },
     weight: { base: 250, modifier: 4 },
@@ -32,7 +33,7 @@ export const Bugbear: RaceModels.Race = {
         }
     ],
     reference: { source: "VGM", page: 119 },
-    subraces: null
+    subraces: []
 };
 
 RaceList[Bugbear.name] = Bugbear;

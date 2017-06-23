@@ -1,10 +1,10 @@
-import { Languages, Skills } from "../../data";
-import { ClassList } from "./class-list";
 import * as ClassModels from "../../models/classes";
+import { ClassList } from "./class-list";
 
 export const Rogue: ClassModels.Class = {
     name: "Rogue",
     primaryStat: "DEX",
+    archetypeName: { singular: "Rogueish Archetypes", plural: "Roguish Archetypes" },
     reference: { source: "PHB", page: 94, url: "https://www.dndbeyond.com/characters/classes/rogue" },
     archetypes: [
         {

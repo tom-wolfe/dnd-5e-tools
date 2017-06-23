@@ -1,47 +1,55 @@
-<div class="row">
-  <div class="col-lg-3 col-md-4 col-sm-6 form-group">
-    <label for="race">Race</label>
-    <select class="form-control" name="race" [(ngModel)]="config.race" (input)="config.subrace = null">
+<div class="generator-config">
+  <div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-6 form-group">
+      <label for="race">Race</label>
+      <select class="form-control" name="race" [(ngModel)]="config.race" (input)="config.subrace = null">
         <option [ngValue]="null" selected>Any Race</option>
         <option *ngFor="let race of races" [ngValue]="race">{{race.name}}</option>
       </select>
-    <select class="form-control mt-2" name="subrace" [(ngModel)]="config.subrace" [disabled]="!config.race || !config.race.subraces">
-        <option *ngIf="!config.race || config.race.subraces" [ngValue]="null" selected>Any Subrace</option>
-        <ng-template [ngIf]="config.race != null">
-          <option *ngIf="!config.race.subraces" [ngValue]="null" selected>No Subraces</option>
+      <select class="form-control mt-2" name="subrace" [(ngModel)]="config.subrace" [disabled]="!config.race || config.race.subraces.length === 0">
+        <option *ngIf="(config.race === null) || (config.race.subraces.length > 0)" [ngValue]="null" selected>Any Subrace</option>
+        <ng-template [ngIf]="config.race !== null">
+          <option *ngIf="config.race.subraces.length === 0" [ngValue]="null" selected>No Subraces</option>
           <option *ngFor="let subrace of (config.race.subraces || [])" [ngValue]="subrace">{{subrace.name}}</option>
         </ng-template>
     </select>
-  </div>
-  <div class="col-lg-3 col-md-4 col-sm-6 form-group">
-    <label for="race">Class</label>
-    <select class="form-control" name="class" [(ngModel)]="config.class" (input)="config.classArchetype = null">
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 form-group">
+      <label for="class">Class</label>
+      <select class="form-control" name="class" [(ngModel)]="config.class" (input)="config.classArchetype = null">
         <option [ngValue]="null" selected>Any Class</option>
         <option *ngFor="let class of classes" [ngValue]="class">{{class.name}}</option>
     </select>
-    <select class="form-control mt-2" name="classArchetype" [(ngModel)]="config.classArchetype" [disabled]="!config.class || !config.class.archetypes">
-        <option *ngIf="!config.class || config.class.archetypes" [ngValue]="null" selected>Any Archetype</option>
+      <select class="form-control mt-2" name="classArchetype" [(ngModel)]="config.classArchetype" [disabled]="!config.class || config.class.archetypes.length === 0">
+        <option *ngIf="(config.class === null) || (config.class.archetypes.length > 0)" [ngValue]="null" selected>Any {{config.class === null ? "Archetype": config.class.archetypeName.singular}}</option>
         <ng-template [ngIf]="config.class != null">
-          <option *ngIf="!config.class.archetypes" [value]="null" selected>No Archetypes</option>
+          <option *ngIf="config.class.archetypes.length === 0" [value]="null" selected>No {{config.class === null ? "Archetypes": config.class.archetypeName.plural}}</option>
           <option *ngFor="let archetype of (config.class.archetypes || [])" [ngValue]="archetype">{{archetype.name}}</option>
         </ng-template>
     </select>
-  </div>
-  <div class="col-lg-3 col-md-4 col-sm-6 form-group">
-    <label for="race">Background</label>
-    <select class="form-control" name="background" [(ngModel)]="config.background">
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 form-group">
+      <label for="background">Background</label>
+      <select class="form-control" name="background" [(ngModel)]="config.background">
         <option [ngValue]="null" selected>Any Background</option>
         <option *ngFor="let background of backgrounds" [ngValue]="background">{{background.name}}</option>
-    </select>
+      </select>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 form-group">
+      <label for="name">Name Generator</label>
+      <select class="form-control" name="name" [(ngModel)]="config.name">
+        <option [ngValue]="null" selected>Race Default</option>
+        <option *ngFor="let name of names" [ngValue]="name">{{name.name}}</option>
+      </select>
+    </div>
   </div>
-</div>
-<div class="row">
-  <div class="col-lg-3 col-md-4 col-sm-6 form-group">
-    <label for="minLevel">Level</label>
-    <div>
-      <div class="row">
-        <div class="col-5">
-          <select class="form-control" name="minLevel" [(ngModel)]="config.minLevel">
+  <div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-6 form-group">
+      <label for="minLevel">Level</label>
+      <div>
+        <div class="row">
+          <div class="col-5">
+            <select class="form-control" name="minLevel" [(ngModel)]="config.minLevel">
             <option value="1" selected>1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -63,12 +71,12 @@
             <option value="19">19</option>
             <option value="20">20</option>
           </select>
-        </div>
-        <div class="col-2 text-center">
-          &ndash;&ndash;
-        </div>
-        <div class="col-5">
-          <select class=" form-control" name="maxLevel" [(ngModel)]="config.maxLevel">
+          </div>
+          <div class="col-2 text-center">
+            &ndash;&ndash;
+          </div>
+          <div class="col-5">
+            <select class=" form-control" name="maxLevel" [(ngModel)]="config.maxLevel">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -90,19 +98,20 @@
             <option value="19">19</option>
             <option value="20">20</option>
           </select>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="col-lg-3 col-md-4 col-sm-6 form-group">
-    <label for="primaryAbility">Abilities</label>
-    <select class="form-control" name="primaryAbility" [(ngModel)]="config.primaryAbility">
+    <div class="col-lg-3 col-md-4 col-sm-6 form-group">
+      <label for="primaryAbility">Main Abilities</label>
+      <select class="form-control" name="primaryAbility" [(ngModel)]="config.primaryAbility">
         <option [ngValue]="null" selected>Any Ability</option>
         <option *ngFor="let ability of abilities" [ngValue]="ability">{{ability.name}}</option>
     </select>
-    <select class="form-control mt-2" name="secondaryAbility" [(ngModel)]="config.secondaryAbility">
+      <select class="form-control mt-2" name="secondaryAbility" [(ngModel)]="config.secondaryAbility">
         <option [ngValue]="null" selected>Any Ability</option>
         <option *ngFor="let ability of abilities" [ngValue]="ability">{{ability.name}}</option>
     </select>
+    </div>
   </div>
 </div>

@@ -1,9 +1,9 @@
 import { Component, Input } from "@angular/core";
-import * as Abilities from "../../models/abilities";
-import * as Characters from "../../models/characters";
-import * as Data from "../../data";
-
 import * as _ from "lodash";
+
+import * as Data from "../../data";
+import { CharacterGenerator } from "../../generators/character-generator";
+import * as Characters from "../../models/characters";
 
 @Component({
   selector: "ability-score-list",
@@ -12,6 +12,7 @@ import * as _ from "lodash";
 })
 export class AbilityScoreListComponent {
   @Input() character: Characters.Character;
+  @Input() generator: CharacterGenerator;
 
   get abilityList(): string[] {
     return Object.keys(Data.Abilities.AbilityList);
@@ -22,5 +23,11 @@ export class AbilityScoreListComponent {
   }
   get abilityPercentile(): string {
     return (this.abilitySum / 108.0 * 100).toFixed(0);
+  }
+
+  onRefreshAbilitiesClick(e) {
+    this.generator.randomizeAbilities(this.character);
+    e.preventDefault();
+    return false;
   }
 };

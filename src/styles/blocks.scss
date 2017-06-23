@@ -1,0 +1,50 @@
+.bt-thick { border-top: 2px solid $brand-primary; }
+.bb-thick { border-bottom: 2px solid $brand-primary; }
+.bt-thin { border-top: 1px solid $brand-primary; }
+.bb-thin { border-bottom: 1px solid $brand-primary; }
+
+
+.bb-light {
+    border-bottom: 1px solid darken($gray-lighter, 5%);
+}
+.bt-light {
+    border-top: 1px solid darken($gray-lighter, 5%);
+}
+
+
+.block-title {
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 8px;
+}
+
+.attribute-block {
+    padding: 12px;
+    text-align: center;
+
+    .attribute-title {
+        display: block;
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .primary {
+        font-size: 24px;
+        font-family: $font-family-secondary;
+    }
+
+    .secondary {
+        font-size: 12px;
+        font-family: $font-family-secondary;
+        vertical-align: top;
+    }
+}
+
+.character-sub-block {
+    padding: 12px;
+    .sub-block-title {
+        font-size: 16px;
+        font-weight: bold;
+    }
+}

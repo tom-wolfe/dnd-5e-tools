@@ -1,5 +1,5 @@
-import { Character } from "../characters";
 import * as Abilities from "../abilities";
+import { Character } from "../characters";
 import { FeatureType } from "./feature-type";
 import { UsageFrequency } from "./usage-frequency";
 

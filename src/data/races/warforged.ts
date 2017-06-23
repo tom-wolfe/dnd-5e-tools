@@ -1,8 +1,8 @@
-import { Languages, Skills } from "../../data";
-import { RaceList } from "./race-list";
-
+import { Languages } from "../../data";
 import * as Characters from "../../models/characters";
 import * as RaceModels from "../../models/races";
+import * as Names from "../names";
+import { RaceList } from "./race-list";
 
 export const Warforged: RaceModels.Race = {
     name: "Warforged",
@@ -11,6 +11,7 @@ export const Warforged: RaceModels.Race = {
     age: { maturity: 1, max: 500 },
     height: { base: 56, modifier: 20 },
     weight: { base: 180, modifier: 8 },
+    nameDefinition: Names.Warforged,
     languages: { known: [Languages.Common], other: 1 },
     abilityMods: { "STR": +1, "CON": +1 },
     features: [
@@ -34,7 +35,7 @@ export const Warforged: RaceModels.Race = {
         source: "UA", page: 2,
         document: "Eberron", url: "http://media.wizards.com/2015/downloads/dnd/UA_Eberron_v1.1.pdf#page=2"
     },
-    subraces: null
+    subraces: []
 };
 
 RaceList[Warforged.name] = Warforged;

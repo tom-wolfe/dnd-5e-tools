@@ -1,10 +1,10 @@
-import { Languages, Skills } from "../../data";
-import { ClassList } from "./class-list";
 import * as ClassModels from "../../models/classes";
+import { ClassList } from "./class-list";
 
 export const Cleric: ClassModels.Class = {
     name: "Cleric",
     primaryStat: "WIS",
+    archetypeName: { singular: "Divine Domain", plural: "Divine Domains" },
     reference: { source: "PHB", page: 56, url: "https://www.dndbeyond.com/characters/classes/cleric" },
     archetypes: [
         {

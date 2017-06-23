@@ -1,7 +1,7 @@
 import { Component, Input } from "@angular/core";
-import * as Characters from "../../models/characters";
 
-import * as _ from "lodash";
+import { CharacterGenerator } from "../../generators/character-generator";
+import * as Characters from "../../models/characters";
 
 @Component({
   selector: "background-display",
@@ -10,4 +10,11 @@ import * as _ from "lodash";
 })
 export class BackgroundDisplayComponent {
   @Input() character: Characters.Character;
+  @Input() generator: CharacterGenerator;
+
+  onRefreshBackgroundClick(e) {
+    this.generator.randomizePersonality(this.character);
+    e.preventDefault();
+    return false;
+  }
 };

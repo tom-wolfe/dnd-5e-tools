@@ -1,8 +1,7 @@
-import { Languages } from "../../data/languages";
-import { RaceList } from "./race-list";
-import { CommonFeatures } from "../common-features";
-
 import * as RaceModels from "../../models/races";
+import { Languages } from "../languages";
+import * as Names from "../names";
+import { RaceList } from "./race-list";
 
 export const Gnome: RaceModels.Race = {
     name: "Gnome",
@@ -12,6 +11,7 @@ export const Gnome: RaceModels.Race = {
     age: { maturity: 18, max: 450 },
     height: { base: 35, modifier: 8 },
     weight: { base: 35, modifier: 1 },
+    nameDefinition: Names.Gnome,
     languages: { known: [Languages.Common, Languages.Gnomish] },
     abilityMods: { "INT": +2 },
     features: [

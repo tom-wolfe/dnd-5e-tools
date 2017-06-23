@@ -1,8 +1,7 @@
 import { Languages } from "../../data/languages";
-import { RaceList } from "./race-list";
-import { CommonFeatures } from "../common-features";
-
 import * as RaceModels from "../../models/races";
+import * as Names from "../names";
+import { RaceList } from "./race-list";
 
 export const Goblin: RaceModels.Race = {
     name: "Goblin",
@@ -12,6 +11,7 @@ export const Goblin: RaceModels.Race = {
     age: { maturity: 8, max: 60 },
     height: { base: 33, modifier: 8 },
     weight: { base: 40, modifier: 3 },
+    nameDefinition: Names.Goblin,
     languages: { known: [Languages.Common, Languages.Goblin] },
     abilityMods: { "DEX": +2, "CON": +1 },
     features: [
@@ -29,7 +29,7 @@ export const Goblin: RaceModels.Race = {
         }
     ],
     reference: { source: "VGM", page: 119 },
-    subraces: null
+    subraces: []
 };
 
 RaceList[Goblin.name] = Goblin;

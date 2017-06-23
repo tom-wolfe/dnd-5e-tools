@@ -1,11 +1,10 @@
+import * as Collections from "typescript-collections";
+
+import { NumberGenerator } from "../generators/number-generator";
 import { ChainState } from "./chain-state";
 import { MarkovChainItems } from "./markov-chain-items";
 import { MarkovTerminalItems } from "./markov-terminal-items";
 import { WeightedDictionary } from "./weighted-dictionary";
-import { NumberGenerator } from "../generators/number-generator";
-
-import * as _ from "lodash";
-import * as Collections from "typescript-collections";
 
 export class MarkovChain<T> {
     private readonly numGen: NumberGenerator = new NumberGenerator();

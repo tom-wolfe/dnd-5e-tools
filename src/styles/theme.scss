@@ -1,17 +1,3 @@
-.character-block-major {
-    border-top: 2px solid $brand-primary;
-    border-bottom: 2px solid $brand-primary;
-}
-
-.character-block-minor {
-    border-bottom: 1px solid $brand-primary;
-}
-
-.character-block-first {
-    border-bottom: 1px solid $brand-primary;
-    border-top: 1px solid $brand-primary;
-}
-
 .attribute-block {
     padding: 12px;
     text-align: center;
@@ -35,20 +21,6 @@
     }
 }
 
-.character-sub-block {
-    padding: 12px;
-    .sub-block-title {
-        font-size: 16px;
-        font-weight: bold;
-    }
-}
-
-.character-block-title {
-    font-size: 18px;
-    font-weight: bold;
-    padding-top: 8px;
-}
-
 .form-group {
     label {
         display: block;
@@ -64,16 +36,10 @@
     }
 }
 
-.feature {
-    padding: 4px 0 4px 0;
-
-    .feature-name {
-        display: inline;
-        font-size: 16px;
-        font-style: italic;
-        font-weight: bold;
-        padding-right: 4px;
-    }
+sub.refresh {
+    margin-left: 0.5rem;
+    font-size: 60% !important;
+    // vertical-align: top;
 }
 
 // TODO: MakeButton(secondary) with

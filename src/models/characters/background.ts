@@ -1,7 +1,6 @@
+import * as Abilities from "../abilities";
 import { KnownLanguages } from "../languages";
 import { Reference } from "../reference";
-
-import * as Abilities from "../abilities";
 
 export class Background {
     name: string;

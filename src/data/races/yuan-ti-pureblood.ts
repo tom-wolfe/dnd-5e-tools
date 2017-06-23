@@ -1,8 +1,7 @@
 import { Languages } from "../../data/languages";
-import { RaceList } from "./race-list";
-import { CommonFeatures } from "../common-features";
-
 import * as RaceModels from "../../models/races";
+import * as Names from "../names";
+import { RaceList } from "./race-list";
 
 export const YuanTiPureblood: RaceModels.Race = {
     name: "Yuan-ti Pureblood",
@@ -11,6 +10,7 @@ export const YuanTiPureblood: RaceModels.Race = {
     age: { maturity: 18, max: 80 },
     height: { base: 56, modifier: 20 },
     weight: { base: 110, modifier: 8 },
+    nameDefinition: Names.YuanTi,
     languages: { known: [Languages.Common, Languages.Abyssal, Languages.Draconic] },
     abilityMods: { "CHA": +2, "INT": +1 },
     speed: { walk: 30 },
@@ -32,7 +32,7 @@ export const YuanTiPureblood: RaceModels.Race = {
         }
     ],
     reference: { source: "VGM", page: 120 },
-    subraces: null
+    subraces: []
 }
 
 RaceList[YuanTiPureblood.name] = YuanTiPureblood;

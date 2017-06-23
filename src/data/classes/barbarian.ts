@@ -1,10 +1,10 @@
-import { Languages, Skills } from "../../data";
-import { ClassList } from "./class-list";
 import * as ClassModels from "../../models/classes";
+import { ClassList } from "./class-list";
 
 export const Barbarian: ClassModels.Class = {
     name: "Barbarian",
     primaryStat: "STR",
+    archetypeName: { singular: "Primal Path", plural: "Primal Paths" },
     reference: { source: "PHB", page: 46, url: "https://www.dndbeyond.com/characters/classes/barbarian" },
     archetypes: [
         {

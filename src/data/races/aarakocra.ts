@@ -1,7 +1,7 @@
 import { Languages } from "../../data/languages";
-import { RaceList } from "./race-list";
-
 import * as RaceModels from "../../models/races";
+import * as Names from "../names";
+import { RaceList } from "./race-list";
 
 export const Aarakocra: RaceModels.Race = {
     name: "Aarakocra",
@@ -10,6 +10,7 @@ export const Aarakocra: RaceModels.Race = {
     age: { maturity: 3, max: 35 },
     height: { base: 54, modifier: 12 },
     weight: { base: 80, modifier: 2 },
+    nameDefinition: Names.Aarakocra,
     languages: { known: [Languages.Common, Languages.Aarakocra, Languages.Primordial] },
     abilityMods: { "DEX": +2, "WIS": +1 },
     features: [
@@ -22,7 +23,7 @@ export const Aarakocra: RaceModels.Race = {
         }
     ],
     reference: { source: "EE", page: 2, url: "https://www.dndbeyond.com/characters/races/aarakocra" },
-    subraces: null
+    subraces: []
 };
 
 RaceList[Aarakocra.name] = Aarakocra;
