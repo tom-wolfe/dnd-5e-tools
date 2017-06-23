@@ -2,6 +2,7 @@ import { Languages } from "../../data/languages";
 import { RaceList } from "./race-list";
 import { CommonFeatures } from "../common-features";
 
+import * as Names from "../names";
 import * as RaceModels from "../../models/races";
 
 export const Tiefling: RaceModels.Race = {
@@ -9,6 +10,7 @@ export const Tiefling: RaceModels.Race = {
     size: "Medium",
     speed: { walk: 30 },
     senses: { darkvision: 60 },
+    nameDefinition: Names.Tiefling,
     age: { maturity: 18, max: 90 },
     height: { base: 57, modifier: 16 },
     weight: { base: 110, modifier: 8 },
