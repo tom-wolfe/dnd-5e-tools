@@ -14,6 +14,7 @@ export * from "./genasi-air";
 export * from "./genasi-earth";
 export * from "./genasi-fire";
 export * from "./genasi-water";
+export * from "./gnome";
 export * from "./goblin";
 export * from "./goliath";
 export * from "./half-elf";
