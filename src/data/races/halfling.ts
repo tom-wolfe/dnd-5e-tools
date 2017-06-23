@@ -1,6 +1,6 @@
 import { Languages } from "../../data/languages";
-import * as Names from "../names";
 import * as RaceModels from "../../models/races";
+import * as Names from "../names";
 import { RaceList } from "./race-list";
 
 export const Halfling: RaceModels.Race = {

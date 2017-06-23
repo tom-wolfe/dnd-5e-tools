@@ -1,5 +1,4 @@
 import * as Races from "../../models/races";
-import { HumanNames } from "./common/human-names";
 import { NameList } from "./name-list";
 
 /* cSpell:disable */

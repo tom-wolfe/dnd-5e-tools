@@ -16,7 +16,7 @@ export class Race {
     senses?: Attributes.Senses;
     abilityMods?: Abilities.AbilityMods;
     languages: Languages.KnownLanguages;
-    nameDefinition?: NameDefinition;
+    nameDefinition: NameDefinition;
     height: Height;
     weight: Height;
     features: Features.Feature[];
