@@ -1,4 +1,5 @@
 import { Languages } from "../../data/languages";
+import * as Names from "../names";
 import * as RaceModels from "../../models/races";
 import { RaceList } from "./race-list";
 
@@ -9,6 +10,7 @@ export const Triton: RaceModels.Race = {
     age: { maturity: 15, max: 200 },
     height: { base: 50, modifier: 20 },
     weight: { base: 120, modifier: 8 },
+    nameDefinition: Names.Triton,
     languages: { known: [Languages.Common, Languages.Primordial] },
     abilityMods: { "STR": +1, "CON": +1, "CHA": +1 },
     features: [

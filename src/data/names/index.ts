@@ -29,5 +29,6 @@ export * from "./orc";
 export * from "./shifter";
 export * from "./tabaxi";
 export * from "./tiefling";
+export * from "./triton";
 export * from "./warforged";
 export * from "./yuan-ti";
