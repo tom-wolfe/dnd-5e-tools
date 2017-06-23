@@ -4,11 +4,11 @@ import * as _ from "lodash";
 import * as Attributes from "../../models/attributes";
 
 @Component({
-  selector: "speed-display",
-  templateUrl: "./speed-display.component.html",
-  styleUrls: ["./speed-display.component.scss"]
+  selector: "dnd-speed",
+  templateUrl: "./speed.component.html",
+  styleUrls: ["./speed.component.scss"]
 })
-export class SpeedDisplayComponent {
+export class SpeedComponent {
   @Input() speed: Attributes.Speed;
   get otherSpeeds(): string {
     const speeds: string[] = [];

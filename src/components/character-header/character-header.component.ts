@@ -5,11 +5,11 @@ import { CharacterGenerator } from "../../generators/character-generator";
 import * as Characters from "../../models/characters";
 
 @Component({
-  selector: "header-display",
-  templateUrl: "./header-display.component.html",
-  styleUrls: ["./header-display.component.scss"]
+  selector: "dnd-character-header",
+  templateUrl: "./character-header.component.html",
+  styleUrls: ["./character-header.component.scss"]
 })
-export class HeaderDisplayComponent {
+export class CharacterHeaderComponent {
   @Input() character: Characters.Character;
   @Input() generator: CharacterGenerator;
   ageDescriptor: Descriptors.AgeDescriptor = new Descriptors.AgeDescriptor();

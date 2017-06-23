@@ -4,11 +4,11 @@ import { CharacterGenerator } from "../../generators/character-generator";
 import * as Characters from "../../models/characters";
 
 @Component({
-  selector: "background-display",
-  templateUrl: "./background-display.component.html",
-  styleUrls: ["./background-display.component.scss"]
+  selector: "dnd-background",
+  templateUrl: "./background.component.html",
+  styleUrls: ["./background.component.scss"]
 })
-export class BackgroundDisplayComponent {
+export class BackgroundComponent {
   @Input() character: Characters.Character;
   @Input() generator: CharacterGenerator;
 

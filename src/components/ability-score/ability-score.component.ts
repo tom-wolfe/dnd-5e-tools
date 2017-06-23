@@ -4,7 +4,7 @@ import * as Data from "../../data";
 import * as Characters from "../../models/characters";
 
 @Component({
-  selector: "ability-score",
+  selector: "dnd-ability-score",
   templateUrl: "./ability-score.component.html",
   styleUrls: ["./ability-score.component.scss"],
   host: {"class": "col-md-2 col-sm-4 col-6"}

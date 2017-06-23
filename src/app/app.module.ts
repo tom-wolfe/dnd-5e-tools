@@ -7,18 +7,21 @@ import { CodemirrorModule } from "ng2-codemirror";
 
 import { AbilityScoreListComponent } from "../components/ability-score-list/ability-score-list.component";
 import { AbilityScoreComponent } from "../components/ability-score/ability-score.component";
-import { BackgroundDisplayComponent } from "../components/background-display/background-display.component";
+import { BackgroundComponent } from "../components/background/background.component";
+import { CharacterGeneratorComponent } from "../components/character-generator/character-generator.component";
+import { CharacterHeaderComponent } from "../components/character-header/character-header.component";
+import { CharacterComponent } from "../components/character/character.component";
 import { ExportModalComponent } from "../components/export-modal/export-modal.component";
-import { FeatureDisplayListComponent } from "../components/feature-display-list/feature-display-list.component";
-import { FeatureDisplayComponent } from "../components/feature-display/feature-display.component";
+import { FeatureListComponent } from "../components/feature-list/feature-list.component";
+import { FeatureComponent } from "../components/feature/feature.component";
 import { GeneratorConfigComponent } from "../components/generator-config/generator-config.component";
-import { HeaderDisplayComponent } from "../components/header-display/header-display.component";
-import { LanguagesDisplayComponent } from "../components/languages-display/languages-display.component";
-import { SensesDisplayComponent } from "../components/senses-display/senses-display.component";
-import { SkillsDisplayComponent } from "../components/skills-display/skills-display.component";
+import { LanguagesComponent } from "../components/languages/languages.component";
+import { SensesComponent } from "../components/senses/senses.component";
+import { SidebarComponent } from "../components/sidebar/sidebar.component";
+import { SkillsComponent } from "../components/skills/skills.component";
 import { SourceReferenceComponent } from "../components/source-reference/source-reference.component";
-import { SpeedDisplayComponent } from "../components/speed-display/speed-display.component";
-import { StatsDisplayComponent } from "../components/stats-display/stats-display.component";
+import { SpeedComponent } from "../components/speed/speed.component";
+import { StatsComponent } from "../components/stats/stats.component";
 import { CollapseDirective } from "../directives/collapse.directive";
 import { AppComponent } from "./app.component";
 
@@ -27,18 +30,22 @@ import { AppComponent } from "./app.component";
     AppComponent,
     AbilityScoreComponent,
     AbilityScoreListComponent,
-    BackgroundDisplayComponent,
+    BackgroundComponent,
+    CharacterComponent,
+    CharacterGeneratorComponent,
+    CharacterHeaderComponent,
     ExportModalComponent,
-    FeatureDisplayComponent,
-    FeatureDisplayListComponent,
+    FeatureComponent,
+    FeatureListComponent,
     GeneratorConfigComponent,
-    HeaderDisplayComponent,
-    LanguagesDisplayComponent,
-    SensesDisplayComponent,
-    SkillsDisplayComponent,
+    LanguagesComponent,
+    SensesComponent,
+    SidebarComponent,
+    SkillsComponent,
     SourceReferenceComponent,
-    SpeedDisplayComponent,
-    StatsDisplayComponent,
+    SpeedComponent,
+    StatsComponent,
+
     CollapseDirective
   ],
   imports: [

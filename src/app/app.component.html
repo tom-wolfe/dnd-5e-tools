@@ -1,34 +1,6 @@
 <nav class="navbar navbar-inverse bg-inverse">
-  <div class="container">
-    <a class="navbar-brand" href="#">{{title}}</a>
-  </div>
+  <a class="navbar-brand" href="#" (click)="sidebarOpen = !sidebarOpen; $event.preventDefault()"><i class="fa fa-navicon"></i><span class="sr-only">Menu</span></a>
+  <a class="navbar-brand" href="#">{{title}}</a>
 </nav>
-<div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <p class="lead">A simple tool for generating NPC character statistics based on the 5th edition Dungeons &amp; Dragons ruleset.</p>
-    <div class="row">
-      <div class="col-12 text-right">
-        <button class="pull-left btn btn-lg btn-secondary" (click)="advancedMode = !advancedMode">Advanced</button>
-        <button type="button" class="btn btn-secondary btn-lg" *ngIf="advancedMode" (click)="onClearClick()">Clear</button>
-        <button type="button" class="btn btn-primary btn-lg" (click)="onGenerateClick()">Generate NPC</button>
-      </div>
-    </div>
-    
-    <div [(collapse)]="!advancedMode" class="mt-2 collapse">
-      <generator-config [config]="config"></generator-config>
-    </div>
-  </div>
-</div>
-<div class="container">
-  <header-display [character]="character" [generator]="generator"></header-display>
-  <background-display [character]="character" [generator]="generator"></background-display>
-  <ability-score-list [character]="character" [generator]="generator"></ability-score-list>
-  <stats-display [character]="character"></stats-display>
-  <feature-display-list [features]="character.features"></feature-display-list>
-  <div class="row mt-2 mb-2">
-    <div class="col-12 text-right">
-      <button type="button" class="btn btn-primary btn-lg" (click)="onExportClick()">Export</button>
-      <export-modal [character]="character" #mdlExport></export-modal>
-    </div>
-  </div>
-</div>
+<dnd-sidebar [(collapsed)]="!sidebarOpen"></dnd-sidebar>
+<dnd-character-generator></dnd-character-generator>

@@ -6,7 +6,7 @@ import { Exporter } from "../../export/exporter";
 import * as Characters from "../../models/characters";
 
 @Component({
-  selector: "export-modal",
+  selector: "dnd-export-modal",
   templateUrl: "export-modal.component.html",
   styleUrls: ["export-modal.component.scss"]
 })

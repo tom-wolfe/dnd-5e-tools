@@ -4,11 +4,11 @@ import * as _ from "lodash";
 import * as Languages from "../../models/languages";
 
 @Component({
-  selector: "languages-display",
-  templateUrl: "./languages-display.component.html",
-  styleUrls: ["./languages-display.component.scss"]
+  selector: "dnd-languages",
+  templateUrl: "./languages.component.html",
+  styleUrls: ["./languages.component.scss"]
 })
-export class LanguagesDisplayComponent {
+export class LanguagesComponent {
   @Input() languages: Languages.Language[];
   get languagesList(): string {
     if (!this.languages || this.languages.length === 0) { return ""; }

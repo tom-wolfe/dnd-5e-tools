@@ -1,6 +1,6 @@
 import { Directive, ElementRef, HostBinding, Input } from "@angular/core";
 
-@Directive({ selector: "[collapse]" })
+@Directive({ selector: "[dndCollapse]" })
 export class CollapseDirective {
 
     @HostBinding("class.collapsing")
@@ -15,7 +15,7 @@ export class CollapseDirective {
     private transitioning: boolean;
 
     @Input()
-    private set collapse(value: boolean) {
+    private set dndCollapse(value: boolean) {
         if (value !== undefined) {
             if (value) {
                 this.hide();

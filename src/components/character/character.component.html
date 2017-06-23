@@ -1,0 +1,11 @@
+<dnd-character-header [character]="character" [generator]="generator"></dnd-character-header>
+<dnd-background [character]="character" [generator]="generator"></dnd-background>
+<dnd-ability-score-list [character]="character" [generator]="generator"></dnd-ability-score-list>
+<dnd-stats [character]="character"></dnd-stats>
+<dnd-feature-list [features]="character.features"></dnd-feature-list>
+<div class="row mt-2 mb-2">
+  <div class="col-12 text-right">
+    <button type="button" class="btn btn-primary btn-lg" (click)="onExportClick()">Export</button>
+    <dnd-export-modal [character]="character" #mdlExport></dnd-export-modal>
+  </div>
+</div>

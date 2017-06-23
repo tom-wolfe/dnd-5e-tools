@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, ViewEncapsulation } from "@angular/core";
 
 import * as Data from "../../data";
 import * as BackgroundData from "../../data/backgrounds";
@@ -12,9 +12,10 @@ import { GeneratorConfig } from "../../models/generator-config";
 import * as Races from "../../models/races";
 
 @Component({
-  selector: "generator-config",
+  selector: "dnd-generator-config",
   templateUrl: "./generator-config.component.html",
-  styleUrls: ["./generator-config.component.scss"]
+  styleUrls: ["./generator-config.component.scss"],
+  encapsulation: ViewEncapsulation.None
 })
 export class GeneratorConfigComponent {
   @Input() config: GeneratorConfig;

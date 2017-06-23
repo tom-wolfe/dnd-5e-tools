@@ -6,7 +6,7 @@ import { CharacterGenerator } from "../../generators/character-generator";
 import * as Characters from "../../models/characters";
 
 @Component({
-  selector: "ability-score-list",
+  selector: "dnd-ability-score-list",
   templateUrl: "./ability-score-list.component.html",
   styleUrls: ["./ability-score-list.component.scss"]
 })

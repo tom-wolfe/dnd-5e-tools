@@ -1,15 +1,16 @@
-@import "../../styles/variables.scss";
+ @import "../../styles/variables.scss";
 
-.ability-score-list {
-    .ability-info {
-        padding: 6px;
-        text-align: right;
-        .ability-sum, .ability-percentile {
-            display: inline-block;
-        }
-        .ability-sum {
-            border-right: 1px solid $brand-primary;
-            padding-right: 6px;
-        }
-    }
-}
+ .ability-score-list {
+     .ability-info {
+         padding: 6px;
+         text-align: right;
+         .ability-sum,
+         .ability-percentile {
+             display: inline-block;
+         }
+         .ability-sum {
+             border-right: 1px solid $brand-primary;
+             padding-right: 6px;
+         }
+     }
+ }

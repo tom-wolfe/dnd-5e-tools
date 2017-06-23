@@ -4,11 +4,11 @@ import * as _ from "lodash";
 import * as Characters from "../../models/characters";
 
 @Component({
-  selector: "skills-display",
-  templateUrl: "./skills-display.component.html",
-  styleUrls: ["./skills-display.component.scss"]
+  selector: "dnd-skills",
+  templateUrl: "./skills.component.html",
+  styleUrls: ["./skills.component.scss"]
 })
-export class SkillsDisplayComponent {
+export class SkillsComponent {
   @Input() character: Characters.Character;
   get skillsList(): string {
     if (!this.character.skillProficiencies || this.character.skillProficiencies.length === 0) { return ""; }

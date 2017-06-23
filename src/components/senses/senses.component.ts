@@ -3,11 +3,11 @@ import { Component, Input } from "@angular/core";
 import * as Attributes from "../../models/attributes";
 
 @Component({
-  selector: "senses-display",
-  templateUrl: "./senses-display.component.html",
-  styleUrls: ["./senses-display.component.scss"]
+  selector: "dnd-senses",
+  templateUrl: "./senses.component.html",
+  styleUrls: ["./senses.component.scss"]
 })
-export class SensesDisplayComponent {
+export class SensesComponent {
   @Input() senses: Attributes.Senses;
   get sensesDescription(): string {
     if (!this.senses) { return ""; }

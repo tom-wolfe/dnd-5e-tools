@@ -1,0 +1,18 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <p class="lead">A simple tool for generating NPC character statistics based on the 5th edition Dungeons &amp; Dragons ruleset.</p>
+    <div class="row">
+      <div class="col-12 text-right">
+        <button class="pull-left btn btn-lg btn-secondary" (click)="advancedMode = !advancedMode">Advanced</button>
+        <button type="button" class="btn btn-secondary btn-lg" *ngIf="advancedMode" (click)="onClearClick()">Clear</button>
+        <button type="button" class="btn btn-primary btn-lg" (click)="onGenerateClick()">Generate NPC</button>
+      </div>
+    </div>
+    <div [(dndCollapse)]="!advancedMode" class="mt-2 collapse">
+      <dnd-generator-config [config]="config"></dnd-generator-config>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <dnd-character [character]="character" [generator]="generator"></dnd-character>
+</div>
