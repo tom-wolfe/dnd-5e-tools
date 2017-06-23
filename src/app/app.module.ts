@@ -3,6 +3,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { JsonpModule } from "@angular/http";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { NavbarComponent } from "components/navbar/navbar.component";
 import { CodemirrorModule } from "ng2-codemirror";
 
 import { AbilityScoreListComponent } from "../components/ability-score-list/ability-score-list.component";
@@ -39,6 +40,7 @@ import { AppComponent } from "./app.component";
     FeatureListComponent,
     GeneratorConfigComponent,
     LanguagesComponent,
+    NavbarComponent,
     SensesComponent,
     SidebarComponent,
     SkillsComponent,

@@ -1,11 +1,10 @@
-import { Component, ViewEncapsulation } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 @Component({
-  selector: "dnd-app-root",
-  templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.scss"],
-  encapsulation: ViewEncapsulation.None
+  selector: "dnd-app",
+  templateUrl: "./app.component.html"
 })
 export class AppComponent {
   title = "D&D 5th Edition Tools";
+  @Input() sidebarOpen: boolean;
 };

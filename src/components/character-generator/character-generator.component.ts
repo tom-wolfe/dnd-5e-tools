@@ -1,4 +1,4 @@
-import { Component, Input, ViewEncapsulation } from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { CharacterGenerator } from "generators";
 import { GeneratorConfig } from "models/generator-config";
 
@@ -7,8 +7,7 @@ import * as Characters from "../../models/characters";
 @Component({
   selector: "dnd-character-generator",
   templateUrl: "./character-generator.component.html",
-  styleUrls: ["./character-generator.component.scss"],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ["./character-generator.component.scss"]
 })
 export class CharacterGeneratorComponent {
   @Input() advancedMode = false;

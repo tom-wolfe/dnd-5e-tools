@@ -1,6 +1,3 @@
-<nav class="navbar navbar-inverse bg-inverse">
-  <a class="navbar-brand" href="#" (click)="sidebarOpen = !sidebarOpen; $event.preventDefault()"><i class="fa fa-navicon"></i><span class="sr-only">Menu</span></a>
-  <a class="navbar-brand" href="#">{{title}}</a>
-</nav>
+<dnd-navbar [title]="title" (menuClick)="sidebarOpen = !sidebarOpen"></dnd-navbar>
 <dnd-sidebar [(collapsed)]="!sidebarOpen"></dnd-sidebar>
 <dnd-character-generator></dnd-character-generator>
