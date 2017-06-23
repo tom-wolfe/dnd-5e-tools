@@ -19,6 +19,7 @@ export * from "./goblin";
 export * from "./goliath";
 export * from "./half-elf";
 export * from "./half-orc";
+export * from "./halfling";
 export * from "./human";
 export * from "./kenku";
 export * from "./khajiit";

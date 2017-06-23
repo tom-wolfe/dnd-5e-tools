@@ -1,4 +1,5 @@
 import { Languages } from "../../data/languages";
+import * as Names from "../names";
 import * as RaceModels from "../../models/races";
 import { RaceList } from "./race-list";
 
@@ -6,6 +7,7 @@ export const Halfling: RaceModels.Race = {
     name: "Halfling",
     size: "Small",
     abilityMods: { "DEX": +2 },
+    nameDefinition: Names.Halfling,
     languages: { known: [Languages.Common, Languages.Halfling] },
     age: { maturity: 20, max: 105 },
     height: { base: 31, modifier: 8 },
