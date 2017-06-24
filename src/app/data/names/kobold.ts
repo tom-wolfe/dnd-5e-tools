@@ -1,11 +1,11 @@
-import * as Races from "../../models/races";
+import * as Names from "app/models/names";
 import { NameList } from "./name-list";
 
 /* cSpell:disable */
 
 /* Adapted from http://www.fantasynamegenerators.com/dnd-kobold-names.php */
 
-export const Kobold: Races.NameDefinition = {
+export const Kobold: Names.NameDefinition = {
     name: "Kobold",
     formats: [
         "{name}"

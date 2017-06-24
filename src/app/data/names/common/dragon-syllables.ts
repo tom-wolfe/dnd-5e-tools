@@ -1,4 +1,4 @@
-import * as Races from "../../../models/races";
+import * as Names from "app/models/names";
 
 /* cSpell:disable */
 

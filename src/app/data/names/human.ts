@@ -1,10 +1,10 @@
-import * as Races from "../../models/races";
+import * as Names from "app/models/names";
 import { HumanNames } from "./common/human-names";
 import { NameList } from "./name-list";
 
 /* cSpell:disable */
 
-export const Human: Races.NameDefinition = {
+export const Human: Names.NameDefinition = {
     name: "Human",
     formats: [
         "{forename} {surnamePrefix}{surnameSuffix}"

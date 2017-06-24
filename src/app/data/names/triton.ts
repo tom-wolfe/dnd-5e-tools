@@ -1,9 +1,9 @@
-import * as Races from "../../models/races";
+import * as Names from "app/models/names";
 import { NameList } from "./name-list";
 
 /* cSpell:disable */
 
-export const Triton: Races.NameDefinition = {
+export const Triton: Names.NameDefinition = {
     name: "Triton",
     formats: ["{forename} {surname}"],
     parts: {

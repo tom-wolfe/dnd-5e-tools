@@ -1,9 +1,9 @@
-import * as Races from "../../models/races";
+import * as Names from "app/models/names";
 import { NameList } from "./name-list";
 
 /* cSpell:disable */
 
-export const GenasiEarth: Races.NameDefinition = {
+export const GenasiEarth: Names.NameDefinition = {
     name: "Genasi (Earth)",
     formats: ["{forename}"],
     parts: {

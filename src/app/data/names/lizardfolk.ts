@@ -1,11 +1,11 @@
-import * as Races from "../../models/races";
+import * as Names from "app/models/names";
 import { NameList } from "./name-list";
 
 /* cSpell:disable */
 
 /* Based on names from http://en.uesp.net/wiki/Lore:Argonian_Names */
 
-export const Lizardfolk: Races.NameDefinition = {
+export const Lizardfolk: Names.NameDefinition = {
     name: "Lizardfolk",
     formats: [
         "{forename}",

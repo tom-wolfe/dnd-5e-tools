@@ -1,11 +1,11 @@
-import * as Races from "../../models/races";
+import * as Names from "app/models/names";
 import { NameList } from "./name-list";
 
 /* cSpell:disable */
 
 /* Adapted from https://thecollaborativegamer.wordpress.com/people/tables-for-creating-fantasy-names/names-halflings/ */
 
-export const Halfling: Races.NameDefinition = {
+export const Halfling: Names.NameDefinition = {
     name: "Halfling",
     formats: [
         "{forename} {surnamePrefix}{surnameSuffix}",

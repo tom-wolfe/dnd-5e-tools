@@ -1,11 +1,11 @@
-import * as Races from "../../models/races";
+import * as Names from "app/models/names";
 import { NameList } from "./name-list";
 
 /* cSpell:disable */
 
 /* Based on names from http://www.fantasynamegenerators.com/dnd-tabaxi-names.php */
 
-export const Tabaxi: Races.NameDefinition = {
+export const Tabaxi: Names.NameDefinition = {
     name: "Tabaxi",
     formats: [
         "{forenameAdjective} {forenameNoun}, The {clanAdjective} {clanNoun} Clan",

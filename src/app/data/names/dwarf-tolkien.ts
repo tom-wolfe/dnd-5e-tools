@@ -1,10 +1,10 @@
-import * as Races from "../../models/races";
+import * as Names from "app/models/names";
 import { DwarfSurnames } from "./common/dwarf-surnames";
 import { NameList } from "./name-list";
 
 /* cSpell:disable */
 
-export const DwarfTolkien: Races.NameDefinition = {
+export const DwarfTolkien: Names.NameDefinition = {
     name: "Dwarf (Tolkien)",
     formats: [
         "{forename} {prefixAdjective}{suffixNoun}",

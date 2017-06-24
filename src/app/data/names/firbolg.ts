@@ -1,10 +1,10 @@
-import * as Races from "../../models/races";
+import * as Names from "app/models/names";
 import { ElfNames } from "./common/elf-names";
 import { NameList } from "./name-list";
 
 /* cSpell:disable */
 
-export const Firbolg: Races.NameDefinition = {
+export const Firbolg: Names.NameDefinition = {
     name: "Firbolg",
     formats: [
         "{forenamePrefixConsonant}{forenameSuffixVowel}",

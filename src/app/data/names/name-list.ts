@@ -1,3 +1,3 @@
-import * as RaceModels from "../../models/races";
+import * as Names from "app/models/names";
 
-export const NameList: { [index: string]: RaceModels.NameDefinition } = {};
+export const NameList: { [index: string]: Names.NameDefinition } = {};

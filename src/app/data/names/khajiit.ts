@@ -1,11 +1,11 @@
-import * as Races from "../../models/races";
+import * as Names from "app/models/names";
 import { NameList } from "./name-list";
 
 /* cSpell:disable */
 
 /* Based on names from http://en.uesp.net/wiki/Lore:Khajiit_Names */
 
-export const Khajiit: Races.NameDefinition = {
+export const Khajiit: Names.NameDefinition = {
     name: "Khajiit",
     formats: [
         "{honorificPrefix}'{forename}",

@@ -1,10 +1,10 @@
-import * as Races from "../../models/races";
+import * as Names from "app/models/names";
 import { DragonSyllables } from "./common/dragon-syllables";
 import { NameList } from "./name-list";
 
 /* cSpell:disable */
 
-export const Dragonborn: Races.NameDefinition = {
+export const Dragonborn: Names.NameDefinition = {
     name: "Dragonborn",
     formats: [
         "{syllable}{syllable}",

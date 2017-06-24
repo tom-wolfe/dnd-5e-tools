@@ -1,11 +1,11 @@
-import * as Races from "../../models/races";
+import * as Names from "app/models/names";
 import { NameList } from "./name-list";
 
 /* cSpell:disable */
 
 /* Adapted from: http://www.fantasynamegenerators.com/dnd-shifter-names.php */
 
-export const Shifter: Races.NameDefinition = {
+export const Shifter: Names.NameDefinition = {
     name: "Shifter",
     formats: ["{forename}"],
     parts: {

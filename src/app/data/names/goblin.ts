@@ -1,11 +1,11 @@
-import * as Races from "../../models/races";
+import * as Names from "app/models/names";
 import { NameList } from "./name-list";
 
 /* cSpell:disable */
 
 /* Adapted from http://www.fantasynamegenerators.com/hp-goblin-names.php */
 
-export const Goblin: Races.NameDefinition = {
+export const Goblin: Names.NameDefinition = {
     name: "Goblin",
     formats: [
         "{firstSyllable}{secondSyllable}"

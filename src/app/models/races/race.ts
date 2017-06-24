@@ -5,7 +5,7 @@ import * as Languages from "../languages";
 import { Reference } from "../reference";
 import { Age } from "./age";
 import { Height } from "./height";
-import { NameDefinition } from "./name-definition";
+import { NameDefinition } from "../names";
 import { Subrace } from "./subrace";
 
 export class Race {

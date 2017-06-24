@@ -1,4 +1,4 @@
-import * as Races from "../../models/races";
+import * as Names from "app/models/names";
 import { GnomeSurnames } from "./common/gnome-surnames";
 import { NameList } from "./name-list";
 
@@ -6,7 +6,7 @@ import { NameList } from "./name-list";
 
 /* Adapted from http://www.fantasynamegenerators.com/dnd-gnome-names.php */
 
-export const Gnome: Races.NameDefinition = {
+export const Gnome: Names.NameDefinition = {
     name: "Gnome",
     formats: [
         "{firstSyllable}{secondSyllable} {surnamePrefixAdjective}{surnameSuffixNoun}",

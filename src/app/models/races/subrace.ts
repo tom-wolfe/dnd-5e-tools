@@ -4,7 +4,7 @@ import * as Features from "../features";
 import * as Languages from "../languages";
 import { Reference } from "../reference";
 import { Height } from "./height";
-import { NameDefinition } from "./name-definition";
+import { NameDefinition } from "../names";
 
 
 export class Subrace {

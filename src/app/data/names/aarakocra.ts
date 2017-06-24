@@ -1,11 +1,11 @@
-import * as Races from "../../models/races";
+import * as Names from "app/models/names";
 import { NameList } from "./name-list";
 
 /* cSpell:disable */
 
 /* Adapted from http://www.fantasynamegenerators.com/dnd-aarakocra-names.php */
 
-export const Aarakocra: Races.NameDefinition = {
+export const Aarakocra: Names.NameDefinition = {
     name: "Aarakocra",
     formats: [
         "{name}"

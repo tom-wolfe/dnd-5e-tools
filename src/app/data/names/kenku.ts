@@ -1,11 +1,11 @@
-import * as Races from "../../models/races";
+import * as Names from "app/models/names";
 import { NameList } from "./name-list";
 
 /* cSpell:disable */
 
 /* Adapted from http://www.fantasynamegenerators.com/dnd-kenku-names.php */
 
-export const Kenku: Races.NameDefinition = {
+export const Kenku: Names.NameDefinition = {
     name: "Kenku",
     formats: [
         "{battleName}",

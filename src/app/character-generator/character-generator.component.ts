@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 
 import * as Characters from "app/models/characters";
 
@@ -8,15 +8,15 @@ import { CharacterGenerator, CharacterGeneratorConfig } from "./generators";
   selector: "dnd-character-generator",
   templateUrl: "./character-generator.component.html"
 })
-export class CharacterGeneratorComponent {
+export class CharacterGeneratorComponent implements OnInit {
   @Input() advancedMode = false;
 
   character: Characters.Character;
   config: CharacterGeneratorConfig = new CharacterGeneratorConfig();
   generator: CharacterGenerator = new CharacterGenerator(this.config);
 
-  constructor() {
-    this.character = this.generator.generateCharacter();
+  ngOnInit() {
+    this.onGenerateClick();
   };
 
   onGenerateClick() {

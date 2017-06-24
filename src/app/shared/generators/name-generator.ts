@@ -2,14 +2,14 @@ import * as _ from "lodash";
 import * as Collections from "typescript-collections";
 
 import * as Markov from "../markov";
-import * as Races from "../models/races";
+import * as Names from "app/models/names";
 import { NumberGenerator } from "./number-generator";
 
 export class NameGenerator {
     private numGen: NumberGenerator = new NumberGenerator();
     private markovGenerators: Collections.Dictionary<string, Markov.MarkovChain<string>>;
 
-    constructor(private definition: Races.NameDefinition, private gender: string) {
+    constructor(private definition: Names.NameDefinition, private gender: string) {
         this.markovGenerators = new Collections.Dictionary<string, Markov.MarkovChain<string>>();
     }
 

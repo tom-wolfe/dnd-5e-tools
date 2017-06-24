@@ -1,11 +1,11 @@
-import * as Races from "../../models/races";
+import * as Names from "app/models/names";
 import { NameList } from "./name-list";
 
 /* cSpell:disable */
 
 /* Adapted from http://www.fantasynamegenerators.com/dnd-goliath-names.php */
 
-export const Goliath: Races.NameDefinition = {
+export const Goliath: Names.NameDefinition = {
     name: "Goliath",
     formats: ["{forenamePrefix}{forenameSuffix} '{nicknameAdjective}{nicknameNoun}' {surname}"],
     parts: {

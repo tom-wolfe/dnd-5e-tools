@@ -1,10 +1,10 @@
-import * as Races from "../../models/races";
+import * as Names from "app/models/names";
 import { ElfNames } from "./common/elf-names";
 import { NameList } from "./name-list";
 
 /* cSpell:disable */
 
-export const Elf: Races.NameDefinition = {
+export const Elf: Names.NameDefinition = {
     name: "Elf",
     formats: [
         "{forenamePrefixConsonant}{forenameSuffixVowel} {surname}",

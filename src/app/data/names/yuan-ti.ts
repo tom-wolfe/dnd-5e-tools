@@ -1,9 +1,9 @@
-import * as Races from "../../models/races";
+import * as Names from "app/models/names";
 import { NameList } from "./name-list";
 
 /* cSpell:disable */
 
-export const YuanTi: Races.NameDefinition = {
+export const YuanTi: Names.NameDefinition = {
     name: "Yuan-ti",
     formats: [
         "{name}"

@@ -1,11 +1,11 @@
-import * as Races from "../../models/races";
+import * as Names from "app/models/names";
 import { NameList } from "./name-list";
 
 /* cSpell:disable */
 
 /* Adapted from http://www.fantasynamegenerators.com/dnd-warforged-names.php */
 
-export const Warforged: Races.NameDefinition = {
+export const Warforged: Names.NameDefinition = {
     name: "Warforged",
     formats: [
         "{forename}"

@@ -1,15 +1,21 @@
-import { Component, Input } from "@angular/core";
+import { AfterViewInit, Component, Input } from "@angular/core";
 
 import * as NameData from "app/data/names";
-import { NameGeneratorConfig } from "app/shared/generators/name-generator-config";
 import * as Names from "app/models/names";
+import { NameGeneratorConfig } from "app/shared/generators/name-generator-config";
 
 @Component({
   selector: "dnd-name-generator-config",
   templateUrl: "./name-generator-config.component.html"
 })
-export class NameGeneratorConfigComponent {
+export class NameGeneratorConfigComponent implements AfterViewInit {
   @Input() config: NameGeneratorConfig;
 
   names: Names.NameDefinition[] = Object.keys(NameData.NameList).sort().map(name => NameData.NameList[name]);
+
+  ngAfterViewInit() {
+    this.config.definition = this.names[0];
+    this.config.count = 10;
+    this.config.gender = "N";
+  }
 };
