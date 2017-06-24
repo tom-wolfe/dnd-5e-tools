@@ -16,6 +16,7 @@ import { CharacterComponent } from "../components/character/character.component"
 import { ExportModalComponent } from "../components/export-modal/export-modal.component";
 import { FeatureListComponent } from "../components/feature-list/feature-list.component";
 import { FeatureComponent } from "../components/feature/feature.component";
+import { FooterComponent } from "../components/footer/footer.component";
 import { GeneratorConfigComponent } from "../components/generator-config/generator-config.component";
 import { LanguagesComponent } from "../components/languages/languages.component";
 import { SensesComponent } from "../components/senses/senses.component";
@@ -45,6 +46,7 @@ import { AppComponent } from "./app.component";
     CharacterHeaderComponent,
     ExportModalComponent,
     FeatureComponent,
+    FooterComponent,
     FeatureListComponent,
     GeneratorConfigComponent,
     LanguagesComponent,
