@@ -1,12 +1,12 @@
 import { Component, Input } from "@angular/core";
+
 import * as _ from "lodash";
 
-import * as Attributes from "../../../models/attributes";
+import * as Attributes from "app/models/attributes";
 
 @Component({
   selector: "dnd-speed",
-  templateUrl: "./speed.component.html",
-  styleUrls: ["./speed.component.scss"]
+  templateUrl: "./speed.component.html"
 })
 export class SpeedComponent {
   @Input() speed: Attributes.Speed;

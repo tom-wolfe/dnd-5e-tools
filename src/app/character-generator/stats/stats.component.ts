@@ -1,11 +1,10 @@
 import { Component, Input } from "@angular/core";
 
-import * as Characters from "../../../models/characters";
+import * as Characters from "app/models/characters";
 
 @Component({
   selector: "dnd-stats",
-  templateUrl: "./stats.component.html",
-  styleUrls: ["./stats.component.scss"]
+  templateUrl: "./stats.component.html"
 })
 export class StatsComponent {
   @Input() character: Characters.Character;

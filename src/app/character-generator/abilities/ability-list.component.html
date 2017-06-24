@@ -1,0 +1,10 @@
+<div class="ability-list bt-thick bb-thick">
+    <div class="refresh pull-right"><a href="" (click)="onRefreshAbilitiesClick($event)"><i class="fa fa-refresh"></i><span class="sr-only">Random Abilities</span></a></div>
+    <div class="ability-list row">
+        <dnd-ability [ability]="ability" [character]="character" *ngFor="let ability of abilityList"></dnd-ability>
+    </div>
+    <div class="ability-info attribute-title">
+        <span class="ability-sum">Total: {{abilitySum}}</span>
+        <span class="ability-percentile">{{abilityPercentile}}% Percentile</span>
+    </div>
+</div>

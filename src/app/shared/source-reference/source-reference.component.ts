@@ -1,7 +1,7 @@
 import { Component, Input } from "@angular/core";
 
-import * as Data from "../../../data";
-import { Reference } from "../../../models/reference";
+import * as Data from "app/data";
+import { Reference } from "app/models/reference";
 
 @Component({
   selector: "dnd-source-reference",

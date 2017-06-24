@@ -1,12 +1,11 @@
 import { Component, Input } from "@angular/core";
-import * as _ from "lodash";
 
-import * as Languages from "../../../models/languages";
+import * as Languages from "app/models/languages";
+import * as _ from "lodash";
 
 @Component({
   selector: "dnd-languages",
-  templateUrl: "./languages.component.html",
-  styleUrls: ["./languages.component.scss"]
+  templateUrl: "./languages.component.html"
 })
 export class LanguagesComponent {
   @Input() languages: Languages.Language[];

@@ -1,11 +1,10 @@
 import { Component, Input } from "@angular/core";
 
-import * as Attributes from "../../../models/attributes";
+import * as Attributes from "app/models/attributes";
 
 @Component({
   selector: "dnd-senses",
-  templateUrl: "./senses.component.html",
-  styleUrls: ["./senses.component.scss"]
+  templateUrl: "./senses.component.html"
 })
 export class SensesComponent {
   @Input() senses: Attributes.Senses;

@@ -1,12 +1,12 @@
 import { Component, Input } from "@angular/core";
 
-import { CharacterGenerator } from "../../../generators/character-generator";
-import * as Characters from "../../../models/characters";
+import * as Characters from "app/models/characters";
+
+import { CharacterGenerator } from "../generators/character-generator";
 
 @Component({
   selector: "dnd-background",
-  templateUrl: "./background.component.html",
-  styleUrls: ["./background.component.scss"]
+  templateUrl: "./background.component.html"
 })
 export class BackgroundComponent {
   @Input() character: Characters.Character;

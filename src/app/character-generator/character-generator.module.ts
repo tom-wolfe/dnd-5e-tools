@@ -1,27 +1,25 @@
 import { NgModule } from "@angular/core";
 
-import { SharedModule } from "../shared/shared.module";
-import { AbilityScoreListComponent } from "./ability-score-list/ability-score-list.component";
-import { AbilityScoreComponent } from "./ability-score/ability-score.component";
-import { BackgroundComponent } from "./background/background.component";
+import { SharedModule } from "app/shared/shared.module";
+
+import { AbilityComponent, AbilityListComponent } from "./abilities";
+import { BackgroundComponent } from "./background";
+import { CharacterComponent, CharacterHeaderComponent } from "./character";
 import { CharacterGeneratorComponent } from "./character-generator.component";
-import { CharacterHeaderComponent } from "./character-header/character-header.component";
-import { CharacterComponent } from "./character/character.component";
-import { ExportModalComponent } from "./export-modal/export-modal.component";
-import { FeatureListComponent } from "./feature-list/feature-list.component";
-import { FeatureComponent } from "./feature/feature.component";
-import { GeneratorConfigComponent } from "./generator-config/generator-config.component";
-import { LanguagesComponent } from "./languages/languages.component";
-import { SensesComponent } from "./senses/senses.component";
-import { SkillsComponent } from "./skills/skills.component";
-import { SpeedComponent } from "./speed/speed.component";
-import { StatsComponent } from "./stats/stats.component";
+import { ExportModalComponent } from "./export";
+import { FeatureComponent, FeatureListComponent } from "./features";
+import { GeneratorConfigComponent } from "./generator-config";
+import { LanguagesComponent } from "./languages";
+import { SensesComponent } from "./senses";
+import { SkillsComponent } from "./skills";
+import { SpeedComponent } from "./speed";
+import { StatsComponent } from "./stats";
 
 @NgModule({
   imports: [SharedModule],
   declarations: [
-    AbilityScoreComponent,
-    AbilityScoreListComponent,
+    AbilityComponent,
+    AbilityListComponent,
     BackgroundComponent,
     CharacterComponent,
     CharacterGeneratorComponent,
