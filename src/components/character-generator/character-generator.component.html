@@ -6,7 +6,7 @@
       <div class="col-12 text-right">
         <button class="pull-left btn btn-lg btn-secondary" (click)="advancedMode = !advancedMode">Advanced</button>
         <button type="button" class="btn btn-secondary btn-lg" *ngIf="advancedMode" (click)="onClearClick()">Clear</button>
-        <button type="button" class="btn btn-primary btn-lg" (click)="onGenerateClick()">Generate NPC</button>
+        <button type="button" class="btn btn-primary btn-lg" (click)="onGenerateClick()">Generate Character</button>
       </div>
     </div>
     <div [(dndCollapse)]="!advancedMode" class="mt-2 collapse">

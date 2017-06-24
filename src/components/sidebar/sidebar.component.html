@@ -1,6 +1,6 @@
- <div class="nav-sidebar" [dndCollapse]="collapsed">
+ <div class="nav-sidebar" [(dndCollapse)]="collapsed">
   <div class="list-group">
-    <a href="/npc-generator" class="list-group-item list-group-item-action active">Character Generator</a>
-    <a href="/name-generator" class="list-group-item list-group-item-action">Name Generator</a>
+    <a routerLink="/character-generator" (click)="onNavigate($event)" class="list-group-item list-group-item-action active">Character Generator</a>
+    <a routerLink="/name-generator" (click)="onNavigate($event)" class="list-group-item list-group-item-action">Name Generator</a>
   </div>
 </div>

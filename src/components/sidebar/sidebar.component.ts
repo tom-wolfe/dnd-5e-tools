@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 
 @Component({
   selector: "dnd-sidebar",
@@ -7,4 +7,10 @@ import { Component, Input } from "@angular/core";
 })
 export class SidebarComponent {
   @Input() collapsed = true;
+  @Output() navigate: EventEmitter<any> = new EventEmitter();
+
+  onNavigate(e) {
+    this.navigate.emit(null);
+    e.preventDefault();
+  }
 };

@@ -1,3 +1,3 @@
 <dnd-navbar [title]="title" (menuClick)="sidebarOpen = !sidebarOpen"></dnd-navbar>
-<dnd-sidebar [(collapsed)]="!sidebarOpen"></dnd-sidebar>
-<dnd-character-generator></dnd-character-generator>
+<dnd-sidebar [(collapsed)]="!sidebarOpen" (navigate)="sidebarOpen = false"></dnd-sidebar>
+<router-outlet></router-outlet>

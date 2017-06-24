@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { JsonpModule } from "@angular/http";
 import { BrowserModule } from "@angular/platform-browser";
+import { RouterModule } from "@angular/router";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { NavbarComponent } from "components/navbar/navbar.component";
 import { CodemirrorModule } from "ng2-codemirror";
@@ -51,7 +51,15 @@ import { AppComponent } from "./app.component";
     CollapseDirective
   ],
   imports: [
-    BrowserModule, CodemirrorModule, FormsModule, ReactiveFormsModule, JsonpModule, NgbModule.forRoot()
+    BrowserModule,
+    CodemirrorModule,
+    FormsModule, ReactiveFormsModule,
+    NgbModule.forRoot(),
+    RouterModule.forRoot([
+      { path: "", redirectTo: "/character-generator", pathMatch: "full" },
+      { path: "character-generator", component: CharacterGeneratorComponent },
+      { path: "name-generator", component: SensesComponent }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
