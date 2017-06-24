@@ -1,8 +1,9 @@
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
-import { RouterModule } from "@angular/router";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { AppRoutingModule } from "app/app.routing";
+import { NameGeneratorComponent } from "components/name-generator/name-generator.component";
 import { NavbarComponent } from "components/navbar/navbar.component";
 import { CodemirrorModule } from "ng2-codemirror";
 
@@ -27,6 +28,13 @@ import { CollapseDirective } from "../directives/collapse.directive";
 import { AppComponent } from "./app.component";
 
 @NgModule({
+  imports: [
+    BrowserModule,
+    CodemirrorModule,
+    FormsModule, ReactiveFormsModule,
+    NgbModule.forRoot(),
+    AppRoutingModule
+  ],
   declarations: [
     AppComponent,
     AbilityScoreComponent,
@@ -40,6 +48,7 @@ import { AppComponent } from "./app.component";
     FeatureListComponent,
     GeneratorConfigComponent,
     LanguagesComponent,
+    NameGeneratorComponent,
     NavbarComponent,
     SensesComponent,
     SidebarComponent,
@@ -49,17 +58,6 @@ import { AppComponent } from "./app.component";
     StatsComponent,
 
     CollapseDirective
-  ],
-  imports: [
-    BrowserModule,
-    CodemirrorModule,
-    FormsModule, ReactiveFormsModule,
-    NgbModule.forRoot(),
-    RouterModule.forRoot([
-      { path: "", redirectTo: "/character-generator", pathMatch: "full" },
-      { path: "character-generator", component: CharacterGeneratorComponent },
-      { path: "name-generator", component: SensesComponent }
-    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
