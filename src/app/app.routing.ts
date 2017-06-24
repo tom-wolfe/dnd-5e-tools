@@ -1,8 +1,8 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { NameGeneratorComponent } from "components/name-generator/name-generator.component";
 
-import { CharacterGeneratorComponent } from "../components/character-generator/character-generator.component";
+import { CharacterGeneratorComponent } from "../components/characters/character-generator/character-generator.component";
+import { NameGeneratorComponent } from "../components/names/name-generator/name-generator.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/character-generator", pathMatch: "full" },
