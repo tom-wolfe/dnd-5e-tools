@@ -12,9 +12,8 @@ export class NameGeneratorComponent implements AfterContentInit {
 
   @Input() names: string[];
 
-
   ngAfterContentInit() {
-    // this.onGenerateClick();
+    setTimeout(() => this.onGenerateClick());
   };
 
   onGenerateClick() {
