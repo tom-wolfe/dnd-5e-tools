@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { AfterViewInit, Component, Input, OnInit } from "@angular/core";
 
 import * as Data from "app/data";
 import * as BackgroundData from "app/data/backgrounds";
@@ -17,13 +17,21 @@ import { CharacterGeneratorConfig } from "../generators";
   selector: "dnd-generator-config",
   templateUrl: "./generator-config.component.html",
 })
-export class GeneratorConfigComponent {
+export class GeneratorConfigComponent implements OnInit {
   @Input() config: CharacterGeneratorConfig;
 
-  races: Races.Race[] = Object.keys(RaceData.RaceList).sort().map(name => RaceData.RaceList[name]);
-  names: Names.NameDefinition[] = Object.keys(NameData.NameList).sort().map(name => NameData.NameList[name]);
-  abilities: Abilities.Ability[] = Object.keys(Data.Abilities.AbilityList).map(name => Data.Abilities.AbilityList[name]);
-  backgrounds: Characters.Background[] = Object.keys(BackgroundData.BackgroundList)
-    .sort().map(name => BackgroundData.BackgroundList[name]);
-  classes: Classes.Class[] = Object.keys(ClassData.ClassList).sort().map(name => ClassData.ClassList[name]);
+  abilities: Abilities.Ability[];
+  names: Names.NameDefinition[];
+  backgrounds: Characters.Background[];
+  classes: Classes.Class[];
+  races: Races.Race[];
+
+  ngOnInit() {
+    this.abilities = Object.keys(Data.Abilities.AbilityList).map(name => Data.Abilities.AbilityList[name]);
+    this.backgrounds = Object.keys(BackgroundData.BackgroundList).sort().map(name => BackgroundData.BackgroundList[name]);
+    this.classes = Object.keys(ClassData.ClassList).sort().map(name => ClassData.ClassList[name]);
+    this.names = Object.keys(NameData.NameList).sort().map(name => NameData.NameList[name]);
+    this.races = Object.keys(RaceData.RaceList).sort().map(name => RaceData.RaceList[name]);
+  }
+
 };

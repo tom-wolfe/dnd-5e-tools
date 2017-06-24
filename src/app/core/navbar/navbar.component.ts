@@ -2,8 +2,7 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
 
 @Component({
   selector: "dnd-navbar",
-  templateUrl: "./navbar.component.html",
-  styleUrls: ["./navbar.component.scss"]
+  templateUrl: "./navbar.component.html"
 })
 export class NavbarComponent {
   @Input() title: string;

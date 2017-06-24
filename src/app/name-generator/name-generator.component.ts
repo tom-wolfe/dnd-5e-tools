@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input } from "@angular/core";
+import { AfterContentInit, Component, Input } from "@angular/core";
 
 import { NameGenerator } from "app/shared/generators";
 import { NameGeneratorConfig } from "app/shared/generators/name-generator-config";
@@ -7,13 +7,14 @@ import { NameGeneratorConfig } from "app/shared/generators/name-generator-config
   selector: "dnd-name-generator",
   templateUrl: "./name-generator.component.html"
 })
-export class NameGeneratorComponent implements AfterViewInit {
+export class NameGeneratorComponent implements AfterContentInit {
   config: NameGeneratorConfig = new NameGeneratorConfig();
 
   @Input() names: string[];
 
-  ngAfterViewInit() {
-    this.onGenerateClick();
+
+  ngAfterContentInit() {
+    // this.onGenerateClick();
   };
 
   onGenerateClick() {

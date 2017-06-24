@@ -1,4 +1,6 @@
 <dnd-navbar [title]="title" (menuClick)="sidebarOpen = !sidebarOpen"></dnd-navbar>
+<div class="wrapper">
 <dnd-sidebar [(collapsed)]="!sidebarOpen" (navigate)="sidebarOpen = false"></dnd-sidebar>
 <router-outlet></router-outlet>
 <dnd-footer></dnd-footer>
+</div>
