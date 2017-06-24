@@ -8,7 +8,7 @@ import * as RaceData from "../data/races/";
 import * as Abilities from "../models/abilities";
 import { ProficiencyType } from "../models/abilities/proficiency-type";
 import * as Characters from "../models/characters";
-import { GeneratorConfig } from "../models/generator-config";
+import { CharacterGeneratorConfig } from "./character-generator-config";
 import * as Languages from "../models/languages";
 import * as Races from "../models/races";
 import { AbilityScoreGenerator } from "./ability-score-generator";
@@ -18,9 +18,9 @@ import { NumberGenerator } from "./number-generator";
 export class CharacterGenerator {
     abGen = new AbilityScoreGenerator();
     numGen = new NumberGenerator();
-    config: GeneratorConfig;
+    config: CharacterGeneratorConfig;
 
-    constructor(config: GeneratorConfig) {
+    constructor(config: CharacterGeneratorConfig) {
         this.config = config;
     }
 

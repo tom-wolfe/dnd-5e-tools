@@ -1,8 +1,8 @@
 import { Component, Input } from "@angular/core";
 import { CharacterGenerator } from "generators";
-import { GeneratorConfig } from "models/generator-config";
 
-import * as Characters from "../../../models/characters";
+import { CharacterGeneratorConfig } from "../../generators/character-generator-config";
+import * as Characters from "../../models/characters";
 
 @Component({
   selector: "dnd-character-generator",
@@ -13,7 +13,7 @@ export class CharacterGeneratorComponent {
   @Input() advancedMode = false;
 
   character: Characters.Character;
-  config: GeneratorConfig = new GeneratorConfig();
+  config: CharacterGeneratorConfig = new CharacterGeneratorConfig();
   generator: CharacterGenerator = new CharacterGenerator(this.config);
 
   constructor() {

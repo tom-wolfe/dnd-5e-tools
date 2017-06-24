@@ -8,7 +8,7 @@ import * as RaceData from "../../../data/races";
 import * as Abilities from "../../../models/abilities";
 import * as Characters from "../../../models/characters";
 import * as Classes from "../../../models/classes";
-import { GeneratorConfig } from "../../../models/generator-config";
+import { CharacterGeneratorConfig } from "../../../generators/character-generator-config";
 import * as Races from "../../../models/races";
 
 @Component({
@@ -17,7 +17,7 @@ import * as Races from "../../../models/races";
   styleUrls: ["./generator-config.component.scss"]
 })
 export class GeneratorConfigComponent {
-  @Input() config: GeneratorConfig;
+  @Input() config: CharacterGeneratorConfig;
 
   races: Races.Race[] = Object.keys(RaceData.RaceList).sort().map(name => RaceData.RaceList[name]);
   names: Races.NameDefinition[] = Object.keys(NameData.NameList).sort().map(name => NameData.NameList[name]);

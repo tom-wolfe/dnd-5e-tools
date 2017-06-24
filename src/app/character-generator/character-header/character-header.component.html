@@ -4,8 +4,8 @@
     {{character.name}}
     <div class="character-class bt-light bb-thick pb-2">
       <small class="text-muted">
-        {{character.class.name}}<source-reference [reference]="character.class.reference"></source-reference>
-        <span *ngIf="character.classArchetype">({{character.classArchetype.name}}<source-reference [reference]="character.classArchetype.reference"></source-reference>)</span>
+        {{character.class.name}}<dnd-source-reference [reference]="character.class.reference"></dnd-source-reference>
+        <span *ngIf="character.classArchetype">({{character.classArchetype.name}}<dnd-source-reference [reference]="character.classArchetype.reference"></dnd-source-reference>)</span>
       </small>
     </div>
   </h1>
@@ -14,8 +14,8 @@
     <div class="text-muted character-subline">
       <span class="gender">{{character.genderDescription}}</span>
       <span class="race">{{character.race.name}}</span>
-      <source-reference [reference]="character.race.reference"></source-reference>
-      <span class="sub-race" *ngIf="character.subrace">{{character.subrace.name}}<source-reference [reference]="character.subrace.reference"></source-reference></span>,
+      <dnd-source-reference [reference]="character.race.reference"></dnd-source-reference>
+      <span class="sub-race" *ngIf="character.subrace">{{character.subrace.name}}<dnd-source-reference [reference]="character.subrace.reference"></dnd-source-reference></span>,
       <span class="size">{{character.race.size}}</span>,
       <span class="alignment">{{character.alignmentDescription}}</span>
     </div>

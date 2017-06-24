@@ -1,9 +1,9 @@
-import * as Abilities from "./abilities";
-import * as Characters from "./characters";
-import * as Classes from "./classes";
-import * as Races from "./races";
+import * as Abilities from "../models/abilities";
+import * as Characters from "../models/characters";
+import * as Classes from "../models/classes";
+import * as Races from "../models/races";
 
-export class GeneratorConfig {
+export class CharacterGeneratorConfig {
     background: Characters.Background = null;
     class: Classes.Class = null;
     classArchetype: Classes.Archetype = null;

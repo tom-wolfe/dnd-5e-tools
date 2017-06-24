@@ -1,10 +1,10 @@
 import { Component, Input } from "@angular/core";
 
-import * as Data from "../../data";
-import { Reference } from "../../models/reference";
+import * as Data from "../../../data";
+import { Reference } from "../../../models/reference";
 
 @Component({
-  selector: "source-reference",
+  selector: "dnd-source-reference",
   templateUrl: "./source-reference.component.html",
   styleUrls: ["./source-reference.component.scss"]
 })
