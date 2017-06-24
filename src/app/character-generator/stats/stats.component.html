@@ -1,0 +1,40 @@
+<div class="bb-thin">
+  <div class="row">
+    <div class="col-md-3 col-sm-6">
+      <div class="attribute-block">
+        <div class="attribute-title">Level</div>
+        <span class="primary">{{character.level.number}}</span>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="attribute-block">
+        <div class="attribute-title">Armor Class</div>
+        <span class="primary">{{character.armorClass}}</span>
+        <span class="secondary">({{character.equippedArmor}})</span>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="attribute-block">
+        <div class="attribute-title">Hit Points</div>
+        <span class="primary">{{character.hitPoints}}</span>
+        <span class="secondary">({{character.hitPointFormula}})</span>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <dnd-speed [speed]="character.speed"></dnd-speed>
+    </div>
+  </div>
+</div>
+<div class="bb-thin">
+  <div class="row">
+    <div class="col-md-4">
+      <dnd-languages [languages]="character.languages"></dnd-languages>
+    </div>
+    <div class="col-md-4">
+      <dnd-senses [senses]="character.senses"></dnd-senses>
+    </div>
+    <div class="col-md-4">
+      <dnd-skills [character]="character"></dnd-skills>
+    </div>
+  </div>
+</div>

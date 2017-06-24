@@ -110,13 +110,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "app",
+      "dnd",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "",
+      "dnd",
       "kebab-case"
     ],
     "use-input-property-decorator": true,

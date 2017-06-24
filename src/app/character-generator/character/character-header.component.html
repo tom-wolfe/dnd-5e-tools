@@ -1,0 +1,28 @@
+<div class="character-header">
+  <h1 class="character-name">
+    <div class="refresh pull-right" style="font-size: 24px"><a href="" (click)="onRefreshNameClick($event)"><i class="fa fa-refresh"></i><span class="sr-only">Random Name</span></a></div>
+    {{character.name}}
+    <div class="character-class bt-light bb-thick pb-2">
+      <small class="text-muted">
+        {{character.class.name}}<dnd-source-reference [reference]="character.class.reference"></dnd-source-reference>
+        <span *ngIf="character.classArchetype">({{character.classArchetype.name}}<dnd-source-reference [reference]="character.classArchetype.reference"></dnd-source-reference>)</span>
+      </small>
+    </div>
+  </h1>
+  <div class="bb-thin pt-2 pb-3">
+    <div class="refresh pull-right"><a href="" (click)="onRefreshPhysicalityClick($event)"><i class="fa fa-refresh"></i><span class="sr-only">Random Physicality</span></a></div>
+    <div class="text-muted character-subline">
+      <span class="gender">{{character.genderDescription}}</span>
+      <span class="race">{{character.race.name}}</span>
+      <dnd-source-reference [reference]="character.race.reference"></dnd-source-reference>
+      <span class="sub-race" *ngIf="character.subrace">{{character.subrace.name}}<dnd-source-reference [reference]="character.subrace.reference"></dnd-source-reference></span>,
+      <span class="size">{{character.race.size}}</span>,
+      <span class="alignment">{{character.alignmentDescription}}</span>
+    </div>
+    <div class="text-muted dnd-5e-tools-subline">
+      <span class="height">{{character.heightString || 0}} <span class="font-weight-bold">({{heightDescriptor.describe(character)}})</span></span>,
+      <span class="weight">{{(character.weight || 0) + " lbs."}} <span class="font-weight-bold">({{weightDescriptor.describe(character)}})</span></span>,
+      <span class="age">{{(character.age || 0) + " years old"}} <span class="font-weight-bold">({{ageDescriptor.describe(character)}})</span></span>
+    </div>
+  </div>
+</div>

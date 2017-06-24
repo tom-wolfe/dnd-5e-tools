@@ -1,49 +1,21 @@
 import { NgModule } from "@angular/core";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { JsonpModule } from "@angular/http";
-import { BrowserModule } from "@angular/platform-browser";
-import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
-import { CodemirrorModule } from "ng2-codemirror";
+import { AppRoutingModule } from "app/app-routing.module";
+import { CoreModule } from "app/core/core.module";
+import { SharedModule } from "app/shared/shared.module";
 
-import { AbilityScoreListComponent } from "../components/ability-score-list/ability-score-list.component";
-import { AbilityScoreComponent } from "../components/ability-score/ability-score.component";
-import { BackgroundDisplayComponent } from "../components/background-display/background-display.component";
-import { ExportModalComponent } from "../components/export-modal/export-modal.component";
-import { FeatureDisplayListComponent } from "../components/feature-display-list/feature-display-list.component";
-import { FeatureDisplayComponent } from "../components/feature-display/feature-display.component";
-import { GeneratorConfigComponent } from "../components/generator-config/generator-config.component";
-import { HeaderDisplayComponent } from "../components/header-display/header-display.component";
-import { LanguagesDisplayComponent } from "../components/languages-display/languages-display.component";
-import { SensesDisplayComponent } from "../components/senses-display/senses-display.component";
-import { SkillsDisplayComponent } from "../components/skills-display/skills-display.component";
-import { SourceReferenceComponent } from "../components/source-reference/source-reference.component";
-import { SpeedDisplayComponent } from "../components/speed-display/speed-display.component";
-import { StatsDisplayComponent } from "../components/stats-display/stats-display.component";
-import { CollapseDirective } from "../directives/collapse.directive";
 import { AppComponent } from "./app.component";
+import { CharacterGeneratorModule } from "./character-generator/character-generator.module";
+import { NameGeneratorModule } from "./name-generator/name-generator.module";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    AbilityScoreComponent,
-    AbilityScoreListComponent,
-    BackgroundDisplayComponent,
-    ExportModalComponent,
-    FeatureDisplayComponent,
-    FeatureDisplayListComponent,
-    GeneratorConfigComponent,
-    HeaderDisplayComponent,
-    LanguagesDisplayComponent,
-    SensesDisplayComponent,
-    SkillsDisplayComponent,
-    SourceReferenceComponent,
-    SpeedDisplayComponent,
-    StatsDisplayComponent,
-    CollapseDirective
-  ],
   imports: [
-    BrowserModule, CodemirrorModule, FormsModule, ReactiveFormsModule, JsonpModule, NgbModule.forRoot()
+    AppRoutingModule,
+    CoreModule,
+    SharedModule,
+    CharacterGeneratorModule,
+    NameGeneratorModule
   ],
+  declarations: [AppComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

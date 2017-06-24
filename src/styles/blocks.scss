@@ -1,16 +1,26 @@
-.bt-thick { border-top: 2px solid $brand-primary; }
-.bb-thick { border-bottom: 2px solid $brand-primary; }
-.bt-thin { border-top: 1px solid $brand-primary; }
-.bb-thin { border-bottom: 1px solid $brand-primary; }
+.bt-thick {
+    border-top: 2px solid $brand-primary;
+}
 
+.bb-thick {
+    border-bottom: 2px solid $brand-primary;
+}
+
+.bt-thin {
+    border-top: 1px solid $brand-primary;
+}
+
+.bb-thin {
+    border-bottom: 1px solid $brand-primary;
+}
 
 .bb-light {
     border-bottom: 1px solid darken($gray-lighter, 5%);
 }
+
 .bt-light {
     border-top: 1px solid darken($gray-lighter, 5%);
 }
-
 
 .block-title {
     font-size: 18px;

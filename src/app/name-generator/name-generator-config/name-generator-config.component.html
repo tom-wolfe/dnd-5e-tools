@@ -1,0 +1,27 @@
+<div class="generator-config">
+  <div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-6 form-group">
+      <label for="name">Name Generator</label>
+      <select class="form-control" name="name" [(ngModel)]="config.definition">
+        <option *ngFor="let name of names" [ngValue]="name">{{name.name}}</option>
+      </select>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 form-group">
+      <label for="gender">Gender</label>
+      <select class="form-control" name="gender" [(ngModel)]="config.gender">
+        <option value="N" selected>Any/Neutral</option>
+        <option value="F" selected>Female</option>
+        <option value="M" selected>Male</option>
+      </select>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 form-group">
+      <label for="count">Number</label>
+      <select class="form-control" name="count" [(ngModel)]="config.count">
+        <option value="10" selected>10</option>
+        <option value="20">20</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+      </select>
+    </div>
+  </div>
+</div>

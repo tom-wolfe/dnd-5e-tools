@@ -1,0 +1,18 @@
+.character-header {
+    .character-class {
+        font-size: 2.5rem;
+    }
+
+    .character-subline {
+        font-style: italic;
+        .sub-race {
+            &:before {
+                content: "(";
+            }
+            &:after {
+                content: ")";
+            }
+        }
+    }
+    padding-bottom: 8px;
+}

@@ -1,3 +1,11 @@
+body {
+    padding-top: 3.4rem;
+}
+
+.navbar {
+    flex-direction: row;
+}
+
 .attribute-block {
     padding: 12px;
     text-align: center;
@@ -39,7 +47,4 @@
 sub.refresh {
     margin-left: 0.5rem;
     font-size: 60% !important;
-    // vertical-align: top;
 }
-
-// TODO: MakeButton(secondary) with
