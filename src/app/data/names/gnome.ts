@@ -9,8 +9,13 @@ import { NameList } from "./name-list";
 export const Gnome: Names.NameDefinition = {
     name: "Gnome",
     formats: [
-        "{firstSyllable}{secondSyllable} {surnamePrefixAdjective}{surnameSuffixNoun}",
-        "{firstSyllable}{secondSyllable} {surnamePrefixNoun}{surnameSuffixAdjective}",
+        {
+            name: "Forename Surname",
+            formats: [
+                "{firstSyllable}{secondSyllable} {surnamePrefixAdjective}{surnameSuffixNoun}",
+                "{firstSyllable}{secondSyllable} {surnamePrefixNoun}{surnameSuffixAdjective}",
+            ]
+        }
     ],
     parts: {
         firstSyllable: {

@@ -7,11 +7,9 @@ import { NameList } from "./name-list";
 
 export const Warforged: Names.NameDefinition = {
     name: "Warforged",
-    formats: [
-        "{forename}"
-    ],
+    formats: [{ name: "Forename", formats: ["{name}"] }],
     parts: {
-        forename: {
+        name: {
             markovOrder: 2,
             mode: "item",
             source: {

@@ -8,9 +8,9 @@ import { NameList } from "./name-list";
 export const Lizardfolk: Names.NameDefinition = {
     name: "Lizardfolk",
     formats: [
-        "{forename}",
-        "{forenamePrefix}-{forenameSuffix}",
-        "{commonTongueName}"
+        { name: "Forename", formats: ["{forename}"] },
+        { name: "Hyphenated Name", formats: ["{forenamePrefix}-{forenameSuffix}"] },
+        { name: "Translated Name", formats: ["{commonTongueName}"] },
     ],
     parts: {
         forenamePrefix: {

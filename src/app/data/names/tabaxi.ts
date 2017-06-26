@@ -8,8 +8,10 @@ import { NameList } from "./name-list";
 export const Tabaxi: Names.NameDefinition = {
     name: "Tabaxi",
     formats: [
-        "{forenameAdjective} {forenameNoun}, The {clanAdjective} {clanNoun} Clan",
-        "{forename}, The {clanAdjective} {clanNoun} Clan",
+        { name: "Adjective Noun", formats: ["{forenameAdjective} {forenameNoun}"] },
+        { name: "Root Name", formats: ["{forename}"] },
+        { name: "Adjective Noun, Clan", formats: ["{forenameAdjective} {forenameNoun}, The {clanAdjective} {clanNoun} Clan"] },
+        { name: "Root Name, Clan", formats: ["{forename}, The {clanAdjective} {clanNoun} Clan"] }
     ],
     parts: {
         forename: {

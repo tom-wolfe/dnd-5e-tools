@@ -81,11 +81,11 @@ export const HumanNames: { [index: string]: Names.NamePartDefinition } = {
                 "mourn", "oak", "orb", "ore", "peak", "pelt", "pike", "punch", "rage", "reaper", "reaver", "rider", "ridge", "ripper",
                 "river", "roar", "rock", "root", "run", "runner", "scar", "scream", "scribe", "seeker", "shade", "shadow", "shaper",
                 "shard", "shield", "shine", "shot", "shout", "singer", "sky", "slayer", "snarl", "snout", "snow", "soar", "song",
-                "sorrow", "spark", "spear", "spell", "spire", "spirit", "splitter", "sprinter", "stalker", "star", "steam", "steel",
-                "stone", "stream", "strength", "stride", "strider", "strike", "striker", "sun", "surge", "swallow", "swift", "sword",
-                "sworn", "tail", "taker", "talon", "thorn", "thorne", "tide", "track", "trap", "trapper", "tree", "vale", "valor",
-                "vigor", "walker", "ward", "watcher", "water", "weaver", "whirl", "whisk", "whisper", "willow", "wind", "winds", "wing",
-                "wolf", "wood", "woods", "wound"
+                "sorrow", "spark", "spear", "spell", "spire", "spirit", "splitter", "spring", "sprinter", "stalker", "star", "steam",
+                "steel", "stone", "stream", "strength", "stride", "strider", "strike", "striker", "summer", "sun", "surge", "swallow",
+                "swift", "sword", "sworn", "tail", "taker", "talon", "thorn", "thorne", "tide", "track", "trap", "trapper", "tree", "vale",
+                "valor", "vigor", "walker", "ward", "watcher", "water", "weaver", "whirl", "whisper", "willow", "wind", "winds", "wing",
+                "winter", "wolf", "wood", "woods", "wound"
             ]
         },
     }

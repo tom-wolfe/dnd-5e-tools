@@ -8,9 +8,9 @@ import { NameList } from "./name-list";
 export const Kenku: Names.NameDefinition = {
     name: "Kenku",
     formats: [
-        "{battleName}",
-        "*{animalSound}*",
-        "*{otherSound}*"
+        { name: "Battle Name", formats: ["{battleName}"] },
+        { name: "Animal Sound", formats: ["*{animalSound}*"] },
+        { name: "Other Sound", formats: ["*{otherSound}*"] },
     ],
     parts: {
         battleName: {

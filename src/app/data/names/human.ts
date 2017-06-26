@@ -7,7 +7,7 @@ import { NameList } from "./name-list";
 export const Human: Names.NameDefinition = {
     name: "Human",
     formats: [
-        "{forename} {surnamePrefix}{surnameSuffix}"
+        { name: "Forename Surname", formats: ["{forename} {surnamePrefix}{surnameSuffix}"] }
     ],
     parts: {
         forename: HumanNames.forename,

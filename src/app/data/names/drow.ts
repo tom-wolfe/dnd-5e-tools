@@ -8,11 +8,16 @@ import { NameList } from "./name-list";
 export const Drow: Names.NameDefinition = {
     name: "Elf (Drow)",
     formats: [
-        "{forenamePrefix}{forenameSuffix} {surnamePrefix}{surnameSuffix}",
-        "{forenamePrefix}{forenameSuffix}{forenameSuffix} {surnamePrefix}{surnameSuffix}",
-        "{forenamePrefix}{forenameSuffix}'{forenameSuffix} {surnamePrefix}{surnameSuffix}",
-        "{forenamePrefix}{forenameSuffix} {forenamePrefix}",
-        "{forenameSuffix}'{forenamePrefix}{forenameSuffix} {surnamePrefix}{surnameSuffix}",
+        {
+            name: "Forename Surname",
+            formats: [
+                "{forenamePrefix}{forenameSuffix} {surnamePrefix}{surnameSuffix}",
+                "{forenamePrefix}{forenameSuffix}{forenameSuffix} {surnamePrefix}{surnameSuffix}",
+                "{forenamePrefix}{forenameSuffix}'{forenameSuffix} {surnamePrefix}{surnameSuffix}",
+                "{forenamePrefix}{forenameSuffix} {forenamePrefix}",
+                "{forenameSuffix}'{forenamePrefix}{forenameSuffix} {surnamePrefix}{surnameSuffix}",
+            ]
+        }
     ],
     parts: {
         forenamePrefix: {

@@ -7,8 +7,13 @@ import { NameList } from "./name-list";
 export const Elf: Names.NameDefinition = {
     name: "Elf",
     formats: [
-        "{forenamePrefixConsonant}{forenameSuffixVowel} {surname}",
-        "{forenamePrefixVowel}{forenameSuffixConsonant} {surname}"
+        {
+            name: "Forename Surname",
+            formats: [
+                "{forenamePrefixConsonant}{forenameSuffixVowel} {surname}",
+                "{forenamePrefixVowel}{forenameSuffixConsonant} {surname}",
+            ]
+        }
     ],
     parts: {
         forenamePrefixConsonant: ElfNames.forenamePrefixConsonant,

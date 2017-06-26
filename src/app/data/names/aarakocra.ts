@@ -7,9 +7,7 @@ import { NameList } from "./name-list";
 
 export const Aarakocra: Names.NameDefinition = {
     name: "Aarakocra",
-    formats: [
-        "{name}"
-    ],
+    formats: [{ name: "Forename", formats: ["{name}"] }],
     parts: {
         name: {
             markovOrder: 2,

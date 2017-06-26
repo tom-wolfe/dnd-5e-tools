@@ -8,10 +8,10 @@ import { NameList } from "./name-list";
 export const Khajiit: Names.NameDefinition = {
     name: "Khajiit",
     formats: [
-        "{honorificPrefix}'{forename}",
-        "{forename}-{honorificSuffix}",
-        "{honorificPrefix}'{forename}-{honorificSuffix}",
-        "{forenamePrefix}{forenameSuffix}"
+        { name: "Honorific'Forename", formats: ["{honorificPrefix}'{forename}"] },
+        { name: "Forename-Honorific", formats: ["{forename}-{honorificSuffix}"] },
+        { name: "Honorific'Forename-Honorific", formats: ["{honorificPrefix}'{forename}-{honorificSuffix}"] },
+        { name: "Forename", formats: ["{forenamePrefix}{forenameSuffix}"] },
     ],
     parts: {
         honorificPrefix: {

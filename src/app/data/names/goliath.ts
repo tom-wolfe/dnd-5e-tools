@@ -7,7 +7,9 @@ import { NameList } from "./name-list";
 
 export const Goliath: Names.NameDefinition = {
     name: "Goliath",
-    formats: ["{forenamePrefix}{forenameSuffix} '{nicknameAdjective}{nicknameNoun}' {surname}"],
+    formats: [
+        { name: "Forename 'Nickname' Surname", formats: ["{forenamePrefix}{forenameSuffix} '{nicknameAdjective}{nicknameNoun}' {surname}"]},
+    ],
     parts: {
         forenamePrefix: {
             markovOrder: 2,

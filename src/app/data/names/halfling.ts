@@ -8,7 +8,7 @@ import { NameList } from "./name-list";
 export const Halfling: Names.NameDefinition = {
     name: "Halfling",
     formats: [
-        "{forename} {surnamePrefix}{surnameSuffix}",
+        { name: "Forename Surname", formats: ["{forename} {surnamePrefix}{surnameSuffix}"] }
     ],
     parts: {
         forename: {

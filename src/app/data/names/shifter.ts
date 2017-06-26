@@ -7,9 +7,9 @@ import { NameList } from "./name-list";
 
 export const Shifter: Names.NameDefinition = {
     name: "Shifter",
-    formats: ["{forename}"],
+    formats: [{ name: "Forename", formats: ["{name}"] }],
     parts: {
-        forename: {
+        name: {
             markovOrder: 2,
             mode: "item",
             source: {

@@ -7,9 +7,7 @@ import { NameList } from "./name-list";
 
 export const Changeling: Names.NameDefinition = {
     name: "Changeling",
-    formats: [
-        "{name}"
-    ],
+    formats: [{ name: "Forename", formats: ["{name}"] }],
     parts: {
         name: {
             markovOrder: 2,

@@ -296,8 +296,8 @@ export class CharacterGenerator {
             }
         }
 
-        const generator = new NameGenerator(nameDef, character.gender);
-        character.name = generator.getName();
+        const generator = new NameGenerator([nameDef], character.gender);
+        character.name = generator.getName().value;
     }
 
     randomizeAge(character: Characters.Character) {

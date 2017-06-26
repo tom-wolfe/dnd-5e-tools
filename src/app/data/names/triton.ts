@@ -5,7 +5,7 @@ import { NameList } from "./name-list";
 
 export const Triton: Names.NameDefinition = {
     name: "Triton",
-    formats: ["{forename} {surname}"],
+    formats: [{ name: "Forename Surname", formats: ["{forename} {surname}"] }],
     parts: {
         forename: {
             markovOrder: 2,

@@ -12,7 +12,7 @@
   <div class="bb-thin pt-2 pb-3">
     <div class="refresh pull-right"><a href="" (click)="onRefreshPhysicalityClick($event)"><i class="fa fa-refresh"></i><span class="sr-only">Random Physicality</span></a></div>
     <div class="text-muted character-subline">
-      <span class="gender">{{character.genderDescription}}</span>
+      <span class="gender"><i class="fa" [ngClass]="character.genderIconClass"></i> {{character.genderDescription}}</span>
       <span class="race">{{character.race.name}}</span>
       <dnd-source-reference [reference]="character.race.reference"></dnd-source-reference>
       <span class="sub-race" *ngIf="character.subrace">{{character.subrace.name}}<dnd-source-reference [reference]="character.subrace.reference"></dnd-source-reference></span>,

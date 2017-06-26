@@ -5,9 +5,7 @@ import { NameList } from "./name-list";
 
 export const YuanTi: Names.NameDefinition = {
     name: "Yuan-ti",
-    formats: [
-        "{name}"
-    ],
+    formats: [{ name: "Forename", formats: ["{name}"] }],
     parts: {
         name: {
             markovOrder: 2,

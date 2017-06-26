@@ -51,7 +51,12 @@ export class Character {
 
     get genderDescription(): string {
         if (!this.gender) { return "Unknown"; }
-        return Data.Genders[this.gender] || "Unknown";
+        return Data.Genders[this.gender].name || "Unknown";
+    }
+
+    get genderIconClass(): string {
+        if (!this.gender) { return "fa-genderless"; }
+        return Data.Genders[this.gender].iconClass || "Unknown";
     }
 
     get heightString(): string {
