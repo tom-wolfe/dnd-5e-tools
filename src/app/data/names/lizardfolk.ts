@@ -158,13 +158,13 @@ export const Lizardfolk: Names.NameDefinition = {
                     "speaks-spells-gently", "stabs-through-hearts", "stands-in-shallows", "stands-in-still-water", "stands-in-thought",
                     "steady-hand", "steps-in-alleys", "stormy-eyes", "stream-murk", "strikes-from-shadows", "studies-many-things",
                     "summons-eyes", "sun-belly", "swift-catch", "swift-light", "swift-prestidigitator", "swift-tail", "swims-in-spells",
-                    "swims-in-swells", "ten-tongues-weerhat", "thick-spine", "thinks-too-much", "thinks-with-belly", "three-toes",
-                    "tips-the-scales", "tongue-toad", "tooth-in-the-sea", "touches-keels", "trades-for-gold", "trades-with-vigor",
-                    "trills-so-sweet", "trouble-finder", "twice-bitten", "two-blades", "two-scales", "under-clouds-darkened",
-                    "walks-by-starlight", "walks-softly", "walks-through-fog", "walks-with-mudcrabs", "walks-with-pride",
-                    "walks-with-purpose", "walks-with-rushes", "walks-with-spirits", "wanders-in-tatters", "watcher-from-afar",
-                    "watches-the-roots", "watches-water", "water-chaser", "weaves-nets", "weaves-one-basket", "wind-in-his-hair",
-                    "wind-in-sails"
+                    "swims-in-swells", "talks-with-dragons", "ten-tongues-weerhat", "thick-spine", "thinks-too-much", "thinks-with-belly",
+                    "three-toes", "tips-the-scales", "tongue-toad", "tooth-in-the-sea", "touches-keels", "trades-for-gold",
+                    "trades-with-vigor", "trills-so-sweet", "trouble-finder", "twice-bitten", "two-blades", "two-scales",
+                    "under-clouds-darkened", "walks-by-starlight", "walks-softly", "walks-through-fog", "walks-with-mudcrabs",
+                    "walks-with-owlbears", "walks-with-pride", "walks-with-purpose", "walks-with-rushes", "walks-with-spirits",
+                    "wanders-in-tatters", "watcher-from-afar", "watches-the-roots", "watches-water", "water-chaser", "weaves-nets",
+                    "weaves-one-basket", "wind-in-his-hair", "wind-in-sails"
                 ],
                 "F": [
                     "amber-eyes", "argues-with-frogs", "axe-fist", "barters-with-wit", "bathed-in-steel", "bitten-once-shy",
