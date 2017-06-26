@@ -8,6 +8,11 @@ export const Cleric: ClassModels.Class = {
     reference: { source: "PHB", page: 56, url: "https://www.dndbeyond.com/characters/classes/cleric" },
     archetypes: [
         {
+            name: "Death Domain",
+            reference: {
+                source: "DMG", page: 96
+            }
+        }, {
             name: "Forge Domain",
             reference: {
                 source: "UA", document: "Cleric", page: 1,

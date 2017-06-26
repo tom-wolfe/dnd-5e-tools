@@ -8,6 +8,11 @@ export const Paladin: ClassModels.Class = {
     reference: { source: "PHB", page: 82, url: "https://www.dndbeyond.com/characters/classes/paladin" },
     archetypes: [
         {
+            name: "Oathbreaker",
+            reference: {
+                source: "DMG", page: 97
+            }
+        }, {
             name: "Oath of Devotion",
             reference: {
                 source: "PHB", page: 85,
