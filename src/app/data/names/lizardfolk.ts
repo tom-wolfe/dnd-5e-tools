@@ -121,7 +121,7 @@ export const Lizardfolk: Names.NameDefinition = {
             }
         },
         commonTongueName: {
-            markovOrder: 2,
+            markovOrder: 1,
             mode: "markovOrItem",
             markovSplitChar: "-",
             markovJoinChar: "-",
