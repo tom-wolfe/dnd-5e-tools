@@ -265,7 +265,7 @@ export class CharacterGenerator {
             heightMod = character.subrace.height.modifier;
             heightBase = character.subrace.height.base;
         }
-        const height = this.numGen.rollDie(heightMod);
+        const height = this.numGen.rollGaussianDie(heightMod);
         character.height = heightBase + height;
 
         let weightMod = character.race.weight.modifier;
@@ -275,7 +275,7 @@ export class CharacterGenerator {
             weightBase = character.subrace.weight.base;
         }
 
-        const weight = this.numGen.rollDie(weightMod);
+        const weight = this.numGen.rollGaussianDie(weightMod);
         character.weight = weightBase + (height * weight);
     }
 
@@ -303,7 +303,7 @@ export class CharacterGenerator {
 
     randomizeAge(character: Characters.Character) {
         const age = character.race.age;
-        character.age = this.numGen.numberBetween(age.maturity, age.max);
+        character.age = this.numGen.gaussianNumberBetween(age.maturity, age.max);
     }
 
     randomizeAlignment(character: Characters.Character) {
