@@ -5,4 +5,8 @@ export abstract class AbilityScores {
     getModifier(ability: string): number {
         return Math.floor((this.get(ability) - 10) / 2);
     }
+    getModifierString(ability: string): string {
+        const mod = this.getModifier(ability);
+        return (mod >= 0) ? "+" + mod : mod.toString();
+    }
 };

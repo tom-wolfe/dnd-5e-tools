@@ -20,9 +20,9 @@
       <span class="alignment">{{character.alignmentDescription}}</span>
     </div>
     <div class="text-muted dnd-5e-tools-subline">
-      <span class="height">{{character.heightString || 0}} <span class="font-weight-bold">({{heightDescriptor.describe(character)}})</span></span>,
-      <span class="weight">{{(character.weight || 0) + " lbs."}} <span class="font-weight-bold">({{weightDescriptor.describe(character)}})</span></span>,
-      <span class="age">{{(character.age || 0) + " years old"}} <span class="font-weight-bold">({{ageDescriptor.describe(character)}})</span></span>
+      <span class="height">{{character.heightDescription}} <span class="font-weight-bold">({{character.heightClassification}})</span></span>,
+      <span class="weight">{{character.weightDescription}} <span class="font-weight-bold">({{character.weightClassification}})</span></span>,
+      <span class="age">{{character.ageDescription}} <span class="font-weight-bold">({{character.ageClassification}})</span></span>
     </div>
   </div>
 </div>

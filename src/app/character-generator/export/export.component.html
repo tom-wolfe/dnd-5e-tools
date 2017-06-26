@@ -1,0 +1,23 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1>Export Character</h1>
+    <p class="lead">Export your character to Markdown syntax for use with the <a href="http://homebrewery.naturalcrit.com/" target="_blank">Homebrewery</a>.</p>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <h2>Template</h2>
+      <codemirror [(ngModel)]="template" [config]="{ lineNumbers: true }"></codemirror>
+    </div>
+    <div class="col-sm-6">
+      <h2>Output</h2>
+      <codemirror [ngModel]="output" [config]="{ lineNumbers: true, readOnly: true }"></codemirror>
+    </div>
+  </div>
+  <div class="row mt-2 mb-2">
+    <div class="col-12">
+      <button class="btn btn-lg btn-primary" (click)="onBackClick()">Back to Generator</button>
+    </div>
+  </div>
+</div>

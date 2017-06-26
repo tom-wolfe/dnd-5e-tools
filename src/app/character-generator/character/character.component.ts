@@ -1,8 +1,9 @@
-import { Component, Input, ViewChild } from "@angular/core";
+import { Component, Input } from "@angular/core";
+import { Router } from "@angular/router";
 
 import * as Characters from "app/models/characters";
 
-import { ExportModalComponent } from "../export";
+import { CharacterGeneratorService } from "../character-generator.service";
 import { CharacterGenerator } from "../generators";
 
 @Component({
@@ -10,11 +11,13 @@ import { CharacterGenerator } from "../generators";
   templateUrl: "./character.component.html",
 })
 export class CharacterComponent {
-  @ViewChild("mdlExport") mdlExport: ExportModalComponent
   @Input() character: Characters.Character;
   @Input() generator: CharacterGenerator;
 
+  constructor(private router: Router, private service: CharacterGeneratorService) { }
+
   onExportClick() {
-    this.mdlExport.open();
+    this.service.character = this.character;
+    this.router.navigateByUrl("/character-generator/export");
   };
 };

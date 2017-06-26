@@ -1,34 +1,56 @@
+/* tslint:disable:max-line-length */
 
 export const ExportTemplate =
-`# {{character.name}}
+  `# {{name}}
+### {{class.name}} ({{classArchetype.name}})
+##### {{genderDescription}} {{raceDescription}}
 
 >____
-> - **Aliases:** [None]
-> - **Status:** Alive
-> - **Age:** {{age}}
-> - **Gender:** {{character.genderDescription}}
-> - **Height:** {{character.heightDescription}}
-> - **Weight:** {{character.weightDescription}}
-> - **Race:** {{character.race.name}} ({{character.subrace.name}})
-> - **Occupation:** {{character.class.name}}
+> ##### Information
+> Alignment: {{alignmentDescription}}<br>
+> Size: {{race.size}}<br>
+> Age: {{ageDescription}} **({{ageClassification}})**<br>
+> Height: {{heightDescription}} **({{heightClassification}})**<br>
+> Weight: {{weightDescription}} **({{weightClassification}})**<br>
+
+<div class='descriptive'>
+##### Background: {{background.name}}
+<br>
+***Trait.*** {{personalityTrait}}
+<br>
+***Ideal.*** {{ideal}}
+<br>
+***Bond.*** {{bond}}
+<br>
+***Flaw.*** {{flaw}}
+</div>
+
+\`\`\`
+\`\`\`
 
 ___
-> ## Base Stats
+> ## {{name}}
+>*{{race.size}} {{race.type}}, {{alignmentDescription}}*
 > ___
-> - **Armor Class** {{character.armorClass}} ({{character.equippedArmor}})
-> - **Hit Points** {{character.hitPoints}} ({{character.hitPointFormula}})
-> - **Speed** {{character.speed.walk}}
+> - **Level** {{level.number}}
+> - **Proficiency Bonus** +{{level.proficiencyBonus}}
+> - **Armor Class** {{armorClass}} ({{equippedArmor}})
+> - **Hit Points** {{hitPoints}} ({{hitPointFormula}})
+> - **Speed** {{walkSpeedDescription}}{{otherSpeedsDescription}}
 >___
->| STR  |  DEX  |  CON  |  INT  |  WIS  |  CHA  |
->|:----:|:-----:|:-----:|:-----:|:-----:|:-----:|
->|8 (-1)|12 (+1)|12 (+1)|14 (+2)|12 (+1)|18 (+4)|
+>|STR|DEX|CON|INT|WIS|CHA|
+>|:---:|:---:|:---:|:---:|:---:|:---:|
+>|{{strength}} ({{strengthMod}})|{{dexterity}} ({{dexterityMod}})|{{constitution}} ({{constitutionMod}})|{{intelligence}} ({{intelligenceMod}})|{{wisdom}} ({{wisdomMod}})|{{charisma}} ({{charismaMod}})|
 >___
-> - **Saving Throws** Wis +4, Cha +7
-> - **Skills** Deception +7, Intimidation +7, Insight +4, Persuasion +7, Perception +4
-> - **Senses** blindsight 120 ft., passive Perception 14 (18 w/raven)
-> - **Languages** Common, Elven, Infernal, Draconic
+> - **Damage Resistances** [TODO]
+> - **Skills** [TODO]
+> - **Senses** [TODO]
+> - **Languages** {{#languages}}{{name}}, {{/languages}}
 > ___
-> ***Voice of the Chain Master.*** Can speak through your familiar.
+{{#features}}
+> ***{{name}}. *** {{description}}
+> 
+{{/features}}
 
 <style>
   /* Printer Friendly A4 */
@@ -38,5 +60,4 @@ ___
     height : 296.8mm;
   }
   .phb hr+blockquote {background: white;}
-</style>
-`;
+</style>`;
