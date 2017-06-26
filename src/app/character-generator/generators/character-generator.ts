@@ -52,15 +52,29 @@ export class CharacterGenerator {
         const assignOrder: string[] = [];
 
         const pushAbility = (index) => {
-            assignOrder.push(abilityList[index]);
-            abilityList.splice(index, 1);
+            // Only push the class primary stat if it hasn't already been set.
+            let tmpAbility;
+            if (tmpAbility = abilityList[index]) {
+                assignOrder.push(tmpAbility);
+                abilityList.splice(index, 1);
+            }
         }
 
-        if (this.config.primaryAbility) { pushAbility(abilityList.indexOf(this.config.primaryAbility.code)); }
-        if (this.config.secondaryAbility) { pushAbility(abilityList.indexOf(this.config.secondaryAbility.code)); }
+        // If the primary stat is overridden, push that.
+        if (this.config.primaryAbility) {
+            pushAbility(abilityList.indexOf(this.config.primaryAbility.code));
+        } else {
+            pushAbility(abilityList.indexOf(character.class.primaryStat));
+        }
+
+        // If the secondary stat is overridden, push that.
+        if (this.config.secondaryAbility) {
+            pushAbility(abilityList.indexOf(this.config.secondaryAbility.code));
+        }
 
         pushAbility(abilityList.indexOf(character.class.primaryStat));
 
+        // Randomize the remaining abilities.
         while (abilityList.length > 0) {
             pushAbility(this.numGen.rollDie(abilityList.length) - 1);
         }
