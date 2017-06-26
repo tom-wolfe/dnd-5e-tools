@@ -5,8 +5,7 @@ import { CharacterGeneratorComponent } from "./character-generator/character-gen
 import { NameGeneratorComponent } from "./name-generator/name-generator.component";
 
 const appRoutes: Routes = [
-  { path: "", redirectTo: "/character-generator", pathMatch: "full" },
-  { path: "name-generator", component: NameGeneratorComponent }
+  { path: "", redirectTo: "/character-generator", pathMatch: "full" }
 ];
 
 @NgModule({

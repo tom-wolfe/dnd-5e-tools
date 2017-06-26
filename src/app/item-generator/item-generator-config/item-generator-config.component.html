@@ -1,0 +1,20 @@
+<div class="generator-config">
+  <div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-6 form-group">
+      <label for="item">Item Generator</label>
+      <select class="form-control" name="item" [(ngModel)]="config.definition" (input)="config.definitionFormat = null">
+        <option [ngValue]="null" selected>Random</option>
+        <option *ngFor="let item of items" [ngValue]="item">{{item.name}}</option>
+      </select>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 form-group">
+      <label for="count">Number</label>
+      <select class="form-control" name="count" [(ngModel)]="config.count">
+        <option value="10" selected>10</option>
+        <option value="20">20</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+      </select>
+    </div>
+  </div>
+</div>
