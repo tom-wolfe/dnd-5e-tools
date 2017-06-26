@@ -8,10 +8,29 @@ import { NameList } from "./name-list";
 export const Khajiit: Names.NameDefinition = {
     name: "Khajiit",
     formats: [
-        { name: "Honorific'Forename", formats: ["{honorificPrefix}'{forename}"] },
-        { name: "Forename-Honorific", formats: ["{forename}-{honorificSuffix}"] },
-        { name: "Honorific'Forename-Honorific", formats: ["{honorificPrefix}'{forename}-{honorificSuffix}"] },
-        { name: "Forename", formats: ["{forenamePrefix}{forenameSuffix}"] },
+        {
+            name: "Honorific'Forename", formats: [
+                "{honorificPrefix}'{forename}",
+                "{honorificPrefix}'{forenamePrefix}{forenameSuffix}"
+            ]
+        }, {
+            name: "Forename-Honorific",
+            formats: [
+                "{forename}-{honorificSuffix}",
+                "{forenamePrefix}{forenameSuffix}-{honorificSuffix}"
+            ]
+        }, {
+            name: "Honorific'Forename-Honorific",
+            formats: [
+                "{honorificPrefix}'{forename}-{honorificSuffix}",
+                "{honorificPrefix}'{forenamePrefix}{forenameSuffix}-{honorificSuffix}",
+            ]
+        }, {
+            name: "Forename", formats: [
+                "{forenamePrefix}{forenameSuffix}",
+                "{forename}"
+            ]
+        }
     ],
     parts: {
         honorificPrefix: {
@@ -53,7 +72,7 @@ export const Khajiit: Names.NameDefinition = {
         },
         forename: {
             markovOrder: 2,
-            mode: "item",
+            mode: "markov",
             source: {
                 "M": [
                     "aiq", "baasha", "bakha", "barri", "bassa", "dar", "darr", "dato", "dhannar", "dirr", "drassa", "farahn", "fazir",
