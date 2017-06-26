@@ -29,7 +29,7 @@ export class NameGeneratorComponent implements AfterContentInit {
     const generator = new NameGenerator(definitions, this.config.gender);
     this.names = [];
     for (let x = 0; x < this.config.count; x++) {
-      this.names.push(generator.getName());
+      this.names.push(generator.getName(this.config.definitionFormat));
     }
   };
 };
