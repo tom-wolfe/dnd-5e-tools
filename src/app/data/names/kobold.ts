@@ -7,9 +7,7 @@ import { NameList } from "./name-list";
 
 export const Kobold: Names.NameDefinition = {
     name: "Kobold",
-    formats: [
-        "{name}"
-    ],
+    formats: [{ name: "Forename", formats: ["{name}"] }],
     parts: {
         name: {
             markovOrder: 2,

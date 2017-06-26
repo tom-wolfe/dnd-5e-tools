@@ -1,4 +1,5 @@
 import { Skills } from "../data";
+import { ProficiencyType } from "../models/abilities/proficiency-type";
 import * as Features from "../models/features";
 
 export const CommonFeatures: { [index: string]: Features.Feature } = {
@@ -12,7 +13,7 @@ export const CommonFeatures: { [index: string]: Features.Feature } = {
     },
     "menacing": {
         name: "Menacing", type: "passive", skillProficiencies: [Skills.Intimidation],
-        proficiencyCount: 1, proficiencyType: "proficient",
+        proficiencyCount: 1, proficiencyType: ProficiencyType.Proficient,
         description: "You are trained in the Intimidation skill."
     },
     "powerfulBuild": {

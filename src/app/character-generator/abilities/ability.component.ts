@@ -21,7 +21,6 @@ export class AbilityComponent {
   }
 
   get modifierText(): string {
-    const mod = this.modifier;
-    return (mod >= 0) ? "+" + mod : mod.toString();
+    return this.character.abilities.getModifierString(this.ability);
   }
 };

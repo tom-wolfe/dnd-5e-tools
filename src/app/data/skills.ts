@@ -10,10 +10,10 @@ export namespace Skills {
     export const Deception: AbilityModels.Skill = { name: "Deception", ability: Abilities.Charisma };
     export const History: AbilityModels.Skill = { name: "History", ability: Abilities.Intelligence };
     export const Insight: AbilityModels.Skill = { name: "Insight", ability: Abilities.Wisdom };
-    export const Intimidation: AbilityModels.Skill = { name: "Intimidation", ability: Abilities.Intelligence };
+    export const Intimidation: AbilityModels.Skill = { name: "Intimidation", ability: Abilities.Charisma };
     export const Investigation: AbilityModels.Skill = { name: "Investigation", ability: Abilities.Intelligence };
-    export const Medicine: AbilityModels.Skill = { name: "Medicine", ability: Abilities.Intelligence };
-    export const Nature: AbilityModels.Skill = { name: "Nature", ability: Abilities.Dexterity };
+    export const Medicine: AbilityModels.Skill = { name: "Medicine", ability: Abilities.Wisdom };
+    export const Nature: AbilityModels.Skill = { name: "Nature", ability: Abilities.Intelligence };
     export const Perception: AbilityModels.Skill = { name: "Perception", ability: Abilities.Wisdom };
     export const Performance: AbilityModels.Skill = { name: "Performance", ability: Abilities.Charisma };
     export const Persuasion: AbilityModels.Skill = { name: "Persuasion", ability: Abilities.Charisma };

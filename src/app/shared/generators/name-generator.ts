@@ -9,36 +9,49 @@ export class NameGenerator {
     private numGen: NumberGenerator = new NumberGenerator();
     private markovGenerators: Collections.Dictionary<string, Markov.MarkovChain<string>>;
 
-    constructor(private definition: Names.NameDefinition, private gender: string) {
+    constructor(private definitions: Names.NameDefinition[], private gender: string) {
         this.markovGenerators = new Collections.Dictionary<string, Markov.MarkovChain<string>>();
     }
 
-    getName(): string {
+    getName(format?: Names.NameDefinitionFormat): Names.Name {
+        // Randomize gender if necessary.
+        if (!this.gender) { this.markovGenerators.clear(); }
+        const gender = this.gender || ["N", "M", "F"][this.numGen.rollDie(3) - 1];
+
         // Choose a name format.
-        const def = this.definition;
-        let format = def.formats[0];
-        if (def.formats.length > 0) {
-            format = def.formats[this.numGen.rollDie(def.formats.length) - 1];
+        const def = this.definitions[this.numGen.rollDie(this.definitions.length) - 1];
+
+        let formatToUse: Names.NameDefinitionFormat;
+        if (def.formats.indexOf(format) > -1) {
+            formatToUse = format;
+        } else {
+            formatToUse = def.formats[this.numGen.rollDie(def.formats.length) - 1];
         }
 
         // Replace the parts of the format.
-        const name = format.replace(/{(.+?)}/g, (match, part) => {
+        const name = formatToUse.formats[this.numGen.rollDie(formatToUse.formats.length) - 1].replace(/{(.+?)}/g, (match, part) => {
             const partDef = def.parts[part];
             if (!partDef) {
-                throw new RangeError(`Name part ${part} has no definition.`);
+                throw new RangeError(`Name part ${part} has no definition in ${def.name}.`);
             }
-            return this.getNamePart(part, partDef);
+            return this.getNamePart(part, partDef, gender);
         });
-        return _.capitalize(name).replace(/[\(\) \*'\-]\w/g, match => {
+
+        const retVal = new Names.Name();
+        retVal.gender = gender;
+        retVal.definition = def;
+        retVal.format = formatToUse;
+        retVal.value = _.capitalize(name).replace(/[\(\) \*'\-]\w/g, match => {
             return match.toUpperCase();
         });
+
+        return retVal;
     }
 
-    getNamePart(name: string, partDef: Names.NamePartDefinition): string {
+    getNamePart(name: string, partDef: Names.NamePartDefinition, gender: string): string {
         // For surnames.
-        let gender = this.gender;
         const availableGenders = Object.keys(partDef.source);
-        if (availableGenders.indexOf(gender) < 0) { gender = availableGenders[0]; }
+        if (availableGenders.indexOf(gender) < 0) { gender = availableGenders[this.numGen.rollDie(availableGenders.length) - 1]; }
 
         let selectedMode = partDef.mode as string;
         if (selectedMode === "markovOrItem") {

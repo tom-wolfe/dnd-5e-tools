@@ -1,5 +1,6 @@
 import { Languages } from "../../data/languages";
 import { Skills } from "../../data/skills";
+import { ProficiencyType } from "../../models/abilities/proficiency-type";
 import * as Characters from "../../models/characters";
 import * as RaceModels from "../../models/races";
 import * as Names from "../names";
@@ -37,7 +38,7 @@ export const Lizardfolk: RaceModels.Race = {
         }, {
             name: "Hunter's Lore", type: "passive",
             skillProficiencies: [Skills.Nature, Skills.Perception, Skills.Stealth, Skills.Survival],
-            proficiencyCount: 2, proficiencyType: "proficient",
+            proficiencyCount: 2, proficiencyType: ProficiencyType.Proficient,
             description: `
                     You gain proficiency with two of the following skills of your choice:
                     Animal Handling, Nature, Perception, Stealth, and Survival.

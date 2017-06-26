@@ -8,16 +8,22 @@ import { NameList } from "./name-list";
 export const HalfElf: Names.NameDefinition = {
     name: "Half-Elf",
     formats: [
-        // Elf names.
-        "{elfForenamePrefixConsonant}{elfForenameSuffixVowel} {elfSurname}",
-        "{elfForenamePrefixVowel}{elfForenameSuffixConsonant} {elfSurname}",
-
-        // Human names.
-        "{humanForename} {humanSurnamePrefix}{humanSurnameSuffix}",
-
-        // Half and half.
-        "{humanForename} {elfSurname}",
-        "{elfForenamePrefixVowel}{elfForenameSuffixConsonant} {humanSurnamePrefix}{humanSurnameSuffix}",
+        {
+            name: "Elf Name",
+            formats: [
+                "{elfForenamePrefixConsonant}{elfForenameSuffixVowel} {elfSurname}",
+                "{elfForenamePrefixVowel}{elfForenameSuffixConsonant} {elfSurname}",
+            ]
+        },
+        { name: "Human Name", formats: ["{humanForename} {humanSurnamePrefix}{humanSurnameSuffix}"] },
+        {
+            name: "Elf Forename, Human Surname",
+            formats: [
+                "{elfForenamePrefixConsonant}{elfForenameSuffixVowel} {humanSurnamePrefix}{humanSurnameSuffix}",
+                "{elfForenamePrefixVowel}{elfForenameSuffixConsonant} {humanSurnamePrefix}{humanSurnameSuffix}"
+            ]
+        },
+        { name: "Human Forename, Elf Surname", formats: ["{humanForename} {elfSurname}"] }
     ],
     parts: {
         elfForenamePrefixConsonant: ElfNames.forenamePrefixConsonant,

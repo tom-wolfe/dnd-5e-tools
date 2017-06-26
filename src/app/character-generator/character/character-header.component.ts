@@ -1,8 +1,8 @@
 import { Component, Input } from "@angular/core";
 
-import * as Descriptors from "../descriptors";
-import { CharacterGenerator } from "../generators/character-generator";
 import * as Characters from "app/models/characters";
+
+import { CharacterGenerator } from "../generators/character-generator";
 
 @Component({
   selector: "dnd-character-header",
@@ -11,9 +11,6 @@ import * as Characters from "app/models/characters";
 export class CharacterHeaderComponent {
   @Input() character: Characters.Character;
   @Input() generator: CharacterGenerator;
-  ageDescriptor: Descriptors.AgeDescriptor = new Descriptors.AgeDescriptor();
-  heightDescriptor: Descriptors.HeightDescriptor = new Descriptors.HeightDescriptor();
-  weightDescriptor: Descriptors.WeightDescriptor = new Descriptors.WeightDescriptor();
 
   onRefreshNameClick(e) {
     this.generator.randomizeName(this.character);

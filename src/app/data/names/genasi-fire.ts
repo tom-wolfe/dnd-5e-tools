@@ -5,7 +5,7 @@ import { NameList } from "./name-list";
 
 export const GenasiFire: Names.NameDefinition = {
     name: "Genasi (Fire)",
-    formats: ["{forename}"],
+    formats: [{ name: "Forename", formats: ["{forename}"] }],
     parts: {
         forename: {
             markovOrder: 2,

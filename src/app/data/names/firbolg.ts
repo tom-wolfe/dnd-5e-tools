@@ -7,10 +7,13 @@ import { NameList } from "./name-list";
 export const Firbolg: Names.NameDefinition = {
     name: "Firbolg",
     formats: [
-        "{forenamePrefixConsonant}{forenameSuffixVowel}",
-        "{forenamePrefixVowel}{forenameSuffixConsonant}"
-    ],
-    parts: {
+        {
+            name: "Forename",
+            formats: [
+                "{forenamePrefixConsonant}{forenameSuffixVowel}", "{forenamePrefixVowel}{forenameSuffixConsonant}"
+            ]
+        }
+    ], parts: {
         forenamePrefixConsonant: ElfNames.forenamePrefixConsonant,
         forenamePrefixVowel: ElfNames.forenamePrefixVowel,
         forenameSuffixVowel: ElfNames.forenameSuffixVowel,

@@ -8,15 +8,10 @@ import { NameList } from "./name-list";
 export const HalfOrc: Names.NameDefinition = {
     name: "Half-Orc",
     formats: [
-        // Orc names
-        "{orcForename} {orcSurnamePrefix}-{orcSurname}",
-
-        // Human names.
-        "{humanForename} {humanSurnamePrefix}{humanSurnameSuffix}",
-
-        // Half and half.
-        "{orcForename} {humanSurnamePrefix}{humanSurnameSuffix}",
-        "{humanForename} {orcSurnamePrefix}-{orcSurname}"
+        { name: "Orc Name", formats: ["{orcForename} {orcSurnamePrefix}-{orcSurname}"] },
+        { name: "Human Name", formats: ["{humanForename} {humanSurnamePrefix}{humanSurnameSuffix}"] },
+        { name: "Orc Forename, Human Surname", formats: ["{orcForename} {humanSurnamePrefix}{humanSurnameSuffix}"] },
+        { name: "Human Forename, Orc Surname", formats: ["{humanForename} {orcSurnamePrefix}-{orcSurname}"] }
     ],
     parts: {
         orcForename: OrcNames.forename,

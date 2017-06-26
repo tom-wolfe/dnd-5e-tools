@@ -7,7 +7,7 @@ import { NameList } from "./name-list";
 export const Orc: Names.NameDefinition = {
     name: "Orc",
     formats: [
-        "{forename} {surnamePrefix}-{surname}"
+        { name: "Forename Surname", formats: ["{forename} {surnamePrefix}-{surname}"] }
     ],
     parts: {
         forename: OrcNames.forename,

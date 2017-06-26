@@ -1,4 +1,5 @@
 import { Languages, Skills } from "../../data";
+import { ProficiencyType } from "../../models/abilities/proficiency-type";
 import * as RaceModels from "../../models/races";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
@@ -19,7 +20,7 @@ export const Tabaxi: RaceModels.Race = {
             name: "Feline Agility", type: "active",
             description: `
                     Your reflexes and agility allow you to move with a burst of speed. When you move on your turn in combat, you can
-                    double your speed until the end of the tum. Once you use this trait, you can't use it again until you move O feet
+                    double your speed until the end of the turn. Once you use this trait, you can't use it again until you move 0 feet
                     on one of your turns.
                 `
         }, {
@@ -33,7 +34,7 @@ export const Tabaxi: RaceModels.Race = {
         }, {
             name: "Cat's Talent", type: "passive",
             skillProficiencies: [Skills.Perception, Skills.Stealth],
-            proficiencyCount: 2, proficiencyType: "proficient",
+            proficiencyCount: 2, proficiencyType: ProficiencyType.Proficient,
             description: "You have proficiency in the Perception and Stealth skills."
         }
     ],

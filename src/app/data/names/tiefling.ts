@@ -5,9 +5,9 @@ import { NameList } from "./name-list";
 
 export const Tiefling: Names.NameDefinition = {
     name: "Tiefling",
-    formats: ["{forename}"],
+    formats: [{ name: "Forename", formats: ["{name}"] }],
     parts: {
-        forename: {
+        name: {
             markovOrder: 2,
             mode: "markovOrItem",
             maxLength: 15,

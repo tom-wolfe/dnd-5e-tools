@@ -7,9 +7,7 @@ import { NameList } from "./name-list";
 
 export const Goblin: Names.NameDefinition = {
     name: "Goblin",
-    formats: [
-        "{firstSyllable}{secondSyllable}"
-    ],
+    formats: [{ name: "Forename", formats: ["{firstSyllable}{secondSyllable}"] }],
     parts: {
         firstSyllable: {
             markovOrder: 2,

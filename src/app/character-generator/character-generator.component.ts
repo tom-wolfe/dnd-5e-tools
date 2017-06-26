@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from "@angular/core";
 
 import * as Characters from "app/models/characters";
 
+import { CharacterGeneratorService } from "./character-generator.service";
 import { CharacterGenerator, CharacterGeneratorConfig } from "./generators";
 
 @Component({
@@ -15,8 +16,10 @@ export class CharacterGeneratorComponent implements OnInit {
   config: CharacterGeneratorConfig = new CharacterGeneratorConfig();
   generator: CharacterGenerator = new CharacterGenerator(this.config);
 
+  constructor(private service: CharacterGeneratorService) { }
+
   ngOnInit() {
-    this.onGenerateClick();
+    this.character = this.service.character || this.generator.generateCharacter();
   };
 
   onGenerateClick() {

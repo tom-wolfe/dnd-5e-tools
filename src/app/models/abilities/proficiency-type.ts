@@ -1,2 +1,7 @@
 
-export type ProficiencyType = "none" | "jackOfAllTrades" | "proficient" | "expert";
+export enum ProficiencyType {
+    None,
+    JackOfAllTrades,
+    Proficient,
+    Expert
+};

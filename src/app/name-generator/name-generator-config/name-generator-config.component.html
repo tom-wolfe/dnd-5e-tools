@@ -2,14 +2,22 @@
   <div class="row">
     <div class="col-lg-3 col-md-4 col-sm-6 form-group">
       <label for="name">Name Generator</label>
-      <select class="form-control" name="name" [(ngModel)]="config.definition">
+      <select class="form-control" name="name" [(ngModel)]="config.definition" (input)="config.definitionFormat = null">
+        <option [ngValue]="null" selected>Random</option>
         <option *ngFor="let name of names" [ngValue]="name">{{name.name}}</option>
       </select>
+        <select class="form-control mt-2" name="definitionFormat" [(ngModel)]="config.definitionFormat" [disabled]="!config.definition">
+        <option *ngIf="config.definitionFormat === null" [ngValue]="null" selected>Any Format</option>
+        <ng-template [ngIf]="config.definition !== null">
+          <option *ngFor="let format of config.definition.formats" [ngValue]="format">{{format.name}}</option>
+        </ng-template>
+    </select>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 form-group">
       <label for="gender">Gender</label>
       <select class="form-control" name="gender" [(ngModel)]="config.gender">
-        <option value="N" selected>Any/Neutral</option>
+        <option [ngValue]="null" selected>Random</option>
+        <option value="N" selected>Neutral</option>
         <option value="F" selected>Female</option>
         <option value="M" selected>Male</option>
       </select>

@@ -6,10 +6,9 @@ import { NameList } from "./name-list";
 
 export const Dragonborn: Names.NameDefinition = {
     name: "Dragonborn",
-    formats: [
-        "{syllable}{syllable}",
-        "{syllable}{syllable}{syllable}",
-    ],
+    formats: [{
+        name: "Forename", formats: ["{syllable}{syllable}", "{syllable}{syllable}{syllable}"]
+    }],
     parts: {
         syllable: DragonSyllables.syllable,
     }

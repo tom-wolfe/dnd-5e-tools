@@ -1,4 +1,5 @@
 import { Languages, Skills } from "../../data";
+import { ProficiencyType } from "../../models/abilities/proficiency-type";
 import * as RaceModels from "../../models/races";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
@@ -31,7 +32,7 @@ export const Human: RaceModels.Race = {
                 {
                     name: "Skill Proficiency", type: "passive",
                     skillProficiencies: Object.keys(Skills.SkillList).map((skill) => Skills.SkillList[skill]),
-                    proficiencyCount: 1, proficiencyType: "proficient",
+                    proficiencyCount: 1, proficiencyType: ProficiencyType.Proficient,
                     description: "You gain proficiency in one skill of your choice."
                 }
             ],

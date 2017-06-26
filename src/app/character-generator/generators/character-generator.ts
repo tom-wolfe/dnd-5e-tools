@@ -9,6 +9,7 @@ import * as Names from "app/models/names";
 import { NameGenerator, NumberGenerator } from "app/shared/generators";
 import * as _ from "lodash";
 
+import { ProficiencyType } from "../../models/abilities/proficiency-type";
 import { AbilityScoreGenerator } from "./ability-score-generator";
 import { CharacterGeneratorConfig } from "./character-generator-config.model";
 
@@ -175,7 +176,7 @@ export class CharacterGenerator {
         const bgProficiencies = character.background.skillProficiencies.forEach(skill => {
             character.skillProficiencies.push({
                 skill: skill,
-                proficiencyType: "proficient"
+                proficiencyType: ProficiencyType.Proficient
             });
         });
     }
@@ -296,8 +297,8 @@ export class CharacterGenerator {
             }
         }
 
-        const generator = new NameGenerator(nameDef, character.gender);
-        character.name = generator.getName();
+        const generator = new NameGenerator([nameDef], character.gender);
+        character.name = generator.getName().value;
     }
 
     randomizeAge(character: Characters.Character) {

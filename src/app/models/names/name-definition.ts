@@ -1,7 +1,8 @@
+import { NameDefinitionFormat } from "./name-definition-format";
 import { NamePartDefinition } from "./name-part-definition";
 
 export class NameDefinition {
     name: string;
-    formats: string[];
-    parts: { [index: string]: NamePartDefinition };
+    formats: NameDefinitionFormat[];
+    parts: { [name: string]: NamePartDefinition };
 };

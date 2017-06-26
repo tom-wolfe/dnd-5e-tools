@@ -7,8 +7,13 @@ import { NameList } from "./name-list";
 export const DwarfNorse: Names.NameDefinition = {
     name: "Dwarf (Norse)",
     formats: [
-        "{forename} {prefixAdjective}{suffixNoun}",
-        "{forename} {prefixNoun}{suffixAdjective}",
+        {
+            name: "Forename Surname",
+            formats: [
+                "{forename} {prefixAdjective}{suffixNoun}",
+                "{forename} {prefixNoun}{suffixAdjective}",
+            ]
+        }
     ],
     parts: {
         forename: {
