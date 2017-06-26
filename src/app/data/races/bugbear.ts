@@ -22,7 +22,8 @@ export const Bugbear: RaceModels.Race = {
         },
         CommonFeatures.powerfulBuild,
         {
-            name: "Sneaky", type: "passive", skillProficiencies: [Skills.Intimidation],
+            name: "Sneaky", type: "passive", skillProficiencies: [Skills.Stealth],
+            proficiencyCount: 1, proficiencyType: "proficient",
             description: "You are proficient in the Stealth skill."
         }, {
             name: "Surprise Attack", type: "passive",

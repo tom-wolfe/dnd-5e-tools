@@ -193,6 +193,25 @@ export class Character {
         }
     };
 
+    get sensesString(): string {
+        const append = (input: string, sense: string): string => {
+            let temp = 0;
+            if ((temp = this.senses[sense.toLowerCase()] || 0) > 0) {
+                if (input.trim().length > 0) { input += ", "; }
+                return `${sense} ${this.senses[sense.toLowerCase()]} ft.`;
+            }
+            return input;
+        }
+
+        if (!this.senses) { return ""; }
+        let output = "";
+        output = append(output, "Darkvision");
+        output = append(output, "Blindsight");
+        output = append(output, "Tremorsense");
+        output = append(output, "Truesight");
+        return output;
+    }
+
     get skillString(): string {
         const format = (modifier: number) => (modifier >= 0) ? "+" + modifier : modifier.toString();
         const profs = this.skillProficiencies.map(p => `${p.skill.name} ${format(this.getSkillModifier(p.skill))}`).sort();
