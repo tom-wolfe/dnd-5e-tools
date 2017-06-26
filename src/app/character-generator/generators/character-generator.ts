@@ -303,7 +303,7 @@ export class CharacterGenerator {
 
     randomizeAge(character: Characters.Character) {
         const age = character.race.age;
-        character.age = this.numGen.gaussianNumberBetween(age.maturity, age.max);
+        character.age = this.numGen.numberBetween(age.maturity, age.max);
     }
 
     randomizeAlignment(character: Characters.Character) {
