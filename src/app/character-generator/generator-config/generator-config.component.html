@@ -105,7 +105,7 @@
     <div class="col-lg-3 col-md-4 col-sm-6 form-group">
       <label for="primaryAbility">Main Abilities</label>
       <select class="form-control" name="primaryAbility" [(ngModel)]="config.primaryAbility">
-        <option [ngValue]="null" selected>Any Ability</option>
+        <option [ngValue]="null" selected>Class Default</option>
         <option *ngFor="let ability of abilities" [ngValue]="ability">{{ability.name}}</option>
     </select>
       <select class="form-control mt-2" name="secondaryAbility" [(ngModel)]="config.secondaryAbility">
