@@ -6,7 +6,7 @@ export const Noble: Characters.Background = {
     name: "Noble",
     reference: { source: "PHB", page: 131, url: "https://www.dndbeyond.com/characters/backgrounds/noble" },
     languages: { other: 1 },
-    skillProficiencies: [Skills.History, Skills.History],
+    skillProficiencies: [Skills.History, Skills.Persuasion],
     proficiencyCount: 2,
     personalityTraits: [
         "My eloquent flattery makes everyone I talk to feel like the most wonderful and important person in the world.",

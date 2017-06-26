@@ -43,9 +43,9 @@ ___
 >|{{strength}} ({{strengthMod}})|{{dexterity}} ({{dexterityMod}})|{{constitution}} ({{constitutionMod}})|{{intelligence}} ({{intelligenceMod}})|{{wisdom}} ({{wisdomMod}})|{{charisma}} ({{charismaMod}})|
 >___
 > - **Damage Resistances** [TODO]
-> - **Skills** [TODO]
-> - **Senses** [TODO]
-> - **Languages** {{#languages}}{{name}}, {{/languages}}
+> - **Skills** {{skillString}}
+> - **Senses** passive Perception {{passivePerception}} [TODO]
+> - **Languages** {{languageString}}
 > ___
 {{#features}}
 > ***{{name}}. *** {{description}}

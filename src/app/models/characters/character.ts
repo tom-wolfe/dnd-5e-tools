@@ -155,6 +155,28 @@ export class Character {
         }
     };
 
+    get otherSpeedsDescription(): string {
+        const pushSpeed = (speed: string, speeds: string[]) => {
+            const val = this.speed[speed] || 0;
+            if (val > 0) { speeds.push(`${speed} ${val} ft.`); }
+        };
+
+        const speeds: string[] = [];
+        pushSpeed("climb", speeds);
+        pushSpeed("fly", speeds);
+        pushSpeed("swim", speeds);
+
+        if (speeds.length === 0) { return ""; } else { return `, ${_.join(speeds, ", ")}`; }
+    }
+
+    get passivePerception(): number {
+        return 10 + this.getSkillModifier(Data.Skills.Perception);
+    }
+
+    get languageString(): string {
+        return _.join(this.languages.map(x => x.name), ", ");
+    }
+
     get raceDescription(): string {
         if (!this.subrace) {
             return `${this.race.name}`;
@@ -171,22 +193,14 @@ export class Character {
         }
     };
 
-    get walkSpeedDescription(): string {
-        return this.speed.walk + " ft.";
+    get skillString(): string {
+        const format = (modifier: number) => (modifier >= 0) ? "+" + modifier : modifier.toString();
+        const profs = this.skillProficiencies.map(p => `${p.skill.name} ${format(this.getSkillModifier(p.skill))}`).sort();
+        return _.join(profs, ", ");
     }
 
-    get otherSpeedsDescription(): string {
-        const pushSpeed = (speed: string, speeds: string[]) => {
-            const val = this.speed[speed] || 0;
-            if (val > 0) { speeds.push(`${speed} ${val} ft.`); }
-        };
-
-        const speeds: string[] = [];
-        pushSpeed("climb", speeds);
-        pushSpeed("fly", speeds);
-        pushSpeed("swim", speeds);
-
-        if (speeds.length === 0) { return ""; } else { return `, ${_.join(speeds, ", ")}`; }
+    get walkSpeedDescription(): string {
+        return this.speed.walk + " ft.";
     }
 
     get weightDescription(): string {
