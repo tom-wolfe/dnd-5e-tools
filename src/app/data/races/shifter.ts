@@ -1,4 +1,5 @@
 import { Languages, Skills } from "../../data";
+import { ProficiencyType } from "../../models/abilities/proficiency-type";
 import * as RaceModels from "../../models/races";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
@@ -18,7 +19,7 @@ export const Shifter: RaceModels.Race = {
         {
             name: "Duplicity", type: "passive",
             skillProficiencies: [Skills.Deception],
-            proficiencyCount: 1, proficiencyType: "proficient",
+            proficiencyCount: 1, proficiencyType: ProficiencyType.Proficient,
             description: "You have proficiency in the Deception skill."
         }, {
             name: "Shapechanger", type: "active",

@@ -1,10 +1,11 @@
+import * as Descriptors from "app/shared/descriptors";
 import * as _ from "lodash";
 
 import * as Data from "../../data/";
+import { ProficiencyType } from "../abilities";
 import * as Abilities from "../abilities";
 import * as Attributes from "../attributes";
 import * as Classes from "../classes";
-import * as Descriptors from "app/shared/descriptors";
 import * as Features from "../features";
 import * as Languages from "../languages";
 import * as Races from "../races";
@@ -240,9 +241,9 @@ export class Character {
         const prof = this.skillProficiencies.filter((sp) => sp.skill === skill);
         if (prof.length > 0) {
             switch (prof[0].proficiencyType) {
-                case "proficient": retVal += proficiencyBonus; break;
-                case "jackOfAllTrades": retVal += Math.floor(proficiencyBonus / 2); break;
-                case "expert": retVal += proficiencyBonus * 2; break;
+                case ProficiencyType.Proficient: retVal += proficiencyBonus; break;
+                case ProficiencyType.JackOfAllTrades: retVal += Math.floor(proficiencyBonus / 2); break;
+                case ProficiencyType.Expert: retVal += proficiencyBonus * 2; break;
             }
         }
         return retVal;

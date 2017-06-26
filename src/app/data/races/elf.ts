@@ -1,4 +1,5 @@
 import { Languages, Skills } from "../../data";
+import { ProficiencyType } from "../../models/abilities/proficiency-type";
 import * as Characters from "../../models/characters";
 import * as RaceModels from "../../models/races";
 import { CommonFeatures } from "../common-features";
@@ -20,7 +21,7 @@ export const Elf: RaceModels.Race = {
         {
             name: "Keen Senses", type: "passive",
             skillProficiencies: [Skills.Perception],
-            proficiencyCount: 1, proficiencyType: "proficient",
+            proficiencyCount: 1, proficiencyType: ProficiencyType.Proficient,
             description: "You have proficiency in the Perception skill."
         },
         CommonFeatures.feyAncestry,
