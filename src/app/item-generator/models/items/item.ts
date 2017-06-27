@@ -1,4 +1,4 @@
-import { NameDefinitionFormat } from "../names";
+import { NameDefinitionFormat } from "app/models/names";
 import { ItemDefinition } from "./";
 
 export class Item {

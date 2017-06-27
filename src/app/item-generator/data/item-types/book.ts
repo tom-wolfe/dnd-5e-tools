@@ -1,4 +1,4 @@
-import * as Items from "app/models/items";
+import * as Items from "../../models/items";
 import { ItemTypeList } from "./item-type-list";
 
 /* cSpell:disable */

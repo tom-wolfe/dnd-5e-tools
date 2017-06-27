@@ -1,11 +1,9 @@
 import { AfterContentInit, Component, Input } from "@angular/core";
 
-import * as ItemTypes from "app/data/item-types";
-import { Item } from "app/models/items";
-
-import { ItemDefinition } from "../models/items/item-definition";
-import { ItemGenerator } from "../shared/generators";
-import { ItemGeneratorConfig } from "../shared/generators/item-generator-config";
+import * as ItemTypes from "./data/item-types";
+import { ItemGenerator, ItemGeneratorConfig } from "./generators";
+import { Item } from "./models/items";
+import { ItemDefinition } from "./models/items/item-definition";
 
 @Component({
   selector: "dnd-item-generator",

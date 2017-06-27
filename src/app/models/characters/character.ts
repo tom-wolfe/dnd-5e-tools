@@ -9,19 +9,20 @@ import * as Classes from "../classes";
 import * as Features from "../features";
 import * as Languages from "../languages";
 import * as Races from "../races";
+import * as Equipment from "../equipment";
 import { Background } from "./background";
 import { Level } from "./level";
 
 export class Character {
-    ageDescriptor: Descriptors.AgeDescriptor = new Descriptors.AgeDescriptor();
-    heightDescriptor: Descriptors.HeightDescriptor = new Descriptors.HeightDescriptor();
-    weightDescriptor: Descriptors.WeightDescriptor = new Descriptors.WeightDescriptor();
+    readonly ageDescriptor: Descriptors.AgeDescriptor = new Descriptors.AgeDescriptor();
+    readonly heightDescriptor: Descriptors.HeightDescriptor = new Descriptors.HeightDescriptor();
+    readonly weightDescriptor: Descriptors.WeightDescriptor = new Descriptors.WeightDescriptor();
 
-    abilities: Abilities.AbilityScores = new Abilities.CharacterAbilityScores(this);
+    readonly abilities: Abilities.AbilityScores = new Abilities.CharacterAbilityScores(this);
     age: number;
     alignment: string;
     background: Background;
-    baseAbilities: Abilities.AbilityScores = new Abilities.BasicAbilityScores();
+    readonly baseAbilities: Abilities.AbilityScores = new Abilities.BasicAbilityScores();
     baseArmorClass = 10;
     baseHitPoints = 10;
     bond: string;
@@ -34,14 +35,20 @@ export class Character {
     ideal: string;
     level: Level;
     name: string;
-    otherLanguages: Languages.Language[] = [];
+    readonly otherLanguages: Languages.Language[] = [];
     personalityTrait: string;
     race: Races.Race;
-    senses: Attributes.Senses = new Attributes.CharacterSenses(this);
-    skillProficiencies: Abilities.SkillProficiency[] = [];
-    speed: Attributes.Speed = new Attributes.CharacterSpeed(this);
+    readonly senses: Attributes.Senses = new Attributes.CharacterSenses(this);
+    readonly skillProficiencies: Abilities.SkillProficiency[] = [];
+    readonly speed: Attributes.Speed = new Attributes.CharacterSpeed(this);
     subrace: Races.Subrace;
+    readonly weaponProficiencies: Equipment.Weapon[] = [];
     weight: number;
+
+    get armorProficiencyString(): string {
+        // TODO: Implement.
+        return "";
+    }
 
     get strength(): number {
         return this.abilities.get("STR");
@@ -178,6 +185,11 @@ export class Character {
         return _.join(this.languages.map(x => x.name), ", ");
     }
 
+    get otherProficiencyString(): string {
+        // TODO: Implement.
+        return "";
+    }
+
     get raceDescription(): string {
         if (!this.subrace) {
             return `${this.race.name}`;
@@ -219,6 +231,11 @@ export class Character {
         return _.join(profs, ", ");
     }
 
+    get toolProficiencyString(): string {
+        // TODO: Implement.
+        return "";
+    }
+
     get walkSpeedDescription(): string {
         return this.speed.walk + " ft.";
     }
@@ -230,6 +247,10 @@ export class Character {
 
     get weightClassification(): string {
         return this.weightDescriptor.describe(this);
+    }
+
+    get weaponProficiencyString(): string {
+        return _.join(this.weaponProficiencies.map(w => w.name).sort(), ", ");
     }
 
     getSkillModifier(skill: Abilities.Skill): number {

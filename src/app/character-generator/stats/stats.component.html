@@ -28,13 +28,50 @@
 <div class="bb-thin">
   <div class="row">
     <div class="col-md-4">
-      <dnd-languages [character]="character"></dnd-languages>
+      <div class="character-sub-block">
+        <h3 class="sub-block-title">Languages</h3>
+        {{character.languageString}}
+      </div>
     </div>
     <div class="col-md-4">
-      <dnd-senses [character]="character"></dnd-senses>
+      <div class="character-sub-block">
+        <h3 class="sub-block-title">Senses</h3>
+        {{character.sensesString}}
+      </div>
     </div>
     <div class="col-md-4">
-      <dnd-skills [character]="character"></dnd-skills>
+      <div class="character-sub-block">
+        <h3 class="sub-block-title">Skills</h3>
+        {{character.skillString}}
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="row">
+    <div class="col-3">
+      <div class="character-sub-block">
+        <h4 class="sub-block-title">Weapon Proficiencies</h4>
+        {{character.weaponProficiencyString}}
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="character-sub-block">
+        <h4 class="sub-block-title">Armor Proficiencies</h4>
+        {{character.armorProficiencyString}}
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="character-sub-block">
+        <h4 class="sub-block-title">Tool Proficiencies</h4>
+        {{character.toolProficiencyString}}
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="character-sub-block">
+        <h4 class="sub-block-title">Other Proficiencies</h4>
+        {{character.otherProficiencyString}}
+      </div>
     </div>
   </div>
 </div>

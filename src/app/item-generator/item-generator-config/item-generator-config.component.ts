@@ -1,8 +1,9 @@
 import { Component, Input, OnInit } from "@angular/core";
 
-import * as ItemTypeData from "app/data/item-types";
-import * as Items from "app/models/items";
 import { NameGeneratorConfig } from "app/shared/generators/name-generator-config";
+
+import * as ItemTypeData from "../data/item-types";
+import * as Items from "../models/items";
 
 @Component({
   selector: "dnd-item-generator-config",

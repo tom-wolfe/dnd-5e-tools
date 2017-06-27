@@ -1,9 +1,9 @@
-import * as NameData from "app/data/names";
-import * as Items from "app/models/items";
-import { NameGenerator } from "app/shared/generators";
 import { Languages } from "app/data/languages";
+import * as NameData from "app/data/names";
+import { NameGenerator } from "app/shared/generators";
+import { NumberGenerator } from "app/shared/generators/number-generator";
 
-import { NumberGenerator } from "./number-generator";
+import * as Items from "../models/items";
 
 export class ItemGenerator {
     private numGen: NumberGenerator = new NumberGenerator();

@@ -1,6 +1,7 @@
 import * as Data from "app/data/";
 import * as BackgroundData from "app/data/backgrounds/";
 import * as ClassData from "app/data/classes/";
+import * as WeaponData from "app/data/weapons/";
 import * as RaceData from "app/data/races/";
 import * as Abilities from "app/models/abilities";
 import * as Characters from "app/models/characters";
