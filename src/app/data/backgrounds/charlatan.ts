@@ -1,5 +1,6 @@
 import { Skills } from "../../data";
 import * as Characters from "../../models/characters";
+import { FeatureType } from "../../models/features/feature-type";
 import { BackgroundList } from "./background-list";
 
 export const Charlatan: Characters.Background = {
@@ -8,6 +9,15 @@ export const Charlatan: Characters.Background = {
     languages: {},
     skillProficiencies: [Skills.Deception, Skills.SleightOfHand],
     proficiencyCount: 2,
+    features: [{
+        name: "Favorite False Identity",
+        type: FeatureType.Passive,
+        description: `
+            You have created a second identity that includes documentation, established acquaintances, and disguises that allow you to
+            assume that persona. Additionally, you can forge documents including official papers and personal letters, as long as you have
+            seen an example of the kind of document or the handwriting you are trying to copy.
+        `
+    }],
     personalityTraits: [
         "I fall in and out of love easily, and am always pursuing someone.",
         "I have a joke for every occasion, especially occasions where humor is inappropriate.",

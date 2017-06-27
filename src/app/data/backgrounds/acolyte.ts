@@ -1,5 +1,6 @@
 import { Skills } from "../../data";
 import * as Characters from "../../models/characters";
+import { FeatureType } from "../../models/features/feature-type";
 import { BackgroundList } from "./background-list";
 
 export const Acolyte: Characters.Background = {
@@ -8,6 +9,21 @@ export const Acolyte: Characters.Background = {
     languages: { other: 2 },
     skillProficiencies: [Skills.Insight, Skills.Religion],
     proficiencyCount: 2,
+    features: [{
+        name: "Shelter of the Faithful",
+        type: FeatureType.Passive,
+        description: `
+            As an acolyte, you command the respect of those who share your faith, and you can perform the religious ceremonies of your
+            deity. You and your adventuring companions can expect to receive free healing and care at a temple, shrine, or other
+            established presence of your faith, though you must provide any material components needed for spells. Those who share your
+            religion will support you (but only you) at a modest lifestyle.
+
+            You might also have ties to a specific temple dedicated to your chosen deity or pantheon, and you have a residence there.
+            This could be the temple where you used to serve, if you remain on good terms with it, or a temple where you have found a new
+            home. While near your temple, you can call upon the priests for assistance, provided the assistance you ask for is not hazardous
+            and you remain in good standing with your temple.
+        `
+    }],
     personalityTraits: [
         "I idolize a particular hero of my faith, and constantly refer to that person's deeds and example.",
         "I can find common ground between the fiercest enemies, empathizing with them and always working toward peace.",

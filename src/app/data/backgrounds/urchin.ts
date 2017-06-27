@@ -1,6 +1,7 @@
-import { Languages, Skills } from "../../data";
-import { BackgroundList } from "./background-list";
+import { Skills } from "../../data";
 import * as Characters from "../../models/characters";
+import { FeatureType } from "../../models/features/feature-type";
+import { BackgroundList } from "./background-list";
 
 export const Urchin: Characters.Background = {
     name: "Urchin",
@@ -8,6 +9,15 @@ export const Urchin: Characters.Background = {
     languages: {},
     skillProficiencies: [Skills.SleightOfHand, Skills.Stealth],
     proficiencyCount: 2,
+    features: [{
+        name: "City Secrets",
+        type: FeatureType.Passive,
+        description: `
+            You know the secret patterns and flow to cities and can find passages through the urban sprawl that others would miss. When you
+            are not in combat, you (and companions you lead) can travel between any two locations in the city twice as fast as your speed
+            would normally allow.
+        `
+    }],
     personalityTraits: [
         "I hide scraps of food and trinkets away in my pockets.",
         "I ask a lot of questions.",

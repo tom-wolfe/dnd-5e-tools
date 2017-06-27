@@ -1,5 +1,6 @@
 import { Skills } from "../../data";
 import * as Characters from "../../models/characters";
+import { FeatureType } from "../../models/features/feature-type";
 import { BackgroundList } from "./background-list";
 
 export const Soldier: Characters.Background = {
@@ -8,6 +9,16 @@ export const Soldier: Characters.Background = {
     languages: {},
     skillProficiencies: [Skills.Athletics, Skills.Intimidation],
     proficiencyCount: 2,
+    features: [{
+        name: "Military Rank",
+        type: FeatureType.Passive,
+        description: `
+            You have a military rank from your career as a soldier. Soldiers loyal to your former military organization still recognize your
+            authority and influence, and they defer to you if they are of a lower rank. You can invoke your rank to exert influence over
+            other soldiers and requisition simple equipment or horses for temporary use. You can also usually gain access to friendly
+            military encampments and fortresses where your rank is recognized.
+        `
+    }],
     personalityTraits: [
         "I’m always polite and respectful.",
         "I’m haunted by memories of war. I can’t get the images of violence out of my mind.",

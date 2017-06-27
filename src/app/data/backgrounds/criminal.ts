@@ -1,5 +1,6 @@
 import { Skills } from "../../data";
 import * as Characters from "../../models/characters";
+import { FeatureType } from "../../models/features/feature-type";
 import { BackgroundList } from "./background-list";
 
 export const Criminal: Characters.Background = {
@@ -8,6 +9,15 @@ export const Criminal: Characters.Background = {
     languages: {},
     skillProficiencies: [Skills.Deception, Skills.Stealth],
     proficiencyCount: 2,
+    features: [{
+        name: "Criminal Contact",
+        type: FeatureType.Passive,
+        description: `
+            You have a reliable and trustworthy contact who acts as your liaison to a network of other criminals. You know how to get
+            messages to and from your contact, even over great distances; specifically, you know the local messengers, corrupt caravan
+            masters, and seedy sailors who can deliver messages for you.
+        `
+    }],
     personalityTraits: [
         "I always have a plan for what to do when things go wrong.",
         "I am always calm, no matter what the situation. I never raise my voice or let my emotions control me.",

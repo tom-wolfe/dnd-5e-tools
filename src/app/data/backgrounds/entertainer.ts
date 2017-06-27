@@ -1,5 +1,6 @@
 import { Skills } from "../../data";
 import * as Characters from "../../models/characters";
+import { FeatureType } from "../../models/features/feature-type";
 import { BackgroundList } from "./background-list";
 
 export const Entertainer: Characters.Background = {
@@ -8,6 +9,16 @@ export const Entertainer: Characters.Background = {
     languages: {},
     skillProficiencies: [Skills.Acrobatics, Skills.Performance],
     proficiencyCount: 2,
+    features: [{
+        name: "By Popular Demand",
+        type: FeatureType.Passive,
+        description: `
+            You can always find a place to perform, usually in an inn or tavern but possibly with a circus, at a theater, or even in a
+            noble's court. At such a place, you receive free lodging and food of a modest or comfortable standard (depending on the quality
+            of the establishment), as long as you perform each night. In addition, your performance makes you something of a local figure.
+            When strangers recognize you in a town where you have performed, they typically take a liking to you.
+        `
+    }],
     personalityTraits: [
         "I know a story relevant to almost every situation.",
         "Whenever I come to a new place, I collect local rumors and spread gossip.",

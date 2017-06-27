@@ -1,5 +1,6 @@
 import { Skills } from "../../data";
 import * as Characters from "../../models/characters";
+import { FeatureType } from "../../models/features/feature-type";
 import { BackgroundList } from "./background-list";
 
 export const Sailor: Characters.Background = {
@@ -8,6 +9,17 @@ export const Sailor: Characters.Background = {
     languages: {},
     skillProficiencies: [Skills.Athletics, Skills.Perception],
     proficiencyCount: 2,
+    features: [{
+        name: "Ship's Passage",
+        type: FeatureType.Passive,
+        description: `
+            When you need to, you can secure free passage on a sailing ship for yourself and your adventuring companions. You might sail on
+            the ship you served on, or another ship you have good relations with (perhaps one captained by a former crewmate). Because
+            you're calling in a favor, you can't be certain of a schedule or route that wiII meet your every need. Your Dungeon Master will
+            determine how long it takes to get where you need to go. In return for your free passage, you and your companions are expected
+            to assist the crew during the voyage.
+        `
+    }],
     personalityTraits: [
         "My friends know they can rely on me, no matter what.",
         "I work hard so that I can play hard when the work is done.",

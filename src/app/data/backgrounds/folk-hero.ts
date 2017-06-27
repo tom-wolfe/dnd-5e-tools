@@ -1,5 +1,6 @@
 import { Skills } from "../../data";
 import * as Characters from "../../models/characters";
+import { FeatureType } from "../../models/features/feature-type";
 import { BackgroundList } from "./background-list";
 
 export const FolkHero: Characters.Background = {
@@ -8,6 +9,16 @@ export const FolkHero: Characters.Background = {
     languages: {},
     skillProficiencies: [Skills.AnimalHandling, Skills.Survival],
     proficiencyCount: 2,
+    features: [{
+        name: "Rustic Hospitality",
+        type: FeatureType.Passive,
+        description: `
+            Since you come from the ranks of the common folk, you fit in among them with ease. You can find a place to hide, rest, or
+            recuperate among other commoners, unless you have shown yourself to be a danger to them. They will shield you from the law
+            or anyone else searching for you, though they will not risk their lives for you.
+
+        `
+    }],
     personalityTraits: [
         "I judge people by their actions, not their words.",
         "If someone is in trouble, I’m always ready to lend help.",

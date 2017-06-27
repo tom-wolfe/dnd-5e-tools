@@ -1,5 +1,6 @@
 import { Skills } from "../../data";
 import * as Characters from "../../models/characters";
+import { FeatureType } from "../../models/features/feature-type";
 import { BackgroundList } from "./background-list";
 
 export const Noble: Characters.Background = {
@@ -8,6 +9,16 @@ export const Noble: Characters.Background = {
     languages: { other: 1 },
     skillProficiencies: [Skills.History, Skills.Persuasion],
     proficiencyCount: 2,
+    features: [{
+        name: "Position of Privilege",
+        type: FeatureType.Passive,
+        description: `
+            Thanks to your noble birth, people are inclined to think the best of you. You are welcome in high society, and people assume
+            you have the right to be wherever you are. The common folk make every effort to accommodate you and avoid your displeasure, and
+            other people of high birth treat you as a member of the same social sphere. You can secure an audience with a local noble if you
+            need to.
+        `
+    }],
     personalityTraits: [
         "My eloquent flattery makes everyone I talk to feel like the most wonderful and important person in the world.",
         "The common folk love me for my kindness and generosity.",

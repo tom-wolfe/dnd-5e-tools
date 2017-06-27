@@ -1,5 +1,6 @@
 import { Skills } from "../../data";
 import * as Characters from "../../models/characters";
+import { FeatureType } from "../../models/features/feature-type";
 import { BackgroundList } from "./background-list";
 
 export const Outlander: Characters.Background = {
@@ -8,6 +9,15 @@ export const Outlander: Characters.Background = {
     languages: { other: 1 },
     skillProficiencies: [Skills.Athletics, Skills.Survival],
     proficiencyCount: 2,
+    features: [{
+        name: "Wanderer",
+        type: FeatureType.Passive,
+        description: `
+            You have an excellent memory for maps and geography, and you can always recall the general layout of terrain, settlements, and
+            other features around you. In addition, you can find food and fresh water for yourself and up to five other people each day,
+            provided that the land offers berries, small game, water, and so forth.
+        `
+    }],
     personalityTraits: [
         "I'm driven by a wanderlust that led me away from home.",
         "I watch over my friends as if they were a litter of newborn pups.",
