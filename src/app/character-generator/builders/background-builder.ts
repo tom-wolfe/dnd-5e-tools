@@ -14,6 +14,7 @@ export class BackgroundBuilder extends BaseCharacterBuilder {
         this.randomizeBackground(character);
         this.randomizeTraits(character);
         this.randomizeLanguages(character);
+        this.applyFeatures(character);
     }
 
     private randomizeAlignment(character: Character) {
@@ -53,6 +54,14 @@ export class BackgroundBuilder extends BaseCharacterBuilder {
         while (otherLanguages > 0) {
             this.grantRandomLanguage(character);
             otherLanguages -= 1;
+        }
+    }
+
+    private applyFeatures(character: Character) {
+        if (character.background.features) {
+            character.background.features.forEach(feature => {
+                this.applyFeature(character, feature);
+            });
         }
     }
 };

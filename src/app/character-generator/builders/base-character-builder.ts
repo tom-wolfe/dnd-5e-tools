@@ -1,6 +1,8 @@
 import * as Data from "app/data";
+import * as Weapons from "app/data/weapons";
 import * as Abilities from "app/models/abilities";
 import { Character } from "app/models/characters/character";
+import * as Equipment from "app/models/equipment";
 import { NumberGenerator } from "app/shared/generators";
 import * as _ from "lodash";
 
@@ -49,6 +51,14 @@ export abstract class BaseCharacterBuilder {
         character.languages.push(Data.Languages.LanguageList[lang]);
     }
 
+    protected grantWeaponProficiency(character: Character, type: Equipment.WeaponType) {
+        const weaponList = Object.keys(Weapons.WeaponList).map(k => Weapons.WeaponList[k]);
+        const martialWeapons = _.difference(weaponList.filter(weapon => weapon.type === type), character.weaponProficiencies);
+        if (martialWeapons.length > 0) {
+            character.weaponProficiencies.push(martialWeapons[this.numGen.rollDie(martialWeapons.length) - 1]);
+        }
+    }
+
     protected applyFeature(character: Character, feature: Feature) {
         if (feature.skillProficiencies) {
             const count = feature.proficiencyCount || feature.skillProficiencies.length;
@@ -62,6 +72,11 @@ export abstract class BaseCharacterBuilder {
                 character.weaponProficiencies.push(weapon);
             });
         }
+        if (feature.martialWeaponProficiencies) {
+            for (let x = 0; x < feature.martialWeaponProficiencies; x++) {
+                this.grantWeaponProficiency(character, Equipment.WeaponType.Martial);
+            }
+        }
         if (feature.damageResistances) {
             feature.damageResistances.forEach(res => {
                 character.damageResistances.push(res);
@@ -70,5 +85,6 @@ export abstract class BaseCharacterBuilder {
         if (feature.type === FeatureType.SingleMod) {
             feature.apply(character);
         }
+        character.features.push(feature);
     }
 };

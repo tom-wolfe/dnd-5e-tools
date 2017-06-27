@@ -1,13 +1,13 @@
 import * as Equipment from "../../models/equipment/";
 import { WeaponList } from "./weapon-list";
 
-export const Club: Equipment.Weapon = new Equipment.Weapon();
-Object.assign(Club, {
-    name: "Club",
+export const Sickle: Equipment.Weapon = new Equipment.Weapon();
+Object.assign(Sickle, {
+    name: "Sickle",
     type: Equipment.WeaponType.Simple,
     properties: [Equipment.WeaponProperty.Light],
-    damageType: Equipment.DamageType.Bludgeoning,
+    damageType: Equipment.DamageType.Slashing,
     damageDice: "1d4"
 });
 
-WeaponList[Club.name] = Club;
+WeaponList[Sickle.name] = Sickle;

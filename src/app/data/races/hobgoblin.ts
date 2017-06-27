@@ -19,11 +19,10 @@ export const Hobgoblin: RaceModels.Race = {
     abilityMods: { "CON": +2, "INT": +1 },
     features: [
         {
-            name: "Martial Training", type: FeatureType.SingleMod,
+            name: "Martial Training", type: FeatureType.Passive,
             description: "You are proficient with two martial weapons of your choice and with light armor.",
-            apply(character: Characters.Character) {
-                // TODO: Apply random proficiencies.
-            }
+            martialWeaponProficiencies: 2,
+            // TODO: Make this real: armorProficiency: ArmorType.Light
         }, {
             name: "Saving Face", type: FeatureType.Active,
             usage: { times: 1, timeUnit: TimeUnit.ShortRest },

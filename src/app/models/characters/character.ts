@@ -31,6 +31,7 @@ export class Character {
     class: Classes.Class;
     classArchetype: Classes.Archetype;
     readonly damageResistances: Equipment.DamageType[] = [];
+    readonly features: Features.Feature[] = [];
     flaw: string;
     gender: string;
     height: number;
@@ -154,11 +155,6 @@ export class Character {
         return `${this.level.number}d${this.hitDie} ${conSign} ${Math.abs(conBonus)}`;
     }
 
-    get features(): Features.Feature[] {
-        // TODO: Add background features.
-        return this.racialFeatures;
-    }
-
     get heightDescription(): string {
         const h = (this.height || 0);
         const inches = h % 12;
@@ -204,14 +200,6 @@ export class Character {
             return `${this.race.name} (${this.subrace.name})`;
         }
     }
-
-    get racialFeatures(): Features.Feature[] {
-        if (this.subrace && this.subrace.features) {
-            return _.union(this.race.features, this.subrace.features);
-        } else {
-            return this.race.features || [];
-        }
-    };
 
     get sensesString(): string {
         const append = (input: string, sense: string): string => {

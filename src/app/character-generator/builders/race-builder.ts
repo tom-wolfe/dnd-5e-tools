@@ -14,7 +14,7 @@ export class RaceBuilder extends BaseCharacterBuilder {
         this.randomizeSubrace(character);
         this.randomizeAbilityMods(character);
         this.randomizeLanguages(character);
-        this.randomizeFeatures(character);
+        this.applyFeatures(character);
     }
 
     private randomizeRace(character: Character) {
@@ -82,10 +82,15 @@ export class RaceBuilder extends BaseCharacterBuilder {
         }
     }
 
-    private randomizeFeatures(character: Character) {
-        character.racialFeatures.forEach(feature => {
+    private applyFeatures(character: Character) {
+        character.race.features.forEach(feature => {
             this.applyFeature(character, feature)
         });
+        if (character.subrace && character.subrace.features) {
+            character.subrace.features.forEach(feature => {
+                this.applyFeature(character, feature)
+            });
+        }
     }
 
     private randomizeLanguages(character: Character) {

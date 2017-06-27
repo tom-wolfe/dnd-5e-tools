@@ -14,6 +14,7 @@ export class Feature {
     type: FeatureType;
     usage?: UsageFrequency;
     weaponProficiencies?: Equipment.Weapon[];
+    martialWeaponProficiencies?: number;
 
     apply?: (character: Character) => void;
 };
