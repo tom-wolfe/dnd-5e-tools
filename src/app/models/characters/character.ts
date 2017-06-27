@@ -33,9 +33,9 @@ export class Character {
     height: number;
     hitDie = 8;
     ideal: string;
+    readonly languages: Languages.Language[] = [];
     level: Level;
     name: string;
-    readonly otherLanguages: Languages.Language[] = [];
     personalityTrait: string;
     race: Races.Race;
     readonly senses: Attributes.Senses = new Attributes.CharacterSenses(this);
@@ -154,14 +154,6 @@ export class Character {
     get heightClassification(): string {
         return this.heightDescriptor.describe(this);
     }
-
-    get languages(): Languages.Language[] {
-        if (this.subrace && this.subrace.languages) {
-            return _.union(this.race.languages.known, this.subrace.languages.known, this.otherLanguages);
-        } else {
-            return _.union(this.race.languages.known, this.otherLanguages);
-        }
-    };
 
     get otherSpeedsDescription(): string {
         const pushSpeed = (speed: string, speeds: string[]) => {

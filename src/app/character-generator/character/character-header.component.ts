@@ -2,7 +2,7 @@ import { Component, Input } from "@angular/core";
 
 import * as Characters from "app/models/characters";
 
-import { CharacterGenerator } from "../generators/character-generator";
+import { CharacterBuilder } from "../builders/character-builder";
 
 @Component({
   selector: "dnd-character-header",
@@ -10,19 +10,20 @@ import { CharacterGenerator } from "../generators/character-generator";
 })
 export class CharacterHeaderComponent {
   @Input() character: Characters.Character;
-  @Input() generator: CharacterGenerator;
+  @Input() builder: CharacterBuilder;
 
   onRefreshNameClick(e) {
-    this.generator.randomizeName(this.character);
+    this.builder.randomizeName(this.character);
     e.preventDefault();
     return false;
   };
 
   onRefreshPhysicalityClick(e) {
-    this.generator.randomizeHeightAndWeight(this.character);
-    this.generator.randomizeGender(this.character);
-    this.generator.randomizeAge(this.character);
-    this.generator.randomizeAlignment(this.character);
+    // TODO: Re-implement this.
+    // this.builder.randomizeHeightAndWeight(this.character);
+    // this.builder.randomizeGender(this.character);
+    // this.builder.randomizeAge(this.character);
+    // this.builder.randomizeAlignment(this.character);
     e.preventDefault();
     return false;
   }

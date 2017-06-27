@@ -4,7 +4,7 @@ import * as Classes from "app/models/classes";
 import * as Names from "app/models/names";
 import * as Races from "app/models/races";
 
-export class CharacterGeneratorConfig {
+export class CharacterBuilderConfig {
     background: Characters.Background = null;
     class: Classes.Class = null;
     classArchetype: Classes.Archetype = null;

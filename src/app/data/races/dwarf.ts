@@ -1,4 +1,5 @@
 import { Languages } from "../../data/languages";
+import * as Weapons from "../../data/weapons";
 import * as Characters from "../../models/characters";
 import * as RaceModels from "../../models/races";
 import { CommonFeatures } from "../common-features";
@@ -21,7 +22,8 @@ export const Dwarf: RaceModels.Race = {
             name: "Dwarven Resilience", type: "passive",
             description: "You have advantage on saving throws against poison, and you have resistance against poison damage."
         }, {
-            name: "Dwarven Combat Training", type: "singleMod",
+            name: "Dwarven Combat Training", type: "passive",
+            weaponProficiencies: [Weapons.Club], // TODO: Change to: [Weapons.Battleaxe, Weapons.Handaxe, Weapons.LightHammer, Weapons.Warhammer],
             description: "You have proficiency with the battleaxe, handaxe, light hammer, and warhammer.",
             apply(character: Characters.Character) {
                 // TODO: Apply weapon proficiencies.

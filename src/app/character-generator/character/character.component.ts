@@ -4,7 +4,7 @@ import { Router } from "@angular/router";
 import * as Characters from "app/models/characters";
 
 import { CharacterGeneratorService } from "../character-generator.service";
-import { CharacterGenerator } from "../generators";
+import { CharacterBuilder } from "../builders";
 
 @Component({
   selector: "dnd-character",
@@ -12,7 +12,7 @@ import { CharacterGenerator } from "../generators";
 })
 export class CharacterComponent {
   @Input() character: Characters.Character;
-  @Input() generator: CharacterGenerator;
+  @Input() builder: CharacterBuilder;
 
   constructor(private router: Router, private service: CharacterGeneratorService) { }
 

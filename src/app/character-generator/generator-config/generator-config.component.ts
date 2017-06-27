@@ -11,14 +11,14 @@ import * as Classes from "app/models/classes";
 import * as Names from "app/models/names";
 import * as Races from "app/models/races";
 
-import { CharacterGeneratorConfig } from "../generators";
+import { CharacterBuilderConfig } from "../builders";
 
 @Component({
   selector: "dnd-generator-config",
   templateUrl: "./generator-config.component.html",
 })
 export class GeneratorConfigComponent implements OnInit {
-  @Input() config: CharacterGeneratorConfig;
+  @Input() config: CharacterBuilderConfig;
 
   abilities: Abilities.Ability[];
   names: Names.NameDefinition[];

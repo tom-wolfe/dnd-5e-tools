@@ -1,19 +1,18 @@
 import { Component, Input } from "@angular/core";
 
-import * as Characters from "app/models/characters";
-
-import { CharacterGenerator } from "../generators/character-generator";
+import { Character } from "app/models/characters/character";
+import { CharacterBuilder } from "../builders/character-builder";
 
 @Component({
   selector: "dnd-background",
   templateUrl: "./background.component.html"
 })
 export class BackgroundComponent {
-  @Input() character: Characters.Character;
-  @Input() generator: CharacterGenerator;
+  @Input() character: Character;
+  @Input() builder: CharacterBuilder;
 
   onRefreshBackgroundClick(e) {
-    this.generator.randomizePersonality(this.character);
+    // TODO: Enable: this.builder.randomizePersonality(this.character);
     e.preventDefault();
     return false;
   }
