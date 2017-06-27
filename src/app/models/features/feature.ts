@@ -10,6 +10,7 @@ export class Feature {
     proficiencyCount?: number;
     proficiencyType?: Abilities.ProficiencyType;
     skillProficiencies?: Abilities.Skill[];
+    damageResistances?: Equipment.DamageType[];
     type: FeatureType;
     usage?: UsageFrequency;
     weaponProficiencies?: Equipment.Weapon[];

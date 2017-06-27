@@ -1,4 +1,5 @@
 import { Languages } from "../../data/languages";
+import { FeatureType } from "../../models/features/feature-type";
 import * as RaceModels from "../../models/races";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
@@ -15,10 +16,10 @@ export const Aarakocra: RaceModels.Race = {
     abilityMods: { "DEX": +2, "WIS": +1 },
     features: [
         {
-            name: "Flight", type: "passive",
+            name: "Flight", type: FeatureType.Passive,
             description: "You have a flying speed of 50 feet. To use this speed, you can’t be wearing medium or heavy armor."
         }, {
-            name: "Talons", type: "active",
+            name: "Talons", type: FeatureType.Active,
             description: "You are proficient with your unarmed strikes, which deal 1d4 slashing damage on a hit."
         }
     ],

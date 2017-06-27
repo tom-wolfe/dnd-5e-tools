@@ -13,9 +13,8 @@ export class RaceBuilder extends BaseCharacterBuilder {
         this.randomizeRace(character);
         this.randomizeSubrace(character);
         this.randomizeAbilityMods(character);
-        this.randomizeSkills(character);
         this.randomizeLanguages(character);
-        this.applyFeatures(character);
+        this.randomizeFeatures(character);
     }
 
     private randomizeRace(character: Character) {
@@ -83,13 +82,9 @@ export class RaceBuilder extends BaseCharacterBuilder {
         }
     }
 
-    private randomizeSkills(character: Character) {
-        // Enumerate the proficiency-based features.
-        const proficiencyFeats = character.racialFeatures.filter(feature => feature.skillProficiencies);
-        proficiencyFeats.forEach(feat => {
-            for (let x = 0; x < feat.proficiencyCount; x++) {
-                this.grantRandomSkillProficiency(character, feat.skillProficiencies, feat.proficiencyType);
-            }
+    private randomizeFeatures(character: Character) {
+        character.racialFeatures.forEach(feature => {
+            this.applyFeature(character, feature)
         });
     }
 
@@ -115,18 +110,4 @@ export class RaceBuilder extends BaseCharacterBuilder {
             otherLanguages -= 1;
         }
     }
-
-    private applyFeatures(character: Character) {
-        if (character.race.features) {
-            character.race.features.filter(feat => feat.type === "singleMod").forEach(feat => {
-                feat.apply(character);
-            });
-        }
-        if (character.subrace && character.subrace.features) {
-            character.subrace.features.filter(feat => feat.type === "singleMod").forEach(feat => {
-                feat.apply(character);
-            });
-        }
-    }
-
 };

@@ -1,5 +1,7 @@
 import { Languages, Skills } from "../../data";
 import { ProficiencyType } from "../../models/abilities/proficiency-type";
+import { FeatureType } from "../../models/features/feature-type";
+import { TimeUnit } from "../../models/features/time-unit";
 import * as RaceModels from "../../models/races";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
@@ -17,12 +19,11 @@ export const Shifter: RaceModels.Race = {
     abilityMods: { "DEX": +1 },
     features: [
         {
-            name: "Duplicity", type: "passive",
+            name: "Duplicity", type: FeatureType.Passive,
             skillProficiencies: [Skills.Deception],
-            proficiencyCount: 1, proficiencyType: ProficiencyType.Proficient,
             description: "You have proficiency in the Deception skill."
         }, {
-            name: "Shapechanger", type: "active",
+            name: "Shapechanger", type: FeatureType.Active,
             description: `
                     As an action, you can polymorph into any humanoid of your size that you have seen,
                     or back into your true form. However, your equipment does not change with you.
@@ -40,8 +41,8 @@ export const Shifter: RaceModels.Race = {
             abilityMods: { "CON": +1 },
             features: [
                 {
-                    name: "Shifting", type: "active",
-                    usage: { times: 1, timeUnit: "shortRest" },
+                    name: "Shifting", type: FeatureType.Active,
+                    usage: { times: 1, timeUnit: TimeUnit.ShortRest },
                     description: `
                             On your turn, you can shift as a bonus action. Shifting lasts for 1 minute or until you end it on your turn as
                             a bonus action. While shifting, you gain temporary hit points equal to your level + your Constitution bonus
@@ -58,8 +59,8 @@ export const Shifter: RaceModels.Race = {
             abilityMods: { "DEX": +1 },
             features: [
                 {
-                    name: "Shifting", type: "active",
-                    usage: { times: 1, timeUnit: "shortRest" },
+                    name: "Shifting", type: FeatureType.Active,
+                    usage: { times: 1, timeUnit: TimeUnit.ShortRest },
                     description: `
                             On your turn, you can shift as a bonus action. Shifting lasts for 1 minute or until you end it on your turn as
                             a bonus action. While shifting, you gain temporary hit points equal to your level + your Constitution bonus
@@ -77,8 +78,8 @@ export const Shifter: RaceModels.Race = {
             abilityMods: { "DEX": +1 },
             features: [
                 {
-                    name: "Shifting", type: "active",
-                    usage: { times: 1, timeUnit: "shortRest" },
+                    name: "Shifting", type: FeatureType.Active,
+                    usage: { times: 1, timeUnit: TimeUnit.ShortRest },
                     description: `
                             On your turn, you can shift as a bonus action. Shifting lasts for 1 minute or until you end it on your turn as
                             a bonus action. While shifting, you gain temporary hit points equal to your level + your Constitution bonus
@@ -95,8 +96,8 @@ export const Shifter: RaceModels.Race = {
             abilityMods: { "STR": +1 },
             features: [
                 {
-                    name: "Shifting", type: "active",
-                    usage: { times: 1, timeUnit: "shortRest" },
+                    name: "Shifting", type: FeatureType.Active,
+                    usage: { times: 1, timeUnit: TimeUnit.ShortRest },
                     description: `
                             On your turn, you can shift as a bonus action. Shifting lasts for 1 minute or until you end it on your turn as
                             a bonus action. While shifting, you gain temporary hit points equal to your level + your Constitution bonus
@@ -115,8 +116,8 @@ export const Shifter: RaceModels.Race = {
             abilityMods: { "DEX": +1 },
             features: [
                 {
-                    name: "Shifting", type: "active",
-                    usage: { times: 1, timeUnit: "shortRest" },
+                    name: "Shifting", type: FeatureType.Active,
+                    usage: { times: 1, timeUnit: TimeUnit.ShortRest },
                     description: `
                             On your turn, you can shift as a bonus action. Shifting lasts for 1 minute or until you end it on your turn as
                             a bonus action. While shifting, you gain temporary hit points equal to your level + your Constitution bonus
@@ -134,8 +135,8 @@ export const Shifter: RaceModels.Race = {
             abilityMods: { "WIS": +1 },
             features: [
                 {
-                    name: "Shifting", type: "active",
-                    usage: { times: 1, timeUnit: "shortRest" },
+                    name: "Shifting", type: FeatureType.Active,
+                    usage: { times: 1, timeUnit: TimeUnit.ShortRest },
                     description: `
                             On your turn, you can shift as a bonus action. Shifting lasts for 1 minute or until you end it on your turn as
                             a bonus action. While shifting, you gain temporary hit points equal to your level + your Constitution bonus

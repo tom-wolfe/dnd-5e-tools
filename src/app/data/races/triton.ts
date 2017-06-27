@@ -1,6 +1,8 @@
 import { Languages } from "../../data/languages";
-import * as Names from "../names";
+import { FeatureType } from "../../models/features/feature-type";
+import { TimeUnit } from "../../models/features/time-unit";
 import * as RaceModels from "../../models/races";
+import * as Names from "../names";
 import { RaceList } from "./race-list";
 
 export const Triton: RaceModels.Race = {
@@ -15,11 +17,11 @@ export const Triton: RaceModels.Race = {
     abilityMods: { "STR": +1, "CON": +1, "CHA": +1 },
     features: [
         {
-            name: "Amphibious", type: "passive",
+            name: "Amphibious", type: FeatureType.Passive,
             description: "You can breathe air and water."
         }, {
-            name: "Control Air and Water", type: "active",
-            usage: { times: 1, timeUnit: "longRest" },
+            name: "Control Air and Water", type: FeatureType.Active,
+            usage: { times: 1, timeUnit: TimeUnit.LongRest },
             description: `
                     A child of the sea, you can call on the magic of elemental air and water. You can cast fog cloud with this trait.
                     Starting at 3rd level, you can cast gust of wind with it, and starting at 5th level, you can also cast wall of water
@@ -27,14 +29,14 @@ export const Triton: RaceModels.Race = {
                     a long rest. Charisma is your spellcasting ability for these spells.
                 `
         }, {
-            name: "Emissary of the Sea", type: "passive",
+            name: "Emissary of the Sea", type: FeatureType.Passive,
             description: `
                     Aquatic beasts have an extraordinary affinity with your people. You can communicate simple ideas with beasts that
                     can breathe water. They can understand the meaning of your words, though you have no special ability to understand
                     them in return.
                 `
         }, {
-            name: "Guardians of the Depths", type: "passive",
+            name: "Guardians of the Depths", type: FeatureType.Passive,
             description: `
                     Adapted to even the most extreme ocean depths, you have resistance to cold damage, and you ignore any of the drawbacks
                     caused by a deep, underwater environment.

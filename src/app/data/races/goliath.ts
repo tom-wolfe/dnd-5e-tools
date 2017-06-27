@@ -1,5 +1,7 @@
 import { Languages, Skills } from "../../data";
 import { ProficiencyType } from "../../models/abilities/proficiency-type";
+import { FeatureType } from "../../models/features/feature-type";
+import { TimeUnit } from "../../models/features/time-unit";
 import * as RaceModels from "../../models/races";
 import { CommonFeatures } from "../common-features";
 import * as Names from "../names";
@@ -17,13 +19,13 @@ export const Goliath: RaceModels.Race = {
     abilityMods: { "STR": +2, "CON": +1 },
     features: [
         {
-            name: "Natural Athlete", type: "passive",
+            name: "Natural Athlete", type: FeatureType.Passive,
             skillProficiencies: [Skills.Athletics],
             proficiencyCount: 1, proficiencyType: ProficiencyType.Proficient,
             description: "You have proficiency in the Athletics skill."
         }, {
-            name: "Stone's Endurance", type: "active",
-            usage: { times: 1, timeUnit: "shortRest" },
+            name: "Stone's Endurance", type: FeatureType.Active,
+            usage: { times: 1, timeUnit: TimeUnit.ShortRest },
             description: `
                     You can focus yourself to occasionally shrug off injury. When you take damage, you can use your reaction to roll a d12.
                     Add your Constitution modifier to the number rolled, and reduce the damage by that total. After you use this trait, you
@@ -32,7 +34,7 @@ export const Goliath: RaceModels.Race = {
         },
         CommonFeatures.powerfulBuild,
         {
-            name: "Mountain Born", type: "passive",
+            name: "Mountain Born", type: FeatureType.Passive,
             description: `
                     You’re acclimated to high altitude, including elevations above 20,000 feet. You’re also naturally adapted to cold
                     climates, as described in chapter 5 of the Dungeon Master’s Guide.

@@ -1,5 +1,6 @@
 import { Languages, Skills } from "../../data";
 import { ProficiencyType } from "../../models/abilities/proficiency-type";
+import { FeatureType } from "../../models/features/feature-type";
 import * as RaceModels from "../../models/races";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
@@ -16,20 +17,20 @@ export const Kenku: RaceModels.Race = {
     abilityMods: { "DEX": +2, "WIS": +1 },
     features: [
         {
-            name: "Export Forgery", type: "passive",
+            name: "Export Forgery", type: FeatureType.Passive,
             description: `
                     You can duplicate other creatures' handwriting and craftwork. You have advantage on all checks made to produce
                     forgeries or duplicates of existing objects.
                 `
         }, {
-            name: "Kenku Training", type: "passive",
+            name: "Kenku Training", type: FeatureType.Passive,
             skillProficiencies: [Skills.Acrobatics, Skills.Deception, Skills.Stealth, Skills.SleightOfHand],
             proficiencyCount: 2, proficiencyType: ProficiencyType.Proficient,
             description: `
                     You are proficient in your choice of two of the following skills: Acrobatics, Deception, Stealth, and Sleight of Hand.
                 `
         }, {
-            name: "Mimicry", type: "passive",
+            name: "Mimicry", type: FeatureType.Passive,
             description: `
                     You can mimic sounds you have heard, including voices. A creature that hears the sounds you make can tell they are
                     imitations with a successful Wisdom (Insight) check opposed by your Charisma (Deception) check.

@@ -28,6 +28,7 @@ export class Character {
     bond: string;
     class: Classes.Class;
     classArchetype: Classes.Archetype;
+    readonly damageResistances: Equipment.DamageType[] = [];
     flaw: string;
     gender: string;
     height: number;

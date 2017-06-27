@@ -1,4 +1,6 @@
 import { Languages } from "../../data/languages";
+import { FeatureType } from "../../models/features/feature-type";
+import { TimeUnit } from "../../models/features/time-unit";
 import * as RaceModels from "../../models/races";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
@@ -15,14 +17,14 @@ export const Dragonborn: RaceModels.Race = {
     abilityMods: { "STR": +2, "CHA": +1 },
     features: [
         {
-            name: "Draconic Ancestry", type: "passive",
+            name: "Draconic Ancestry", type: FeatureType.Passive,
             description: `
                 You have draconic ancestry. Choose one type of dragon from the Draconic Ancestry table.
                 Your breath weapon and damage resistance are determined by lhe dragon type. as shown in the table
             `
         }, {
-            name: "Breath Weapon", type: "active",
-            usage: { times: 1, timeUnit: "shortRest" },
+            name: "Breath Weapon", type: FeatureType.Active,
+            usage: { times: 1, timeUnit: TimeUnit.ShortRest },
             description: `
                 You can use your action to exhale destructive energy. Your draconic ancestry determines the size, shape, and damage type of
                 the exhalation. When you use your breath weapon, each creature in the area of the exhalation must make a saving throw. the
@@ -32,7 +34,7 @@ export const Dragonborn: RaceModels.Race = {
                 use it again until you complete a short or long rest.
             `
         }, {
-            name: "Damage Resistance", type: "passive",
+            name: "Damage Resistance", type: FeatureType.Passive,
             description: "Vou have resistance to the damage type associated with your draconic ancestry."
         }
     ],

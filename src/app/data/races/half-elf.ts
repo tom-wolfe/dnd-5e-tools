@@ -1,5 +1,6 @@
 import { Languages, Skills } from "../../data";
 import { ProficiencyType } from "../../models/abilities/proficiency-type";
+import { FeatureType } from "../../models/features/feature-type";
 import * as RaceModels from "../../models/races";
 import { CommonFeatures } from "../common-features";
 import * as Names from "../names";
@@ -19,7 +20,7 @@ export const HalfElf: RaceModels.Race = {
     features: [
         CommonFeatures.feyAncestry,
         {
-            name: "Skill Versatility", type: "passive",
+            name: "Skill Versatility", type: FeatureType.Passive,
             skillProficiencies: Object.keys(Skills.SkillList).map((skill) => Skills.SkillList[skill]),
             proficiencyCount: 2, proficiencyType: ProficiencyType.Proficient,
             description: "You gain proficiency in two skills of your choice."

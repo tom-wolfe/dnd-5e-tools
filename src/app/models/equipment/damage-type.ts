@@ -2,5 +2,14 @@
 export enum DamageType {
     Bludgeoning,
     Slashing,
-    Piercing
+    Piercing,
+    Fire,
+    Radiant,
+    Force,
+    Necrotic,
+    Thunder,
+    Lightning,
+    Poison,
+    Acid,
+    Psychic
 };

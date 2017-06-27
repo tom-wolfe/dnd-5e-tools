@@ -1,4 +1,6 @@
 import { Languages } from "../../data/languages";
+import { FeatureType } from "../../models/features/feature-type";
+import { TimeUnit } from "../../models/features/time-unit";
 import * as RaceModels from "../../models/races";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
@@ -22,11 +24,11 @@ export const Genasi: RaceModels.Race = {
             abilityMods: { "DEX": +1 },
             features: [
                 {
-                    name: "Unending Breath", type: "passive",
+                    name: "Unending Breath", type: FeatureType.Passive,
                     description: "You can hold your breath indefinitely while you’re not incapacitated."
                 }, {
-                    name: "Mingle with the Wind", type: "active",
-                    usage: { times: 1, timeUnit: "longRest" },
+                    name: "Mingle with the Wind", type: FeatureType.Active,
+                    usage: { times: 1, timeUnit: TimeUnit.LongRest },
                     description: `
                         You can cast the levitate spell once with this trait, requiring no material components, and you regain the
                         ability to cast it this way when you finish a long rest. Constitution is your spellcasting ability for this
@@ -41,11 +43,11 @@ export const Genasi: RaceModels.Race = {
             abilityMods: { "STR": +1 },
             features: [
                 {
-                    name: "Earth Walk", type: "passive",
+                    name: "Earth Walk", type: FeatureType.Passive,
                     description: "You can move across difficult terrain made of earth or stone without expending extra movement."
                 }, {
-                    name: "Mingle with Stone", type: "active",
-                    usage: { times: 1, timeUnit: "longRest" },
+                    name: "Mingle with Stone", type: FeatureType.Active,
+                    usage: { times: 1, timeUnit: TimeUnit.LongRest },
                     description: `
                         You can cast the pass without trace spell once with this trait, requiring no material components, and you
                         regain the ability to cast it this way when you finish a long rest. Constitution is your spellcasting
@@ -61,11 +63,11 @@ export const Genasi: RaceModels.Race = {
             senses: { darkvision: 60 },
             features: [
                 {
-                    name: "Fire Resistance", type: "passive",
+                    name: "Fire Resistance", type: FeatureType.Passive,
                     description: "You have resistance to fire damage."
                 }, {
-                    name: "Reach to the Blaze", type: "active",
-                    usage: { times: 1, timeUnit: "longRest" },
+                    name: "Reach to the Blaze", type: FeatureType.Active,
+                    usage: { times: 1, timeUnit: TimeUnit.LongRest },
                     description: `
                         You know the produce flame cantrip. Once you reach 3rd level, you can cast the burning hands spell once with
                         this trait as a 1st-level spell, and you regain the ability to cast it this way when you finish a long rest.
@@ -81,14 +83,14 @@ export const Genasi: RaceModels.Race = {
             abilityMods: { "WIS": +1 },
             features: [
                 {
-                    name: "Acid Resistance", type: "passive",
+                    name: "Acid Resistance", type: FeatureType.Passive,
                     description: "You have resistance to acid damage."
                 }, {
-                    name: "Amphibious", type: "passive",
+                    name: "Amphibious", type: FeatureType.Passive,
                     description: "You can breathe air and water."
                 }, {
-                    name: "Call to the Wave", type: "active",
-                    usage: { times: 1, timeUnit: "longRest" },
+                    name: "Call to the Wave", type: FeatureType.Active,
+                    usage: { times: 1, timeUnit: TimeUnit.LongRest },
                     description: `
                         You know the shape water cantrip (see chapter 2). When you reach 3rd level, you can cast the create or destroy
                         water spell as a 2nd-level spell once with this trait, and you regain the ability to cast it this way when you

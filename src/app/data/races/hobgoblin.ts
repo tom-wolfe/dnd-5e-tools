@@ -1,5 +1,7 @@
 import { Languages } from "../../data/languages";
 import * as Characters from "../../models/characters";
+import { FeatureType } from "../../models/features/feature-type";
+import { TimeUnit } from "../../models/features/time-unit";
 import * as RaceModels from "../../models/races";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
@@ -17,14 +19,14 @@ export const Hobgoblin: RaceModels.Race = {
     abilityMods: { "CON": +2, "INT": +1 },
     features: [
         {
-            name: "Martial Training", type: "singleMod",
+            name: "Martial Training", type: FeatureType.SingleMod,
             description: "You are proficient with two martial weapons of your choice and with light armor.",
             apply(character: Characters.Character) {
                 // TODO: Apply random proficiencies.
             }
         }, {
-            name: "Saving Face", type: "active",
-            usage: { times: 1, timeUnit: "shortRest" },
+            name: "Saving Face", type: FeatureType.Active,
+            usage: { times: 1, timeUnit: TimeUnit.ShortRest },
             description: `
                 Hobgoblins are careful not to show weakness in front of their allies, for fear of losing status. If you miss
                 with an attack roll or fail an ability check or a saving throw, you can gain a bonus to the roll equal to the

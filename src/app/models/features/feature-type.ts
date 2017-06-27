@@ -1,2 +1,7 @@
 
-export type FeatureType = "singleMod" | "onLevelMod" | "active" | "passive";
+export enum FeatureType {
+    SingleMod,
+    OnLevelMod,
+    Active,
+    Passive
+}

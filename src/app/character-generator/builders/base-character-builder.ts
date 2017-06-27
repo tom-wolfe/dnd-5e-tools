@@ -4,6 +4,9 @@ import { Character } from "app/models/characters/character";
 import { NumberGenerator } from "app/shared/generators";
 import * as _ from "lodash";
 
+import { ProficiencyType } from "../../models/abilities";
+import { Feature } from "../../models/features";
+import { FeatureType } from "../../models/features/feature-type";
 import { CharacterBuilderConfig } from "./character-builder-config";
 
 export abstract class BaseCharacterBuilder {
@@ -44,5 +47,28 @@ export abstract class BaseCharacterBuilder {
         const langIndex = this.numGen.rollDie(availableLanguages.length) - 1;
         const lang = availableLanguages[langIndex];
         character.languages.push(Data.Languages.LanguageList[lang]);
+    }
+
+    protected applyFeature(character: Character, feature: Feature) {
+        if (feature.skillProficiencies) {
+            const count = feature.proficiencyCount || feature.skillProficiencies.length;
+            for (let x = 0; x < count; x++) {
+                const profType = feature.proficiencyType || ProficiencyType.Proficient;
+                this.grantRandomSkillProficiency(character, feature.skillProficiencies, profType);
+            }
+        }
+        if (feature.weaponProficiencies) {
+            feature.weaponProficiencies.forEach(weapon => {
+                character.weaponProficiencies.push(weapon);
+            });
+        }
+        if (feature.damageResistances) {
+            feature.damageResistances.forEach(res => {
+                character.damageResistances.push(res);
+            });
+        }
+        if (feature.type === FeatureType.SingleMod) {
+            feature.apply(character);
+        }
     }
 };

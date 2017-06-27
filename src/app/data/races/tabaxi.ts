@@ -1,5 +1,6 @@
 import { Languages, Skills } from "../../data";
 import { ProficiencyType } from "../../models/abilities/proficiency-type";
+import { FeatureType } from "../../models/features/feature-type";
 import * as RaceModels from "../../models/races";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
@@ -17,24 +18,22 @@ export const Tabaxi: RaceModels.Race = {
     abilityMods: { "DEX": +2, "CHA": +1 },
     features: [
         {
-            name: "Feline Agility", type: "active",
+            name: "Feline Agility", type: FeatureType.Active,
             description: `
                     Your reflexes and agility allow you to move with a burst of speed. When you move on your turn in combat, you can
                     double your speed until the end of the turn. Once you use this trait, you can't use it again until you move 0 feet
                     on one of your turns.
                 `
         }, {
-            name: "Cat's Claws", type: "active",
-            usage: { times: 1, timeUnit: "shortRest" },
+            name: "Cat's Claws", type: FeatureType.Active,
             description: `
                     Because of your claws, you have a climbing speed of 20 feet. In addition, your claws are natural weapons, which you
                     can use to make unarmed strikes. If you hit with them, you deal slashing damage equal to ld4 + your Strength modifier,
                     instead of the bludgeoning damage normal for an unarmed strike.
                 `
         }, {
-            name: "Cat's Talent", type: "passive",
+            name: "Cat's Talent", type: FeatureType.Passive,
             skillProficiencies: [Skills.Perception, Skills.Stealth],
-            proficiencyCount: 2, proficiencyType: ProficiencyType.Proficient,
             description: "You have proficiency in the Perception and Stealth skills."
         }
     ],

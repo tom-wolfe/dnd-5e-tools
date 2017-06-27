@@ -1,5 +1,6 @@
 import { Languages, Skills } from "../../data";
 import { ProficiencyType } from "../../models/abilities/proficiency-type";
+import { FeatureType } from "../../models/features/feature-type";
 import * as RaceModels from "../../models/races";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
@@ -16,12 +17,12 @@ export const Changeling: RaceModels.Race = {
     abilityMods: { "DEX": +1, "CHA": +1 },
     features: [
         {
-            name: "Duplicity", type: "passive",
+            name: "Duplicity", type: FeatureType.Passive,
             skillProficiencies: [Skills.Deception],
             proficiencyCount: 1, proficiencyType: ProficiencyType.Proficient,
             description: "You have proficiency in the Deception skill."
         }, {
-            name: "Shapechanger", type: "active",
+            name: "Shapechanger", type: FeatureType.Active,
             description: `
                     As an action, you can polymorph into any humanoid of your size that you have seen,
                     or back into your true form. However, your equipment does not change with you.

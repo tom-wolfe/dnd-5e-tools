@@ -1,4 +1,7 @@
 import { Languages } from "../../data/languages";
+import { DamageType } from "../../models/equipment/damage-type";
+import { FeatureType } from "../../models/features/feature-type";
+import { TimeUnit } from "../../models/features/time-unit";
 import * as RaceModels from "../../models/races";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
@@ -16,11 +19,12 @@ export const Tiefling: RaceModels.Race = {
     abilityMods: { "INT": +1, "CHA": +2 },
     features: [
         {
-            name: "Hellish Resistance", type: "passive",
+            name: "Hellish Resistance", type: FeatureType.Passive,
+            damageResistances: [DamageType.Fire],
             description: "You have resistance to fire damage."
         }, {
-            name: "Infernal Legacy", type: "active",
-            usage: { times: 1, timeUnit: "day" },
+            name: "Infernal Legacy", type: FeatureType.Active,
+            usage: { times: 1, timeUnit: TimeUnit.Day },
             description: `
                 You know the thaumaturgy cantrip. Once you reach 3rd level, you can cast the hellish rebuke spell once per day as a
                 2nd-level spell. Once you reach 5th level, you can also cast the darkness spell once per day. Charisma is your spellcasting

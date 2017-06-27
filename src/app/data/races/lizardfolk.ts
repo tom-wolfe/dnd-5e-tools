@@ -1,7 +1,11 @@
 import { Languages } from "../../data/languages";
 import { Skills } from "../../data/skills";
-import { ProficiencyType } from "../../models/abilities/proficiency-type";
+import { ProficiencyType } from "../../models/abilities";
 import * as Characters from "../../models/characters";
+import { Character } from "../../models/characters/character";
+import { FeatureType } from "../../models/features/feature-type";
+import { TimeUnit } from "../../models/features/time-unit";
+import { Race } from "../../models/races";
 import * as RaceModels from "../../models/races";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
@@ -18,14 +22,14 @@ export const Lizardfolk: RaceModels.Race = {
     abilityMods: { "CON": +2, "WIS": +1 },
     features: [
         {
-            name: "Bite", type: "active",
+            name: "Bite", type: FeatureType.Active,
             description: `
                     Your fanged maw is a natural weapon, which you can use to make unarmed strikes. If you hit with it, you deal piercing
                     damage equal to 1d6 + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike.
                 `
         }, {
-            name: "Cunning Artisan", type: "active",
-            usage: { times: 1, timeUnit: "shortRest" },
+            name: "Cunning Artisan", type: FeatureType.Active,
+            usage: { times: 1, timeUnit: TimeUnit.ShortRest },
             description: `
                     As part of a short rest, you can harvest bone and hide from a slain beast, construct, dragon, monstrosity, or plant
                     creature of size Small or larger to create one of the following items: a shield, a club, a javelin, or ld4 darts or
@@ -33,10 +37,10 @@ export const Lizardfolk: RaceModels.Race = {
                     leatherworker's tools.
                 `
         }, {
-            name: "Hold Breath", type: "passive",
+            name: "Hold Breath", type: FeatureType.Passive,
             description: "You can hold your breath for up to 15 minutes at a time."
         }, {
-            name: "Hunter's Lore", type: "passive",
+            name: "Hunter's Lore", type: FeatureType.Passive,
             skillProficiencies: [Skills.Nature, Skills.Perception, Skills.Stealth, Skills.Survival],
             proficiencyCount: 2, proficiencyType: ProficiencyType.Proficient,
             description: `
@@ -44,7 +48,7 @@ export const Lizardfolk: RaceModels.Race = {
                     Animal Handling, Nature, Perception, Stealth, and Survival.
                 `
         }, {
-            name: "Natural Armor", type: "singleMod",
+            name: "Natural Armor", type: FeatureType.SingleMod,
             description: `
                     You have tough, scaly skin. When you aren't wearing armor, your AC is 13 + your Dexterity modifier. You can use your
                     natural armor to determine your AC if the armor you wear would leave you with a lower AC. A shield's benefits apply
@@ -54,7 +58,7 @@ export const Lizardfolk: RaceModels.Race = {
                 character.baseArmorClass = 13;
             }
         }, {
-            name: "Hungry Jaws", type: "active",
+            name: "Hungry Jaws", type: FeatureType.Active,
             description: `
                     In battle, you can throw yourself into a vicious feeding frenzy. As a bonus action, you can make a special attack
                     with your bite. If the attack hits, it deals its normal damage, and you gain temporary hit points (minimum of 1)

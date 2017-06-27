@@ -1,4 +1,6 @@
 import { Languages } from "../../data/languages";
+import { FeatureType } from "../../models/features/feature-type";
+import { TimeUnit } from "../../models/features/time-unit";
 import * as RaceModels from "../../models/races";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
@@ -16,17 +18,17 @@ export const Aasimar: RaceModels.Race = {
     abilityMods: { "CHA": +2 },
     features: [
         {
-            name: "Celestial Resistance", type: "passive",
+            name: "Celestial Resistance", type: FeatureType.Passive,
             description: "You have resistance to necrotic damage and radiant damage."
         }, {
-            name: "Healing Hands", type: "active",
-            usage: { times: 1, timeUnit: "longRest" },
+            name: "Healing Hands", type: FeatureType.Active,
+            usage: { times: 1, timeUnit: TimeUnit.LongRest },
             description: `
                     As an action, you can touch a creature and cause it to regain a number of hit points equal to your level.
                     Once you use this trait, you can't use it again until you finish a long rest.
                 `
         }, {
-            name: "Light Bearer", type: "active",
+            name: "Light Bearer", type: FeatureType.Active,
             description: "You know the light cantrip. Charisma is your spellcasting ability for it."
         }
     ],
@@ -36,8 +38,8 @@ export const Aasimar: RaceModels.Race = {
             name: "Protector", abilityMods: { "WIS": +1 },
             features: [
                 {
-                    name: "Radiant Soul", type: "active",
-                    usage: { times: 1, timeUnit: "longRest" },
+                    name: "Radiant Soul", type: FeatureType.Active,
+                    usage: { times: 1, timeUnit: TimeUnit.LongRest },
                     description: `
                             Starting at 3rd level, you can use your action to unleash the divine energy within yourself, causing your eyes
                             to glimmer and two luminous, incorporeal wings to sprout from your back.
@@ -55,8 +57,8 @@ export const Aasimar: RaceModels.Race = {
             name: "Scourge", abilityMods: { "CON": +1 },
             features: [
                 {
-                    name: "Radiant Consumption", type: "active",
-                    usage: { times: 1, timeUnit: "longRest" },
+                    name: "Radiant Consumption", type: FeatureType.Active,
+                    usage: { times: 1, timeUnit: TimeUnit.LongRest },
                     description: `
                             Starting at 3rd level, you can use your action to unleash the divine energy within yourself, causing a searing
                             light to radiate from you, pour out of your eyes and mouth, and threaten to char you.
@@ -76,8 +78,8 @@ export const Aasimar: RaceModels.Race = {
             name: "Fallen", abilityMods: { "STR": +1 },
             features: [
                 {
-                    name: "Necrotic Shroud", type: "active",
-                    usage: { times: 1, timeUnit: "longRest" },
+                    name: "Necrotic Shroud", type: FeatureType.Active,
+                    usage: { times: 1, timeUnit: TimeUnit.LongRest },
                     description: `
                             Starting at 3rd level, you can use your action to unleash the divine energy within yourself, causing your eyes
                             to turn into pools of darkness and two skeletal, ghostly, flightless wings to sprout from your back. The instant
