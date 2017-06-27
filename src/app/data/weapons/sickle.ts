@@ -10,4 +10,4 @@ Object.assign(Sickle, {
     damageDice: "1d4"
 });
 
-WeaponList[Sickle.name] = Sickle;
+WeaponList.push(Sickle);

@@ -10,4 +10,4 @@ Object.assign(Maul, {
     damageDice: "2d6"
 });
 
-WeaponList[Maul.name] = Maul;
+WeaponList.push(Maul);

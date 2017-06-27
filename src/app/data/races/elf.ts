@@ -1,9 +1,8 @@
-import { Languages, Skills } from "../../data";
-import { ProficiencyType } from "../../models/abilities/proficiency-type";
-import * as Characters from "../../models/characters";
-import { FeatureType } from "../../models/features/feature-type";
-import { TimeUnit } from "../../models/features/time-unit";
-import * as RaceModels from "../../models/races";
+import { Languages, Skills } from "app/data";
+import * as Characters from "app/models/characters";
+import { FeatureType, TimeUnit } from "app/models/features";
+import * as RaceModels from "app/models/races";
+
 import { CommonFeatures } from "../common-features";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
@@ -22,8 +21,7 @@ export const Elf: RaceModels.Race = {
     features: [
         {
             name: "Keen Senses", type: FeatureType.Passive,
-            skillProficiencies: [Skills.Perception],
-            proficiencyCount: 1, proficiencyType: ProficiencyType.Proficient,
+            skillProficiencies: [{ proficiencies: [Skills.Perception] }],
             description: "You have proficiency in the Perception skill."
         },
         CommonFeatures.feyAncestry,

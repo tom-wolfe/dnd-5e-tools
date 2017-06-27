@@ -7,8 +7,7 @@ export const Hermit: Characters.Background = {
     name: "Hermit",
     reference: { source: "PHB", page: 134, url: "" },
     languages: { other: 1 },
-    skillProficiencies: [Skills.Medicine, Skills.Religion],
-    proficiencyCount: 2,
+    skillProficiencies: [ { proficiencies: [Skills.Medicine, Skills.Religion] }],
     features: [{
         name: "Discovery",
         type: FeatureType.Passive,

@@ -10,4 +10,4 @@ Object.assign(Warhammer, {
     damageDice: "1d8"
 });
 
-WeaponList[Warhammer.name] = Warhammer;
+WeaponList.push(Warhammer);

@@ -10,4 +10,4 @@ Object.assign(Pike, {
     damageDice: "1d10"
 });
 
-WeaponList[Pike.name] = Pike;
+WeaponList.push(Pike);

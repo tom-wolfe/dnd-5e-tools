@@ -7,8 +7,7 @@ export const FolkHero: Characters.Background = {
     name: "Folk Hero",
     reference: { source: "PHB", page: 131, url: "https://www.dndbeyond.com/characters/backgrounds/folk-hero" },
     languages: {},
-    skillProficiencies: [Skills.AnimalHandling, Skills.Survival],
-    proficiencyCount: 2,
+    skillProficiencies: [ { proficiencies: [Skills.AnimalHandling, Skills.Survival] }],
     features: [{
         name: "Rustic Hospitality",
         type: FeatureType.Passive,

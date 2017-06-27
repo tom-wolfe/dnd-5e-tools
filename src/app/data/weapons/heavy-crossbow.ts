@@ -15,4 +15,4 @@ Object.assign(HeavyCrossbow, {
     damageDice: "1d10"
 });
 
-WeaponList[HeavyCrossbow.name] = HeavyCrossbow;
+WeaponList.push(HeavyCrossbow);

@@ -1,7 +1,7 @@
-import { Languages, Skills } from "../../data";
-import { ProficiencyType } from "../../models/abilities/proficiency-type";
-import { FeatureType } from "../../models/features/feature-type";
-import * as RaceModels from "../../models/races";
+import { Languages, Skills } from "app/data";
+import { FeatureType } from "app/models/features";
+import * as RaceModels from "app/models/races";
+
 import { CommonFeatures } from "../common-features";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
@@ -24,8 +24,8 @@ export const Bugbear: RaceModels.Race = {
         },
         CommonFeatures.powerfulBuild,
         {
-            name: "Sneaky", type: FeatureType.Passive, skillProficiencies: [Skills.Stealth],
-            proficiencyCount: 1, proficiencyType: ProficiencyType.Proficient,
+            name: "Sneaky", type: FeatureType.Passive,
+            skillProficiencies: [{ proficiencies: [Skills.Stealth] }],
             description: "You are proficient in the Stealth skill."
         }, {
             name: "Surprise Attack", type: FeatureType.Passive,

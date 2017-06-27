@@ -7,8 +7,7 @@ export const Soldier: Characters.Background = {
     name: "Soldier",
     reference: { source: "PHB", page: 140, url: "https://www.dndbeyond.com/characters/backgrounds/soldier" },
     languages: {},
-    skillProficiencies: [Skills.Athletics, Skills.Intimidation],
-    proficiencyCount: 2,
+    skillProficiencies: [ { proficiencies: [Skills.Athletics, Skills.Intimidation] }],
     features: [{
         name: "Military Rank",
         type: FeatureType.Passive,

@@ -1,6 +1,6 @@
 import { Skills } from "../data";
-import { ProficiencyType } from "../models/abilities/proficiency-type";
-import * as Features from "../models/features";
+import { ProficiencyType } from "app/models/proficiency-type";
+import * as Features from "app/models/features";
 
 export const CommonFeatures: { [index: string]: Features.Feature } = {
     "elfWeaponTraining": {
@@ -12,7 +12,10 @@ export const CommonFeatures: { [index: string]: Features.Feature } = {
         description: "You have advantage on saving throws against being charmed, and magic can't put you to sleep."
     },
     "menacing": {
-        name: "Menacing", type: Features.FeatureType.Passive, skillProficiencies: [Skills.Intimidation],
+        name: "Menacing", type: Features.FeatureType.Passive,
+        skillProficiencies: [
+            { proficiencies: [Skills.Intimidation] }
+        ],
         description: "You are trained in the Intimidation skill."
     },
     "powerfulBuild": {

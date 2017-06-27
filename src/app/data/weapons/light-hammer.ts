@@ -10,4 +10,4 @@ Object.assign(LightHammer, {
     damageDice: "1d4"
 });
 
-WeaponList[LightHammer.name] = LightHammer;
+WeaponList.push(LightHammer);

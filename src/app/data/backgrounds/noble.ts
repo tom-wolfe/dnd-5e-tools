@@ -7,8 +7,7 @@ export const Noble: Characters.Background = {
     name: "Noble",
     reference: { source: "PHB", page: 131, url: "https://www.dndbeyond.com/characters/backgrounds/noble" },
     languages: { other: 1 },
-    skillProficiencies: [Skills.History, Skills.Persuasion],
-    proficiencyCount: 2,
+    skillProficiencies: [ { proficiencies: [Skills.History, Skills.Persuasion] }],
     features: [{
         name: "Position of Privilege",
         type: FeatureType.Passive,

@@ -1,7 +1,7 @@
-import { Languages, Skills } from "../../data";
-import { ProficiencyType } from "../../models/abilities/proficiency-type";
-import { FeatureType } from "../../models/features/feature-type";
-import * as RaceModels from "../../models/races";
+import { Languages, Skills } from "app/data";
+import { FeatureType } from "app/models/features";
+import * as RaceModels from "app/models/races";
+
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
@@ -33,7 +33,7 @@ export const Tabaxi: RaceModels.Race = {
                 `
         }, {
             name: "Cat's Talent", type: FeatureType.Passive,
-            skillProficiencies: [Skills.Perception, Skills.Stealth],
+            skillProficiencies: [{ proficiencies: [Skills.Perception, Skills.Stealth] }],
             description: "You have proficiency in the Perception and Stealth skills."
         }
     ],

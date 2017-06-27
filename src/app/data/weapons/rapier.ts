@@ -10,4 +10,4 @@ Object.assign(Rapier, {
     damageDice: "1d8"
 });
 
-WeaponList[Rapier.name] = Rapier;
+WeaponList.push(Rapier);

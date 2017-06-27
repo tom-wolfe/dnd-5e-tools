@@ -10,4 +10,4 @@ Object.assign(Blowgun, {
     damageDice: "1"
 });
 
-WeaponList[Blowgun.name] = Blowgun;
+WeaponList.push(Blowgun);

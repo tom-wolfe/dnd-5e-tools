@@ -1,8 +1,7 @@
-import { Languages, Skills } from "../../data";
-import { ProficiencyType } from "../../models/abilities";
-import { FeatureType } from "../../models/features/feature-type";
-import { Race } from "../../models/races";
-import * as RaceModels from "../../models/races";
+import { Languages, Skills } from "app/data";
+import { FeatureType } from "app/models/features";
+import * as RaceModels from "app/models/races";
+
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
@@ -33,8 +32,7 @@ export const Human: RaceModels.Race = {
             features: [
                 {
                     name: "Skill Proficiency", type: FeatureType.Passive,
-                    skillProficiencies: Object.keys(Skills.SkillList).map((skill) => Skills.SkillList[skill]),
-                    proficiencyCount: 1, proficiencyType: ProficiencyType.Proficient,
+                    skillProficiencies: [{ proficiencies: Skills.SkillList, count: 1 }],
                     description: "You gain proficiency in one skill of your choice."
                 }
             ],

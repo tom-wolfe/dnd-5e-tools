@@ -10,4 +10,4 @@ Object.assign(WarPick, {
     damageDice: "1d8"
 });
 
-WeaponList[WarPick.name] = WarPick;
+WeaponList.push(WarPick);

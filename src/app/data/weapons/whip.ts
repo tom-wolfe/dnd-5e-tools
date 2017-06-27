@@ -10,4 +10,4 @@ Object.assign(Whip, {
     damageDice: "1d4"
 });
 
-WeaponList[Whip.name] = Whip;
+WeaponList.push(Whip);

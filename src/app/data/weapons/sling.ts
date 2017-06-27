@@ -10,4 +10,4 @@ Object.assign(Sling, {
     damageDice: "1d4"
 });
 
-WeaponList[Sling.name] = Sling;
+WeaponList.push(Sling);

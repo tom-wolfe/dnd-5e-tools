@@ -1,6 +1,6 @@
 import * as Data from "app/data/";
 import * as Backgrounds from "app/data/backgrounds";
-import { ProficiencyType } from "app/models/abilities";
+import { ProficiencyType } from "app/models/proficiency-type";
 import { Character } from "app/models/characters/character";
 
 import { BaseCharacterBuilder } from "./base-character-builder";
@@ -32,11 +32,8 @@ export class BackgroundBuilder extends BaseCharacterBuilder {
             character.background = Backgrounds.BackgroundList[bgKeys[bgNum]];
         }
 
-        const bgProficiencies = character.background.skillProficiencies.forEach(skill => {
-            character.skillProficiencies.push({
-                skill: skill,
-                proficiencyType: ProficiencyType.Proficient
-            });
+        const bgProficiencies = character.background.skillProficiencies.forEach(op => {
+            this.grantSkillProficiencyOption(character, op);
         });
     }
 

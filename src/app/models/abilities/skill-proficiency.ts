@@ -1,6 +1,6 @@
-import { ProficiencyType, Skill } from "./";
+import { ProficiencyType } from "../proficiency-type";
+import { Skill } from "./";
 
 export class SkillProficiency {
-    skill: Skill;
-    proficiencyType: ProficiencyType;
+    constructor(public skill: Skill, public type: ProficiencyType) { }
 };

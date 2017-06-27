@@ -10,4 +10,4 @@ Object.assign(Greatsword, {
     damageDice: "2d6"
 });
 
-WeaponList[Greatsword.name] = Greatsword;
+WeaponList.push(Greatsword);

@@ -10,4 +10,4 @@ Object.assign(Javelin, {
     damageDice: "1d6"
 });
 
-WeaponList[Javelin.name] = Javelin;
+WeaponList.push(Javelin);

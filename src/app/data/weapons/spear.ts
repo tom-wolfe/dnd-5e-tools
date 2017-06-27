@@ -10,4 +10,4 @@ Object.assign(Spear, {
     damageDice: "1d6"
 });
 
-WeaponList[Spear.name] = Spear;
+WeaponList.push(Spear);

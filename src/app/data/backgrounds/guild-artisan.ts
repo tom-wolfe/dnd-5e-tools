@@ -7,8 +7,7 @@ export const GuildArtisan: Characters.Background = {
     name: "Guild Artisan",
     reference: { source: "PHB", page: 132, url: "" },
     languages: { other: 1 },
-    skillProficiencies: [Skills.Insight, Skills.Persuasion],
-    proficiencyCount: 2,
+    skillProficiencies: [ { proficiencies: [Skills.Insight, Skills.Persuasion] }],
     features: [{
         name: "Guild Membership",
         type: FeatureType.Passive,

@@ -1,12 +1,10 @@
-import { Languages } from "../../data/languages";
-import { Skills } from "../../data/skills";
-import { ProficiencyType } from "../../models/abilities";
-import * as Characters from "../../models/characters";
-import { Character } from "../../models/characters/character";
-import { FeatureType } from "../../models/features/feature-type";
-import { TimeUnit } from "../../models/features/time-unit";
-import { Race } from "../../models/races";
-import * as RaceModels from "../../models/races";
+import { Languages } from "app/data/languages";
+import { Skills } from "app/data/skills";
+import * as Characters from "app/models/characters";
+import { FeatureType, TimeUnit } from "app/models/features";
+import { ProficiencyType } from "app/models/proficiency-type";
+import * as RaceModels from "app/models/races";
+
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
@@ -41,8 +39,10 @@ export const Lizardfolk: RaceModels.Race = {
             description: "You can hold your breath for up to 15 minutes at a time."
         }, {
             name: "Hunter's Lore", type: FeatureType.Passive,
-            skillProficiencies: [Skills.Nature, Skills.Perception, Skills.Stealth, Skills.Survival],
-            proficiencyCount: 2, proficiencyType: ProficiencyType.Proficient,
+            skillProficiencies: [{
+                proficiencies: [Skills.Nature, Skills.Perception, Skills.Stealth, Skills.Survival],
+                count: 2, type: ProficiencyType.Proficient
+            }],
             description: `
                     You gain proficiency with two of the following skills of your choice:
                     Animal Handling, Nature, Perception, Stealth, and Survival.

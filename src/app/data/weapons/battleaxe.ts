@@ -10,4 +10,4 @@ Object.assign(Battleaxe, {
     damageDice: "1d8"
 });
 
-WeaponList[Battleaxe.name] = Battleaxe;
+WeaponList.push(Battleaxe);

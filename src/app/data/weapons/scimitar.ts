@@ -10,4 +10,4 @@ Object.assign(Scimitar, {
     damageDice: "1d6"
 });
 
-WeaponList[Scimitar.name] = Scimitar;
+WeaponList.push(Scimitar);

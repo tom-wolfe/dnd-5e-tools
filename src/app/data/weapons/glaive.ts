@@ -10,4 +10,4 @@ Object.assign(Glaive, {
     damageDice: "1d10"
 });
 
-WeaponList[Glaive.name] = Glaive;
+WeaponList.push(Glaive);

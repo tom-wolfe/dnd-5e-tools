@@ -1,8 +1,9 @@
-import { Languages, Skills } from "../../data";
-import { ProficiencyType } from "../../models/abilities/proficiency-type";
-import { FeatureType } from "../../models/features/feature-type";
-import { TimeUnit } from "../../models/features/time-unit";
-import * as RaceModels from "../../models/races";
+import { Languages, Skills } from "app/data";
+import * as Characters from "app/models/characters";
+import { FeatureType, TimeUnit } from "app/models/features";
+import * as RaceModels from "app/models/races";
+
+import { CommonFeatures } from "../common-features";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
@@ -17,20 +18,7 @@ export const Shifter: RaceModels.Race = {
     senses: { darkvision: 60 },
     languages: { known: [Languages.Common, Languages.Sylvan] },
     abilityMods: { "DEX": +1 },
-    features: [
-        {
-            name: "Duplicity", type: FeatureType.Passive,
-            skillProficiencies: [Skills.Deception],
-            description: "You have proficiency in the Deception skill."
-        }, {
-            name: "Shapechanger", type: FeatureType.Active,
-            description: `
-                    As an action, you can polymorph into any humanoid of your size that you have seen,
-                    or back into your true form. However, your equipment does not change with you.
-                    If you die, you revert to your natural appearance.
-                `
-        }
-    ],
+    features: [ ],
     reference: {
         source: "UA", page: 2,
         document: "Eberron", url: "http://media.wizards.com/2015/downloads/dnd/UA_Eberron_v1.1.pdf#page=2"

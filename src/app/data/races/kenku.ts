@@ -1,7 +1,8 @@
-import { Languages, Skills } from "../../data";
-import { ProficiencyType } from "../../models/abilities/proficiency-type";
-import { FeatureType } from "../../models/features/feature-type";
-import * as RaceModels from "../../models/races";
+import { Languages, Skills } from "app/data";
+import { FeatureType } from "app/models/features/feature-type";
+import { ProficiencyType } from "app/models/proficiency-type";
+import * as RaceModels from "app/models/races";
+
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
@@ -24,9 +25,10 @@ export const Kenku: RaceModels.Race = {
                 `
         }, {
             name: "Kenku Training", type: FeatureType.Passive,
-            skillProficiencies: [Skills.Acrobatics, Skills.Deception, Skills.Stealth, Skills.SleightOfHand],
-            proficiencyCount: 2, proficiencyType: ProficiencyType.Proficient,
-            description: `
+            skillProficiencies: [{
+                proficiencies: [Skills.Acrobatics, Skills.Deception, Skills.Stealth, Skills.SleightOfHand],
+                count: 2, type: ProficiencyType.Proficient
+            }], description: `
                     You are proficient in your choice of two of the following skills: Acrobatics, Deception, Stealth, and Sleight of Hand.
                 `
         }, {

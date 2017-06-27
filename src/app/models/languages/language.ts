@@ -1,4 +1,4 @@
 
 export class Language {
-    name: string;
+    constructor(public name: string) { }
 };

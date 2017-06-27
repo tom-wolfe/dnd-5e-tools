@@ -7,8 +7,7 @@ export const Sailor: Characters.Background = {
     name: "Sailor",
     reference: { source: "PHB", page: 139, url: "" },
     languages: {},
-    skillProficiencies: [Skills.Athletics, Skills.Perception],
-    proficiencyCount: 2,
+    skillProficiencies: [ { proficiencies: [Skills.Athletics, Skills.Perception] }],
     features: [{
         name: "Ship's Passage",
         type: FeatureType.Passive,

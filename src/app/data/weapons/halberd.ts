@@ -10,4 +10,4 @@ Object.assign(Halberd, {
     damageDice: "1d10"
 });
 
-WeaponList[Halberd.name] = Halberd;
+WeaponList.push(Halberd);

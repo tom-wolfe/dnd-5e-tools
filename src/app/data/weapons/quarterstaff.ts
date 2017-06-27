@@ -10,4 +10,4 @@ Object.assign(Quarterstaff, {
     damageDice: "1d6"
 });
 
-WeaponList[Quarterstaff.name] = Quarterstaff;
+WeaponList.push(Quarterstaff);

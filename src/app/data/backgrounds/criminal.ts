@@ -7,8 +7,7 @@ export const Criminal: Characters.Background = {
     name: "Criminal",
     reference: { source: "PHB", page: 129, url: "" },
     languages: {},
-    skillProficiencies: [Skills.Deception, Skills.Stealth],
-    proficiencyCount: 2,
+    skillProficiencies: [ { proficiencies: [Skills.Deception, Skills.Stealth] }],
     features: [{
         name: "Criminal Contact",
         type: FeatureType.Passive,

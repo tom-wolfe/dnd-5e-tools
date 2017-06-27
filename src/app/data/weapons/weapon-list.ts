@@ -1,3 +1,3 @@
 import { Weapon } from "../../models/equipment/weapon";
 
-export const WeaponList: { [index: string]: Weapon } = {};
+export const WeaponList: Weapon[] = [];

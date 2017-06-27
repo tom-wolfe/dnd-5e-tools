@@ -7,8 +7,7 @@ export const Acolyte: Characters.Background = {
     name: "Acolyte",
     reference: { source: "PHB", page: 127, url: "https://www.dndbeyond.com/characters/backgrounds/acolyte" },
     languages: { other: 2 },
-    skillProficiencies: [Skills.Insight, Skills.Religion],
-    proficiencyCount: 2,
+    skillProficiencies: [ { proficiencies: [Skills.Insight, Skills.Religion] }],
     features: [{
         name: "Shelter of the Faithful",
         type: FeatureType.Passive,

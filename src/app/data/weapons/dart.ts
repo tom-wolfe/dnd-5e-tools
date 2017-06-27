@@ -10,4 +10,4 @@ Object.assign(Dart, {
     damageDice: "1d4"
 });
 
-WeaponList[Dart.name] = Dart;
+WeaponList.push(Dart);

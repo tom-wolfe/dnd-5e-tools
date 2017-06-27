@@ -3,12 +3,13 @@ import * as Weapons from "app/data/weapons";
 import * as Abilities from "app/models/abilities";
 import { Character } from "app/models/characters/character";
 import * as Equipment from "app/models/equipment";
+import { Feature, FeatureType } from "app/models/features";
+import { ProficiencyOption } from "app/models/proficiency-option";
+import { ProficiencyType } from "app/models/proficiency-type";
 import { NumberGenerator } from "app/shared/generators";
 import * as _ from "lodash";
 
-import { ProficiencyType } from "../../models/abilities";
-import { Feature } from "../../models/features";
-import { FeatureType } from "../../models/features/feature-type";
+import { SkillProficiency } from "../../models/abilities/skill-proficiency";
 import { CharacterBuilderConfig } from "./character-builder-config";
 
 export abstract class BaseCharacterBuilder {
@@ -19,29 +20,43 @@ export abstract class BaseCharacterBuilder {
         this.config = config;
     }
 
-    protected grantRandomSkillProficiency(character: Character, skills: Abilities.Skill[], proficiencyType: Abilities.ProficiencyType) {
-        const charProfs = character.skillProficiencies.map(s => s.skill.name);
-        const availableProfs = _.difference(Object.keys(Data.Skills.SkillList), charProfs);
+    protected grantSkillProficiencyOption(character: Character, option: ProficiencyOption<Abilities.Skill>) {
+        const profType = option.type || ProficiencyType.Proficient;
+
+        if (!option.count) {
+            option.proficiencies.forEach(skill => {
+                this.grantSkillProficiency(character, skill, profType);
+            });
+        } else {
+            for (let x = 0; x < option.count; x++) {
+                this.grantRandomSkillProficiency(character, option.proficiencies, profType);
+            }
+        }
+    }
+
+    protected grantRandomSkillProficiency(character: Character, skills: Abilities.Skill[], type: ProficiencyType) {
+        const availableProfs = _.differenceWith(Data.Skills.SkillList, character.skillProficiencies, _.isEqual);
 
         // Get the offered proficiencies, excluding those already attained.
-        const featProfs = _.difference(skills.map(s => s.name), charProfs);
+        const featProfs = _.differenceWith(skills, character.skillProficiencies, _.isEqual);
 
-        let chosenProfName: string;
+        let chosenSkill: Abilities.Skill;
         if (featProfs.length > 0) {
             // Choose one at random from the feature list.
             const index = this.numGen.rollDie(featProfs.length) - 1;
-            chosenProfName = featProfs[index];
+            chosenSkill = featProfs[index];
         } else {
             // Character already has all these proficiencies, so choose one at random.
             const index = this.numGen.rollDie(availableProfs.length) - 1;
-            chosenProfName = availableProfs[index];
+            chosenSkill = availableProfs[index];
         }
 
         // Grant it to the character and remove it from the available list.
-        character.skillProficiencies.push({
-            skill: Data.Skills.SkillList[chosenProfName],
-            proficiencyType: proficiencyType
-        });
+        this.grantSkillProficiency(character, chosenSkill, type);
+    }
+
+    protected grantSkillProficiency(character: Character, skill: Abilities.Skill, type: ProficiencyType): void {
+        character.skillProficiencies.push(new SkillProficiency(skill, type));
     }
 
     protected grantRandomLanguage(character: Character) {
@@ -52,8 +67,7 @@ export abstract class BaseCharacterBuilder {
     }
 
     protected grantWeaponProficiency(character: Character, type: Equipment.WeaponType) {
-        const weaponList = Object.keys(Weapons.WeaponList).map(k => Weapons.WeaponList[k]);
-        const martialWeapons = _.difference(weaponList.filter(weapon => weapon.type === type), character.weaponProficiencies);
+        const martialWeapons = _.difference(Weapons.WeaponList.filter(weapon => weapon.type === type), character.weaponProficiencies);
         if (martialWeapons.length > 0) {
             character.weaponProficiencies.push(martialWeapons[this.numGen.rollDie(martialWeapons.length) - 1]);
         }
@@ -61,11 +75,9 @@ export abstract class BaseCharacterBuilder {
 
     protected applyFeature(character: Character, feature: Feature) {
         if (feature.skillProficiencies) {
-            const count = feature.proficiencyCount || feature.skillProficiencies.length;
-            for (let x = 0; x < count; x++) {
-                const profType = feature.proficiencyType || ProficiencyType.Proficient;
-                this.grantRandomSkillProficiency(character, feature.skillProficiencies, profType);
-            }
+            feature.skillProficiencies.forEach(op => {
+                this.grantSkillProficiencyOption(character, op);
+            });
         }
         if (feature.weaponProficiencies) {
             feature.weaponProficiencies.forEach(weapon => {

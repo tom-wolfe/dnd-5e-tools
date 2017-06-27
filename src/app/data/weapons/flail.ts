@@ -10,4 +10,4 @@ Object.assign(Flail, {
     damageDice: "1d8"
 });
 
-WeaponList[Flail.name] = Flail;
+WeaponList.push(Flail);

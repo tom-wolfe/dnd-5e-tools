@@ -3,23 +3,25 @@ import * as LanguageModels from "../models/languages";
 export namespace Languages {
     export const LanguageList: { [index: string]: LanguageModels.Language } = {};
 
-    export const Aarakocra: LanguageModels.Language = { name: "Aarakocra" };
-    export const Abyssal: LanguageModels.Language = { name: "Abyssal" };
-    export const Celestial: LanguageModels.Language = { name: "Celestial" };
-    export const Common: LanguageModels.Language = { name: "Common" };
-    export const DeepSpeech: LanguageModels.Language = { name: "Deep Speech" };
-    export const Draconic: LanguageModels.Language = { name: "Draconic" };
-    export const Dwarvish: LanguageModels.Language = { name: "Dwarvish" };
-    export const Elvish: LanguageModels.Language = { name: "Elvish" };
-    export const Giant: LanguageModels.Language = { name: "Giant" };
-    export const Gnomish: LanguageModels.Language = { name: "Gnomish" };
-    export const Goblin: LanguageModels.Language = { name: "Goblin" };
-    export const Halfling: LanguageModels.Language = { name: "Halfling" };
-    export const Infernal: LanguageModels.Language = { name: "Infernal" };
-    export const Orc: LanguageModels.Language = { name: "Orc" };
-    export const Primordial: LanguageModels.Language = { name: "Primordial" };
-    export const Sylvan: LanguageModels.Language = { name: "Sylvan" };
-    export const Undercommon: LanguageModels.Language = { name: "Undercommon" };
+    export const Aarakocra: LanguageModels.Language = new LanguageModels.Language("Aarakocra");
+    export const Abyssal: LanguageModels.Language = new LanguageModels.Language("Abyssal");
+    export const Celestial: LanguageModels.Language = new LanguageModels.Language("Celestial");
+    export const Common: LanguageModels.Language = new LanguageModels.Language("Common");
+    export const DeepSpeech: LanguageModels.Language = new LanguageModels.Language("Deep Speech");
+    export const Draconic: LanguageModels.Language = new LanguageModels.Language("Draconic");
+    export const Dwarvish: LanguageModels.Language = new LanguageModels.Language("Dwarvish");
+    export const Elvish: LanguageModels.Language = new LanguageModels.Language("Elvish");
+    export const Giant: LanguageModels.Language = new LanguageModels.Language("Giant");
+    export const Gnomish: LanguageModels.Language = new LanguageModels.Language("Gnomish");
+    export const Goblin: LanguageModels.Language = new LanguageModels.Language("Goblin");
+    export const Halfling: LanguageModels.Language = new LanguageModels.Language("Halfling");
+    export const Infernal: LanguageModels.Language = new LanguageModels.Language("Infernal");
+    export const Orc: LanguageModels.Language = new LanguageModels.Language("Orc");
+    export const Primordial: LanguageModels.Language = new LanguageModels.Language("Primordial");
+    export const Sylvan: LanguageModels.Language = new LanguageModels.Language("Sylvan");
+    export const Undercommon: LanguageModels.Language = new LanguageModels.Language("Undercommon");
+
+    // TODO: Change to list.
 
     LanguageList[Aarakocra.name] = Aarakocra;
     LanguageList[Abyssal.name] = Abyssal;

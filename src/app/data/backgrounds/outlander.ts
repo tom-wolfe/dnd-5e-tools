@@ -7,8 +7,7 @@ export const Outlander: Characters.Background = {
     name: "Outlander",
     reference: { source: "PHB", page: 136, url: "" },
     languages: { other: 1 },
-    skillProficiencies: [Skills.Athletics, Skills.Survival],
-    proficiencyCount: 2,
+    skillProficiencies: [ { proficiencies: [Skills.Athletics, Skills.Survival] }],
     features: [{
         name: "Wanderer",
         type: FeatureType.Passive,

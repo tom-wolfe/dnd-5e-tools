@@ -1,14 +1,19 @@
 import { Skills } from "../../data";
 import * as Characters from "../../models/characters";
 import { FeatureType } from "../../models/features/feature-type";
+import * as Tools from "../tools";
 import { BackgroundList } from "./background-list";
 
 export const Charlatan: Characters.Background = {
     name: "Charlatan",
     reference: { source: "PHB", page: 128 },
     languages: {},
-    skillProficiencies: [Skills.Deception, Skills.SleightOfHand],
-    proficiencyCount: 2,
+    skillProficiencies: [
+        { proficiencies: [Skills.Deception, Skills.SleightOfHand] }
+    ],
+    toolProficiencies: [
+        { proficiencies: [Tools.DisguiseKit, Tools.ForgeryKit] }
+    ],
     features: [{
         name: "Favorite False Identity",
         type: FeatureType.Passive,

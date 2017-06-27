@@ -10,4 +10,4 @@ Object.assign(Net, {
     damageDice: ""
 });
 
-WeaponList[Net.name] = Net;
+WeaponList.push(Net);

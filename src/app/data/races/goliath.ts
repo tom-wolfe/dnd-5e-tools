@@ -1,8 +1,7 @@
-import { Languages, Skills } from "../../data";
-import { ProficiencyType } from "../../models/abilities/proficiency-type";
-import { FeatureType } from "../../models/features/feature-type";
-import { TimeUnit } from "../../models/features/time-unit";
-import * as RaceModels from "../../models/races";
+import { Languages, Skills } from "app/data";
+import { FeatureType, TimeUnit } from "app/models/features";
+import * as RaceModels from "app/models/races";
+
 import { CommonFeatures } from "../common-features";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
@@ -20,8 +19,7 @@ export const Goliath: RaceModels.Race = {
     features: [
         {
             name: "Natural Athlete", type: FeatureType.Passive,
-            skillProficiencies: [Skills.Athletics],
-            proficiencyCount: 1, proficiencyType: ProficiencyType.Proficient,
+            skillProficiencies: [{ proficiencies: [Skills.Athletics] }],
             description: "You have proficiency in the Athletics skill."
         }, {
             name: "Stone's Endurance", type: FeatureType.Active,

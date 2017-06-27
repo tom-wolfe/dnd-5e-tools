@@ -1,8 +1,7 @@
+import * as Data from "app/data/";
 import * as Descriptors from "app/shared/descriptors";
 import * as _ from "lodash";
 
-import * as Data from "../../data/";
-import { ProficiencyType } from "../abilities";
 import * as Abilities from "../abilities";
 import * as Attributes from "../attributes";
 import * as Classes from "../classes";
@@ -11,6 +10,7 @@ import { Feature } from "../features";
 import * as Features from "../features";
 import { FeatureType } from "../features/feature-type";
 import * as Languages from "../languages";
+import { ProficiencyType } from "../proficiency-type";
 import * as Races from "../races";
 import { Background } from "./background";
 import { Level } from "./level";
@@ -185,7 +185,7 @@ export class Character {
     }
 
     get languagesString(): string {
-        return _.join(this.languages.map(x => x.name), ", ");
+        return _.join(this.languages.map(x => x.name).sort(), ", ");
     }
 
     get otherProficiencyString(): string {
@@ -256,7 +256,7 @@ export class Character {
         retVal += this.abilities.getModifier(skill.ability.code);
         const prof = this.skillProficiencies.filter((sp) => sp.skill === skill);
         if (prof.length > 0) {
-            switch (prof[0].proficiencyType) {
+            switch (prof[0].type) {
                 case ProficiencyType.Proficient: retVal += proficiencyBonus; break;
                 case ProficiencyType.JackOfAllTrades: retVal += Math.floor(proficiencyBonus / 2); break;
                 case ProficiencyType.Expert: retVal += proficiencyBonus * 2; break;

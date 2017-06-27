@@ -3,12 +3,12 @@ import * as AbilityModels from "../models/abilities";
 export namespace Abilities {
     export const AbilityList: { [index: string]: AbilityModels.Ability } = {};
 
-    export const Strength: AbilityModels.Ability = { code: "STR", name: "Strength" };
-    export const Dexterity: AbilityModels.Ability = { code: "DEX", name: "Dexterity" };
-    export const Constitution: AbilityModels.Ability = { code: "CON", name: "Constitution" };
-    export const Wisdom: AbilityModels.Ability = { code: "WIS", name: "Wisdom" };
-    export const Intelligence: AbilityModels.Ability = { code: "INT", name: "Intelligence" };
-    export const Charisma: AbilityModels.Ability = { code: "CHA", name: "Charisma" };
+    export const Strength: AbilityModels.Ability = new AbilityModels.Ability("STR", "Strength");
+    export const Dexterity: AbilityModels.Ability = new AbilityModels.Ability("DEX", "Dexterity");
+    export const Constitution: AbilityModels.Ability = new AbilityModels.Ability("CON", "Constitution");
+    export const Wisdom: AbilityModels.Ability = new AbilityModels.Ability("WIS", "Wisdom");
+    export const Intelligence: AbilityModels.Ability = new AbilityModels.Ability("INT", "Intelligence");
+    export const Charisma: AbilityModels.Ability = new AbilityModels.Ability("CHA", "Charisma");
 
     AbilityList[Strength.code] = Strength;
     AbilityList[Dexterity.code] = Dexterity;

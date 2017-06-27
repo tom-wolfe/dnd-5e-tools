@@ -7,8 +7,7 @@ export const Sage: Characters.Background = {
     name: "Sage",
     reference: { source: "PHB", page: 137, url: "https://www.dndbeyond.com/characters/backgrounds/sage" },
     languages: { other: 2 },
-    skillProficiencies: [Skills.Arcana, Skills.History],
-    proficiencyCount: 2,
+    skillProficiencies: [ { proficiencies: [Skills.Arcana, Skills.History] }],
     features: [{
         name: "Researcher",
         type: FeatureType.Passive,

@@ -10,4 +10,4 @@ Object.assign(Club, {
     damageDice: "1d4"
 });
 
-WeaponList[Club.name] = Club;
+WeaponList.push(Club);

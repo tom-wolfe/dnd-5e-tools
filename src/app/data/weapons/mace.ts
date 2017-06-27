@@ -10,4 +10,4 @@ Object.assign(Mace, {
     damageDice: "1d6"
 });
 
-WeaponList[Mace.name] = Mace;
+WeaponList.push(Mace);

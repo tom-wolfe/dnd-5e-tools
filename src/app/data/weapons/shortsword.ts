@@ -10,4 +10,4 @@ Object.assign(Shortsword, {
     damageDice: "1d6"
 });
 
-WeaponList[Shortsword.name] = Shortsword;
+WeaponList.push(Shortsword);

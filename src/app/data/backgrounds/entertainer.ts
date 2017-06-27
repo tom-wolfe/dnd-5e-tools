@@ -7,8 +7,7 @@ export const Entertainer: Characters.Background = {
     name: "Entertainer",
     reference: { source: "PHB", page: 130, url: "" },
     languages: {},
-    skillProficiencies: [Skills.Acrobatics, Skills.Performance],
-    proficiencyCount: 2,
+    skillProficiencies: [ { proficiencies: [Skills.Acrobatics, Skills.Performance] }],
     features: [{
         name: "By Popular Demand",
         type: FeatureType.Passive,

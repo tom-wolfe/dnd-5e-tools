@@ -10,4 +10,4 @@ Object.assign(Longsword, {
     damageDice: "1d8"
 });
 
-WeaponList[Longsword.name] = Longsword;
+WeaponList.push(Longsword);

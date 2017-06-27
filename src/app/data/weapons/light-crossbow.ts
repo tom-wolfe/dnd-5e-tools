@@ -10,4 +10,4 @@ Object.assign(LightCrossbow, {
     damageDice: "1d8"
 });
 
-WeaponList[LightCrossbow.name] = LightCrossbow;
+WeaponList.push(LightCrossbow);

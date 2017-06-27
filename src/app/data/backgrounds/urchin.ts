@@ -7,8 +7,7 @@ export const Urchin: Characters.Background = {
     name: "Urchin",
     reference: { source: "PHB", page: 141, url: "" },
     languages: {},
-    skillProficiencies: [Skills.SleightOfHand, Skills.Stealth],
-    proficiencyCount: 2,
+    skillProficiencies: [ { proficiencies: [Skills.SleightOfHand, Skills.Stealth] }],
     features: [{
         name: "City Secrets",
         type: FeatureType.Passive,

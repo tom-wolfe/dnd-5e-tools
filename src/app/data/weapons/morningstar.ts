@@ -10,4 +10,4 @@ Object.assign(Morningstar, {
     damageDice: "1d8"
 });
 
-WeaponList[Morningstar.name] = Morningstar;
+WeaponList.push(Morningstar);
