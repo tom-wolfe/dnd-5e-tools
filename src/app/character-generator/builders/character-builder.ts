@@ -45,7 +45,20 @@ export class CharacterBuilder extends BaseCharacterBuilder {
         this.nameBuilder.build(character);
     }
 
+    randomizeAttributes(character: Character) {
+        this.attributeBuilder.randomizeHeightAndWeight(character);
+        this.attributeBuilder.randomizeAge(character);
+    }
+
     randomizeName(character: Character) {
         this.nameBuilder.build(character);
+    }
+
+    randomizeAbilities(character: Character) {
+        this.abilityBuilder.randomizeAbilities(character);
+    }
+
+    randomizeTraits(character: Character) {
+        this.backgroundBuilder.randomizeTraits(character);
     }
 };

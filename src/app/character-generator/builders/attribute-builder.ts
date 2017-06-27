@@ -15,7 +15,7 @@ export class AttributeBuilder extends BaseCharacterBuilder {
         this.randomizeAge(character);
     }
 
-    private randomizeHeightAndWeight(character: Character) {
+    randomizeHeightAndWeight(character: Character) {
         let heightMod = character.race.height.modifier;
         let heightBase = character.race.height.base;
         if (character.subrace && character.subrace.height) {
@@ -42,7 +42,7 @@ export class AttributeBuilder extends BaseCharacterBuilder {
         character.gender = genders[genderIndex];
     }
 
-    private randomizeAge(character: Character) {
+    randomizeAge(character: Character) {
         const age = character.race.age;
         character.age = this.numGen.numberBetween(age.maturity, age.max);
     }

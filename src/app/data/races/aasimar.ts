@@ -1,3 +1,5 @@
+import { DamageType } from "app/models/equipment";
+
 import { Languages } from "../../data/languages";
 import { FeatureType } from "../../models/features/feature-type";
 import { TimeUnit } from "../../models/features/time-unit";
@@ -19,6 +21,7 @@ export const Aasimar: RaceModels.Race = {
     features: [
         {
             name: "Celestial Resistance", type: FeatureType.Passive,
+            damageResistances: [ DamageType.Necrotic, DamageType.Radiant ],
             description: "You have resistance to necrotic damage and radiant damage."
         }, {
             name: "Healing Hands", type: FeatureType.Active,

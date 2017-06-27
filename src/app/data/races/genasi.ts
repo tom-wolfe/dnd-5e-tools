@@ -1,4 +1,5 @@
 import { Languages } from "../../data/languages";
+import { DamageType } from "../../models/equipment/damage-type";
 import { FeatureType } from "../../models/features/feature-type";
 import { TimeUnit } from "../../models/features/time-unit";
 import * as RaceModels from "../../models/races";
@@ -64,6 +65,7 @@ export const Genasi: RaceModels.Race = {
             features: [
                 {
                     name: "Fire Resistance", type: FeatureType.Passive,
+                    damageResistances: [DamageType.Fire],
                     description: "You have resistance to fire damage."
                 }, {
                     name: "Reach to the Blaze", type: FeatureType.Active,
@@ -84,6 +86,7 @@ export const Genasi: RaceModels.Race = {
             features: [
                 {
                     name: "Acid Resistance", type: FeatureType.Passive,
+                    damageResistances: [DamageType.Acid],
                     description: "You have resistance to acid damage."
                 }, {
                     name: "Amphibious", type: FeatureType.Passive,

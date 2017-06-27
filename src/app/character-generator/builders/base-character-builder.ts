@@ -82,13 +82,18 @@ export abstract class BaseCharacterBuilder {
                 this.grantProficiencyOption(character.skillProficiencies, op, Data.Skills.SkillList);
             });
         }
+         if (feature.armorProficiencies) {
+            feature.armorProficiencies.forEach(option => {
+                this.grantProficiencyOption(character.armorProficiencies, option);
+            });
+        }
         if (feature.weaponProficiencies) {
             feature.weaponProficiencies.forEach(option => {
                 this.grantProficiencyOption(character.weaponProficiencies, option);
             });
         }
         if (feature.toolProficiencies) {
-            feature.weaponProficiencies.forEach(option => {
+            feature.toolProficiencies.forEach(option => {
                 this.grantProficiencyOption(character.toolProficiencies, option);
             });
         }

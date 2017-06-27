@@ -1,4 +1,5 @@
 import { Languages } from "../../data/languages";
+import { DamageType } from "../../models/equipment/damage-type";
 import { FeatureType } from "../../models/features/feature-type";
 import * as RaceModels from "../../models/races";
 import * as Names from "../names";
@@ -50,6 +51,7 @@ export const Halfling: RaceModels.Race = {
             features: [
                 {
                     name: "Stout Resilience", type: FeatureType.Passive,
+                    damageResistances: [DamageType.Poison],
                     description: `
                             You have advantage on saving throws against poison, and you have resistance against poison damage.
                         `

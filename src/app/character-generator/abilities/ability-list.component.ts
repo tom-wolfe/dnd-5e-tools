@@ -27,7 +27,7 @@ export class AbilityListComponent {
   }
 
   onRefreshAbilitiesClick(e) {
-    // TODO: Enable: this.builder.randomizeAbilities(this.character);
+    this.builder.randomizeAbilities(this.character);
     e.preventDefault();
     return false;
   }

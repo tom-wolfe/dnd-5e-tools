@@ -12,7 +12,7 @@ export class AbilityBuilder extends BaseCharacterBuilder {
         this.randomizeAbilities(character);
     }
 
-    private randomizeAbilities(character: Character) {
+    randomizeAbilities(character: Character) {
         const abilityList = Object.keys(Abilities.AbilityList);
         let statList = abilityList.map((ability) => this.generateScore())
         statList = statList.sort((a, b) => a - b).reverse();

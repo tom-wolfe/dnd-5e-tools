@@ -43,7 +43,7 @@ export class BackgroundBuilder extends BaseCharacterBuilder {
         });
     }
 
-    private randomizeTraits(character: Character) {
+    randomizeTraits(character: Character) {
         const bg = character.background;
         character.personalityTrait = bg.personalityTraits[this.numGen.rollDie(bg.personalityTraits.length) - 1];
         character.ideal = bg.ideals[this.numGen.rollDie(bg.ideals.length) - 1];
@@ -51,7 +51,7 @@ export class BackgroundBuilder extends BaseCharacterBuilder {
         character.flaw = bg.flaws[this.numGen.rollDie(bg.flaws.length) - 1];
     }
 
-    randomizeLanguages(character: Character) {
+    private randomizeLanguages(character: Character) {
         let otherLanguages = character.background.languages.other || 0;
         if (otherLanguages === 0) { return; }
         while (otherLanguages > 0) {

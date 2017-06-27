@@ -1,9 +1,11 @@
 import { Languages } from "../../data/languages";
 import * as Weapons from "../../data/weapons";
 import * as Characters from "../../models/characters";
+import { ArmorType } from "../../models/equipment/armor-type";
 import { FeatureType } from "../../models/features/feature-type";
 import { TimeUnit } from "../../models/features/time-unit";
 import * as RaceModels from "../../models/races";
+import * as Tools from "../artisan-tools";
 import { CommonFeatures } from "../common-features";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
@@ -28,14 +30,12 @@ export const Dwarf: RaceModels.Race = {
             weaponProficiencies: [{ proficiencies: [Weapons.Battleaxe, Weapons.Handaxe, Weapons.LightHammer, Weapons.Warhammer] }],
             description: "You have proficiency with the battleaxe, handaxe, light hammer, and warhammer."
         }, {
-            name: "Tool Proficiency", type: FeatureType.SingleMod,
+            name: "Tool Proficiency", type: FeatureType.Passive,
+            toolProficiencies: [{ proficiencies: [Tools.SmithsTools, Tools.BrewersSupplies, Tools.MasonsTools], count: 1 }],
             description: `
                     You gain proficiency with the artisan's tool of your choice:
                     smith's tools, brewer's supplies, or mason's tools.
-                `,
-            apply(character: Characters.Character) {
-                // TODO: Apply tool proficiencies.
-            }
+                `
         }, {
             name: "Stonecunning", type: FeatureType.Passive,
             description: `
@@ -64,11 +64,9 @@ export const Dwarf: RaceModels.Race = {
             abilityMods: { "STR": +2 },
             features: [
                 {
-                    name: "Dwarven Armor Training", type: FeatureType.SingleMod,
+                    name: "Dwarven Armor Training", type: FeatureType.Passive,
                     description: "You have proficiency with light and medium armor.",
-                    apply(character: Characters.Character) {
-                        // TODO: Apply armor proficiencies.
-                    }
+                    armorProficiencies: [{ proficiencies: [ArmorType.Light, ArmorType.Medium] }],
                 }
             ],
             reference: { source: "PHB", page: 20, url: "https://www.dndbeyond.com/characters/races/dwarf#MountainDwarf" }

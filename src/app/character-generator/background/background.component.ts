@@ -12,7 +12,7 @@ export class BackgroundComponent {
   @Input() builder: CharacterBuilder;
 
   onRefreshBackgroundClick(e) {
-    // TODO: Enable: this.builder.randomizePersonality(this.character);
+    this.builder.randomizeTraits(this.character);
     e.preventDefault();
     return false;
   }

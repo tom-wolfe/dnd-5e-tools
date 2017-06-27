@@ -1,4 +1,5 @@
 import { Languages } from "../../data/languages";
+import { DamageType } from "../../models/equipment/damage-type";
 import { FeatureType } from "../../models/features/feature-type";
 import { TimeUnit } from "../../models/features/time-unit";
 import * as RaceModels from "../../models/races";
@@ -37,6 +38,7 @@ export const Triton: RaceModels.Race = {
                 `
         }, {
             name: "Guardians of the Depths", type: FeatureType.Passive,
+            damageResistances: [DamageType.Cold],
             description: `
                     Adapted to even the most extreme ocean depths, you have resistance to cold damage, and you ignore any of the drawbacks
                     caused by a deep, underwater environment.

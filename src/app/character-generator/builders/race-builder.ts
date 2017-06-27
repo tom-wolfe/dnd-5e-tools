@@ -47,7 +47,7 @@ export class RaceBuilder extends BaseCharacterBuilder {
         Object.assign(abilityMods, character.race.abilityMods);
 
         abilityMods.additionalPoints = (character.race.abilityMods.additionalPoints || 0);
-        if (character.subrace) {
+        if (character.subrace && character.subrace.abilityMods) {
             const addPoints = abilityMods.additionalPoints + (character.subrace.abilityMods.additionalPoints || 0);
             Object.assign(abilityMods, character.subrace.abilityMods);
             abilityMods.additionalPoints = addPoints;
@@ -63,11 +63,13 @@ export class RaceBuilder extends BaseCharacterBuilder {
         });
 
         const addAbility = (ability, index?) => {
-            index = index || abilityList.indexOf(ability);
-            if (ability && index > -1) {
-                character.baseAbilities[ability] += 1;
-                abilityList.splice(index, 1);
-                abilityPoints -= 1;
+            if (abilityPoints > 0) {
+                index = index || abilityList.indexOf(ability);
+                if (ability && index > -1) {
+                    character.baseAbilities[ability] += 1;
+                    abilityList.splice(index, 1);
+                    abilityPoints -= 1;
+                }
             }
         };
 

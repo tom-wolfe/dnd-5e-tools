@@ -9,8 +9,7 @@
       </small>
     </div>
   </h1>
-  <div class="bb-thin pt-2 pb-3">
-    <div class="refresh pull-right"><a href="" (click)="onRefreshPhysicalityClick($event)"><i class="fa fa-refresh"></i><span class="sr-only">Random Physicality</span></a></div>
+  <div class="bb-light pt-1 pb-1">
     <div class="text-muted character-subline">
       <span class="gender"><i class="fa" [ngClass]="character.genderIconClass"></i> {{character.genderDescription}}</span>
       <span class="race">{{character.race.name}}</span>
@@ -19,7 +18,10 @@
       <span class="size">{{character.race.size}}</span>,
       <span class="alignment">{{character.alignmentDescription}}</span>
     </div>
+  </div>
+  <div class="bb-thin pt-2 pb-2">
     <div class="text-muted dnd-5e-tools-subline">
+      <div class="refresh pull-right"><a href="" (click)="onRefreshPhysicalityClick($event)"><i class="fa fa-refresh"></i><span class="sr-only">Random Physicality</span></a></div>
       <span class="height">{{character.heightDescription}} <span class="font-weight-bold">({{character.heightClassification}})</span></span>,
       <span class="weight">{{character.weightDescription}} <span class="font-weight-bold">({{character.weightClassification}})</span></span>,
       <span class="age">{{character.ageDescription}} <span class="font-weight-bold">({{character.ageClassification}})</span></span>

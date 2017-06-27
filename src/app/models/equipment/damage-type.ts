@@ -11,5 +11,6 @@ export enum DamageType {
     Lightning,
     Poison,
     Acid,
-    Psychic
+    Psychic,
+    Cold
 };

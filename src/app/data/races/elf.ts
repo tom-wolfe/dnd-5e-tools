@@ -3,6 +3,7 @@ import * as Characters from "app/models/characters";
 import { FeatureType, TimeUnit } from "app/models/features";
 import * as RaceModels from "app/models/races";
 
+import * as Weapons from "../../data/weapons";
 import { CommonFeatures } from "../common-features";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
@@ -92,6 +93,9 @@ export const Elf: RaceModels.Race = {
                         `
                 }, {
                     name: "Drow Weapon Training", type: FeatureType.Passive,
+                    weaponProficiencies: [
+                        { proficiencies: [Weapons.Rapier, Weapons.Shortsword, Weapons.HandCrossbow] }
+                    ],
                     description: "You have proficiency with rapiers, shortswords, and hand crossbows."
                 }
             ],

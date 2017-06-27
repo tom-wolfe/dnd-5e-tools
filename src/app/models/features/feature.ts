@@ -12,6 +12,7 @@ export class Feature {
     damageResistances?: Equipment.DamageType[];
     type: FeatureType;
     usage?: UsageFrequency;
+    armorProficiencies?: ProficiencyOption<Equipment.ArmorType>[];
     weaponProficiencies?: ProficiencyOption<Equipment.Weapon>[];
     toolProficiencies?: ProficiencyOption<Equipment.Item>[];
     otherProficiencies?: ProficiencyOption<Equipment.Weapon>[];

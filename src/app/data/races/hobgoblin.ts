@@ -4,6 +4,7 @@ import { WeaponType } from "app/models/equipment";
 import { FeatureType, TimeUnit } from "app/models/features";
 import * as RaceModels from "app/models/races";
 
+import { ArmorType } from "../../models/equipment/armor-type";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
@@ -22,8 +23,8 @@ export const Hobgoblin: RaceModels.Race = {
         {
             name: "Martial Training", type: FeatureType.Passive,
             description: "You are proficient with two martial weapons of your choice and with light armor.",
-            weaponProficiencies: [{ proficiencies: WeaponList.filter(w => w.type === WeaponType.Martial) , count: 2}],
-            // TODO: Make this real: armorProficiency: ArmorType.Light
+            weaponProficiencies: [{ proficiencies: WeaponList.filter(w => w.type === WeaponType.Martial), count: 2 }],
+            armorProficiencies: [{ proficiencies: [ArmorType.Light] }],
         }, {
             name: "Saving Face", type: FeatureType.Active,
             usage: { times: 1, timeUnit: TimeUnit.ShortRest },

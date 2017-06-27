@@ -4,6 +4,7 @@ import { TimeUnit } from "../../models/features/time-unit";
 import * as RaceModels from "../../models/races";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
+import { DamageType } from "app/models/equipment";
 
 export const Dragonborn: RaceModels.Race = {
     name: "Dragonborn",
@@ -17,12 +18,6 @@ export const Dragonborn: RaceModels.Race = {
     abilityMods: { "STR": +2, "CHA": +1 },
     features: [
         {
-            name: "Draconic Ancestry", type: FeatureType.Passive,
-            description: `
-                You have draconic ancestry. Choose one type of dragon from the Draconic Ancestry table.
-                Your breath weapon and damage resistance are determined by lhe dragon type. as shown in the table
-            `
-        }, {
             name: "Breath Weapon", type: FeatureType.Active,
             usage: { times: 1, timeUnit: TimeUnit.ShortRest },
             description: `
@@ -35,7 +30,7 @@ export const Dragonborn: RaceModels.Race = {
             `
         }, {
             name: "Damage Resistance", type: FeatureType.Passive,
-            description: "Vou have resistance to the damage type associated with your draconic ancestry."
+            description: "You have resistance to the damage type associated with your draconic ancestry."
         }
     ],
     reference: {
@@ -43,7 +38,88 @@ export const Dragonborn: RaceModels.Race = {
         page: 32,
         url: "https://www.dndbeyond.com/characters/races/dragonborn"
     },
-    subraces: []
+    subraces: [
+        {
+            name: "Black",
+            features: [{
+                name: "Draconic Ancestry", type: FeatureType.Passive,
+                damageResistances: [DamageType.Acid],
+                description: "Your are resistant to acid damage and your breath weapon deals acid damage in a 5 by 30 ft. line (Dex. save)."
+            }], reference: { source: "PHB", page: 34 }
+        },
+        {
+            name: "Blue",
+            features: [{
+                name: "Draconic Ancestry", type: FeatureType.Passive,
+                damageResistances: [DamageType.Lightning],
+                description: "Your are resistant to lightning damage and your breath weapon deals lightning damage in a 5 by 30 ft. line (Dex. save)."
+            }], reference: { source: "PHB", page: 34 }
+        },
+        {
+            name: "Brass",
+            features: [{
+                name: "Draconic Ancestry", type: FeatureType.Passive,
+                damageResistances: [DamageType.Fire],
+                description: "Your are resistant to fire damage and your breath weapon deals fire damage in a 5 by 30 ft. line (Dex. save)."
+            }], reference: { source: "PHB", page: 34 }
+        },
+        {
+            name: "Bronze",
+            features: [{
+                name: "Draconic Ancestry", type: FeatureType.Passive,
+                damageResistances: [DamageType.Lightning],
+                description: "Your are resistant to lightning damage and your breath weapon deals lightning damage in a 5 by 30 ft. line (Dex. save)."
+            }], reference: { source: "PHB", page: 34 }
+        },
+        {
+            name: "Copper",
+            features: [{
+                name: "Draconic Ancestry", type: FeatureType.Passive,
+                damageResistances: [DamageType.Acid],
+                description: "Your are resistant to acid damage and your breath weapon deals acid damage in a 5 by 30 ft. line (Dex. save)."
+            }], reference: { source: "PHB", page: 34 }
+        },
+        {
+            name: "Gold",
+            features: [{
+                name: "Draconic Ancestry", type: FeatureType.Passive,
+                damageResistances: [DamageType.Fire],
+                description: "Your are resistant to fire damage and your breath weapon deals fire damage in a 15 ft. cone (Dex. save)."
+            }], reference: { source: "PHB", page: 34 }
+        },
+        {
+            name: "Green",
+            features: [{
+                name: "Draconic Ancestry", type: FeatureType.Passive,
+                damageResistances: [DamageType.Poison],
+                description: "Your are resistant to poison damage and your breath weapon deals poison damage in a 15 ft. cone (Con. save)."
+            }], reference: { source: "PHB", page: 34 }
+        },
+        {
+            name: "Red",
+            features: [{
+                name: "Draconic Ancestry", type: FeatureType.Passive,
+                damageResistances: [DamageType.Fire],
+                description: "Your are resistant to fire damage and your breath weapon deals fire damage in a 15 ft. cone (Dex. save)."
+            }], reference: { source: "PHB", page: 34 }
+        },
+        {
+            name: "Silver",
+            features: [{
+                name: "Draconic Ancestry", type: FeatureType.Passive,
+                damageResistances: [DamageType.Cold],
+                description: "Your are resistant to cold damage and your breath weapon deals cold damage in a 15 ft. cone (Con. save)."
+            }], reference: { source: "PHB", page: 34 }
+        },
+        {
+            name: "White",
+            features: [{
+                name: "Draconic Ancestry", type: FeatureType.Passive,
+                damageResistances: [DamageType.Cold],
+                description: "Your are resistant to cold damage and your breath weapon deals cold damage in a 15 ft. cone (Con. save)."
+            }], reference: { source: "PHB", page: 34 }
+        }
+    ]
 };
 
 RaceList[Dragonborn.name] = Dragonborn;

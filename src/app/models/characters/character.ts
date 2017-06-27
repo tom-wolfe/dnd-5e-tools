@@ -43,17 +43,17 @@ export class Character {
     personalityTrait: string;
     race: Races.Race;
     readonly senses: Attributes.Senses = new Attributes.CharacterSenses(this);
+    readonly armorProficiencies: Proficiencies.Proficiency<Equipment.ArmorType>[] = [];
     readonly skillProficiencies: Proficiencies.Proficiency<Abilities.Skill>[] = [];
-    readonly weaponProficiencies: Proficiencies.Proficiency<Equipment.Weapon>[] = [];
     readonly toolProficiencies: Proficiencies.Proficiency<Equipment.Item>[] = [];
     readonly otherProficiencies: Proficiencies.Proficiency<Equipment.Item>[] = [];
+    readonly weaponProficiencies: Proficiencies.Proficiency<Equipment.Weapon>[] = [];
     readonly speed: Attributes.Speed = new Attributes.CharacterSpeed(this);
     subrace: Races.Subrace;
     weight: number;
 
     get armorProficiencyString(): string {
-        // TODO: Implement.
-        return "";
+        return _.join(this.armorProficiencies.map(x => Equipment.ArmorType[x.thing].toString()), ", ");
     }
 
     get strength(): number {
@@ -130,7 +130,8 @@ export class Character {
     }
 
     get damageResistancesString(): string {
-        return _.join(this.damageResistances.map(x => Equipment.DamageType[x].toString()), ", ");
+        const retVal = _.join(this.damageResistances.map(x => Equipment.DamageType[x].toString()), ", ");
+        return retVal || "[None]";
     }
 
     get equippedArmor(): string {

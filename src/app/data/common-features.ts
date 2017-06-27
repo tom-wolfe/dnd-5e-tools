@@ -1,3 +1,4 @@
+import * as Weapons from "app/data/weapons";
 import * as Features from "app/models/features";
 
 import { Skills } from "../data";
@@ -5,6 +6,9 @@ import { Skills } from "../data";
 export const CommonFeatures: { [index: string]: Features.Feature } = {
     "elfWeaponTraining": {
         name: "Elf Weapon Training", type: Features.FeatureType.Passive,
+        weaponProficiencies: [
+            { proficiencies: [Weapons.Longsword, Weapons.Shortsword, Weapons.Shortbow, Weapons.Longbow] }
+        ],
         description: "You have proficiency with the longsword, shortsword, shortbow, and longbow."
     },
     "feyAncestry": {
@@ -13,9 +17,7 @@ export const CommonFeatures: { [index: string]: Features.Feature } = {
     },
     "menacing": {
         name: "Menacing", type: Features.FeatureType.Passive,
-        skillProficiencies: [
-            { proficiencies: [Skills.Intimidation] }
-        ],
+        skillProficiencies: [{ proficiencies: [Skills.Intimidation] }],
         description: "You are trained in the Intimidation skill."
     },
     "powerfulBuild": {
@@ -30,3 +32,4 @@ export const CommonFeatures: { [index: string]: Features.Feature } = {
         `
     }
 };
+
