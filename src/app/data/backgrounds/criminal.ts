@@ -1,13 +1,20 @@
-import { Skills } from "../../data";
-import * as Characters from "../../models/characters";
-import { FeatureType } from "../../models/features/feature-type";
+import { Skills } from "app/data";
+import * as Tools from "app/data/tools";
+import { GamingSetList } from "app/data/gaming-sets";
+import * as Characters from "app/models/characters";
+import { FeatureType } from "app/models/features/feature-type";
+
 import { BackgroundList } from "./background-list";
 
 export const Criminal: Characters.Background = {
     name: "Criminal",
     reference: { source: "PHB", page: 129, url: "" },
     languages: {},
-    skillProficiencies: [ { proficiencies: [Skills.Deception, Skills.Stealth] }],
+    skillProficiencies: [{ proficiencies: [Skills.Deception, Skills.Stealth] }],
+    toolProficiencies: [
+        { proficiencies: [Tools.ThievesTools] },
+        { proficiencies: GamingSetList, count: 1 }
+    ],
     features: [{
         name: "Criminal Contact",
         type: FeatureType.Passive,

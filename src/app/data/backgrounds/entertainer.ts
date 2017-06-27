@@ -1,4 +1,6 @@
 import { Skills } from "../../data";
+import * as Tools from "app/data/tools";
+import { InstrumentList } from "app/data/instruments";
 import * as Characters from "../../models/characters";
 import { FeatureType } from "../../models/features/feature-type";
 import { BackgroundList } from "./background-list";
@@ -7,7 +9,11 @@ export const Entertainer: Characters.Background = {
     name: "Entertainer",
     reference: { source: "PHB", page: 130, url: "" },
     languages: {},
-    skillProficiencies: [ { proficiencies: [Skills.Acrobatics, Skills.Performance] }],
+    skillProficiencies: [{ proficiencies: [Skills.Acrobatics, Skills.Performance] }],
+    toolProficiencies: [
+        { proficiencies: [Tools.DisguiseKit] },
+        { proficiencies: InstrumentList, count: 1 }
+    ],
     features: [{
         name: "By Popular Demand",
         type: FeatureType.Passive,

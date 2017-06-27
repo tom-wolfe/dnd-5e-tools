@@ -1,13 +1,18 @@
+import * as Vehicles from "app/data/vehicles";
+
 import { Skills } from "../../data";
 import * as Characters from "../../models/characters";
 import { FeatureType } from "../../models/features/feature-type";
+import { GamingSetList } from "../gaming-sets";
 import { BackgroundList } from "./background-list";
 
 export const Soldier: Characters.Background = {
     name: "Soldier",
     reference: { source: "PHB", page: 140, url: "https://www.dndbeyond.com/characters/backgrounds/soldier" },
     languages: {},
-    skillProficiencies: [ { proficiencies: [Skills.Athletics, Skills.Intimidation] }],
+    skillProficiencies: [{ proficiencies: [Skills.Athletics, Skills.Intimidation] }],
+    toolProficiencies: [{ proficiencies: GamingSetList, count: 1 }],
+    otherProficiencies: [{ proficiencies: [Vehicles.LandVehicles] }],
     features: [{
         name: "Military Rank",
         type: FeatureType.Passive,

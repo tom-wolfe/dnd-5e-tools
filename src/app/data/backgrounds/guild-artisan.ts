@@ -1,13 +1,15 @@
 import { Skills } from "../../data";
 import * as Characters from "../../models/characters";
 import { FeatureType } from "../../models/features/feature-type";
+import { ArtisanToolList } from "../artisan-tools";
 import { BackgroundList } from "./background-list";
 
 export const GuildArtisan: Characters.Background = {
     name: "Guild Artisan",
     reference: { source: "PHB", page: 132, url: "" },
     languages: { other: 1 },
-    skillProficiencies: [ { proficiencies: [Skills.Insight, Skills.Persuasion] }],
+    skillProficiencies: [{ proficiencies: [Skills.Insight, Skills.Persuasion] }],
+    toolProficiencies: [{ proficiencies: ArtisanToolList, count: 1 }],
     features: [{
         name: "Guild Membership",
         type: FeatureType.Passive,

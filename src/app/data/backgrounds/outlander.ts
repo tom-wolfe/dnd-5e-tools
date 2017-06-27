@@ -1,13 +1,15 @@
 import { Skills } from "../../data";
 import * as Characters from "../../models/characters";
 import { FeatureType } from "../../models/features/feature-type";
+import { InstrumentList } from "../instruments";
 import { BackgroundList } from "./background-list";
 
 export const Outlander: Characters.Background = {
     name: "Outlander",
     reference: { source: "PHB", page: 136, url: "" },
     languages: { other: 1 },
-    skillProficiencies: [ { proficiencies: [Skills.Athletics, Skills.Survival] }],
+    skillProficiencies: [{ proficiencies: [Skills.Athletics, Skills.Survival] }],
+    toolProficiencies: [{ proficiencies: InstrumentList, count: 1 }],
     features: [{
         name: "Wanderer",
         type: FeatureType.Passive,

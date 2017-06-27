@@ -25,8 +25,7 @@ export class ItemGenerator {
             switch (part) {
                 case "name": return this.nameGen.getName().value;
                 case "language":
-                    const items = Object.keys(Languages.LanguageList);
-                    return items[this.numGen.rollDie(items.length) - 1];
+                    return Languages.LanguageList[this.numGen.rollDie(Languages.LanguageList.length) - 1].name;
                 case "number":
                     return this.numGen.rollDie(200).toString();
                 default:

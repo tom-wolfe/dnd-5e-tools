@@ -10,7 +10,7 @@ import { Feature } from "../features";
 import * as Features from "../features";
 import { FeatureType } from "../features/feature-type";
 import * as Languages from "../languages";
-import { ProficiencyType } from "../proficiency-type";
+import * as Proficiencies from "../proficiencies";
 import * as Races from "../races";
 import { Background } from "./background";
 import { Level } from "./level";
@@ -43,10 +43,12 @@ export class Character {
     personalityTrait: string;
     race: Races.Race;
     readonly senses: Attributes.Senses = new Attributes.CharacterSenses(this);
-    readonly skillProficiencies: Abilities.SkillProficiency[] = [];
+    readonly skillProficiencies: Proficiencies.Proficiency<Abilities.Skill>[] = [];
+    readonly weaponProficiencies: Proficiencies.Proficiency<Equipment.Weapon>[] = [];
+    readonly toolProficiencies: Proficiencies.Proficiency<Equipment.Item>[] = [];
+    readonly otherProficiencies: Proficiencies.Proficiency<Equipment.Item>[] = [];
     readonly speed: Attributes.Speed = new Attributes.CharacterSpeed(this);
     subrace: Races.Subrace;
-    readonly weaponProficiencies: Equipment.Weapon[] = [];
     weight: number;
 
     get armorProficiencyString(): string {
@@ -189,8 +191,7 @@ export class Character {
     }
 
     get otherProficiencyString(): string {
-        // TODO: Implement.
-        return "";
+        return _.join(this.otherProficiencies.map(t => t.thing.name), ", ");
     }
 
     get raceDescription(): string {
@@ -222,13 +223,12 @@ export class Character {
 
     get skillString(): string {
         const format = (modifier: number) => (modifier >= 0) ? "+" + modifier : modifier.toString();
-        const profs = this.skillProficiencies.map(p => `${p.skill.name} ${format(this.getSkillModifier(p.skill))}`).sort();
+        const profs = this.skillProficiencies.map(p => `${p.thing.name} ${format(this.getSkillModifier(p.thing))}`).sort();
         return _.join(profs, ", ");
     }
 
     get toolProficiencyString(): string {
-        // TODO: Implement.
-        return "";
+        return _.join(this.toolProficiencies.map(t => t.thing.name), ", ");
     }
 
     get walkSpeedDescription(): string {
@@ -245,7 +245,7 @@ export class Character {
     }
 
     get weaponProficiencyString(): string {
-        return _.join(this.weaponProficiencies.map(w => w.name).sort(), ", ");
+        return _.join(this.weaponProficiencies.map(w => w.thing.name).sort(), ", ");
     }
 
     getSkillModifier(skill: Abilities.Skill): number {
@@ -254,12 +254,12 @@ export class Character {
         const proficiencyBonus = this.level.proficiencyBonus;
 
         retVal += this.abilities.getModifier(skill.ability.code);
-        const prof = this.skillProficiencies.filter((sp) => sp.skill === skill);
+        const prof = this.skillProficiencies.filter((sp) => sp.thing === skill);
         if (prof.length > 0) {
             switch (prof[0].type) {
-                case ProficiencyType.Proficient: retVal += proficiencyBonus; break;
-                case ProficiencyType.JackOfAllTrades: retVal += Math.floor(proficiencyBonus / 2); break;
-                case ProficiencyType.Expert: retVal += proficiencyBonus * 2; break;
+                case Proficiencies.ProficiencyType.Proficient: retVal += proficiencyBonus; break;
+                case Proficiencies.ProficiencyType.JackOfAllTrades: retVal += Math.floor(proficiencyBonus / 2); break;
+                case Proficiencies.ProficiencyType.Expert: retVal += proficiencyBonus * 2; break;
             }
         }
         return retVal;

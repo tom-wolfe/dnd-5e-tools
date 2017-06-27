@@ -1,13 +1,15 @@
 import { Skills } from "../../data";
 import * as Characters from "../../models/characters";
 import { FeatureType } from "../../models/features/feature-type";
+import { GamingSetList } from "../gaming-sets";
 import { BackgroundList } from "./background-list";
 
 export const Noble: Characters.Background = {
     name: "Noble",
     reference: { source: "PHB", page: 131, url: "https://www.dndbeyond.com/characters/backgrounds/noble" },
     languages: { other: 1 },
-    skillProficiencies: [ { proficiencies: [Skills.History, Skills.Persuasion] }],
+    skillProficiencies: [{ proficiencies: [Skills.History, Skills.Persuasion] }],
+    toolProficiencies: [{ proficiencies: GamingSetList, count: 1 }],
     features: [{
         name: "Position of Privilege",
         type: FeatureType.Passive,

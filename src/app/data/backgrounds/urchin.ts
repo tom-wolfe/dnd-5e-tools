@@ -1,13 +1,15 @@
 import { Skills } from "../../data";
 import * as Characters from "../../models/characters";
 import { FeatureType } from "../../models/features/feature-type";
+import * as Tools from "../tools";
 import { BackgroundList } from "./background-list";
 
 export const Urchin: Characters.Background = {
     name: "Urchin",
     reference: { source: "PHB", page: 141, url: "" },
     languages: {},
-    skillProficiencies: [ { proficiencies: [Skills.SleightOfHand, Skills.Stealth] }],
+    skillProficiencies: [{ proficiencies: [Skills.SleightOfHand, Skills.Stealth] }],
+    toolProficiencies: [{ proficiencies: [Tools.DisguiseKit, Tools.ThievesTools] }],
     features: [{
         name: "City Secrets",
         type: FeatureType.Passive,

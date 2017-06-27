@@ -25,7 +25,7 @@ export const Dwarf: RaceModels.Race = {
             description: "You have advantage on saving throws against poison, and you have resistance against poison damage."
         }, {
             name: "Dwarven Combat Training", type: FeatureType.Passive,
-            weaponProficiencies: [Weapons.Battleaxe, Weapons.Handaxe, Weapons.LightHammer, Weapons.Warhammer],
+            weaponProficiencies: [{ proficiencies: [Weapons.Battleaxe, Weapons.Handaxe, Weapons.LightHammer, Weapons.Warhammer] }],
             description: "You have proficiency with the battleaxe, handaxe, light hammer, and warhammer."
         }, {
             name: "Tool Proficiency", type: FeatureType.SingleMod,

@@ -1,13 +1,18 @@
+import * as Vehicles from "app/data/vehicles";
+
 import { Skills } from "../../data";
 import * as Characters from "../../models/characters";
 import { FeatureType } from "../../models/features/feature-type";
+import { NavigatorsTools } from "../tools";
 import { BackgroundList } from "./background-list";
 
 export const Sailor: Characters.Background = {
     name: "Sailor",
     reference: { source: "PHB", page: 139, url: "" },
     languages: {},
-    skillProficiencies: [ { proficiencies: [Skills.Athletics, Skills.Perception] }],
+    skillProficiencies: [{ proficiencies: [Skills.Athletics, Skills.Perception] }],
+    toolProficiencies: [{ proficiencies: [NavigatorsTools] },],
+    otherProficiencies: [{ proficiencies: [Vehicles.WaterVehicles] }],
     features: [{
         name: "Ship's Passage",
         type: FeatureType.Passive,

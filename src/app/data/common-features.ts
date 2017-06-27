@@ -1,6 +1,6 @@
-import { Skills } from "../data";
-import { ProficiencyType } from "app/models/proficiency-type";
 import * as Features from "app/models/features";
+
+import { Skills } from "../data";
 
 export const CommonFeatures: { [index: string]: Features.Feature } = {
     "elfWeaponTraining": {

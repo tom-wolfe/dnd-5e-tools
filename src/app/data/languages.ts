@@ -1,7 +1,7 @@
 import * as LanguageModels from "../models/languages";
 
 export namespace Languages {
-    export const LanguageList: { [index: string]: LanguageModels.Language } = {};
+    export const LanguageList: LanguageModels.Language[] = [];
 
     export const Aarakocra: LanguageModels.Language = new LanguageModels.Language("Aarakocra");
     export const Abyssal: LanguageModels.Language = new LanguageModels.Language("Abyssal");
@@ -21,23 +21,21 @@ export namespace Languages {
     export const Sylvan: LanguageModels.Language = new LanguageModels.Language("Sylvan");
     export const Undercommon: LanguageModels.Language = new LanguageModels.Language("Undercommon");
 
-    // TODO: Change to list.
-
-    LanguageList[Aarakocra.name] = Aarakocra;
-    LanguageList[Abyssal.name] = Abyssal;
-    LanguageList[Celestial.name] = Celestial;
-    LanguageList[Common.name] = Common;
-    LanguageList[DeepSpeech.name] = DeepSpeech;
-    LanguageList[Draconic.name] = Draconic;
-    LanguageList[Dwarvish.name] = Dwarvish;
-    LanguageList[Elvish.name] = Elvish;
-    LanguageList[Giant.name] = Giant;
-    LanguageList[Gnomish.name] = Gnomish;
-    LanguageList[Goblin.name] = Goblin;
-    LanguageList[Halfling.name] = Halfling;
-    LanguageList[Infernal.name] = Infernal;
-    LanguageList[Orc.name] = Orc;
-    LanguageList[Primordial.name] = Primordial;
-    LanguageList[Sylvan.name] = Sylvan;
-    LanguageList[Undercommon.name] = Undercommon;
+    LanguageList.push(Aarakocra);
+    LanguageList.push(Abyssal);
+    LanguageList.push(Celestial);
+    LanguageList.push(Common);
+    LanguageList.push(DeepSpeech);
+    LanguageList.push(Draconic);
+    LanguageList.push(Dwarvish);
+    LanguageList.push(Elvish);
+    LanguageList.push(Giant);
+    LanguageList.push(Gnomish);
+    LanguageList.push(Goblin);
+    LanguageList.push(Halfling);
+    LanguageList.push(Infernal);
+    LanguageList.push(Orc);
+    LanguageList.push(Primordial);
+    LanguageList.push(Sylvan);
+    LanguageList.push(Undercommon);
 };

@@ -95,12 +95,12 @@ export class RaceBuilder extends BaseCharacterBuilder {
 
     private randomizeLanguages(character: Character) {
         character.race.languages.known.forEach(lang => {
-            character.languages.push(lang);
+            this.grantLanguage(character, lang);
         });
 
         if (character.subrace && character.subrace.languages) {
             character.subrace.languages.known.forEach(lang => {
-                character.languages.push(lang);
+                this.grantLanguage(character, lang);
             });
         };
 

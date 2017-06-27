@@ -1,13 +1,15 @@
 import { Skills } from "../../data";
 import * as Characters from "../../models/characters";
 import { FeatureType } from "../../models/features/feature-type";
+import * as Tools from "../tools";
 import { BackgroundList } from "./background-list";
 
 export const Hermit: Characters.Background = {
     name: "Hermit",
     reference: { source: "PHB", page: 134, url: "" },
     languages: { other: 1 },
-    skillProficiencies: [ { proficiencies: [Skills.Medicine, Skills.Religion] }],
+    skillProficiencies: [{ proficiencies: [Skills.Medicine, Skills.Religion] }],
+    toolProficiencies: [{ proficiencies: [Tools.HerbalismKit] }],
     features: [{
         name: "Discovery",
         type: FeatureType.Passive,

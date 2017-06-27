@@ -1,4 +1,4 @@
-import { ProficiencyType } from "app/models/proficiency-type";
+import { ProficiencyType } from "./proficiency-type";
 
 export class ProficiencyOption<T> {
     proficiencies: T[];

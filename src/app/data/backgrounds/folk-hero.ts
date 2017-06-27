@@ -1,4 +1,6 @@
 import { Skills } from "../../data";
+import { ArtisanToolList } from "app/data/artisan-tools";
+import * as Vehicles from "app/data/vehicles";
 import * as Characters from "../../models/characters";
 import { FeatureType } from "../../models/features/feature-type";
 import { BackgroundList } from "./background-list";
@@ -7,7 +9,9 @@ export const FolkHero: Characters.Background = {
     name: "Folk Hero",
     reference: { source: "PHB", page: 131, url: "https://www.dndbeyond.com/characters/backgrounds/folk-hero" },
     languages: {},
-    skillProficiencies: [ { proficiencies: [Skills.AnimalHandling, Skills.Survival] }],
+    skillProficiencies: [{ proficiencies: [Skills.AnimalHandling, Skills.Survival] }],
+    toolProficiencies: [{ proficiencies: ArtisanToolList, count: 1 }],
+    otherProficiencies: [{ proficiencies: [Vehicles.LandVehicles] }],
     features: [{
         name: "Rustic Hospitality",
         type: FeatureType.Passive,

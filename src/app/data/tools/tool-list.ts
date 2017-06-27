@@ -15,13 +15,13 @@ Object.assign(HerbalismKit, { name: "Herbalism kit" });
 ToolList.push(HerbalismKit);
 
 export const NavigatorsTools: Item = new Item();
-Object.assign(NavigatorsTools, { name: "Navigator's kit" });
+Object.assign(NavigatorsTools, { name: "Navigator's tools" });
 ToolList.push(NavigatorsTools);
 
-export const PoisonersTools: Item = new Item();
-Object.assign(PoisonersTools, { name: "Poisoner's kit" });
-ToolList.push(PoisonersTools);
+export const PoisonersKit: Item = new Item();
+Object.assign(PoisonersKit, { name: "Poisoner's kit" });
+ToolList.push(PoisonersKit);
 
 export const ThievesTools: Item = new Item();
-Object.assign(ThievesTools, { name: "Thieves' kit" });
+Object.assign(ThievesTools, { name: "Thieves' tools" });
 ToolList.push(ThievesTools);
