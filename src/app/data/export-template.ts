@@ -42,14 +42,19 @@ ___
 >|:---:|:---:|:---:|:---:|:---:|:---:|
 >|{{strength}} ({{strengthMod}})|{{dexterity}} ({{dexterityMod}})|{{constitution}} ({{constitutionMod}})|{{intelligence}} ({{intelligenceMod}})|{{wisdom}} ({{wisdomMod}})|{{charisma}} ({{charismaMod}})|
 >___
+> - **Damage Resistances** {{damageResistancesString}}
 > - **Skills** {{skillString}}
 > - **Senses** passive Perception{{#sensesString}}, {{/sensesString}}{{sensesString}}
-> - **Languages** {{languageString}}
+> - **Languages** {{languagesString}}
 > ___
-{{#features}}
+{{#otherFeatures}}
 > ***{{name}}. *** {{description}}
 > 
-{{/features}}
+{{/otherFeatures}}
+> ### Actions
+{{#activeFeatures}}
+> ***{{name}}. *** {{description}}
+{{/activeFeatures}}
 
 <style>
   /* Printer Friendly A4 */

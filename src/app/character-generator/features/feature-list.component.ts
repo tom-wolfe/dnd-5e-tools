@@ -7,5 +7,6 @@ import * as Features from "app/models/features";
   templateUrl: "./feature-list.component.html",
 })
 export class FeatureListComponent {
+  @Input() title: string;
   @Input() features: Features.Feature[];
 };

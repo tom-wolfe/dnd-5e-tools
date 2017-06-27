@@ -1,3 +1,4 @@
 <div class="feature-list bt-thick">
+    <h5 class="mt-2" *ngIf="title">{{title}}</h5>
     <dnd-feature *ngFor="let feature of features" [feature]="feature"></dnd-feature>
 </div>

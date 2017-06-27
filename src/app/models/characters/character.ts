@@ -6,10 +6,12 @@ import { ProficiencyType } from "../abilities";
 import * as Abilities from "../abilities";
 import * as Attributes from "../attributes";
 import * as Classes from "../classes";
+import * as Equipment from "../equipment";
+import { Feature } from "../features";
 import * as Features from "../features";
+import { FeatureType } from "../features/feature-type";
 import * as Languages from "../languages";
 import * as Races from "../races";
-import * as Equipment from "../equipment";
 import { Background } from "./background";
 import { Level } from "./level";
 
@@ -99,6 +101,14 @@ export class Character {
         return this.abilities.getModifierString("CHA");
     }
 
+    get activeFeatures(): Feature[] {
+        return this.features.filter(feat => feat.type === FeatureType.Active);
+    }
+
+    get otherFeatures(): Feature[] {
+        return this.features.filter(feat => feat.type !== FeatureType.Active);
+    }
+
     get ageDescription(): string {
         const a = (this.age || 0);
         return `${a} years old`;
@@ -114,6 +124,10 @@ export class Character {
 
     get armorClass(): number {
         return this.baseArmorClass + this.abilities.getModifier("DEX");
+    }
+
+    get damageResistancesString(): string {
+        return _.join(this.damageResistances.map(x => Equipment.DamageType[x].toString()), ", ");
     }
 
     get equippedArmor(): string {
@@ -174,7 +188,7 @@ export class Character {
         return 10 + this.getSkillModifier(Data.Skills.Perception);
     }
 
-    get languageString(): string {
+    get languagesString(): string {
         return _.join(this.languages.map(x => x.name), ", ");
     }
 
