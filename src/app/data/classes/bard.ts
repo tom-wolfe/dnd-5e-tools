@@ -4,7 +4,10 @@ import * as ClassModels from "../../models/classes";
 import { ArmorType } from "../../models/equipment";
 import { WeaponType } from "../../models/equipment";
 import { InstrumentList } from "../instruments";
+import * as Packs from "../packs";
+import * as Instruments from "../instruments";
 import * as Weapons from "../weapons";
+import { WeaponList } from "../weapons";
 import { ClassList } from "./class-list";
 
 export const Bard: ClassModels.Class = new ClassModels.Class({
@@ -12,6 +15,28 @@ export const Bard: ClassModels.Class = new ClassModels.Class({
     primaryStat: "CHA",
     hitDie: 8,
     savingThrows: ["DEX", "CHA"],
+    equipment: [
+        {
+            items: [
+                Weapons.Rapier,
+                Weapons.Longsword,
+                { items: WeaponList.filter(w => w.type === WeaponType.Simple).map(w => [w]), count: 1 }
+            ], count: 1
+        },
+        {
+            items: [
+                Packs.DiplomatPack,
+                Packs.EntertainerPack
+            ], count: 1
+        },
+        {
+            items: [
+                Instruments.Lute,
+                { items: Instruments.InstrumentList.map(i => [i]), count: 1 }
+            ], count: 1
+        },
+        { items: [Weapons.Javelin, Weapons.Javelin, Weapons.Javelin, Weapons.Javelin] },
+    ],
     armorProficiencies: [{ proficiencies: [ArmorType.Light] }],
     weaponProficiencies: [{
         proficiencies: [

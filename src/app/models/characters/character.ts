@@ -276,7 +276,9 @@ export class Character {
 
     get weaponAttacks(): Feature[] {
         const retVal: Feature[] = [];
-        this.equipment.filter(e => e instanceof Equipment.Weapon).forEach((weapon: Equipment.Weapon) => {
+        let weapons = this.equipment.filter(e => e instanceof Equipment.Weapon);
+        weapons = _.uniq(weapons);
+        weapons.forEach((weapon: Equipment.Weapon) => {
             retVal.push({
                 name: weapon.name,
                 description: this.weaponDescriptor.describe(weapon),

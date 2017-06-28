@@ -80,8 +80,20 @@ export abstract class BaseCharacterBuilder {
         }
     }
 
-    protected grantEquipmentOptionOrItem(character: Character, options: (Equipment.Item | Equipment.EquipmentOption)[]) {
-        options.forEach(option => {
+    protected grantEquipmentOptionOrItem(
+        character: Character,
+        options: (Equipment.Item | Equipment.Item[] | Equipment.EquipmentOption | Equipment.EquipmentOption[])
+    ) {
+
+        // Normalize options to being an array.
+        const optionArray: (Equipment.Item | Equipment.EquipmentOption)[] = [];
+        if (options instanceof Array) {
+            optionArray.push(...options);
+        } else {
+            optionArray.push(options);
+        }
+
+        optionArray.forEach(option => {
             if (option instanceof Equipment.Item || (option as any).name) {
                 this.grantEquipment(character, option as Equipment.Item);
             } else {
@@ -104,11 +116,17 @@ export abstract class BaseCharacterBuilder {
             ).map(p => p.thing);
             charProfs = _.union(charProfs, Armor.ArmorList.filter(a => _.includes(character.armorProficiencies.map(p => p.thing), a.type)));
 
-            const options: (Equipment.EquipmentOption | Equipment.Item)[][] = _.clone(option.items);
+            const options = _.clone(option.items);
 
             // Get any available items that the character is proficient in.
             const overlap = options.filter(opt => {
-                return opt.filter(item => _.includes(charProfs, item)).length > 0;
+                const optionArray: (Equipment.Item | Equipment.EquipmentOption)[] = [];
+                if (opt instanceof Array) {
+                    optionArray.push(...opt);
+                } else {
+                    optionArray.push(opt);
+                }
+                return optionArray.filter(item => _.includes(charProfs, item)).length > 0;
             });
 
             for (let x = 0; x < option.count; x++) {
