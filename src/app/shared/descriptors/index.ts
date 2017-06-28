@@ -4,4 +4,5 @@ export * from "./character-descriptor";
 export * from "./descriptor";
 export * from "./height-descriptor";
 export * from "./weapon-descriptor";
+export * from "./weapon-proficiency-descriptor";
 export * from "./weight-descriptor";

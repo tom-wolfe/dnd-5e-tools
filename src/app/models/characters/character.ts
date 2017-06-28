@@ -2,12 +2,14 @@ import * as Data from "app/data/";
 import * as Descriptors from "app/shared/descriptors";
 import * as _ from "lodash";
 
+import { WeaponList } from "../../data/weapons";
 import * as Abilities from "../abilities";
 import * as Attributes from "../attributes";
 import * as Classes from "../classes";
 import * as Equipment from "../equipment";
-import { Feature } from "../features";
+import { WeaponType } from "../equipment";
 import * as Features from "../features";
+import { Feature } from "../features";
 import { FeatureType } from "../features/feature-type";
 import * as Languages from "../languages";
 import * as Proficiencies from "../proficiencies";
@@ -19,6 +21,7 @@ export class Character {
     readonly ageDescriptor: Descriptors.AgeDescriptor = new Descriptors.AgeDescriptor();
     readonly heightDescriptor: Descriptors.HeightDescriptor = new Descriptors.HeightDescriptor();
     readonly weaponDescriptor: Descriptors.WeaponDescriptor = new Descriptors.WeaponDescriptor(this);
+    readonly weaponProficiencyDescriptor: Descriptors.WeaponProficiencyDescriptor = new Descriptors.WeaponProficiencyDescriptor();
     readonly weightDescriptor: Descriptors.WeightDescriptor = new Descriptors.WeightDescriptor();
 
     readonly abilities: Abilities.AbilityScores = new Abilities.CharacterAbilityScores(this);
@@ -284,7 +287,7 @@ export class Character {
     }
 
     get weaponProficiencyString(): string {
-        return _.join(this.weaponProficiencies.map(w => w.thing.name).sort(), ", ") || "[None]";
+        return this.weaponProficiencyDescriptor.describe(this);
     }
 
     get weightDescription(): string {
