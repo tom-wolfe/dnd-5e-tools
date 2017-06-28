@@ -4,6 +4,7 @@ import { ClassList } from "./class-list";
 export const Sorcerer: ClassModels.Class = new ClassModels.Class({
     name: "Sorcerer",
     primaryStat: "CHA",
+    hitDie: 6,
     savingThrows: ["CHA", "CON"],
     archetypeName: { singular: "Sorcerous Origin", plural: "Sorcerous Origins" },
     reference: { source: "PHB", page: 99, url: "https://www.dndbeyond.com/characters/classes/sorcerer" },

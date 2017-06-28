@@ -4,6 +4,7 @@ import { ClassList } from "./class-list";
 export const Barbarian: ClassModels.Class = new ClassModels.Class({
     name: "Barbarian",
     primaryStat: "STR",
+    hitDie: 12,
     savingThrows: ["STR", "CON"],
     archetypeName: { singular: "Primal Path", plural: "Primal Paths" },
     reference: { source: "PHB", page: 46, url: "https://www.dndbeyond.com/characters/classes/barbarian" },

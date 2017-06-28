@@ -42,7 +42,8 @@ export class ClassBuilder extends BaseCharacterBuilder {
     }
 
     private randomizeHitPoints(character: Character) {
-        const hitDice = this.numGen.rollDice(character.hitDie, character.level.number);
+        const hitDice = this.numGen.rollDice(character.class.hitDie, character.level.number - 1);
+        hitDice.push(character.class.hitDie); // Max roll for first level.
         character.baseHitPoints = _.sum(hitDice);
     }
 };

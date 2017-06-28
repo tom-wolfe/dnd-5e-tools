@@ -4,6 +4,7 @@ import { ClassList } from "./class-list";
 export const Monk: ClassModels.Class = new ClassModels.Class({
     name: "Monk",
     primaryStat: "DEX",
+    hitDie: 8,
     savingThrows: ["STR", "DEX"],
     archetypeName: { singular: "Monastic Tradition", plural: "Monastic Traditions" },
     reference: { source: "PHB", page: 76, url: "https://www.dndbeyond.com/characters/classes/monk" },

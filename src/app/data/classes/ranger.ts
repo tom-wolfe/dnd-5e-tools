@@ -4,6 +4,7 @@ import { ClassList } from "./class-list";
 export const Ranger: ClassModels.Class = new ClassModels.Class({
     name: "Ranger",
     primaryStat: "DEX",
+    hitDie: 10,
     savingThrows: ["DEX", "WIS"],
     archetypeName: { singular: "Ranger Archetype", plural: "Ranger Archetypes" },
     reference: { source: "PHB", page: 89, url: "https://www.dndbeyond.com/characters/classes/ranger" },

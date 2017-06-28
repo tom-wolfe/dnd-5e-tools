@@ -40,7 +40,6 @@ export class Character {
     flaw: string;
     gender: string;
     height: number;
-    hitDie = 8;
     ideal: string;
     readonly languages: Languages.Language[] = [];
     level: Level;
@@ -165,7 +164,7 @@ export class Character {
     get hitPointFormula(): string {
         const conBonus = this.abilities.getModifier("CON") * this.level.number;
         const conSign = (conBonus >= 0) ? "+" : "-";
-        return `${this.level.number}d${this.hitDie} ${conSign} ${Math.abs(conBonus)}`;
+        return `${this.level.number}d${this.class.hitDie} ${conSign} ${Math.abs(conBonus)}`;
     }
 
     get heightDescription(): string {

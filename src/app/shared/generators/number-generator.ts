@@ -10,7 +10,7 @@ export class NumberGenerator {
 
     rollDice(sides: number, times: number): number[] {
         const retVal: number[] = new Array();
-        for (let n = 1; n <= times; n++) {
+        for (let n = 0; n < times; n++) {
             retVal.push(this.rollDie(sides));
         }
         return retVal;

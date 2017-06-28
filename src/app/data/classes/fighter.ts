@@ -4,6 +4,7 @@ import { ClassList } from "./class-list";
 export const Fighter: ClassModels.Class = new ClassModels.Class({
     name: "Fighter",
     primaryStat: "STR",
+    hitDie: 10,
     savingThrows: ["STR", "CON"],
     archetypeName: { singular: "Martial Archetype", plural: "Martial Archetypes" },
     reference: { source: "PHB", page: 70, url: "https://www.dndbeyond.com/characters/classes/fighter" },

@@ -112,9 +112,7 @@ export abstract class BaseCharacterBuilder {
     }
 
     protected grantEquipment(character: Character, equipment: Equipment.Item[]) {
-        equipment.forEach(item => {
-            character.equipment.push(item);
-        })
+        character.equipment.push(...equipment);
     }
 
     protected applyFeature(character: Character, feature: Feature) {
