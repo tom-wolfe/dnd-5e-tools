@@ -8,10 +8,12 @@ export const HeavyCrossbow: Equipment.Weapon = new Equipment.Weapon({
         Equipment.WeaponProperty.Ammunition,
         Equipment.WeaponProperty.Heavy,
         Equipment.WeaponProperty.Loading,
-        Equipment.WeaponProperty.TwoHanded
+        Equipment.WeaponProperty.TwoHanded,
+        Equipment.WeaponProperty.Ranged
     ],
     damageType: Equipment.DamageType.Piercing,
-    damageDice: "1d10"
+    damageDice: "1d10",
+    range: { from: 100, to: 400 }
 });
 
 WeaponList.push(HeavyCrossbow);

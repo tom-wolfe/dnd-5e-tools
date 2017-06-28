@@ -1,8 +1,3 @@
-import * as Data from "app/data/";
-import * as Languages from "app/models/languages";
-import * as _ from "lodash";
-import * as Armor from "app/data/armor";
-
 import { Character } from "../../models/characters/character";
 import { AbilityBuilder } from "./ability-builder";
 import { AttributeBuilder } from "./attribute-builder";

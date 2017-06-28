@@ -1,7 +1,9 @@
 import * as Characters from "app/models/characters";
 
-export abstract class Descriptor<T> {
-    abstract describe(object: T): string;
+import { Descriptor } from "./descriptor";
+
+export abstract class CharacterDescriptor extends Descriptor<Characters.Character> {
+    abstract describe(object: Characters.Character): string;
 
     getBand(value: number, lower: number, upper: number, bands: number): number {
         const bandSize = (upper - lower) / bands;

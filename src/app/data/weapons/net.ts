@@ -6,7 +6,8 @@ export const Net: Equipment.Weapon = new Equipment.Weapon({
     type: Equipment.WeaponType.Martial,
     properties: [Equipment.WeaponProperty.Special, Equipment.WeaponProperty.Thrown],
     damageType: Equipment.DamageType.Bludgeoning,
-    damageDice: ""
+    damageDice: "",
+    range: { from: 5, to: 15 }
 });
 
 WeaponList.push(Net);

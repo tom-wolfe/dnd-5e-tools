@@ -6,7 +6,8 @@ export const Handaxe: Equipment.Weapon = new Equipment.Weapon({
     type: Equipment.WeaponType.Simple,
     properties: [Equipment.WeaponProperty.Light, Equipment.WeaponProperty.Thrown],
     damageType: Equipment.DamageType.Slashing,
-    damageDice: "1d6"
+    damageDice: "1d6",
+    range: { from: 20, to: 60 }
 });
 
 WeaponList.push(Handaxe);
