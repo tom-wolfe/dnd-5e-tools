@@ -32,6 +32,8 @@ export class Character {
     classArchetype: Classes.Archetype;
     readonly damageResistances: Equipment.DamageType[] = [];
     readonly equipment: Equipment.Item[] = [];
+    equippedArmor: Equipment.Armor;
+    equippedShield: Equipment.Armor;
     readonly features: Features.Feature[] = [];
     flaw: string;
     gender: string;
@@ -143,7 +145,7 @@ export class Character {
             retVal.push({
                 name: weapon.name,
                 description:
-                    `${type} Weapon Attack: ${hitBonus} to hit, reach ${reach} ft., one target. Hit: ${damage} ${damageType} damage.`,
+                `${type} Weapon Attack: ${hitBonus} to hit, reach ${reach} ft., one target. Hit: ${damage} ${damageType} damage.`,
                 type: FeatureType.Active
             });
         })
@@ -172,7 +174,25 @@ export class Character {
     }
 
     get armorClass(): number {
-        return this.baseArmorClass + this.abilities.getModifier("DEX");
+        const dexMod = this.abilities.getModifier("DEX");
+        let ac = this.baseArmorClass + dexMod;
+        if (this.equippedArmor) {
+            ac = this.equippedArmor.ac;
+            if (this.equippedArmor.plusDex) {
+                switch (this.equippedArmor.type) {
+                    case Equipment.ArmorType.Light:
+                        ac += this.abilities.getModifier("DEX");
+                        break;
+                    case Equipment.ArmorType.Medium:
+                        ac += Math.min(this.abilities.getModifier("DEX"), 2);
+                        break;
+                }
+            }
+        }
+        if (this.equippedShield) {
+            ac += this.equippedShield.ac;
+        }
+        return ac;
     }
 
     get damageResistancesString(): string {
@@ -183,8 +203,12 @@ export class Character {
         return _.join(this.equipment.map(x => x.name).sort(), ", ") || "[None]";
     }
 
-    get equippedArmor(): string {
-        return "natural armor";
+    get equippedArmorString(): string {
+        let armor = this.equippedArmor ? this.equippedArmor.name : "natural armor";
+        if (this.equippedShield) {
+            armor += " + " + this.equippedShield.name;
+        }
+        return armor;
     }
 
     get genderDescription(): string {

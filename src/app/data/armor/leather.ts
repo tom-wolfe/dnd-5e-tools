@@ -1,11 +1,11 @@
 import * as Equipment from "../../models/equipment/";
 import { ArmorList } from "./armor-list";
 
-export const Padded: Equipment.Armor = new Equipment.Armor({
-    name: "Padded armor",
+export const Leather: Equipment.Armor = new Equipment.Armor({
+    name: "Leather armor",
     type: Equipment.ArmorType.Light,
     ac: 11, plusDex: true,
-    stealthDisadvantage: true
+    stealthDisadvantage: false,
 });
 
-ArmorList.push(Padded);
+ArmorList.push(Leather);
