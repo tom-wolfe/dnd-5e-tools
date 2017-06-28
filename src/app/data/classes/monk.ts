@@ -1,4 +1,11 @@
+import { Skills } from "app/data";
+import * as Weapons from "app/data/weapons";
+import * as _ from "lodash";
+
 import * as ClassModels from "../../models/classes";
+import { WeaponType } from "../../models/equipment";
+import { ArtisanToolList } from "../artisan-tools";
+import { InstrumentList } from "../instruments";
 import { ClassList } from "./class-list";
 
 export const Monk: ClassModels.Class = new ClassModels.Class({
@@ -6,6 +13,13 @@ export const Monk: ClassModels.Class = new ClassModels.Class({
     primaryStat: "DEX",
     hitDie: 8,
     savingThrows: ["STR", "DEX"],
+    armorProficiencies: [],
+    weaponProficiencies: [{ proficiencies: [...Weapons.WeaponList.filter(w => w.type === WeaponType.Simple), Weapons.Shortsword] }],
+    toolProficiencies: [{ proficiencies: _.union(ArtisanToolList, InstrumentList), count: 1 }],
+    skillProficiencies: [{
+        proficiencies: [Skills.Acrobatics, Skills.Athletics, Skills.History, Skills.Insight, Skills.Religion, Skills.Stealth], count: 2
+    }],
+    otherProficiencies: [],
     archetypeName: { singular: "Monastic Tradition", plural: "Monastic Traditions" },
     reference: { source: "PHB", page: 76, url: "https://www.dndbeyond.com/characters/classes/monk" },
     archetypes: [

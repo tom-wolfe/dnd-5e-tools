@@ -1,10 +1,23 @@
 import * as ClassModels from "../../models/classes";
+import { ArmorType } from "../../models/equipment";
+import { WeaponList } from "../weapons";
 import { ClassList } from "./class-list";
+import { Skills } from "app/data";
 
 export const Barbarian: ClassModels.Class = new ClassModels.Class({
     name: "Barbarian",
     primaryStat: "STR",
     hitDie: 12,
+    armorProficiencies: [{ proficiencies: [ArmorType.Light, ArmorType.Medium, ArmorType.Shield] }],
+    weaponProficiencies: [{ proficiencies: WeaponList }],
+    toolProficiencies: [],
+    skillProficiencies: [
+        {
+            proficiencies: [Skills.AnimalHandling, Skills.Athletics, Skills.Intimidation, Skills.Nature,
+            Skills.Perception, Skills.Survival], count: 2
+        },
+    ],
+    otherProficiencies: [],
     savingThrows: ["STR", "CON"],
     archetypeName: { singular: "Primal Path", plural: "Primal Paths" },
     reference: { source: "PHB", page: 46, url: "https://www.dndbeyond.com/characters/classes/barbarian" },

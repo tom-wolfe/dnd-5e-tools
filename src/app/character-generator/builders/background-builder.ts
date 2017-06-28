@@ -61,8 +61,6 @@ export class BackgroundBuilder extends BaseCharacterBuilder {
     }
 
     private randomizeEquipment(character: Character) {
-        // TODO: Remove.
-        if (!character.background.equipment) { return; }
         character.background.equipment.forEach(option => {
             this.grantEquipmentOption(character, option);
         })

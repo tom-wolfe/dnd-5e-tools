@@ -37,7 +37,9 @@ export abstract class BaseCharacterBuilder {
     }
 
     protected grantProficiency<T>(existing: Proficiencies.Proficiency<T>[], thing: T, type: Proficiencies.ProficiencyType): void {
-        existing.push(new Proficiencies.Proficiency<T>(thing, type));
+        if (!_.includes(existing.map(p => p.thing), thing)) {
+            existing.push(new Proficiencies.Proficiency<T>(thing, type));
+        }
     }
 
     protected grantRandomProficiency<T>(

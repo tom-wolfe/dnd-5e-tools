@@ -1,3 +1,6 @@
+import { Skills } from "app/data";
+import * as Weapons from "app/data/weapons";
+
 import * as ClassModels from "../../models/classes";
 import { ClassList } from "./class-list";
 
@@ -6,6 +9,17 @@ export const Sorcerer: ClassModels.Class = new ClassModels.Class({
     primaryStat: "CHA",
     hitDie: 6,
     savingThrows: ["CHA", "CON"],
+    armorProficiencies: [],
+    weaponProficiencies: [{
+        proficiencies: [Weapons.Dagger, Weapons.Dart, Weapons.Sling, Weapons.Quarterstaff, Weapons.LightCrossbow]
+    }],
+    toolProficiencies: [],
+    skillProficiencies: [{
+        proficiencies: [
+            Skills.Arcana, Skills.Deception, Skills.Insight, Skills.Intimidation, Skills.Persuasion, Skills.Religion
+        ], count: 2
+    }],
+    otherProficiencies: [],
     archetypeName: { singular: "Sorcerous Origin", plural: "Sorcerous Origins" },
     reference: { source: "PHB", page: 99, url: "https://www.dndbeyond.com/characters/classes/sorcerer" },
     archetypes: [

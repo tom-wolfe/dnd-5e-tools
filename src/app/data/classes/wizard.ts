@@ -1,11 +1,25 @@
+import * as Weapons from "app/data/weapons";
+
 import * as ClassModels from "../../models/classes";
 import { ClassList } from "./class-list";
+import { Skills } from "app/data";
 
 export const Wizard: ClassModels.Class = new ClassModels.Class({
     name: "Wizard",
     primaryStat: "INT",
     hitDie: 6,
     savingThrows: ["INT", "WIS"],
+    armorProficiencies: [],
+    weaponProficiencies: [{
+        proficiencies: [Weapons.Dagger, Weapons.Dart, Weapons.Sling, Weapons.Quarterstaff, Weapons.LightCrossbow]
+    }],
+    toolProficiencies: [],
+    skillProficiencies: [{
+        proficiencies: [
+            Skills.Arcana, Skills.History, Skills.Insight, Skills.Investigation, Skills.Medicine, Skills.Religion
+        ], count: 2
+    }],
+    otherProficiencies: [],
     archetypeName: { singular: "Arcane Tradition", plural: "Arcane Traditions" },
     reference: { source: "PHB", page: 112, url: "https://www.dndbeyond.com/characters/classes/wizard" },
     archetypes: [

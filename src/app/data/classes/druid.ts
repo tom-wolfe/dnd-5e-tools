@@ -1,4 +1,9 @@
+import { Skills } from "app/data";
+import * as Tools from "app/data/tools";
+import * as Weapons from "app/data/weapons";
+
 import * as ClassModels from "../../models/classes";
+import { ArmorType } from "../../models/equipment";
 import { ClassList } from "./class-list";
 
 export const Druid: ClassModels.Class = new ClassModels.Class({
@@ -6,6 +11,21 @@ export const Druid: ClassModels.Class = new ClassModels.Class({
     primaryStat: "WIS",
     hitDie: 8,
     savingThrows: ["INT", "WIS"],
+    armorProficiencies: [{ proficiencies: [ArmorType.Light, ArmorType.Medium, ArmorType.Shield] }],
+    weaponProficiencies: [{
+        proficiencies: [
+            Weapons.Club, Weapons.Dagger, Weapons.Dart, Weapons.Javelin, Weapons.Mace, Weapons.Quarterstaff, Weapons.Scimitar,
+            Weapons.Sickle, Weapons.Sling, Weapons.Spear
+        ]
+    }],
+    toolProficiencies: [{ proficiencies: [Tools.HerbalismKit] }],
+    skillProficiencies: [{
+        proficiencies: [
+            Skills.Arcana, Skills.AnimalHandling, Skills.Insight, Skills.Medicine, Skills.Nature, Skills.Perception, Skills.Religion,
+            Skills.Survival
+        ], count: 2
+    }],
+    otherProficiencies: [],
     archetypeName: { singular: "Druid Circle", plural: "Druid Circles" },
     reference: { source: "PHB", page: 64, url: "https://www.dndbeyond.com/characters/classes/druid" },
     archetypes: [
