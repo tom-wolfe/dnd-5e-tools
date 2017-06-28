@@ -4,8 +4,7 @@ import { Languages } from "../languages";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
-export const Gnome: RaceModels.Race = new RaceModels.Race()
-Object.assign(Gnome, {
+export const Gnome: RaceModels.Race = new RaceModels.Race({
     name: "Gnome",
     size: "Small",
     speed: { walk: 25 },

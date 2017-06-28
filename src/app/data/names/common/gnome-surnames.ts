@@ -12,8 +12,8 @@ export const GnomeSurnames: { [index: string]: Names.NamePartDefinition } = {
             "N": [
                 "beech", "black", "blazing", "blessed", "blooming", "bright", "broad", "broken", "bronze", "dark", "deep", "diamond", "dim",
                 "dusk", "earth", "emerald", "flint", "gleaming", "gold", "golden", "golden", "grey", "grip", "grog", "hidden", "iron",
-                "light", "long", "minor", "oaken", "onyx", "pearl", "radiant", "ruby", "rune", "sapphire", "shadow", "shining", "silver",
-                "silver", "stone", "storm", "thunder", "twilight", "whispered", "wild", "wooden"
+                "light", "long", "minor", "oaken", "onyx", "pearl", "radiant", "ruby", "rune", "sapphire", "shadow", "shining", "silent",
+                "silver", "stone", "storm", "thunder", "trick", "twilight", "whispered", "wild", "wooden"
             ]
         },
     },

@@ -1,8 +1,7 @@
 import * as ClassModels from "../../models/classes";
 import { ClassList } from "./class-list";
 
-export const Paladin: ClassModels.Class = new ClassModels.Class();
-Object.assign(Paladin, {
+export const Paladin: ClassModels.Class = new ClassModels.Class({
     name: "Paladin",
     primaryStat: "STR",
     archetypeName: { singular: "Sacred Oath", plural: "Sacred Oaths" },

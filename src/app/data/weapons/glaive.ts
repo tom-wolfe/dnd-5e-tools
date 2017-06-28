@@ -1,8 +1,7 @@
 import * as Equipment from "../../models/equipment/";
 import { WeaponList } from "./weapon-list";
 
-export const Glaive: Equipment.Weapon = new Equipment.Weapon();
-Object.assign(Glaive, {
+export const Glaive: Equipment.Weapon = new Equipment.Weapon({
     name: "Glaive",
     type: Equipment.WeaponType.Martial,
     properties: [Equipment.WeaponProperty.Heavy, Equipment.WeaponProperty.Reach, Equipment.WeaponProperty.TwoHanded],

@@ -6,4 +6,5 @@ export class Armor extends Item {
     ac: number;
     plusDex: boolean;
     stealthDisadvantage: boolean;
+    constructor(initial: Armor) { super(null); Object.assign(this, initial); }
 };

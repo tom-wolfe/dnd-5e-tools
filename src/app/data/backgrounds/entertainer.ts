@@ -1,12 +1,13 @@
-import { Skills } from "../../data";
-import * as Tools from "app/data/tools";
 import { InstrumentList } from "app/data/instruments";
+import * as Tools from "app/data/tools";
+import * as Equipment from "app/models/equipment";
+
+import { Skills } from "../../data";
 import * as Characters from "../../models/characters";
 import { FeatureType } from "../../models/features/feature-type";
 import { BackgroundList } from "./background-list";
 
-export const Entertainer: Characters.Background = new Characters.Background();
-Object.assign(Entertainer, {
+export const Entertainer: Characters.Background = new Characters.Background({
     name: "Entertainer",
     reference: { source: "PHB", page: 130, url: "" },
     languages: {},
@@ -14,6 +15,13 @@ Object.assign(Entertainer, {
     toolProficiencies: [
         { proficiencies: [Tools.DisguiseKit] },
         { proficiencies: InstrumentList, count: 1 }
+    ],
+    money: new Equipment.Money({ platinum: 0, gold: 15, silver: 0, copper: 0 }),
+    equipment: [
+        { items: [[{ name: "fine clothes" }, { name: "costume" }]] },
+        { items: InstrumentList.map(i => [i]), count: 1 },
+        // TODO: Allow to generate random trinket.
+        { items: [[{ name: "love letter" }], [{ name: "lock of hair" }], [{ name: "trinket" }]], count: 1 },
     ],
     features: [{
         name: "By Popular Demand",

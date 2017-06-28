@@ -1,8 +1,7 @@
 import * as ClassModels from "../../models/classes";
 import { ClassList } from "./class-list";
 
-export const Druid: ClassModels.Class = new ClassModels.Class();
-Object.assign(Druid, {
+export const Druid: ClassModels.Class = new ClassModels.Class({
     name: "Druid",
     primaryStat: "WIS",
     archetypeName: { singular: "Druid Circle", plural: "Druid Circles" },

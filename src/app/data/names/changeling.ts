@@ -5,8 +5,7 @@ import { NameList } from "./name-list";
 
 /* Adapted from http://www.fantasynamegenerators.com/dnd-changeling-names.php */
 
-export const Changeling: Names.NameDefinition = new Names.NameDefinition()
-Object.assign(Changeling, {
+export const Changeling: Names.NameDefinition = new Names.NameDefinition({
     name: "Changeling",
     formats: [{ name: "Forename", formats: ["{name}"] }],
     parts: {

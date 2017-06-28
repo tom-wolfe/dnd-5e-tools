@@ -7,8 +7,7 @@ import * as RaceModels from "../../models/races";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
-export const Aasimar: RaceModels.Race = new RaceModels.Race()
-Object.assign(Aasimar, {
+export const Aasimar: RaceModels.Race = new RaceModels.Race({
     name: "Aasimar",
     size: "Medium",
     speed: { walk: 30 },

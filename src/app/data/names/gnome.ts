@@ -6,8 +6,7 @@ import { NameList } from "./name-list";
 
 /* Adapted from http://www.fantasynamegenerators.com/dnd-gnome-names.php */
 
-export const Gnome: Names.NameDefinition = new Names.NameDefinition()
-Object.assign(Gnome, {
+export const Gnome: Names.NameDefinition = new Names.NameDefinition({
     name: "Gnome",
     formats: [
         {
@@ -31,7 +30,7 @@ Object.assign(Gnome, {
                 ],
                 "F": [
                     "alu", "ari", "ban", "bree", "car", "cel", "daphi", "do", "eili", "el", "fae", "fen", "fol", "gal", "gren", "hel",
-                    "hes", "ina", "iso", "jel", "jo", "klo", "kri", "lil", "lori", "min", "my", "ni", "ny", "oda", "or", "phi", "pri",
+                    "hes", "ina", "iso", "jel", "jo", "klo", "kri", "lil", "lori", "min", "my", "ni", "ny", "oda", "or", "phi", "pi", "pri",
                     "qi", "que", "re", "rosi", "sa", "sel", "spi", "ta", "tifa", "tri", "ufe", "uri", "ven", "vo", "wel", "wro", "xa",
                     "xyro", "ylo", "yo", "zani", "zin"
                 ]

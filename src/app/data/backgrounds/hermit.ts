@@ -1,16 +1,27 @@
+import * as Equipment from "app/models/equipment";
+
 import { Skills } from "../../data";
 import * as Characters from "../../models/characters";
 import { FeatureType } from "../../models/features/feature-type";
 import * as Tools from "../tools";
 import { BackgroundList } from "./background-list";
 
-export const Hermit: Characters.Background = new Characters.Background();
-Object.assign(Hermit, {
+export const Hermit: Characters.Background = new Characters.Background({
     name: "Hermit",
     reference: { source: "PHB", page: 134, url: "" },
     languages: { other: 1 },
     skillProficiencies: [{ proficiencies: [Skills.Medicine, Skills.Religion] }],
     toolProficiencies: [{ proficiencies: [Tools.HerbalismKit] }],
+    money: new Equipment.Money({ platinum: 0, gold: 5, silver: 0, copper: 0 }),
+    equipment: [
+        {
+            items: [[
+                Tools.HerbalismKit,
+                { name: "scroll case full of notes" },
+                { name: "common clothes" },
+                { name: "winter blanket" }]]
+        },
+    ],
     features: [{
         name: "Discovery",
         type: FeatureType.Passive,

@@ -31,6 +31,7 @@ export class Character {
     class: Classes.Class;
     classArchetype: Classes.Archetype;
     readonly damageResistances: Equipment.DamageType[] = [];
+    readonly equipment: Equipment.Item[] = [];
     readonly features: Features.Feature[] = [];
     flaw: string;
     gender: string;
@@ -131,6 +132,10 @@ export class Character {
 
     get damageResistancesString(): string {
         return _.join(this.damageResistances.map(x => Equipment.DamageType[x].toString()), ", ") || "[None]";
+    }
+
+    get equipmentString(): string {
+        return _.join(this.equipment.map(x => x.name).sort(), ", ") || "[None]";
     }
 
     get equippedArmor(): string {

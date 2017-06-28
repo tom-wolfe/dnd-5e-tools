@@ -10,8 +10,7 @@ import { CommonFeatures } from "../common-features";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
-export const Dwarf: RaceModels.Race = new RaceModels.Race()
-Object.assign(Dwarf, {
+export const Dwarf: RaceModels.Race = new RaceModels.Race({
     name: "Dwarf",
     size: "Medium",
     speed: { walk: 25 },

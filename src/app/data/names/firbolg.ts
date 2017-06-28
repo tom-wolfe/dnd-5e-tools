@@ -4,8 +4,7 @@ import { NameList } from "./name-list";
 
 /* cSpell:disable */
 
-export const Firbolg: Names.NameDefinition = new Names.NameDefinition()
-Object.assign(Firbolg, {
+export const Firbolg: Names.NameDefinition = new Names.NameDefinition({
     name: "Firbolg",
     formats: [
         {

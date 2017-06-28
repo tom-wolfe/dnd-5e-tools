@@ -1,14 +1,27 @@
+import * as Equipment from "app/models/equipment";
+
 import { Skills } from "../../data";
 import * as Characters from "../../models/characters";
 import { FeatureType } from "../../models/features/feature-type";
 import { BackgroundList } from "./background-list";
 
-export const Sage: Characters.Background = new Characters.Background();
-Object.assign(Sage, {
+export const Sage: Characters.Background = new Characters.Background({
     name: "Sage",
     reference: { source: "PHB", page: 137, url: "https://www.dndbeyond.com/characters/backgrounds/sage" },
     languages: { other: 2 },
     skillProficiencies: [{ proficiencies: [Skills.Arcana, Skills.History] }],
+    money: new Equipment.Money({ platinum: 0, gold: 10, silver: 0, copper: 0 }),
+    equipment: [
+        {
+            items: [[
+                { name: "small knife" },
+                { name: "letter from dead colleague asking an unanswered question" },
+                { name: "bottle of black ink" },
+                { name: "quill" },
+                { name: "common clothes" }
+            ]]
+        }
+    ],
     features: [{
         name: "Researcher",
         type: FeatureType.Passive,

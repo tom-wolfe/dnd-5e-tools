@@ -2,35 +2,13 @@
 
 export const ExportTemplate =
   `# {{name}}
-### {{class.name}} ({{classArchetype.name}})
-##### {{genderDescription}} {{raceDescription}}
-
->____
-> ##### Information
-> Alignment: {{alignmentDescription}}<br>
-> Size: {{race.size}}<br>
-> Age: {{ageDescription}} **({{ageClassification}})**<br>
-> Height: {{heightDescription}} **({{heightClassification}})**<br>
-> Weight: {{weightDescription}} **({{weightClassification}})**<br>
-
-<div class='descriptive'>
-##### Background: {{background.name}}
-<br>
-***Trait.*** {{personalityTrait}}
-<br>
-***Ideal.*** {{ideal}}
-<br>
-***Bond.*** {{bond}}
-<br>
-***Flaw.*** {{flaw}}
-</div>
-
-\`\`\`
-\`\`\`
 
 ___
+___
 > ## {{name}}
->*{{race.size}} {{race.type}}, {{alignmentDescription}}*
+> ##### {{class.name}} {{#classArchetype}}({{classArchetype.name}}){{/classArchetype}}
+> *{{genderDescription}} {{raceDescription}}*<br>
+> *{{race.size}} {{race.type}}, {{alignmentDescription}}*
 > ___
 > - **Level** {{level.number}}
 > - **Proficiency Bonus** +{{level.proficiencyBonus}}
@@ -52,6 +30,8 @@ ___
 > - **Tool Proficiencies** {{toolProficiencyString}}
 > - **Other Proficiencies** {{otherProficiencyString}}
 > ___
+> - **Equipment** {{equipmentString}}
+> ___
 {{#otherFeatures}}
 > ***{{name}}. *** {{description}}
 > 
@@ -60,6 +40,30 @@ ___
 {{#activeFeatures}}
 > ***{{name}}. *** {{description}}
 {{/activeFeatures}}
+
+<br>
+>____
+> ##### Information
+> Alignment: {{alignmentDescription}}<br>
+> Size: {{race.size}}<br>
+> Age: {{ageDescription}} **({{ageClassification}})**<br>
+> Height: {{heightDescription}} **({{heightClassification}})**<br>
+> Weight: {{weightDescription}} **({{weightClassification}})**<br>
+
+\`\`\`
+\`\`\`
+
+<div class='descriptive'>
+##### Background: {{background.name}}
+<br>
+***Trait.*** {{personalityTrait}}
+<br>
+***Ideal.*** {{ideal}}
+<br>
+***Bond.*** {{bond}}
+<br>
+***Flaw.*** {{flaw}}
+</div>
 
 <style>
   /* Printer Friendly A4 */

@@ -5,8 +5,7 @@ import { NameList } from "./name-list";
 
 /* Partially adapted from http://www.angelfire.com/rpg2/vortexshadow/names.html */
 
-export const Drow: Names.NameDefinition = new Names.NameDefinition()
-Object.assign(Drow, {
+export const Drow: Names.NameDefinition = new Names.NameDefinition({
     name: "Elf (Drow)",
     formats: [
         {

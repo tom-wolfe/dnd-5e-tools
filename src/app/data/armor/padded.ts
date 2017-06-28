@@ -1,8 +1,7 @@
 import * as Equipment from "../../models/equipment/";
 import { ArmorList } from "./armor-list";
 
-export const Padded: Equipment.Armor = new Equipment.Armor();
-Object.assign(Padded, {
+export const Padded: Equipment.Armor = new Equipment.Armor({
     name: "Padded",
     type: Equipment.ArmorType.Light,
     ac: 11, plusDex: true,

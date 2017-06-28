@@ -5,8 +5,7 @@ import * as RaceModels from "app/models/races";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
-export const Changeling: RaceModels.Race = new RaceModels.Race()
-Object.assign(Changeling, {
+export const Changeling: RaceModels.Race = new RaceModels.Race({
     name: "Changeling",
     size: "Medium",
     speed: { walk: 30 },

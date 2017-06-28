@@ -1,8 +1,7 @@
 import * as Equipment from "../../models/equipment/";
 import { WeaponList } from "./weapon-list";
 
-export const Halberd: Equipment.Weapon = new Equipment.Weapon();
-Object.assign(Halberd, {
+export const Halberd: Equipment.Weapon = new Equipment.Weapon({
     name: "Halberd",
     type: Equipment.WeaponType.Martial,
     properties: [Equipment.WeaponProperty.Heavy, Equipment.WeaponProperty.Reach, Equipment.WeaponProperty.TwoHanded],

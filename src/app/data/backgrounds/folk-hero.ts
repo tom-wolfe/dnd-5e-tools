@@ -1,18 +1,24 @@
-import { Skills } from "../../data";
 import { ArtisanToolList } from "app/data/artisan-tools";
 import * as Vehicles from "app/data/vehicles";
+import * as Equipment from "app/models/equipment";
+
+import { Skills } from "../../data";
 import * as Characters from "../../models/characters";
 import { FeatureType } from "../../models/features/feature-type";
 import { BackgroundList } from "./background-list";
 
-export const FolkHero: Characters.Background = new Characters.Background();
-Object.assign(FolkHero, {
+export const FolkHero: Characters.Background = new Characters.Background({
     name: "Folk Hero",
     reference: { source: "PHB", page: 131, url: "https://www.dndbeyond.com/characters/backgrounds/folk-hero" },
     languages: {},
     skillProficiencies: [{ proficiencies: [Skills.AnimalHandling, Skills.Survival] }],
     toolProficiencies: [{ proficiencies: ArtisanToolList, count: 1 }],
     otherProficiencies: [{ proficiencies: [Vehicles.LandVehicles] }],
+    money: new Equipment.Money({ platinum: 0, gold: 10, silver: 0, copper: 0 }),
+    equipment: [
+        { items: ArtisanToolList.map(i => [i]), count: 1 },
+        { items: [[{ name: "shovel" }, { name: "iron pot" }, { name: "common clothes" }]] },
+    ],
     features: [{
         name: "Rustic Hospitality",
         type: FeatureType.Passive,

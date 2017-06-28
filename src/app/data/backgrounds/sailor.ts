@@ -1,19 +1,26 @@
 import * as Vehicles from "app/data/vehicles";
+import * as Equipment from "app/models/equipment";
 
 import { Skills } from "../../data";
 import * as Characters from "../../models/characters";
 import { FeatureType } from "../../models/features/feature-type";
 import { NavigatorsTools } from "../tools";
 import { BackgroundList } from "./background-list";
+import * as Weapons from "app/data/weapons";
 
-export const Sailor: Characters.Background = new Characters.Background();
-Object.assign(Sailor, {
+export const Sailor: Characters.Background = new Characters.Background({
     name: "Sailor",
     reference: { source: "PHB", page: 139, url: "" },
     languages: {},
     skillProficiencies: [{ proficiencies: [Skills.Athletics, Skills.Perception] }],
     toolProficiencies: [{ proficiencies: [NavigatorsTools] },],
     otherProficiencies: [{ proficiencies: [Vehicles.WaterVehicles] }],
+    money: new Equipment.Money({ platinum: 0, gold: 10, silver: 0, copper: 0 }),
+    equipment: [
+        { items: [[Weapons.Club, { name: "50 ft. silk rope" }, { name: "common clothes" }]] },
+        // TODO: Replace with real trinket.
+        { items: [[{ name: "lucky charm" }], [{ name: "trinket" }]], count: 1 },
+    ],
     features: [{
         name: "Ship's Passage",
         type: FeatureType.Passive,

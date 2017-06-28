@@ -1,8 +1,7 @@
 import * as Equipment from "../../models/equipment/";
 import { WeaponList } from "./weapon-list";
 
-export const Pike: Equipment.Weapon = new Equipment.Weapon();
-Object.assign(Pike, {
+export const Pike: Equipment.Weapon = new Equipment.Weapon({
     name: "Pike",
     type: Equipment.WeaponType.Martial,
     properties: [Equipment.WeaponProperty.Heavy, Equipment.WeaponProperty.Reach, Equipment.WeaponProperty.TwoHanded],

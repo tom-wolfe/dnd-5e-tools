@@ -3,8 +3,7 @@ import { NameList } from "./name-list";
 
 /* cSpell:disable */
 
-export const YuanTi: Names.NameDefinition = new Names.NameDefinition()
-Object.assign(YuanTi, {
+export const YuanTi: Names.NameDefinition = new Names.NameDefinition({
     name: "Yuan-ti",
     formats: [{ name: "Forename", formats: ["{name}"] }],
     parts: {

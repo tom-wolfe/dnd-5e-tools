@@ -1,16 +1,22 @@
+import * as Equipment from "app/models/equipment";
+
 import { Skills } from "../../data";
 import * as Characters from "../../models/characters";
 import { FeatureType } from "../../models/features/feature-type";
 import { ArtisanToolList } from "../artisan-tools";
 import { BackgroundList } from "./background-list";
 
-export const GuildArtisan: Characters.Background = new Characters.Background();
-Object.assign(GuildArtisan, {
+export const GuildArtisan: Characters.Background = new Characters.Background({
     name: "Guild Artisan",
     reference: { source: "PHB", page: 132, url: "" },
     languages: { other: 1 },
     skillProficiencies: [{ proficiencies: [Skills.Insight, Skills.Persuasion] }],
     toolProficiencies: [{ proficiencies: ArtisanToolList, count: 1 }],
+    money: new Equipment.Money({ platinum: 0, gold: 15, silver: 0, copper: 0 }),
+    equipment: [
+        { items: [[{ name: "letter of introduction from your guild" }, { name: "traveler's clothes" }]] },
+        { items: ArtisanToolList.map(i => [i]), count: 1 },
+    ],
     features: [{
         name: "Guild Membership",
         type: FeatureType.Passive,

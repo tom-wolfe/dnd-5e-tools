@@ -1,8 +1,7 @@
 import * as Equipment from "../../models/equipment/";
 import { WeaponList } from "./weapon-list";
 
-export const Dart: Equipment.Weapon = new Equipment.Weapon();
-Object.assign(Dart, {
+export const Dart: Equipment.Weapon = new Equipment.Weapon({
     name: "Dart",
     type: Equipment.WeaponType.Simple,
     properties: [Equipment.WeaponProperty.Finesse, Equipment.WeaponProperty.Thrown],

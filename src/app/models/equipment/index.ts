@@ -2,6 +2,8 @@ export * from "./armor";
 export * from "./armor-type";
 export * from "./item";
 export * from "./damage-type";
+export * from "./equipment-option";
+export * from "./money";
 export * from "./weapon";
 export * from "./weapon-property";
 export * from "./weapon-type";

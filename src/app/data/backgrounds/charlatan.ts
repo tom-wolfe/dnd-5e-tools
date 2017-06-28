@@ -1,19 +1,28 @@
+import * as Equipment from "app/models/equipment";
+
 import { Skills } from "../../data";
 import * as Characters from "../../models/characters";
 import { FeatureType } from "../../models/features/feature-type";
 import * as Tools from "../tools";
 import { BackgroundList } from "./background-list";
 
-export const Charlatan: Characters.Background = new Characters.Background();
-Object.assign(Charlatan, {
+export const Charlatan: Characters.Background = new Characters.Background({
     name: "Charlatan",
     reference: { source: "PHB", page: 128 },
     languages: {},
-    skillProficiencies: [
-        { proficiencies: [Skills.Deception, Skills.SleightOfHand] }
-    ],
-    toolProficiencies: [
-        { proficiencies: [Tools.DisguiseKit, Tools.ForgeryKit] }
+    skillProficiencies: [{ proficiencies: [Skills.Deception, Skills.SleightOfHand] }],
+    toolProficiencies: [{ proficiencies: [Tools.DisguiseKit, Tools.ForgeryKit] }],
+    money: new Equipment.Money({ platinum: 0, gold: 15, silver: 0, copper: 0 }),
+    equipment: [
+        { items: [[Tools.DisguiseKit, { name: "fine clothes" }]] },
+        {
+            items: [
+                [{ name: "10 stoppered bottles filled with colored liquid" }],
+                [{ name: "weighted dice" }],
+                [{ name: "deck of marked cards" }],
+                [{ name: "signet ring of an imaginary duke" }]],
+            count: 1
+        }
     ],
     features: [{
         name: "Favorite False Identity",

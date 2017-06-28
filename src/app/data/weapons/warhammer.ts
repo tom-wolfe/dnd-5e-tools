@@ -1,8 +1,7 @@
 import * as Equipment from "../../models/equipment/";
 import { WeaponList } from "./weapon-list";
 
-export const Warhammer: Equipment.Weapon = new Equipment.Weapon();
-Object.assign(Warhammer, {
+export const Warhammer: Equipment.Weapon = new Equipment.Weapon({
     name: "Warhammer",
     type: Equipment.WeaponType.Martial,
     properties: [Equipment.WeaponProperty.Versatile],

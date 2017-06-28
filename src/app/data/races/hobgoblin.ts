@@ -8,8 +8,7 @@ import { ArmorType } from "../../models/equipment/armor-type";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
-export const Hobgoblin: RaceModels.Race = new RaceModels.Race()
-Object.assign(Hobgoblin, {
+export const Hobgoblin: RaceModels.Race = new RaceModels.Race({
     name: "Hobgoblin",
     size: "Medium",
     speed: { walk: 30 },

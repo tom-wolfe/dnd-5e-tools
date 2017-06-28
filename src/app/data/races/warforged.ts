@@ -5,8 +5,7 @@ import * as RaceModels from "../../models/races";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
-export const Warforged: RaceModels.Race = new RaceModels.Race()
-Object.assign(Warforged, {
+export const Warforged: RaceModels.Race = new RaceModels.Race({
     name: "Warforged",
     size: "Medium",
     speed: { walk: 30 },

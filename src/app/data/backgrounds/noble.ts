@@ -1,16 +1,21 @@
+import * as Equipment from "app/models/equipment";
+
 import { Skills } from "../../data";
 import * as Characters from "../../models/characters";
 import { FeatureType } from "../../models/features/feature-type";
 import { GamingSetList } from "../gaming-sets";
 import { BackgroundList } from "./background-list";
 
-export const Noble: Characters.Background = new Characters.Background();
-Object.assign(Noble, {
+export const Noble: Characters.Background = new Characters.Background({
     name: "Noble",
     reference: { source: "PHB", page: 131, url: "https://www.dndbeyond.com/characters/backgrounds/noble" },
     languages: { other: 1 },
     skillProficiencies: [{ proficiencies: [Skills.History, Skills.Persuasion] }],
     toolProficiencies: [{ proficiencies: GamingSetList, count: 1 }],
+    money: new Equipment.Money({ platinum: 0, gold: 25, silver: 0, copper: 0 }),
+    equipment: [
+        { items: [[{ name: "fine clothes" }, { name: "signet ring" }, { name: "scroll of pedigree" }]] }
+    ],
     features: [{
         name: "Position of Privilege",
         type: FeatureType.Passive,

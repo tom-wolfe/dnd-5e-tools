@@ -1,13 +1,13 @@
 import { Skills } from "app/data";
-import * as Tools from "app/data/tools";
 import { GamingSetList } from "app/data/gaming-sets";
+import * as Tools from "app/data/tools";
 import * as Characters from "app/models/characters";
+import * as Equipment from "app/models/equipment";
 import { FeatureType } from "app/models/features/feature-type";
 
 import { BackgroundList } from "./background-list";
 
-export const Criminal: Characters.Background = new Characters.Background();
-Object.assign(Criminal, {
+export const Criminal: Characters.Background = new Characters.Background({
     name: "Criminal",
     reference: { source: "PHB", page: 129, url: "" },
     languages: {},
@@ -15,6 +15,10 @@ Object.assign(Criminal, {
     toolProficiencies: [
         { proficiencies: [Tools.ThievesTools] },
         { proficiencies: GamingSetList, count: 1 }
+    ],
+    money: new Equipment.Money({ platinum: 0, gold: 15, silver: 0, copper: 0 }),
+    equipment: [
+        { items: [[{ name: "crowbar" }, { name: "dark common clothes with hood" }]] }
     ],
     features: [{
         name: "Criminal Contact",

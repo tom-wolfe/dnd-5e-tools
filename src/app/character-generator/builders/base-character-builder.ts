@@ -4,6 +4,7 @@ import { Feature, FeatureType } from "app/models/features";
 import { Language } from "app/models/languages";
 import * as Proficiencies from "app/models/proficiencies";
 import { NumberGenerator } from "app/shared/generators";
+import * as Equipment from "app/models/equipment";
 import * as _ from "lodash";
 
 import { CharacterBuilderConfig } from "./character-builder-config";
@@ -74,6 +75,27 @@ export abstract class BaseCharacterBuilder {
         } else {
             character.languages.push(language);
         }
+    }
+
+    protected grantEquipmentOption(character: Character, option: Equipment.EquipmentOption) {
+        if (!option.count) {
+            option.items.forEach(items => {
+                this.grantEquipment(character, items);
+            })
+        } else {
+            const items: Equipment.Item[][] = _.clone(option.items);
+            for(let x = 0; x < option.count; x++) {
+                const index = this.numGen.rollDie(items.length) - 1;
+                this.grantEquipment(character, items[index]);
+                items.splice(index, 1);
+            }
+        }
+    }
+
+    protected grantEquipment(character: Character, equipment: Equipment.Item[]) {
+        equipment.forEach(item => {
+            character.equipment.push(item);
+        })
     }
 
     protected applyFeature(character: Character, feature: Feature) {

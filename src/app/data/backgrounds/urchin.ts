@@ -3,14 +3,26 @@ import * as Characters from "../../models/characters";
 import { FeatureType } from "../../models/features/feature-type";
 import * as Tools from "../tools";
 import { BackgroundList } from "./background-list";
+import * as Equipment from "app/models/equipment";
 
-export const Urchin: Characters.Background = new Characters.Background();
-Object.assign(Urchin, {
+export const Urchin: Characters.Background = new Characters.Background({
     name: "Urchin",
     reference: { source: "PHB", page: 141, url: "" },
     languages: {},
     skillProficiencies: [{ proficiencies: [Skills.SleightOfHand, Skills.Stealth] }],
     toolProficiencies: [{ proficiencies: [Tools.DisguiseKit, Tools.ThievesTools] }],
+    money: new Equipment.Money({ platinum: 0, gold: 10, silver: 0, copper: 0 }),
+    equipment: [
+        {
+            items: [[
+                { name: "small knife" },
+                { name: "city map" },
+                { name: "pet mouse" },
+                { name: "token to remember your parents by" },
+                { name: "common clothes" },
+            ]]
+        },
+    ],
     features: [{
         name: "City Secrets",
         type: FeatureType.Passive,

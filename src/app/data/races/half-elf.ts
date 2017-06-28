@@ -6,8 +6,7 @@ import { CommonFeatures } from "../common-features";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
-export const HalfElf: RaceModels.Race = new RaceModels.Race()
-Object.assign(HalfElf, {
+export const HalfElf: RaceModels.Race = new RaceModels.Race({
     name: "Half-elf",
     size: "Medium",
     speed: { walk: 30 },

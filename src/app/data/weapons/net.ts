@@ -1,8 +1,7 @@
 import * as Equipment from "../../models/equipment/";
 import { WeaponList } from "./weapon-list";
 
-export const Net: Equipment.Weapon = new Equipment.Weapon();
-Object.assign(Net, {
+export const Net: Equipment.Weapon = new Equipment.Weapon({
     name: "Net",
     type: Equipment.WeaponType.Martial,
     properties: [Equipment.WeaponProperty.Special, Equipment.WeaponProperty.Thrown],

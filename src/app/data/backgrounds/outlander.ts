@@ -1,16 +1,22 @@
+import * as Equipment from "app/models/equipment";
+
 import { Skills } from "../../data";
 import * as Characters from "../../models/characters";
 import { FeatureType } from "../../models/features/feature-type";
 import { InstrumentList } from "../instruments";
+import * as Weapons from "../weapons";
 import { BackgroundList } from "./background-list";
 
-export const Outlander: Characters.Background = new Characters.Background();
-Object.assign(Outlander, {
+export const Outlander: Characters.Background = new Characters.Background({
     name: "Outlander",
     reference: { source: "PHB", page: 136, url: "" },
     languages: { other: 1 },
     skillProficiencies: [{ proficiencies: [Skills.Athletics, Skills.Survival] }],
     toolProficiencies: [{ proficiencies: InstrumentList, count: 1 }],
+    money: new Equipment.Money({ platinum: 0, gold: 10, silver: 0, copper: 0 }),
+    equipment: [
+        { items: [[Weapons.Quarterstaff, { name: "hunting trap" }, { name: "animal trophy" }, { name: "traveler's clothes" }]] }
+    ],
     features: [{
         name: "Wanderer",
         type: FeatureType.Passive,

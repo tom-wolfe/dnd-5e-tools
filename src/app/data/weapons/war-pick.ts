@@ -1,8 +1,7 @@
 import * as Equipment from "../../models/equipment/";
 import { WeaponList } from "./weapon-list";
 
-export const WarPick: Equipment.Weapon = new Equipment.Weapon();
-Object.assign(WarPick, {
+export const WarPick: Equipment.Weapon = new Equipment.Weapon({
     name: "War Pick",
     type: Equipment.WeaponType.Martial,
     properties: [],

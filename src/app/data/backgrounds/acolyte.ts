@@ -2,13 +2,18 @@ import { Skills } from "../../data";
 import * as Characters from "../../models/characters";
 import { FeatureType } from "../../models/features/feature-type";
 import { BackgroundList } from "./background-list";
+import * as Equipment from "app/models/equipment";
 
-export const Acolyte: Characters.Background = new Characters.Background();
-Object.assign(Acolyte, {
+export const Acolyte: Characters.Background = new Characters.Background({
     name: "Acolyte",
     reference: { source: "PHB", page: 127, url: "https://www.dndbeyond.com/characters/backgrounds/acolyte" },
     languages: { other: 2 },
     skillProficiencies: [{ proficiencies: [Skills.Insight, Skills.Religion] }],
+    money: new Equipment.Money({ platinum: 0, gold: 15, silver: 0, copper: 0 }),
+    equipment: [
+        { items: [[{ name: "holy symbol" }, { name: "5 sticks of incense" }, { name: "vestment" }, { name: "common clothes" }]] },
+        { items: [[{ name: "prayer book" }], [{ name: "prayer wheel" }]], count: 1 }
+    ],
     features: [{
         name: "Shelter of the Faithful",
         type: FeatureType.Passive,

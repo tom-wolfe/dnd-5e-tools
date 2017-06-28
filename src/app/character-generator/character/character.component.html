@@ -2,6 +2,16 @@
 <dnd-background [character]="character" [builder]="builder"></dnd-background>
 <dnd-ability-list [character]="character" [builder]="builder"></dnd-ability-list>
 <dnd-stats [character]="character"></dnd-stats>
+<div class="bb-thin">
+  <div class="row">
+    <div class="col-12">
+      <div class="character-sub-block">
+        <h4 class="sub-block-title">Equipment</h4>
+        {{character.equipmentString}}
+      </div>
+    </div>
+  </div>
+</div>
 <dnd-feature-list [features]="character.otherFeatures"></dnd-feature-list>
 <dnd-feature-list [features]="character.activeFeatures" title="Actions"></dnd-feature-list>
 <div class="row mt-2 mb-2">

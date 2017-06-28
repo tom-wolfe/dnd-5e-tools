@@ -5,8 +5,7 @@ import * as RaceModels from "../../models/races";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
-export const Halfling: RaceModels.Race = new RaceModels.Race()
-Object.assign(Halfling, {
+export const Halfling: RaceModels.Race = new RaceModels.Race({
     name: "Halfling",
     size: "Small",
     abilityMods: { "DEX": +2 },

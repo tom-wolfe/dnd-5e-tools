@@ -3,8 +3,7 @@ import { NameList } from "./name-list";
 
 /* cSpell:disable */
 
-export const Triton: Names.NameDefinition = new Names.NameDefinition()
-Object.assign(Triton, {
+export const Triton: Names.NameDefinition = new Names.NameDefinition({
     name: "Triton",
     formats: [{ name: "Forename Surname", formats: ["{forename} {surname}"] }],
     parts: {

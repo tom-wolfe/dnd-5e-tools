@@ -5,8 +5,7 @@ import { NameList } from "./name-list";
 
 /* cSpell:disable */
 
-export const HalfOrc: Names.NameDefinition = new Names.NameDefinition()
-Object.assign(HalfOrc, {
+export const HalfOrc: Names.NameDefinition = new Names.NameDefinition({
     name: "Half-Orc",
     formats: [
         { name: "Orc Name", formats: ["{orcForename} {orcSurnamePrefix}-{orcSurname}"] },

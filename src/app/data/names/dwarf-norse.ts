@@ -4,8 +4,7 @@ import { NameList } from "./name-list";
 
 /* cSpell:disable */
 
-export const DwarfNorse: Names.NameDefinition = new Names.NameDefinition()
-Object.assign(DwarfNorse, {
+export const DwarfNorse: Names.NameDefinition = new Names.NameDefinition({
     name: "Dwarf (Norse)",
     formats: [
         {

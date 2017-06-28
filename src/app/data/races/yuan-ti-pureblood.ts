@@ -5,8 +5,7 @@ import * as RaceModels from "../../models/races";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
-export const YuanTiPureblood: RaceModels.Race = new RaceModels.Race()
-Object.assign(YuanTiPureblood, {
+export const YuanTiPureblood: RaceModels.Race = new RaceModels.Race({
     name: "Yuan-ti Pureblood",
     size: "Medium",
     senses: { darkvision: 60 },

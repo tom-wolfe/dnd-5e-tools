@@ -4,8 +4,7 @@ import { NameList } from "./name-list";
 
 /* cSpell:disable */
 
-export const Elf: Names.NameDefinition = new Names.NameDefinition()
-Object.assign(Elf, {
+export const Elf: Names.NameDefinition = new Names.NameDefinition({
     name: "Elf",
     formats: [
         {

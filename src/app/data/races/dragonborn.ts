@@ -6,8 +6,7 @@ import * as Names from "../names";
 import { RaceList } from "./race-list";
 import { DamageType } from "app/models/equipment";
 
-export const Dragonborn: RaceModels.Race = new RaceModels.Race()
-Object.assign(Dragonborn, {
+export const Dragonborn: RaceModels.Race = new RaceModels.Race({
     name: "Dragonborn",
     size: "Medium",
     speed: { walk: 30 },

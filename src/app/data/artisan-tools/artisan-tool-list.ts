@@ -2,70 +2,53 @@ import { Item } from "app/models/equipment";
 
 export const ArtisanToolList: Item[] = [];
 
-export const AlchemistsSupplies: Item = new Item();
-Object.assign(AlchemistsSupplies, { name: "Alchemist's Supplies" });
+export const AlchemistsSupplies: Item = new Item({ name: "Alchemist's supplies" });
 ArtisanToolList.push(AlchemistsSupplies);
 
-export const BrewersSupplies: Item = new Item();
-Object.assign(BrewersSupplies, { name: "Brewer's Supplies" });
+export const BrewersSupplies: Item = new Item({ name: "Brewer's supplies" });
 ArtisanToolList.push(BrewersSupplies);
 
-export const CalligraphersSupplies: Item = new Item();
-Object.assign(CalligraphersSupplies, { name: "Calligrapher's Supplies" });
+export const CalligraphersSupplies: Item = new Item({ name: "Calligrapher's supplies" });
 ArtisanToolList.push(CalligraphersSupplies);
 
-export const CarpentersTools: Item = new Item();
-Object.assign(CarpentersTools, { name: "Carpenter's Tools" });
+export const CarpentersTools: Item = new Item({ name: "Carpenter's tools" });
 ArtisanToolList.push(CarpentersTools);
 
-export const CartographersTools: Item = new Item();
-Object.assign(CartographersTools, { name: "Cartographer's Tools" });
+export const CartographersTools: Item = new Item({ name: "Cartographer's tools" });
 ArtisanToolList.push(CartographersTools);
 
-export const CobblersTools: Item = new Item();
-Object.assign(CobblersTools, { name: "Cobbler's Tools" });
+export const CobblersTools: Item = new Item({ name: "Cobbler's tools" });
 ArtisanToolList.push(CobblersTools);
 
-export const CooksTools: Item = new Item();
-Object.assign(CooksTools, { name: "Cook's Utensils" });
+export const CooksTools: Item = new Item({ name: "Cook's utensils" });
 ArtisanToolList.push(CooksTools);
 
-export const GlassblowersTools: Item = new Item();
-Object.assign(GlassblowersTools, { name: "Glassblower's Tools" });
+export const GlassblowersTools: Item = new Item({ name: "Glassblower's tools" });
 ArtisanToolList.push(GlassblowersTools);
 
-export const JewelersTools: Item = new Item();
-Object.assign(JewelersTools, { name: "Jeweler's Tools" });
+export const JewelersTools: Item = new Item({ name: "Jeweler's tools" });
 ArtisanToolList.push(JewelersTools);
 
-export const LeatherworkersTools: Item = new Item();
-Object.assign(LeatherworkersTools, { name: "Leatherworker's Tools" });
+export const LeatherworkersTools: Item = new Item({ name: "Leatherworker's tools" });
 ArtisanToolList.push(LeatherworkersTools);
 
-export const MasonsTools: Item = new Item();
-Object.assign(MasonsTools, { name: "Mason's Tools" });
+export const MasonsTools: Item = new Item({ name: "Mason's tools" });
 ArtisanToolList.push(MasonsTools);
 
-export const PaintersSupplies: Item = new Item();
-Object.assign(PaintersSupplies, { name: "Painter's Supplies" });
+export const PaintersSupplies: Item = new Item({ name: "Painter's supplies" });
 ArtisanToolList.push(PaintersSupplies);
 
-export const PottersTools: Item = new Item();
-Object.assign(PottersTools, { name: "Potter's Tools" });
+export const PottersTools: Item = new Item({ name: "Potter's tools" });
 ArtisanToolList.push(PottersTools);
 
-export const SmithsTools: Item = new Item();
-Object.assign(SmithsTools, { name: "Smith's Tools" });
+export const SmithsTools: Item = new Item({ name: "Smith's tools" });
 ArtisanToolList.push(SmithsTools);
 
-export const TinkersTools: Item = new Item();
-Object.assign(TinkersTools, { name: "Tinker's Tools" });
+export const TinkersTools: Item = new Item({ name: "Tinker's tools" });
 ArtisanToolList.push(TinkersTools);
 
-export const WeaversTools: Item = new Item();
-Object.assign(WeaversTools, { name: "Weaver's Tools" });
+export const WeaversTools: Item = new Item({ name: "Weaver's tools" });
 ArtisanToolList.push(WeaversTools);
 
-export const WoodcarversTools: Item = new Item();
-Object.assign(WoodcarversTools, { name: "Woodcarver's Tools" });
+export const WoodcarversTools: Item = new Item({ name: "Woodcarver's tools" });
 ArtisanToolList.push(WoodcarversTools);

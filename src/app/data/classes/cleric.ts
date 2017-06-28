@@ -1,8 +1,7 @@
 import * as ClassModels from "../../models/classes";
 import { ClassList } from "./class-list";
 
-export const Cleric: ClassModels.Class = new ClassModels.Class();
-Object.assign(Cleric, {
+export const Cleric: ClassModels.Class = new ClassModels.Class({
     name: "Cleric",
     primaryStat: "WIS",
     archetypeName: { singular: "Divine Domain", plural: "Divine Domains" },

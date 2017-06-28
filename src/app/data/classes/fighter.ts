@@ -1,8 +1,7 @@
 import * as ClassModels from "../../models/classes";
 import { ClassList } from "./class-list";
 
-export const Fighter: ClassModels.Class = new ClassModels.Class();
-Object.assign(Fighter, {
+export const Fighter: ClassModels.Class = new ClassModels.Class({
     name: "Fighter",
     primaryStat: "STR",
     archetypeName: { singular: "Martial Archetype", plural: "Martial Archetypes" },

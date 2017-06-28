@@ -5,8 +5,7 @@ import { NameList } from "./name-list";
 
 /* Based on names from http://en.uesp.net/wiki/Lore:Khajiit_Names */
 
-export const Khajiit: Names.NameDefinition = new Names.NameDefinition()
-Object.assign(Khajiit, {
+export const Khajiit: Names.NameDefinition = new Names.NameDefinition({
     name: "Khajiit",
     formats: [
         {
