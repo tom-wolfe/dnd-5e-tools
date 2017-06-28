@@ -1,7 +1,4 @@
-/* tslint:disable:max-line-length */
-
-export const ExportTemplate =
-  `# {{name}}
+# {{name}}
 
 ___
 ___
@@ -73,4 +70,4 @@ ___
     height : 296.8mm;
   }
   .phb hr+blockquote {background: white;}
-</style>`;
+</style>

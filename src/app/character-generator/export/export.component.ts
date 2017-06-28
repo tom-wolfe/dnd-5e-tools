@@ -1,8 +1,5 @@
-import { Component } from "@angular/core";
 import { Location } from "@angular/common";
-import { Router } from "@angular/router";
-
-import * as Data from "app/data";
+import { Component, OnInit } from "@angular/core";
 
 import { CharacterGeneratorService } from "../character-generator.service";
 import { Exporter } from "./exporter";
@@ -11,7 +8,7 @@ import { Exporter } from "./exporter";
   selector: "dnd-export",
   templateUrl: "export.component.html"
 })
-export class ExportComponent {
+export class ExportComponent implements OnInit {
   exporter: Exporter;
   template = "";
 
@@ -25,7 +22,16 @@ export class ExportComponent {
 
   constructor(private location: Location, private service: CharacterGeneratorService) {
     this.exporter = new Exporter();
-    this.template = Data.ExportTemplate;
+  }
+
+  loadTemplate(): void {
+    this.service.getTemplate().then(template => {
+      this.template = template;
+    })
+  }
+
+  ngOnInit(): void {
+    this.loadTemplate();
   }
 
   onBackClick(): void {
