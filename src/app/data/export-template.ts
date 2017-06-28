@@ -46,6 +46,11 @@ ___
 > - **Skills** {{skillString}}
 > - **Senses** passive Perception{{#sensesString}}, {{/sensesString}}{{sensesString}}
 > - **Languages** {{languagesString}}
+>___
+> - **Weapon Proficiencies** {{weaponProficiencyString}}
+> - **Armor Proficiencies** {{armorProficiencyString}}
+> - **Tool Proficiencies** {{toolProficiencyString}}
+> - **Other Proficiencies** {{otherProficiencyString}}
 > ___
 {{#otherFeatures}}
 > ***{{name}}. *** {{description}}

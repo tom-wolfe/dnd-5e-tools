@@ -53,7 +53,7 @@ export class Character {
     weight: number;
 
     get armorProficiencyString(): string {
-        return _.join(this.armorProficiencies.map(x => Equipment.ArmorType[x.thing].toString()), ", ");
+        return _.join(this.armorProficiencies.map(x => Equipment.ArmorType[x.thing].toString()), ", ") || "[None]";
     }
 
     get strength(): number {
@@ -130,8 +130,7 @@ export class Character {
     }
 
     get damageResistancesString(): string {
-        const retVal = _.join(this.damageResistances.map(x => Equipment.DamageType[x].toString()), ", ");
-        return retVal || "[None]";
+        return _.join(this.damageResistances.map(x => Equipment.DamageType[x].toString()), ", ") || "[None]";
     }
 
     get equippedArmor(): string {
@@ -188,11 +187,11 @@ export class Character {
     }
 
     get languagesString(): string {
-        return _.join(this.languages.map(x => x.name).sort(), ", ");
+        return _.join(this.languages.map(x => x.name).sort(), ", ") || "[None]";
     }
 
     get otherProficiencyString(): string {
-        return _.join(this.otherProficiencies.map(t => t.thing.name), ", ");
+        return _.join(this.otherProficiencies.map(t => t.thing.name), ", ") || "[None]";
     }
 
     get raceDescription(): string {
@@ -229,7 +228,7 @@ export class Character {
     }
 
     get toolProficiencyString(): string {
-        return _.join(this.toolProficiencies.map(t => t.thing.name), ", ");
+        return _.join(this.toolProficiencies.map(t => t.thing.name), ", ") || "[None]";
     }
 
     get walkSpeedDescription(): string {
@@ -246,7 +245,7 @@ export class Character {
     }
 
     get weaponProficiencyString(): string {
-        return _.join(this.weaponProficiencies.map(w => w.thing.name).sort(), ", ");
+        return _.join(this.weaponProficiencies.map(w => w.thing.name).sort(), ", ") || "[None]";
     }
 
     getSkillModifier(skill: Abilities.Skill): number {
