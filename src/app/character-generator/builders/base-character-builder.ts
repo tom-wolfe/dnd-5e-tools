@@ -96,34 +96,32 @@ export abstract class BaseCharacterBuilder {
                 this.grantEquipmentOptionOrItem(character, items);
             })
         } else {
-
-            const options: (Equipment.EquipmentOption | Equipment.Item)[][] = _.clone(option.items);
+            // Get all the character proficiencies.
             let charProfs = _.union(
                 character.weaponProficiencies,
                 character.toolProficiencies,
                 character.otherProficiencies
             ).map(p => p.thing);
-
-            // Add all of the right types of armor.
             charProfs = _.union(charProfs, Armor.ArmorList.filter(a => _.includes(character.armorProficiencies.map(p => p.thing), a.type)));
 
+            const options: (Equipment.EquipmentOption | Equipment.Item)[][] = _.clone(option.items);
+
             // Get any available items that the character is proficient in.
-            // TODO: this is now a *lot* more complicated.
-            // const overlap = options.filter(opt => {
-            //     opt.filter(item => _.includes(charProfs, item)).length > 0
-            // });
+            const overlap = options.filter(opt => {
+                return opt.filter(item => _.includes(charProfs, item)).length > 0;
+            });
 
             for (let x = 0; x < option.count; x++) {
-                // if (overlap.length > 0) {
-                //     const index = this.numGen.rollDie(overlap.length) - 1;
-                //     this.grantEquipment(character, overlap[index]);
-                //     overlap.splice(index, 1);
-                // } else {
-                const index = this.numGen.rollDie(options.length) - 1;
-                const selected = options[index];
-                this.grantEquipmentOptionOrItem(character, selected);
-                options.splice(index, 1);
-                // }
+                if (overlap.length > 0) {
+                    const index = this.numGen.rollDie(overlap.length) - 1;
+                    this.grantEquipmentOptionOrItem(character, overlap[index]);
+                    overlap.splice(index, 1);
+                } else {
+                    const index = this.numGen.rollDie(options.length) - 1;
+                    const selected = options[index];
+                    this.grantEquipmentOptionOrItem(character, selected);
+                    options.splice(index, 1);
+                }
             }
         }
     }
