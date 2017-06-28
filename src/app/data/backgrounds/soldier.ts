@@ -16,8 +16,8 @@ export const Soldier: Characters.Background = new Characters.Background({
     otherProficiencies: [{ proficiencies: [Vehicles.LandVehicles] }],
     money: new Equipment.Money({ platinum: 0, gold: 10, silver: 0, copper: 0 }),
     equipment: [
-        { items: [[{ name: "common clothes" }, { name: "insignia of rank" }, { name: "trophy from a fallen enemy" }]] },
-        { items: [[{ name: "bone dice" }], [{ name: "deck of cards" }]], count: 1 },
+        { items: [{ name: "common clothes" }, { name: "insignia of rank" }, { name: "trophy from a fallen enemy" }] },
+        { items: [{ name: "bone dice" }, { name: "deck of cards" }], count: 1 },
     ],
     features: [{
         name: "Military Rank",

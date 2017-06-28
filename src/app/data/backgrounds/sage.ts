@@ -13,13 +13,13 @@ export const Sage: Characters.Background = new Characters.Background({
     money: new Equipment.Money({ platinum: 0, gold: 10, silver: 0, copper: 0 }),
     equipment: [
         {
-            items: [[
+            items: [
                 { name: "small knife" },
                 { name: "letter from dead colleague asking an unanswered question" },
                 { name: "bottle of black ink" },
                 { name: "quill" },
                 { name: "common clothes" }
-            ]]
+            ]
         }
     ],
     features: [{
