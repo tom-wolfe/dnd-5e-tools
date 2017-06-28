@@ -1,4 +1,5 @@
 import * as Data from "app/data";
+import * as Armor from "app/data/armor";
 import { Character } from "app/models/characters";
 import { Feature, FeatureType } from "app/models/features";
 import { Language } from "app/models/languages";
@@ -83,11 +84,29 @@ export abstract class BaseCharacterBuilder {
                 this.grantEquipment(character, items);
             })
         } else {
-            const items: Equipment.Item[][] = _.clone(option.items);
-            for(let x = 0; x < option.count; x++) {
-                const index = this.numGen.rollDie(items.length) - 1;
-                this.grantEquipment(character, items[index]);
-                items.splice(index, 1);
+            const options: Equipment.Item[][] = _.clone(option.items);
+            let charProfs = _.union(
+                character.weaponProficiencies,
+                character.toolProficiencies,
+                character.otherProficiencies
+            ).map(p => p.thing);
+
+            // Add all of the right types of armor.
+            charProfs = _.union(charProfs, Armor.ArmorList.filter(a => _.includes(character.armorProficiencies.map(p => p.thing), a.type)));
+
+            // Get any available items that the character is proficient in.
+            const overlap = options.filter(opt => opt.filter(item => _.includes(charProfs, item)).length > 0);
+
+            for (let x = 0; x < option.count; x++) {
+                if (overlap.length > 0) {
+                    const index = this.numGen.rollDie(overlap.length) - 1;
+                    this.grantEquipment(character, overlap[index]);
+                    overlap.splice(index, 1);
+                } else {
+                    const index = this.numGen.rollDie(options.length) - 1;
+                    this.grantEquipment(character, options[index]);
+                    options.splice(index, 1);
+                }
             }
         }
     }
