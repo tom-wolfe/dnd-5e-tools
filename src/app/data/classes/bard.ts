@@ -1,9 +1,27 @@
+import { Skills } from "app/data";
+
 import * as ClassModels from "../../models/classes";
+import { ArmorType } from "../../models/equipment";
+import { WeaponType } from "../../models/equipment";
+import { InstrumentList } from "../instruments";
+import * as Weapons from "../weapons";
 import { ClassList } from "./class-list";
 
 export const Bard: ClassModels.Class = new ClassModels.Class({
     name: "Bard",
     primaryStat: "CHA",
+    hitDie: 8,
+    savingThrows: ["DEX", "CHA"],
+    armorProficiencies: [{ proficiencies: [ArmorType.Light] }],
+    weaponProficiencies: [{
+        proficiencies: [
+            ...Weapons.WeaponList.filter(w => w.type === WeaponType.Simple),
+            Weapons.HandCrossbow, Weapons.Longsword, Weapons.Rapier, Weapons.Shortsword
+        ]
+    }],
+    toolProficiencies: [{ proficiencies: InstrumentList, count: 3 }],
+    skillProficiencies: [{ proficiencies: Skills.SkillList, count: 3 }],
+    otherProficiencies: [],
     archetypeName: { singular: "Bard College", plural: "Bard Colleges" },
     reference: { source: "PHB", page: 51, url: "https://www.dndbeyond.com/characters/classes/bard" },
     archetypes: [

@@ -1,9 +1,25 @@
+import { Skills } from "app/data";
+
 import * as ClassModels from "../../models/classes";
+import { ArmorType } from "../../models/equipment";
+import { WeaponList } from "../weapons";
 import { ClassList } from "./class-list";
 
 export const Fighter: ClassModels.Class = new ClassModels.Class({
     name: "Fighter",
     primaryStat: "STR",
+    hitDie: 10,
+    savingThrows: ["STR", "CON"],
+    armorProficiencies: [{ proficiencies: [ArmorType.Light, ArmorType.Medium, ArmorType.Heavy, ArmorType.Shield] }],
+    weaponProficiencies: [{ proficiencies: WeaponList }],
+    toolProficiencies: [],
+    skillProficiencies: [{
+        proficiencies: [
+            Skills.Acrobatics, Skills.AnimalHandling, Skills.Athletics, Skills.History, Skills.Insight, Skills.Intimidation,
+            Skills.Perception, Skills.Survival
+        ], count: 2
+    }],
+    otherProficiencies: [],
     archetypeName: { singular: "Martial Archetype", plural: "Martial Archetypes" },
     reference: { source: "PHB", page: 70, url: "https://www.dndbeyond.com/characters/classes/fighter" },
     archetypes: [

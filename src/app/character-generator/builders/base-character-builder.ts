@@ -37,7 +37,9 @@ export abstract class BaseCharacterBuilder {
     }
 
     protected grantProficiency<T>(existing: Proficiencies.Proficiency<T>[], thing: T, type: Proficiencies.ProficiencyType): void {
-        existing.push(new Proficiencies.Proficiency<T>(thing, type));
+        if (!_.includes(existing.map(p => p.thing), thing)) {
+            existing.push(new Proficiencies.Proficiency<T>(thing, type));
+        }
     }
 
     protected grantRandomProficiency<T>(
@@ -112,9 +114,7 @@ export abstract class BaseCharacterBuilder {
     }
 
     protected grantEquipment(character: Character, equipment: Equipment.Item[]) {
-        equipment.forEach(item => {
-            character.equipment.push(item);
-        })
+        character.equipment.push(...equipment);
     }
 
     protected applyFeature(character: Character, feature: Feature) {

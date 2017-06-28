@@ -1,9 +1,23 @@
 import * as ClassModels from "../../models/classes";
+import { ArmorType } from "../../models/equipment";
+import { WeaponList } from "../weapons";
 import { ClassList } from "./class-list";
+import { Skills } from "app/data";
 
 export const Paladin: ClassModels.Class = new ClassModels.Class({
     name: "Paladin",
     primaryStat: "STR",
+    hitDie: 10,
+    savingThrows: ["STR", "CHA"],
+    armorProficiencies: [{ proficiencies: [ArmorType.Light, ArmorType.Medium, ArmorType.Heavy, ArmorType.Shield] }],
+    weaponProficiencies: [{ proficiencies: WeaponList }],
+    toolProficiencies: [],
+    skillProficiencies: [{
+        proficiencies: [
+            Skills.Athletics, Skills.Insight, Skills.Intimidation, Skills.Medicine, Skills.Persuasion, Skills.Religion
+        ], count: 2
+    }],
+    otherProficiencies: [],
     archetypeName: { singular: "Sacred Oath", plural: "Sacred Oaths" },
     reference: { source: "PHB", page: 82, url: "https://www.dndbeyond.com/characters/classes/paladin" },
     archetypes: [

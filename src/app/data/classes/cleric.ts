@@ -1,9 +1,23 @@
 import * as ClassModels from "../../models/classes";
+import { ArmorType } from "../../models/equipment";
+import { WeaponType } from "../../models/equipment";
+import { WeaponList } from "../weapons";
 import { ClassList } from "./class-list";
+import { Skills } from "app/data";
 
 export const Cleric: ClassModels.Class = new ClassModels.Class({
     name: "Cleric",
     primaryStat: "WIS",
+    hitDie: 8,
+    savingThrows: ["WIS", "CHA"],
+    armorProficiencies: [{ proficiencies: [ArmorType.Light, ArmorType.Medium, ArmorType.Shield] }],
+    weaponProficiencies: [{ proficiencies: WeaponList.filter(w => w.type === WeaponType.Simple) }],
+    toolProficiencies: [],
+    skillProficiencies: [{
+        proficiencies: [Skills.History, Skills.Insight, Skills.Medicine, Skills.Persuasion, Skills.Religion],
+        count: 2
+    }],
+    otherProficiencies: [],
     archetypeName: { singular: "Divine Domain", plural: "Divine Domains" },
     reference: { source: "PHB", page: 56, url: "https://www.dndbeyond.com/characters/classes/cleric" },
     archetypes: [

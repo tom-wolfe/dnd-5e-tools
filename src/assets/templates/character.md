@@ -1,7 +1,4 @@
-/* tslint:disable:max-line-length */
-
-export const ExportTemplate =
-  `# {{name}}
+# {{name}}
 
 ___
 ___
@@ -22,6 +19,7 @@ ___
 >___
 > - **Damage Resistances** {{damageResistancesString}}
 > - **Skills** {{skillString}}
+> - **Saving Throws** {{savingThrowProficiencyString}}
 > - **Senses** passive Perception{{#sensesString}}, {{/sensesString}}{{sensesString}}
 > - **Languages** {{languagesString}}
 >___
@@ -37,9 +35,9 @@ ___
 > 
 {{/otherFeatures}}
 > ### Actions
-{{#activeFeatures}}
+{{#actions}}
 > ***{{name}}. *** {{description}}
-{{/activeFeatures}}
+{{/actions}}
 
 <br>
 >____
@@ -73,4 +71,4 @@ ___
     height : 296.8mm;
   }
   .phb hr+blockquote {background: white;}
-</style>`;
+</style>

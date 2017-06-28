@@ -1,4 +1,5 @@
 import { Levels } from "app/data";
+import * as Data from "app/data/";
 import * as Classes from "app/data/classes";
 import { Character } from "app/models/characters/character";
 import * as _ from "lodash";
@@ -34,6 +35,23 @@ export class ClassBuilder extends BaseCharacterBuilder {
             character.classArchetype = null;
         }
 
+        character.savingThrowProficiencies.push(...character.class.savingThrows);
+
+        character.class.armorProficiencies.forEach(op => {
+            this.grantProficiencyOption(character.armorProficiencies, op);
+        });
+        character.class.weaponProficiencies.forEach(op => {
+            this.grantProficiencyOption(character.weaponProficiencies, op);
+        });
+        character.class.skillProficiencies.forEach(op => {
+            this.grantProficiencyOption(character.skillProficiencies, op, Data.Skills.SkillList);
+        });
+        (character.class.toolProficiencies || []).forEach(op => {
+            this.grantProficiencyOption(character.toolProficiencies, op);
+        });
+        (character.class.otherProficiencies || []).forEach(op => {
+            this.grantProficiencyOption(character.otherProficiencies, op);
+        });
     }
 
     private randomizeLevel(character: Character) {
@@ -41,7 +59,8 @@ export class ClassBuilder extends BaseCharacterBuilder {
     }
 
     private randomizeHitPoints(character: Character) {
-        const hitDice = this.numGen.rollDice(character.hitDie, character.level.number);
+        const hitDice = this.numGen.rollDice(character.class.hitDie, character.level.number - 1);
+        hitDice.push(character.class.hitDie); // Max roll for first level.
         character.baseHitPoints = _.sum(hitDice);
     }
 };

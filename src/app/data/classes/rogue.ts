@@ -1,9 +1,32 @@
+import * as Tools from "app/data/tools";
+import * as Weapons from "app/data/weapons";
+import { ArmorType } from "app/models/equipment";
+
 import * as ClassModels from "../../models/classes";
+import { WeaponType } from "../../models/equipment";
 import { ClassList } from "./class-list";
+import { Skills } from "app/data";
 
 export const Rogue: ClassModels.Class = new ClassModels.Class({
     name: "Rogue",
     primaryStat: "DEX",
+    hitDie: 8,
+    savingThrows: ["DEX", "INT"],
+    armorProficiencies: [{ proficiencies: [ArmorType.Light] }],
+    weaponProficiencies: [{
+        proficiencies: [
+            ...Weapons.WeaponList.filter(w => w.type === WeaponType.Simple),
+            Weapons.HandCrossbow, Weapons.Longsword, Weapons.Rapier, Weapons.Shortsword
+        ]
+    }],
+    toolProficiencies: [{ proficiencies: [Tools.ThievesTools] }],
+    skillProficiencies: [{
+        proficiencies: [
+            Skills.Acrobatics, Skills.Athletics, Skills.Deception, Skills.Insight, Skills.Intimidation, Skills.Investigation,
+            Skills.Perception, Skills.Performance, Skills.Persuasion, Skills.SleightOfHand, Skills.Stealth
+        ], count: 4
+    }],
+    otherProficiencies: [],
     archetypeName: { singular: "Rogueish Archetypes", plural: "Roguish Archetypes" },
     reference: { source: "PHB", page: 94, url: "https://www.dndbeyond.com/characters/classes/rogue" },
     archetypes: [

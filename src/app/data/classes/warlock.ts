@@ -1,9 +1,25 @@
+import { Skills } from "app/data";
+
 import * as ClassModels from "../../models/classes";
+import { ArmorType } from "../../models/equipment";
+import { WeaponType } from "../../models/equipment";
+import { WeaponList } from "../weapons";
 import { ClassList } from "./class-list";
 
 export const Warlock: ClassModels.Class = new ClassModels.Class({
     name: "Warlock",
     primaryStat: "CHA",
+    hitDie: 8,
+    savingThrows: ["WIS", "CHA"],
+    armorProficiencies: [{ proficiencies: [ArmorType.Light] }],
+    weaponProficiencies: [{ proficiencies: WeaponList.filter(w => w.type === WeaponType.Simple) }],
+    toolProficiencies: [],
+    skillProficiencies: [{
+        proficiencies: [
+            Skills.Arcana, Skills.Deception, Skills.History, Skills.Intimidation, Skills.Investigation, Skills.Nature, Skills.Religion
+        ], count: 2
+    }],
+    otherProficiencies: [],
     archetypeName: { singular: "Otherworldly Patron", plural: "Otherworldly Patrons" },
     reference: { source: "PHB", page: 105, url: "https://www.dndbeyond.com/characters/classes/warlock" },
     archetypes: [
