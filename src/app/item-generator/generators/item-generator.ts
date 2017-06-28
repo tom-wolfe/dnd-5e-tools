@@ -7,7 +7,7 @@ import * as Items from "../models/items";
 
 export class ItemGenerator {
     private numGen: NumberGenerator = new NumberGenerator();
-    private nameGen: NameGenerator = new NameGenerator(Object.keys(NameData.NameList).map(n => NameData.NameList[n]), "");
+    private nameGen: NameGenerator = new NameGenerator(NameData.NameList, "");
 
     constructor(private definitions: Items.ItemDefinition[]) { }
 

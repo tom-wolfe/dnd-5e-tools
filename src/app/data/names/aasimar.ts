@@ -3,8 +3,8 @@ import { HumanNames } from "./common/human-names";
 import { NameList } from "./name-list";
 
 /* cSpell:disable */
-
-export const Aasimar: Names.NameDefinition = {
+export const Aasimar: Names.NameDefinition = new Names.NameDefinition()
+Object.assign(Aasimar, {
     name: "Aasimar",
     formats: [
         { name: "Human Name", formats: ["{humanForename} {surnamePrefix}{surnameSuffix}"] },
@@ -32,6 +32,6 @@ export const Aasimar: Names.NameDefinition = {
             }
         }
     }
-};
+});
 
-NameList[Aasimar.name] = Aasimar;
+NameList.push(Aasimar);

@@ -5,7 +5,8 @@ import * as RaceModels from "app/models/races";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
-export const Human: RaceModels.Race = {
+export const Human: RaceModels.Race = new RaceModels.Race()
+Object.assign(Human, {
     name: "Human",
     size: "Medium",
     speed: { walk: 30 },
@@ -39,6 +40,8 @@ export const Human: RaceModels.Race = {
             reference: { source: "PHB", page: 31, url: "https://www.dndbeyond.com/characters/races/human#VariantHuman" }
         }
     ]
-};
+});
 
-RaceList[Human.name] = Human;
+RaceList.push
+
+RaceList.push(Human);

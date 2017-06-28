@@ -5,7 +5,8 @@ import * as RaceModels from "../../models/races";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
-export const Goblin: RaceModels.Race = {
+export const Goblin: RaceModels.Race = new RaceModels.Race()
+Object.assign(Goblin, {
     name: "Goblin",
     size: "Small",
     speed: { walk: 30 },
@@ -32,6 +33,8 @@ export const Goblin: RaceModels.Race = {
     ],
     reference: { source: "VGM", page: 119 },
     subraces: []
-};
+});
 
-RaceList[Goblin.name] = Goblin;
+RaceList.push
+
+RaceList.push(Goblin);

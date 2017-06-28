@@ -5,7 +5,8 @@ import { NameList } from "./name-list";
 
 /* Adapted from http://www.fantasynamegenerators.com/dnd-kobold-names.php */
 
-export const Kobold: Names.NameDefinition = {
+export const Kobold: Names.NameDefinition = new Names.NameDefinition()
+Object.assign(Kobold, {
     name: "Kobold",
     formats: [{ name: "Forename", formats: ["{name}"] }],
     parts: {
@@ -21,6 +22,6 @@ export const Kobold: Names.NameDefinition = {
             },
         }
     }
-};
+});
 
-NameList[Kobold.name] = Kobold;
+NameList.push(Kobold);

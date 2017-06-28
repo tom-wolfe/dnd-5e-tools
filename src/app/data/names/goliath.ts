@@ -5,7 +5,8 @@ import { NameList } from "./name-list";
 
 /* Adapted from http://www.fantasynamegenerators.com/dnd-goliath-names.php */
 
-export const Goliath: Names.NameDefinition = {
+export const Goliath: Names.NameDefinition = new Names.NameDefinition()
+Object.assign(Goliath, {
     name: "Goliath",
     formats: [
         { name: "Forename 'Nickname' Surname", formats: ["{forenamePrefix}{forenameSuffix} '{nicknameAdjective}{nicknameNoun}' {surname}"]},
@@ -85,6 +86,6 @@ export const Goliath: Names.NameDefinition = {
             },
         },
     }
-};
+});
 
-NameList[Goliath.name] = Goliath;
+NameList.push(Goliath);

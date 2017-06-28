@@ -5,7 +5,8 @@ import { NameList } from "./name-list";
 
 /* Adapted from http://www.fantasynamegenerators.com/dnd-warforged-names.php */
 
-export const Warforged: Names.NameDefinition = {
+export const Warforged: Names.NameDefinition = new Names.NameDefinition()
+Object.assign(Warforged, {
     name: "Warforged",
     formats: [{ name: "Forename", formats: ["{name}"] }],
     parts: {
@@ -45,6 +46,6 @@ export const Warforged: Names.NameDefinition = {
             }
         }
     }
-};
+});
 
-NameList[Warforged.name] = Warforged;
+NameList.push(Warforged);

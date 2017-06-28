@@ -22,9 +22,8 @@ export class RaceBuilder extends BaseCharacterBuilder {
             character.race = this.config.race;
             character.subrace = this.config.subrace;
         } else {
-            const raceKeys = Object.keys(RaceData.RaceList);
-            const raceNum = this.numGen.rollDie(raceKeys.length) - 1;
-            character.race = RaceData.RaceList[raceKeys[raceNum]];
+            const raceNum = this.numGen.rollDie(RaceData.RaceList.length) - 1;
+            character.race = RaceData.RaceList[raceNum];
         }
     }
 

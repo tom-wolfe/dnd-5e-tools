@@ -4,7 +4,8 @@ import { FeatureType } from "../../models/features/feature-type";
 import * as Tools from "../tools";
 import { BackgroundList } from "./background-list";
 
-export const Urchin: Characters.Background = {
+export const Urchin: Characters.Background = new Characters.Background();
+Object.assign(Urchin, {
     name: "Urchin",
     reference: { source: "PHB", page: 141, url: "" },
     languages: {},
@@ -53,6 +54,6 @@ export const Urchin: Characters.Background = {
         "It's not stealing if I need It more than someone else.",
         "People who can't take care of themselves get what they deserve.",
     ]
-};
+});
 
-BackgroundList[Urchin.name] = Urchin;
+BackgroundList.push(Urchin);

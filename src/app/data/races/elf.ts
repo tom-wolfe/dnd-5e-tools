@@ -8,7 +8,8 @@ import { CommonFeatures } from "../common-features";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
-export const Elf: RaceModels.Race = {
+export const Elf: RaceModels.Race = new RaceModels.Race()
+Object.assign(Elf, {
     name: "Elf",
     size: "Medium",
     speed: { walk: 30 },
@@ -117,7 +118,6 @@ export const Elf: RaceModels.Race = {
             reference: { source: "DMG", page: 286 }
         }
     ]
-};
+});
 
-RaceList[Elf.name] = Elf;
-
+RaceList.push(Elf);

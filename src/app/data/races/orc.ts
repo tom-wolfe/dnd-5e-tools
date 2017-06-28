@@ -6,7 +6,8 @@ import { CommonFeatures } from "../common-features";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
-export const Orc: RaceModels.Race = {
+export const Orc: RaceModels.Race = new RaceModels.Race()
+Object.assign(Orc, {
     name: "Orc",
     size: "Medium",
     senses: { darkvision: 60 },
@@ -30,6 +31,8 @@ export const Orc: RaceModels.Race = {
     ],
     reference: { source: "VGM", page: 120 },
     subraces: []
-};
+});
 
-RaceList[Orc.name] = Orc;
+RaceList.push
+
+RaceList.push(Orc);

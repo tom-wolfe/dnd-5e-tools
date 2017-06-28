@@ -6,7 +6,8 @@ import * as RaceModels from "../../models/races";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
-export const Genasi: RaceModels.Race = {
+export const Genasi: RaceModels.Race = new RaceModels.Race()
+Object.assign(Genasi, {
     name: "Genasi",
     size: "Medium",
     speed: { walk: 30 },
@@ -104,6 +105,8 @@ export const Genasi: RaceModels.Race = {
             reference: { source: "EE", page: 9, url: "https://www.dndbeyond.com/characters/races/genasi#WaterGenasi" }
         },
     ]
-};
+});
 
-RaceList[Genasi.name] = Genasi;
+RaceList.push
+
+RaceList.push(Genasi);

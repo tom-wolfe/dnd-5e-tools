@@ -4,7 +4,8 @@ import { Languages } from "../languages";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
-export const Gnome: RaceModels.Race = {
+export const Gnome: RaceModels.Race = new RaceModels.Race()
+Object.assign(Gnome, {
     name: "Gnome",
     size: "Small",
     speed: { walk: 25 },
@@ -87,6 +88,8 @@ export const Gnome: RaceModels.Race = {
             reference: { source: "EE", page: 4, url: "https://www.dndbeyond.com/characters/races/gnome#DeepGnome" }
         }
     ]
-};
+});
 
-RaceList[Gnome.name] = Gnome;
+RaceList.push
+
+RaceList.push(Gnome);

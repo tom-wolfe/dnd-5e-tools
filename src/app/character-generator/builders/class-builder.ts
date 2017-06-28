@@ -19,9 +19,8 @@ export class ClassBuilder extends BaseCharacterBuilder {
         if (this.config.class) {
             character.class = this.config.class;
         } else {
-            const classKeys = Object.keys(Classes.ClassList);
-            const classNum = this.numGen.rollDie(classKeys.length) - 1;
-            character.class = Classes.ClassList[classKeys[classNum]];
+            const classNum = this.numGen.rollDie(Classes.ClassList.length) - 1;
+            character.class = Classes.ClassList[classNum];
         }
 
         if (character.class.archetypes) {

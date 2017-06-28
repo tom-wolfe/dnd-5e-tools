@@ -6,7 +6,8 @@ import { CommonFeatures } from "../common-features";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
-export const Bugbear: RaceModels.Race = {
+export const Bugbear: RaceModels.Race = new RaceModels.Race()
+Object.assign(Bugbear, {
     name: "Bugbear",
     size: "Medium",
     speed: { walk: 30 },
@@ -37,6 +38,8 @@ export const Bugbear: RaceModels.Race = {
     ],
     reference: { source: "VGM", page: 119 },
     subraces: []
-};
+});
 
-RaceList[Bugbear.name] = Bugbear;
+RaceList.push
+
+RaceList.push(Bugbear);

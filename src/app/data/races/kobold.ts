@@ -6,7 +6,8 @@ import { CommonFeatures } from "../common-features";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
-export const Kobold: RaceModels.Race = {
+export const Kobold: RaceModels.Race = new RaceModels.Race()
+Object.assign(Kobold, {
     name: "Kobold",
     size: "Small",
     speed: { walk: 30 },
@@ -37,6 +38,8 @@ export const Kobold: RaceModels.Race = {
     ],
     reference: { source: "VGM", page: 119 },
     subraces: []
-};
+});
 
-RaceList[Kobold.name] = Kobold;
+RaceList.push
+
+RaceList.push(Kobold);

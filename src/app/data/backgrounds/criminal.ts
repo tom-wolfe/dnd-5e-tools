@@ -6,7 +6,8 @@ import { FeatureType } from "app/models/features/feature-type";
 
 import { BackgroundList } from "./background-list";
 
-export const Criminal: Characters.Background = {
+export const Criminal: Characters.Background = new Characters.Background();
+Object.assign(Criminal, {
     name: "Criminal",
     reference: { source: "PHB", page: 129, url: "" },
     languages: {},
@@ -58,6 +59,6 @@ export const Criminal: Characters.Background = {
         "I turn tail and run when things look bad.",
         "An innocent person is in prison for a crime that I committed. I’m okay with that.",
     ]
-};
+});
 
-BackgroundList[Criminal.name] = Criminal;
+BackgroundList.push(Criminal);

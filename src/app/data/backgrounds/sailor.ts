@@ -6,7 +6,8 @@ import { FeatureType } from "../../models/features/feature-type";
 import { NavigatorsTools } from "../tools";
 import { BackgroundList } from "./background-list";
 
-export const Sailor: Characters.Background = {
+export const Sailor: Characters.Background = new Characters.Background();
+Object.assign(Sailor, {
     name: "Sailor",
     reference: { source: "PHB", page: 139, url: "" },
     languages: {},
@@ -58,7 +59,6 @@ export const Sailor: Characters.Background = {
         "I can't help but pocket loose coins and other trinkets I come across.",
         "My pride will probably lead to my destruction.",
     ]
-};
+});
 
-BackgroundList[Sailor.name] = Sailor;
-
+BackgroundList.push(Sailor);

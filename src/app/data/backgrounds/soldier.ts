@@ -6,7 +6,8 @@ import { FeatureType } from "../../models/features/feature-type";
 import { GamingSetList } from "../gaming-sets";
 import { BackgroundList } from "./background-list";
 
-export const Soldier: Characters.Background = {
+export const Soldier: Characters.Background = new Characters.Background();
+Object.assign(Soldier, {
     name: "Soldier",
     reference: { source: "PHB", page: 140, url: "https://www.dndbeyond.com/characters/backgrounds/soldier" },
     languages: {},
@@ -57,6 +58,6 @@ export const Soldier: Characters.Background = {
         "I obey the law, even if the law causes misery.",
         "I’d rather eat my armor than admit when I’m wrong.",
     ]
-};
+});
 
-BackgroundList[Soldier.name] = Soldier;
+BackgroundList.push(Soldier);

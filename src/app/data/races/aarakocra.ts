@@ -4,7 +4,8 @@ import * as RaceModels from "../../models/races";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
-export const Aarakocra: RaceModels.Race = {
+export const Aarakocra: RaceModels.Race = new RaceModels.Race()
+Object.assign(Aarakocra, {
     name: "Aarakocra",
     size: "Medium",
     speed: { walk: 25, fly: 50 },
@@ -25,6 +26,6 @@ export const Aarakocra: RaceModels.Race = {
     ],
     reference: { source: "EE", page: 2, url: "https://www.dndbeyond.com/characters/races/aarakocra" },
     subraces: []
-};
+});
 
-RaceList[Aarakocra.name] = Aarakocra;
+RaceList.push(Aarakocra);

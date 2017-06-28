@@ -5,7 +5,8 @@ import { NameList } from "./name-list";
 
 /* Adapted from http://www.fantasynamegenerators.com/hp-goblin-names.php */
 
-export const Goblin: Names.NameDefinition = {
+export const Goblin: Names.NameDefinition = new Names.NameDefinition()
+Object.assign(Goblin, {
     name: "Goblin",
     formats: [{ name: "Forename", formats: ["{firstSyllable}{secondSyllable}"] }],
     parts: {
@@ -32,6 +33,6 @@ export const Goblin: Names.NameDefinition = {
             },
         }
     }
-};
+});
 
-NameList[Goblin.name] = Goblin;
+NameList.push(Goblin);

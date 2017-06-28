@@ -4,7 +4,8 @@ import { NameList } from "./name-list";
 
 /* cSpell:disable */
 
-export const Dragonborn: Names.NameDefinition = {
+export const Dragonborn: Names.NameDefinition = new Names.NameDefinition()
+Object.assign(Dragonborn, {
     name: "Dragonborn",
     formats: [{
         name: "Forename", formats: ["{syllable}{syllable}", "{syllable}{syllable}{syllable}"]
@@ -12,6 +13,6 @@ export const Dragonborn: Names.NameDefinition = {
     parts: {
         syllable: DragonSyllables.syllable,
     }
-};
+});
 
-NameList[Dragonborn.name] = Dragonborn;
+NameList.push(Dragonborn);

@@ -4,7 +4,8 @@ import { NameList } from "./name-list";
 
 /* cSpell:disable */
 
-export const Human: Names.NameDefinition = {
+export const Human: Names.NameDefinition = new Names.NameDefinition()
+Object.assign(Human, {
     name: "Human",
     formats: [
         { name: "Forename Surname", formats: ["{forename} {surnamePrefix}{surnameSuffix}"] }
@@ -14,6 +15,6 @@ export const Human: Names.NameDefinition = {
         surnamePrefix: HumanNames.surnamePrefix,
         surnameSuffix: HumanNames.surnameSuffix
     }
-};
+});
 
-NameList[Human.name] = Human;
+NameList.push(Human);

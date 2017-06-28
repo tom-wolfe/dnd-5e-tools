@@ -4,7 +4,8 @@ import { FeatureType } from "../../models/features/feature-type";
 import * as Tools from "../tools";
 import { BackgroundList } from "./background-list";
 
-export const Hermit: Characters.Background = {
+export const Hermit: Characters.Background = new Characters.Background();
+Object.assign(Hermit, {
     name: "Hermit",
     reference: { source: "PHB", page: 134, url: "" },
     languages: { other: 1 },
@@ -57,6 +58,6 @@ export const Hermit: Characters.Background = {
         "I'd risk too much to uncover a lost bit of knowledge.",
         "I like keeping secrets and won't share them with anyone.",
     ]
-};
+});
 
-BackgroundList[Hermit.name] = Hermit;
+BackgroundList.push(Hermit);

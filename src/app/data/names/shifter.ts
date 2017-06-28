@@ -5,7 +5,8 @@ import { NameList } from "./name-list";
 
 /* Adapted from: http://www.fantasynamegenerators.com/dnd-shifter-names.php */
 
-export const Shifter: Names.NameDefinition = {
+export const Shifter: Names.NameDefinition = new Names.NameDefinition()
+Object.assign(Shifter, {
     name: "Shifter",
     formats: [{ name: "Forename", formats: ["{name}"] }],
     parts: {
@@ -41,6 +42,6 @@ export const Shifter: Names.NameDefinition = {
             },
         }
     }
-};
+});
 
-NameList[Shifter.name] = Shifter;
+NameList.push(Shifter);

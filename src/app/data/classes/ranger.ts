@@ -1,7 +1,8 @@
 import * as ClassModels from "../../models/classes";
 import { ClassList } from "./class-list";
 
-export const Ranger: ClassModels.Class = {
+export const Ranger: ClassModels.Class = new ClassModels.Class();
+Object.assign(Ranger, {
     name: "Ranger",
     primaryStat: "DEX",
     archetypeName: { singular: "Ranger Archetype", plural: "Ranger Archetypes" },
@@ -33,6 +34,6 @@ export const Ranger: ClassModels.Class = {
             }
         },
     ]
-};
+});
 
-ClassList[Ranger.name] = Ranger;
+ClassList.push(Ranger);

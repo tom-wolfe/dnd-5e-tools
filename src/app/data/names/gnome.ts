@@ -6,7 +6,8 @@ import { NameList } from "./name-list";
 
 /* Adapted from http://www.fantasynamegenerators.com/dnd-gnome-names.php */
 
-export const Gnome: Names.NameDefinition = {
+export const Gnome: Names.NameDefinition = new Names.NameDefinition()
+Object.assign(Gnome, {
     name: "Gnome",
     formats: [
         {
@@ -58,6 +59,6 @@ export const Gnome: Names.NameDefinition = {
         surnamePrefixNoun: GnomeSurnames.prefixNoun,
         surnameSuffixAdjective: GnomeSurnames.suffixAdjective
     }
-};
+});
 
-NameList[Gnome.name] = Gnome;
+NameList.push(Gnome);

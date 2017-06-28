@@ -4,7 +4,8 @@ import { FeatureType } from "../../models/features/feature-type";
 import * as Tools from "../tools";
 import { BackgroundList } from "./background-list";
 
-export const Charlatan: Characters.Background = {
+export const Charlatan: Characters.Background = new Characters.Background();
+Object.assign(Charlatan, {
     name: "Charlatan",
     reference: { source: "PHB", page: 128 },
     languages: {},
@@ -60,6 +61,6 @@ export const Charlatan: Characters.Background = {
         "I can't resist swindling people who are more powerful than me.",
         "I hate to admit it and will hate myself for it, but I'll run and preserve my own hide if the going gets tough.",
     ]
-};
+});
 
-BackgroundList[Charlatan.name] = Charlatan;
+BackgroundList.push(Charlatan);

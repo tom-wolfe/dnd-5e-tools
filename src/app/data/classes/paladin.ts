@@ -1,7 +1,8 @@
 import * as ClassModels from "../../models/classes";
 import { ClassList } from "./class-list";
 
-export const Paladin: ClassModels.Class = {
+export const Paladin: ClassModels.Class = new ClassModels.Class();
+Object.assign(Paladin, {
     name: "Paladin",
     primaryStat: "STR",
     archetypeName: { singular: "Sacred Oath", plural: "Sacred Oaths" },
@@ -44,6 +45,6 @@ export const Paladin: ClassModels.Class = {
             }
         },
     ]
-};
+});
 
-ClassList[Paladin.name] = Paladin;
+ClassList.push(Paladin);

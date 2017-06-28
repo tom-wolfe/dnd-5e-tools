@@ -5,7 +5,8 @@ import { NameList } from "./name-list";
 
 /* Adapted from http://www.fantasynamegenerators.com/dnd-aarakocra-names.php */
 
-export const Aarakocra: Names.NameDefinition = {
+export const Aarakocra: Names.NameDefinition = new Names.NameDefinition()
+Object.assign(Aarakocra, {
     name: "Aarakocra",
     formats: [{ name: "Forename", formats: ["{name}"] }],
     parts: {
@@ -26,6 +27,6 @@ export const Aarakocra: Names.NameDefinition = {
             },
         }
     }
-};
+});
 
-NameList[Aarakocra.name] = Aarakocra;
+NameList.push(Aarakocra);

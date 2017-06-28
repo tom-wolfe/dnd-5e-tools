@@ -5,7 +5,8 @@ import * as RaceModels from "../../models/races";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
-export const Halfling: RaceModels.Race = {
+export const Halfling: RaceModels.Race = new RaceModels.Race()
+Object.assign(Halfling, {
     name: "Halfling",
     size: "Small",
     abilityMods: { "DEX": +2 },
@@ -60,6 +61,8 @@ export const Halfling: RaceModels.Race = {
             reference: { source: "PHB", page: 28, url: "https://www.dndbeyond.com/characters/races/halfling#Stout" }
         }
     ]
-};
+});
 
-RaceList[Halfling.name] = Halfling;
+RaceList.push
+
+RaceList.push(Halfling);

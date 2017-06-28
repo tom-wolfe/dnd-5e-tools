@@ -3,7 +3,8 @@ import { ItemTypeList } from "./item-type-list";
 
 /* cSpell:disable */
 
-export const Book: Items.ItemDefinition = {
+export const Book: Items.ItemDefinition = new Items.ItemDefinition();
+Object.assign(Book, {
     name: "Book",
     iconClass: "fa-book",
     nameFormats: [
@@ -282,6 +283,6 @@ export const Book: Items.ItemDefinition = {
             "Teaching", "Stewarding", "Milling", "Butchery", "Drapery", "Weaving", "Baking", "Squiring", "Tailoring", "Brewing"
         ]
     }
-};
+});
 
-ItemTypeList[Book.name] = Book;
+ItemTypeList.push(Book);

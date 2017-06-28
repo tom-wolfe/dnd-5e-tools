@@ -5,7 +5,8 @@ import * as RaceModels from "app/models/races";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
-export const Kenku: RaceModels.Race = {
+export const Kenku: RaceModels.Race = new RaceModels.Race()
+Object.assign(Kenku, {
     name: "Kenku",
     size: "Medium",
     speed: { walk: 30 },
@@ -38,7 +39,9 @@ export const Kenku: RaceModels.Race = {
     ],
     reference: { source: "VGM", page: 110 },
     subraces: []
-};
+});
 
-RaceList[Kenku.name] = Kenku;
+RaceList.push
+
+RaceList.push(Kenku);
 

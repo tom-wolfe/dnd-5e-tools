@@ -5,7 +5,8 @@ import * as Characters from "../../models/characters";
 import { FeatureType } from "../../models/features/feature-type";
 import { BackgroundList } from "./background-list";
 
-export const FolkHero: Characters.Background = {
+export const FolkHero: Characters.Background = new Characters.Background();
+Object.assign(FolkHero, {
     name: "Folk Hero",
     reference: { source: "PHB", page: 131, url: "https://www.dndbeyond.com/characters/backgrounds/folk-hero" },
     languages: {},
@@ -56,6 +57,6 @@ export const FolkHero: Characters.Background = {
         "Secretly, I believe that things would be better if I were a tyrant lording over the land.",
         "I have trouble trusting in my allies.",
     ]
-};
+});
 
-BackgroundList[FolkHero.name] = FolkHero;
+BackgroundList.push(FolkHero);

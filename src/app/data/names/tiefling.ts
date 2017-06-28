@@ -3,7 +3,8 @@ import { NameList } from "./name-list";
 
 /* cSpell:disable */
 
-export const Tiefling: Names.NameDefinition = {
+export const Tiefling: Names.NameDefinition = new Names.NameDefinition()
+Object.assign(Tiefling, {
     name: "Tiefling",
     formats: [{ name: "Forename", formats: ["{name}"] }],
     parts: {
@@ -31,6 +32,6 @@ export const Tiefling: Names.NameDefinition = {
             },
         }
     }
-};
+});
 
-NameList[Tiefling.name] = Tiefling;
+NameList.push(Tiefling);

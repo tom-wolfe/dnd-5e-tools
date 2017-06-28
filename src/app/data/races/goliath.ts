@@ -6,7 +6,8 @@ import { CommonFeatures } from "../common-features";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
-export const Goliath: RaceModels.Race = {
+export const Goliath: RaceModels.Race = new RaceModels.Race()
+Object.assign(Goliath, {
     name: "Goliath",
     size: "Medium",
     speed: { walk: 30 },
@@ -41,6 +42,8 @@ export const Goliath: RaceModels.Race = {
     ],
     reference: { source: "VGM", page: 108, url: "https://www.dndbeyond.com/characters/races/goliath" },
     subraces: []
-};
+});
 
-RaceList[Goliath.name] = Goliath;
+RaceList.push
+
+RaceList.push(Goliath);

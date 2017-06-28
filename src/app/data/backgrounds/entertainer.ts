@@ -5,7 +5,8 @@ import * as Characters from "../../models/characters";
 import { FeatureType } from "../../models/features/feature-type";
 import { BackgroundList } from "./background-list";
 
-export const Entertainer: Characters.Background = {
+export const Entertainer: Characters.Background = new Characters.Background();
+Object.assign(Entertainer, {
     name: "Entertainer",
     reference: { source: "PHB", page: 130, url: "" },
     languages: {},
@@ -58,6 +59,6 @@ export const Entertainer: Characters.Background = {
         "I have trouble keeping my true feelings hidden. My sharp tongue lands me in trouble.",
         "Despite my best efforts, I am unreliable to my friends.",
     ]
-};
+});
 
-BackgroundList[Entertainer.name] = Entertainer;
+BackgroundList.push(Entertainer);

@@ -4,7 +4,8 @@ import { FeatureType } from "../../models/features/feature-type";
 import { GamingSetList } from "../gaming-sets";
 import { BackgroundList } from "./background-list";
 
-export const Noble: Characters.Background = {
+export const Noble: Characters.Background = new Characters.Background();
+Object.assign(Noble, {
     name: "Noble",
     reference: { source: "PHB", page: 131, url: "https://www.dndbeyond.com/characters/backgrounds/noble" },
     languages: { other: 1 },
@@ -54,6 +55,6 @@ export const Noble: Characters.Background = {
         "In fact, the world does revolve around me.",
         "By my words and actions, I often bring shame to my family.",
     ]
-};
+});
 
-BackgroundList[Noble.name] = Noble;
+BackgroundList.push(Noble);

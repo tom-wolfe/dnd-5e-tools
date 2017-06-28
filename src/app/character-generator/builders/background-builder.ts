@@ -27,9 +27,8 @@ export class BackgroundBuilder extends BaseCharacterBuilder {
         if (this.config.background) {
             character.background = this.config.background;
         } else {
-            const bgKeys = Object.keys(Backgrounds.BackgroundList);
-            const bgNum = this.numGen.rollDie(bgKeys.length) - 1;
-            character.background = Backgrounds.BackgroundList[bgKeys[bgNum]];
+            const bgNum = this.numGen.rollDie(Backgrounds.BackgroundList.length) - 1;
+            character.background = Backgrounds.BackgroundList[bgNum];
         }
 
         character.background.skillProficiencies.forEach(op => {

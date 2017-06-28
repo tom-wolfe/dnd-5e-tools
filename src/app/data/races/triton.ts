@@ -6,7 +6,8 @@ import * as RaceModels from "../../models/races";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
-export const Triton: RaceModels.Race = {
+export const Triton: RaceModels.Race = new RaceModels.Race()
+Object.assign(Triton, {
     name: "Triton",
     size: "Medium",
     speed: { walk: 30, swim: 30 },
@@ -47,6 +48,8 @@ export const Triton: RaceModels.Race = {
     ],
     reference: { source: "VGM", page: 113 },
     subraces: []
-};
+});
 
-RaceList[Triton.name] = Triton;
+RaceList.push
+
+RaceList.push(Triton);

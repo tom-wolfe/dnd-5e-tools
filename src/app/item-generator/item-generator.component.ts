@@ -24,7 +24,7 @@ export class ItemGeneratorComponent implements AfterContentInit {
     if (this.config.definition) {
       definitions = [this.config.definition]
     } else {
-      definitions = Object.keys(ItemTypes.ItemTypeList).map(n => ItemTypes.ItemTypeList[n]);
+      definitions = ItemTypes.ItemTypeList
     }
     const generator = new ItemGenerator(definitions);
     this.items = [];

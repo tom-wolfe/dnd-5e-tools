@@ -1,7 +1,8 @@
 import * as ClassModels from "../../models/classes";
 import { ClassList } from "./class-list";
 
-export const Barbarian: ClassModels.Class = {
+export const Barbarian: ClassModels.Class = new ClassModels.Class();
+Object.assign(Barbarian, {
     name: "Barbarian",
     primaryStat: "STR",
     archetypeName: { singular: "Primal Path", plural: "Primal Paths" },
@@ -36,6 +37,6 @@ export const Barbarian: ClassModels.Class = {
             },
         },
     ]
-};
+});
 
-ClassList[Barbarian.name] = Barbarian;
+ClassList.push(Barbarian);

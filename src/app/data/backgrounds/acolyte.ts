@@ -3,11 +3,12 @@ import * as Characters from "../../models/characters";
 import { FeatureType } from "../../models/features/feature-type";
 import { BackgroundList } from "./background-list";
 
-export const Acolyte: Characters.Background = {
+export const Acolyte: Characters.Background = new Characters.Background();
+Object.assign(Acolyte, {
     name: "Acolyte",
     reference: { source: "PHB", page: 127, url: "https://www.dndbeyond.com/characters/backgrounds/acolyte" },
     languages: { other: 2 },
-    skillProficiencies: [ { proficiencies: [Skills.Insight, Skills.Religion] }],
+    skillProficiencies: [{ proficiencies: [Skills.Insight, Skills.Religion] }],
     features: [{
         name: "Shelter of the Faithful",
         type: FeatureType.Passive,
@@ -57,6 +58,6 @@ export const Acolyte: Characters.Background = {
         "I am suspicious of strangers and expect the worst of them.",
         "Once I pick a goal, I become obsessed with it to the detriment of everything else in my life."
     ]
-};
+});
 
-BackgroundList[Acolyte.name] = Acolyte;
+BackgroundList.push(Acolyte);

@@ -6,7 +6,8 @@ import { CommonFeatures } from "../common-features";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
-export const HalfElf: RaceModels.Race = {
+export const HalfElf: RaceModels.Race = new RaceModels.Race()
+Object.assign(HalfElf, {
     name: "Half-elf",
     size: "Medium",
     speed: { walk: 30 },
@@ -27,6 +28,8 @@ export const HalfElf: RaceModels.Race = {
     ],
     reference: { source: "PHB", page: 38, url: "https://www.dndbeyond.com/characters/races/half-elf" },
     subraces: []
-};
+});
 
-RaceList[HalfElf.name] = HalfElf;
+RaceList.push
+
+RaceList.push(HalfElf);

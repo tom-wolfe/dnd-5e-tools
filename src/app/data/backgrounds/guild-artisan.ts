@@ -4,7 +4,8 @@ import { FeatureType } from "../../models/features/feature-type";
 import { ArtisanToolList } from "../artisan-tools";
 import { BackgroundList } from "./background-list";
 
-export const GuildArtisan: Characters.Background = {
+export const GuildArtisan: Characters.Background = new Characters.Background();
+Object.assign(GuildArtisan, {
     name: "Guild Artisan",
     reference: { source: "PHB", page: 132, url: "" },
     languages: { other: 1 },
@@ -68,6 +69,6 @@ export const GuildArtisan: Characters.Background = {
         "I would kill to acquire a noble title.",
         "I'm horribly jealous of anyone who can outshine my handiwork. Everywhere I go, I'm surrounded by rivals.",
     ]
-};
+});
 
-BackgroundList[GuildArtisan.name] = GuildArtisan;
+BackgroundList.push(GuildArtisan);

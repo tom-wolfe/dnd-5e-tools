@@ -3,7 +3,8 @@ import * as Characters from "../../models/characters";
 import { FeatureType } from "../../models/features/feature-type";
 import { BackgroundList } from "./background-list";
 
-export const Sage: Characters.Background = {
+export const Sage: Characters.Background = new Characters.Background();
+Object.assign(Sage, {
     name: "Sage",
     reference: { source: "PHB", page: 137, url: "https://www.dndbeyond.com/characters/backgrounds/sage" },
     languages: { other: 2 },
@@ -53,6 +54,6 @@ export const Sage: Characters.Background = {
         "I speak without really thinking through my words, invariably insulting others.",
         "I can’t keep a secret to save my life, or anyone else’s.",
     ]
-};
+});
 
-BackgroundList[Sage.name] = Sage;
+BackgroundList.push(Sage);

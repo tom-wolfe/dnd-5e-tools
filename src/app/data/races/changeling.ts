@@ -5,7 +5,8 @@ import * as RaceModels from "app/models/races";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
-export const Changeling: RaceModels.Race = {
+export const Changeling: RaceModels.Race = new RaceModels.Race()
+Object.assign(Changeling, {
     name: "Changeling",
     size: "Medium",
     speed: { walk: 30 },
@@ -31,6 +32,8 @@ export const Changeling: RaceModels.Race = {
     ],
     reference: { source: "UA", page: 1, document: "Eberron", url: "http://media.wizards.com/2015/downloads/dnd/UA_Eberron_v1.1.pdf" },
     subraces: []
-};
+});
 
-RaceList[Changeling.name] = Changeling;
+RaceList.push
+
+RaceList.push(Changeling);

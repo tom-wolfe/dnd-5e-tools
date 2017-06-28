@@ -6,7 +6,8 @@ import * as RaceModels from "../../models/races";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
-export const Tiefling: RaceModels.Race = {
+export const Tiefling: RaceModels.Race = new RaceModels.Race()
+Object.assign(Tiefling, {
     name: "Tiefling",
     size: "Medium",
     speed: { walk: 30 },
@@ -34,6 +35,8 @@ export const Tiefling: RaceModels.Race = {
     ],
     reference: { source: "PHB", page: 42, url: "https://www.dndbeyond.com/characters/races/tiefling" },
     subraces: []
-};
+});
 
-RaceList[Tiefling.name] = Tiefling;
+RaceList.push
+
+RaceList.push(Tiefling);

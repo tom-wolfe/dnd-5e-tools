@@ -5,7 +5,8 @@ import * as RaceModels from "../../models/races";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
-export const Warforged: RaceModels.Race = {
+export const Warforged: RaceModels.Race = new RaceModels.Race()
+Object.assign(Warforged, {
     name: "Warforged",
     size: "Medium",
     speed: { walk: 30 },
@@ -37,6 +38,8 @@ export const Warforged: RaceModels.Race = {
         document: "Eberron", url: "http://media.wizards.com/2015/downloads/dnd/UA_Eberron_v1.1.pdf#page=2"
     },
     subraces: []
-};
+});
 
-RaceList[Warforged.name] = Warforged;
+RaceList.push
+
+RaceList.push(Warforged);

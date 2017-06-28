@@ -1,7 +1,8 @@
 import * as ClassModels from "../../models/classes";
 import { ClassList } from "./class-list";
 
-export const Rogue: ClassModels.Class = {
+export const Rogue: ClassModels.Class = new ClassModels.Class();
+Object.assign(Rogue, {
     name: "Rogue",
     primaryStat: "DEX",
     archetypeName: { singular: "Rogueish Archetypes", plural: "Roguish Archetypes" },
@@ -45,6 +46,6 @@ export const Rogue: ClassModels.Class = {
             }
         }
     ]
-};
+});
 
-ClassList[Rogue.name] = Rogue;
+ClassList.push(Rogue);

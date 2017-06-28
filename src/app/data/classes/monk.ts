@@ -1,7 +1,8 @@
 import * as ClassModels from "../../models/classes";
 import { ClassList } from "./class-list";
 
-export const Monk: ClassModels.Class = {
+export const Monk: ClassModels.Class = new ClassModels.Class();
+Object.assign(Monk, {
     name: "Monk",
     primaryStat: "DEX",
     archetypeName: { singular: "Monastic Tradition", plural: "Monastic Traditions" },
@@ -39,6 +40,6 @@ export const Monk: ClassModels.Class = {
             }
         },
     ]
-};
+});
 
-ClassList[Monk.name] = Monk;
+ClassList.push(Monk);

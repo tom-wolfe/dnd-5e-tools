@@ -4,7 +4,8 @@ import { FeatureType } from "../../models/features/feature-type";
 import { InstrumentList } from "../instruments";
 import { BackgroundList } from "./background-list";
 
-export const Outlander: Characters.Background = {
+export const Outlander: Characters.Background = new Characters.Background();
+Object.assign(Outlander, {
     name: "Outlander",
     reference: { source: "PHB", page: 136, url: "" },
     languages: { other: 1 },
@@ -53,6 +54,6 @@ export const Outlander: Characters.Background = {
         "Violence is my answer to almost any challenge.",
         "Don't expect me to save those who can't save themselves. It is nature's way that the strong thrive and the weak perish.",
     ]
-};
+});
 
-BackgroundList[Outlander.name] = Outlander;
+BackgroundList.push(Outlander);

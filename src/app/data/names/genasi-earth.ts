@@ -3,7 +3,8 @@ import { NameList } from "./name-list";
 
 /* cSpell:disable */
 
-export const GenasiEarth: Names.NameDefinition = {
+export const GenasiEarth: Names.NameDefinition = new Names.NameDefinition()
+Object.assign(GenasiEarth, {
     name: "Genasi (Earth)",
     formats: [{ name: "Forename", formats: ["{forename}"] }],
     parts: {
@@ -25,6 +26,6 @@ export const GenasiEarth: Names.NameDefinition = {
             },
         }
     }
-};
+});
 
-NameList[GenasiEarth.name] = GenasiEarth;
+NameList.push(GenasiEarth);

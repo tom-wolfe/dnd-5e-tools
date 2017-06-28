@@ -1,7 +1,8 @@
 import * as ClassModels from "../../models/classes";
 import { ClassList } from "./class-list";
 
-export const Wizard: ClassModels.Class = {
+export const Wizard: ClassModels.Class = new ClassModels.Class();
+Object.assign(Wizard, {
     name: "Wizard",
     primaryStat: "INT",
     archetypeName: { singular: "Arcane Tradition", plural: "Arcane Traditions" },
@@ -75,6 +76,6 @@ export const Wizard: ClassModels.Class = {
             }
         }
     ]
-};
+});
 
-ClassList[Wizard.name] = Wizard;
+ClassList.push(Wizard);

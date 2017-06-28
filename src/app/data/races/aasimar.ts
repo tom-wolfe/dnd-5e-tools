@@ -7,7 +7,8 @@ import * as RaceModels from "../../models/races";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
-export const Aasimar: RaceModels.Race = {
+export const Aasimar: RaceModels.Race = new RaceModels.Race()
+Object.assign(Aasimar, {
     name: "Aasimar",
     size: "Medium",
     speed: { walk: 30 },
@@ -101,6 +102,8 @@ export const Aasimar: RaceModels.Race = {
             reference: { source: "VGM", page: 105 }
         }
     ]
-};
+});
 
-RaceList[Aasimar.name] = Aasimar;
+RaceList.push
+
+RaceList.push(Aasimar);

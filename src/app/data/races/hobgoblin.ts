@@ -8,7 +8,8 @@ import { ArmorType } from "../../models/equipment/armor-type";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
-export const Hobgoblin: RaceModels.Race = {
+export const Hobgoblin: RaceModels.Race = new RaceModels.Race()
+Object.assign(Hobgoblin, {
     name: "Hobgoblin",
     size: "Medium",
     speed: { walk: 30 },
@@ -38,6 +39,8 @@ export const Hobgoblin: RaceModels.Race = {
     ],
     reference: { source: "VGM", page: 119 },
     subraces: []
-};
+});
 
-RaceList[Hobgoblin.name] = Hobgoblin;
+RaceList.push
+
+RaceList.push(Hobgoblin);

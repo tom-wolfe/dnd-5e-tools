@@ -25,7 +25,7 @@ export class NameGeneratorComponent implements AfterContentInit {
     if (this.config.definition) {
       definitions = [this.config.definition]
     } else {
-      definitions = Object.keys(Names.NameList).map(n => Names.NameList[n]);
+      definitions = Names.NameList;
     }
     const generator = new NameGenerator(definitions, this.config.gender);
     this.names = [];
