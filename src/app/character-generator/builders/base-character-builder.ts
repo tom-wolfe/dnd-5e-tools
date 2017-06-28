@@ -44,9 +44,9 @@ export abstract class BaseCharacterBuilder {
         type: Proficiencies.ProficiencyType,
         source: T[] = null
     ): void {
-
+        const existingThings = existing.map(p => p.thing);
         // Get the offered proficiencies, excluding those already attained.
-        const profs = _.differenceWith(available, existing, _.isEqual);
+        const profs = _.differenceWith(available, existingThings, _.isEqual);
         let thing: T;
         if (profs.length > 0) {
             // Choose one at random from the feature list.
@@ -54,7 +54,7 @@ export abstract class BaseCharacterBuilder {
             thing = profs[index];
         } else if (source) {
             // Character already has all these proficiencies, so choose one at random.
-            const allProfs = _.differenceWith(source, existing, _.isEqual);
+            const allProfs = _.differenceWith(source, existingThings, _.isEqual);
             const index = this.numGen.rollDie(allProfs.length) - 1;
             thing = allProfs[index];
         }
@@ -82,7 +82,7 @@ export abstract class BaseCharacterBuilder {
                 this.grantProficiencyOption(character.skillProficiencies, op, Data.Skills.SkillList);
             });
         }
-         if (feature.armorProficiencies) {
+        if (feature.armorProficiencies) {
             feature.armorProficiencies.forEach(option => {
                 this.grantProficiencyOption(character.armorProficiencies, option);
             });

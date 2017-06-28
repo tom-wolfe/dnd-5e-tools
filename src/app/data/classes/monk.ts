@@ -33,7 +33,7 @@ Object.assign(Monk, {
                 url: "https://media.wizards.com/2016/dnd/downloads/M_2016_UAMonk1_12_12WKWT.pdf#page=1"
             }
         }, {
-            name: "Way of the Tranquility",
+            name: "Way of Tranquility",
             reference: {
                 source: "UA", document: "Monk", page: 1,
                 url: "https://media.wizards.com/2016/dnd/downloads/M_2016_UAMonk1_12_12WKWT.pdf#page=1"
