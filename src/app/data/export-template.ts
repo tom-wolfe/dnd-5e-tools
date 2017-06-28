@@ -8,7 +8,7 @@ ___
 > ## {{name}}
 > ##### {{class.name}} {{#classArchetype}}({{classArchetype.name}}){{/classArchetype}}
 > *{{genderDescription}} {{raceDescription}}*<br>
-> *{{race.size}} {{race.type}}, {{alignmentDescription}}*
+> *{{race.size}} humanoid, {{alignmentDescription}}*
 > ___
 > - **Level** {{level.number}}
 > - **Proficiency Bonus** +{{level.proficiencyBonus}}
