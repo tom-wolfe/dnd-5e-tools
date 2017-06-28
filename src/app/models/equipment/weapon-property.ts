@@ -9,5 +9,6 @@ export enum WeaponProperty {
     TwoHanded,
     Heavy,
     Reach,
-    Special
+    Special,
+    Ranged
 };

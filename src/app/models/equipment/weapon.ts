@@ -8,5 +8,6 @@ export class Weapon extends Item {
     properties: WeaponProperty[];
     damageType: DamageType;
     damageDice: string;
+    range?: { from: number, to: number };
     constructor(initial: Weapon) { super(null); Object.assign(this, initial); }
 };

@@ -109,6 +109,51 @@ export class Character {
         return this.features.filter(feat => feat.type === FeatureType.Active);
     }
 
+    get weaponAttacks(): Feature[] {
+        const retVal: Feature[] = [];
+        this.equipment.filter(e => e instanceof Equipment.Weapon).forEach((weapon: Equipment.Weapon) => {
+            const isRanged = _.includes(weapon.properties, Equipment.WeaponProperty.Ranged)
+            const type = isRanged ? "Ranged" : "Melee";
+            const damageType = Equipment.DamageType[weapon.damageType].toString().toLowerCase();
+            let reach = "5";
+            if (isRanged) {
+                reach = weapon.range.from + "/" + weapon.range.to;
+            } else if (_.includes(weapon.properties, Equipment.WeaponProperty.Reach)) {
+                reach = "10";
+            }
+
+            let toHit = 0;
+            let ability = "STR";
+            if (_.includes(weapon.properties, Equipment.WeaponProperty.Ranged)) {
+                ability = "DEX";
+            }
+            if (_.includes(weapon.properties, Equipment.WeaponProperty.Finesse)) {
+                ability = "DEX";
+            }
+            if (_.includes(this.weaponProficiencies.map(w => w.thing), weapon)) {
+                toHit += this.level.proficiencyBonus;
+            }
+
+            const abModifier = this.abilities.getModifier(ability);
+            toHit += abModifier;
+
+            const hitBonus = toHit >= 0 ? "+" + toHit : toHit;
+
+            const damage = weapon.damageDice + " + " + abModifier;
+            retVal.push({
+                name: weapon.name,
+                description:
+                    `${type} Weapon Attack: ${hitBonus} to hit, reach ${reach} ft., one target. Hit: ${damage} ${damageType} damage.`,
+                type: FeatureType.Active
+            });
+        })
+        return retVal;
+    }
+
+    get actions(): Feature[] {
+        return _.union(this.activeFeatures, this.weaponAttacks);
+    }
+
     get otherFeatures(): Feature[] {
         return this.features.filter(feat => feat.type !== FeatureType.Active);
     }
