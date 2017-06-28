@@ -34,9 +34,9 @@ ___
 > 
 {{/otherFeatures}}
 > ### Actions
-{{#activeFeatures}}
+{{#actions}}
 > ***{{name}}. *** {{description}}
-{{/activeFeatures}}
+{{/actions}}
 
 <br>
 >____
