@@ -249,7 +249,7 @@ export class Character {
         output = append(output, "Blindsight");
         output = append(output, "Tremorsense");
         output = append(output, "Truesight");
-        return output;
+        return output || "[None]";
     }
 
     get skillString(): string {
