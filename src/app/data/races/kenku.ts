@@ -1,10 +1,11 @@
-import { Languages, Skills } from "../../data";
-import { ProficiencyType } from "../../models/abilities/proficiency-type";
-import * as RaceModels from "../../models/races";
+import { Languages, Skills } from "app/data";
+import { FeatureType } from "app/models/features/feature-type";
+import * as RaceModels from "app/models/races";
+
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
-export const Kenku: RaceModels.Race = {
+export const Kenku: RaceModels.Race = new RaceModels.Race({
     name: "Kenku",
     size: "Medium",
     speed: { walk: 30 },
@@ -16,20 +17,19 @@ export const Kenku: RaceModels.Race = {
     abilityMods: { "DEX": +2, "WIS": +1 },
     features: [
         {
-            name: "Export Forgery", type: "passive",
+            name: "Export Forgery", type: FeatureType.Passive,
             description: `
                     You can duplicate other creatures' handwriting and craftwork. You have advantage on all checks made to produce
                     forgeries or duplicates of existing objects.
                 `
         }, {
-            name: "Kenku Training", type: "passive",
-            skillProficiencies: [Skills.Acrobatics, Skills.Deception, Skills.Stealth, Skills.SleightOfHand],
-            proficiencyCount: 2, proficiencyType: ProficiencyType.Proficient,
+            name: "Kenku Training", type: FeatureType.Passive,
+            skillProficiencies: [{ proficiencies: [Skills.Acrobatics, Skills.Deception, Skills.Stealth, Skills.SleightOfHand], count: 2 }],
             description: `
                     You are proficient in your choice of two of the following skills: Acrobatics, Deception, Stealth, and Sleight of Hand.
                 `
         }, {
-            name: "Mimicry", type: "passive",
+            name: "Mimicry", type: FeatureType.Passive,
             description: `
                     You can mimic sounds you have heard, including voices. A creature that hears the sounds you make can tell they are
                     imitations with a successful Wisdom (Insight) check opposed by your Charisma (Deception) check.
@@ -38,7 +38,9 @@ export const Kenku: RaceModels.Race = {
     ],
     reference: { source: "VGM", page: 110 },
     subraces: []
-};
+});
 
-RaceList[Kenku.name] = Kenku;
+RaceList.push
+
+RaceList.push(Kenku);
 

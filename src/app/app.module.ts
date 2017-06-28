@@ -1,6 +1,5 @@
 import { NgModule } from "@angular/core";
 
-import { AppRoutingModule } from "app/app-routing.module";
 import { CoreModule } from "app/core/core.module";
 import { SharedModule } from "app/shared/shared.module";
 
@@ -12,12 +11,11 @@ import { NameGeneratorModule } from "./name-generator/name-generator.module";
 
 @NgModule({
   imports: [
-    AppRoutingModule,
-    CoreModule,
     SharedModule,
     CharacterGeneratorModule,
     NameGeneratorModule,
-    ItemGeneratorModule
+    ItemGeneratorModule,
+    CoreModule,
   ],
   declarations: [AppComponent],
   providers: [],

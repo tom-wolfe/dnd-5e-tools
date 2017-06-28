@@ -4,7 +4,7 @@ import { NameList } from "./name-list";
 
 /* cSpell:disable */
 
-export const Firbolg: Names.NameDefinition = {
+export const Firbolg: Names.NameDefinition = new Names.NameDefinition({
     name: "Firbolg",
     formats: [
         {
@@ -19,6 +19,6 @@ export const Firbolg: Names.NameDefinition = {
         forenameSuffixVowel: ElfNames.forenameSuffixVowel,
         forenameSuffixConsonant: ElfNames.forenameSuffixConsonant,
     }
-};
+});
 
-NameList[Firbolg.name] = Firbolg;
+NameList.push(Firbolg);

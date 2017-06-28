@@ -3,7 +3,7 @@ import { Component, Input, OnInit } from "@angular/core";
 import * as Characters from "app/models/characters";
 
 import { CharacterGeneratorService } from "./character-generator.service";
-import { CharacterGenerator, CharacterGeneratorConfig } from "./generators";
+import { CharacterBuilder, CharacterBuilderConfig } from "./builders";
 
 @Component({
   selector: "dnd-character-generator",
@@ -13,17 +13,17 @@ export class CharacterGeneratorComponent implements OnInit {
   @Input() advancedMode = false;
 
   character: Characters.Character;
-  config: CharacterGeneratorConfig = new CharacterGeneratorConfig();
-  generator: CharacterGenerator = new CharacterGenerator(this.config);
+  config: CharacterBuilderConfig = new CharacterBuilderConfig();
+  builder: CharacterBuilder = new CharacterBuilder(this.config);
 
   constructor(private service: CharacterGeneratorService) { }
 
   ngOnInit() {
-    this.character = this.service.character || this.generator.generateCharacter();
+    this.character = this.service.character || this.builder.create();
   };
 
   onGenerateClick() {
-    this.character = this.generator.generateCharacter();
+    this.character = this.builder.create();
   };
 
   onClearClick() {

@@ -5,7 +5,7 @@ import { NameList } from "./name-list";
 
 /* Adapted from https://thecollaborativegamer.wordpress.com/people/tables-for-creating-fantasy-names/names-halflings/ */
 
-export const Halfling: Names.NameDefinition = {
+export const Halfling: Names.NameDefinition = new Names.NameDefinition({
     name: "Halfling",
     formats: [
         { name: "Forename Surname", formats: ["{forename} {surnamePrefix}{surnameSuffix}"] }
@@ -74,6 +74,6 @@ export const Halfling: Names.NameDefinition = {
             }
         }
     }
-};
+});
 
-NameList[Halfling.name] = Halfling;
+NameList.push(Halfling);

@@ -1,13 +1,38 @@
+import * as Equipment from "app/models/equipment";
+
 import { Skills } from "../../data";
 import * as Characters from "../../models/characters";
+import { FeatureType } from "../../models/features/feature-type";
 import { BackgroundList } from "./background-list";
 
-export const Sage: Characters.Background = {
+export const Sage: Characters.Background = new Characters.Background({
     name: "Sage",
     reference: { source: "PHB", page: 137, url: "https://www.dndbeyond.com/characters/backgrounds/sage" },
     languages: { other: 2 },
-    skillProficiencies: [Skills.Arcana, Skills.History],
-    proficiencyCount: 2,
+    skillProficiencies: [{ proficiencies: [Skills.Arcana, Skills.History] }],
+    money: new Equipment.Money({ platinum: 0, gold: 10, silver: 0, copper: 0 }),
+    equipment: [
+        {
+            items: [[
+                { name: "small knife" },
+                { name: "letter from dead colleague asking an unanswered question" },
+                { name: "bottle of black ink" },
+                { name: "quill" },
+                { name: "common clothes" }
+            ]]
+        }
+    ],
+    features: [{
+        name: "Researcher",
+        type: FeatureType.Passive,
+        description: `
+            When you attempt to learn or recall a piece of lore, if you do not know that information, you often know where and from whom you
+            can obtain it. Usually, this information comes from a library, scriptorium, university, or a sage or other learned person or
+            creature. Your DM might rule that the knowledge you seek is secreted away in an almost inaccessible place, or that it simply
+            cannot be found. Unearthing the deepest secrets of the multiverse can require an adventure or even a whole campaign.
+
+        `
+    }],
     personalityTraits: [
         "I use polysyllabic words that convey the impression of great erudition.",
         "I’ve read every book in the world’s greatest libraries—or I like to boast that I have.",
@@ -42,6 +67,6 @@ export const Sage: Characters.Background = {
         "I speak without really thinking through my words, invariably insulting others.",
         "I can’t keep a secret to save my life, or anyone else’s.",
     ]
-};
+});
 
-BackgroundList[Sage.name] = Sage;
+BackgroundList.push(Sage);

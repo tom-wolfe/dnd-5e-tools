@@ -1,13 +1,37 @@
+import * as Vehicles from "app/data/vehicles";
+import * as Equipment from "app/models/equipment";
+
 import { Skills } from "../../data";
 import * as Characters from "../../models/characters";
+import { FeatureType } from "../../models/features/feature-type";
+import { NavigatorsTools } from "../tools";
 import { BackgroundList } from "./background-list";
+import * as Weapons from "app/data/weapons";
 
-export const Sailor: Characters.Background = {
+export const Sailor: Characters.Background = new Characters.Background({
     name: "Sailor",
     reference: { source: "PHB", page: 139, url: "" },
     languages: {},
-    skillProficiencies: [Skills.Athletics, Skills.Perception],
-    proficiencyCount: 2,
+    skillProficiencies: [{ proficiencies: [Skills.Athletics, Skills.Perception] }],
+    toolProficiencies: [{ proficiencies: [NavigatorsTools] },],
+    otherProficiencies: [{ proficiencies: [Vehicles.WaterVehicles] }],
+    money: new Equipment.Money({ platinum: 0, gold: 10, silver: 0, copper: 0 }),
+    equipment: [
+        { items: [[Weapons.Club, { name: "50 ft. silk rope" }, { name: "common clothes" }]] },
+        // TODO: Replace with real trinket.
+        { items: [[{ name: "lucky charm" }], [{ name: "trinket" }]], count: 1 },
+    ],
+    features: [{
+        name: "Ship's Passage",
+        type: FeatureType.Passive,
+        description: `
+            When you need to, you can secure free passage on a sailing ship for yourself and your adventuring companions. You might sail on
+            the ship you served on, or another ship you have good relations with (perhaps one captained by a former crewmate). Because
+            you're calling in a favor, you can't be certain of a schedule or route that wiII meet your every need. Your Dungeon Master will
+            determine how long it takes to get where you need to go. In return for your free passage, you and your companions are expected
+            to assist the crew during the voyage.
+        `
+    }],
     personalityTraits: [
         "My friends know they can rely on me, no matter what.",
         "I work hard so that I can play hard when the work is done.",
@@ -42,7 +66,6 @@ export const Sailor: Characters.Background = {
         "I can't help but pocket loose coins and other trinkets I come across.",
         "My pride will probably lead to my destruction.",
     ]
-};
+});
 
-BackgroundList[Sailor.name] = Sailor;
-
+BackgroundList.push(Sailor);

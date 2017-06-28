@@ -1,13 +1,31 @@
+import * as Equipment from "app/models/equipment";
+
 import { Skills } from "../../data";
 import * as Characters from "../../models/characters";
+import { FeatureType } from "../../models/features/feature-type";
+import { InstrumentList } from "../instruments";
+import * as Weapons from "../weapons";
 import { BackgroundList } from "./background-list";
 
-export const Outlander: Characters.Background = {
+export const Outlander: Characters.Background = new Characters.Background({
     name: "Outlander",
     reference: { source: "PHB", page: 136, url: "" },
     languages: { other: 1 },
-    skillProficiencies: [Skills.Athletics, Skills.Survival],
-    proficiencyCount: 2,
+    skillProficiencies: [{ proficiencies: [Skills.Athletics, Skills.Survival] }],
+    toolProficiencies: [{ proficiencies: InstrumentList, count: 1 }],
+    money: new Equipment.Money({ platinum: 0, gold: 10, silver: 0, copper: 0 }),
+    equipment: [
+        { items: [[Weapons.Quarterstaff, { name: "hunting trap" }, { name: "animal trophy" }, { name: "traveler's clothes" }]] }
+    ],
+    features: [{
+        name: "Wanderer",
+        type: FeatureType.Passive,
+        description: `
+            You have an excellent memory for maps and geography, and you can always recall the general layout of terrain, settlements, and
+            other features around you. In addition, you can find food and fresh water for yourself and up to five other people each day,
+            provided that the land offers berries, small game, water, and so forth.
+        `
+    }],
     personalityTraits: [
         "I'm driven by a wanderlust that led me away from home.",
         "I watch over my friends as if they were a litter of newborn pups.",
@@ -42,6 +60,6 @@ export const Outlander: Characters.Background = {
         "Violence is my answer to almost any challenge.",
         "Don't expect me to save those who can't save themselves. It is nature's way that the strong thrive and the weak perish.",
     ]
-};
+});
 
-BackgroundList[Outlander.name] = Outlander;
+BackgroundList.push(Outlander);

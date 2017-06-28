@@ -1,10 +1,12 @@
-import { Languages } from "../../data/languages";
-import * as RaceModels from "../../models/races";
+import { Languages } from "app/data/languages";
+import { FeatureType } from "app/models/features";
+import * as RaceModels from "app/models/races";
+
 import { CommonFeatures } from "../common-features";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
-export const Orc: RaceModels.Race = {
+export const Orc: RaceModels.Race = new RaceModels.Race({
     name: "Orc",
     size: "Medium",
     senses: { darkvision: 60 },
@@ -17,32 +19,19 @@ export const Orc: RaceModels.Race = {
     speed: { walk: 30 },
     features: [
         {
-            name: "Aggressive", type: "active",
+            name: "Aggressive", type: FeatureType.Active,
             description: `
                 As a bonus action, you can move up to your speed toward an enemy of your choice that you can see or hear.
                 You must end this move closer to the enemy than you started.
             `
         },
         CommonFeatures.menacing,
-        CommonFeatures.powerfulBuild,
-        {
-            name: "Natural Armor", type: "passive",
-            description: `
-                You have tough, scaly skin. When you aren't wearing armor, your AC is 13 + your Dexterity modifier. You can use your
-                natural armor to determine your AC if the armor you wear would leave you with a lower AC. A shield's benefits apply
-                as normal while you use your natural armor.
-            `
-        }, {
-            name: "Hungry Jaws", type: "active",
-            description: `
-                In battle, you can throw yourself into a vicious feeding frenzy. As a bonus action, you can make a special attack
-                with your bite. If the attack hits, it deals its normal damage, and you gain temporary hit points (minimum of 1)
-                equal to your Constitution modifier, and you can't use this trait again until you finish a short or long rest.
-            `
-        }
+        CommonFeatures.powerfulBuild
     ],
     reference: { source: "VGM", page: 120 },
     subraces: []
-};
+});
 
-RaceList[Orc.name] = Orc;
+RaceList.push
+
+RaceList.push(Orc);

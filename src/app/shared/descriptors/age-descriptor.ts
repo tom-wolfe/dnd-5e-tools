@@ -1,7 +1,8 @@
 import * as Characters from "app/models/characters";
-import { Descriptor } from "./descriptor";
 
-export class AgeDescriptor extends Descriptor {
+import { CharacterDescriptor } from "./character-descriptor";
+
+export class AgeDescriptor extends CharacterDescriptor {
     describe(character: Characters.Character): string {
         const band = this.getBand(character.age, character.race.age.maturity, character.race.age.max, 6);
         switch (band) {

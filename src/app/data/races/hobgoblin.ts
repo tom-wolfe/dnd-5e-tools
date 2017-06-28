@@ -1,10 +1,14 @@
-import { Languages } from "../../data/languages";
-import * as Characters from "../../models/characters";
-import * as RaceModels from "../../models/races";
+import { Languages } from "app/data/languages";
+import { WeaponList } from "app/data/weapons/weapon-list";
+import { WeaponType } from "app/models/equipment";
+import { FeatureType, TimeUnit } from "app/models/features";
+import * as RaceModels from "app/models/races";
+
+import { ArmorType } from "../../models/equipment/armor-type";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
-export const Hobgoblin: RaceModels.Race = {
+export const Hobgoblin: RaceModels.Race = new RaceModels.Race({
     name: "Hobgoblin",
     size: "Medium",
     speed: { walk: 30 },
@@ -17,14 +21,13 @@ export const Hobgoblin: RaceModels.Race = {
     abilityMods: { "CON": +2, "INT": +1 },
     features: [
         {
-            name: "Martial Training", type: "singleMod",
+            name: "Martial Training", type: FeatureType.Passive,
             description: "You are proficient with two martial weapons of your choice and with light armor.",
-            apply(character: Characters.Character) {
-                // TODO: Apply random proficiencies.
-            }
+            weaponProficiencies: [{ proficiencies: WeaponList.filter(w => w.type === WeaponType.Martial), count: 2 }],
+            armorProficiencies: [{ proficiencies: [ArmorType.Light] }],
         }, {
-            name: "Saving Face", type: "active",
-            usage: { times: 1, timeUnit: "shortRest" },
+            name: "Saving Face", type: FeatureType.Active,
+            usage: { times: 1, timeUnit: TimeUnit.ShortRest },
             description: `
                 Hobgoblins are careful not to show weakness in front of their allies, for fear of losing status. If you miss
                 with an attack roll or fail an ability check or a saving throw, you can gain a bonus to the roll equal to the
@@ -35,6 +38,8 @@ export const Hobgoblin: RaceModels.Race = {
     ],
     reference: { source: "VGM", page: 119 },
     subraces: []
-};
+});
 
-RaceList[Hobgoblin.name] = Hobgoblin;
+RaceList.push
+
+RaceList.push(Hobgoblin);

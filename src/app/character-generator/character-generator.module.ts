@@ -11,9 +11,6 @@ import { CharacterGeneratorService } from "./character-generator.service";
 import { ExportComponent } from "./export";
 import { FeatureComponent, FeatureListComponent } from "./features";
 import { GeneratorConfigComponent } from "./generator-config";
-import { LanguagesComponent } from "./languages";
-import { SensesComponent } from "./senses";
-import { SkillsComponent } from "./skills";
 import { SpeedComponent } from "./speed";
 import { StatsComponent } from "./stats";
 
@@ -30,9 +27,6 @@ import { StatsComponent } from "./stats";
     FeatureComponent,
     FeatureListComponent,
     GeneratorConfigComponent,
-    LanguagesComponent,
-    SensesComponent,
-    SkillsComponent,
     SpeedComponent,
     StatsComponent
   ],

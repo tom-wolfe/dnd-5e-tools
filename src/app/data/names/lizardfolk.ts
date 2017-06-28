@@ -5,7 +5,7 @@ import { NameList } from "./name-list";
 
 /* Based on names from http://en.uesp.net/wiki/Lore:Argonian_Names */
 
-export const Lizardfolk: Names.NameDefinition = {
+export const Lizardfolk: Names.NameDefinition = new Names.NameDefinition({
     name: "Lizardfolk",
     formats: [
         { name: "Forename", formats: ["{forename}"] },
@@ -202,6 +202,6 @@ export const Lizardfolk: Names.NameDefinition = {
             }
         }
     }
-};
+});
 
-NameList[Lizardfolk.name] = Lizardfolk;
+NameList.push(Lizardfolk);

@@ -2,9 +2,46 @@
 
 export const ExportTemplate =
   `# {{name}}
-### {{class.name}} ({{classArchetype.name}})
-##### {{genderDescription}} {{raceDescription}}
 
+___
+___
+> ## {{name}}
+> ##### {{class.name}} {{#classArchetype}}({{classArchetype.name}}){{/classArchetype}}
+> *{{genderDescription}} {{raceDescription}}*<br>
+> *{{race.size}} humanoid, {{alignmentDescription}}*
+> ___
+> - **Level** {{level.number}}
+> - **Proficiency Bonus** +{{level.proficiencyBonus}}
+> - **Armor Class** {{armorClass}} ({{equippedArmor}})
+> - **Hit Points** {{hitPoints}} ({{hitPointFormula}})
+> - **Speed** {{walkSpeedDescription}}{{otherSpeedsDescription}}
+>___
+>|STR|DEX|CON|INT|WIS|CHA|
+>|:---:|:---:|:---:|:---:|:---:|:---:|
+>|{{strength}} ({{strengthMod}})|{{dexterity}} ({{dexterityMod}})|{{constitution}} ({{constitutionMod}})|{{intelligence}} ({{intelligenceMod}})|{{wisdom}} ({{wisdomMod}})|{{charisma}} ({{charismaMod}})|
+>___
+> - **Damage Resistances** {{damageResistancesString}}
+> - **Skills** {{skillString}}
+> - **Senses** passive Perception{{#sensesString}}, {{/sensesString}}{{sensesString}}
+> - **Languages** {{languagesString}}
+>___
+> - **Weapon Proficiencies** {{weaponProficiencyString}}
+> - **Armor Proficiencies** {{armorProficiencyString}}
+> - **Tool Proficiencies** {{toolProficiencyString}}
+> - **Other Proficiencies** {{otherProficiencyString}}
+> ___
+> - **Equipment** {{equipmentString}}
+> ___
+{{#otherFeatures}}
+> ***{{name}}. *** {{description}}
+> 
+{{/otherFeatures}}
+> ### Actions
+{{#activeFeatures}}
+> ***{{name}}. *** {{description}}
+{{/activeFeatures}}
+
+<br>
 >____
 > ##### Information
 > Alignment: {{alignmentDescription}}<br>
@@ -12,6 +49,9 @@ export const ExportTemplate =
 > Age: {{ageDescription}} **({{ageClassification}})**<br>
 > Height: {{heightDescription}} **({{heightClassification}})**<br>
 > Weight: {{weightDescription}} **({{weightClassification}})**<br>
+
+\`\`\`
+\`\`\`
 
 <div class='descriptive'>
 ##### Background: {{background.name}}
@@ -24,32 +64,6 @@ export const ExportTemplate =
 <br>
 ***Flaw.*** {{flaw}}
 </div>
-
-\`\`\`
-\`\`\`
-
-___
-> ## {{name}}
->*{{race.size}} {{race.type}}, {{alignmentDescription}}*
-> ___
-> - **Level** {{level.number}}
-> - **Proficiency Bonus** +{{level.proficiencyBonus}}
-> - **Armor Class** {{armorClass}} ({{equippedArmor}})
-> - **Hit Points** {{hitPoints}} ({{hitPointFormula}})
-> - **Speed** {{walkSpeedDescription}}{{otherSpeedsDescription}}
->___
->|STR|DEX|CON|INT|WIS|CHA|
->|:---:|:---:|:---:|:---:|:---:|:---:|
->|{{strength}} ({{strengthMod}})|{{dexterity}} ({{dexterityMod}})|{{constitution}} ({{constitutionMod}})|{{intelligence}} ({{intelligenceMod}})|{{wisdom}} ({{wisdomMod}})|{{charisma}} ({{charismaMod}})|
->___
-> - **Skills** {{skillString}}
-> - **Senses** passive Perception{{#sensesString}}, {{/sensesString}}{{sensesString}}
-> - **Languages** {{languageString}}
-> ___
-{{#features}}
-> ***{{name}}. *** {{description}}
-> 
-{{/features}}
 
 <style>
   /* Printer Friendly A4 */

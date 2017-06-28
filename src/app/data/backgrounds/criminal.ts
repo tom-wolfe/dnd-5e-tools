@@ -1,13 +1,34 @@
-import { Skills } from "../../data";
-import * as Characters from "../../models/characters";
+import { Skills } from "app/data";
+import { GamingSetList } from "app/data/gaming-sets";
+import * as Tools from "app/data/tools";
+import * as Characters from "app/models/characters";
+import * as Equipment from "app/models/equipment";
+import { FeatureType } from "app/models/features/feature-type";
+
 import { BackgroundList } from "./background-list";
 
-export const Criminal: Characters.Background = {
+export const Criminal: Characters.Background = new Characters.Background({
     name: "Criminal",
     reference: { source: "PHB", page: 129, url: "" },
     languages: {},
-    skillProficiencies: [Skills.Deception, Skills.Stealth],
-    proficiencyCount: 2,
+    skillProficiencies: [{ proficiencies: [Skills.Deception, Skills.Stealth] }],
+    toolProficiencies: [
+        { proficiencies: [Tools.ThievesTools] },
+        { proficiencies: GamingSetList, count: 1 }
+    ],
+    money: new Equipment.Money({ platinum: 0, gold: 15, silver: 0, copper: 0 }),
+    equipment: [
+        { items: [[{ name: "crowbar" }, { name: "dark common clothes with hood" }]] }
+    ],
+    features: [{
+        name: "Criminal Contact",
+        type: FeatureType.Passive,
+        description: `
+            You have a reliable and trustworthy contact who acts as your liaison to a network of other criminals. You know how to get
+            messages to and from your contact, even over great distances; specifically, you know the local messengers, corrupt caravan
+            masters, and seedy sailors who can deliver messages for you.
+        `
+    }],
     personalityTraits: [
         "I always have a plan for what to do when things go wrong.",
         "I am always calm, no matter what the situation. I never raise my voice or let my emotions control me.",
@@ -42,6 +63,6 @@ export const Criminal: Characters.Background = {
         "I turn tail and run when things look bad.",
         "An innocent person is in prison for a crime that I committed. I’m okay with that.",
     ]
-};
+});
 
-BackgroundList[Criminal.name] = Criminal;
+BackgroundList.push(Criminal);

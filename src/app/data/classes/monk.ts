@@ -1,7 +1,7 @@
 import * as ClassModels from "../../models/classes";
 import { ClassList } from "./class-list";
 
-export const Monk: ClassModels.Class = {
+export const Monk: ClassModels.Class = new ClassModels.Class({
     name: "Monk",
     primaryStat: "DEX",
     archetypeName: { singular: "Monastic Tradition", plural: "Monastic Traditions" },
@@ -32,13 +32,13 @@ export const Monk: ClassModels.Class = {
                 url: "https://media.wizards.com/2016/dnd/downloads/M_2016_UAMonk1_12_12WKWT.pdf#page=1"
             }
         }, {
-            name: "Way of the Tranquility",
+            name: "Way of Tranquility",
             reference: {
                 source: "UA", document: "Monk", page: 1,
                 url: "https://media.wizards.com/2016/dnd/downloads/M_2016_UAMonk1_12_12WKWT.pdf#page=1"
             }
         },
     ]
-};
+});
 
-ClassList[Monk.name] = Monk;
+ClassList.push(Monk);

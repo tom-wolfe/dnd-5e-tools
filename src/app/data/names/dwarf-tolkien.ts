@@ -4,7 +4,7 @@ import { NameList } from "./name-list";
 
 /* cSpell:disable */
 
-export const DwarfTolkien: Names.NameDefinition = {
+export const DwarfTolkien: Names.NameDefinition = new Names.NameDefinition({
     name: "Dwarf (Tolkien)",
     formats: [
         {
@@ -33,6 +33,6 @@ export const DwarfTolkien: Names.NameDefinition = {
         prefixNoun: DwarfSurnames.prefixNoun,
         suffixAdjective: DwarfSurnames.suffixAdjective
     }
-};
+});
 
-NameList[DwarfTolkien.name] = DwarfTolkien;
+NameList.push(DwarfTolkien);

@@ -1,9 +1,10 @@
+import { FeatureType } from "../../models/features/feature-type";
 import * as RaceModels from "../../models/races";
 import { Languages } from "../languages";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
-export const Gnome: RaceModels.Race = {
+export const Gnome: RaceModels.Race = new RaceModels.Race({
     name: "Gnome",
     size: "Small",
     speed: { walk: 25 },
@@ -16,7 +17,7 @@ export const Gnome: RaceModels.Race = {
     abilityMods: { "INT": +2 },
     features: [
         {
-            name: "Gnome Cunning", type: "passive",
+            name: "Gnome Cunning", type: FeatureType.Passive,
             description: "You have advantage on all Intelligence, Wisdom, and Charisma saving throws against magic."
         }
     ],
@@ -27,10 +28,10 @@ export const Gnome: RaceModels.Race = {
             abilityMods: { "DEX": +1 },
             features: [
                 {
-                    name: "Natural Illusionist", type: "active",
+                    name: "Natural Illusionist", type: FeatureType.Active,
                     description: "You know the minor illusion cantrip. Intelligence is your spellcasting ability for it."
                 }, {
-                    name: "Speak with Small Beasts", type: "passive",
+                    name: "Speak with Small Beasts", type: FeatureType.Passive,
                     description: `
                             Through sounds and gestures, you can communicate simple ideas with Small ar smaller beasts. Forest gnomes
                             love animals and often keep squirrels, badgers, rabbits, moles, woodpeckers, and other creatures as beloved
@@ -44,13 +45,14 @@ export const Gnome: RaceModels.Race = {
             abilityMods: { "CON": +1 },
             features: [
                 {
-                    name: "Artificer's Lore", type: "passive",
+                    name: "Artificer's Lore", type: FeatureType.Passive,
                     description: `
                             Whenever you make an Intelligence (History) check related to magic items, alchemical objects, or technological
                             devices, you can add twice your proficiency bonus, instead of any proficiency bonus you normally apply.
                         `
                 }, {
-                    name: "Tinker", type: "passive",
+                    name: "Tinker", type: FeatureType.Passive,
+                    // TODO: Add markdown support for this.
                     description: `
                             You have proficiency with artisan's tools (tinker's tools). Using those tools, you can spend 1 hour and 10 gp
                             worth of materiaIs to construct a Tiny clockwork device (AC 5, 1 hp). The device ceases to function after
@@ -78,13 +80,15 @@ export const Gnome: RaceModels.Race = {
             senses: { darkvision: 120 },
             features: [
                 {
-                    name: "Stone Camouflage", type: "passive",
+                    name: "Stone Camouflage", type: FeatureType.Passive,
                     description: "You have advantage on Dexterity (stealth) checks to hide in rocky terrain."
                 }
             ],
             reference: { source: "EE", page: 4, url: "https://www.dndbeyond.com/characters/races/gnome#DeepGnome" }
         }
     ]
-};
+});
 
-RaceList[Gnome.name] = Gnome;
+RaceList.push
+
+RaceList.push(Gnome);

@@ -1,5 +1,4 @@
 
-export interface Ability {
-    code: string;
-    name: string;
+export class Ability {
+    constructor(public code: string, public name: string) { }
 };

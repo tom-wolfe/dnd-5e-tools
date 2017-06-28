@@ -1,13 +1,37 @@
-import { Languages, Skills } from "../../data";
-import { BackgroundList } from "./background-list";
+import { Skills } from "../../data";
 import * as Characters from "../../models/characters";
+import { FeatureType } from "../../models/features/feature-type";
+import * as Tools from "../tools";
+import { BackgroundList } from "./background-list";
+import * as Equipment from "app/models/equipment";
 
-export const Urchin: Characters.Background = {
+export const Urchin: Characters.Background = new Characters.Background({
     name: "Urchin",
     reference: { source: "PHB", page: 141, url: "" },
     languages: {},
-    skillProficiencies: [Skills.SleightOfHand, Skills.Stealth],
-    proficiencyCount: 2,
+    skillProficiencies: [{ proficiencies: [Skills.SleightOfHand, Skills.Stealth] }],
+    toolProficiencies: [{ proficiencies: [Tools.DisguiseKit, Tools.ThievesTools] }],
+    money: new Equipment.Money({ platinum: 0, gold: 10, silver: 0, copper: 0 }),
+    equipment: [
+        {
+            items: [[
+                { name: "small knife" },
+                { name: "city map" },
+                { name: "pet mouse" },
+                { name: "token to remember your parents by" },
+                { name: "common clothes" },
+            ]]
+        },
+    ],
+    features: [{
+        name: "City Secrets",
+        type: FeatureType.Passive,
+        description: `
+            You know the secret patterns and flow to cities and can find passages through the urban sprawl that others would miss. When you
+            are not in combat, you (and companions you lead) can travel between any two locations in the city twice as fast as your speed
+            would normally allow.
+        `
+    }],
     personalityTraits: [
         "I hide scraps of food and trinkets away in my pockets.",
         "I ask a lot of questions.",
@@ -42,6 +66,6 @@ export const Urchin: Characters.Background = {
         "It's not stealing if I need It more than someone else.",
         "People who can't take care of themselves get what they deserve.",
     ]
-};
+});
 
-BackgroundList[Urchin.name] = Urchin;
+BackgroundList.push(Urchin);

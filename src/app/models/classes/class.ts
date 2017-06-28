@@ -7,4 +7,5 @@ export class Class {
     primaryStat: string;
     archetypeName: { singular: string, plural: string };
     archetypes?: Archetype[];
+    constructor(initial: Class) { Object.assign(this, initial); }
 };

@@ -5,7 +5,7 @@ import { NameList } from "./name-list";
 
 /* Adapted from http://www.fantasynamegenerators.com/dnd-kenku-names.php */
 
-export const Kenku: Names.NameDefinition = {
+export const Kenku: Names.NameDefinition = new Names.NameDefinition({
     name: "Kenku",
     formats: [
         { name: "Battle Name", formats: ["{battleName}"] },
@@ -95,6 +95,6 @@ export const Kenku: Names.NameDefinition = {
             },
         }
     }
-};
+});
 
-NameList[Kenku.name] = Kenku;
+NameList.push(Kenku);

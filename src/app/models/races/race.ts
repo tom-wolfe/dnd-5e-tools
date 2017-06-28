@@ -22,4 +22,5 @@ export class Race {
     features: Features.Feature[];
     reference: Reference;
     subraces: Subrace[];
+    constructor(initial: Race) { Object.assign(this, initial); }
 };

@@ -1,13 +1,31 @@
+import * as Equipment from "app/models/equipment";
+
 import { Skills } from "../../data";
 import * as Characters from "../../models/characters";
+import { FeatureType } from "../../models/features/feature-type";
+import { GamingSetList } from "../gaming-sets";
 import { BackgroundList } from "./background-list";
 
-export const Noble: Characters.Background = {
+export const Noble: Characters.Background = new Characters.Background({
     name: "Noble",
     reference: { source: "PHB", page: 131, url: "https://www.dndbeyond.com/characters/backgrounds/noble" },
     languages: { other: 1 },
-    skillProficiencies: [Skills.History, Skills.Persuasion],
-    proficiencyCount: 2,
+    skillProficiencies: [{ proficiencies: [Skills.History, Skills.Persuasion] }],
+    toolProficiencies: [{ proficiencies: GamingSetList, count: 1 }],
+    money: new Equipment.Money({ platinum: 0, gold: 25, silver: 0, copper: 0 }),
+    equipment: [
+        { items: [[{ name: "fine clothes" }, { name: "signet ring" }, { name: "scroll of pedigree" }]] }
+    ],
+    features: [{
+        name: "Position of Privilege",
+        type: FeatureType.Passive,
+        description: `
+            Thanks to your noble birth, people are inclined to think the best of you. You are welcome in high society, and people assume
+            you have the right to be wherever you are. The common folk make every effort to accommodate you and avoid your displeasure, and
+            other people of high birth treat you as a member of the same social sphere. You can secure an audience with a local noble if you
+            need to.
+        `
+    }],
     personalityTraits: [
         "My eloquent flattery makes everyone I talk to feel like the most wonderful and important person in the world.",
         "The common folk love me for my kindness and generosity.",
@@ -42,6 +60,6 @@ export const Noble: Characters.Background = {
         "In fact, the world does revolve around me.",
         "By my words and actions, I often bring shame to my family.",
     ]
-};
+});
 
-BackgroundList[Noble.name] = Noble;
+BackgroundList.push(Noble);

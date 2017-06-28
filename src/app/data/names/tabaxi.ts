@@ -5,7 +5,7 @@ import { NameList } from "./name-list";
 
 /* Based on names from http://www.fantasynamegenerators.com/dnd-tabaxi-names.php */
 
-export const Tabaxi: Names.NameDefinition = {
+export const Tabaxi: Names.NameDefinition = new Names.NameDefinition({
     name: "Tabaxi",
     formats: [
         { name: "Adjective Noun", formats: ["{forenameAdjective} {forenameNoun}"] },
@@ -147,6 +147,6 @@ export const Tabaxi: Names.NameDefinition = {
             },
         }
     }
-};
+});
 
-NameList[Tabaxi.name] = Tabaxi;
+NameList.push(Tabaxi);

@@ -1,7 +1,7 @@
 import * as ClassModels from "../../models/classes";
 import { ClassList } from "./class-list";
 
-export const Warlock: ClassModels.Class = {
+export const Warlock: ClassModels.Class = new ClassModels.Class({
     name: "Warlock",
     primaryStat: "CHA",
     archetypeName: { singular: "Otherworldly Patron", plural: "Otherworldly Patrons" },
@@ -45,6 +45,6 @@ export const Warlock: ClassModels.Class = {
             }
         }
     ]
-};
+});
 
-ClassList[Warlock.name] = Warlock;
+ClassList.push(Warlock);

@@ -1,10 +1,13 @@
-import { Languages, Skills } from "../../data";
-import { ProficiencyType } from "../../models/abilities/proficiency-type";
-import * as RaceModels from "../../models/races";
+import { Languages, Skills } from "app/data";
+import * as Characters from "app/models/characters";
+import { FeatureType, TimeUnit } from "app/models/features";
+import * as RaceModels from "app/models/races";
+
+import { CommonFeatures } from "../common-features";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
-export const Shifter: RaceModels.Race = {
+export const Shifter: RaceModels.Race = new RaceModels.Race({
     name: "Shifter",
     size: "Medium",
     speed: { walk: 30 },
@@ -15,21 +18,7 @@ export const Shifter: RaceModels.Race = {
     senses: { darkvision: 60 },
     languages: { known: [Languages.Common, Languages.Sylvan] },
     abilityMods: { "DEX": +1 },
-    features: [
-        {
-            name: "Duplicity", type: "passive",
-            skillProficiencies: [Skills.Deception],
-            proficiencyCount: 1, proficiencyType: ProficiencyType.Proficient,
-            description: "You have proficiency in the Deception skill."
-        }, {
-            name: "Shapechanger", type: "active",
-            description: `
-                    As an action, you can polymorph into any humanoid of your size that you have seen,
-                    or back into your true form. However, your equipment does not change with you.
-                    If you die, you revert to your natural appearance.
-                `
-        }
-    ],
+    features: [ ],
     reference: {
         source: "UA", page: 2,
         document: "Eberron", url: "http://media.wizards.com/2015/downloads/dnd/UA_Eberron_v1.1.pdf#page=2"
@@ -40,8 +29,8 @@ export const Shifter: RaceModels.Race = {
             abilityMods: { "CON": +1 },
             features: [
                 {
-                    name: "Shifting", type: "active",
-                    usage: { times: 1, timeUnit: "shortRest" },
+                    name: "Shifting", type: FeatureType.Active,
+                    usage: { times: 1, timeUnit: TimeUnit.ShortRest },
                     description: `
                             On your turn, you can shift as a bonus action. Shifting lasts for 1 minute or until you end it on your turn as
                             a bonus action. While shifting, you gain temporary hit points equal to your level + your Constitution bonus
@@ -58,8 +47,8 @@ export const Shifter: RaceModels.Race = {
             abilityMods: { "DEX": +1 },
             features: [
                 {
-                    name: "Shifting", type: "active",
-                    usage: { times: 1, timeUnit: "shortRest" },
+                    name: "Shifting", type: FeatureType.Active,
+                    usage: { times: 1, timeUnit: TimeUnit.ShortRest },
                     description: `
                             On your turn, you can shift as a bonus action. Shifting lasts for 1 minute or until you end it on your turn as
                             a bonus action. While shifting, you gain temporary hit points equal to your level + your Constitution bonus
@@ -77,8 +66,8 @@ export const Shifter: RaceModels.Race = {
             abilityMods: { "DEX": +1 },
             features: [
                 {
-                    name: "Shifting", type: "active",
-                    usage: { times: 1, timeUnit: "shortRest" },
+                    name: "Shifting", type: FeatureType.Active,
+                    usage: { times: 1, timeUnit: TimeUnit.ShortRest },
                     description: `
                             On your turn, you can shift as a bonus action. Shifting lasts for 1 minute or until you end it on your turn as
                             a bonus action. While shifting, you gain temporary hit points equal to your level + your Constitution bonus
@@ -95,8 +84,8 @@ export const Shifter: RaceModels.Race = {
             abilityMods: { "STR": +1 },
             features: [
                 {
-                    name: "Shifting", type: "active",
-                    usage: { times: 1, timeUnit: "shortRest" },
+                    name: "Shifting", type: FeatureType.Active,
+                    usage: { times: 1, timeUnit: TimeUnit.ShortRest },
                     description: `
                             On your turn, you can shift as a bonus action. Shifting lasts for 1 minute or until you end it on your turn as
                             a bonus action. While shifting, you gain temporary hit points equal to your level + your Constitution bonus
@@ -115,8 +104,8 @@ export const Shifter: RaceModels.Race = {
             abilityMods: { "DEX": +1 },
             features: [
                 {
-                    name: "Shifting", type: "active",
-                    usage: { times: 1, timeUnit: "shortRest" },
+                    name: "Shifting", type: FeatureType.Active,
+                    usage: { times: 1, timeUnit: TimeUnit.ShortRest },
                     description: `
                             On your turn, you can shift as a bonus action. Shifting lasts for 1 minute or until you end it on your turn as
                             a bonus action. While shifting, you gain temporary hit points equal to your level + your Constitution bonus
@@ -134,8 +123,8 @@ export const Shifter: RaceModels.Race = {
             abilityMods: { "WIS": +1 },
             features: [
                 {
-                    name: "Shifting", type: "active",
-                    usage: { times: 1, timeUnit: "shortRest" },
+                    name: "Shifting", type: FeatureType.Active,
+                    usage: { times: 1, timeUnit: TimeUnit.ShortRest },
                     description: `
                             On your turn, you can shift as a bonus action. Shifting lasts for 1 minute or until you end it on your turn as
                             a bonus action. While shifting, you gain temporary hit points equal to your level + your Constitution bonus
@@ -149,6 +138,8 @@ export const Shifter: RaceModels.Race = {
             },
         }
     ]
-};
+});
 
-RaceList[Shifter.name] = Shifter;
+RaceList.push
+
+RaceList.push(Shifter);

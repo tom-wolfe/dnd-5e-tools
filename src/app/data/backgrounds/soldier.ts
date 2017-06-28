@@ -1,13 +1,34 @@
+import * as Vehicles from "app/data/vehicles";
+import * as Equipment from "app/models/equipment";
+
 import { Skills } from "../../data";
 import * as Characters from "../../models/characters";
+import { FeatureType } from "../../models/features/feature-type";
+import { GamingSetList } from "../gaming-sets";
 import { BackgroundList } from "./background-list";
 
-export const Soldier: Characters.Background = {
+export const Soldier: Characters.Background = new Characters.Background({
     name: "Soldier",
     reference: { source: "PHB", page: 140, url: "https://www.dndbeyond.com/characters/backgrounds/soldier" },
     languages: {},
-    skillProficiencies: [Skills.Athletics, Skills.Intimidation],
-    proficiencyCount: 2,
+    skillProficiencies: [{ proficiencies: [Skills.Athletics, Skills.Intimidation] }],
+    toolProficiencies: [{ proficiencies: GamingSetList, count: 1 }],
+    otherProficiencies: [{ proficiencies: [Vehicles.LandVehicles] }],
+    money: new Equipment.Money({ platinum: 0, gold: 10, silver: 0, copper: 0 }),
+    equipment: [
+        { items: [[{ name: "common clothes" }, { name: "insignia of rank" }, { name: "trophy from a fallen enemy" }]] },
+        { items: [[{ name: "bone dice" }], [{ name: "deck of cards" }]], count: 1 },
+    ],
+    features: [{
+        name: "Military Rank",
+        type: FeatureType.Passive,
+        description: `
+            You have a military rank from your career as a soldier. Soldiers loyal to your former military organization still recognize your
+            authority and influence, and they defer to you if they are of a lower rank. You can invoke your rank to exert influence over
+            other soldiers and requisition simple equipment or horses for temporary use. You can also usually gain access to friendly
+            military encampments and fortresses where your rank is recognized.
+        `
+    }],
     personalityTraits: [
         "I’m always polite and respectful.",
         "I’m haunted by memories of war. I can’t get the images of violence out of my mind.",
@@ -42,6 +63,6 @@ export const Soldier: Characters.Background = {
         "I obey the law, even if the law causes misery.",
         "I’d rather eat my armor than admit when I’m wrong.",
     ]
-};
+});
 
-BackgroundList[Soldier.name] = Soldier;
+BackgroundList.push(Soldier);

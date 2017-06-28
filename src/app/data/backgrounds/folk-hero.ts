@@ -1,13 +1,34 @@
+import { ArtisanToolList } from "app/data/artisan-tools";
+import * as Vehicles from "app/data/vehicles";
+import * as Equipment from "app/models/equipment";
+
 import { Skills } from "../../data";
 import * as Characters from "../../models/characters";
+import { FeatureType } from "../../models/features/feature-type";
 import { BackgroundList } from "./background-list";
 
-export const FolkHero: Characters.Background = {
+export const FolkHero: Characters.Background = new Characters.Background({
     name: "Folk Hero",
     reference: { source: "PHB", page: 131, url: "https://www.dndbeyond.com/characters/backgrounds/folk-hero" },
     languages: {},
-    skillProficiencies: [Skills.AnimalHandling, Skills.Survival],
-    proficiencyCount: 2,
+    skillProficiencies: [{ proficiencies: [Skills.AnimalHandling, Skills.Survival] }],
+    toolProficiencies: [{ proficiencies: ArtisanToolList, count: 1 }],
+    otherProficiencies: [{ proficiencies: [Vehicles.LandVehicles] }],
+    money: new Equipment.Money({ platinum: 0, gold: 10, silver: 0, copper: 0 }),
+    equipment: [
+        { items: ArtisanToolList.map(i => [i]), count: 1 },
+        { items: [[{ name: "shovel" }, { name: "iron pot" }, { name: "common clothes" }]] },
+    ],
+    features: [{
+        name: "Rustic Hospitality",
+        type: FeatureType.Passive,
+        description: `
+            Since you come from the ranks of the common folk, you fit in among them with ease. You can find a place to hide, rest, or
+            recuperate among other commoners, unless you have shown yourself to be a danger to them. They will shield you from the law
+            or anyone else searching for you, though they will not risk their lives for you.
+
+        `
+    }],
     personalityTraits: [
         "I judge people by their actions, not their words.",
         "If someone is in trouble, I’m always ready to lend help.",
@@ -42,6 +63,6 @@ export const FolkHero: Characters.Background = {
         "Secretly, I believe that things would be better if I were a tyrant lording over the land.",
         "I have trouble trusting in my allies.",
     ]
-};
+});
 
-BackgroundList[FolkHero.name] = FolkHero;
+BackgroundList.push(FolkHero);

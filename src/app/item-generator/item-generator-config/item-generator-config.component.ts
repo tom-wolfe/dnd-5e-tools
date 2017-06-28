@@ -1,8 +1,10 @@
 import { Component, Input, OnInit } from "@angular/core";
 
-import * as ItemTypeData from "app/data/item-types";
-import * as Items from "app/models/items";
 import { NameGeneratorConfig } from "app/shared/generators/name-generator-config";
+
+import * as ItemTypeData from "../data/item-types";
+import * as Items from "../models/items";
+import * as _ from "lodash";
 
 @Component({
   selector: "dnd-item-generator-config",
@@ -14,7 +16,7 @@ export class ItemGeneratorConfigComponent implements OnInit {
   items: Items.ItemDefinition[];
 
   ngOnInit() {
-    this.items = Object.keys(ItemTypeData.ItemTypeList).sort().map(name => ItemTypeData.ItemTypeList[name]);
+    this.items = _.sortBy(ItemTypeData.ItemTypeList, ["name"]);
     this.config.count = 10;
     this.config.definition = null;
   }

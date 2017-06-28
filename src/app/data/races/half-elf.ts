@@ -1,11 +1,12 @@
-import { Languages, Skills } from "../../data";
-import { ProficiencyType } from "../../models/abilities/proficiency-type";
-import * as RaceModels from "../../models/races";
+import { Languages, Skills } from "app/data";
+import { FeatureType } from "app/models/features/feature-type";
+import * as RaceModels from "app/models/races";
+
 import { CommonFeatures } from "../common-features";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
-export const HalfElf: RaceModels.Race = {
+export const HalfElf: RaceModels.Race = new RaceModels.Race({
     name: "Half-elf",
     size: "Medium",
     speed: { walk: 30 },
@@ -19,14 +20,15 @@ export const HalfElf: RaceModels.Race = {
     features: [
         CommonFeatures.feyAncestry,
         {
-            name: "Skill Versatility", type: "passive",
-            skillProficiencies: Object.keys(Skills.SkillList).map((skill) => Skills.SkillList[skill]),
-            proficiencyCount: 2, proficiencyType: ProficiencyType.Proficient,
+            name: "Skill Versatility", type: FeatureType.Passive,
+            skillProficiencies: [{ proficiencies: Skills.SkillList, count: 2 }],
             description: "You gain proficiency in two skills of your choice."
         }
     ],
     reference: { source: "PHB", page: 38, url: "https://www.dndbeyond.com/characters/races/half-elf" },
     subraces: []
-};
+});
 
-RaceList[HalfElf.name] = HalfElf;
+RaceList.push
+
+RaceList.push(HalfElf);

@@ -1,13 +1,38 @@
+import * as Equipment from "app/models/equipment";
+
 import { Skills } from "../../data";
 import * as Characters from "../../models/characters";
+import { FeatureType } from "../../models/features/feature-type";
+import * as Tools from "../tools";
 import { BackgroundList } from "./background-list";
 
-export const Charlatan: Characters.Background = {
+export const Charlatan: Characters.Background = new Characters.Background({
     name: "Charlatan",
     reference: { source: "PHB", page: 128 },
     languages: {},
-    skillProficiencies: [Skills.Deception, Skills.SleightOfHand],
-    proficiencyCount: 2,
+    skillProficiencies: [{ proficiencies: [Skills.Deception, Skills.SleightOfHand] }],
+    toolProficiencies: [{ proficiencies: [Tools.DisguiseKit, Tools.ForgeryKit] }],
+    money: new Equipment.Money({ platinum: 0, gold: 15, silver: 0, copper: 0 }),
+    equipment: [
+        { items: [[Tools.DisguiseKit, { name: "fine clothes" }]] },
+        {
+            items: [
+                [{ name: "10 stoppered bottles filled with colored liquid" }],
+                [{ name: "weighted dice" }],
+                [{ name: "deck of marked cards" }],
+                [{ name: "signet ring of an imaginary duke" }]],
+            count: 1
+        }
+    ],
+    features: [{
+        name: "Favorite False Identity",
+        type: FeatureType.Passive,
+        description: `
+            You have created a second identity that includes documentation, established acquaintances, and disguises that allow you to
+            assume that persona. Additionally, you can forge documents including official papers and personal letters, as long as you have
+            seen an example of the kind of document or the handwriting you are trying to copy.
+        `
+    }],
     personalityTraits: [
         "I fall in and out of love easily, and am always pursuing someone.",
         "I have a joke for every occasion, especially occasions where humor is inappropriate.",
@@ -45,6 +70,6 @@ export const Charlatan: Characters.Background = {
         "I can't resist swindling people who are more powerful than me.",
         "I hate to admit it and will hate myself for it, but I'll run and preserve my own hide if the going gets tough.",
     ]
-};
+});
 
-BackgroundList[Charlatan.name] = Charlatan;
+BackgroundList.push(Charlatan);

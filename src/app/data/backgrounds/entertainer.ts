@@ -1,13 +1,38 @@
+import { InstrumentList } from "app/data/instruments";
+import * as Tools from "app/data/tools";
+import * as Equipment from "app/models/equipment";
+
 import { Skills } from "../../data";
 import * as Characters from "../../models/characters";
+import { FeatureType } from "../../models/features/feature-type";
 import { BackgroundList } from "./background-list";
 
-export const Entertainer: Characters.Background = {
+export const Entertainer: Characters.Background = new Characters.Background({
     name: "Entertainer",
     reference: { source: "PHB", page: 130, url: "" },
     languages: {},
-    skillProficiencies: [Skills.Acrobatics, Skills.Performance],
-    proficiencyCount: 2,
+    skillProficiencies: [{ proficiencies: [Skills.Acrobatics, Skills.Performance] }],
+    toolProficiencies: [
+        { proficiencies: [Tools.DisguiseKit] },
+        { proficiencies: InstrumentList, count: 1 }
+    ],
+    money: new Equipment.Money({ platinum: 0, gold: 15, silver: 0, copper: 0 }),
+    equipment: [
+        { items: [[{ name: "fine clothes" }, { name: "costume" }]] },
+        { items: InstrumentList.map(i => [i]), count: 1 },
+        // TODO: Allow to generate random trinket.
+        { items: [[{ name: "love letter" }], [{ name: "lock of hair" }], [{ name: "trinket" }]], count: 1 },
+    ],
+    features: [{
+        name: "By Popular Demand",
+        type: FeatureType.Passive,
+        description: `
+            You can always find a place to perform, usually in an inn or tavern but possibly with a circus, at a theater, or even in a
+            noble's court. At such a place, you receive free lodging and food of a modest or comfortable standard (depending on the quality
+            of the establishment), as long as you perform each night. In addition, your performance makes you something of a local figure.
+            When strangers recognize you in a town where you have performed, they typically take a liking to you.
+        `
+    }],
     personalityTraits: [
         "I know a story relevant to almost every situation.",
         "Whenever I come to a new place, I collect local rumors and spread gossip.",
@@ -42,6 +67,6 @@ export const Entertainer: Characters.Background = {
         "I have trouble keeping my true feelings hidden. My sharp tongue lands me in trouble.",
         "Despite my best efforts, I am unreliable to my friends.",
     ]
-};
+});
 
-BackgroundList[Entertainer.name] = Entertainer;
+BackgroundList.push(Entertainer);

@@ -1,10 +1,11 @@
-import { Languages, Skills } from "../../data";
-import { ProficiencyType } from "../../models/abilities/proficiency-type";
-import * as RaceModels from "../../models/races";
+import { Languages, Skills } from "app/data";
+import { FeatureType } from "app/models/features";
+import * as RaceModels from "app/models/races";
+
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
-export const Changeling: RaceModels.Race = {
+export const Changeling: RaceModels.Race = new RaceModels.Race({
     name: "Changeling",
     size: "Medium",
     speed: { walk: 30 },
@@ -16,12 +17,11 @@ export const Changeling: RaceModels.Race = {
     abilityMods: { "DEX": +1, "CHA": +1 },
     features: [
         {
-            name: "Duplicity", type: "passive",
-            skillProficiencies: [Skills.Deception],
-            proficiencyCount: 1, proficiencyType: ProficiencyType.Proficient,
+            name: "Duplicity", type: FeatureType.Passive,
+            skillProficiencies: [{ proficiencies: [Skills.Deception] }],
             description: "You have proficiency in the Deception skill."
         }, {
-            name: "Shapechanger", type: "active",
+            name: "Shapechanger", type: FeatureType.Active,
             description: `
                     As an action, you can polymorph into any humanoid of your size that you have seen,
                     or back into your true form. However, your equipment does not change with you.
@@ -31,6 +31,8 @@ export const Changeling: RaceModels.Race = {
     ],
     reference: { source: "UA", page: 1, document: "Eberron", url: "http://media.wizards.com/2015/downloads/dnd/UA_Eberron_v1.1.pdf" },
     subraces: []
-};
+});
 
-RaceList[Changeling.name] = Changeling;
+RaceList.push
+
+RaceList.push(Changeling);

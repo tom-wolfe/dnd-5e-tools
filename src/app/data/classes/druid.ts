@@ -1,7 +1,7 @@
 import * as ClassModels from "../../models/classes";
 import { ClassList } from "./class-list";
 
-export const Druid: ClassModels.Class = {
+export const Druid: ClassModels.Class = new ClassModels.Class({
     name: "Druid",
     primaryStat: "WIS",
     archetypeName: { singular: "Druid Circle", plural: "Druid Circles" },
@@ -39,6 +39,6 @@ export const Druid: ClassModels.Class = {
             }
         },
     ]
-};
+});
 
-ClassList[Druid.name] = Druid;
+ClassList.push(Druid);

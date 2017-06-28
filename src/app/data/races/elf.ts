@@ -1,12 +1,14 @@
-import { Languages, Skills } from "../../data";
-import { ProficiencyType } from "../../models/abilities/proficiency-type";
-import * as Characters from "../../models/characters";
-import * as RaceModels from "../../models/races";
+import { Languages, Skills } from "app/data";
+import * as Characters from "app/models/characters";
+import { FeatureType, TimeUnit } from "app/models/features";
+import * as RaceModels from "app/models/races";
+
+import * as Weapons from "../../data/weapons";
 import { CommonFeatures } from "../common-features";
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
-export const Elf: RaceModels.Race = {
+export const Elf: RaceModels.Race = new RaceModels.Race({
     name: "Elf",
     size: "Medium",
     speed: { walk: 30 },
@@ -19,14 +21,13 @@ export const Elf: RaceModels.Race = {
     abilityMods: { "DEX": +2 },
     features: [
         {
-            name: "Keen Senses", type: "passive",
-            skillProficiencies: [Skills.Perception],
-            proficiencyCount: 1, proficiencyType: ProficiencyType.Proficient,
+            name: "Keen Senses", type: FeatureType.Passive,
+            skillProficiencies: [{ proficiencies: [Skills.Perception] }],
             description: "You have proficiency in the Perception skill."
         },
         CommonFeatures.feyAncestry,
         {
-            name: "Trance", type: "passive",
+            name: "Trance", type: FeatureType.Passive,
             description: `
                     Elves don't need to sleep. Instead, they meditate deeply, remaining semiconscious, for 4 hours a day. (The common word
                     for such meditation is "trance.") While meditating, you can dream after a fashion; such dreams are actually mental
@@ -43,7 +44,7 @@ export const Elf: RaceModels.Race = {
             features: [
                 CommonFeatures.elfWeaponTraining,
                 {
-                    name: "Cantrip", type: "singleMod",
+                    name: "Cantrip", type: FeatureType.SingleMod,
                     description: `
                             You know one Cantrip of your choice from the wizard spell list.
                             Intelligence is your spellcasting ability for it.
@@ -62,10 +63,10 @@ export const Elf: RaceModels.Race = {
             features: [
                 CommonFeatures.elfWeaponTraining,
                 {
-                    name: "Fleet of Foot", type: "passive",
+                    name: "Fleet of Foot", type: FeatureType.Passive,
                     description: "Your base walking speed increase to 35 feet."
                 }, {
-                    name: "Mask of the Wild", type: "passive",
+                    name: "Mask of the Wild", type: FeatureType.Passive,
                     description: `
                             You can attempt to hide even when you are only lightly obscured by foliage, heavy rain,
                             falling snow, mist, and other natural phenomena.
@@ -83,15 +84,18 @@ export const Elf: RaceModels.Race = {
             features: [
                 CommonFeatures.sunlightSensitivity,
                 {
-                    name: "Drow Magic", type: "active",
-                    usage: { times: 1, timeUnit: "longRest" },
+                    name: "Drow Magic", type: FeatureType.Active,
+                    usage: { times: 1, timeUnit: TimeUnit.LongRest },
                     description: `
                             You know the dancing lights cantrip. When you reach 3rd level, you can cast the faerie fire spell
                             once per day. When you reach 5th level, you can also cast the darkness spell once per day. Charisma is
                             your spellcasting ability for these spells.
                         `
                 }, {
-                    name: "Drow Weapon Training", type: "passive",
+                    name: "Drow Weapon Training", type: FeatureType.Passive,
+                    weaponProficiencies: [
+                        { proficiencies: [Weapons.Rapier, Weapons.Shortsword, Weapons.HandCrossbow] }
+                    ],
                     description: "You have proficiency with rapiers, shortswords, and hand crossbows."
                 }
             ],
@@ -102,8 +106,8 @@ export const Elf: RaceModels.Race = {
             features: [
                 CommonFeatures.elfWeaponTraining,
                 {
-                    name: "Fey Step", type: "active",
-                    usage: { times: 1, timeUnit: "shortRest" },
+                    name: "Fey Step", type: FeatureType.Active,
+                    usage: { times: 1, timeUnit: TimeUnit.ShortRest },
                     description: `
                             You can cast the misty step spell once using this trait.
                             You regain the ability to do so when you finish a short or long rest.
@@ -113,7 +117,6 @@ export const Elf: RaceModels.Race = {
             reference: { source: "DMG", page: 286 }
         }
     ]
-};
+});
 
-RaceList[Elf.name] = Elf;
-
+RaceList.push(Elf);

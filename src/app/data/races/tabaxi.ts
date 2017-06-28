@@ -1,10 +1,11 @@
-import { Languages, Skills } from "../../data";
-import { ProficiencyType } from "../../models/abilities/proficiency-type";
-import * as RaceModels from "../../models/races";
+import { Languages, Skills } from "app/data";
+import { FeatureType } from "app/models/features";
+import * as RaceModels from "app/models/races";
+
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
-export const Tabaxi: RaceModels.Race = {
+export const Tabaxi: RaceModels.Race = new RaceModels.Race({
     name: "Tabaxi",
     size: "Medium",
     speed: { walk: 30, climb: 20 },
@@ -17,29 +18,29 @@ export const Tabaxi: RaceModels.Race = {
     abilityMods: { "DEX": +2, "CHA": +1 },
     features: [
         {
-            name: "Feline Agility", type: "active",
+            name: "Feline Agility", type: FeatureType.Active,
             description: `
                     Your reflexes and agility allow you to move with a burst of speed. When you move on your turn in combat, you can
                     double your speed until the end of the turn. Once you use this trait, you can't use it again until you move 0 feet
                     on one of your turns.
                 `
         }, {
-            name: "Cat's Claws", type: "active",
-            usage: { times: 1, timeUnit: "shortRest" },
+            name: "Cat's Claws", type: FeatureType.Active,
             description: `
                     Because of your claws, you have a climbing speed of 20 feet. In addition, your claws are natural weapons, which you
                     can use to make unarmed strikes. If you hit with them, you deal slashing damage equal to ld4 + your Strength modifier,
                     instead of the bludgeoning damage normal for an unarmed strike.
                 `
         }, {
-            name: "Cat's Talent", type: "passive",
-            skillProficiencies: [Skills.Perception, Skills.Stealth],
-            proficiencyCount: 2, proficiencyType: ProficiencyType.Proficient,
+            name: "Cat's Talent", type: FeatureType.Passive,
+            skillProficiencies: [{ proficiencies: [Skills.Perception, Skills.Stealth] }],
             description: "You have proficiency in the Perception and Stealth skills."
         }
     ],
     reference: { source: "VGM", page: 113 },
     subraces: []
-};
+});
 
-RaceList[Tabaxi.name] = Tabaxi;
+RaceList.push
+
+RaceList.push(Tabaxi);

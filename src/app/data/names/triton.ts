@@ -3,7 +3,7 @@ import { NameList } from "./name-list";
 
 /* cSpell:disable */
 
-export const Triton: Names.NameDefinition = {
+export const Triton: Names.NameDefinition = new Names.NameDefinition({
     name: "Triton",
     formats: [{ name: "Forename Surname", formats: ["{forename} {surname}"] }],
     parts: {
@@ -100,6 +100,6 @@ export const Triton: Names.NameDefinition = {
             }
         }
     }
-};
+});
 
-NameList[Triton.name] = Triton;
+NameList.push(Triton);

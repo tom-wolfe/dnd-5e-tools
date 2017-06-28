@@ -1,7 +1,8 @@
 import * as Characters from "app/models/characters";
-import { Descriptor } from "./descriptor";
 
-export class HeightDescriptor extends Descriptor {
+import { CharacterDescriptor } from "./character-descriptor";
+
+export class HeightDescriptor extends CharacterDescriptor {
     describe(character: Characters.Character): string {
         let baseHeight = character.race.height.base;
         let modHeight = character.race.height.modifier;

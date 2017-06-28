@@ -1,10 +1,11 @@
-import { Languages, Skills } from "../../data";
-import { ProficiencyType } from "../../models/abilities/proficiency-type";
-import * as RaceModels from "../../models/races";
+import { Languages, Skills } from "app/data";
+import { FeatureType } from "app/models/features";
+import * as RaceModels from "app/models/races";
+
 import * as Names from "../names";
 import { RaceList } from "./race-list";
 
-export const Human: RaceModels.Race = {
+export const Human: RaceModels.Race = new RaceModels.Race({
     name: "Human",
     size: "Medium",
     speed: { walk: 30 },
@@ -30,15 +31,16 @@ export const Human: RaceModels.Race = {
             abilityMods: { additionalPoints: 2 },
             features: [
                 {
-                    name: "Skill Proficiency", type: "passive",
-                    skillProficiencies: Object.keys(Skills.SkillList).map((skill) => Skills.SkillList[skill]),
-                    proficiencyCount: 1, proficiencyType: ProficiencyType.Proficient,
+                    name: "Skill Proficiency", type: FeatureType.Passive,
+                    skillProficiencies: [{ proficiencies: Skills.SkillList, count: 1 }],
                     description: "You gain proficiency in one skill of your choice."
                 }
             ],
             reference: { source: "PHB", page: 31, url: "https://www.dndbeyond.com/characters/races/human#VariantHuman" }
         }
     ]
-};
+});
 
-RaceList[Human.name] = Human;
+RaceList.push
+
+RaceList.push(Human);

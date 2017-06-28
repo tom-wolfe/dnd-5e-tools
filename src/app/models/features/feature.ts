@@ -1,15 +1,20 @@
 import * as Abilities from "../abilities";
 import { Character } from "../characters";
+import * as Equipment from "../equipment";
+import { ProficiencyOption } from "../proficiencies/proficiency-option";
 import { FeatureType } from "./feature-type";
 import { UsageFrequency } from "./usage-frequency";
 
 export class Feature {
-    name: string;
     description: string;
-    usage?: UsageFrequency;
+    name: string;
+    skillProficiencies?: ProficiencyOption<Abilities.Skill>[];
+    damageResistances?: Equipment.DamageType[];
     type: FeatureType;
-    skillProficiencies?: Abilities.Skill[];
-    proficiencyCount?: number;
-    proficiencyType?: Abilities.ProficiencyType;
+    usage?: UsageFrequency;
+    armorProficiencies?: ProficiencyOption<Equipment.ArmorType>[];
+    weaponProficiencies?: ProficiencyOption<Equipment.Weapon>[];
+    toolProficiencies?: ProficiencyOption<Equipment.Item>[];
+    otherProficiencies?: ProficiencyOption<Equipment.Weapon>[];
     apply?: (character: Character) => void;
 };
