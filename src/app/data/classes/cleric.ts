@@ -4,6 +4,7 @@ import { ClassList } from "./class-list";
 export const Cleric: ClassModels.Class = new ClassModels.Class({
     name: "Cleric",
     primaryStat: "WIS",
+    savingThrows: ["WIS", "CHA"],
     archetypeName: { singular: "Divine Domain", plural: "Divine Domains" },
     reference: { source: "PHB", page: 56, url: "https://www.dndbeyond.com/characters/classes/cleric" },
     archetypes: [

@@ -34,6 +34,7 @@ export class ClassBuilder extends BaseCharacterBuilder {
             character.classArchetype = null;
         }
 
+        character.savingThrowProficiencies.push(...character.class.savingThrows);
     }
 
     private randomizeLevel(character: Character) {

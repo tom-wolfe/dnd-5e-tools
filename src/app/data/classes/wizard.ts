@@ -4,6 +4,7 @@ import { ClassList } from "./class-list";
 export const Wizard: ClassModels.Class = new ClassModels.Class({
     name: "Wizard",
     primaryStat: "INT",
+    savingThrows: ["INT", "WIS"],
     archetypeName: { singular: "Arcane Tradition", plural: "Arcane Traditions" },
     reference: { source: "PHB", page: 112, url: "https://www.dndbeyond.com/characters/classes/wizard" },
     archetypes: [

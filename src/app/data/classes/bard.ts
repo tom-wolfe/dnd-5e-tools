@@ -4,6 +4,7 @@ import { ClassList } from "./class-list";
 export const Bard: ClassModels.Class = new ClassModels.Class({
     name: "Bard",
     primaryStat: "CHA",
+    savingThrows: ["DEX", "CHA"],
     archetypeName: { singular: "Bard College", plural: "Bard Colleges" },
     reference: { source: "PHB", page: 51, url: "https://www.dndbeyond.com/characters/classes/bard" },
     archetypes: [

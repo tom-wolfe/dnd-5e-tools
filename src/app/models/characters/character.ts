@@ -24,6 +24,7 @@ export class Character {
     readonly abilities: Abilities.AbilityScores = new Abilities.CharacterAbilityScores(this);
     age: number;
     alignment: string;
+    readonly armorProficiencies: Proficiencies.Proficiency<Equipment.ArmorType>[] = [];
     background: Background;
     readonly baseAbilities: Abilities.AbilityScores = new Abilities.BasicAbilityScores();
     baseArmorClass = 10;
@@ -44,101 +45,37 @@ export class Character {
     readonly languages: Languages.Language[] = [];
     level: Level;
     name: string;
+    readonly otherProficiencies: Proficiencies.Proficiency<Equipment.Item>[] = [];
     personalityTrait: string;
     race: Races.Race;
+    savingThrowProficiencies: string[] = [];
     readonly senses: Attributes.Senses = new Attributes.CharacterSenses(this);
-    readonly armorProficiencies: Proficiencies.Proficiency<Equipment.ArmorType>[] = [];
     readonly skillProficiencies: Proficiencies.Proficiency<Abilities.Skill>[] = [];
-    readonly toolProficiencies: Proficiencies.Proficiency<Equipment.Item>[] = [];
-    readonly otherProficiencies: Proficiencies.Proficiency<Equipment.Item>[] = [];
-    readonly weaponProficiencies: Proficiencies.Proficiency<Equipment.Weapon>[] = [];
     readonly speed: Attributes.Speed = new Attributes.CharacterSpeed(this);
     subrace: Races.Subrace;
+    readonly toolProficiencies: Proficiencies.Proficiency<Equipment.Item>[] = [];
+    readonly weaponProficiencies: Proficiencies.Proficiency<Equipment.Weapon>[] = [];
     weight: number;
 
     get armorProficiencyString(): string {
         return _.join(this.armorProficiencies.map(x => Equipment.ArmorType[x.thing].toString()), ", ") || "[None]";
     }
 
-    get strength(): number {
-        return this.abilities.get("STR");
-    }
-
-    get strengthMod(): string {
-        return this.abilities.getModifierString("STR");
-    }
-
-    get dexterity(): number {
-        return this.abilities.get("DEX");
-    }
-
-    get dexterityMod(): string {
-        return this.abilities.getModifierString("DEX");
-    }
-
-    get constitution(): number {
-        return this.abilities.get("CON");
-    }
-
-    get constitutionMod(): string {
-        return this.abilities.getModifierString("CON");
-    }
-
-    get intelligence(): number {
-        return this.abilities.get("INT");
-    }
-
-    get intelligenceMod(): string {
-        return this.abilities.getModifierString("INT");
-    }
-
-    get wisdom(): number {
-        return this.abilities.get("WIS");
-    }
-
-    get wisdomMod(): string {
-        return this.abilities.getModifierString("WIS");
-    }
-
-    get charisma(): number {
-        return this.abilities.get("CHA");
-    }
-
-    get charismaMod(): string {
-        return this.abilities.getModifierString("CHA");
+    get actions(): Feature[] {
+        return _.union(this.activeFeatures, this.weaponAttacks);
     }
 
     get activeFeatures(): Feature[] {
         return this.features.filter(feat => feat.type === FeatureType.Active);
     }
 
-    get weaponAttacks(): Feature[] {
-        const retVal: Feature[] = [];
-        this.equipment.filter(e => e instanceof Equipment.Weapon).forEach((weapon: Equipment.Weapon) => {
-            retVal.push({
-                name: weapon.name,
-                description: this.weaponDescriptor.describe(weapon),
-                type: FeatureType.Active
-            });
-        })
-        return retVal;
-    }
-
-    get actions(): Feature[] {
-        return _.union(this.activeFeatures, this.weaponAttacks);
-    }
-
-    get otherFeatures(): Feature[] {
-        return this.features.filter(feat => feat.type !== FeatureType.Active);
+    get ageClassification(): string {
+        return this.ageDescriptor.describe(this);
     }
 
     get ageDescription(): string {
         const a = (this.age || 0);
         return `${a} years old`;
-    }
-
-    get ageClassification(): string {
-        return this.ageDescriptor.describe(this);
     }
 
     get alignmentDescription(): string {
@@ -167,8 +104,32 @@ export class Character {
         return ac;
     }
 
+    get charisma(): number {
+        return this.abilities.get("CHA");
+    }
+
+    get charismaMod(): string {
+        return this.abilities.getModifierString("CHA");
+    }
+
+    get constitution(): number {
+        return this.abilities.get("CON");
+    }
+
+    get constitutionMod(): string {
+        return this.abilities.getModifierString("CON");
+    }
+
     get damageResistancesString(): string {
         return _.join(this.damageResistances.map(x => Equipment.DamageType[x].toString()), ", ") || "[None]";
+    }
+
+    get dexterity(): number {
+        return this.abilities.get("DEX");
+    }
+
+    get dexterityMod(): string {
+        return this.abilities.getModifierString("DEX");
     }
 
     get equipmentString(): string {
@@ -193,6 +154,10 @@ export class Character {
         return Data.Genders[this.gender].iconClass || "Unknown";
     }
 
+    get heightClassification(): string {
+        return this.heightDescriptor.describe(this);
+    }
+
     get hitPoints(): number {
         return (this.baseHitPoints || 0) + (this.abilities.getModifier("CON") * this.level.number);
     }
@@ -210,8 +175,24 @@ export class Character {
         return `${feet}'${inches}"`;
     }
 
-    get heightClassification(): string {
-        return this.heightDescriptor.describe(this);
+    get intelligence(): number {
+        return this.abilities.get("INT");
+    }
+
+    get intelligenceMod(): string {
+        return this.abilities.getModifierString("INT");
+    }
+
+    get languagesString(): string {
+        return _.join(this.languages.map(x => x.name).sort(), ", ") || "[None]";
+    }
+
+    get otherFeatures(): Feature[] {
+        return this.features.filter(feat => feat.type !== FeatureType.Active);
+    }
+
+    get otherProficiencyString(): string {
+        return _.join(this.otherProficiencies.map(t => t.thing.name), ", ") || "[None]";
     }
 
     get otherSpeedsDescription(): string {
@@ -232,20 +213,22 @@ export class Character {
         return 10 + this.getSkillModifier(Data.Skills.Perception);
     }
 
-    get languagesString(): string {
-        return _.join(this.languages.map(x => x.name).sort(), ", ") || "[None]";
-    }
-
-    get otherProficiencyString(): string {
-        return _.join(this.otherProficiencies.map(t => t.thing.name), ", ") || "[None]";
-    }
-
     get raceDescription(): string {
         if (!this.subrace) {
             return `${this.race.name}`;
         } else {
             return `${this.race.name} (${this.subrace.name})`;
         }
+    }
+
+    get savingThrowProficiencyString(): string {
+        const format = (modifier: number) => (modifier >= 0) ? "+" + modifier : modifier.toString();
+        const profs = this.savingThrowProficiencies.map(x => {
+            const name = Data.Abilities.AbilityList[x].name;
+            const mod = this.abilities.getModifier(x) + this.level.proficiencyBonus;
+            return `${name} ${format(mod)}`;
+        }).sort();
+        return _.join(profs, ", ") || "[None]";
     }
 
     get sensesString(): string {
@@ -273,6 +256,14 @@ export class Character {
         return _.join(profs, ", ");
     }
 
+    get strength(): number {
+        return this.abilities.get("STR");
+    }
+
+    get strengthMod(): string {
+        return this.abilities.getModifierString("STR");
+    }
+
     get toolProficiencyString(): string {
         return _.join(this.toolProficiencies.map(t => t.thing.name), ", ") || "[None]";
     }
@@ -281,17 +272,36 @@ export class Character {
         return this.speed.walk + " ft.";
     }
 
+    get weaponAttacks(): Feature[] {
+        const retVal: Feature[] = [];
+        this.equipment.filter(e => e instanceof Equipment.Weapon).forEach((weapon: Equipment.Weapon) => {
+            retVal.push({
+                name: weapon.name,
+                description: this.weaponDescriptor.describe(weapon),
+                type: FeatureType.Active
+            });
+        })
+        return retVal;
+    }
+
+    get weaponProficiencyString(): string {
+        return _.join(this.weaponProficiencies.map(w => w.thing.name).sort(), ", ") || "[None]";
+    }
+
     get weightDescription(): string {
-        const w = (this.weight || 0);
-        return `${w} lbs.`;
+        return `${this.weight || 0} lbs.`;
     }
 
     get weightClassification(): string {
         return this.weightDescriptor.describe(this);
     }
 
-    get weaponProficiencyString(): string {
-        return _.join(this.weaponProficiencies.map(w => w.thing.name).sort(), ", ") || "[None]";
+    get wisdom(): number {
+        return this.abilities.get("WIS");
+    }
+
+    get wisdomMod(): string {
+        return this.abilities.getModifierString("WIS");
     }
 
     getSkillModifier(skill: Abilities.Skill): number {

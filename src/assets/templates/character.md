@@ -19,6 +19,7 @@ ___
 >___
 > - **Damage Resistances** {{damageResistancesString}}
 > - **Skills** {{skillString}}
+> - **Saving Throws** {{savingThrowProficiencyString}}
 > - **Senses** passive Perception{{#sensesString}}, {{/sensesString}}{{sensesString}}
 > - **Languages** {{languagesString}}
 >___

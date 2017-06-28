@@ -5,6 +5,7 @@ export class Class {
     name: string;
     reference: Reference;
     primaryStat: string;
+    savingThrows: string[];
     archetypeName: { singular: string, plural: string };
     archetypes?: Archetype[];
     constructor(initial: Class) { Object.assign(this, initial); }

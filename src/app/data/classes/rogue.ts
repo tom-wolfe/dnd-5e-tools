@@ -4,6 +4,7 @@ import { ClassList } from "./class-list";
 export const Rogue: ClassModels.Class = new ClassModels.Class({
     name: "Rogue",
     primaryStat: "DEX",
+    savingThrows: ["DEX", "INT"],
     archetypeName: { singular: "Rogueish Archetypes", plural: "Roguish Archetypes" },
     reference: { source: "PHB", page: 94, url: "https://www.dndbeyond.com/characters/classes/rogue" },
     archetypes: [
