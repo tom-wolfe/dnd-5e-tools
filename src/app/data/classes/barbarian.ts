@@ -1,13 +1,31 @@
 import * as ClassModels from "../../models/classes";
 import { ArmorType } from "../../models/equipment";
+import { WeaponType } from "../../models/equipment";
 import { WeaponList } from "../weapons";
 import { ClassList } from "./class-list";
 import { Skills } from "app/data";
+import * as Packs from "../packs";
+import * as Weapons from "../weapons";
 
 export const Barbarian: ClassModels.Class = new ClassModels.Class({
     name: "Barbarian",
     primaryStat: "STR",
     hitDie: 12,
+    equipment: [
+        {
+            items: [
+                [Weapons.Greataxe],
+                [{ items: WeaponList.filter(w => w.type === WeaponType.Martial).map(w => [w]), count: 1 }]
+            ], count: 1
+        },
+        {
+            items: [
+                [Weapons.Handaxe, Weapons.Handaxe],
+                [{ items: WeaponList.filter(w => w.type === WeaponType.Simple).map(w => [w]), count: 1 }]
+            ], count: 1
+        },
+        { items: [[Weapons.Javelin, Weapons.Javelin, Weapons.Javelin, Weapons.Javelin], Packs.ExplorerPack] },
+    ],
     armorProficiencies: [{ proficiencies: [ArmorType.Light, ArmorType.Medium, ArmorType.Shield] }],
     weaponProficiencies: [{ proficiencies: WeaponList }],
     toolProficiencies: [],

@@ -14,6 +14,7 @@ export class ClassBuilder extends BaseCharacterBuilder {
         this.randomizeClass(character);
         this.randomizeLevel(character);
         this.randomizeHitPoints(character);
+        this.randomizeEquipment(character);
     }
 
     private randomizeClass(character: Character) {
@@ -62,5 +63,12 @@ export class ClassBuilder extends BaseCharacterBuilder {
         const hitDice = this.numGen.rollDice(character.class.hitDie, character.level.number - 1);
         hitDice.push(character.class.hitDie); // Max roll for first level.
         character.baseHitPoints = _.sum(hitDice);
+    }
+
+    private randomizeEquipment(character: Character) {
+        if (!character.class.equipment) { return; }
+        character.class.equipment.forEach(option => {
+            this.grantEquipmentOption(character, option);
+        })
     }
 };
