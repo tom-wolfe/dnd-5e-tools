@@ -57,4 +57,10 @@
         font-size: 16px;
         font-weight: bold;
     }
+    @include media-breakpoint-down(sm) {
+        padding: 8px;
+        .sub-block-title {
+            display: inline;
+        }
+    }
 }
