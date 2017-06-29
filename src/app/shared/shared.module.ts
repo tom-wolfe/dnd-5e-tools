@@ -9,6 +9,7 @@ import { CollapseDirective } from "app/shared/collapse.directive";
 import { CodemirrorModule } from "ng2-codemirror/lib";
 
 import { SourceReferenceComponent } from "./source-reference/source-reference.component";
+import { ViewModeComponent } from "./view-mode/view-mode.component";
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { SourceReferenceComponent } from "./source-reference/source-reference.co
   ],
   declarations: [
     CollapseDirective,
-    SourceReferenceComponent
+    SourceReferenceComponent,
+    ViewModeComponent
   ],
   exports: [
     CommonModule,
@@ -30,7 +32,8 @@ import { SourceReferenceComponent } from "./source-reference/source-reference.co
     BrowserModule,
     CodemirrorModule,
     CollapseDirective,
-    SourceReferenceComponent
+    SourceReferenceComponent,
+    ViewModeComponent
   ]
 })
 export class SharedModule { }

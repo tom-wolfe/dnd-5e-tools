@@ -1,6 +1,7 @@
 import { AfterContentInit, Component, Input } from "@angular/core";
 
 import * as Names from "app/data/names";
+import { ViewMode } from "app/models/view-mode";
 import { NameGenerator } from "app/shared/generators";
 import { NameGeneratorConfig } from "app/shared/generators/name-generator-config";
 
@@ -14,7 +15,7 @@ export class NameGeneratorComponent implements AfterContentInit {
   config: NameGeneratorConfig = new NameGeneratorConfig();
 
   @Input() names: Name[];
-  @Input() displayMode: "detailed" | "basic" = "detailed";
+  protected ViewMode = ViewMode;
 
   ngAfterContentInit() {
     setTimeout(() => this.onGenerateClick());

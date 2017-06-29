@@ -1,0 +1,20 @@
+<sup class="source-reference">
+    <span class="hidden-print">
+        <a *ngIf="reference.url" [href]="reference.url" target="_blank">
+            <ng-container *ngTemplateOutlet="linkTpl"></ng-container>
+        </a>
+        <span *ngIf="!reference.url">
+            <ng-container *ngTemplateOutlet="linkTpl"></ng-container>
+        </span>
+    </span>
+    <span class="print-reference visible-print-inline">{{shortTipString}}</span>
+</sup>
+<ng-template #refContent>
+    <div class="source-tip">
+        {{tipString}}
+    </div>
+</ng-template>
+<ng-template #linkTpl>
+    <i class="mdi mdi-bookmark" [ngbTooltip]="refContent" triggers="hover click:click blur"></i>
+    <span class="sr-only">Reference</span>
+</ng-template>

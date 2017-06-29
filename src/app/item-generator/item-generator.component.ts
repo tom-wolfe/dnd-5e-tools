@@ -5,15 +5,16 @@ import { ItemGenerator, ItemGeneratorConfig } from "./generators";
 import { Item } from "./models/items";
 import { ItemDefinition } from "./models/items/item-definition";
 
+import { ViewMode } from "app/models/view-mode";
+
 @Component({
   selector: "dnd-item-generator",
   templateUrl: "./item-generator.component.html"
 })
 export class ItemGeneratorComponent implements AfterContentInit {
   config: ItemGeneratorConfig = new ItemGeneratorConfig();
-
+  protected ViewMode = ViewMode;
   @Input() items: Item[];
-  @Input() displayMode: "detailed" | "basic" = "detailed";
 
   ngAfterContentInit() {
     setTimeout(() => this.onGenerateClick());

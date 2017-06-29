@@ -1,4 +1,10 @@
 <div class="feature-list bt-thick">
-    <h5 class="mt-2" *ngIf="title">{{title}}</h5>
-    <dnd-feature *ngFor="let feature of features.sort()" [feature]="feature"></dnd-feature>
+    <div class="clearfix mt-2">
+        <dnd-view-mode #viewMode></dnd-view-mode>
+        <h5 class="" *ngIf="title">{{title}}</h5>
+    </div>
+    <div class="features">
+        <dnd-feature [ngClass]="{ 'comma-separated': viewMode.mode === ViewMode.Basic }" *ngFor="let feature of sortedFeatures" [feature]="feature"
+            [viewMode]="viewMode.mode"></dnd-feature>
+    </div>
 </div>
