@@ -33,7 +33,7 @@
     <div class="col-sm-6" *ngFor="let name of names">
       <div class="card mb-2">
         <div class="card-block">
-          <span class="pull-right text-muted"><i class="fa" [ngClass]="name.genderIcon"></i> {{name.genderDesc}}</span>
+          <span class="pull-right text-muted"><i class="mdi" [ngClass]="name.genderIcon"></i> {{name.genderDesc}}</span>
           <h3 class="card-title">{{name.value}}</h3>
           <p class="card-text">{{name.definition.name}} ({{name.format.name}})</p>
         </div>

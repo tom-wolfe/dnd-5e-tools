@@ -1,9 +1,11 @@
 @import "fonts.scss";
 @import "variables.scss";
+@import "utils.scss";
 
-$fa-font-path: "~font-awesome/fonts";
-@import "~font-awesome/scss/font-awesome";
+$mdi-font-path: "~mdi/fonts";
+@import "~mdi/scss/materialdesignicons";
 @import "~bootstrap/scss/bootstrap";
+@import '~spinkit/scss/spinners/9-cube-grid';
 
 @import "bootstrap.scss";
 @import "theme.scss";

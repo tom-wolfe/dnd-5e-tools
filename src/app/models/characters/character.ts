@@ -152,7 +152,7 @@ export class Character {
     }
 
     get genderIconClass(): string {
-        if (!this.gender) { return "fa-genderless"; }
+        if (!this.gender) { return "mdi-circle-outline"; }
         return Data.Genders[this.gender].iconClass || "Unknown";
     }
 

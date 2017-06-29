@@ -1,6 +1,6 @@
 
 export const Genders: { [index: string]: { name: string, iconClass: string } } = {
-    "M": { name: "Male", iconClass: "fa-mars" },
-    "F": { name: "Female", iconClass: "fa-venus" },
-    "N": { name: "Non-binary", iconClass: "fa-transgender" },
+    "M": { name: "Male", iconClass: "mdi-gender-male" },
+    "F": { name: "Female", iconClass: "mdi-gender-female" },
+    "N": { name: "Non-binary", iconClass: "mdi-gender-male-female" },
 };
