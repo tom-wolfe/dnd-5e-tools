@@ -22,8 +22,9 @@ export const Kobold: RaceModels.Race = new RaceModels.Race({
             name: "Pack Tactics", type: FeatureType.Passive,
             description: `
                 You have advantage on an attack roll against a creature if at least one of your allies is within 5 feet of the
-                creature and the ally isn't incapacitated.
-            `
+                creature and the ally isn't incapacitated.,
+            `,
+            reference: { source: "VGM", page: 119 }
         }, {
             name: "Grovel, Cower, and Beg", type: FeatureType.Active,
             usage: { times: 1, timeUnit: TimeUnit.ShortRest },
@@ -31,14 +32,13 @@ export const Kobold: RaceModels.Race = new RaceModels.Race({
                 As an action on your turn, you can cower pathetically to distract nearby foes. Until the end of your next turn,
                 your allies gain advantage on attack rolls against enemies within 10 feet of you that can see you. Once you use
                 this trait, you can't use it again until you finish a short or long rest.
-            `
+            `,
+            reference: { source: "VGM", page: 119 },
         },
         CommonFeatures.sunlightSensitivity
     ],
     reference: { source: "VGM", page: 119 },
     subraces: []
 });
-
-RaceList.push
 
 RaceList.push(Kobold);

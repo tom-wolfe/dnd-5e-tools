@@ -34,7 +34,8 @@ export const Acolyte: Characters.Background = new Characters.Background({
             This could be the temple where you used to serve, if you remain on good terms with it, or a temple where you have found a new
             home. While near your temple, you can call upon the priests for assistance, provided the assistance you ask for is not hazardous
             and you remain in good standing with your temple.
-        `
+        `,
+        reference: { source: "PHB", page: 127, url: "https://www.dndbeyond.com/characters/backgrounds/acolyte#shelter-of-the-faithful" },
     }],
     personalityTraits: [
         "I idolize a particular hero of my faith, and constantly refer to that person's deeds and example.",

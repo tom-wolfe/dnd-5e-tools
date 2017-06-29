@@ -34,7 +34,8 @@ export const Hermit: Characters.Background = new Characters.Background({
             be damaging to the people who or consigned you to exile, and hence the reason for your return to society.
 
             Work with your DM to determine the details of your discovery and its impact on the campaign.
-        `
+        `,
+        reference: { source: "PHB", page: 134 },
     }],
     personalityTraits: [
         "I've been isolated for so long that I rarely speak, preferring gestures and the occasional grunt.",

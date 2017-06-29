@@ -10,7 +10,7 @@ import * as Weapons from "app/data/weapons";
 
 export const Sailor: Characters.Background = new Characters.Background({
     name: "Sailor",
-    reference: { source: "PHB", page: 139, url: "" },
+    reference: { source: "PHB", page: 139 },
     languages: {},
     skillProficiencies: [{ proficiencies: [Skills.Athletics, Skills.Perception] }],
     toolProficiencies: [{ proficiencies: [NavigatorsTools] },],
@@ -30,7 +30,8 @@ export const Sailor: Characters.Background = new Characters.Background({
             you're calling in a favor, you can't be certain of a schedule or route that wiII meet your every need. Your Dungeon Master will
             determine how long it takes to get where you need to go. In return for your free passage, you and your companions are expected
             to assist the crew during the voyage.
-        `
+        `,
+        reference: { source: "PHB", page: 139 },
     }],
     personalityTraits: [
         "My friends know they can rely on me, no matter what.",

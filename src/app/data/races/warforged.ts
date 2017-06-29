@@ -22,7 +22,11 @@ export const Warforged: RaceModels.Race = new RaceModels.Race({
             description: "Your construction incorporates wood and metal, granting you a +1 bonus to Armor Class.",
             apply(character: Characters.Character) {
                 character.baseArmorClass += 1;
-            }
+            },
+            reference: {
+                source: "UA", page: 3,
+                document: "Eberron", url: "http://media.wizards.com/2015/downloads/dnd/UA_Eberron_v1.1.pdf#page=3"
+            },
         }, {
             name: "Living Construct", type: FeatureType.Passive,
             conditionImmunities: [Condition.Diseased],
@@ -31,16 +35,18 @@ export const Warforged: RaceModels.Race = new RaceModels.Race({
                     breathe, but you can ingest food and drink if you wish. Instead of sleeping, you enter an inactive state for 4 hours
                     each day. You do not dream in this state; you are fully aware of your surroundings and notice approaching enemies and
                     other events as normal.
-                `
+                `,
+            reference: {
+                source: "UA", page: 3,
+                document: "Eberron", url: "http://media.wizards.com/2015/downloads/dnd/UA_Eberron_v1.1.pdf#page=3"
+            },
         }
     ],
     reference: {
-        source: "UA", page: 2,
-        document: "Eberron", url: "http://media.wizards.com/2015/downloads/dnd/UA_Eberron_v1.1.pdf#page=2"
+        source: "UA", page: 3,
+        document: "Eberron", url: "http://media.wizards.com/2015/downloads/dnd/UA_Eberron_v1.1.pdf#page=3"
     },
     subraces: []
 });
-
-RaceList.push
 
 RaceList.push(Warforged);

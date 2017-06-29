@@ -30,8 +30,8 @@ export const Sage: Characters.Background = new Characters.Background({
             can obtain it. Usually, this information comes from a library, scriptorium, university, or a sage or other learned person or
             creature. Your DM might rule that the knowledge you seek is secreted away in an almost inaccessible place, or that it simply
             cannot be found. Unearthing the deepest secrets of the multiverse can require an adventure or even a whole campaign.
-
-        `
+        `,
+        reference: { source: "PHB", page: 137, url: "https://www.dndbeyond.com/characters/backgrounds/sage#researcher" },
     }],
     personalityTraits: [
         "I use polysyllabic words that convey the impression of great erudition.",

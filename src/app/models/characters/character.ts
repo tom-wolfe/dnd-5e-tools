@@ -332,7 +332,8 @@ export class Character {
             retVal.push({
                 name: weapon.name,
                 description: this.weaponDescriptor.describe(weapon),
-                type: FeatureType.Active
+                type: FeatureType.Active,
+                reference: weapon.reference
             });
         })
         return retVal;

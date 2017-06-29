@@ -26,7 +26,8 @@ export const Genasi: RaceModels.Race = new RaceModels.Race({
             features: [
                 {
                     name: "Unending Breath", type: FeatureType.Passive,
-                    description: "You can hold your breath indefinitely while you’re not incapacitated."
+                    description: "You can hold your breath indefinitely while you’re not incapacitated.",
+                    reference: { source: "EE", page: 9, url: "https://www.dndbeyond.com/characters/races/genasi#UndyingBreath" }
                 }, {
                     name: "Mingle with the Wind", type: FeatureType.Active,
                     usage: { times: 1, timeUnit: TimeUnit.LongRest },
@@ -34,7 +35,8 @@ export const Genasi: RaceModels.Race = new RaceModels.Race({
                         You can cast the levitate spell once with this trait, requiring no material components, and you regain the
                         ability to cast it this way when you finish a long rest. Constitution is your spellcasting ability for this
                         spell.
-                    `
+                    `,
+                    reference: { source: "EE", page: 9, url: "https://www.dndbeyond.com/characters/races/genasi#MinglewiththeWind" }
                 }
             ],
             reference: { source: "EE", page: 8, url: "https://www.dndbeyond.com/characters/races/genasi#AirGenasi" }
@@ -45,7 +47,8 @@ export const Genasi: RaceModels.Race = new RaceModels.Race({
             features: [
                 {
                     name: "Earth Walk", type: FeatureType.Passive,
-                    description: "You can move across difficult terrain made of earth or stone without expending extra movement."
+                    description: "You can move across difficult terrain made of earth or stone without expending extra movement.",
+                    reference: { source: "EE", page: 9, url: "https://www.dndbeyond.com/characters/races/genasi#EarthWalk" }
                 }, {
                     name: "Mingle with Stone", type: FeatureType.Active,
                     usage: { times: 1, timeUnit: TimeUnit.LongRest },
@@ -53,7 +56,8 @@ export const Genasi: RaceModels.Race = new RaceModels.Race({
                         You can cast the pass without trace spell once with this trait, requiring no material components, and you
                         regain the ability to cast it this way when you finish a long rest. Constitution is your spellcasting
                         ability for this spell.
-                    `
+                    `,
+                    reference: { source: "EE", page: 9, url: "https://www.dndbeyond.com/characters/races/genasi#MinglewithStone" }
                 }
             ],
             reference: { source: "EE", page: 8, url: "https://www.dndbeyond.com/characters/races/genasi#EarthGenasi" }
@@ -66,7 +70,8 @@ export const Genasi: RaceModels.Race = new RaceModels.Race({
                 {
                     name: "Fire Resistance", type: FeatureType.Passive,
                     damageResistances: [DamageType.Fire],
-                    description: "You have resistance to fire damage."
+                    description: "You have resistance to fire damage.",
+                    reference: { source: "EE", page: 10, url: "https://www.dndbeyond.com/characters/races/genasi#FireResistance" }
                 }, {
                     name: "Reach to the Blaze", type: FeatureType.Active,
                     usage: { times: 1, timeUnit: TimeUnit.LongRest },
@@ -74,7 +79,8 @@ export const Genasi: RaceModels.Race = new RaceModels.Race({
                         You know the produce flame cantrip. Once you reach 3rd level, you can cast the burning hands spell once with
                         this trait as a 1st-level spell, and you regain the ability to cast it this way when you finish a long rest.
                         Constitution is your spellcasting ability for these spells.
-                    `
+                    `,
+                    reference: { source: "EE", page: 10, url: "https://www.dndbeyond.com/characters/races/genasi#ReachtotheBlaze" }
                 }
             ],
             reference: { source: "EE", page: 8, url: "https://www.dndbeyond.com/characters/races/genasi#FireGenasi" }
@@ -87,10 +93,12 @@ export const Genasi: RaceModels.Race = new RaceModels.Race({
                 {
                     name: "Acid Resistance", type: FeatureType.Passive,
                     damageResistances: [DamageType.Acid],
-                    description: "You have resistance to acid damage."
+                    description: "You have resistance to acid damage.",
+                    reference: { source: "EE", page: 10, url: "https://www.dndbeyond.com/characters/races/genasi#AcidResistance" }
                 }, {
                     name: "Amphibious", type: FeatureType.Passive,
-                    description: "You can breathe air and water."
+                    description: "You can breathe air and water.",
+                    reference: { source: "EE", page: 10, url: "https://www.dndbeyond.com/characters/races/genasi#Amphibious" }
                 }, {
                     name: "Call to the Wave", type: FeatureType.Active,
                     usage: { times: 1, timeUnit: TimeUnit.LongRest },
@@ -98,14 +106,13 @@ export const Genasi: RaceModels.Race = new RaceModels.Race({
                         You know the shape water cantrip (see chapter 2). When you reach 3rd level, you can cast the create or destroy
                         water spell as a 2nd-level spell once with this trait, and you regain the ability to cast it this way when you
                         finish a long rest. Constitution is your spellcasting ability for these spells.
-                    `
+                    `,
+                    reference: { source: "EE", page: 10, url: "https://www.dndbeyond.com/characters/races/genasi#CalltotheWave" }
                 }
             ],
             reference: { source: "EE", page: 9, url: "https://www.dndbeyond.com/characters/races/genasi#WaterGenasi" }
         },
     ]
 });
-
-RaceList.push
 
 RaceList.push(Genasi);

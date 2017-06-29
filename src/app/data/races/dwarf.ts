@@ -24,25 +24,29 @@ export const Dwarf: RaceModels.Race = new RaceModels.Race({
     features: [
         {
             name: "Dwarven Resilience", type: FeatureType.Passive,
-            description: "You have advantage on saving throws against poison, and you have resistance against poison damage."
+            description: "You have advantage on saving throws against poison, and you have resistance against poison damage.",
+            reference: { source: "PHB", page: 20, url: "https://www.dndbeyond.com/characters/races/dwarf#DwarvenResilience" }
         }, {
             name: "Dwarven Combat Training", type: FeatureType.Passive,
             weaponProficiencies: [{ proficiencies: [Weapons.Battleaxe, Weapons.Handaxe, Weapons.LightHammer, Weapons.Warhammer] }],
-            description: "You have proficiency with the battleaxe, handaxe, light hammer, and warhammer."
+            description: "You have proficiency with the battleaxe, handaxe, light hammer, and warhammer.",
+            reference: { source: "PHB", page: 20, url: "https://www.dndbeyond.com/characters/races/dwarf#DwarvenCombatTraining" }
         }, {
             name: "Tool Proficiency", type: FeatureType.Passive,
             toolProficiencies: [{ proficiencies: [Tools.SmithsTools, Tools.BrewersSupplies, Tools.MasonsTools], count: 1 }],
             description: `
-                    You gain proficiency with the artisan's tool of your choice:
-                    smith's tools, brewer's supplies, or mason's tools.
-                `
+                You gain proficiency with the artisan's tool of your choice:
+                smith's tools, brewer's supplies, or mason's tools.
+            `,
+            reference: { source: "PHB", page: 20, url: "https://www.dndbeyond.com/characters/races/dwarf#ToolProficiency" }
         }, {
             name: "Stonecunning", type: FeatureType.Passive,
             description: `
-                    Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered
-                    proficient in the History skill and add double your proficiency bonus to the check, instead of your
-                    normal proficiency bonus.
-                `
+                Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered
+                proficient in the History skill and add double your proficiency bonus to the check, instead of your
+                normal proficiency bonus.
+            `,
+            reference: { source: "PHB", page: 20, url: "https://www.dndbeyond.com/characters/races/dwarf#StoneCunning" }
         }
     ],
     reference: { source: "PHB", page: 18, url: "https://www.dndbeyond.com/characters/races/dwarf" },
@@ -55,7 +59,8 @@ export const Dwarf: RaceModels.Race = new RaceModels.Race({
             features: [
                 {
                     name: "Dwarven Toughness", type: FeatureType.OnLevelMod,
-                    description: "Your hit point maximum increases by 1 every time you gain a level."
+                    description: "Your hit point maximum increases by 1 every time you gain a level.",
+                    reference: { source: "PHB", page: 20, url: "https://www.dndbeyond.com/characters/races/dwarf#DwarvenToughness" }
                 }
             ],
             reference: { source: "PHB", page: 20, url: "https://www.dndbeyond.com/characters/races/dwarf#HillDwarf" }
@@ -67,6 +72,7 @@ export const Dwarf: RaceModels.Race = new RaceModels.Race({
                     name: "Dwarven Armor Training", type: FeatureType.Passive,
                     description: "You have proficiency with light and medium armor.",
                     armorProficiencies: [{ proficiencies: [ArmorType.Light, ArmorType.Medium] }],
+                    reference: { source: "PHB", page: 20, url: "https://www.dndbeyond.com/characters/races/dwarf#DwarvenArmorTraining" },
                 }
             ],
             reference: { source: "PHB", page: 20, url: "https://www.dndbeyond.com/characters/races/dwarf#MountainDwarf" }
@@ -77,17 +83,19 @@ export const Dwarf: RaceModels.Race = new RaceModels.Race({
             features: [
                 {
                     name: "Duergar Resilience", type: FeatureType.Passive,
-                    description: "You have advantage on saving throws against illusions and against being charmed or paralyzed."
+                    description: "You have advantage on saving throws against illusions and against being charmed or paralyzed.",
+                    reference: { source: "SCG", page: 104 },
                 }, {
                     name: "Duergar Magic", type: FeatureType.Active,
                     usage: { times: 1, timeUnit: TimeUnit.LongRest },
                     description: `
-                            When you reach 3rd level, you can cast the enlarge/reduce spell on yourself once with this trait, using only the
-                            spell's enlarge option. When you reach 5th level, you can cast the invisibility spell on yourself once with this
-                            trait. You don't need material components for either spell, and you can't cast them while you're in direct
-                            sunlight, although sunlight has no effect on them once cast. You regain the ability to cast these spells with
-                            this trait when you finish a long rest. Intelligence is your spellcasting ability for these spells.
-                        `
+                        When you reach 3rd level, you can cast the enlarge/reduce spell on yourself once with this trait, using only the
+                        spell's enlarge option. When you reach 5th level, you can cast the invisibility spell on yourself once with this
+                        trait. You don't need material components for either spell, and you can't cast them while you're in direct
+                        sunlight, although sunlight has no effect on them once cast. You regain the ability to cast these spells with
+                        this trait when you finish a long rest. Intelligence is your spellcasting ability for these spells.
+                    `,
+                    reference: { source: "SCG", page: 104 },
                 },
                 CommonFeatures.sunlightSensitivity
             ],
@@ -95,7 +103,5 @@ export const Dwarf: RaceModels.Race = new RaceModels.Race({
         }
     ]
 });
-
-RaceList.push
 
 RaceList.push(Dwarf);

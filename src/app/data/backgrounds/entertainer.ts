@@ -9,7 +9,7 @@ import { BackgroundList } from "./background-list";
 
 export const Entertainer: Characters.Background = new Characters.Background({
     name: "Entertainer",
-    reference: { source: "PHB", page: 130, url: "" },
+    reference: { source: "PHB", page: 130 },
     languages: {},
     skillProficiencies: [{ proficiencies: [Skills.Acrobatics, Skills.Performance] }],
     toolProficiencies: [
@@ -36,7 +36,8 @@ export const Entertainer: Characters.Background = new Characters.Background({
             noble's court. At such a place, you receive free lodging and food of a modest or comfortable standard (depending on the quality
             of the establishment), as long as you perform each night. In addition, your performance makes you something of a local figure.
             When strangers recognize you in a town where you have performed, they typically take a liking to you.
-        `
+        `,
+        reference: { source: "PHB", page: 130 },
     }],
     personalityTraits: [
         "I know a story relevant to almost every situation.",

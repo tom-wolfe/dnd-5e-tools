@@ -17,13 +17,15 @@ export const Aarakocra: RaceModels.Race = new RaceModels.Race({
     features: [
         {
             name: "Flight", type: FeatureType.Passive,
-            description: "You have a flying speed of 50 feet. To use this speed, you can’t be wearing medium or heavy armor."
+            description: "You have a flying speed of 50 feet. To use this speed, you can’t be wearing medium or heavy armor.",
+            reference: { source: "EE", page: 5, url: "https://www.dndbeyond.com/characters/races/aarakocra#Flight" },
         }, {
             name: "Talons", type: FeatureType.Active,
-            description: "You are proficient with your unarmed strikes, which deal 1d4 slashing damage on a hit."
+            description: "You are proficient with your unarmed strikes, which deal 1d4 slashing damage on a hit.",
+            reference: { source: "EE", page: 5, url: "https://www.dndbeyond.com/characters/races/aarakocra#Talons" },
         }
     ],
-    reference: { source: "EE", page: 2, url: "https://www.dndbeyond.com/characters/races/aarakocra" },
+    reference: { source: "EE", page: 3, url: "https://www.dndbeyond.com/characters/races/aarakocra" },
     subraces: []
 });
 

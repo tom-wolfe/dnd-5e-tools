@@ -21,7 +21,8 @@ export const Tiefling: RaceModels.Race = new RaceModels.Race({
         {
             name: "Hellish Resistance", type: FeatureType.Passive,
             damageResistances: [DamageType.Fire],
-            description: "You have resistance to fire damage."
+            description: "You have resistance to fire damage.",
+            reference: { source: "PHB", page: 43, url: "https://www.dndbeyond.com/characters/races/tiefling#HellishResistance" },
         }, {
             name: "Infernal Legacy", type: FeatureType.Active,
             usage: { times: 1, timeUnit: TimeUnit.Day },
@@ -29,13 +30,12 @@ export const Tiefling: RaceModels.Race = new RaceModels.Race({
                 You know the thaumaturgy cantrip. Once you reach 3rd level, you can cast the hellish rebuke spell once per day as a
                 2nd-level spell. Once you reach 5th level, you can also cast the darkness spell once per day. Charisma is your spellcasting
                 ability for these spells.
-            `
+            `,
+            reference: { source: "PHB", page: 43, url: "https://www.dndbeyond.com/characters/races/tiefling#InfernalLegacy" },
         }
     ],
     reference: { source: "PHB", page: 42, url: "https://www.dndbeyond.com/characters/races/tiefling" },
     subraces: []
 });
-
-RaceList.push
 
 RaceList.push(Tiefling);

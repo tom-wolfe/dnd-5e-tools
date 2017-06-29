@@ -3,6 +3,7 @@ import { Character } from "../characters";
 import { Condition } from "../condition";
 import * as Equipment from "../equipment";
 import { ProficiencyOption } from "../proficiencies/proficiency-option";
+import { Reference } from "../reference";
 import { FeatureType } from "./feature-type";
 import { UsageFrequency } from "./usage-frequency";
 
@@ -20,4 +21,5 @@ export class Feature {
     toolProficiencies?: ProficiencyOption<Equipment.Item>[];
     otherProficiencies?: ProficiencyOption<Equipment.Weapon>[];
     apply?: (character: Character) => void;
+    reference: Reference;
 };
