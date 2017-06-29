@@ -15,7 +15,7 @@ export const Outlander: Characters.Background = new Characters.Background({
     toolProficiencies: [{ proficiencies: InstrumentList, count: 1 }],
     money: new Equipment.Money({ platinum: 0, gold: 10, silver: 0, copper: 0 }),
     equipment: [
-        { items: [[Weapons.Quarterstaff, { name: "hunting trap" }, { name: "animal trophy" }, { name: "traveler's clothes" }]] }
+        { items: [Weapons.Quarterstaff, { name: "hunting trap" }, { name: "animal trophy" }, { name: "traveler's clothes" }] }
     ],
     features: [{
         name: "Wanderer",

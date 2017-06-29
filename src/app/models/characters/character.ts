@@ -6,8 +6,9 @@ import { WeaponList } from "../../data/weapons";
 import * as Abilities from "../abilities";
 import * as Attributes from "../attributes";
 import * as Classes from "../classes";
-import * as Equipment from "../equipment";
+import { Condition } from "../condition";
 import { WeaponType } from "../equipment";
+import * as Equipment from "../equipment";
 import * as Features from "../features";
 import { Feature } from "../features";
 import { FeatureType } from "../features/feature-type";
@@ -36,6 +37,8 @@ export class Character {
     class: Classes.Class;
     classArchetype: Classes.Archetype;
     readonly damageResistances: Equipment.DamageType[] = [];
+    readonly damageImmunities: Equipment.DamageType[] = [];
+    readonly conditionImmunities: Condition[] = [];
     readonly equipment: Equipment.Item[] = [];
     equippedArmor: Equipment.Armor;
     equippedShield: Equipment.Armor;
@@ -126,6 +129,14 @@ export class Character {
         return _.join(this.damageResistances.map(x => Equipment.DamageType[x].toString()), ", ") || "[None]";
     }
 
+    get damageImmunitiesString(): string {
+        return _.join(this.damageImmunities.map(x => Equipment.DamageType[x].toString()), ", ") || "[None]";
+    }
+
+    get conditionImmunitiesString(): string {
+        return _.join(this.conditionImmunities.map(x => Condition[x].toString()), ", ") || "[None]";
+    }
+
     get dexterity(): number {
         return this.abilities.get("DEX");
     }
@@ -152,8 +163,44 @@ export class Character {
     }
 
     get genderIconClass(): string {
-        if (!this.gender) { return "fa-genderless"; }
+        if (!this.gender) { return "mdi-circle-outline"; }
         return Data.Genders[this.gender].iconClass || "Unknown";
+    }
+
+    get hasArmorProficiencies(): boolean {
+        return this.armorProficiencies.length > 0;
+    }
+
+    get hasConditionImmunities(): boolean {
+        return this.conditionImmunities.length > 0;
+    }
+
+    get hasDamageImmunities(): boolean {
+        return this.damageImmunities.length > 0;
+    }
+
+    get hasDamageResistances(): boolean {
+        return this.damageResistances.length > 0;
+    }
+
+    get hasResistancesOrImmunities(): boolean {
+        return this.hasDamageResistances || this.hasConditionImmunities || this.hasDamageImmunities;
+    }
+
+    get hasSenses(): boolean {
+        return (this.senses.darkvision || this.senses.blindsight || this.senses.tremorsense || this.senses.truesight || 0) > 0;
+    }
+
+    get hasToolProficiencies(): boolean {
+        return this.toolProficiencies.length > 0;
+    }
+
+    get hasOtherProficiencies(): boolean {
+        return this.otherProficiencies.length > 0;
+    }
+
+    get hasWeaponProficiencies(): boolean {
+        return this.weaponProficiencies.length > 0;
     }
 
     get heightClassification(): string {
@@ -249,7 +296,7 @@ export class Character {
         output = append(output, "Blindsight");
         output = append(output, "Tremorsense");
         output = append(output, "Truesight");
-        return output;
+        return output || "[None]";
     }
 
     get skillString(): string {
@@ -276,7 +323,9 @@ export class Character {
 
     get weaponAttacks(): Feature[] {
         const retVal: Feature[] = [];
-        this.equipment.filter(e => e instanceof Equipment.Weapon).forEach((weapon: Equipment.Weapon) => {
+        let weapons = this.equipment.filter(e => e instanceof Equipment.Weapon);
+        weapons = _.uniq(weapons);
+        weapons.forEach((weapon: Equipment.Weapon) => {
             retVal.push({
                 name: weapon.name,
                 description: this.weaponDescriptor.describe(weapon),

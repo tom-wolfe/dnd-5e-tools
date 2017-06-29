@@ -1,6 +1,7 @@
 import { Levels } from "app/data";
 import * as Data from "app/data/";
 import * as Classes from "app/data/classes";
+import { Armor, ArmorType } from "app/models/equipment";
 import { Character } from "app/models/characters/character";
 import * as _ from "lodash";
 
@@ -14,6 +15,7 @@ export class ClassBuilder extends BaseCharacterBuilder {
         this.randomizeClass(character);
         this.randomizeLevel(character);
         this.randomizeHitPoints(character);
+        this.randomizeEquipment(character);
     }
 
     private randomizeClass(character: Character) {
@@ -62,5 +64,22 @@ export class ClassBuilder extends BaseCharacterBuilder {
         const hitDice = this.numGen.rollDice(character.class.hitDie, character.level.number - 1);
         hitDice.push(character.class.hitDie); // Max roll for first level.
         character.baseHitPoints = _.sum(hitDice);
+    }
+
+    private randomizeEquipment(character: Character) {
+        if (!character.class.equipment) { return; }
+        character.class.equipment.forEach(option => {
+            this.grantEquipmentOption(character, option);
+        });
+
+        // Equip random shield and armour.
+        const shields = character.equipment.filter(a => a instanceof Armor && a.type === ArmorType.Shield);
+        if (shields.length > 0) {
+            character.equippedShield = shields[this.numGen.rollDie(shields.length) - 1] as Armor;
+        }
+        const armor = character.equipment.filter(a => a instanceof Armor && a.type !== ArmorType.Shield);
+        if (armor.length > 0) {
+            character.equippedArmor = armor[this.numGen.rollDie(armor.length) - 1] as Armor;
+        }
     }
 };

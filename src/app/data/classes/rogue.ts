@@ -4,6 +4,8 @@ import { ArmorType } from "app/models/equipment";
 
 import * as ClassModels from "../../models/classes";
 import { WeaponType } from "../../models/equipment";
+import * as Armor from "../armor";
+import * as Packs from "../packs";
 import { ClassList } from "./class-list";
 import { Skills } from "app/data";
 
@@ -15,10 +17,16 @@ export const Rogue: ClassModels.Class = new ClassModels.Class({
     armorProficiencies: [{ proficiencies: [ArmorType.Light] }],
     weaponProficiencies: [{
         proficiencies: [
-            ...Weapons.WeaponList.filter(w => w.type === WeaponType.Simple),
+            ...Weapons.SimpleWeapons,
             Weapons.HandCrossbow, Weapons.Longsword, Weapons.Rapier, Weapons.Shortsword
         ]
     }],
+    equipment: [
+        { items: [Weapons.Rapier, Weapons.Shortsword], count: 1 },
+        { items: [[Weapons.Shortbow, { name: "20 arrows" }], Weapons.Shortsword], count: 1 },
+        { items: [Packs.BurglarPack, Packs.DungeoneerPack, Packs.ExplorerPack], count: 1 },
+        { items: [Armor.Leather, Weapons.Dagger, Weapons.Dagger, Tools.ThievesTools], count: 1 },
+    ],
     toolProficiencies: [{ proficiencies: [Tools.ThievesTools] }],
     skillProficiencies: [{
         proficiencies: [

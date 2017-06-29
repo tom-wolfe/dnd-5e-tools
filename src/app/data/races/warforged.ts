@@ -1,5 +1,6 @@
 import { Languages } from "../../data";
 import * as Characters from "../../models/characters";
+import { Condition } from "../../models/condition";
 import { FeatureType } from "../../models/features/feature-type";
 import * as RaceModels from "../../models/races";
 import * as Names from "../names";
@@ -24,6 +25,7 @@ export const Warforged: RaceModels.Race = new RaceModels.Race({
             }
         }, {
             name: "Living Construct", type: FeatureType.Passive,
+            conditionImmunities: [Condition.Diseased],
             description: `
                     Even though you were constructed, you are a living creature. You are immune to disease. You do not need to eat or
                     breathe, but you can ingest food and drink if you wish. Instead of sleeping, you enter an inactive state for 4 hours

@@ -1,5 +1,5 @@
 <div class="ability-list bt-thick bb-thick">
-    <div class="refresh pull-right"><a href="" (click)="onRefreshAbilitiesClick($event)"><i class="fa fa-refresh"></i><span class="sr-only">Random Abilities</span></a></div>
+    <div class="refresh pull-right"><a href="" (click)="onRefreshAbilitiesClick($event)"><i class="mdi mdi-refresh"></i><span class="sr-only">Random Abilities</span></a></div>
     <div class="ability-list row">
         <dnd-ability [ability]="ability" [character]="character" *ngFor="let ability of abilityList"></dnd-ability>
     </div>

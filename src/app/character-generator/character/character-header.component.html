@@ -1,6 +1,6 @@
 <div class="character-header">
   <h1 class="character-name">
-    <div class="refresh pull-right" style="font-size: 24px"><a href="" (click)="onRefreshNameClick($event)"><i class="fa fa-refresh"></i><span class="sr-only">Random Name</span></a></div>
+    <div class="refresh pull-right" style="font-size: 24px"><a href="" (click)="onRefreshNameClick($event)"><i class="mdi mdi-refresh"></i><span class="sr-only">Random Name</span></a></div>
     {{character.name}}
     <div class="character-class bt-light bb-thick pb-2">
       <small class="text-muted">
@@ -11,7 +11,7 @@
   </h1>
   <div class="bb-light pt-1 pb-1">
     <div class="text-muted character-subline">
-      <span class="gender"><i class="fa" [ngClass]="character.genderIconClass"></i> {{character.genderDescription}}</span>
+      <span class="gender"><i class="mdi" [ngClass]="character.genderIconClass"></i> {{character.genderDescription}}</span>
       <span class="race">{{character.race.name}}</span>
       <dnd-source-reference [reference]="character.race.reference"></dnd-source-reference>
       <span class="sub-race" *ngIf="character.subrace">{{character.subrace.name}}<dnd-source-reference [reference]="character.subrace.reference"></dnd-source-reference></span>,
@@ -21,7 +21,7 @@
   </div>
   <div class="bb-thin pt-2 pb-2">
     <div class="text-muted dnd-5e-tools-subline">
-      <div class="refresh pull-right"><a href="" (click)="onRefreshPhysicalityClick($event)"><i class="fa fa-refresh"></i><span class="sr-only">Random Physicality</span></a></div>
+      <div class="refresh pull-right"><a href="" (click)="onRefreshPhysicalityClick($event)"><i class="mdi mdi-refresh"></i><span class="sr-only">Random Physicality</span></a></div>
       <span class="height">{{character.heightDescription}} <span class="font-weight-bold">({{character.heightClassification}})</span></span>,
       <span class="weight">{{character.weightDescription}} <span class="font-weight-bold">({{character.weightClassification}})</span></span>,
       <span class="age">{{character.ageDescription}} <span class="font-weight-bold">({{character.ageClassification}})</span></span>

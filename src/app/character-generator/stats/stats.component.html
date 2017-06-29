@@ -33,7 +33,7 @@
         {{character.languagesString}}
       </div>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-3" [ngClass]="{ 'hidden-sm-down': !character.hasSenses }">
       <div class="character-sub-block">
         <h3 class="sub-block-title">Senses</h3>
         {{character.sensesString}}
@@ -55,25 +55,25 @@
 </div>
 <div class="bb-thin">
   <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-3" [ngClass]="{ 'hidden-sm-down': !character.hasWeaponProficiencies }">
       <div class="character-sub-block">
         <h4 class="sub-block-title">Weapon Proficiencies</h4>
         {{character.weaponProficiencyString}}
       </div>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-3" [ngClass]="{ 'hidden-sm-down': !character.hasArmorProficiencies }">
       <div class="character-sub-block">
         <h4 class="sub-block-title">Armor Proficiencies</h4>
         {{character.armorProficiencyString}}
       </div>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-3" [ngClass]="{ 'hidden-sm-down': !character.hasToolProficiencies }">
       <div class="character-sub-block">
         <h4 class="sub-block-title">Tool Proficiencies</h4>
         {{character.toolProficiencyString}}
       </div>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-3" [ngClass]="{ 'hidden-sm-down': !character.hasOtherProficiencies }">
       <div class="character-sub-block">
         <h4 class="sub-block-title">Other Proficiencies</h4>
         {{character.otherProficiencyString}}
@@ -81,24 +81,24 @@
     </div>
   </div>
 </div>
-<div class="bb-thin">
+<div class="bb-thin" [ngClass]="{ 'hidden-sm-down': !character.hasResistancesOrImmunities }">
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4" [ngClass]="{ 'hidden-sm-down': !character.hasDamageResistances }">
       <div class="character-sub-block">
         <h4 class="sub-block-title">Damage Resistances</h4>
         {{character.damageResistancesString}}
       </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-4" [ngClass]="{ 'hidden-sm-down': !character.hasDamageImmunities }">
       <div class="character-sub-block">
         <h4 class="sub-block-title">Damage Immunities</h4>
-        [None]
+        {{character.damageImmunitiesString}}
       </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-4" [ngClass]="{ 'hidden-sm-down': !character.hasConditionImmunities }">
       <div class="character-sub-block">
         <h4 class="sub-block-title">Condition Immunities</h4>
-        [None]
+        {{character.conditionImmunitiesString}}
       </div>
     </div>
   </div>

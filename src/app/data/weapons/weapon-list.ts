@@ -1,3 +1,3 @@
-import { Weapon } from "../../models/equipment/weapon";
+import { Weapon } from "app/models/equipment";
 
 export const WeaponList: Weapon[] = [];

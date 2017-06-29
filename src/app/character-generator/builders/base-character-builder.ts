@@ -80,41 +80,72 @@ export abstract class BaseCharacterBuilder {
         }
     }
 
+    protected grantEquipmentOptionOrItem(
+        character: Character,
+        options: (Equipment.Item | Equipment.EquipmentOption | (Equipment.Item | Equipment.EquipmentOption)[])
+    ) {
+
+        // Normalize options to being an array.
+        const optionArray: (Equipment.Item | Equipment.EquipmentOption)[] = [];
+        if (options instanceof Array) {
+            optionArray.push(...options);
+        } else {
+            optionArray.push(options);
+        }
+
+        optionArray.forEach(option => {
+            if (option instanceof Equipment.Item || (option as any).name) {
+                this.grantEquipment(character, option as Equipment.Item);
+            } else {
+                this.grantEquipmentOption(character, option);
+            }
+        })
+    }
+
     protected grantEquipmentOption(character: Character, option: Equipment.EquipmentOption) {
         if (!option.count) {
             option.items.forEach(items => {
-                this.grantEquipment(character, items);
+                this.grantEquipmentOptionOrItem(character, items);
             })
         } else {
-            const options: Equipment.Item[][] = _.clone(option.items);
+            // Get all the character proficiencies.
             let charProfs = _.union(
                 character.weaponProficiencies,
                 character.toolProficiencies,
                 character.otherProficiencies
             ).map(p => p.thing);
-
-            // Add all of the right types of armor.
             charProfs = _.union(charProfs, Armor.ArmorList.filter(a => _.includes(character.armorProficiencies.map(p => p.thing), a.type)));
 
+            const options = _.clone(option.items);
+
             // Get any available items that the character is proficient in.
-            const overlap = options.filter(opt => opt.filter(item => _.includes(charProfs, item)).length > 0);
+            const overlap = options.filter(opt => {
+                const optionArray: (Equipment.Item | Equipment.EquipmentOption)[] = [];
+                if (opt instanceof Array) {
+                    optionArray.push(...opt);
+                } else {
+                    optionArray.push(opt);
+                }
+                return optionArray.filter(item => _.includes(charProfs, item)).length > 0;
+            });
 
             for (let x = 0; x < option.count; x++) {
                 if (overlap.length > 0) {
                     const index = this.numGen.rollDie(overlap.length) - 1;
-                    this.grantEquipment(character, overlap[index]);
+                    this.grantEquipmentOptionOrItem(character, overlap[index]);
                     overlap.splice(index, 1);
                 } else {
                     const index = this.numGen.rollDie(options.length) - 1;
-                    this.grantEquipment(character, options[index]);
+                    const selected = options[index];
+                    this.grantEquipmentOptionOrItem(character, selected);
                     options.splice(index, 1);
                 }
             }
         }
     }
 
-    protected grantEquipment(character: Character, equipment: Equipment.Item[]) {
-        character.equipment.push(...equipment);
+    protected grantEquipment(character: Character, equipment: Equipment.Item) {
+        character.equipment.push(equipment);
     }
 
     protected applyFeature(character: Character, feature: Feature) {
@@ -141,6 +172,16 @@ export abstract class BaseCharacterBuilder {
         if (feature.damageResistances) {
             feature.damageResistances.forEach(res => {
                 character.damageResistances.push(res);
+            });
+        }
+        if (feature.damageImmunities) {
+            feature.damageImmunities.forEach(res => {
+                character.damageImmunities.push(res);
+            });
+        }
+        if (feature.conditionImmunities) {
+            feature.conditionImmunities.forEach(res => {
+                character.conditionImmunities.push(res);
             });
         }
         if (feature.type === FeatureType.SingleMod) {

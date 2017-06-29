@@ -17,16 +17,18 @@ ___
 >|:---:|:---:|:---:|:---:|:---:|:---:|
 >|{{strength}} ({{strengthMod}})|{{dexterity}} ({{dexterityMod}})|{{constitution}} ({{constitutionMod}})|{{intelligence}} ({{intelligenceMod}})|{{wisdom}} ({{wisdomMod}})|{{charisma}} ({{charismaMod}})|
 >___
-> - **Damage Resistances** {{damageResistancesString}}
+{{#hasDamageResistances}}> - **Damage Resistances** {{damageResistancesString}}{{/hasDamageResistances}}
+{{#hasDamageImmunities}}> - **Damage Immunities** {{damageImmunitiesString}}{{/hasDamageImmunities}}
+{{#hasConditionImmunities}}> - **Condition Immunities** {{conditionImmunitiesString}}{{/hasConditionImmunities}}
 > - **Skills** {{skillString}}
 > - **Saving Throws** {{savingThrowProficiencyString}}
-> - **Senses** passive Perception{{#sensesString}}, {{/sensesString}}{{sensesString}}
+> - **Senses** passive Perception{{#hasSenses}}, {{sensesString}}{{/hasSenses}}
 > - **Languages** {{languagesString}}
 >___
-> - **Weapon Proficiencies** {{weaponProficiencyString}}
-> - **Armor Proficiencies** {{armorProficiencyString}}
-> - **Tool Proficiencies** {{toolProficiencyString}}
-> - **Other Proficiencies** {{otherProficiencyString}}
+{{#hasWeaponProficiencies}}> - **Weapon Proficiencies** {{weaponProficiencyString}}{{/hasWeaponProficiencies}}
+{{#hasArmorProficiencies}}> - **Armor Proficiencies** {{armorProficiencyString}}{{/hasArmorProficiencies}}
+{{#hasToolProficiencies}}> - **Tool Proficiencies** {{toolProficiencyString}}{{/hasToolProficiencies}}
+{{#hasOtherProficiencies}}> - **Other Proficiencies** {{otherProficiencyString}}{{/hasOtherProficiencies}}
 > ___
 > - **Equipment** {{equipmentString}}
 > ___

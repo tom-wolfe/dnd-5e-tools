@@ -2,7 +2,9 @@ import { Skills } from "app/data";
 
 import * as ClassModels from "../../models/classes";
 import { ArmorType } from "../../models/equipment";
-import { WeaponList } from "../weapons";
+import * as Armor from "../armor";
+import * as Packs from "../packs";
+import * as Weapons from "../weapons";
 import { ClassList } from "./class-list";
 
 export const Ranger: ClassModels.Class = new ClassModels.Class({
@@ -11,7 +13,7 @@ export const Ranger: ClassModels.Class = new ClassModels.Class({
     hitDie: 10,
     savingThrows: ["DEX", "WIS"],
     armorProficiencies: [{ proficiencies: [ArmorType.Light, ArmorType.Medium, ArmorType.Shield] }],
-    weaponProficiencies: [{ proficiencies: WeaponList }],
+    weaponProficiencies: [{ proficiencies: Weapons.WeaponList }],
     toolProficiencies: [],
     skillProficiencies: [{
         proficiencies: [
@@ -19,6 +21,17 @@ export const Ranger: ClassModels.Class = new ClassModels.Class({
             Skills.Perception, Skills.Stealth, Skills.Survival
         ], count: 3
     }],
+    equipment: [
+        { items: [Armor.ScaleMail, Armor.Leather], count: 1 },
+        { items: [Packs.DungeoneerPack, Packs.ExplorerPack], count: 1 },
+        { items: [Weapons.Longbow, { name: "20 arrows" }], count: 1 },
+        {
+            items: [
+                [Weapons.Shortsword, Weapons.Shortsword],
+                [{ items: Weapons.SimpleWeapons, count: 1 }, { items: Weapons.SimpleWeapons, count: 1 }]
+            ], count: 1
+        },
+    ],
     otherProficiencies: [],
     archetypeName: { singular: "Ranger Archetype", plural: "Ranger Archetypes" },
     reference: { source: "PHB", page: 89, url: "https://www.dndbeyond.com/characters/classes/ranger" },

@@ -15,11 +15,12 @@ export const Hermit: Characters.Background = new Characters.Background({
     money: new Equipment.Money({ platinum: 0, gold: 5, silver: 0, copper: 0 }),
     equipment: [
         {
-            items: [[
+            items: [
                 Tools.HerbalismKit,
                 { name: "scroll case full of notes" },
                 { name: "common clothes" },
-                { name: "winter blanket" }]]
+                { name: "winter blanket" }
+            ]
         },
     ],
     features: [{

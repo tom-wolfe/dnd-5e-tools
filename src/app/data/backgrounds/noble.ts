@@ -14,7 +14,7 @@ export const Noble: Characters.Background = new Characters.Background({
     toolProficiencies: [{ proficiencies: GamingSetList, count: 1 }],
     money: new Equipment.Money({ platinum: 0, gold: 25, silver: 0, copper: 0 }),
     equipment: [
-        { items: [[{ name: "fine clothes" }, { name: "signet ring" }, { name: "scroll of pedigree" }]] }
+        { items: [{ name: "fine clothes" }, { name: "signet ring" }, { name: "scroll of pedigree" }] }
     ],
     features: [{
         name: "Position of Privilege",

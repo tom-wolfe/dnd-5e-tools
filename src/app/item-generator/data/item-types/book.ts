@@ -6,7 +6,7 @@ import { ItemTypeList } from "./item-type-list";
 export const Book: Items.ItemDefinition = new Items.ItemDefinition();
 Object.assign(Book, {
     name: "Book",
-    iconClass: "fa-book",
+    iconClass: "mdi-book-open-page-variant",
     nameFormats: [
         "Heraldry of {historicalPeriod}",
         "Great Battles of {historicalPeriod}",

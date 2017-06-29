@@ -1,10 +1,14 @@
 import { Skills } from "app/data";
+import * as Armor from "app/data/armor";
+import * as Packs from "app/data/packs";
 import * as Tools from "app/data/tools";
 import * as Weapons from "app/data/weapons";
+import * as _ from "lodash";
 
 import * as ClassModels from "../../models/classes";
-import { ArmorType } from "../../models/equipment";
+import { ArmorType, WeaponProperty, WeaponType } from "../../models/equipment";
 import { ClassList } from "./class-list";
+
 
 export const Druid: ClassModels.Class = new ClassModels.Class({
     name: "Druid",
@@ -26,6 +30,11 @@ export const Druid: ClassModels.Class = new ClassModels.Class({
         ], count: 2
     }],
     otherProficiencies: [],
+    equipment: [
+        { items: [Armor.Shield, { items: Weapons.SimpleWeapons, count: 1 }], count: 1 },
+        { items: [Weapons.Scimitar, { items: Weapons.SimpleMeleeWeapons, count: 1 }], count: 1 },
+        { items: [Armor.Leather, Packs.ExplorerPack, { name: "Druidic focus" }], count: 1 }
+    ],
     archetypeName: { singular: "Druid Circle", plural: "Druid Circles" },
     reference: { source: "PHB", page: 64, url: "https://www.dndbeyond.com/characters/classes/druid" },
     archetypes: [

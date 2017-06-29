@@ -14,8 +14,8 @@ export const GuildArtisan: Characters.Background = new Characters.Background({
     toolProficiencies: [{ proficiencies: ArtisanToolList, count: 1 }],
     money: new Equipment.Money({ platinum: 0, gold: 15, silver: 0, copper: 0 }),
     equipment: [
-        { items: [[{ name: "letter of introduction from your guild" }, { name: "traveler's clothes" }]] },
-        { items: ArtisanToolList.map(i => [i]), count: 1 },
+        { items: [{ name: "letter of introduction from your guild" }, { name: "traveler's clothes" }] },
+        { items: ArtisanToolList, count: 1 },
     ],
     features: [{
         name: "Guild Membership",

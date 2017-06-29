@@ -1,8 +1,9 @@
+import { Skills } from "app/data";
+import * as Packs from "app/data/packs";
 import * as Weapons from "app/data/weapons";
 
 import * as ClassModels from "../../models/classes";
 import { ClassList } from "./class-list";
-import { Skills } from "app/data";
 
 export const Wizard: ClassModels.Class = new ClassModels.Class({
     name: "Wizard",
@@ -19,6 +20,12 @@ export const Wizard: ClassModels.Class = new ClassModels.Class({
             Skills.Arcana, Skills.History, Skills.Insight, Skills.Investigation, Skills.Medicine, Skills.Religion
         ], count: 2
     }],
+    equipment: [
+        { items: [Weapons.Quarterstaff, Weapons.Dagger], count: 1 },
+        { items: [{ name: "component pouch" }, { name: "arcane focus" }], count: 1 },
+        { items: [Packs.ExplorerPack, Packs.ScholarPack], count: 1 },
+        { items: [{ name: "spellbook" }] }
+    ],
     otherProficiencies: [],
     archetypeName: { singular: "Arcane Tradition", plural: "Arcane Traditions" },
     reference: { source: "PHB", page: 112, url: "https://www.dndbeyond.com/characters/classes/wizard" },

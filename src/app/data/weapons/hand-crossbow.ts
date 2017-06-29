@@ -2,7 +2,7 @@ import * as Equipment from "../../models/equipment/";
 import { WeaponList } from "./weapon-list";
 
 export const HandCrossbow: Equipment.Weapon = new Equipment.Weapon({
-    name: "Hand Crossbow",
+    name: "Hand crossbow",
     type: Equipment.WeaponType.Martial,
     properties: [
         Equipment.WeaponProperty.Ammunition,

@@ -14,13 +14,13 @@ export const Urchin: Characters.Background = new Characters.Background({
     money: new Equipment.Money({ platinum: 0, gold: 10, silver: 0, copper: 0 }),
     equipment: [
         {
-            items: [[
+            items: [
                 { name: "small knife" },
                 { name: "city map" },
                 { name: "pet mouse" },
                 { name: "token to remember your parents by" },
                 { name: "common clothes" },
-            ]]
+            ]
         },
     ],
     features: [{
