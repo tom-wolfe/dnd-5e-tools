@@ -1,4 +1,6 @@
 import { Languages } from "../../data/languages";
+import { Condition } from "../../models/condition";
+import { DamageType } from "../../models/equipment";
 import { FeatureType } from "../../models/features/feature-type";
 import { TimeUnit } from "../../models/features/time-unit";
 import * as RaceModels from "../../models/races";
@@ -30,6 +32,8 @@ export const YuanTiPureblood: RaceModels.Race = new RaceModels.Race({
             description: "You have advantage on saving throws against spells and other magical effects."
         }, {
             name: "Poison Immunity", type: FeatureType.Passive,
+            damageImmunities: [DamageType.Poison],
+            conditionImmunities: [Condition.Poisoned],
             description: "You are immune to poison damage and the poisoned condition."
         }
     ],

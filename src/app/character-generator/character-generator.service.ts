@@ -13,7 +13,7 @@ export class CharacterGeneratorService {
     constructor(private http: Http) { }
 
     getTemplate(): Promise<string> {
-        return this.http.get("/assets/templates/character.md")
+        return this.http.get("/assets/templates/character.mustache")
             .toPromise()
             .then(res => res.text());
     }

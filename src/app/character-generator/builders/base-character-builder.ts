@@ -174,6 +174,16 @@ export abstract class BaseCharacterBuilder {
                 character.damageResistances.push(res);
             });
         }
+        if (feature.damageImmunities) {
+            feature.damageImmunities.forEach(res => {
+                character.damageImmunities.push(res);
+            });
+        }
+        if (feature.conditionImmunities) {
+            feature.conditionImmunities.forEach(res => {
+                character.conditionImmunities.push(res);
+            });
+        }
         if (feature.type === FeatureType.SingleMod) {
             feature.apply(character);
         }
