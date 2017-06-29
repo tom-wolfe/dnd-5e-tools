@@ -1,4 +1,5 @@
 import { Item } from "app/models/equipment";
+import * as Tools from "app/data/tools";
 
 export const PackList: Item[][] = [];
 
@@ -55,7 +56,7 @@ export const EntertainerPack: Item[] = [
     new Item({ name: "5 candles" }),
     new Item({ name: "5 days' rations" }),
     new Item({ name: "waterskin" }),
-    new Item({ name: "disguise kit" }),
+    new Item(Tools.DisguiseKit),
 ];
 PackList.push(EntertainerPack);
 

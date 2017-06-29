@@ -1,13 +1,12 @@
 import * as Data from "app/data/";
 import * as Descriptors from "app/shared/descriptors";
 import * as _ from "lodash";
+import * as Collections from "typescript-collections";
 
-import { WeaponList } from "../../data/weapons";
 import * as Abilities from "../abilities";
 import * as Attributes from "../attributes";
 import * as Classes from "../classes";
 import { Condition } from "../condition";
-import { WeaponType } from "../equipment";
 import * as Equipment from "../equipment";
 import * as Features from "../features";
 import { Feature } from "../features";
@@ -39,7 +38,7 @@ export class Character {
     readonly damageResistances: Equipment.DamageType[] = [];
     readonly damageImmunities: Equipment.DamageType[] = [];
     readonly conditionImmunities: Condition[] = [];
-    readonly equipment: Equipment.Item[] = [];
+    readonly equipment: Collections.Dictionary<Equipment.Item, number> = new Collections.Dictionary<Equipment.Item, number>();
     equippedArmor: Equipment.Armor;
     equippedShield: Equipment.Armor;
     readonly features: Features.Feature[] = [];
@@ -146,7 +145,11 @@ export class Character {
     }
 
     get equipmentString(): string {
-        return _.join(this.equipment.map(x => x.name).sort(), ", ") || "[None]";
+        const retVal: string[] = [];
+        _.sortBy(this.equipment.keys(), ["name"]).forEach(i => {
+            retVal.push(`${this.equipment.getValue(i)} x ${i.name}`)
+        });
+        return _.join(retVal, ", ") || "[None]";
     }
 
     get equippedArmorString(): string {
@@ -241,7 +244,7 @@ export class Character {
     }
 
     get otherProficiencyString(): string {
-        return _.join(this.otherProficiencies.map(t => t.thing.name), ", ") || "[None]";
+        return _.join(this.otherProficiencies.map(t => t.thing.name).sort(), ", ") || "[None]";
     }
 
     get otherSpeedsDescription(): string {
@@ -314,7 +317,7 @@ export class Character {
     }
 
     get toolProficiencyString(): string {
-        return _.join(this.toolProficiencies.map(t => t.thing.name), ", ") || "[None]";
+        return _.join(this.toolProficiencies.map(t => t.thing.name).sort(), ", ") || "[None]";
     }
 
     get walkSpeedDescription(): string {
@@ -323,7 +326,7 @@ export class Character {
 
     get weaponAttacks(): Feature[] {
         const retVal: Feature[] = [];
-        let weapons = this.equipment.filter(e => e instanceof Equipment.Weapon);
+        let weapons = this.equipment.keys().filter(e => e instanceof Equipment.Weapon);
         weapons = _.uniq(weapons);
         weapons.forEach((weapon: Equipment.Weapon) => {
             retVal.push({
@@ -370,5 +373,17 @@ export class Character {
             }
         }
         return retVal;
+    }
+
+    addEquipment(item: Equipment.Item) {
+        if (this.equipment.containsKey(item)) {
+            this.equipment.setValue(item, this.equipment.getValue(item) + 1);
+        } else {
+            this.equipment.setValue(item, 1);
+        }
+    }
+
+    getEquipment(): Equipment.Item[] {
+        return this.equipment.keys();
     }
 };

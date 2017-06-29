@@ -17,7 +17,12 @@ export const FolkHero: Characters.Background = new Characters.Background({
     money: new Equipment.Money({ platinum: 0, gold: 10, silver: 0, copper: 0 }),
     equipment: [
         { items: ArtisanToolList, count: 1 },
-        { items: [{ name: "shovel" }, { name: "iron pot" }, { name: "common clothes" }] },
+        {
+            items: [
+                new Equipment.Item({ name: "shovel" }),
+                new Equipment.Item({ name: "iron pot" }),
+                new Equipment.Item({ name: "common clothes" })]
+        },
     ],
     features: [{
         name: "Rustic Hospitality",

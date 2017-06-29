@@ -11,8 +11,15 @@ export const Acolyte: Characters.Background = new Characters.Background({
     skillProficiencies: [{ proficiencies: [Skills.Insight, Skills.Religion] }],
     money: new Equipment.Money({ platinum: 0, gold: 15, silver: 0, copper: 0 }),
     equipment: [
-        { items: [{ name: "holy symbol" }, { name: "5 sticks of incense" }, { name: "vestment" }, { name: "common clothes" }] },
-        { items: [{ name: "prayer book" }, { name: "prayer wheel" }], count: 1 }
+        {
+            items: [
+                new Equipment.Item({ name: "holy symbol" }),
+                new Equipment.Item({ name: "5 sticks of incense" }),
+                new Equipment.Item({ name: "vestment" }),
+                new Equipment.Item({ name: "common clothes" })
+            ]
+        },
+        { items: [new Equipment.Item({ name: "prayer book" }), new Equipment.Item({ name: "prayer wheel" })], count: 1 }
     ],
     features: [{
         name: "Shelter of the Faithful",

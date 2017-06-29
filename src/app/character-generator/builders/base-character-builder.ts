@@ -145,7 +145,7 @@ export abstract class BaseCharacterBuilder {
     }
 
     protected grantEquipment(character: Character, equipment: Equipment.Item) {
-        character.equipment.push(equipment);
+        character.addEquipment(equipment);
     }
 
     protected applyFeature(character: Character, feature: Feature) {

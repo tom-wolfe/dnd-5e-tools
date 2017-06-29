@@ -1,7 +1,7 @@
 import { Skills } from "app/data";
 
 import * as ClassModels from "../../models/classes";
-import { ArmorType } from "../../models/equipment";
+import { ArmorType, Item } from "../../models/equipment";
 import * as Armor from "../armor";
 import * as Packs from "../packs";
 import * as Weapons from "../weapons";
@@ -22,8 +22,8 @@ export const Warlock: ClassModels.Class = new ClassModels.Class({
     }],
     otherProficiencies: [],
     equipment: [
-        { items: [[Weapons.LightCrossbow, { name: "20 crossbow bolts" }], { items: Weapons.SimpleWeapons, count: 1 }], count: 1 },
-        { items: [{ name: "component pouch" }, { name: "arcane focus" }], count: 1 },
+        { items: [[Weapons.LightCrossbow, new Item({ name: "20 crossbow bolts" })], { items: Weapons.SimpleWeapons, count: 1 }], count: 1 },
+        { items: [new Item({ name: "component pouch" }), new Item({ name: "arcane focus" })], count: 1 },
         { items: [Packs.DungeoneerPack, Packs.ScholarPack], count: 1 },
         { items: [Armor.Leather, Weapons.Dagger, Weapons.Dagger, { items: Weapons.SimpleWeapons, count: 1 }] }
     ],

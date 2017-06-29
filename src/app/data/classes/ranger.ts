@@ -1,7 +1,7 @@
 import { Skills } from "app/data";
 
 import * as ClassModels from "../../models/classes";
-import { ArmorType } from "../../models/equipment";
+import { ArmorType, Item } from "../../models/equipment";
 import * as Armor from "../armor";
 import * as Packs from "../packs";
 import * as Weapons from "../weapons";
@@ -24,7 +24,7 @@ export const Ranger: ClassModels.Class = new ClassModels.Class({
     equipment: [
         { items: [Armor.ScaleMail, Armor.Leather], count: 1 },
         { items: [Packs.DungeoneerPack, Packs.ExplorerPack], count: 1 },
-        { items: [Weapons.Longbow, { name: "20 arrows" }], count: 1 },
+        { items: [Weapons.Longbow, new Item({ name: "20 arrows" })], count: 1 },
         {
             items: [
                 [Weapons.Shortsword, Weapons.Shortsword],

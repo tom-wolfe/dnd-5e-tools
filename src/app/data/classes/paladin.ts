@@ -1,7 +1,7 @@
 import { Skills } from "app/data";
 
 import * as ClassModels from "../../models/classes";
-import { ArmorType } from "../../models/equipment";
+import { ArmorType, Item } from "../../models/equipment";
 import * as Armor from "../armor";
 import * as Packs from "../packs";
 import * as Weapons from "../weapons";
@@ -31,11 +31,11 @@ export const Paladin: ClassModels.Class = new ClassModels.Class({
         {
             items: [
                 [Weapons.Javelin, Weapons.Javelin, Weapons.Javelin, Weapons.Javelin, Weapons.Javelin],
-                Weapons.SimpleMeleeWeapons
+                { items: Weapons.SimpleMeleeWeapons, count: 1 }
             ], count: 1
         },
         { items: [Packs.ExplorerPack, Packs.PriestPack], count: 1 },
-        { items: [Armor.ChainMail, {name: "Holy symbol"}], count: 1 },
+        { items: [Armor.ChainMail, new Item({name: "holy symbol"})], count: 1 },
     ],
     archetypeName: { singular: "Sacred Oath", plural: "Sacred Oaths" },
     reference: { source: "PHB", page: 82, url: "https://www.dndbeyond.com/characters/classes/paladin" },
