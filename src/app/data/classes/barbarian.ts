@@ -15,13 +15,13 @@ export const Barbarian: ClassModels.Class = new ClassModels.Class({
         {
             items: [
                 Weapons.Greataxe,
-                { items: WeaponList.filter(w => w.type === WeaponType.Martial).map(w => [w]), count: 1 }
+                { items: WeaponList.filter(w => w.type === WeaponType.Martial), count: 1 }
             ], count: 1
         },
         {
             items: [
                 [Weapons.Handaxe, Weapons.Handaxe],
-                { items: WeaponList.filter(w => w.type === WeaponType.Simple).map(w => [w]), count: 1 }
+                { items: WeaponList.filter(w => w.type === WeaponType.Simple), count: 1 }
             ], count: 1
         },
         { items: [[Weapons.Javelin, Weapons.Javelin, Weapons.Javelin, Weapons.Javelin], Packs.ExplorerPack] },

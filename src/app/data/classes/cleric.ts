@@ -1,9 +1,13 @@
+import { Skills } from "app/data";
+import * as Armor from "app/data/armor";
+import * as Packs from "app/data/packs";
+import * as Weapons from "app/data/weapons";
+
 import * as ClassModels from "../../models/classes";
 import { ArmorType } from "../../models/equipment";
 import { WeaponType } from "../../models/equipment";
 import { WeaponList } from "../weapons";
 import { ClassList } from "./class-list";
-import { Skills } from "app/data";
 
 export const Cleric: ClassModels.Class = new ClassModels.Class({
     name: "Cleric",
@@ -18,6 +22,18 @@ export const Cleric: ClassModels.Class = new ClassModels.Class({
         count: 2
     }],
     otherProficiencies: [],
+    equipment: [
+        { items: [Weapons.Mace, Weapons.Warhammer], count: 1 },
+        { items: [Armor.ScaleMail, Armor.Leather, Armor.ChainMail], count: 1 },
+        { items: [Packs.PriestPack, Packs.ExplorerPack], count: 1 },
+        {
+            items: [
+                [Weapons.LightCrossbow, { name: "20 crossbow bolts" }],
+                { items: WeaponList.filter(w => w.type === WeaponType.Simple), count: 1 }
+            ], count: 1
+        },
+        { items: [Armor.Shield, { name: "holy symbol" }] },
+    ],
     archetypeName: { singular: "Divine Domain", plural: "Divine Domains" },
     reference: { source: "PHB", page: 56, url: "https://www.dndbeyond.com/characters/classes/cleric" },
     archetypes: [

@@ -17,8 +17,8 @@ export const Artificer: ClassModels.Class = new ClassModels.Class({
     equipment: [
         {
             items: [
-                { items: WeaponList.filter(w => w.type === WeaponType.Simple).map(w => [w]), count: 1 },
-                { items: WeaponList.filter(w => w.type === WeaponType.Simple).map(w => [w]), count: 1 }
+                { items: WeaponList.filter(w => w.type === WeaponType.Simple), count: 1 },
+                { items: WeaponList.filter(w => w.type === WeaponType.Simple), count: 1 }
             ]
         },
         { items: [Weapons.LightCrossbow, { name: "20 crossbow bolts" }] },
