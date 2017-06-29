@@ -1,13 +1,29 @@
+$menu-width: 250px;
+
 .nav-sidebar {
     background: #fff;
     border-right: 5px solid #ccc;
     height: 100%;
     position: fixed;
     left: 0;
-    width: 250px;
+    overflow: hidden;
+    width: $menu-width;
     z-index: 200;
+    
+    &.collapse {
+        display: block;
+        width: 0;
+    }
+
+    &.show {
+        width: $menu-width;
+    }
+
+    -webkit-transition: width 0.5s;
+    transition: width 0.5s;
 
     .list-group {
+        width: $menu-width;
         .list-group-item {
             border-left: none;
             border-right: none;
