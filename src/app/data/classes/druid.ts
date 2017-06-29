@@ -31,16 +31,8 @@ export const Druid: ClassModels.Class = new ClassModels.Class({
     }],
     otherProficiencies: [],
     equipment: [
-        { items: [Armor.Shield, { items: Weapons.WeaponList.filter(w => w.type === WeaponType.Simple) }], count: 1 },
-        {
-            items: [
-                Weapons.Scimitar,
-                {
-                    items: Weapons.WeaponList.filter(w => w.type === WeaponType.Simple && !_.includes(w.properties, WeaponProperty.Ranged)),
-                    count: 1
-                }
-            ], count: 1
-        },
+        { items: [Armor.Shield, { items: Weapons.SimpleWeapons, count: 1 }], count: 1 },
+        { items: [Weapons.Scimitar, { items: Weapons.SimpleMeleeWeapons, count: 1 }], count: 1 },
         { items: [Armor.Leather, Packs.ExplorerPack, { name: "Druidic focus" }], count: 1 }
     ],
     archetypeName: { singular: "Druid Circle", plural: "Druid Circles" },

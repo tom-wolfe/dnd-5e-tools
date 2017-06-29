@@ -1,8 +1,11 @@
+import { Skills } from "app/data";
+
 import * as ClassModels from "../../models/classes";
 import { ArmorType } from "../../models/equipment";
-import { WeaponList } from "../weapons";
+import * as Armor from "../armor";
+import * as Packs from "../packs";
+import * as Weapons from "../weapons";
 import { ClassList } from "./class-list";
-import { Skills } from "app/data";
 
 export const Paladin: ClassModels.Class = new ClassModels.Class({
     name: "Paladin",
@@ -10,7 +13,7 @@ export const Paladin: ClassModels.Class = new ClassModels.Class({
     hitDie: 10,
     savingThrows: ["STR", "CHA"],
     armorProficiencies: [{ proficiencies: [ArmorType.Light, ArmorType.Medium, ArmorType.Heavy, ArmorType.Shield] }],
-    weaponProficiencies: [{ proficiencies: WeaponList }],
+    weaponProficiencies: [{ proficiencies: Weapons.WeaponList }],
     toolProficiencies: [],
     skillProficiencies: [{
         proficiencies: [
@@ -18,6 +21,22 @@ export const Paladin: ClassModels.Class = new ClassModels.Class({
         ], count: 2
     }],
     otherProficiencies: [],
+    equipment: [
+        {
+            items: [
+                [Armor.Shield, { items: Weapons.MartialWeapons, count: 1 }],
+                [{ items: Weapons.MartialWeapons, count: 1 }, { items: Weapons.MartialWeapons, count: 1 }]
+            ], count: 1
+        },
+        {
+            items: [
+                [Weapons.Javelin, Weapons.Javelin, Weapons.Javelin, Weapons.Javelin, Weapons.Javelin],
+                Weapons.SimpleMeleeWeapons
+            ], count: 1
+        },
+        { items: [Packs.ExplorerPack, Packs.PriestPack], count: 1 },
+        { items: [Armor.ChainMail, {name: "Holy symbol"}], count: 1 },
+    ],
     archetypeName: { singular: "Sacred Oath", plural: "Sacred Oaths" },
     reference: { source: "PHB", page: 82, url: "https://www.dndbeyond.com/characters/classes/paladin" },
     archetypes: [

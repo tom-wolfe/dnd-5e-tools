@@ -4,10 +4,8 @@ import * as Tools from "app/data/tools";
 import * as Armor from "../../data/armor";
 import * as ClassModels from "../../models/classes";
 import { ArmorType } from "../../models/equipment";
-import { WeaponType } from "../../models/equipment";
-import { WeaponList } from "../weapons";
-import * as Weapons from "../weapons";
 import * as Packs from "../packs";
+import * as Weapons from "../weapons";
 import { ClassList } from "./class-list";
 
 export const Artificer: ClassModels.Class = new ClassModels.Class({
@@ -15,18 +13,13 @@ export const Artificer: ClassModels.Class = new ClassModels.Class({
     primaryStat: "INT",
     hitDie: 8,
     equipment: [
-        {
-            items: [
-                { items: WeaponList.filter(w => w.type === WeaponType.Simple), count: 1 },
-                { items: WeaponList.filter(w => w.type === WeaponType.Simple), count: 1 }
-            ]
-        },
+        { items: [{ items: Weapons.SimpleWeapons, count: 1 }, { items: Weapons.SimpleWeapons, count: 1 }] },
         { items: [Weapons.LightCrossbow, { name: "20 crossbow bolts" }] },
         { items: [Armor.ScaleMail, Armor.StuddedLeather], count: 1 },
         { items: [Tools.ThievesTools, Packs.DungeoneerPack] },
     ],
     armorProficiencies: [{ proficiencies: [ArmorType.Light, ArmorType.Medium] }],
-    weaponProficiencies: [{ proficiencies: WeaponList.filter(w => w.type === WeaponType.Simple) }],
+    weaponProficiencies: [{ proficiencies: Weapons.SimpleWeapons }],
     toolProficiencies: [
         { proficiencies: [Tools.ThievesTools] },
         { proficiencies: Tools.ToolList, count: 2 },

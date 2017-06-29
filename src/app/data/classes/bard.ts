@@ -8,7 +8,6 @@ import { InstrumentList } from "../instruments";
 import * as Instruments from "../instruments";
 import * as Packs from "../packs";
 import * as Weapons from "../weapons";
-import { WeaponList } from "../weapons";
 import { ClassList } from "./class-list";
 
 export const Bard: ClassModels.Class = new ClassModels.Class({
@@ -17,31 +16,15 @@ export const Bard: ClassModels.Class = new ClassModels.Class({
     hitDie: 8,
     savingThrows: ["DEX", "CHA"],
     equipment: [
-        {
-            items: [
-                Weapons.Rapier,
-                Weapons.Longsword,
-                { items: WeaponList.filter(w => w.type === WeaponType.Simple), count: 1 }
-            ], count: 1
-        },
-        {
-            items: [
-                Packs.DiplomatPack,
-                Packs.EntertainerPack
-            ], count: 1
-        },
-        {
-            items: [
-                Instruments.Lute,
-                { items: Instruments.InstrumentList, count: 1 }
-            ], count: 1
-        },
+        { items: [Weapons.Rapier, Weapons.Longsword, { items: Weapons.SimpleWeapons, count: 1 }], count: 1 },
+        { items: [Packs.DiplomatPack, Packs.EntertainerPack], count: 1 },
+        { items: [Instruments.Lute, { items: Instruments.InstrumentList, count: 1 }], count: 1 },
         { items: [Armor.Leather, Weapons.Dagger] },
     ],
     armorProficiencies: [{ proficiencies: [ArmorType.Light] }],
     weaponProficiencies: [{
         proficiencies: [
-            ...Weapons.WeaponList.filter(w => w.type === WeaponType.Simple),
+            ...Weapons.SimpleWeapons,
             Weapons.HandCrossbow, Weapons.Longsword, Weapons.Rapier, Weapons.Shortsword
         ]
     }],

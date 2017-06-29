@@ -82,7 +82,7 @@ export abstract class BaseCharacterBuilder {
 
     protected grantEquipmentOptionOrItem(
         character: Character,
-        options: (Equipment.Item | Equipment.Item[] | Equipment.EquipmentOption | Equipment.EquipmentOption[])
+        options: (Equipment.Item | Equipment.EquipmentOption | (Equipment.Item | Equipment.EquipmentOption)[])
     ) {
 
         // Normalize options to being an array.

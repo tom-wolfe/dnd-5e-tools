@@ -1,3 +1,8 @@
+import { WeaponProperty, WeaponType } from "app/models/equipment";
+import * as _ from "lodash";
+
+import { Weapon } from "../../models/equipment/weapon";
+import { WeaponList } from "./weapon-list";
 
 export * from "./weapon-list";
 
@@ -39,3 +44,18 @@ export * from "./war-pick";
 export * from "./warhammer";
 export * from "./whip";
 
+export const MartialWeapons: Weapon[] = [];
+export const SimpleWeapons: Weapon[] = [];
+export const SimpleMeleeWeapons: Weapon[] = []
+
+WeaponList.forEach(w => {
+    switch (w.type) {
+        case WeaponType.Martial: MartialWeapons.push(w); break;
+        case WeaponType.Simple:
+            SimpleWeapons.push(w);
+            if (!_.includes(w.properties, WeaponProperty.Ranged)) {
+                SimpleMeleeWeapons.push(w)
+            }
+            break;
+    }
+})

@@ -6,7 +6,6 @@ import * as Weapons from "app/data/weapons";
 import * as ClassModels from "../../models/classes";
 import { ArmorType } from "../../models/equipment";
 import { WeaponType } from "../../models/equipment";
-import { WeaponList } from "../weapons";
 import { ClassList } from "./class-list";
 
 export const Cleric: ClassModels.Class = new ClassModels.Class({
@@ -15,7 +14,7 @@ export const Cleric: ClassModels.Class = new ClassModels.Class({
     hitDie: 8,
     savingThrows: ["WIS", "CHA"],
     armorProficiencies: [{ proficiencies: [ArmorType.Light, ArmorType.Medium, ArmorType.Shield] }],
-    weaponProficiencies: [{ proficiencies: WeaponList.filter(w => w.type === WeaponType.Simple) }],
+    weaponProficiencies: [{ proficiencies: Weapons.SimpleWeapons }],
     toolProficiencies: [],
     skillProficiencies: [{
         proficiencies: [Skills.History, Skills.Insight, Skills.Medicine, Skills.Persuasion, Skills.Religion],
@@ -26,12 +25,7 @@ export const Cleric: ClassModels.Class = new ClassModels.Class({
         { items: [Weapons.Mace, Weapons.Warhammer], count: 1 },
         { items: [Armor.ScaleMail, Armor.Leather, Armor.ChainMail], count: 1 },
         { items: [Packs.PriestPack, Packs.ExplorerPack], count: 1 },
-        {
-            items: [
-                [Weapons.LightCrossbow, { name: "20 crossbow bolts" }],
-                { items: WeaponList.filter(w => w.type === WeaponType.Simple), count: 1 }
-            ], count: 1
-        },
+        { items: [[Weapons.LightCrossbow, { name: "20 crossbow bolts" }], { items: Weapons.SimpleWeapons, count: 1 }], count: 1 },
         { items: [Armor.Shield, { name: "holy symbol" }] },
     ],
     archetypeName: { singular: "Divine Domain", plural: "Divine Domains" },

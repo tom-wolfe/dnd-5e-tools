@@ -2,8 +2,9 @@ import { Skills } from "app/data";
 
 import * as ClassModels from "../../models/classes";
 import { ArmorType } from "../../models/equipment";
-import { WeaponType } from "../../models/equipment";
-import { WeaponList } from "../weapons";
+import * as Armor from "../armor";
+import * as Packs from "../packs";
+import * as Weapons from "../weapons";
 import { ClassList } from "./class-list";
 
 export const Warlock: ClassModels.Class = new ClassModels.Class({
@@ -12,7 +13,7 @@ export const Warlock: ClassModels.Class = new ClassModels.Class({
     hitDie: 8,
     savingThrows: ["WIS", "CHA"],
     armorProficiencies: [{ proficiencies: [ArmorType.Light] }],
-    weaponProficiencies: [{ proficiencies: WeaponList.filter(w => w.type === WeaponType.Simple) }],
+    weaponProficiencies: [{ proficiencies: Weapons.SimpleWeapons }],
     toolProficiencies: [],
     skillProficiencies: [{
         proficiencies: [
@@ -20,6 +21,12 @@ export const Warlock: ClassModels.Class = new ClassModels.Class({
         ], count: 2
     }],
     otherProficiencies: [],
+    equipment: [
+        { items: [[Weapons.LightCrossbow, { name: "20 crossbow bolts" }], { items: Weapons.SimpleWeapons, count: 1 }], count: 1 },
+        { items: [{ name: "component pouch" }, { name: "arcane focus" }], count: 1 },
+        { items: [Packs.DungeoneerPack, Packs.ScholarPack], count: 1 },
+        { items: [Armor.Leather, Weapons.Dagger, Weapons.Dagger, { items: Weapons.SimpleWeapons, count: 1 }] }
+    ],
     archetypeName: { singular: "Otherworldly Patron", plural: "Otherworldly Patrons" },
     reference: { source: "PHB", page: 105, url: "https://www.dndbeyond.com/characters/classes/warlock" },
     archetypes: [

@@ -1,8 +1,7 @@
+import * as Weapons from "app/data/weapons";
 import * as _ from "lodash";
 
-import { WeaponList } from "../../data/weapons";
 import { Character } from "../../models/characters/character";
-import { WeaponType } from "../../models/equipment";
 import { CharacterDescriptor } from "./";
 
 export class WeaponProficiencyDescriptor extends CharacterDescriptor {
@@ -12,17 +11,15 @@ export class WeaponProficiencyDescriptor extends CharacterDescriptor {
 
         const profs: string[] = []
         let charWeapons = character.weaponProficiencies.map(w => w.thing);
-        const simpleWeapons = WeaponList.filter(w => w.type === WeaponType.Simple);
-        const martialWeapons = WeaponList.filter(w => w.type === WeaponType.Martial);
 
-        if (simpleWeapons.length === _.intersection(simpleWeapons, charWeapons).length) {
+        if (Weapons.SimpleWeapons.length === _.intersection(Weapons.SimpleWeapons, charWeapons).length) {
             profs.push("Simple weapons");
-            charWeapons = _.difference(charWeapons, simpleWeapons);
+            charWeapons = _.difference(charWeapons, Weapons.SimpleWeapons);
         }
 
-        if (martialWeapons.length === _.intersection(martialWeapons, charWeapons).length) {
+        if (Weapons.MartialWeapons.length === _.intersection(Weapons.MartialWeapons, charWeapons).length) {
             profs.push("Martial weapons");
-            charWeapons = _.difference(charWeapons, martialWeapons);
+            charWeapons = _.difference(charWeapons, Weapons.MartialWeapons);
         }
 
         profs.push(...charWeapons.map(w => w.name).sort());
