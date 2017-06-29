@@ -12,7 +12,7 @@ import { ViewMode } from "../../models/view-mode";
 export class FeatureListComponent {
   @Input() title: string;
   @Input() features: Features.Feature[];
-  protected ViewMode = ViewMode;
+  ViewMode = ViewMode;
   get sortedFeatures(): Features.Feature[] {
     return _.sortBy(this.features, ["name"]);
   }

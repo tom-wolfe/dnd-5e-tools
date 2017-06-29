@@ -15,7 +15,7 @@ export class NameGeneratorComponent implements AfterContentInit {
   config: NameGeneratorConfig = new NameGeneratorConfig();
 
   @Input() names: Name[];
-  protected ViewMode = ViewMode;
+  ViewMode = ViewMode;
 
   ngAfterContentInit() {
     setTimeout(() => this.onGenerateClick());

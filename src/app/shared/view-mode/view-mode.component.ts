@@ -7,7 +7,7 @@ import { ViewMode } from "app/models/view-mode";
   templateUrl: "./view-mode.component.html",
 })
 export class ViewModeComponent {
-  public mode: ViewMode;
-  protected ViewMode = ViewMode;
+  mode: ViewMode;
+  ViewMode = ViewMode;
   constructor() { this.mode = ViewMode.Detailed; }
 };

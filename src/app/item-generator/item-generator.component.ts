@@ -13,7 +13,7 @@ import { ViewMode } from "app/models/view-mode";
 })
 export class ItemGeneratorComponent implements AfterContentInit {
   config: ItemGeneratorConfig = new ItemGeneratorConfig();
-  protected ViewMode = ViewMode;
+  ViewMode = ViewMode;
   @Input() items: Item[];
 
   ngAfterContentInit() {

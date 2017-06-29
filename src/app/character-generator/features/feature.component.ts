@@ -8,7 +8,7 @@ import { ViewMode } from "app/models/view-mode";
   templateUrl: "./feature.component.html",
 })
 export class FeatureComponent {
-  protected ViewMode = ViewMode;
+  ViewMode = ViewMode;
   @Input() viewMode: ViewMode;
   @Input() feature: Features.Feature;
 };
