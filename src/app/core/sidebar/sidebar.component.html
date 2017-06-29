@@ -1,7 +1,9 @@
- <div class="nav-sidebar" [(dndCollapse)]="collapsed">
-  <div class="list-group">
-    <a routerLink="/character-generator" (click)="onNavigate($event)" routerLinkActive="active" class="list-group-item list-group-item-action">Character Generator</a>
-    <a routerLink="/name-generator" (click)="onNavigate($event)" routerLinkActive="active" class="list-group-item list-group-item-action">Name Generator</a>
-    <a routerLink="/item-generator" (click)="onNavigate($event)" routerLinkActive="active" class="list-group-item list-group-item-action">Item Generator</a>
+<div class="sidebar-layout" [ngClass]="{ hidden: !isOpen }" (click)="close()">
+  <div class="nav-sidebar" [(dndCollapse)]="!isOpen" (click)="$event.stopPropagation()">
+    <div class="list-group">
+      <a routerLink="/character-generator" (click)="onNavigate($event)" routerLinkActive="active" class="list-group-item list-group-item-action">Character Generator</a>
+      <a routerLink="/name-generator" (click)="onNavigate($event)" routerLinkActive="active" class="list-group-item list-group-item-action">Name Generator</a>
+      <a routerLink="/item-generator" (click)="onNavigate($event)" routerLinkActive="active" class="list-group-item list-group-item-action">Item Generator</a>
+    </div>
   </div>
 </div>
