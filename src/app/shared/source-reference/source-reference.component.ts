@@ -13,4 +13,16 @@ export class SourceReferenceComponent {
   get sourceName() {
     return Data.Sources[this.reference.source];
   }
+
+  get tipString(): string {
+    const ref = this.reference;
+    const doc = ref.document ? `(${ref.document}) ` : "";
+    return `${Data.Sources[ref.source]} ${doc}| Page ${this.reference.page}`;
+  }
+
+  get shortTipString(): string {
+    const ref = this.reference;
+    const doc = ref.document ? `:${ref.document}` : "";
+    return `${ref.source}${this.reference.page}${doc}`;
+  }
 };

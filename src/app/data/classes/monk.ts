@@ -22,7 +22,7 @@ export const Monk: ClassModels.Class = new ClassModels.Class({
     }],
     otherProficiencies: [],
     equipment: [
-        { items: [Weapons.Shortsword, Weapons.SimpleWeapons], count: 1 },
+        { items: [Weapons.Shortsword, { items: Weapons.SimpleWeapons, count: 1 }], count: 1 },
         { items: [Packs.ExplorerPack, Packs.DungeoneerPack], count: 1 },
         { items: [{ name: "10 darts" }], count: 1 },
 

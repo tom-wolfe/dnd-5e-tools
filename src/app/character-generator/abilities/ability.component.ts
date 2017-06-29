@@ -6,7 +6,7 @@ import * as Characters from "app/models/characters";
 @Component({
   selector: "dnd-ability",
   templateUrl: "./ability.component.html",
-  host: {"class": "col-md-2 col-sm-4 col-6"}
+  host: {"class": "col-sm-2 col-4"}
 })
 export class AbilityComponent {
   @Input() ability: string;

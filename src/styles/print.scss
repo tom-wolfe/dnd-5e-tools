@@ -1,0 +1,52 @@
+@media print {
+    dnd-app {
+        padding-top: 0 !important;
+    }
+    nav {
+        display: none !important;
+    }
+    footer {
+        display: none !important;
+    }
+    .nav-sidebar {
+        display: none !important;
+    }
+
+    dnd-character-generator {
+        .jumbotron {
+            display: none !important;
+        }
+
+        .refresh {
+            display: none !important;
+        }
+
+        .export {
+            display: none !important;
+        }
+
+        dnd-ability {
+            -ms-flex: 0 0 16.66666666% !important;
+            flex: 0 0 16.66666666% !important;
+            max-width: 16.66666666% !important;
+        }
+
+        .attribute-block {
+            .primary {
+                font-size: 18px;
+            }
+        }
+
+        .character-sub-block {
+            padding: 4px;
+        }
+
+        .print-reference {
+            font-weight: normal !important;
+            color: black !important;
+            text-decoration: none !important;
+            font-size: 11px !important;
+            font-style: normal !important;
+        }
+    }
+}
