@@ -31,6 +31,12 @@
             max-width: 16.66666666% !important;
         }
 
+        .level, .armor-class, .hit-points, .speed {
+            -ms-flex: 0 0 25% !important;
+            flex: 0 0 25% !important;
+            max-width: 25% !important;
+        }
+
         .attribute-block {
             .primary {
                 font-size: 18px;
