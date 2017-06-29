@@ -1,0 +1,22 @@
+.btn {
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.btn-lg {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.btn-bottom-right {
+    width: 56px;
+    height: 56px;
+
+    padding: 0;
+    font-size: 20px;
+    border-radius: 50%;
+
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
