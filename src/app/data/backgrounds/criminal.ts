@@ -18,7 +18,7 @@ export const Criminal: Characters.Background = new Characters.Background({
     ],
     money: new Equipment.Money({ platinum: 0, gold: 15, silver: 0, copper: 0 }),
     equipment: [
-        { items: [new Equipment.Item({ name: "crowbar" }), new Equipment.Item({ name: "dark common clothes with hood" })] }
+        { items: [new Equipment.Item("crowbar"), new Equipment.Item("dark common clothes with hood")] }
     ],
     features: [{
         name: "Criminal Contact",

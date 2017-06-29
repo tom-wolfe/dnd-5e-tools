@@ -14,11 +14,11 @@ export const Sage: Characters.Background = new Characters.Background({
     equipment: [
         {
             items: [
-                new Equipment.Item({ name: "small knife" }),
-                new Equipment.Item({ name: "letter from dead colleague asking an unanswered question" }),
-                new Equipment.Item({ name: "bottle of black ink" }),
-                new Equipment.Item({ name: "quill" }),
-                new Equipment.Item({ name: "common clothes" })
+                new Equipment.Item("small knife"),
+                new Equipment.Item("letter from dead colleague asking an unanswered question"),
+                new Equipment.Item("bottle of black ink"),
+                new Equipment.Item("quill"),
+                new Equipment.Item("common clothes")
             ]
         }
     ],

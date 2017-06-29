@@ -33,7 +33,7 @@ export const Druid: ClassModels.Class = new ClassModels.Class({
     equipment: [
         { items: [Armor.Shield, { items: Weapons.SimpleWeapons, count: 1 }], count: 1 },
         { items: [Weapons.Scimitar, { items: Weapons.SimpleMeleeWeapons, count: 1 }], count: 1 },
-        { items: [Armor.Leather, Packs.ExplorerPack, new Item({ name: "Druidic focus" })], count: 1 }
+        { items: [Armor.Leather, Packs.ExplorerPack, new Item("Druidic focus")], count: 1 }
     ],
     archetypeName: { singular: "Druid Circle", plural: "Druid Circles" },
     reference: { source: "PHB", page: 64, url: "https://www.dndbeyond.com/characters/classes/druid" },

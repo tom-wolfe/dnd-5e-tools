@@ -14,13 +14,13 @@ export const Charlatan: Characters.Background = new Characters.Background({
     toolProficiencies: [{ proficiencies: [Tools.DisguiseKit, Tools.ForgeryKit] }],
     money: new Equipment.Money({ platinum: 0, gold: 15, silver: 0, copper: 0 }),
     equipment: [
-        { items: [Tools.DisguiseKit, new Equipment.Item({ name: "fine clothes" })] },
+        { items: [Tools.DisguiseKit, new Equipment.Item("fine clothes")] },
         {
             items: [
-                new Equipment.Item({ name: "10 stoppered bottles filled with colored liquid" }),
-                new Equipment.Item({ name: "weighted dice" }),
-                new Equipment.Item({ name: "deck of marked cards" }),
-                new Equipment.Item({ name: "signet ring of an imaginary duke" })
+                new Equipment.ItemQuantity(new Equipment.Item("stoppered bottle filled with colored liquid"), 10),
+                new Equipment.Item("weighted dice"),
+                new Equipment.Item("deck of marked cards"),
+                new Equipment.Item("signet ring of an imaginary duke")
             ],
             count: 1
         }

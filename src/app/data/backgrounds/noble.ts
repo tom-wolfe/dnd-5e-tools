@@ -16,9 +16,9 @@ export const Noble: Characters.Background = new Characters.Background({
     equipment: [
         {
             items: [
-                new Equipment.Item({ name: "fine clothes" }),
-                new Equipment.Item({ name: "signet ring" }),
-                new Equipment.Item({ name: "scroll of pedigree" })
+                new Equipment.Item("fine clothes"),
+                new Equipment.Item("signet ring"),
+                new Equipment.Item("scroll of pedigree")
             ]
         }
     ],

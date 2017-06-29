@@ -4,7 +4,7 @@ import * as Weapons from "app/data/weapons";
 import { ArmorType } from "app/models/equipment";
 
 import * as ClassModels from "../../models/classes";
-import { Item } from "../../models/equipment";
+import { Item, ItemQuantity } from "../../models/equipment";
 import * as Armor from "../armor";
 import * as Packs from "../packs";
 import { ClassList } from "./class-list";
@@ -23,7 +23,7 @@ export const Rogue: ClassModels.Class = new ClassModels.Class({
     }],
     equipment: [
         { items: [Weapons.Rapier, Weapons.Shortsword], count: 1 },
-        { items: [[Weapons.Shortbow, new Item({ name: "20 arrows" })], Weapons.Shortsword], count: 1 },
+        { items: [[Weapons.Shortbow, new ItemQuantity(new Item("arrows"), 20)], Weapons.Shortsword], count: 1 },
         { items: [Packs.BurglarPack, Packs.DungeoneerPack, Packs.ExplorerPack], count: 1 },
         { items: [Armor.Leather, Weapons.Dagger, Weapons.Dagger, Tools.ThievesTools], count: 1 },
     ],

@@ -17,9 +17,9 @@ export const Hermit: Characters.Background = new Characters.Background({
         {
             items: [
                 Tools.HerbalismKit,
-                new Equipment.Item({ name: "scroll case full of notes" }),
-                new Equipment.Item({ name: "common clothes" }),
-                new Equipment.Item({ name: "winter blanket" })
+                new Equipment.Item("scroll case full of notes"),
+                new Equipment.Item("common clothes"),
+                new Equipment.Item("winter blanket")
             ]
         },
     ],

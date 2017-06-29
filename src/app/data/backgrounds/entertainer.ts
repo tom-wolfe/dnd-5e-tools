@@ -18,14 +18,14 @@ export const Entertainer: Characters.Background = new Characters.Background({
     ],
     money: new Equipment.Money({ platinum: 0, gold: 15, silver: 0, copper: 0 }),
     equipment: [
-        { items: [new Equipment.Item({ name: "fine clothes" }), new Equipment.Item({ name: "costume" })] },
+        { items: [new Equipment.Item("fine clothes"), new Equipment.Item("costume")] },
         { items: InstrumentList, count: 1 },
         // TODO: Allow to generate random trinket.
         {
             items: [
-                new Equipment.Item({ name: "love letter" }),
-                new Equipment.Item({ name: "lock of hair" }),
-                new Equipment.Item({ name: "trinket" })], count: 1
+                new Equipment.Item("love letter"),
+                new Equipment.Item("lock of hair"),
+                new Equipment.Item("trinket")], count: 1
         },
     ],
     features: [{

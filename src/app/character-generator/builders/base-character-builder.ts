@@ -82,11 +82,13 @@ export abstract class BaseCharacterBuilder {
 
     protected grantEquipmentOptionOrItem(
         character: Character,
-        options: (Equipment.Item | Equipment.EquipmentOption | (Equipment.Item | Equipment.EquipmentOption)[])
+        options: (
+            Equipment.Item | Equipment.ItemQuantity | Equipment.EquipmentOption |
+            (Equipment.Item | Equipment.ItemQuantity | Equipment.EquipmentOption)[])
     ) {
 
         // Normalize options to being an array.
-        const optionArray: (Equipment.Item | Equipment.EquipmentOption)[] = [];
+        const optionArray: (Equipment.Item | Equipment.ItemQuantity | Equipment.EquipmentOption)[] = [];
         if (options instanceof Array) {
             optionArray.push(...options);
         } else {
@@ -94,10 +96,10 @@ export abstract class BaseCharacterBuilder {
         }
 
         optionArray.forEach(option => {
-            if (option instanceof Equipment.Item || (option as any).name) {
-                this.grantEquipment(character, option as Equipment.Item);
+            if (option instanceof Equipment.EquipmentOption || (option as any).items) {
+                this.grantEquipmentOption(character, option as Equipment.EquipmentOption);
             } else {
-                this.grantEquipmentOption(character, option);
+                this.grantEquipment(character, option as Equipment.Item);
             }
         })
     }
@@ -120,7 +122,7 @@ export abstract class BaseCharacterBuilder {
 
             // Get any available items that the character is proficient in.
             const overlap = options.filter(opt => {
-                const optionArray: (Equipment.Item | Equipment.EquipmentOption)[] = [];
+                const optionArray: (Equipment.Item | Equipment.ItemQuantity | Equipment.EquipmentOption)[] = [];
                 if (opt instanceof Array) {
                     optionArray.push(...opt);
                 } else {
@@ -144,7 +146,7 @@ export abstract class BaseCharacterBuilder {
         }
     }
 
-    protected grantEquipment(character: Character, equipment: Equipment.Item) {
+    protected grantEquipment(character: Character, equipment: Equipment.Item | Equipment.ItemQuantity) {
         character.addEquipment(equipment);
     }
 

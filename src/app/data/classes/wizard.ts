@@ -23,9 +23,9 @@ export const Wizard: ClassModels.Class = new ClassModels.Class({
     }],
     equipment: [
         { items: [Weapons.Quarterstaff, Weapons.Dagger], count: 1 },
-        { items: [new Item({ name: "component pouch" }), new Item({ name: "arcane focus" })], count: 1 },
+        { items: [new Item("component pouch"), new Item("arcane focus")], count: 1 },
         { items: [Packs.ExplorerPack, Packs.ScholarPack], count: 1 },
-        { items: [new Item({ name: "spellbook" })] }
+        { items: [new Item("spellbook")] }
     ],
     otherProficiencies: [],
     archetypeName: { singular: "Arcane Tradition", plural: "Arcane Traditions" },

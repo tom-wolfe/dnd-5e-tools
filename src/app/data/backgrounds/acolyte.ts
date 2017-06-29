@@ -13,13 +13,13 @@ export const Acolyte: Characters.Background = new Characters.Background({
     equipment: [
         {
             items: [
-                new Equipment.Item({ name: "holy symbol" }),
-                new Equipment.Item({ name: "5 sticks of incense" }),
-                new Equipment.Item({ name: "vestment" }),
-                new Equipment.Item({ name: "common clothes" })
+                new Equipment.Item("holy symbol"),
+                new Equipment.ItemQuantity(new Equipment.Item("stick of incense"), 5),
+                new Equipment.Item("vestment"),
+                new Equipment.Item("common clothes")
             ]
         },
-        { items: [new Equipment.Item({ name: "prayer book" }), new Equipment.Item({ name: "prayer wheel" })], count: 1 }
+        { items: [new Equipment.Item("prayer book"), new Equipment.Item("prayer wheel")], count: 1 }
     ],
     features: [{
         name: "Shelter of the Faithful",

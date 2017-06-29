@@ -17,9 +17,9 @@ export const Sailor: Characters.Background = new Characters.Background({
     otherProficiencies: [{ proficiencies: [Vehicles.WaterVehicles] }],
     money: new Equipment.Money({ platinum: 0, gold: 10, silver: 0, copper: 0 }),
     equipment: [
-        { items: [Weapons.Club, new Equipment.Item({ name: "50 ft. silk rope" }), new Equipment.Item({ name: "common clothes" })] },
+        { items: [Weapons.Club, new Equipment.Item("50 ft. silk rope"), new Equipment.Item("common clothes")] },
         // TODO: Replace with real trinket.
-        { items: [new Equipment.Item({ name: "lucky charm" }), new Equipment.Item({ name: "trinket" })], count: 1 },
+        { items: [new Equipment.Item("lucky charm"), new Equipment.Item("trinket")], count: 1 },
     ],
     features: [{
         name: "Ship's Passage",

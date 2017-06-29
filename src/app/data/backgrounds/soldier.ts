@@ -18,14 +18,14 @@ export const Soldier: Characters.Background = new Characters.Background({
     equipment: [
         {
             items: [
-                new Equipment.Item({ name: "common clothes" }),
-                new Equipment.Item({ name: "insignia of rank" }),
-                new Equipment.Item({ name: "trophy from a fallen enemy" })]
+                new Equipment.Item("common clothes"),
+                new Equipment.Item("insignia of rank"),
+                new Equipment.Item("trophy from a fallen enemy")]
         },
         {
             items: [
-                new Equipment.Item({ name: "bone dice" }),
-                new Equipment.Item({ name: "deck of cards" })
+                new Equipment.Item("bone dice"),
+                new Equipment.Item("deck of cards")
             ], count: 1
         },
     ],

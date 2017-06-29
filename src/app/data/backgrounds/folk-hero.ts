@@ -19,9 +19,9 @@ export const FolkHero: Characters.Background = new Characters.Background({
         { items: ArtisanToolList, count: 1 },
         {
             items: [
-                new Equipment.Item({ name: "shovel" }),
-                new Equipment.Item({ name: "iron pot" }),
-                new Equipment.Item({ name: "common clothes" })]
+                new Equipment.Item("shovel"),
+                new Equipment.Item("iron pot"),
+                new Equipment.Item("common clothes")]
         },
     ],
     features: [{

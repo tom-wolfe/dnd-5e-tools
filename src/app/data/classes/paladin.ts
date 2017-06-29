@@ -35,7 +35,7 @@ export const Paladin: ClassModels.Class = new ClassModels.Class({
             ], count: 1
         },
         { items: [Packs.ExplorerPack, Packs.PriestPack], count: 1 },
-        { items: [Armor.ChainMail, new Item({name: "holy symbol"})], count: 1 },
+        { items: [Armor.ChainMail, new Item("holy symbol")], count: 1 },
     ],
     archetypeName: { singular: "Sacred Oath", plural: "Sacred Oaths" },
     reference: { source: "PHB", page: 82, url: "https://www.dndbeyond.com/characters/classes/paladin" },

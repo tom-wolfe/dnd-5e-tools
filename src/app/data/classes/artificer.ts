@@ -3,7 +3,7 @@ import * as Tools from "app/data/tools";
 
 import * as Armor from "../../data/armor";
 import * as ClassModels from "../../models/classes";
-import { ArmorType, Item } from "../../models/equipment";
+import { ArmorType, Item, ItemQuantity } from "../../models/equipment";
 import * as Packs from "../packs";
 import * as Weapons from "../weapons";
 import { ClassList } from "./class-list";
@@ -14,7 +14,7 @@ export const Artificer: ClassModels.Class = new ClassModels.Class({
     hitDie: 8,
     equipment: [
         { items: [{ items: Weapons.SimpleWeapons, count: 1 }, { items: Weapons.SimpleWeapons, count: 1 }] },
-        { items: [Weapons.LightCrossbow, new Item({ name: "20 crossbow bolts" })] },
+        { items: [Weapons.LightCrossbow, new ItemQuantity(new Item("crossbow bolts"), 20)] },
         { items: [Armor.ScaleMail, Armor.StuddedLeather], count: 1 },
         { items: [Tools.ThievesTools, Packs.DungeoneerPack] },
     ],

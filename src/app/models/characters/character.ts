@@ -146,16 +146,16 @@ export class Character {
 
     get equipmentString(): string {
         const retVal: string[] = [];
-        _.sortBy(this.equipment.keys(), ["name"]).forEach(i => {
-            retVal.push(`${this.equipment.getValue(i)} x ${i.name}`)
+        _.sortBy(this.equipment.keys(), [x => x.name.toLowerCase()]).forEach(i => {
+            retVal.push(`${this.equipment.getValue(i)} x ${i.name.toLowerCase()}`)
         });
         return _.join(retVal, ", ") || "[None]";
     }
 
     get equippedArmorString(): string {
-        let armor = this.equippedArmor ? this.equippedArmor.name : "natural armor";
+        let armor = this.equippedArmor ? this.equippedArmor.name.toLowerCase() : "natural armor";
         if (this.equippedShield) {
-            armor += " + " + this.equippedShield.name;
+            armor += " + " + this.equippedShield.name.toLowerCase();
         }
         return armor;
     }
@@ -375,11 +375,20 @@ export class Character {
         return retVal;
     }
 
-    addEquipment(item: Equipment.Item) {
-        if (this.equipment.containsKey(item)) {
-            this.equipment.setValue(item, this.equipment.getValue(item) + 1);
+    addEquipment(item: (Equipment.Item | Equipment.ItemQuantity)) {
+        let qty = 1;
+        let equip: Equipment.Item;
+        if (item instanceof Equipment.Item) {
+            equip = item;
         } else {
-            this.equipment.setValue(item, 1);
+            equip = item.item;
+            qty = item.quantity;
+        }
+
+        if (this.equipment.containsKey(equip)) {
+            this.equipment.setValue(equip, this.equipment.getValue(equip) + qty);
+        } else {
+            this.equipment.setValue(equip, qty);
         }
     }
 

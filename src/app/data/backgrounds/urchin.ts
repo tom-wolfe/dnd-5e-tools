@@ -15,11 +15,11 @@ export const Urchin: Characters.Background = new Characters.Background({
     equipment: [
         {
             items: [
-                new Equipment.Item({ name: "small knife" }),
-                new Equipment.Item({ name: "city map" }),
-                new Equipment.Item({ name: "pet mouse" }),
-                new Equipment.Item({ name: "token to remember your parents by" }),
-                new Equipment.Item({ name: "common clothes" }),
+                new Equipment.Item("small knife"),
+                new Equipment.Item("city map"),
+                new Equipment.Item("pet mouse"),
+                new Equipment.Item("token to remember your parents by"),
+                new Equipment.Item("common clothes"),
             ]
         },
     ],

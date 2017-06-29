@@ -18,9 +18,9 @@ export const Outlander: Characters.Background = new Characters.Background({
         {
             items: [
                 Weapons.Quarterstaff,
-                new Equipment.Item({ name: "hunting trap" }),
-                new Equipment.Item({ name: "animal trophy" }),
-                new Equipment.Item({ name: "traveler's clothes" })
+                new Equipment.Item("hunting trap"),
+                new Equipment.Item("animal trophy"),
+                new Equipment.Item("traveler's clothes")
             ]
         }
     ],
