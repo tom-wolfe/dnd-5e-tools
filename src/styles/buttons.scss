@@ -1,9 +1,6 @@
 .btn {
     cursor: pointer;
     text-transform: uppercase;
-}
-
-.btn-lg {
     font-size: 0.8rem;
     font-weight: bold;
 }
@@ -19,4 +16,12 @@
     position: fixed;
     right: 20px;
     bottom: 20px;
+}
+
+.btn-icon {
+    padding: 0.32rem 1.5rem;
+    .mdi {
+        font-size: 1.4rem;
+        vertical-align: middle;
+    }
 }
