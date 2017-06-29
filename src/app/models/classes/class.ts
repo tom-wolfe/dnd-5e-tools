@@ -11,7 +11,7 @@ export class Class {
     hitDie: number;
     primaryStat: string;
     savingThrows: string[];
-    equipment?: EquipmentOption[]; // TODO: Make non-optional.
+    equipment: EquipmentOption[];
     skillProficiencies: ProficiencyOption<Abilities.Skill>[];
     armorProficiencies: ProficiencyOption<Equipment.ArmorType>[];
     weaponProficiencies: ProficiencyOption<Equipment.Weapon>[];

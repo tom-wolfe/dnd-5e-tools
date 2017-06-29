@@ -72,7 +72,7 @@ export class ClassBuilder extends BaseCharacterBuilder {
             this.grantEquipmentOption(character, option);
         });
 
-        // TODO: Equip random shield and armour.
+        // Equip random shield and armour.
         const shields = character.equipment.filter(a => a instanceof Armor && a.type === ArmorType.Shield);
         if (shields.length > 0) {
             character.equippedShield = shields[this.numGen.rollDie(shields.length) - 1] as Armor;
