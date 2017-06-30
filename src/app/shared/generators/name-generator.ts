@@ -1,7 +1,7 @@
 import * as _ from "lodash";
 import * as Collections from "typescript-collections";
 
-import * as Markov from "../markov";
+import * as Markov from "markov-typescript";
 import * as Names from "app/models/names";
 import { NumberGenerator } from "./number-generator";
 
