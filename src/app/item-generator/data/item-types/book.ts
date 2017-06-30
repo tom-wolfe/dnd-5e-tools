@@ -213,7 +213,7 @@ Object.assign(Book, {
         ],
         faith: [
             "Emptiness", "The Raven Queen", "The Balance", "Enlightenment", "The Way", "Foregiveness", "The Vessel", "Death",
-            "The Cleansing Flame", "The Dyling Light", "The Open Hand", "The Serpent's Fang", "The Victenti", "The Weavers"
+            "The Cleansing Flame", "The Dying Light", "The Open Hand", "The Serpent's Fang", "The Victenti", "The Weavers"
         ],
         feature: [
             "has dog-eared pages",
