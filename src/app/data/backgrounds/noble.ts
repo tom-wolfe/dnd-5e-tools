@@ -1,3 +1,5 @@
+/* tslint:disable:max-line-length */
+
 import * as Equipment from "app/models/equipment";
 
 import { Skills } from "../../data";

@@ -13,7 +13,7 @@ export const Sailor: Characters.Background = new Characters.Background({
     reference: { source: "PHB", page: 139 },
     languages: {},
     skillProficiencies: [{ proficiencies: [Skills.Athletics, Skills.Perception] }],
-    toolProficiencies: [{ proficiencies: [NavigatorsTools] },],
+    toolProficiencies: [{ proficiencies: [NavigatorsTools] }],
     otherProficiencies: [{ proficiencies: [Vehicles.WaterVehicles] }],
     money: new Equipment.Money({ platinum: 0, gold: 10, silver: 0, copper: 0 }),
     equipment: [

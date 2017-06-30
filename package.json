@@ -2,13 +2,13 @@
   "name": "dnd-5e-tools",
   "version": "1.0.0",
   "description": "D&D 5th Edition Tools",
-  "main": "index.js",
+  "main": "main.ts",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "npm run lint && ng serve",
+    "build": "npm run lint && ng build",
     "test": "ng test",
-    "lint": "ng lint",
+    "lint": "ng lint --type-check",
     "e2e": "ng e2e"
   },
   "repository": {
