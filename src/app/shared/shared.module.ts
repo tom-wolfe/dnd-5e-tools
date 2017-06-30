@@ -5,6 +5,7 @@ import { HttpModule } from "@angular/http";
 import { BrowserModule } from "@angular/platform-browser";
 
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { ClipboardModule } from "ngx-clipboard";
 import { CollapseDirective } from "app/shared/collapse.directive";
 import { CodemirrorModule } from "ng2-codemirror/lib";
 
@@ -18,6 +19,7 @@ import { ViewModeComponent } from "./view-mode/view-mode.component";
     HttpModule,
     BrowserModule,
     CodemirrorModule,
+    ClipboardModule,
     NgbModule.forRoot()
   ],
   declarations: [
@@ -31,6 +33,7 @@ import { ViewModeComponent } from "./view-mode/view-mode.component";
     HttpModule,
     BrowserModule,
     CodemirrorModule,
+    ClipboardModule,
     CollapseDirective,
     SourceReferenceComponent,
     ViewModeComponent

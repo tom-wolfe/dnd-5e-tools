@@ -44,6 +44,7 @@
     "mdi": "^1.9.33",
     "mustache": "^2.3.0",
     "ng2-codemirror": "^1.1.2",
+    "ngx-clipboard": "^8.0.2",
     "rxjs": "^5.1.0",
     "spinkit": "^1.2.5",
     "typescript-collections": "^1.2.3",

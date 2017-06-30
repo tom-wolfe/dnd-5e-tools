@@ -8,16 +8,17 @@
   <div class="row">
     <div class="col-sm-6">
       <h2>Template</h2>
-      <codemirror [(ngModel)]="template" [config]="{ lineNumbers: true }"></codemirror>
+      <codemirror name="template" [(ngModel)]="template" [config]="{ lineNumbers: true }"></codemirror>
     </div>
     <div class="col-sm-6">
       <h2>Output</h2>
-      <codemirror [ngModel]="output" [config]="{ lineNumbers: true, readOnly: true }"></codemirror>
+      <codemirror name="output" [ngModel]="output" [config]="{ lineNumbers: true, readOnly: true }"></codemirror>
     </div>
   </div>
   <div class="row mt-2 mb-2">
     <div class="col-12">
-      <button class="btn btn-lg btn-primary" (click)="onBackClick()">Back to Generator</button>
+      <button class="pull-right btn btn-lg btn-primary" ngxClipboard [cbContent]="output" (cbOnSuccess)="onCopySuccess()">Copy</button>
+      <button class="btn btn-lg btn-secondary" (click)="onBackClick()">Back to Generator</button>
     </div>
   </div>
 </div>
