@@ -82,7 +82,7 @@ export class NameGenerator {
         if (!this.markovGenerators.containsKey(name)) {
             const generator = new Markov.MarkovChain<string>(partDef.markovOrder);
             partDef.source[gender].forEach(n => {
-                generator.add(n.split(partDef.markovSplitChar || ""));
+                generator.learn(n.split(partDef.markovSplitChar || ""));
             });
             this.markovGenerators.setValue(name, generator);
         }
