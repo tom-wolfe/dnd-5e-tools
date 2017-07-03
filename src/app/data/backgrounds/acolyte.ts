@@ -11,8 +11,15 @@ export const Acolyte: Characters.Background = new Characters.Background({
     skillProficiencies: [{ proficiencies: [Skills.Insight, Skills.Religion] }],
     money: new Equipment.Money({ platinum: 0, gold: 15, silver: 0, copper: 0 }),
     equipment: [
-        { items: [{ name: "holy symbol" }, { name: "5 sticks of incense" }, { name: "vestment" }, { name: "common clothes" }] },
-        { items: [{ name: "prayer book" }, { name: "prayer wheel" }], count: 1 }
+        {
+            items: [
+                new Equipment.Item("holy symbol"),
+                new Equipment.ItemQuantity(new Equipment.Item("stick of incense"), 5),
+                new Equipment.Item("vestment"),
+                new Equipment.Item("common clothes")
+            ]
+        },
+        { items: [new Equipment.Item("prayer book"), new Equipment.Item("prayer wheel")], count: 1 }
     ],
     features: [{
         name: "Shelter of the Faithful",
@@ -27,7 +34,8 @@ export const Acolyte: Characters.Background = new Characters.Background({
             This could be the temple where you used to serve, if you remain on good terms with it, or a temple where you have found a new
             home. While near your temple, you can call upon the priests for assistance, provided the assistance you ask for is not hazardous
             and you remain in good standing with your temple.
-        `
+        `,
+        reference: { source: "PHB", page: 127, url: "https://www.dndbeyond.com/characters/backgrounds/acolyte#shelter-of-the-faithful" },
     }],
     personalityTraits: [
         "I idolize a particular hero of my faith, and constantly refer to that person's deeds and example.",

@@ -24,16 +24,16 @@ export const Goblin: RaceModels.Race = new RaceModels.Race({
                     When you damage a creature with an attack or a spell and the creature's size is larger than yours, you
                     can cause the attack or spell to deal extra damage to the creature. The extra damage equals your level.
                     Once you use this trait, you can't use it again until you finish a short or long rest.
-                `
+                `,
+                reference: { source: "VGM", page: 119 },
         }, {
             name: "Nimble Escape", type: FeatureType.Active,
-            description: "You can take the Disengage or Hide action as a bonus action on each of your turns."
+            description: "You can take the Disengage or Hide action as a bonus action on each of your turns.",
+            reference: { source: "VGM", page: 119 },
         }
     ],
     reference: { source: "VGM", page: 119 },
     subraces: []
 });
-
-RaceList.push
 
 RaceList.push(Goblin);

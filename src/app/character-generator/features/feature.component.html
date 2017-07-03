@@ -1,3 +1,9 @@
-<div class="feature">
-    <h3 class="feature-name">{{feature.name}}.</h3><span class="feature-description" [innerHTML]="feature.description"></span>
+<div class="feature" *ngIf="viewMode === ViewMode.Detailed">
+    <h3 class="feature-name">{{feature.name}}.
+        <dnd-source-reference *ngIf="feature.reference" [reference]="feature.reference"></dnd-source-reference>
+    </h3>
+    <span class="feature-description" [innerHTML]="feature.description"></span>
 </div>
+<span class="feature" *ngIf="viewMode === ViewMode.Basic">
+    {{feature.name}}<dnd-source-reference *ngIf="feature.reference" [reference]="feature.reference"></dnd-source-reference>
+</span>

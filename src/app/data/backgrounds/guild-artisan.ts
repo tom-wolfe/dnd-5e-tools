@@ -8,13 +8,18 @@ import { BackgroundList } from "./background-list";
 
 export const GuildArtisan: Characters.Background = new Characters.Background({
     name: "Guild Artisan",
-    reference: { source: "PHB", page: 132, url: "" },
+    reference: { source: "PHB", page: 132 },
     languages: { other: 1 },
     skillProficiencies: [{ proficiencies: [Skills.Insight, Skills.Persuasion] }],
     toolProficiencies: [{ proficiencies: ArtisanToolList, count: 1 }],
     money: new Equipment.Money({ platinum: 0, gold: 15, silver: 0, copper: 0 }),
     equipment: [
-        { items: [{ name: "letter of introduction from your guild" }, { name: "traveler's clothes" }] },
+        {
+            items: [
+                new Equipment.Item("letter of introduction from your guild"),
+                new Equipment.Item("traveler's clothes")
+            ]
+        },
         { items: ArtisanToolList, count: 1 },
     ],
     features: [{
@@ -33,7 +38,8 @@ export const GuildArtisan: Characters.Background = new Characters.Background({
 
             You must pay dues of 5 gp per month to the guild. If you miss payments, you must make up back dues to remain in the guild's good
             graces.
-        `
+        `,
+        reference: { source: "PHB", page: 133 },
     }],
     personalityTraits: [
         "I believe that anything worth doing is worth doing right. I can't help it&mdash;I'm a perfectionist.",

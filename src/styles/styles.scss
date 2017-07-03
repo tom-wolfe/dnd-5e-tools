@@ -8,8 +8,10 @@ $mdi-font-path: "~mdi/fonts";
 @import '~spinkit/scss/spinners/9-cube-grid';
 
 @import "print.scss";
+@import "loading-splash.scss";
 @import "bootstrap.scss";
-@import "theme.scss";
+@import "forms.scss";
+@import "buttons.scss";
 @import "blocks.scss";
 @import "features.scss";
 @import "codemirror.scss";

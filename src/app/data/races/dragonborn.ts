@@ -1,3 +1,5 @@
+/* tslint:disable: max-line-length */
+
 import { Languages } from "../../data/languages";
 import { FeatureType } from "../../models/features/feature-type";
 import { TimeUnit } from "../../models/features/time-unit";
@@ -27,101 +29,107 @@ export const Dragonborn: RaceModels.Race = new RaceModels.Race({
                 your proficiency bonus. A creature takes 2d6 damage on a failed save. and half as much damage on a successful one. The
                 damage increases to 3d6 at 6th level. 4d6 at 11th level, and 5d6 at 16th level. After you use your breath weapon, you can't
                 use it again until you complete a short or long rest.
-            `
+            `,
+            reference: { source: "PHB", page: 34, url: "https://www.dndbeyond.com/characters/races/dragonborn#BreathWeapon" },
         }, {
             name: "Damage Resistance", type: FeatureType.Passive,
-            description: "You have resistance to the damage type associated with your draconic ancestry."
+            description: "You have resistance to the damage type associated with your draconic ancestry.",
+            reference: { source: "PHB", page: 34, url: "https://www.dndbeyond.com/characters/races/dragonborn#DamageResistance" },
         }
     ],
-    reference: {
-        source: "PHB",
-        page: 32,
-        url: "https://www.dndbeyond.com/characters/races/dragonborn"
-    },
+    reference: { source: "PHB", page: 32, url: "https://www.dndbeyond.com/characters/races/dragonborn" },
     subraces: [
         {
             name: "Black",
             features: [{
                 name: "Draconic Ancestry", type: FeatureType.Passive,
                 damageResistances: [DamageType.Acid],
-                description: "Your are resistant to acid damage and your breath weapon deals acid damage in a 5 by 30 ft. line (Dex. save)."
-            }], reference: { source: "PHB", page: 34 }
+                description: "Your are resistant to acid damage and your breath weapon deals acid damage in a 5 by 30 ft. line (Dex. save).",
+                reference: { source: "PHB", page: 34, url: "https://www.dndbeyond.com/characters/races/dragonborn#DraconicAncestry" },
+            }], reference: { source: "PHB", page: 34, url: "https://www.dndbeyond.com/characters/races/dragonborn#DraconicAncestry" },
         },
         {
             name: "Blue",
             features: [{
                 name: "Draconic Ancestry", type: FeatureType.Passive,
                 damageResistances: [DamageType.Lightning],
-                description: "Your are resistant to lightning damage and your breath weapon deals lightning damage in a 5 by 30 ft. line (Dex. save)."
-            }], reference: { source: "PHB", page: 34 }
+                description: "Your are resistant to lightning damage and your breath weapon deals lightning damage in a 5 by 30 ft. line (Dex. save).",
+                reference: { source: "PHB", page: 34, url: "https://www.dndbeyond.com/characters/races/dragonborn#DraconicAncestry" },
+            }], reference: { source: "PHB", page: 34, url: "https://www.dndbeyond.com/characters/races/dragonborn#DraconicAncestry" },
         },
         {
             name: "Brass",
             features: [{
                 name: "Draconic Ancestry", type: FeatureType.Passive,
                 damageResistances: [DamageType.Fire],
-                description: "Your are resistant to fire damage and your breath weapon deals fire damage in a 5 by 30 ft. line (Dex. save)."
-            }], reference: { source: "PHB", page: 34 }
+                description: "Your are resistant to fire damage and your breath weapon deals fire damage in a 5 by 30 ft. line (Dex. save).",
+                reference: { source: "PHB", page: 34, url: "https://www.dndbeyond.com/characters/races/dragonborn#DraconicAncestry" },
+            }], reference: { source: "PHB", page: 34, url: "https://www.dndbeyond.com/characters/races/dragonborn#DraconicAncestry" }
         },
         {
             name: "Bronze",
             features: [{
                 name: "Draconic Ancestry", type: FeatureType.Passive,
                 damageResistances: [DamageType.Lightning],
-                description: "Your are resistant to lightning damage and your breath weapon deals lightning damage in a 5 by 30 ft. line (Dex. save)."
-            }], reference: { source: "PHB", page: 34 }
+                description: "Your are resistant to lightning damage and your breath weapon deals lightning damage in a 5 by 30 ft. line (Dex. save).",
+                reference: { source: "PHB", page: 34, url: "https://www.dndbeyond.com/characters/races/dragonborn#DraconicAncestry" }
+            }], reference: { source: "PHB", page: 34, url: "https://www.dndbeyond.com/characters/races/dragonborn#DraconicAncestry" }
         },
         {
             name: "Copper",
             features: [{
                 name: "Draconic Ancestry", type: FeatureType.Passive,
                 damageResistances: [DamageType.Acid],
-                description: "Your are resistant to acid damage and your breath weapon deals acid damage in a 5 by 30 ft. line (Dex. save)."
-            }], reference: { source: "PHB", page: 34 }
+                description: "Your are resistant to acid damage and your breath weapon deals acid damage in a 5 by 30 ft. line (Dex. save).",
+                reference: { source: "PHB", page: 34, url: "https://www.dndbeyond.com/characters/races/dragonborn#DraconicAncestry" }
+            }], reference: { source: "PHB", page: 34, url: "https://www.dndbeyond.com/characters/races/dragonborn#DraconicAncestry" }
         },
         {
             name: "Gold",
             features: [{
                 name: "Draconic Ancestry", type: FeatureType.Passive,
                 damageResistances: [DamageType.Fire],
-                description: "Your are resistant to fire damage and your breath weapon deals fire damage in a 15 ft. cone (Dex. save)."
-            }], reference: { source: "PHB", page: 34 }
+                description: "Your are resistant to fire damage and your breath weapon deals fire damage in a 15 ft. cone (Dex. save).",
+                reference: { source: "PHB", page: 34, url: "https://www.dndbeyond.com/characters/races/dragonborn#DraconicAncestry" }
+            }], reference: { source: "PHB", page: 34, url: "https://www.dndbeyond.com/characters/races/dragonborn#DraconicAncestry" }
         },
         {
             name: "Green",
             features: [{
                 name: "Draconic Ancestry", type: FeatureType.Passive,
                 damageResistances: [DamageType.Poison],
-                description: "Your are resistant to poison damage and your breath weapon deals poison damage in a 15 ft. cone (Con. save)."
-            }], reference: { source: "PHB", page: 34 }
+                description: "Your are resistant to poison damage and your breath weapon deals poison damage in a 15 ft. cone (Con. save).",
+                reference: { source: "PHB", page: 34, url: "https://www.dndbeyond.com/characters/races/dragonborn#DraconicAncestry" }
+            }], reference: { source: "PHB", page: 34, url: "https://www.dndbeyond.com/characters/races/dragonborn#DraconicAncestry" }
         },
         {
             name: "Red",
             features: [{
                 name: "Draconic Ancestry", type: FeatureType.Passive,
                 damageResistances: [DamageType.Fire],
-                description: "Your are resistant to fire damage and your breath weapon deals fire damage in a 15 ft. cone (Dex. save)."
-            }], reference: { source: "PHB", page: 34 }
+                description: "Your are resistant to fire damage and your breath weapon deals fire damage in a 15 ft. cone (Dex. save).",
+                reference: { source: "PHB", page: 34, url: "https://www.dndbeyond.com/characters/races/dragonborn#DraconicAncestry" }
+            }], reference: { source: "PHB", page: 34, url: "https://www.dndbeyond.com/characters/races/dragonborn#DraconicAncestry" }
         },
         {
             name: "Silver",
             features: [{
                 name: "Draconic Ancestry", type: FeatureType.Passive,
                 damageResistances: [DamageType.Cold],
-                description: "Your are resistant to cold damage and your breath weapon deals cold damage in a 15 ft. cone (Con. save)."
-            }], reference: { source: "PHB", page: 34 }
+                description: "Your are resistant to cold damage and your breath weapon deals cold damage in a 15 ft. cone (Con. save).",
+                reference: { source: "PHB", page: 34, url: "https://www.dndbeyond.com/characters/races/dragonborn#DraconicAncestry" }
+            }], reference: { source: "PHB", page: 34, url: "https://www.dndbeyond.com/characters/races/dragonborn#DraconicAncestry" }
         },
         {
             name: "White",
             features: [{
                 name: "Draconic Ancestry", type: FeatureType.Passive,
                 damageResistances: [DamageType.Cold],
-                description: "Your are resistant to cold damage and your breath weapon deals cold damage in a 15 ft. cone (Con. save)."
-            }], reference: { source: "PHB", page: 34 }
+                description: "Your are resistant to cold damage and your breath weapon deals cold damage in a 15 ft. cone (Con. save).",
+                reference: { source: "PHB", page: 34, url: "https://www.dndbeyond.com/characters/races/dragonborn#DraconicAncestry" }
+            }], reference: { source: "PHB", page: 34, url: "https://www.dndbeyond.com/characters/races/dragonborn#DraconicAncestry" }
         }
     ]
 });
-
-RaceList.push
 
 RaceList.push(Dragonborn);

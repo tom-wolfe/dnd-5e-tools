@@ -1,7 +1,7 @@
 import * as _ from "lodash";
 import * as Collections from "typescript-collections";
 
-import * as Markov from "../markov";
+import * as Markov from "markov-typescript";
 import * as Names from "app/models/names";
 import { NumberGenerator } from "./number-generator";
 
@@ -82,7 +82,7 @@ export class NameGenerator {
         if (!this.markovGenerators.containsKey(name)) {
             const generator = new Markov.MarkovChain<string>(partDef.markovOrder);
             partDef.source[gender].forEach(n => {
-                generator.add(n.split(partDef.markovSplitChar || ""));
+                generator.learn(n.split(partDef.markovSplitChar || ""));
             });
             this.markovGenerators.setValue(name, generator);
         }

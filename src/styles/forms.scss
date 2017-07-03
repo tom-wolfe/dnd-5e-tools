@@ -1,0 +1,63 @@
+.form-group {
+    label {
+        display: block;
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .form-control,
+    .custom-select {
+        font-size: 14px;
+        font-family: $font-family-secondary;
+    }
+}
+
+.form-inline.always {
+    .form-group {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        margin-bottom: 0;
+    }
+
+    .form-control-label {
+        margin-bottom: 0;
+        vertical-align: middle;
+    }
+
+    .form-check {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        width: auto;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .form-check-label {
+        padding-left: 0;
+    }
+
+    .form-check-input {
+        position: relative;
+        margin-top: 0;
+        margin-right: 0.25rem;
+        margin-left: 0;
+    }
+}

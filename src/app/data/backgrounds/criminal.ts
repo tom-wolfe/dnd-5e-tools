@@ -18,7 +18,7 @@ export const Criminal: Characters.Background = new Characters.Background({
     ],
     money: new Equipment.Money({ platinum: 0, gold: 15, silver: 0, copper: 0 }),
     equipment: [
-        { items: [{ name: "crowbar" }, { name: "dark common clothes with hood" }] }
+        { items: [new Equipment.Item("crowbar"), new Equipment.Item("dark common clothes with hood")] }
     ],
     features: [{
         name: "Criminal Contact",
@@ -27,7 +27,8 @@ export const Criminal: Characters.Background = new Characters.Background({
             You have a reliable and trustworthy contact who acts as your liaison to a network of other criminals. You know how to get
             messages to and from your contact, even over great distances; specifically, you know the local messengers, corrupt caravan
             masters, and seedy sailors who can deliver messages for you.
-        `
+        `,
+        reference: { source: "PHB", page: 129, url: "https://www.dndbeyond.com/characters/backgrounds/criminal#criminal-contact" },
     }],
     personalityTraits: [
         "I always have a plan for what to do when things go wrong.",

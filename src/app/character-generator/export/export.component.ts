@@ -1,5 +1,7 @@
+import { CodemirrorComponent } from "ng2-codemirror/lib";
+
 import { Location } from "@angular/common";
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 
 import { CharacterGeneratorService } from "../character-generator.service";
 import { Exporter } from "./exporter";
@@ -9,6 +11,8 @@ import { Exporter } from "./exporter";
   templateUrl: "export.component.html"
 })
 export class ExportComponent implements OnInit {
+  @ViewChild("codemirror[name=output]") codeMirror: CodemirrorComponent;
+
   exporter: Exporter;
   template = "";
 
@@ -36,5 +40,9 @@ export class ExportComponent implements OnInit {
 
   onBackClick(): void {
     this.location.back();
+  }
+
+  onCopySuccess(): void {
+    // TODO: Display success toaster.
   }
 }

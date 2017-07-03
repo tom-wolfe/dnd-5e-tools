@@ -1,7 +1,9 @@
 import { Skills } from "app/data";
 import * as Weapons from "app/data/weapons";
+import { Item } from "app/models/equipment";
 
 import * as ClassModels from "../../models/classes";
+import { ItemQuantity } from "../../models/equipment/item-quantity";
 import * as Packs from "../packs";
 import { ClassList } from "./class-list";
 
@@ -22,8 +24,12 @@ export const Sorcerer: ClassModels.Class = new ClassModels.Class({
     }],
     otherProficiencies: [],
     equipment: [
-        { items: [[Weapons.LightCrossbow, { name: "20 crossbow bolts" }], { items: Weapons.SimpleWeapons, count: 1 }], count: 1 },
-        { items: [{ name: "component pouch" }, { name: "arcane focus" }], count: 1 },
+        {
+            items: [
+                [Weapons.LightCrossbow, new ItemQuantity(new Item("crossbow bolts"), 20)],
+                { items: Weapons.SimpleWeapons, count: 1 }], count: 1
+        },
+        { items: [new Item("component pouch"), new Item("arcane focus")], count: 1 },
         { items: [Packs.DungeoneerPack, Packs.ExplorerPack], count: 1 },
         { items: [Weapons.Dagger, Weapons.Dagger] }
     ],

@@ -20,4 +20,8 @@ export class CharacterComponent {
     this.service.character = this.character;
     this.router.navigateByUrl("/character-generator/export");
   };
+
+  onPrintClick() {
+    window.print();
+  }
 };

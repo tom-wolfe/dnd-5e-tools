@@ -22,13 +22,12 @@ export const HalfElf: RaceModels.Race = new RaceModels.Race({
         {
             name: "Skill Versatility", type: FeatureType.Passive,
             skillProficiencies: [{ proficiencies: Skills.SkillList, count: 2 }],
-            description: "You gain proficiency in two skills of your choice."
-        }
+            description: "You gain proficiency in two skills of your choice.",
+            reference: { source: "PHB", page: 39, url: "https://www.dndbeyond.com/characters/races/half-elf#SkillVersatility" },
+        },
     ],
     reference: { source: "PHB", page: 38, url: "https://www.dndbeyond.com/characters/races/half-elf" },
     subraces: []
 });
-
-RaceList.push
 
 RaceList.push(HalfElf);

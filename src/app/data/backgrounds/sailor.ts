@@ -10,16 +10,16 @@ import * as Weapons from "app/data/weapons";
 
 export const Sailor: Characters.Background = new Characters.Background({
     name: "Sailor",
-    reference: { source: "PHB", page: 139, url: "" },
+    reference: { source: "PHB", page: 139 },
     languages: {},
     skillProficiencies: [{ proficiencies: [Skills.Athletics, Skills.Perception] }],
-    toolProficiencies: [{ proficiencies: [NavigatorsTools] },],
+    toolProficiencies: [{ proficiencies: [NavigatorsTools] }],
     otherProficiencies: [{ proficiencies: [Vehicles.WaterVehicles] }],
     money: new Equipment.Money({ platinum: 0, gold: 10, silver: 0, copper: 0 }),
     equipment: [
-        { items: [Weapons.Club, { name: "50 ft. silk rope" }, { name: "common clothes" }] },
+        { items: [Weapons.Club, new Equipment.Item("50 ft. silk rope"), new Equipment.Item("common clothes")] },
         // TODO: Replace with real trinket.
-        { items: [{ name: "lucky charm" }, { name: "trinket" }], count: 1 },
+        { items: [new Equipment.Item("lucky charm"), new Equipment.Item("trinket")], count: 1 },
     ],
     features: [{
         name: "Ship's Passage",
@@ -30,7 +30,8 @@ export const Sailor: Characters.Background = new Characters.Background({
             you're calling in a favor, you can't be certain of a schedule or route that wiII meet your every need. Your Dungeon Master will
             determine how long it takes to get where you need to go. In return for your free passage, you and your companions are expected
             to assist the crew during the voyage.
-        `
+        `,
+        reference: { source: "PHB", page: 139 },
     }],
     personalityTraits: [
         "My friends know they can rely on me, no matter what.",

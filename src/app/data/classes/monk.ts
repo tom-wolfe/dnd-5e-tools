@@ -1,10 +1,10 @@
 import { Skills } from "app/data";
-import * as Weapons from "app/data/weapons";
 import * as Packs from "app/data/packs";
+import * as Weapons from "app/data/weapons";
 import * as _ from "lodash";
 
 import * as ClassModels from "../../models/classes";
-import { WeaponType } from "../../models/equipment";
+import { Item, ItemQuantity } from "../../models/equipment";
 import { ArtisanToolList } from "../artisan-tools";
 import { InstrumentList } from "../instruments";
 import { ClassList } from "./class-list";
@@ -24,7 +24,7 @@ export const Monk: ClassModels.Class = new ClassModels.Class({
     equipment: [
         { items: [Weapons.Shortsword, { items: Weapons.SimpleWeapons, count: 1 }], count: 1 },
         { items: [Packs.ExplorerPack, Packs.DungeoneerPack], count: 1 },
-        { items: [{ name: "10 darts" }], count: 1 },
+        { items: [new ItemQuantity(Weapons.Dart, 10)], count: 1 },
 
     ],
     archetypeName: { singular: "Monastic Tradition", plural: "Monastic Traditions" },

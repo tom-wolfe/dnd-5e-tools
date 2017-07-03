@@ -16,8 +16,18 @@ export const Soldier: Characters.Background = new Characters.Background({
     otherProficiencies: [{ proficiencies: [Vehicles.LandVehicles] }],
     money: new Equipment.Money({ platinum: 0, gold: 10, silver: 0, copper: 0 }),
     equipment: [
-        { items: [{ name: "common clothes" }, { name: "insignia of rank" }, { name: "trophy from a fallen enemy" }] },
-        { items: [{ name: "bone dice" }, { name: "deck of cards" }], count: 1 },
+        {
+            items: [
+                new Equipment.Item("common clothes"),
+                new Equipment.Item("insignia of rank"),
+                new Equipment.Item("trophy from a fallen enemy")]
+        },
+        {
+            items: [
+                new Equipment.Item("bone dice"),
+                new Equipment.Item("deck of cards")
+            ], count: 1
+        },
     ],
     features: [{
         name: "Military Rank",
@@ -27,7 +37,8 @@ export const Soldier: Characters.Background = new Characters.Background({
             authority and influence, and they defer to you if they are of a lower rank. You can invoke your rank to exert influence over
             other soldiers and requisition simple equipment or horses for temporary use. You can also usually gain access to friendly
             military encampments and fortresses where your rank is recognized.
-        `
+        `,
+        reference: { source: "PHB", page: 140, url: "https://www.dndbeyond.com/characters/backgrounds/soldier#military-rank" },
     }],
     personalityTraits: [
         "I’m always polite and respectful.",

@@ -19,20 +19,26 @@ export const Changeling: RaceModels.Race = new RaceModels.Race({
         {
             name: "Duplicity", type: FeatureType.Passive,
             skillProficiencies: [{ proficiencies: [Skills.Deception] }],
-            description: "You have proficiency in the Deception skill."
+            description: "You have proficiency in the Deception skill.",
+            reference: {
+                source: "UA", page: 1, document: "Eberron",
+                url: "http://media.wizards.com/2015/downloads/dnd/UA_Eberron_v1.1.pdf"
+            },
         }, {
             name: "Shapechanger", type: FeatureType.Active,
             description: `
                     As an action, you can polymorph into any humanoid of your size that you have seen,
                     or back into your true form. However, your equipment does not change with you.
                     If you die, you revert to your natural appearance.
-                `
+                `,
+            reference: {
+                source: "UA", page: 1, document: "Eberron",
+                url: "http://media.wizards.com/2015/downloads/dnd/UA_Eberron_v1.1.pdf"
+            },
         }
     ],
     reference: { source: "UA", page: 1, document: "Eberron", url: "http://media.wizards.com/2015/downloads/dnd/UA_Eberron_v1.1.pdf" },
     subraces: []
 });
-
-RaceList.push
 
 RaceList.push(Changeling);

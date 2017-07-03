@@ -1,6 +1,6 @@
-import { Item } from "./";
+import { Item, ItemQuantity } from "./";
 
 export class EquipmentOption {
-    items: (Item | EquipmentOption | (Item | EquipmentOption)[])[];
+    items: (Item | ItemQuantity | EquipmentOption | (Item | ItemQuantity | EquipmentOption)[])[];
     count?: number;
 };

@@ -16,11 +16,7 @@ export const Human: RaceModels.Race = new RaceModels.Race({
     languages: { known: [Languages.Common], other: 1 },
     features: [],
     abilityMods: {},
-    reference: {
-        source: "PHB",
-        page: 29,
-        url: "https://www.dndbeyond.com/characters/races/human"
-    },
+    reference: { source: "PHB", page: 29, url: "https://www.dndbeyond.com/characters/races/human" },
     subraces: [
         {
             name: "Normal",
@@ -33,14 +29,13 @@ export const Human: RaceModels.Race = new RaceModels.Race({
                 {
                     name: "Skill Proficiency", type: FeatureType.Passive,
                     skillProficiencies: [{ proficiencies: Skills.SkillList, count: 1 }],
-                    description: "You gain proficiency in one skill of your choice."
-                }
+                    description: "You gain proficiency in one skill of your choice.",
+                    reference: { source: "PHB", page: 29, url: "https://www.dndbeyond.com/characters/races/human#Skills" },
+                },
             ],
             reference: { source: "PHB", page: 31, url: "https://www.dndbeyond.com/characters/races/human#VariantHuman" }
         }
     ]
 });
-
-RaceList.push
 
 RaceList.push(Human);

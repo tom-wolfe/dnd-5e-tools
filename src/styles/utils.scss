@@ -5,3 +5,11 @@
 .pull-right {
     float: right;
 }
+
+.comma-separated::before {
+    content: ", ";
+}
+
+.comma-separated:first-child::before {
+  content: "";
+}

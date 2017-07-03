@@ -14,11 +14,11 @@ export const Sage: Characters.Background = new Characters.Background({
     equipment: [
         {
             items: [
-                { name: "small knife" },
-                { name: "letter from dead colleague asking an unanswered question" },
-                { name: "bottle of black ink" },
-                { name: "quill" },
-                { name: "common clothes" }
+                new Equipment.Item("small knife"),
+                new Equipment.Item("letter from dead colleague asking an unanswered question"),
+                new Equipment.Item("bottle of black ink"),
+                new Equipment.Item("quill"),
+                new Equipment.Item("common clothes")
             ]
         }
     ],
@@ -30,8 +30,8 @@ export const Sage: Characters.Background = new Characters.Background({
             can obtain it. Usually, this information comes from a library, scriptorium, university, or a sage or other learned person or
             creature. Your DM might rule that the knowledge you seek is secreted away in an almost inaccessible place, or that it simply
             cannot be found. Unearthing the deepest secrets of the multiverse can require an adventure or even a whole campaign.
-
-        `
+        `,
+        reference: { source: "PHB", page: 137, url: "https://www.dndbeyond.com/characters/backgrounds/sage#researcher" },
     }],
     personalityTraits: [
         "I use polysyllabic words that convey the impression of great erudition.",

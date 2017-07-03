@@ -6,30 +6,17 @@
     </div>
     <div class="row">
       <div class="col-12 text-right">
-        <button type="button" class="btn btn-primary btn-lg" (click)="onGenerateClick()">Generate Items</button>
+        <button type="button" class="btn btn-primary btn-lg btn-icon" (click)="onGenerateClick()"><i class="mdi mdi-shuffle-variant"></i> Generate Items</button>
+        <button class="btn btn-primary btn-lg btn-bottom-right" (click)="onGenerateClick()"><i class="mdi mdi-shuffle-variant"></i><span class="sr-only">Generate Items</span></button>
       </div>
     </div>
   </div>
 </div>
 <div class="container">
   <div class="clearfix mb-4">
-    <form class="form-inline pull-right">
-      <div class="form-group">
-        <label class="form-control-label mr-2" for="viewMode">View Mode</label>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-        <input class="form-check-input" type="radio" name="viewMode" id="viewMode" value="detailed" [(ngModel)]="displayMode"> Detailed
-      </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-        <input class="form-check-input" type="radio" name="viewMode" id="viewMode" value="basic" [(ngModel)]="displayMode"> Basic
-      </label>
-        </div>
-      </div>
-    </form>
+    <dnd-view-mode #viewMode></dnd-view-mode>
   </div>
-  <div class="row" *ngIf="displayMode == 'detailed'">
+  <div class="row" *ngIf="viewMode.mode === ViewMode.Detailed">
     <div class="col-sm-6" *ngFor="let item of items">
       <div class="card mb-2">
         <div class="card-block">
@@ -40,7 +27,7 @@
       </div>
     </div>
   </div>
-  <div class="list-group" *ngIf="displayMode == 'basic'">
+  <div class="list-group" *ngIf="viewMode.mode === ViewMode.Basic">
     <div class="list-group-item" *ngFor="let item of items">
       {{item.name}}
     </div>

@@ -20,25 +20,26 @@ export const Bugbear: RaceModels.Race = new RaceModels.Race({
     features: [
         {
             name: "Long-Limbed", type: FeatureType.Passive,
-            description: "When you make a melee attack on your turn, your reach for it is 5 feet greater than normal."
+            description: "When you make a melee attack on your turn, your reach for it is 5 feet greater than normal.",
+            reference: { source: "VGM", page: 119 },
         },
         CommonFeatures.powerfulBuild,
         {
             name: "Sneaky", type: FeatureType.Passive,
             skillProficiencies: [{ proficiencies: [Skills.Stealth] }],
-            description: "You are proficient in the Stealth skill."
+            description: "You are proficient in the Stealth skill.",
+            reference: { source: "VGM", page: 119 },
         }, {
             name: "Surprise Attack", type: FeatureType.Passive,
             description: `
                     If you surprise a creature and hit it with an attack on your first turn in combat, the attack deals an extra 2d6
                     damage to it. You can use this trait only once per combat.
-                `
+                `,
+                reference: { source: "VGM", page: 119 },
         }
     ],
     reference: { source: "VGM", page: 119 },
     subraces: []
 });
-
-RaceList.push
 
 RaceList.push(Bugbear);

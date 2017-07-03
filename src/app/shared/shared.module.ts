@@ -5,10 +5,12 @@ import { HttpModule } from "@angular/http";
 import { BrowserModule } from "@angular/platform-browser";
 
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { ClipboardModule } from "ngx-clipboard";
 import { CollapseDirective } from "app/shared/collapse.directive";
 import { CodemirrorModule } from "ng2-codemirror/lib";
 
 import { SourceReferenceComponent } from "./source-reference/source-reference.component";
+import { ViewModeComponent } from "./view-mode/view-mode.component";
 
 @NgModule({
   imports: [
@@ -17,11 +19,13 @@ import { SourceReferenceComponent } from "./source-reference/source-reference.co
     HttpModule,
     BrowserModule,
     CodemirrorModule,
+    ClipboardModule,
     NgbModule.forRoot()
   ],
   declarations: [
     CollapseDirective,
-    SourceReferenceComponent
+    SourceReferenceComponent,
+    ViewModeComponent
   ],
   exports: [
     CommonModule,
@@ -29,8 +33,10 @@ import { SourceReferenceComponent } from "./source-reference/source-reference.co
     HttpModule,
     BrowserModule,
     CodemirrorModule,
+    ClipboardModule,
     CollapseDirective,
-    SourceReferenceComponent
+    SourceReferenceComponent,
+    ViewModeComponent
   ]
 })
 export class SharedModule { }

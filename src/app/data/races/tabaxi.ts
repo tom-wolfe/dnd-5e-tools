@@ -20,27 +20,28 @@ export const Tabaxi: RaceModels.Race = new RaceModels.Race({
         {
             name: "Feline Agility", type: FeatureType.Active,
             description: `
-                    Your reflexes and agility allow you to move with a burst of speed. When you move on your turn in combat, you can
-                    double your speed until the end of the turn. Once you use this trait, you can't use it again until you move 0 feet
-                    on one of your turns.
-                `
+                Your reflexes and agility allow you to move with a burst of speed. When you move on your turn in combat, you can
+                double your speed until the end of the turn. Once you use this trait, you can't use it again until you move 0 feet
+                on one of your turns.
+            `,
+            reference: { source: "VGM", page: 115 },
         }, {
             name: "Cat's Claws", type: FeatureType.Active,
             description: `
-                    Because of your claws, you have a climbing speed of 20 feet. In addition, your claws are natural weapons, which you
-                    can use to make unarmed strikes. If you hit with them, you deal slashing damage equal to ld4 + your Strength modifier,
-                    instead of the bludgeoning damage normal for an unarmed strike.
-                `
+                Because of your claws, you have a climbing speed of 20 feet. In addition, your claws are natural weapons, which you
+                can use to make unarmed strikes. If you hit with them, you deal slashing damage equal to ld4 + your Strength modifier,
+                instead of the bludgeoning damage normal for an unarmed strike.
+            `,
+            reference: { source: "VGM", page: 115 },
         }, {
             name: "Cat's Talent", type: FeatureType.Passive,
             skillProficiencies: [{ proficiencies: [Skills.Perception, Skills.Stealth] }],
-            description: "You have proficiency in the Perception and Stealth skills."
+            description: "You have proficiency in the Perception and Stealth skills.",
+            reference: { source: "VGM", page: 115 },
         }
     ],
     reference: { source: "VGM", page: 113 },
     subraces: []
 });
-
-RaceList.push
 
 RaceList.push(Tabaxi);

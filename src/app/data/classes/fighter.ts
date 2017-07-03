@@ -1,7 +1,8 @@
 import { Skills } from "app/data";
 
 import * as ClassModels from "../../models/classes";
-import { ArmorType } from "../../models/equipment";
+import { ArmorType, Item } from "../../models/equipment";
+import { ItemQuantity } from "../../models/equipment/item-quantity";
 import * as Armor from "../armor";
 import * as Packs from "../packs";
 import * as Weapons from "../weapons";
@@ -23,14 +24,19 @@ export const Fighter: ClassModels.Class = new ClassModels.Class({
         ], count: 2
     }],
     equipment: [
-        { items: [Armor.ChainMail, [Armor.Leather, Weapons.Longbow, { name: "20 arrows" }]], count: 1 },
+        { items: [Armor.ChainMail, [Armor.Leather, Weapons.Longbow, new ItemQuantity(new Item("arrows"), 20)]], count: 1 },
         {
             items: [
                 [Armor.Shield, { items: Weapons.MartialWeapons, count: 1 }],
                 [{ items: Weapons.MartialWeapons, count: 1 }, { items: Weapons.MartialWeapons, count: 1 }]
             ], count: 1
         },
-        { items: [[Weapons.LightCrossbow, { name: "20 crossbow bolts" }], [Weapons.Handaxe, Weapons.Handaxe]], count: 1 },
+        {
+            items: [
+                [Weapons.LightCrossbow, new ItemQuantity(new Item("crossbow bolts"), 20)],
+                [Weapons.Handaxe, Weapons.Handaxe]
+            ], count: 1
+        },
         { items: [Packs.ExplorerPack, Packs.DungeoneerPack], count: 1 },
     ],
     otherProficiencies: [],

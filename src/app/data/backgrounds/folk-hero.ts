@@ -17,7 +17,12 @@ export const FolkHero: Characters.Background = new Characters.Background({
     money: new Equipment.Money({ platinum: 0, gold: 10, silver: 0, copper: 0 }),
     equipment: [
         { items: ArtisanToolList, count: 1 },
-        { items: [{ name: "shovel" }, { name: "iron pot" }, { name: "common clothes" }] },
+        {
+            items: [
+                new Equipment.Item("shovel"),
+                new Equipment.Item("iron pot"),
+                new Equipment.Item("common clothes")]
+        },
     ],
     features: [{
         name: "Rustic Hospitality",
@@ -27,7 +32,8 @@ export const FolkHero: Characters.Background = new Characters.Background({
             recuperate among other commoners, unless you have shown yourself to be a danger to them. They will shield you from the law
             or anyone else searching for you, though they will not risk their lives for you.
 
-        `
+        `,
+        reference: { source: "PHB", page: 131, url: "https://www.dndbeyond.com/characters/backgrounds/folk-hero#rustic-hospitality" },
     }],
     personalityTraits: [
         "I judge people by their actions, not their words.",

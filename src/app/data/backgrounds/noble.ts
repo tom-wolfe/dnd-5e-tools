@@ -1,3 +1,5 @@
+/* tslint:disable:max-line-length */
+
 import * as Equipment from "app/models/equipment";
 
 import { Skills } from "../../data";
@@ -14,7 +16,13 @@ export const Noble: Characters.Background = new Characters.Background({
     toolProficiencies: [{ proficiencies: GamingSetList, count: 1 }],
     money: new Equipment.Money({ platinum: 0, gold: 25, silver: 0, copper: 0 }),
     equipment: [
-        { items: [{ name: "fine clothes" }, { name: "signet ring" }, { name: "scroll of pedigree" }] }
+        {
+            items: [
+                new Equipment.Item("fine clothes"),
+                new Equipment.Item("signet ring"),
+                new Equipment.Item("scroll of pedigree")
+            ]
+        }
     ],
     features: [{
         name: "Position of Privilege",
@@ -24,7 +32,8 @@ export const Noble: Characters.Background = new Characters.Background({
             you have the right to be wherever you are. The common folk make every effort to accommodate you and avoid your displeasure, and
             other people of high birth treat you as a member of the same social sphere. You can secure an audience with a local noble if you
             need to.
-        `
+        `,
+        reference: { source: "PHB", page: 135, url: "https://www.dndbeyond.com/characters/backgrounds/noble#position-of-privilege" },
     }],
     personalityTraits: [
         "My eloquent flattery makes everyone I talk to feel like the most wonderful and important person in the world.",

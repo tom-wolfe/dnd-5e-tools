@@ -23,7 +23,8 @@ export const Orc: RaceModels.Race = new RaceModels.Race({
             description: `
                 As a bonus action, you can move up to your speed toward an enemy of your choice that you can see or hear.
                 You must end this move closer to the enemy than you started.
-            `
+            `,
+            reference: { source: "VGM", page: 120 },
         },
         CommonFeatures.menacing,
         CommonFeatures.powerfulBuild
@@ -31,7 +32,5 @@ export const Orc: RaceModels.Race = new RaceModels.Race({
     reference: { source: "VGM", page: 120 },
     subraces: []
 });
-
-RaceList.push
 
 RaceList.push(Orc);

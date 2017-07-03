@@ -9,13 +9,20 @@ import { BackgroundList } from "./background-list";
 
 export const Outlander: Characters.Background = new Characters.Background({
     name: "Outlander",
-    reference: { source: "PHB", page: 136, url: "" },
+    reference: { source: "PHB", page: 136 },
     languages: { other: 1 },
     skillProficiencies: [{ proficiencies: [Skills.Athletics, Skills.Survival] }],
     toolProficiencies: [{ proficiencies: InstrumentList, count: 1 }],
     money: new Equipment.Money({ platinum: 0, gold: 10, silver: 0, copper: 0 }),
     equipment: [
-        { items: [Weapons.Quarterstaff, { name: "hunting trap" }, { name: "animal trophy" }, { name: "traveler's clothes" }] }
+        {
+            items: [
+                Weapons.Quarterstaff,
+                new Equipment.Item("hunting trap"),
+                new Equipment.Item("animal trophy"),
+                new Equipment.Item("traveler's clothes")
+            ]
+        }
     ],
     features: [{
         name: "Wanderer",
@@ -24,7 +31,8 @@ export const Outlander: Characters.Background = new Characters.Background({
             You have an excellent memory for maps and geography, and you can always recall the general layout of terrain, settlements, and
             other features around you. In addition, you can find food and fresh water for yourself and up to five other people each day,
             provided that the land offers berries, small game, water, and so forth.
-        `
+        `,
+        reference: { source: "PHB", page: 136 },
     }],
     personalityTraits: [
         "I'm driven by a wanderlust that led me away from home.",

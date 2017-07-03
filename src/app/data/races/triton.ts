@@ -19,36 +19,38 @@ export const Triton: RaceModels.Race = new RaceModels.Race({
     features: [
         {
             name: "Amphibious", type: FeatureType.Passive,
-            description: "You can breathe air and water."
+            description: "You can breathe air and water.",
+            reference: { source: "VGM", page: 118 },
         }, {
             name: "Control Air and Water", type: FeatureType.Active,
             usage: { times: 1, timeUnit: TimeUnit.LongRest },
             description: `
-                    A child of the sea, you can call on the magic of elemental air and water. You can cast fog cloud with this trait.
-                    Starting at 3rd level, you can cast gust of wind with it, and starting at 5th level, you can also cast wall of water
-                    with it (see the spell in the sidebar). Once you cast a spell with this trait, you can't do so again until you finish
-                    a long rest. Charisma is your spellcasting ability for these spells.
-                `
+                A child of the sea, you can call on the magic of elemental air and water. You can cast fog cloud with this trait.
+                Starting at 3rd level, you can cast gust of wind with it, and starting at 5th level, you can also cast wall of water
+                with it (see the spell in the sidebar). Once you cast a spell with this trait, you can't do so again until you finish
+                a long rest. Charisma is your spellcasting ability for these spells.
+            `,
+            reference: { source: "VGM", page: 118 },
         }, {
             name: "Emissary of the Sea", type: FeatureType.Passive,
             description: `
-                    Aquatic beasts have an extraordinary affinity with your people. You can communicate simple ideas with beasts that
-                    can breathe water. They can understand the meaning of your words, though you have no special ability to understand
-                    them in return.
-                `
+                Aquatic beasts have an extraordinary affinity with your people. You can communicate simple ideas with beasts that
+                can breathe water. They can understand the meaning of your words, though you have no special ability to understand
+                them in return.
+            `,
+            reference: { source: "VGM", page: 118 },
         }, {
             name: "Guardians of the Depths", type: FeatureType.Passive,
             damageResistances: [DamageType.Cold],
             description: `
-                    Adapted to even the most extreme ocean depths, you have resistance to cold damage, and you ignore any of the drawbacks
-                    caused by a deep, underwater environment.
-                `
+                Adapted to even the most extreme ocean depths, you have resistance to cold damage, and you ignore any of the drawbacks
+                caused by a deep, underwater environment.
+            `,
+            reference: { source: "VGM", page: 118 },
         }
     ],
     reference: { source: "VGM", page: 113 },
     subraces: []
 });
-
-RaceList.push
 
 RaceList.push(Triton);

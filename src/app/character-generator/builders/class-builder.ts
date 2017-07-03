@@ -73,11 +73,12 @@ export class ClassBuilder extends BaseCharacterBuilder {
         });
 
         // Equip random shield and armour.
-        const shields = character.equipment.filter(a => a instanceof Armor && a.type === ArmorType.Shield);
+        const equipment = character.getEquipment();
+        const shields = equipment.filter(a => a instanceof Armor && a.type === ArmorType.Shield);
         if (shields.length > 0) {
             character.equippedShield = shields[this.numGen.rollDie(shields.length) - 1] as Armor;
         }
-        const armor = character.equipment.filter(a => a instanceof Armor && a.type !== ArmorType.Shield);
+        const armor = equipment.filter(a => a instanceof Armor && a.type !== ArmorType.Shield);
         if (armor.length > 0) {
             character.equippedArmor = armor[this.numGen.rollDie(armor.length) - 1] as Armor;
         }

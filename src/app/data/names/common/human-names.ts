@@ -8,7 +8,7 @@ import * as Names from "app/models/names";
 export const HumanNames: { [index: string]: Names.NamePartDefinition } = {
     forename: {
         markovOrder: 2,
-        mode: "item",
+        mode: "markovOrItem",
         source: {
             "M": [
                 "aaron", "adam", "aidan", "aiden", "alex", "alexander", "alfie", "andrew", "anthony", "archie", "arthur", "ashton",
