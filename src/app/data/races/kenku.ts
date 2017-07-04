@@ -18,24 +18,13 @@ export const Kenku: RaceModels.Race = new RaceModels.Race({
     features: [
         {
             name: "Export Forgery", type: FeatureType.Passive,
-            description: `
-                You can duplicate other creatures' handwriting and craftwork. You have advantage on all checks made to produce
-                forgeries or duplicates of existing objects.
-            `,
             reference: { source: "VGM", page: 111 },
         }, {
             name: "Kenku Training", type: FeatureType.Passive,
             skillProficiencies: [{ proficiencies: [Skills.Acrobatics, Skills.Deception, Skills.Stealth, Skills.SleightOfHand], count: 2 }],
-            description: `
-                You are proficient in your choice of two of the following skills: Acrobatics, Deception, Stealth, and Sleight of Hand.
-            `,
             reference: { source: "VGM", page: 111 },
         }, {
             name: "Mimicry", type: FeatureType.Passive,
-            description: `
-                You can mimic sounds you have heard, including voices. A creature that hears the sounds you make can tell they are
-                imitations with a successful Wisdom (Insight) check opposed by your Charisma (Deception) check.
-            `,
             reference: { source: "VGM", page: 111 },
         }
     ],

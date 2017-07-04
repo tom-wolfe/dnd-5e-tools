@@ -27,11 +27,6 @@ export const Outlander: Characters.Background = new Characters.Background({
     features: [{
         name: "Wanderer",
         type: FeatureType.Passive,
-        description: `
-            You have an excellent memory for maps and geography, and you can always recall the general layout of terrain, settlements, and
-            other features around you. In addition, you can find food and fresh water for yourself and up to five other people each day,
-            provided that the land offers berries, small game, water, and so forth.
-        `,
         reference: { source: "PHB", page: 136 },
     }],
     personalityTraits: [

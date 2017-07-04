@@ -23,11 +23,6 @@ export const Criminal: Characters.Background = new Characters.Background({
     features: [{
         name: "Criminal Contact",
         type: FeatureType.Passive,
-        description: `
-            You have a reliable and trustworthy contact who acts as your liaison to a network of other criminals. You know how to get
-            messages to and from your contact, even over great distances; specifically, you know the local messengers, corrupt caravan
-            masters, and seedy sailors who can deliver messages for you.
-        `,
         reference: { source: "PHB", page: 129, url: "https://www.dndbeyond.com/characters/backgrounds/criminal#criminal-contact" },
     }],
     personalityTraits: [

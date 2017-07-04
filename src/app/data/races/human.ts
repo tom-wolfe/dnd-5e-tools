@@ -29,7 +29,6 @@ export const Human: RaceModels.Race = new RaceModels.Race({
                 {
                     name: "Skill Proficiency", type: FeatureType.Passive,
                     skillProficiencies: [{ proficiencies: Skills.SkillList, count: 1 }],
-                    description: "You gain proficiency in one skill of your choice.",
                     reference: { source: "PHB", page: 29, url: "https://www.dndbeyond.com/characters/races/human#Skills" },
                 },
             ],
