@@ -11,7 +11,7 @@ import { ClassList } from "./class-list";
 
 export const Rogue: ClassModels.Class = new ClassModels.Class({
     name: "Rogue",
-    primaryStat: "DEX",
+    primaryAbility: "DEX",
     hitDie: 8,
     savingThrows: ["DEX", "INT"],
     armorProficiencies: [{ proficiencies: [ArmorType.Light] }],
@@ -52,6 +52,7 @@ export const Rogue: ClassModels.Class = new ClassModels.Class({
             }
         }, {
             name: "Arcane Trickster",
+            castingAbility: "INT",
             reference: {
                 source: "PHB", page: 97,
                 url: ""

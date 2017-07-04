@@ -12,7 +12,8 @@ import { ClassList } from "./class-list";
 
 export const Druid: ClassModels.Class = new ClassModels.Class({
     name: "Druid",
-    primaryStat: "WIS",
+    primaryAbility: "WIS",
+    castingAbility: "WIS",
     hitDie: 8,
     savingThrows: ["INT", "WIS"],
     armorProficiencies: [{ proficiencies: [ArmorType.Light, ArmorType.Medium, ArmorType.Shield] }],

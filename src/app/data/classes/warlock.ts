@@ -10,7 +10,7 @@ import { ClassList } from "./class-list";
 
 export const Warlock: ClassModels.Class = new ClassModels.Class({
     name: "Warlock",
-    primaryStat: "CHA",
+    primaryAbility: "CHA",
     hitDie: 8,
     savingThrows: ["WIS", "CHA"],
     armorProficiencies: [{ proficiencies: [ArmorType.Light] }],

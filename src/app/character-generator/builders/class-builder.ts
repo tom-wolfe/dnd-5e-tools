@@ -16,6 +16,7 @@ export class ClassBuilder extends BaseCharacterBuilder {
         this.randomizeLevel(character);
         this.randomizeHitPoints(character);
         this.randomizeEquipment(character);
+        this.applyFeatures(character);
     }
 
     private randomizeClass(character: Character) {
@@ -81,6 +82,23 @@ export class ClassBuilder extends BaseCharacterBuilder {
         const armor = equipment.filter(a => a instanceof Armor && a.type !== ArmorType.Shield);
         if (armor.length > 0) {
             character.equippedArmor = armor[this.numGen.rollDie(armor.length) - 1] as Armor;
+        }
+    }
+
+    private applyFeatures(character: Character) {
+        if (character.class.features) {
+            character.class.features.forEach(feature => {
+                if (feature.level <= character.level.number) {
+                    this.applyFeature(character, feature);
+                }
+            });
+        }
+        if (character.classArchetype && character.classArchetype.features) {
+            character.classArchetype.features.forEach(feature => {
+                if (feature.level <= character.level.number) {
+                    this.applyFeature(character, feature);
+                }
+            });
         }
     }
 };

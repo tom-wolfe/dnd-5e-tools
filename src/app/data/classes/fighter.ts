@@ -11,7 +11,7 @@ import { ClassList } from "./class-list";
 
 export const Fighter: ClassModels.Class = new ClassModels.Class({
     name: "Fighter",
-    primaryStat: "STR",
+    primaryAbility: "STR",
     hitDie: 10,
     savingThrows: ["STR", "CON"],
     armorProficiencies: [{ proficiencies: [ArmorType.Light, ArmorType.Medium, ArmorType.Heavy, ArmorType.Shield] }],
@@ -63,6 +63,7 @@ export const Fighter: ClassModels.Class = new ClassModels.Class({
             }
         }, {
             name: "Eldritch Knight",
+            castingAbility: "INT",
             reference: {
                 source: "PHB", page: 74,
                 url: ""

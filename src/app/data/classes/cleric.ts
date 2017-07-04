@@ -10,7 +10,8 @@ import { ClassList } from "./class-list";
 
 export const Cleric: ClassModels.Class = new ClassModels.Class({
     name: "Cleric",
-    primaryStat: "WIS",
+    primaryAbility: "WIS",
+    castingAbility: "WIS",
     hitDie: 8,
     savingThrows: ["WIS", "CHA"],
     armorProficiencies: [{ proficiencies: [ArmorType.Light, ArmorType.Medium, ArmorType.Shield] }],

@@ -4,12 +4,15 @@ import { EquipmentOption } from "../equipment";
 import { ProficiencyOption } from "../proficiencies";
 import { Reference } from "../reference";
 import { Archetype } from "./archetype";
+import { ClassFeature } from "./class-feature";
 
 export class Class {
     name: string;
     reference: Reference;
+    castingAbility?: string;
     hitDie: number;
-    primaryStat: string;
+    features?: ClassFeature[]; // TODO: Make mandatory
+    primaryAbility: string;
     savingThrows: string[];
     equipment: EquipmentOption[];
     skillProficiencies: ProficiencyOption<Abilities.Skill>[];

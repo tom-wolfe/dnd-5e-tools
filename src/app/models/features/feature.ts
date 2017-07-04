@@ -8,7 +8,6 @@ import { FeatureType } from "./feature-type";
 import { UsageFrequency } from "./usage-frequency";
 
 export class Feature {
-    // description: string;
     name: string;
     skillProficiencies?: ProficiencyOption<Abilities.Skill>[];
     damageResistances?: Equipment.DamageType[];

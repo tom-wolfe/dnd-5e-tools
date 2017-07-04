@@ -8,7 +8,7 @@ import { Item } from "app/models/equipment";
 
 export const Wizard: ClassModels.Class = new ClassModels.Class({
     name: "Wizard",
-    primaryStat: "INT",
+    primaryAbility: "INT",
     hitDie: 6,
     savingThrows: ["INT", "WIS"],
     armorProficiencies: [],

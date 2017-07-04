@@ -32,7 +32,7 @@ export class AbilityBuilder extends BaseCharacterBuilder {
         if (this.config.primaryAbility) {
             pushAbility(abilityList.indexOf(this.config.primaryAbility.code));
         } else {
-            pushAbility(abilityList.indexOf(character.class.primaryStat));
+            pushAbility(abilityList.indexOf(character.class.primaryAbility));
         }
 
         // If the secondary stat is overridden, push that.
@@ -40,7 +40,7 @@ export class AbilityBuilder extends BaseCharacterBuilder {
             pushAbility(abilityList.indexOf(this.config.secondaryAbility.code));
         }
 
-        pushAbility(abilityList.indexOf(character.class.primaryStat));
+        pushAbility(abilityList.indexOf(character.class.primaryAbility));
 
         // Randomize the remaining abilities.
         while (abilityList.length > 0) {

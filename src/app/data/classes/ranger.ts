@@ -9,7 +9,8 @@ import { ClassList } from "./class-list";
 
 export const Ranger: ClassModels.Class = new ClassModels.Class({
     name: "Ranger",
-    primaryStat: "DEX",
+    primaryAbility: "DEX",
+    castingAbility: "WIS",
     hitDie: 10,
     savingThrows: ["DEX", "WIS"],
     armorProficiencies: [{ proficiencies: [ArmorType.Light, ArmorType.Medium, ArmorType.Shield] }],

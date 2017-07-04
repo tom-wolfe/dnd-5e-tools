@@ -11,7 +11,7 @@ import { ClassList } from "./class-list";
 
 export const Monk: ClassModels.Class = new ClassModels.Class({
     name: "Monk",
-    primaryStat: "DEX",
+    primaryAbility: "DEX",
     hitDie: 8,
     savingThrows: ["STR", "DEX"],
     armorProficiencies: [],

@@ -9,7 +9,8 @@ import { ClassList } from "./class-list";
 
 export const Paladin: ClassModels.Class = new ClassModels.Class({
     name: "Paladin",
-    primaryStat: "STR",
+    primaryAbility: "STR",
+    castingAbility: "CHA",
     hitDie: 10,
     savingThrows: ["STR", "CHA"],
     armorProficiencies: [{ proficiencies: [ArmorType.Light, ArmorType.Medium, ArmorType.Heavy, ArmorType.Shield] }],

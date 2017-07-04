@@ -12,7 +12,8 @@ import { ClassList } from "./class-list";
 
 export const Bard: ClassModels.Class = new ClassModels.Class({
     name: "Bard",
-    primaryStat: "CHA",
+    primaryAbility: "CHA",
+    castingAbility: "CHA",
     hitDie: 8,
     savingThrows: ["DEX", "CHA"],
     equipment: [

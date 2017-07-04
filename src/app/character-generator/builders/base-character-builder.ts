@@ -186,7 +186,7 @@ export abstract class BaseCharacterBuilder {
                 character.conditionImmunities.push(res);
             });
         }
-        if (feature.type === FeatureType.SingleMod) {
+        if (feature.apply) {
             feature.apply(character);
         }
         character.features.push(feature);
