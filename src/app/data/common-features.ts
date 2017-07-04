@@ -9,31 +9,23 @@ export const CommonFeatures: { [index: string]: Features.Feature } = {
         weaponProficiencies: [
             { proficiencies: [Weapons.Longsword, Weapons.Shortsword, Weapons.Shortbow, Weapons.Longbow] }
         ],
-        description: "You have proficiency with the longsword, shortsword, shortbow, and longbow.",
         reference: { source: "PHB", page: 23, url: "https://www.dndbeyond.com/characters/races/elf#ElfWeaponTraining" },
     },
     "feyAncestry": {
         name: "Fey Ancestry", type: Features.FeatureType.Passive,
-        description: "You have advantage on saving throws against being charmed, and magic can't put you to sleep.",
         reference: { source: "PHB", page: 23, url: "https://www.dndbeyond.com/characters/races/elf#ElfWeaponTraining" },
     },
     "menacing": {
         name: "Menacing", type: Features.FeatureType.Passive,
         skillProficiencies: [{ proficiencies: [Skills.Intimidation] }],
-        description: "You are trained in the Intimidation skill.",
         reference: { source: "PHB", page: 41, url: "https://www.dndbeyond.com/characters/races/half-orc#Menacing" },
     },
     "powerfulBuild": {
         name: "Powerful Build", type: Features.FeatureType.Passive,
-        description: "You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.",
         reference: { source: "VGM", page: 107, url: "https://www.dndbeyond.com/characters/races/goliath#PowerfulBuild"},
     },
     "sunlightSensitivity": {
         name: "Sunlight Sensitivity", type: Features.FeatureType.Passive,
-        description: `
-            You have disadvantage on attack rolls and on Wisdom (Perception) checks that rely on sight when you, the target
-            of your attack, or whatever you are trying to perceive is in direct sunlight.
-        `,
         reference: { source: "PHB", page: 24 },
     }
 };
