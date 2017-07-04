@@ -13,6 +13,7 @@ export const Fighter: ClassModels.Class = new ClassModels.Class({
     name: "Fighter",
     primaryAbility: "STR",
     hitDie: 10,
+    archetypeLevel: 3,
     savingThrows: ["STR", "CON"],
     armorProficiencies: [{ proficiencies: [ArmorType.Light, ArmorType.Medium, ArmorType.Heavy, ArmorType.Shield] }],
     weaponProficiencies: [{ proficiencies: WeaponList }],

@@ -21,6 +21,7 @@ export class Class {
     toolProficiencies: ProficiencyOption<Equipment.Item>[];
     otherProficiencies: ProficiencyOption<Equipment.Weapon>[];
     archetypeName: { singular: string, plural: string };
+    archetypeLevel: number;
     archetypes?: Archetype[];
     constructor(initial: Class) { Object.assign(this, initial); }
 };

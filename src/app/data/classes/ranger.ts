@@ -11,6 +11,7 @@ export const Ranger: ClassModels.Class = new ClassModels.Class({
     name: "Ranger",
     primaryAbility: "DEX",
     castingAbility: "WIS",
+    archetypeLevel: 3,
     hitDie: 10,
     savingThrows: ["DEX", "WIS"],
     armorProficiencies: [{ proficiencies: [ArmorType.Light, ArmorType.Medium, ArmorType.Shield] }],

@@ -10,6 +10,7 @@ export const Wizard: ClassModels.Class = new ClassModels.Class({
     name: "Wizard",
     primaryAbility: "INT",
     hitDie: 6,
+    archetypeLevel: 2,
     savingThrows: ["INT", "WIS"],
     armorProficiencies: [],
     weaponProficiencies: [{

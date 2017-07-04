@@ -11,6 +11,7 @@ export const Paladin: ClassModels.Class = new ClassModels.Class({
     name: "Paladin",
     primaryAbility: "STR",
     castingAbility: "CHA",
+    archetypeLevel: 3,
     hitDie: 10,
     savingThrows: ["STR", "CHA"],
     armorProficiencies: [{ proficiencies: [ArmorType.Light, ArmorType.Medium, ArmorType.Heavy, ArmorType.Shield] }],

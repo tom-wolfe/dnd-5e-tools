@@ -13,6 +13,7 @@ export const Rogue: ClassModels.Class = new ClassModels.Class({
     name: "Rogue",
     primaryAbility: "DEX",
     hitDie: 8,
+    archetypeLevel: 3,
     savingThrows: ["DEX", "INT"],
     armorProficiencies: [{ proficiencies: [ArmorType.Light] }],
     weaponProficiencies: [{

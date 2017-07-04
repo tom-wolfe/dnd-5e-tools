@@ -10,6 +10,7 @@ import { ClassList } from "./class-list";
 export const Barbarian: ClassModels.Class = new ClassModels.Class({
     name: "Barbarian",
     primaryAbility: "STR",
+    archetypeLevel: 3,
     hitDie: 12,
     equipment: [
         { items: [Weapons.Greataxe, { items: Weapons.MartialWeapons, count: 1 }], count: 1 },

@@ -25,6 +25,7 @@ export const Human: RaceModels.Race = new RaceModels.Race({
         }, {
             name: "Variant",
             abilityMods: { additionalPoints: 2 },
+            // TODO: Random feature.
             features: [
                 {
                     name: "Skill Proficiency", type: FeatureType.Passive,

@@ -13,6 +13,7 @@ export const Monk: ClassModels.Class = new ClassModels.Class({
     name: "Monk",
     primaryAbility: "DEX",
     hitDie: 8,
+    archetypeLevel: 3,
     savingThrows: ["STR", "DEX"],
     armorProficiencies: [],
     weaponProficiencies: [{ proficiencies: [...Weapons.SimpleWeapons, Weapons.Shortsword] }],

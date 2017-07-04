@@ -12,8 +12,8 @@ export class ClassBuilder extends BaseCharacterBuilder {
     constructor(config: CharacterBuilderConfig) { super(config); }
 
     build(character: Character): void {
-        this.randomizeClass(character);
         this.randomizeLevel(character);
+        this.randomizeClass(character);
         this.randomizeHitPoints(character);
         this.randomizeEquipment(character);
         this.applyFeatures(character);
@@ -27,7 +27,7 @@ export class ClassBuilder extends BaseCharacterBuilder {
             character.class = Classes.ClassList[classNum];
         }
 
-        if (character.class.archetypes) {
+        if (character.level.number >= character.class.archetypeLevel && character.class.archetypes) {
             if (this.config.classArchetype) {
                 character.classArchetype = this.config.classArchetype;
             } else {

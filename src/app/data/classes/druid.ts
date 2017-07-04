@@ -14,6 +14,7 @@ export const Druid: ClassModels.Class = new ClassModels.Class({
     name: "Druid",
     primaryAbility: "WIS",
     castingAbility: "WIS",
+    archetypeLevel: 2,
     hitDie: 8,
     savingThrows: ["INT", "WIS"],
     armorProficiencies: [{ proficiencies: [ArmorType.Light, ArmorType.Medium, ArmorType.Shield] }],

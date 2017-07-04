@@ -14,6 +14,7 @@ export const Bard: ClassModels.Class = new ClassModels.Class({
     name: "Bard",
     primaryAbility: "CHA",
     castingAbility: "CHA",
+    archetypeLevel: 3,
     hitDie: 8,
     savingThrows: ["DEX", "CHA"],
     equipment: [

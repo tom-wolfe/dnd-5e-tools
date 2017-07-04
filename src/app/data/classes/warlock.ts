@@ -12,6 +12,7 @@ export const Warlock: ClassModels.Class = new ClassModels.Class({
     name: "Warlock",
     primaryAbility: "CHA",
     hitDie: 8,
+    archetypeLevel: 1,
     savingThrows: ["WIS", "CHA"],
     armorProficiencies: [{ proficiencies: [ArmorType.Light] }],
     weaponProficiencies: [{ proficiencies: Weapons.SimpleWeapons }],

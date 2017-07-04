@@ -12,6 +12,7 @@ export const Cleric: ClassModels.Class = new ClassModels.Class({
     name: "Cleric",
     primaryAbility: "WIS",
     castingAbility: "WIS",
+    archetypeLevel: 1,
     hitDie: 8,
     savingThrows: ["WIS", "CHA"],
     armorProficiencies: [{ proficiencies: [ArmorType.Light, ArmorType.Medium, ArmorType.Shield] }],

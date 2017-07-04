@@ -14,6 +14,7 @@ export const Artificer: ClassModels.Class = new ClassModels.Class({
     primaryAbility: "INT",
     castingAbility: "INT",
     hitDie: 8,
+    archetypeLevel: 1,
     features: [
         {
             level: 1, name: "Artificer Specialist", type: FeatureType.Active,

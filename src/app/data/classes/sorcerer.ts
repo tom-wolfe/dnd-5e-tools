@@ -11,6 +11,7 @@ export const Sorcerer: ClassModels.Class = new ClassModels.Class({
     name: "Sorcerer",
     primaryAbility: "CHA",
     hitDie: 6,
+    archetypeLevel: 1,
     savingThrows: ["CHA", "CON"],
     armorProficiencies: [],
     weaponProficiencies: [{
