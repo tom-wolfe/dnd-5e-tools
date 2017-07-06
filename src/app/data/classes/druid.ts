@@ -6,7 +6,8 @@ import * as Weapons from "app/data/weapons";
 import * as _ from "lodash";
 
 import * as ClassModels from "../../models/classes";
-import { ArmorType, WeaponProperty, WeaponType, Item } from "../../models/equipment";
+import { ArmorType, Item, WeaponProperty, WeaponType } from "../../models/equipment";
+import { FeatureType } from "../../models/features";
 import { ClassList } from "./class-list";
 
 
@@ -17,6 +18,27 @@ export const Druid: ClassModels.Class = new ClassModels.Class({
     archetypeLevel: 2,
     hitDie: 8,
     savingThrows: ["INT", "WIS"],
+    features: [
+        {
+            level: 1, name: "Spellcasting", type: FeatureType.Passive,
+            reference: { source: "PHB", page: 66, url: "https://www.dndbeyond.com/characters/classes/druid#Spellcasting" }
+        }, {
+            level: 2, name: "Wild Shape", type: FeatureType.Passive,
+            reference: { source: "PHB", page: 66, url: "https://www.dndbeyond.com/characters/classes/druid#WildShape" }
+        }, {
+            level: 2, name: "Druid Circle", type: FeatureType.Passive,
+            reference: { source: "PHB", page: 67, url: "https://www.dndbeyond.com/characters/classes/druid#DruidCircle" }
+        }, {
+            level: 18, name: "Timeless Body", type: FeatureType.Passive,
+            reference: { source: "PHB", page: 67, url: "https://www.dndbeyond.com/characters/classes/druid#TimelessBody" }
+        }, {
+            level: 18, name: "Beast Spells", type: FeatureType.Passive,
+            reference: { source: "PHB", page: 67, url: "https://www.dndbeyond.com/characters/classes/druid#BeastSpells" }
+        }, {
+            level: 20, name: "Archdruid", type: FeatureType.Passive,
+            reference: { source: "PHB", page: 67, url: "https://www.dndbeyond.com/characters/classes/druid#Archdruid" }
+        }
+    ],
     armorProficiencies: [{ proficiencies: [ArmorType.Light, ArmorType.Medium, ArmorType.Shield] }],
     weaponProficiencies: [{
         proficiencies: [
@@ -42,30 +64,142 @@ export const Druid: ClassModels.Class = new ClassModels.Class({
     archetypes: [
         {
             name: "Circle of Dreams",
+            features: [
+                {
+                    level: 2, name: "Balm of the Summer Court", type: FeatureType.Passive,
+                    reference: {
+                        source: "UA", document: "Druid", page: 1,
+                        url: "https://media.wizards.com/2016/dnd/downloads/UA_Druid11272016_CAWS.pdf#page=1"
+                    }
+                }, {
+                    level: 6, name: "Hearth of Moonlight and Shadow", type: FeatureType.Passive,
+                    reference: {
+                        source: "UA", document: "Druid", page: 1,
+                        url: "https://media.wizards.com/2016/dnd/downloads/UA_Druid11272016_CAWS.pdf#page=1"
+                    }
+                }, {
+                    level: 10, name: "Hidden Paths", type: FeatureType.Passive,
+                    reference: {
+                        source: "UA", document: "Druid", page: 1,
+                        url: "https://media.wizards.com/2016/dnd/downloads/UA_Druid11272016_CAWS.pdf#page=1"
+                    }
+                }, {
+                    level: 14, name: "Purifying Light", type: FeatureType.Passive,
+                    reference: {
+                        source: "UA", document: "Druid", page: 1,
+                        url: "https://media.wizards.com/2016/dnd/downloads/UA_Druid11272016_CAWS.pdf#page=1"
+                    }
+                }
+            ],
             reference: {
                 source: "UA", document: "Druid", page: 1,
                 url: "https://media.wizards.com/2016/dnd/downloads/UA_Druid11272016_CAWS.pdf#page=1"
             }
         }, {
             name: "Circle of the Land",
+            features: [
+                {
+                    level: 2, name: "Bonus Cantrip", type: FeatureType.Passive,
+                    reference: { source: "PHB", page: 68, url: "https://www.dndbeyond.com/characters/classes/druid#BonusCantrip" }
+                }, {
+                    level: 2, name: "Natural Recovery", type: FeatureType.Passive,
+                    reference: { source: "PHB", page: 68, url: "https://www.dndbeyond.com/characters/classes/druid#NaturalRecovery" }
+                }, {
+                    level: 3, name: "Circle Spells", type: FeatureType.Passive,
+                    reference: { source: "PHB", page: 68, url: "https://www.dndbeyond.com/characters/classes/druid#CircleSpells" }
+                }, {
+                    level: 6, name: "Land's Stride", type: FeatureType.Passive,
+                    reference: { source: "PHB", page: 69, url: "https://www.dndbeyond.com/characters/classes/druid#LandsStride" }
+                }, {
+                    level: 10, name: "Nature's Ward", type: FeatureType.Passive,
+                    reference: { source: "PHB", page: 69, url: "https://www.dndbeyond.com/characters/classes/druid#NaturesWard" }
+                }, {
+                    level: 14, name: "Nature's Sanctuary", type: FeatureType.Passive,
+                    reference: { source: "PHB", page: 69, url: "https://www.dndbeyond.com/characters/classes/druid#NaturesSanctuary" }
+                }
+            ],
             reference: {
                 source: "PHB", page: 68,
                 url: "https://www.dndbeyond.com/characters/classes/druid#CircleOfTheLand"
             }
         }, {
             name: "Circle of the Moon",
-            reference: {
-                source: "PHB", page: 69,
-                url: ""
-            }
+            features: [
+                { level: 2, name: "Combat Wild Shape", type: FeatureType.Passive, reference: { source: "PHB", page: 69 } },
+                { level: 2, name: "Circle Forms", type: FeatureType.Passive, reference: { source: "PHB", page: 69 } },
+                { level: 6, name: "Primal Strike", type: FeatureType.Passive, reference: { source: "PHB", page: 69 } },
+                { level: 10, name: "Elemental Wild Shape", type: FeatureType.Passive, reference: { source: "PHB", page: 69 } },
+                { level: 14, name: "Thousand Forms", type: FeatureType.Passive, reference: { source: "PHB", page: 69 } }
+            ],
+            reference: { source: "PHB", page: 69, url: "" }
         }, {
             name: "Circle of the Shepherd",
+            features: [
+                {
+                    level: 2, name: "Spirit Bond", type: FeatureType.Passive,
+                    reference: {
+                        source: "UA", document: "Druid", page: 2,
+                        url: "https://media.wizards.com/2016/dnd/downloads/UA_Druid11272016_CAWS.pdf#page=2"
+                    }
+                }, {
+                    level: 2, name: "Beast Speech", type: FeatureType.Passive,
+                    reference: {
+                        source: "UA", document: "Druid", page: 2,
+                        url: "https://media.wizards.com/2016/dnd/downloads/UA_Druid11272016_CAWS.pdf#page=2"
+                    }
+                }, {
+                    level: 6, name: "Mighty Summoner", type: FeatureType.Passive,
+                    reference: {
+                        source: "UA", document: "Druid", page: 2,
+                        url: "https://media.wizards.com/2016/dnd/downloads/UA_Druid11272016_CAWS.pdf#page=2"
+                    }
+                }, {
+                    level: 10, name: "Guardian Spirit", type: FeatureType.Passive,
+                    reference: {
+                        source: "UA", document: "Druid", page: 2,
+                        url: "https://media.wizards.com/2016/dnd/downloads/UA_Druid11272016_CAWS.pdf#page=2"
+                    }
+                },  {
+                    level: 14, name: "Faithful Summons", type: FeatureType.Passive,
+                    reference: {
+                        source: "UA", document: "Druid", page: 2,
+                        url: "https://media.wizards.com/2016/dnd/downloads/UA_Druid11272016_CAWS.pdf#page=2"
+                    }
+                }
+            ],
             reference: {
                 source: "UA", document: "Druid", page: 1,
                 url: "https://media.wizards.com/2016/dnd/downloads/UA_Druid11272016_CAWS.pdf#page=1"
             }
         }, {
             name: "Circle of Twilight",
+            features: [
+                {
+                    level: 2, name: "Harvest's Scythe", type: FeatureType.Passive,
+                    reference: {
+                        source: "UA", document: "Druid", page: 3,
+                        url: "https://media.wizards.com/2016/dnd/downloads/UA_Druid11272016_CAWS.pdf#page=3"
+                    }
+                }, {
+                    level: 6, name: "Speech Beyond the Grave", type: FeatureType.Passive,
+                    reference: {
+                        source: "UA", document: "Druid", page: 3,
+                        url: "https://media.wizards.com/2016/dnd/downloads/UA_Druid11272016_CAWS.pdf#page=3"
+                    }
+                }, {
+                    level: 10, name: "Watcher at the Threshold", type: FeatureType.Passive,
+                    reference: {
+                        source: "UA", document: "Druid", page: 3,
+                        url: "https://media.wizards.com/2016/dnd/downloads/UA_Druid11272016_CAWS.pdf#page=3"
+                    }
+                }, {
+                    level: 14, name: "Paths of the Dead", type: FeatureType.Passive,
+                    reference: {
+                        source: "UA", document: "Druid", page: 3,
+                        url: "https://media.wizards.com/2016/dnd/downloads/UA_Druid11272016_CAWS.pdf#page=3"
+                    }
+                }
+            ],
             reference: {
                 source: "UA", document: "Druid", page: 2,
                 url: "https://media.wizards.com/2016/dnd/downloads/UA_Druid11272016_CAWS.pdf#page=2"
