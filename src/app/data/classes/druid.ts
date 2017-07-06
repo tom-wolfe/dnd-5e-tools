@@ -136,34 +136,34 @@ export const Druid: ClassModels.Class = new ClassModels.Class({
             name: "Circle of the Shepherd",
             features: [
                 {
-                    level: 2, name: "Spirit Bond", type: FeatureType.Passive,
+                    level: 2, name: "Speech of the Woods", type: FeatureType.Passive,
                     reference: {
-                        source: "UA", document: "Druid", page: 2,
-                        url: "https://media.wizards.com/2016/dnd/downloads/UA_Druid11272016_CAWS.pdf#page=2"
+                        source: "UA", document: "Revised Class Options", page: 1,
+                        url: "https://media.wizards.com/2017/dnd/downloads/June5UA_RevisedClassOptv1.pdf#page=1"
                     }
                 }, {
-                    level: 2, name: "Beast Speech", type: FeatureType.Passive,
+                    level: 2, name: "Spirit Totem", type: FeatureType.Passive,
                     reference: {
-                        source: "UA", document: "Druid", page: 2,
-                        url: "https://media.wizards.com/2016/dnd/downloads/UA_Druid11272016_CAWS.pdf#page=2"
+                        source: "UA", document: "Revised Class Options", page: 1,
+                        url: "https://media.wizards.com/2017/dnd/downloads/June5UA_RevisedClassOptv1.pdf#page=1"
                     }
                 }, {
                     level: 6, name: "Mighty Summoner", type: FeatureType.Passive,
                     reference: {
-                        source: "UA", document: "Druid", page: 2,
-                        url: "https://media.wizards.com/2016/dnd/downloads/UA_Druid11272016_CAWS.pdf#page=2"
+                        source: "UA", document: "Revised Class Options", page: 2,
+                        url: "https://media.wizards.com/2017/dnd/downloads/June5UA_RevisedClassOptv1.pdf#page=2"
                     }
                 }, {
                     level: 10, name: "Guardian Spirit", type: FeatureType.Passive,
                     reference: {
-                        source: "UA", document: "Druid", page: 2,
-                        url: "https://media.wizards.com/2016/dnd/downloads/UA_Druid11272016_CAWS.pdf#page=2"
+                        source: "UA", document: "Revised Class Options", page: 2,
+                        url: "https://media.wizards.com/2017/dnd/downloads/June5UA_RevisedClassOptv1.pdf#page=2"
                     }
                 },  {
                     level: 14, name: "Faithful Summons", type: FeatureType.Passive,
                     reference: {
-                        source: "UA", document: "Druid", page: 2,
-                        url: "https://media.wizards.com/2016/dnd/downloads/UA_Druid11272016_CAWS.pdf#page=2"
+                        source: "UA", document: "Revised Class Options", page: 2,
+                        url: "https://media.wizards.com/2017/dnd/downloads/June5UA_RevisedClassOptv1.pdf#page=2"
                     }
                 }
             ],

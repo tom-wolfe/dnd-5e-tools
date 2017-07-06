@@ -281,46 +281,46 @@ export const Fighter: ClassModels.Class = new ClassModels.Class({
             name: "Cavalier",
             features: [
                 {
-                    level: 3, name: "Bonus Proficiencies", type: FeatureType.Passive,
+                    level: 3, name: "Bonus Proficiency", type: FeatureType.Passive,
                     reference: {
-                        source: "UA", document: "Kits of Old", page: 3,
-                        url: "http://media.wizards.com/2015/downloads/dnd/04_UA_Classics_Revisited.pdf#page3"
+                        source: "UA", document: "Revised Class Options", page: 2,
+                        url: "https://media.wizards.com/2017/dnd/downloads/June5UA_RevisedClassOptv1.pdf#page=2"
                     }
                 }, {
                     level: 3, name: "Born to the Saddle", type: FeatureType.Passive,
                     reference: {
-                        source: "UA", document: "Kits of Old", page: 3,
-                        url: "http://media.wizards.com/2015/downloads/dnd/04_UA_Classics_Revisited.pdf#page3"
+                        source: "UA", document: "Revised Class Options", page: 2,
+                        url: "https://media.wizards.com/2017/dnd/downloads/June5UA_RevisedClassOptv1.pdf#page=2"
                     }
                 }, {
                     level: 3, name: "Combat Superiority", type: FeatureType.Passive,
                     reference: {
-                        source: "UA", document: "Kits of Old", page: 3,
-                        url: "http://media.wizards.com/2015/downloads/dnd/04_UA_Classics_Revisited.pdf#page3"
+                        source: "UA", document: "Revised Class Options", page: 2,
+                        url: "https://media.wizards.com/2017/dnd/downloads/June5UA_RevisedClassOptv1.pdf#page=2"
                     }
                 }, {
                     level: 7, name: "Ferocious Charger", type: FeatureType.Passive,
                     reference: {
-                        source: "UA", document: "Kits of Old", page: 3,
-                        url: "http://media.wizards.com/2015/downloads/dnd/04_UA_Classics_Revisited.pdf#page3"
+                        source: "UA", document: "Revised Class Options", page: 3,
+                        url: "https://media.wizards.com/2017/dnd/downloads/June5UA_RevisedClassOptv1.pdf#page=3"
                     }
                 }, {
                     level: 10, name: "Improved Combat Superiority", type: FeatureType.Passive,
                     reference: {
-                        source: "UA", document: "Kits of Old", page: 3,
-                        url: "http://media.wizards.com/2015/downloads/dnd/04_UA_Classics_Revisited.pdf#page3"
+                        source: "UA", document: "Revised Class Options", page: 3,
+                        url: "https://media.wizards.com/2017/dnd/downloads/June5UA_RevisedClassOptv1.pdf#page=3"
                     }
                 }, {
                     level: 15, name: "Relentless", type: FeatureType.Passive,
                     reference: {
-                        source: "UA", document: "Kits of Old", page: 3,
-                        url: "http://media.wizards.com/2015/downloads/dnd/04_UA_Classics_Revisited.pdf#page3"
+                        source: "UA", document: "Revised Class Options", page: 3,
+                        url: "https://media.wizards.com/2017/dnd/downloads/June5UA_RevisedClassOptv1.pdf#page=3"
                     }
                 }
             ],
             reference: {
-                source: "UA", document: "Kits of Old", page: 3,
-                url: "http://media.wizards.com/2015/downloads/dnd/04_UA_Classics_Revisited.pdf#page3"
+                source: "UA", document: "Revised Class Options", page: 2,
+                        url: "https://media.wizards.com/2017/dnd/downloads/June5UA_RevisedClassOptv1.pdf#page=2"
             },
         }, {
             name: "Scout",

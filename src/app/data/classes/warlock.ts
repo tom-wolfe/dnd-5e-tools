@@ -66,6 +66,12 @@ export const Warlock: ClassModels.Class = new ClassModels.Class({
                 url: "https://media.wizards.com/2017/dnd/downloads/20170213_Wizrd_Wrlck_UAv2_i48nf.pdf#page=2"
             }
         }, {
+            name: "The Celestial",
+            reference: {
+                source: "UA", document: "Revised Class Options", page: 1,
+                url: "https://media.wizards.com/2017/dnd/downloads/June5UA_RevisedClassOptv1.pdf#page=4"
+            }
+        }, {
             name: "The Seeker",
             reference: {
                 source: "UA", document: "The Faithful", page: 1,

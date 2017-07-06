@@ -68,8 +68,8 @@ export const Paladin: ClassModels.Class = new ClassModels.Class({
         }, {
             name: "Oath of Conquest",
             reference: {
-                source: "UA", document: "Paladin", page: 1,
-                url: "http://media.wizards.com/2016/dnd/downloads/UAPaladin_SO_20161219_1.pdf#page=1"
+                source: "UA", document: "Revised Class Options", page: 3,
+                url: "https://media.wizards.com/2017/dnd/downloads/June5UA_RevisedClassOptv1.pdf#page=3"
             }
         }, {
             name: "Oath of Treachery",
