@@ -4,12 +4,12 @@
   "description": "D&D 5th Edition Tools",
   "main": "main.ts",
   "scripts": {
-    "ng": "ng",
-    "start": "npm run lint && ng serve",
-    "build": "npm run lint && ng build",
-    "test": "ng test",
-    "lint": "ng lint --type-check",
-    "e2e": "ng e2e"
+    "build": "npm run lint && \"./node_modules/.bin/ng\" build",
+    "e2e": "./node_modules/.bin/ng e2e",
+    "lint": "./node_modules/.bin/ng lint --type-check",
+    "serve": "./node_modules/.bin/ng serve",
+    "start": "npm run lint && npm run serve",
+    "test": "./node_modules/.bin/ng test"
   },
   "repository": {
     "type": "git",
