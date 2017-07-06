@@ -130,12 +130,75 @@ export const Bard: ClassModels.Class = new ClassModels.Class({
             },
         }, {
             name: "College of Satire",
+            features: [
+                {
+                    level: 3, name: "Bonus Proficiencies", type: FeatureType.Passive,
+                    // TODO: Add extra proficiencies.
+                    reference: {
+                        source: "UA", document: "Kits of Old", page: 2,
+                        url: "http://media.wizards.com/2015/downloads/dnd/04_UA_Classics_Revisited.pdf#page2"
+                    },
+                }, {
+                    level: 3, name: "Tumbling Fool", type: FeatureType.Passive,
+                    // TODO: Add extra proficiencies.
+                    reference: {
+                        source: "UA", document: "Kits of Old", page: 2,
+                        url: "http://media.wizards.com/2015/downloads/dnd/04_UA_Classics_Revisited.pdf#page2"
+                    },
+                }, {
+                    level: 6, name: "Fool's Insight", type: FeatureType.Passive,
+                    reference: {
+                        source: "UA", document: "Kits of Old", page: 2,
+                        url: "http://media.wizards.com/2015/downloads/dnd/04_UA_Classics_Revisited.pdf#page2"
+                    },
+                }, {
+                    level: 14, name: "Fool's Luck", type: FeatureType.Passive,
+                    reference: {
+                        source: "UA", document: "Kits of Old", page: 3,
+                        url: "http://media.wizards.com/2015/downloads/dnd/04_UA_Classics_Revisited.pdf#page3"
+                    },
+                }
+            ],
             reference: {
                 source: "UA", document: "Kits of Old", page: 2,
                 url: "http://media.wizards.com/2015/downloads/dnd/04_UA_Classics_Revisited.pdf#page2"
             },
         }, {
             name: "College of Swords",
+            features: [
+                {
+                    level: 3, name: "Bonus Proficiencies", type: FeatureType.Passive,
+                    // TODO: Add extra proficiencies.
+                    reference: {
+                        source: "UA", document: "Kits of Old", page: 1,
+                        url: "http://media.wizards.com/2015/downloads/dnd/04_UA_Classics_Revisited.pdf#page1"
+                    },
+                }, {
+                    level: 3, name: "Fighting Style", type: FeatureType.Passive,
+                    reference: {
+                        source: "UA", document: "Kits of Old", page: 1,
+                        url: "http://media.wizards.com/2015/downloads/dnd/04_UA_Classics_Revisited.pdf#page1"
+                    },
+                }, {
+                    level: 3, name: "Blade Flourish", type: FeatureType.Passive,
+                    reference: {
+                        source: "UA", document: "Kits of Old", page: 1,
+                        url: "http://media.wizards.com/2015/downloads/dnd/04_UA_Classics_Revisited.pdf#page1"
+                    },
+                }, {
+                    level: 6, name: "Extra Attack", type: FeatureType.Passive,
+                    reference: {
+                        source: "UA", document: "Kits of Old", page: 2,
+                        url: "http://media.wizards.com/2015/downloads/dnd/04_UA_Classics_Revisited.pdf#page2"
+                    },
+                }, {
+                    level: 14, name: "Battle Magic", type: FeatureType.Passive,
+                    reference: {
+                        source: "UA", document: "Kits of Old", page: 2,
+                        url: "http://media.wizards.com/2015/downloads/dnd/04_UA_Classics_Revisited.pdf#page2"
+                    },
+                }
+            ],
             reference: {
                 source: "UA", document: "Kits of Old", page: 1,
                 url: "http://media.wizards.com/2015/downloads/dnd/04_UA_Classics_Revisited.pdf#page1"
