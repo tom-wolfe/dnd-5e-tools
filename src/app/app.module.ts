@@ -7,6 +7,7 @@ import { AppComponent } from "./app.component";
 
 import { CharacterGeneratorModule } from "./character-generator/character-generator.module";
 import { ItemGeneratorModule } from "./item-generator/item-generator.module";
+import { InitiativeTrackerModule } from "./initiative-tracker/initiative-tracker.module";
 import { NameGeneratorModule } from "./name-generator/name-generator.module";
 
 @NgModule({
@@ -15,6 +16,7 @@ import { NameGeneratorModule } from "./name-generator/name-generator.module";
     CharacterGeneratorModule,
     NameGeneratorModule,
     ItemGeneratorModule,
+    InitiativeTrackerModule,
     CoreModule,
   ],
   declarations: [AppComponent],

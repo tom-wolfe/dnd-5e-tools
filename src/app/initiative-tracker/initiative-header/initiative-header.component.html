@@ -1,0 +1,27 @@
+<div class="bb-thick bt-thick">
+  <div class="row">
+    <div class="col-md-3 col-6 level">
+      <div class="attribute-block">
+        <div class="attribute-title">Initiative</div>
+        <span class="primary">{{currentInitiative || "--"}}</span>
+      </div>
+    </div>
+    <div class="col-md-3 col-6 level">
+      <div class="attribute-block">
+        <div class="attribute-title">Round</div>
+        <span class="primary">{{currentRound}}</span>
+      </div>
+    </div>
+    <div class="col-md-3 col-6 level">
+      <div class="attribute-block">
+        <div class="attribute-title">Time Past</div>
+        <span class="primary">{{timePast}}</span>
+      </div>
+    </div>
+    <div class="col-md-3 col-6 level">
+      <div class="attribute-block">
+        <button class="btn btn-lg btn-primary" (click)="nextClick.emit(null)">Next</button>
+      </div>
+    </div>
+  </div>
+</div>

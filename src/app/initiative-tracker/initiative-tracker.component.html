@@ -1,0 +1,14 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1>Initiative Tracker</h1>
+    <div class="row">
+      <div class="col-12 text-right">
+        <button type="button" class="btn btn-primary btn-lg" (click)="onResetClick()">Reset Tracker</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <dnd-initiative-header (nextClick)="onNextClick()" [currentInitiative]="currentInitiative" [currentRound]="currentRound"></dnd-initiative-header>
+  <dnd-initiative-list [creatures]="creatures" [currentInitiative]="currentInitiative"></dnd-initiative-list>
+</div>
