@@ -1,0 +1,48 @@
+@import "../../../styles/variables.scss";
+
+.initiative {
+    margin-bottom: 0;
+
+    th {
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    thead tr th {
+        border-bottom: 1px solid $brand-primary;
+    }
+
+    .active {
+        td {
+            background: rgba($brand-primary, 0.7) !important;
+            color: white;
+        }
+    }
+
+    .disabled {
+        background: #eee;
+        color: grey;
+    }
+}
+
+.col-active,
+.col-remove {
+    width: 8.33%;
+    text-align: center;
+}
+
+.col-initiative {
+    width: 16.66%;
+    text-align: center;
+}
+
+.col-remove {
+    color: $brand-primary;
+    padding: 0.4rem;
+    font-size: 24px;
+}
+
+.initiative-footer {
+    padding: 0.75rem;
+}

@@ -9,6 +9,7 @@ import { ClipboardModule } from "ngx-clipboard";
 import { CollapseDirective } from "app/shared/collapse.directive";
 import { CodemirrorModule } from "ng2-codemirror/lib";
 
+import { SlideToggleComponent } from "./slide-toggle/slide-toggle.component";
 import { SourceReferenceComponent } from "./source-reference/source-reference.component";
 import { ViewModeComponent } from "./view-mode/view-mode.component";
 
@@ -25,7 +26,8 @@ import { ViewModeComponent } from "./view-mode/view-mode.component";
   declarations: [
     CollapseDirective,
     SourceReferenceComponent,
-    ViewModeComponent
+    ViewModeComponent,
+    SlideToggleComponent
   ],
   exports: [
     CommonModule,
@@ -36,7 +38,8 @@ import { ViewModeComponent } from "./view-mode/view-mode.component";
     ClipboardModule,
     CollapseDirective,
     SourceReferenceComponent,
-    ViewModeComponent
+    ViewModeComponent,
+    SlideToggleComponent
   ]
 })
 export class SharedModule { }
