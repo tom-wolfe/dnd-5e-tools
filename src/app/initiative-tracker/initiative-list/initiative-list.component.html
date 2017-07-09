@@ -1,47 +1,53 @@
-<table class="table initiative">
-  <thead>
-    <tr>
-      <th class="col-active">Active?</th>
-      <th class="col-name">Name</th>
-      <th class="col-initiative">Initiative</th>
-      <th class="col-remove">Remove</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let creature of sortedCreatures" [ngClass]="{disabled: !creature.active, active: currentInitiative === creature.initiative && creature.active}">
-      <td class="col-active">
-        <dnd-slide-toggle [(ngModel)]="creature.active">
-          <span class="sr-only">Active?</span>
-        </dnd-slide-toggle>
-      </td>
-      <td class="col-name">{{creature.name}}</td>
-      <td class="col-initiative">{{creature.initiative}}</td>
-      <td class="col-remove"><a href="#" (click)="onRemoveClick($event, creature)"><i class="mdi mdi-minus-circle"></i></a></td>
-    </tr>
-    <tr *ngIf="!creatures || creatures.length === 0">
-      <td class="col-name" colspan="4">No creatures. Add one below!</td>
-    </tr>
-  </tbody>
-</table>
-<div class="initiative-footer bt-thin">
-  <div class="row">
-    <div class="col-sm-1">
-      <label class="sr-only" for="name">Count</label>
-      <input type="number" class="form-control" id="count" placeholder="#" [(ngModel)]="newCreatureCount" (keydown.enter)="onAddToInitiativeClick()"
-        #count>
-    </div>
-    <div class="col-sm-9">
-      <label class="sr-only" for="name">Name</label>
-      <input type="text" class="form-control" id="name" placeholder="Goblin" [(ngModel)]="newCreature.name" (keydown.enter)="onAddToInitiativeClick()">
-    </div>
-    <div class="col-sm-2">
-      <label class="sr-only" for="initiative">Initiative</label>
-      <input type="text" class="form-control" id="initiative" placeholder="1d20 + 2" [(ngModel)]="newCreature.initiative" (keydown.enter)="onAddToInitiativeClick()">
+<div class="initiative">
+  <div class="header">
+    <div class="row">
+      <div class="col-sm-1 col-active">Active?</div>
+      <div class="col-sm-6 col-name">Name</div>
+      <div class="col-sm-2 col-initiative">Initiative</div>
+      <div class="col-sm-2 col-hp">HP</div>
+      <div class="col-sm-1 col-remove">Remove</div>
     </div>
   </div>
-  <div class="row mt-2 text-right">
-    <div class="col-sm-12">
-      <button type="submit" class="btn btn-lg btn-primary" (click)="onAddToInitiativeClick()">Add to Initiative</button>
+  <div class="body">
+    <div class="wrapper" *ngFor="let creature of sortedCreatures" [ngClass]="{disabled: !creature.active, active: currentInitiative === creature.initiative && creature.active}">
+      <div class="row">
+        <div class="col-sm-1 col-active">
+          <dnd-slide-toggle [(ngModel)]="creature.active">
+            <span class="sr-only">Active?</span>
+          </dnd-slide-toggle>
+        </div>
+        <div class="col-sm-6 col-name">{{creature.name}}</div>
+        <div class="col-sm-2 col-initiative">{{creature.initiative}}</div>
+        <div class="col-sm-2 col-hp">{{creature.currentHp}}/{{creature.maximumHp}}</div>
+        <div class="col-sm-1 col-remove"><a href="#" (click)="onRemoveClick($event, creature)"><i class="mdi mdi-minus-circle"></i></a></div>
+      </div>
+    </div>
+    <div class="row" *ngIf="!creatures || creatures.length === 0">
+      <div class="col-sm-12 no-creatures">No creatures. Add one below!</div>
+    </div>
+  </div>
+  <div class="footer bt-thin pt-2">
+    <div class="row">
+      <div class="col-sm-1">
+        <label class="sr-only" for="name">Count</label>
+        <input type="number" class="form-control" id="count" placeholder="#" [(ngModel)]="newCreatureCount" (keydown.enter)="onAddToInitiativeClick()"
+          #count>
+      </div>
+      <div class="col-sm-6">
+        <label class="sr-only" for="name">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Goblin" [(ngModel)]="newCreature.name" (keydown.enter)="onAddToInitiativeClick()">
+      </div>
+      <div class="col-sm-2">
+        <label class="sr-only" for="initiative">Initiative</label>
+        <input type="text" class="form-control" id="initiative" placeholder="1d20 + 2" [(ngModel)]="newCreature.initiative" (keydown.enter)="onAddToInitiativeClick()">
+      </div>
+      <div class="col-sm-2">
+        <label class="sr-only" for="hp">HP</label>
+        <input type="text" class="form-control" id="hp" placeholder="HP" [(ngModel)]="newCreature.maximumHp" (keydown.enter)="onAddToInitiativeClick()">
+      </div>
+      <div class="col-sm-1 col-remove">
+        <a href="#" (click)="onAddToInitiativeClick($event)"><i class="mdi mdi-plus-circle"></i><label class="sr-only">Add to Initiative</label></a>
+      </div>
     </div>
   </div>
 </div>
