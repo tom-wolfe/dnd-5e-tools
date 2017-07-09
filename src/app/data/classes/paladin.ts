@@ -81,9 +81,14 @@ export const Paladin: ClassModels.Class = new ClassModels.Class({
     archetypes: [
         {
             name: "Oathbreaker",
-            reference: {
-                source: "DMG", page: 97
-            }
+            features: [
+                { level: 3, name: "Channel Divinity: Control Undead", type: FeatureType.Passive, reference: { source: "DMG", page: 97 } },
+                { level: 3, name: "Channel Divinity: Dreadful Aspect", type: FeatureType.Passive, reference: { source: "DMG", page: 97 } },
+                { level: 7, name: "Aura of Hate", type: FeatureType.Passive, reference: { source: "DMG", page: 97 } },
+                { level: 15, name: "Supernatural Resistance", type: FeatureType.Passive, reference: { source: "DMG", page: 97 } },
+                { level: 20, name: "Dread Lord", type: FeatureType.Passive, reference: { source: "DMG", page: 97 } },
+            ],
+            reference: { source: "DMG", page: 97 }
         }, {
             name: "Oath of Devotion",
             features: [

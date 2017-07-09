@@ -56,10 +56,19 @@ export const Cleric: ClassModels.Class = new ClassModels.Class({
     archetypes: [
         {
             name: "Death Domain",
-            // TODO: Death Domain from DMG.
-            reference: {
-                source: "DMG", page: 96
-            }
+            features: [
+                {
+                    level: 1, name: "Bonus Proficiency", type: FeatureType.Passive,
+                    // TODO: Gain proficiencies.
+                    reference: { source: "DMG", page: 96 }
+                },
+                { level: 1, name: "Reaper", type: FeatureType.Passive, reference: { source: "DMG", page: 96 } },
+                { level: 2, name: "Channel Divinity: Touch of Death", type: FeatureType.Passive, reference: { source: "DMG", page: 97 } },
+                { level: 6, name: "Inescapable Destruction", type: FeatureType.Passive, reference: { source: "DMG", page: 97 } },
+                { level: 8, name: "Divine Strike", type: FeatureType.Passive, reference: { source: "DMG", page: 97 } },
+                { level: 17, name: "Improved Reaper", type: FeatureType.Passive, reference: { source: "DMG", page: 97 } }
+            ],
+            reference: { source: "DMG", page: 96 }
         }, {
             name: "Forge Domain",
             features: [
