@@ -5,7 +5,7 @@ import { AboutComponent } from "./about/about.component";
 import { NotFoundComponent } from "./not-found/not-found.component";
 
 const coreRoutes: Routes = [
-  { path: "", redirectTo: "/character-generator", pathMatch: "full" },
+  { path: "", redirectTo: "/characters", pathMatch: "full" },
   { path: "about", component: AboutComponent },
   { path: "**", component: NotFoundComponent }
 ];

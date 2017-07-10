@@ -65,7 +65,7 @@ export class RaceBuilder extends BaseCharacterBuilder {
             if (abilityPoints > 0) {
                 index = index || abilityList.indexOf(ability);
                 if (ability && index > -1) {
-                    character.baseAbilities[ability] += 1;
+                    character.abilityBonuses.set(ability, (character.abilityBonuses.get(ability) || 0) + 1);
                     abilityList.splice(index, 1);
                     abilityPoints -= 1;
                 }

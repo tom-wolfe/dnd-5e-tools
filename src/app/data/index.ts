@@ -1,5 +1,6 @@
 
 export * from "./abilities";
+export * from "./feats";
 export * from "./skills";
 
 export * from "./alignments";

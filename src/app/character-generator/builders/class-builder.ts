@@ -1,4 +1,4 @@
-import { Levels } from "app/data";
+import { Feats, Levels } from "app/data";
 import * as Data from "app/data/";
 import * as Classes from "app/data/classes";
 import { Armor, ArmorType } from "app/models/equipment";
@@ -14,6 +14,7 @@ export class ClassBuilder extends BaseCharacterBuilder {
     build(character: Character): void {
         this.randomizeLevel(character);
         this.randomizeClass(character);
+        this.randomizeAbilityImprovements(character);
         this.randomizeHitPoints(character);
         this.randomizeEquipment(character);
         this.applyFeatures(character);
@@ -59,6 +60,31 @@ export class ClassBuilder extends BaseCharacterBuilder {
 
     private randomizeLevel(character: Character) {
         character.level = Levels[this.numGen.numberBetween(this.config.minLevel, this.config.maxLevel)];
+    }
+
+    private randomizeAbilityImprovements(character: Character) {
+        const improvements = character.class.abilityScoreImprovements.filter(i => i <= character.level.number);
+        improvements.forEach(() => {
+            if (this.numGen.numberBetween(1, 12) % 3 === 0) {
+                this.applyRandomFeature(character);
+            } else {
+                this.applyAbilityScoreImprovement(character);
+            }
+        });
+    }
+
+    private applyRandomFeature(character: Character) {
+        const feats = _.difference(Feats.FeatList, character.features);
+        const feat = feats[this.numGen.rollDie(feats.length) - 1];
+        character.features.push(feat);
+    }
+
+    private applyAbilityScoreImprovement(character: Character) {
+        // TODO: This doesn't work because abilities aren't there yet.
+        // TODO: Apply ability score improvement.
+        const str = (character.baseAbilities.get("STR") || 0) + 2;
+        character.baseAbilities.set("STR", str);
+        console.log("Set str: " + str);
     }
 
     private randomizeHitPoints(character: Character) {
