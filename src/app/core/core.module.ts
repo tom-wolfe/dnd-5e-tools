@@ -1,6 +1,7 @@
 import { NgModule, Optional, SkipSelf } from "@angular/core";
 import { RouterModule } from "@angular/router";
 
+import { AboutComponent } from "app/core/about/about.component";
 import { FooterComponent } from "app/core/footer/footer.component";
 import { NavbarComponent } from "app/core/navbar/navbar.component";
 import { NotFoundComponent } from "app/core/not-found/not-found.component";
@@ -17,6 +18,7 @@ import { throwIfAlreadyLoaded } from "./module-import-guard";
         CoreRoutingModule
     ],
     declarations: [
+        AboutComponent,
         FooterComponent,
         NavbarComponent,
         SidebarComponent,

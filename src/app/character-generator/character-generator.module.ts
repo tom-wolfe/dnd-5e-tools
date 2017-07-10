@@ -3,6 +3,7 @@ import { NgModule } from "@angular/core";
 import { SharedModule } from "app/shared/shared.module";
 
 import { AbilityComponent, AbilityListComponent } from "./abilities";
+import { ActionComponent, ActionListComponent } from "./actions";
 import { BackgroundComponent } from "./background";
 import { CharacterComponent, CharacterHeaderComponent } from "./character";
 import { CharacterGeneratorRoutingModule } from "./character-generator-routing.module";
@@ -19,6 +20,8 @@ import { StatsComponent } from "./stats";
   declarations: [
     AbilityComponent,
     AbilityListComponent,
+    ActionComponent,
+    ActionListComponent,
     BackgroundComponent,
     CharacterComponent,
     CharacterGeneratorComponent,

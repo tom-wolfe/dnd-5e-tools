@@ -18,19 +18,12 @@ export const Halfling: RaceModels.Race = new RaceModels.Race({
     features: [
         {
             name: "Lucky", type: FeatureType.Passive,
-            description: `
-                When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll.
-            `,
             reference: { source: "PHB", page: 28, url: "https://www.dndbeyond.com/characters/races/halfling#Lucky" }
         }, {
             name: "Brave", type: FeatureType.Passive,
-            description: `
-                You have advantage on saving throws against being frightened.
-            `,
             reference: { source: "PHB", page: 28, url: "https://www.dndbeyond.com/characters/races/halfling#Brave" }
         }, {
             name: "Halfling Nimbleness", type: FeatureType.Passive,
-            description: "You can move through the space of any creature that is of a size larger than yours.",
             reference: { source: "PHB", page: 28, url: "https://www.dndbeyond.com/characters/races/halfling#HalflingNimbleness" }
         }
     ],
@@ -42,9 +35,6 @@ export const Halfling: RaceModels.Race = new RaceModels.Race({
             features: [
                 {
                     name: "Naturally Stealthy", type: FeatureType.Passive,
-                    description: `
-                        You can attempt to hide even when you are obscured only by a creature that is at least one size larger than you.
-                    `,
                     reference: { source: "PHB", page: 28 }
                 }
             ],
@@ -56,9 +46,6 @@ export const Halfling: RaceModels.Race = new RaceModels.Race({
                 {
                     name: "Stout Resilience", type: FeatureType.Passive,
                     damageResistances: [DamageType.Poison],
-                    description: `
-                        You have advantage on saving throws against poison, and you have resistance against poison damage.
-                    `,
                     reference: { source: "PHB", page: 28, url: "https://www.dndbeyond.com/characters/races/halfling#StoutResilience" }
                 }
             ],

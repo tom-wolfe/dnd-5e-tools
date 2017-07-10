@@ -32,12 +32,6 @@ export const Soldier: Characters.Background = new Characters.Background({
     features: [{
         name: "Military Rank",
         type: FeatureType.Passive,
-        description: `
-            You have a military rank from your career as a soldier. Soldiers loyal to your former military organization still recognize your
-            authority and influence, and they defer to you if they are of a lower rank. You can invoke your rank to exert influence over
-            other soldiers and requisition simple equipment or horses for temporary use. You can also usually gain access to friendly
-            military encampments and fortresses where your rank is recognized.
-        `,
         reference: { source: "PHB", page: 140, url: "https://www.dndbeyond.com/characters/backgrounds/soldier#military-rank" },
     }],
     personalityTraits: [

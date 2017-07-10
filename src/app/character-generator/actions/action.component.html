@@ -1,0 +1,6 @@
+<div class="feature">
+    <h3 class="feature-name">{{action.name}}.
+        <dnd-source-reference *ngIf="action.reference" [reference]="action.reference"></dnd-source-reference>
+    </h3>
+    <span class="feature-description" [innerHTML]="action.description"></span>
+</div>

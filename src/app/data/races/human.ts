@@ -25,11 +25,11 @@ export const Human: RaceModels.Race = new RaceModels.Race({
         }, {
             name: "Variant",
             abilityMods: { additionalPoints: 2 },
+            // TODO: Random feature.
             features: [
                 {
                     name: "Skill Proficiency", type: FeatureType.Passive,
                     skillProficiencies: [{ proficiencies: Skills.SkillList, count: 1 }],
-                    description: "You gain proficiency in one skill of your choice.",
                     reference: { source: "PHB", page: 29, url: "https://www.dndbeyond.com/characters/races/human#Skills" },
                 },
             ],

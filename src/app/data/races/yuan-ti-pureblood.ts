@@ -22,21 +22,14 @@ export const YuanTiPureblood: RaceModels.Race = new RaceModels.Race({
         {
             name: "Innate Spellcasting", type: FeatureType.Active,
             usage: { times: 1, timeUnit: TimeUnit.ShortRest },
-            description: `
-                    You know the poison spray cantrip. You can cast animal friendship an unlimited number of times with this trait,
-                    but you can target only snakes with it. Starting at 3rd level, you can also cast suggestion with this trait. Once
-                    you cast it, you can't do so again until you finish a long rest. Charisma is your spellcasting ability for these spells.
-                `,
-                reference: { source: "VGM", page: 120 },
+            reference: { source: "VGM", page: 120 },
         }, {
             name: "Magic Resistance", type: FeatureType.Passive,
-            description: "You have advantage on saving throws against spells and other magical effects.",
             reference: { source: "VGM", page: 120 },
         }, {
             name: "Poison Immunity", type: FeatureType.Passive,
             damageImmunities: [DamageType.Poison],
             conditionImmunities: [Condition.Poisoned],
-            description: "You are immune to poison damage and the poisoned condition.",
             reference: { source: "VGM", page: 120 },
         }
     ],

@@ -4,12 +4,15 @@ import { EquipmentOption } from "../equipment";
 import { ProficiencyOption } from "../proficiencies";
 import { Reference } from "../reference";
 import { Archetype } from "./archetype";
+import { ClassFeature } from "./class-feature";
 
 export class Class {
     name: string;
     reference: Reference;
+    castingAbility?: string;
     hitDie: number;
-    primaryStat: string;
+    features?: ClassFeature[]; // TODO: Make mandatory
+    primaryAbility: string;
     savingThrows: string[];
     equipment: EquipmentOption[];
     skillProficiencies: ProficiencyOption<Abilities.Skill>[];
@@ -18,6 +21,7 @@ export class Class {
     toolProficiencies: ProficiencyOption<Equipment.Item>[];
     otherProficiencies: ProficiencyOption<Equipment.Weapon>[];
     archetypeName: { singular: string, plural: string };
+    archetypeLevel: number;
     archetypes?: Archetype[];
     constructor(initial: Class) { Object.assign(this, initial); }
 };

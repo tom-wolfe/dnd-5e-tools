@@ -3,6 +3,7 @@ import * as Descriptors from "app/shared/descriptors";
 import * as _ from "lodash";
 import * as Collections from "typescript-collections";
 
+import { Action } from "./action";
 import * as Abilities from "../abilities";
 import * as Attributes from "../attributes";
 import * as Classes from "../classes";
@@ -65,12 +66,8 @@ export class Character {
         return _.join(this.armorProficiencies.map(x => Equipment.ArmorType[x.thing].toString()), ", ") || "[None]";
     }
 
-    get actions(): Feature[] {
-        return _.union(this.activeFeatures, this.weaponAttacks);
-    }
-
-    get activeFeatures(): Feature[] {
-        return this.features.filter(feat => feat.type === FeatureType.Active);
+    get actions(): Action[] {
+        return this.weaponAttacks;
     }
 
     get ageClassification(): string {
@@ -239,10 +236,6 @@ export class Character {
         return _.join(this.languages.map(x => x.name).sort(), ", ") || "[None]";
     }
 
-    get otherFeatures(): Feature[] {
-        return this.features.filter(feat => feat.type !== FeatureType.Active);
-    }
-
     get otherProficiencyString(): string {
         return _.join(this.otherProficiencies.map(t => t.thing.name).sort(), ", ") || "[None]";
     }
@@ -324,8 +317,8 @@ export class Character {
         return this.speed.walk + " ft.";
     }
 
-    get weaponAttacks(): Feature[] {
-        const retVal: Feature[] = [];
+    get weaponAttacks(): Action[] {
+        const retVal: Action[] = [];
         let weapons = this.equipment.keys().filter(e => e instanceof Equipment.Weapon);
         weapons = _.uniq(weapons);
         weapons.forEach((weapon: Equipment.Weapon) => {

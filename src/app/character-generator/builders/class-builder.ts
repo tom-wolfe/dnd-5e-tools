@@ -12,10 +12,11 @@ export class ClassBuilder extends BaseCharacterBuilder {
     constructor(config: CharacterBuilderConfig) { super(config); }
 
     build(character: Character): void {
-        this.randomizeClass(character);
         this.randomizeLevel(character);
+        this.randomizeClass(character);
         this.randomizeHitPoints(character);
         this.randomizeEquipment(character);
+        this.applyFeatures(character);
     }
 
     private randomizeClass(character: Character) {
@@ -26,7 +27,7 @@ export class ClassBuilder extends BaseCharacterBuilder {
             character.class = Classes.ClassList[classNum];
         }
 
-        if (character.class.archetypes) {
+        if (character.level.number >= character.class.archetypeLevel && character.class.archetypes) {
             if (this.config.classArchetype) {
                 character.classArchetype = this.config.classArchetype;
             } else {
@@ -81,6 +82,23 @@ export class ClassBuilder extends BaseCharacterBuilder {
         const armor = equipment.filter(a => a instanceof Armor && a.type !== ArmorType.Shield);
         if (armor.length > 0) {
             character.equippedArmor = armor[this.numGen.rollDie(armor.length) - 1] as Armor;
+        }
+    }
+
+    private applyFeatures(character: Character) {
+        if (character.class.features) {
+            character.class.features.forEach(feature => {
+                if (feature.level <= character.level.number) {
+                    this.applyFeature(character, feature);
+                }
+            });
+        }
+        if (character.classArchetype && character.classArchetype.features) {
+            character.classArchetype.features.forEach(feature => {
+                if (feature.level <= character.level.number) {
+                    this.applyFeature(character, feature);
+                }
+            });
         }
     }
 };
