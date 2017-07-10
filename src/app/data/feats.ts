@@ -1,4 +1,7 @@
+import { Character } from "../models/characters";
+import { ArmorType } from "../models/equipment";
 import * as Features from "../models/features";
+import * as _ from "lodash";
 
 export namespace Feats {
     export const FeatList: Features.Feature[] = [];
@@ -44,7 +47,9 @@ export namespace Feats {
     export const DefensiveDuelist: Features.Feature = new Features.Feature({
         name: "Defensive Duelist",
         type: Features.FeatureType.Passive,
-        // Set pre-requisite
+        prerequisite: (character: Character) => {
+            return character.abilities.get("DEX") >= 13;
+        },
         reference: { source: "PHB", page: 165, url: "https://www.dndbeyond.com/characters/feats/defensive-duelist" }
     });
     FeatList.push(DefensiveDuelist);
@@ -73,6 +78,9 @@ export namespace Feats {
     export const ElementalAdept: Features.Feature = new Features.Feature({
         name: "Elemental Adept",
         type: Features.FeatureType.Passive,
+        prerequisite: (character: Character) => {
+            return character.class.castingAbility !== undefined;
+        },
         reference: { source: "PHB", page: 166, url: "https://www.dndbeyond.com/characters/feats/elemental-adept" }
     });
     FeatList.push(ElementalAdept);
@@ -87,6 +95,9 @@ export namespace Feats {
     export const GreatWeaponMaster: Features.Feature = new Features.Feature({
         name: "Great Weapon Master",
         type: Features.FeatureType.Passive,
+        prerequisite: (character: Character) => {
+            return character.abilities.get("STR") >= 13;
+        },
         reference: { source: "PHB", page: 167, url: "https://www.dndbeyond.com/characters/feats/great-weapon-master" }
     });
     FeatList.push(GreatWeaponMaster);
@@ -101,6 +112,9 @@ export namespace Feats {
     export const HeavilyArmored: Features.Feature = new Features.Feature({
         name: "Heavily Armored",
         type: Features.FeatureType.Passive,
+        prerequisite: (character: Character) => {
+            return _.includes(character.armorProficiencies.map(p => p.thing), ArmorType.Medium);
+        },
         reference: { source: "PHB", page: 167, url: "https://www.dndbeyond.com/characters/feats/heavily-armored" }
     });
     FeatList.push(HeavilyArmored);
@@ -108,6 +122,9 @@ export namespace Feats {
     export const HeavyArmorMaster: Features.Feature = new Features.Feature({
         name: "Heavily Armored",
         type: Features.FeatureType.Passive,
+        prerequisite: (character: Character) => {
+            return _.includes(character.armorProficiencies.map(p => p.thing), ArmorType.Heavy);
+        },
         reference: { source: "PHB", page: 167, url: "https://www.dndbeyond.com/characters/feats/heavy-armor-master" }
     });
     FeatList.push(HeavyArmorMaster);
@@ -122,6 +139,9 @@ export namespace Feats {
     export const KeenMind: Features.Feature = new Features.Feature({
         name: "Keen Mind",
         type: Features.FeatureType.Passive,
+        prerequisite: (character: Character) => {
+            return character.abilities.get("CHA") >= 13;
+        },
         reference: { source: "PHB", page: 167, url: "https://www.dndbeyond.com/characters/feats/keen-mind" }
     });
     FeatList.push(KeenMind);
@@ -171,6 +191,9 @@ export namespace Feats {
     export const MediumArmorMaster: Features.Feature = new Features.Feature({
         name: "Medium Armor Master",
         type: Features.FeatureType.Passive,
+        prerequisite: (character: Character) => {
+            return _.includes(character.armorProficiencies.map(p => p.thing), ArmorType.Medium);
+        },
         reference: { source: "PHB", page: 168, url: "https://www.dndbeyond.com/characters/feats/medium-armor-master" }
     });
     FeatList.push(MediumArmorMaster);
@@ -185,6 +208,9 @@ export namespace Feats {
     export const ModeratelyArmored: Features.Feature = new Features.Feature({
         name: "Moderately Armored",
         type: Features.FeatureType.Passive,
+        prerequisite: (character: Character) => {
+            return _.includes(character.armorProficiencies.map(p => p.thing), ArmorType.Light);
+        },
         reference: { source: "PHB", page: 168, url: "https://www.dndbeyond.com/characters/feats/moderately-armored" }
     });
     FeatList.push(ModeratelyArmored);
@@ -220,6 +246,9 @@ export namespace Feats {
     export const RitualCaster: Features.Feature = new Features.Feature({
         name: "Ritual Caster",
         type: Features.FeatureType.Passive,
+        prerequisite: (character: Character) => {
+            return character.abilities.get("WIS") >= 13 || character.abilities.get("INT") >= 13;
+        },
         reference: { source: "PHB", page: 169, url: "https://www.dndbeyond.com/characters/feats/ritual-caster" }
     });
     FeatList.push(RitualCaster);
@@ -262,6 +291,9 @@ export namespace Feats {
     export const Skulker: Features.Feature = new Features.Feature({
         name: "Skulker",
         type: Features.FeatureType.Passive,
+        prerequisite: (character: Character) => {
+            return character.abilities.get("DEX") >= 13;
+        },
         reference: { source: "PHB", page: 170, url: "https://www.dndbeyond.com/characters/feats/skulker" }
     });
     FeatList.push(Skulker);
@@ -269,6 +301,9 @@ export namespace Feats {
     export const SpellSniper: Features.Feature = new Features.Feature({
         name: "Spell Sniper",
         type: Features.FeatureType.Passive,
+        prerequisite: (character: Character) => {
+            return character.class.castingAbility !== undefined;
+        },
         reference: { source: "PHB", page: 170, url: "https://www.dndbeyond.com/characters/feats/spell-sniper" }
     });
     FeatList.push(SpellSniper);
@@ -290,6 +325,9 @@ export namespace Feats {
     export const WarCaster: Features.Feature = new Features.Feature({
         name: "War Caster",
         type: Features.FeatureType.Passive,
+        prerequisite: (character: Character) => {
+            return character.class.castingAbility !== undefined;
+        },
         reference: { source: "PHB", page: 170, url: "https://www.dndbeyond.com/characters/feats/war-caster" }
     });
     FeatList.push(WarCaster);
