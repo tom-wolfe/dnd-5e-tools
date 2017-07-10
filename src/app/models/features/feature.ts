@@ -21,4 +21,7 @@ export class Feature {
     otherProficiencies?: ProficiencyOption<Equipment.Weapon>[];
     apply?: (character: Character) => void;
     reference: Reference;
+    constructor(feature?: Feature) {
+        Object.assign(this, feature);
+    }
 };
