@@ -5,7 +5,7 @@ import { ItemGeneratorComponent } from "./item-generator.component";
 
 const itemGeneratorRoutes: Routes = [
   {
-    path: "item-generator",
+    path: "items",
     children: [
       { path: "", component: ItemGeneratorComponent },
     ]
