@@ -1,0 +1,45 @@
+@import "../../../styles/variables.scss";
+
+.initiative {
+    margin-bottom: 0;
+
+    .row {
+        line-height: 2.5;
+    }
+
+    .header {
+        border-bottom: 1px solid $brand-primary;
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .col-active,
+    .col-remove,
+    .col-hp {
+        text-align: center;
+    }
+
+    .col-initiative {
+        text-align: center;
+    }
+
+    .body,
+    .footer {
+        .col-remove {
+            color: $brand-primary;
+            font-size: 24px;
+            line-height: 1.6;
+        }
+    }
+
+    .active {
+        background: rgba($brand-primary, 0.7) !important;
+        color: white;
+    }
+
+    .disabled {
+        background: #eee;
+        color: grey;
+    }
+}

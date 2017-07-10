@@ -1,0 +1,13 @@
+<div class="slide-toggle" [ngClass]="{ checked: checked }" (click)="onToggleClick()" tabindex="0">
+    <label>
+        <div class="slide-toggle-bar">
+            <input class="hidden" style="display: none" type="checkbox">
+            <div class="slide-toggle-button-container">
+                <div class="slide-toggle-button"></div>
+            </div>
+        </div>
+        <span class="content">
+            <ng-content></ng-content>
+        </span>
+    </label>
+</div>
