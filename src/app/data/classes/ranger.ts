@@ -15,6 +15,7 @@ export const Ranger: ClassModels.Class = new ClassModels.Class({
     archetypeLevel: 3,
     hitDie: 10,
     savingThrows: ["DEX", "WIS"],
+    abilityScoreImprovements: [ 4, 8, 12, 16, 19 ],
     features: [
         {
             level: 1, name: "Favored Enemy", type: FeatureType.Passive,

@@ -18,6 +18,7 @@ export const Bard: ClassModels.Class = new ClassModels.Class({
     archetypeLevel: 3,
     hitDie: 8,
     savingThrows: ["DEX", "CHA"],
+    abilityScoreImprovements: [ 4, 8, 12, 16, 19 ],
     features: [
         {
             level: 1, name: "Spellcasting", type: FeatureType.Passive,

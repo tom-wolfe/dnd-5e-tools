@@ -15,6 +15,7 @@ export const Cleric: ClassModels.Class = new ClassModels.Class({
     archetypeLevel: 1,
     hitDie: 8,
     savingThrows: ["WIS", "CHA"],
+    abilityScoreImprovements: [ 4, 8, 12, 16, 19 ],
     features: [
         {
             level: 1, name: "Spellcasting", type: FeatureType.Passive,

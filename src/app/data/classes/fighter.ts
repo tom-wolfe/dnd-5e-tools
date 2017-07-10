@@ -16,6 +16,7 @@ export const Fighter: ClassModels.Class = new ClassModels.Class({
     hitDie: 10,
     archetypeLevel: 3,
     savingThrows: ["STR", "CON"],
+    abilityScoreImprovements: [ 4, 6, 8, 12, 14, 16, 19 ],
     features: [
         {
             level: 1, name: "Fighting Style", type: FeatureType.Passive,

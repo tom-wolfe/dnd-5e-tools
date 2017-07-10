@@ -15,6 +15,7 @@ export const Paladin: ClassModels.Class = new ClassModels.Class({
     archetypeLevel: 3,
     hitDie: 10,
     savingThrows: ["STR", "CHA"],
+    abilityScoreImprovements: [ 4, 8, 12, 16, 19 ],
     features: [
         {
             level: 1, name: "Divine Sense", type: FeatureType.Passive,

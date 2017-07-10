@@ -16,6 +16,7 @@ export const Rogue: ClassModels.Class = new ClassModels.Class({
     hitDie: 8,
     archetypeLevel: 3,
     savingThrows: ["DEX", "INT"],
+    abilityScoreImprovements: [ 4, 8, 10, 12, 16, 19 ],
     features: [
         {
             level: 1, name: "Expertise", type: FeatureType.Passive,
