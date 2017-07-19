@@ -18,8 +18,11 @@
         </div>
         <div class="col-md-6 col-4 col-name">{{creature.name}}</div>
         <div class="ccol-md-2 col-2 col-initiative">{{creature.initiative}}</div>
-        <div class="col-md-2 col-2 col-hp">{{creature.currentHp}}/{{creature.maximumHp}}</div>
+        <div class="col-md-2 col-2 col-hp"><button class="btn-primary">{{creature.currentHp}} / {{creature.maximumHp}}</button></div>
         <div class="col-md-1 col-2 col-remove"><a href="#" (click)="onRemoveClick($event, creature)"><i class="mdi mdi-minus-circle"></i></a></div>
+      </div>
+      <div class="row small">
+        <div class="offset-md-1 offset-2 col-md-11 col-10"><span class="note-title">Notes:</span> {{creature.notes}}</div>
       </div>
     </div>
     <div class="row" *ngIf="!creatures || creatures.length === 0">

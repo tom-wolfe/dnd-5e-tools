@@ -4,6 +4,7 @@ export class CreatureInitiative {
     maximumHp: number;
     currentHp: number;
     initiative: number = null;
+    notes: string = null;
     constructor(values?: CreatureInitiative) {
         Object.assign(this, values);
     }

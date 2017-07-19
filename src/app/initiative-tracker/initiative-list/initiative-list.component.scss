@@ -18,6 +18,15 @@
     .col-remove,
     .col-hp {
         text-align: center;
+        button {
+            line-height: 1.5;
+            width: 60%;
+        }
+    }
+
+    .note-title {
+        font-weight: bold;
+        font-style: italic;
     }
 
     .col-initiative {
