@@ -56,9 +56,7 @@ export class HpModalComponent {
   private applyHitPoints(amount: number) {
     this.creature.currentHp = (this.creature.currentHp || 0) + amount;
     this.hitPoints = 0;
-    if (this.creature.currentHp <= 0) {
-      this.creature.active = false;
-    }
+    this.creature.active = this.creature.currentHp > 0;
   }
 
   private getDismissReason(reason: any): string {

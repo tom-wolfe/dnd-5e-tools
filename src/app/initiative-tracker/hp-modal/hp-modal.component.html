@@ -6,12 +6,18 @@
      </button>
   </div>
   <div class="modal-body">
-    <div class="row hp-mod">
-      <div class="col-2"><button class="btn btn-block" (click)="modifyHp(-10)">-10</button></div>
+    <div class="hp-mod row">
+       <!-- <div class="col-2"><button class="btn btn-block" (click)="modifyHp(-10)">-10</button></div>
       <div class="col-2"><button class="btn btn-block" (click)="modifyHp(-1)">-1</button></div>
-      <div class="col-4 text-center"><span class="">{{hitPoints}}</span></div>
+      <div class="col-2 text-center"><span class="">{{hitPoints}}</span></div>
       <div class="col-2"><button class="btn btn-block" (click)="modifyHp(1)">1</button></div>
-      <div class="col-2"><button class="btn btn-block" (click)="modifyHp(10)">10</button></div>
+      <div class="col-2"><button class="btn btn-block" (click)="modifyHp(10)">10</button></div>  -->
+
+         <div class="col-fifth"><button class="btn btn-block" (click)="modifyHp(-10)">-10</button></div>
+      <div class="col-fifth"><button class="btn btn-block" (click)="modifyHp(-1)">-1</button></div>
+      <div class="col-fifth text-center"><span class="">{{hitPoints}}</span></div>
+      <div class="col-fifth"><button class="btn btn-block" (click)="modifyHp(1)">1</button></div>
+      <div class="col-fifth"><button class="btn btn-block" (click)="modifyHp(10)">10</button></div>  
     </div>
   </div>
   <div class="modal-footer">

@@ -29,8 +29,8 @@
         </button></div>
         <div class="col-md-1 col-2 col-remove"><a href="#" (click)="onRemoveClick($event, creature)"><i class="mdi mdi-minus-circle"></i></a></div>
       </div>
-      <div class="row small">
-        <div class="offset-md-1 offset-2 col-md-11 col-10"><span class="note-title">Notes:</span> {{creature.notes}}</div>
+      <div class="row notes small">
+        <div class="offset-md-1 offset-2 col-md-11 col-10"><span class="note-title">Notes:</span> <dnd-inline-edit class="muted creature-notes" label="Add notes" [(ngModel)]="creature.notes"></dnd-inline-edit></div>
       </div>
     </div>
     <div class="row" *ngIf="!creatures || creatures.length === 0">

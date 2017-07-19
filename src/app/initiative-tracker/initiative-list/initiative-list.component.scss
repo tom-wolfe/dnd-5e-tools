@@ -24,10 +24,22 @@
         }
     }
 
-    .note-title {
-        font-weight: bold;
-        font-style: italic;
+    .notes {
+        .note-title {
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .creature-notes {
+            display: inline-block !important;
+
+            .inline-edit {
+                font-size: 80% !important;
+                margin-bottom: 14px;
+            }
+        }
     }
+
 
     .col-initiative {
         text-align: center;

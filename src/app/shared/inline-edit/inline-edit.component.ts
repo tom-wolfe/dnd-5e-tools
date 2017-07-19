@@ -22,13 +22,13 @@ export class InlineEditComponent implements ControlValueAccessor, OnInit {
   @Input() required = false;
   @Input() disabled = false;
 
+  preValue = "";
   editing = false;
 
   @Output() beforeChange: EventEmitter<any> = new EventEmitter(false);
   @Output() afterChange: EventEmitter<any> = new EventEmitter();
 
   private _value = "";
-  private preValue = "";
 
   private onChange = (_: any) => { };
   private onTouched = () => { };
