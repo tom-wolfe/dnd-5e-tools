@@ -32,9 +32,7 @@ export class InitiativeListComponent {
       if (this.newCreatureCount > 1) {
         creature.name += ` (#${x})`;
       }
-      if (creature.maximumHp) {
-        creature.maximumHp = this.dice.roll(creature.maximumHp).total;
-      }
+      creature.maximumHp = this.dice.roll(creature.maximumHp || "10").total;
       creature.currentHp = creature.maximumHp;
       creature.initiative = this.dice.roll(init).total;
       this.creatures.push(creature);
