@@ -1,0 +1,8 @@
+<div>
+  <div *ngIf="editing">
+    <input #inlineEditControl class="form-control" [required]="required" (blur)="onBlur($event)" (keydown.enter)="onBlur($event)" [name]="value" [(ngModel)]="preValue" [type]="type" [placeholder]="label" />
+  </div>
+  <div *ngIf="!editing">
+    <label class="edit" title="Click to edit" (click)="edit(value)" (focus)="edit(value);" tabindex="0" class="inline-edit">{{value}}&nbsp;</label>
+  </div>
+</div>

@@ -9,16 +9,24 @@
     </div>
   </div>
   <div class="body">
-    <div class="wrapper" *ngFor="let creature of sortedCreatures" [ngClass]="{disabled: !creature.active, active: currentInitiative === creature.initiative && creature.active}">
+    <div class="wrapper" *ngFor="let creature of creatures" [ngClass]="{disabled: !creature.active, active: currentInitiative === creature.initiative && creature.active}">
       <div class="row">
         <div class="col-md-1 col-2 col-active">
           <dnd-slide-toggle [(ngModel)]="creature.active">
             <span class="sr-only">Active?</span>
           </dnd-slide-toggle>
         </div>
-        <div class="col-md-6 col-4 col-name">{{creature.name}}</div>
-        <div class="ccol-md-2 col-2 col-initiative">{{creature.initiative}}</div>
-        <div class="col-md-2 col-2 col-hp"><button class="btn-primary">{{creature.currentHp}} / {{creature.maximumHp}}</button></div>
+        <div class="col-md-6 col-4 col-name">
+          <dnd-inline-edit [(ngModel)]="creature.name"></dnd-inline-edit>
+        </div>
+        <div class="ccol-md-2 col-2 col-initiative">
+          <dnd-inline-edit [(ngModel)]="creature.initiative" (beforeChange)="preProcessRoll($event)" (afterChange)="afterInitiativeChanged($event)"></dnd-inline-edit>
+        </div>
+        <div class="col-md-2 col-2 col-hp">
+          <button class="btn" [ngClass]="{'btn-primary': (creature.currentHp > 0 && creature.currentHp < creature.maximumHp), 'btn-success': creature.currentHp >= creature.maximumHp }"
+            (click)="onHPClick($event, creature)">
+          {{creature.currentHp}} / {{creature.maximumHp}}
+        </button></div>
         <div class="col-md-1 col-2 col-remove"><a href="#" (click)="onRemoveClick($event, creature)"><i class="mdi mdi-minus-circle"></i></a></div>
       </div>
       <div class="row small">
@@ -54,3 +62,4 @@
     </div>
   </div>
 </div>
+<dnd-hp-modal #mdlHP [creature]="activeCreature"></dnd-hp-modal>

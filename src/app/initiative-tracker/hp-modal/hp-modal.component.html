@@ -1,0 +1,22 @@
+<ng-template #content>
+  <div class="modal-header">
+    <h4 class="modal-title">{{creature.name}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="dismiss()">
+       <span aria-hidden="true">&times;</span>
+     </button>
+  </div>
+  <div class="modal-body">
+    <div class="row hp-mod">
+      <div class="col-2"><button class="btn btn-block" (click)="modifyHp(-10)">-10</button></div>
+      <div class="col-2"><button class="btn btn-block" (click)="modifyHp(-1)">-1</button></div>
+      <div class="col-4 text-center"><span class="">{{hitPoints}}</span></div>
+      <div class="col-2"><button class="btn btn-block" (click)="modifyHp(1)">1</button></div>
+      <div class="col-2"><button class="btn btn-block" (click)="modifyHp(10)">10</button></div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="pull-left btn btn-lg" (click)="close()">Cancel</button>
+    <button type="button" class="btn btn-lg btn-success" (click)="onHealClick()">Heal</button>
+    <button type="button" class="btn btn-lg btn-primary" (click)="onHarmClick()">Harm</button>
+  </div>
+</ng-template>
