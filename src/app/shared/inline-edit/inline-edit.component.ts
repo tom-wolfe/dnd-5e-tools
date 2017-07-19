@@ -24,7 +24,7 @@ export class InlineEditComponent implements ControlValueAccessor, OnInit {
 
   editing = false;
 
-  @Output() beforeChange: EventEmitter<any> = new EventEmitter();
+  @Output() beforeChange: EventEmitter<any> = new EventEmitter(false);
   @Output() afterChange: EventEmitter<any> = new EventEmitter();
 
   private _value = "";
@@ -40,11 +40,8 @@ export class InlineEditComponent implements ControlValueAccessor, OnInit {
 
   set value(v: any) {
     if (v !== this._value) {
-      const eventArgs = { value: v };
-      this.beforeChange.emit(eventArgs);
-      this._value = eventArgs.value;
+      this._value = v;
       this.onChange(this._value);
-      this.afterChange.emit(eventArgs);
     }
   }
 
@@ -63,8 +60,13 @@ export class InlineEditComponent implements ControlValueAccessor, OnInit {
   }
 
   onBlur($event: Event) {
+    if (!this.editing) { return; }
     this.editing = false;
-    this.value = this.preValue;
+
+    const eventArgs = { value: this.preValue };
+    this.beforeChange.emit(eventArgs);
+    this.value = eventArgs.value;
+    this.afterChange.emit(eventArgs);
   }
 
   edit(value) {
