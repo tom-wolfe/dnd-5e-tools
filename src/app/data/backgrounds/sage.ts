@@ -29,13 +29,13 @@ export const Sage: Characters.Background = new Characters.Background({
     }],
     personalityTraits: [
         "I use polysyllabic words that convey the impression of great erudition.",
-        "I’ve read every book in the world’s greatest libraries—or I like to boast that I have.",
-        "I’m used to helping out those who aren’t as smart as I am, and I patiently explain anything and everything to others.",
-        "There’s nothing I like more than a good mystery.",
-        "I’m willing to listen to every side of an argument before I make my own judgment.",
+        "I've read every book in the world's greatest libraries—or I like to boast that I have.",
+        "I'm used to helping out those who aren't as smart as I am, and I patiently explain anything and everything to others.",
+        "There's nothing I like more than a good mystery.",
+        "I'm willing to listen to every side of an argument before I make my own judgment.",
         "I … speak … slowly … when talking … to idiots, … which … almost … everyone … is … compared … to me.",
         "I am horribly, horribly awkward in social situations.",
-        "I’m convinced that people are always trying to steal my secrets.",
+        "I'm convinced that people are always trying to steal my secrets.",
     ],
     ideals: [
         "Knowledge. The path to power and self-improvement is through knowledge. (Neutral)",
@@ -49,8 +49,8 @@ export const Sage: Characters.Background = new Characters.Background({
         "It is my duty to protect my students.",
         "I have an ancient text that holds terrible secrets that must not fall into the wrong hands.",
         "I work to preserve a library, university, scriptorium, or monastery.",
-        "My life’s work is a series of tomes related to a specific field of lore.",
-        "I’ve been searching my whole life for the answer to a certain question.",
+        "My life's work is a series of tomes related to a specific field of lore.",
+        "I've been searching my whole life for the answer to a certain question.",
         "I sold my soul for knowledge. I hope to do great deeds and win it back.",
     ],
     flaws: [
@@ -59,7 +59,7 @@ export const Sage: Characters.Background = new Characters.Background({
         "Unlocking an ancient mystery is worth the price of a civilization.",
         "I overlook obvious solutions in favor of complicated ones.",
         "I speak without really thinking through my words, invariably insulting others.",
-        "I can’t keep a secret to save my life, or anyone else’s.",
+        "I can't keep a secret to save my life, or anyone else's.",
     ]
 });
 

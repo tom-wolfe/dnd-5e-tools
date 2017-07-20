@@ -80,7 +80,7 @@ export const Goliath: Names.NameDefinition = new Names.NameDefinition({
                     "nnamani", "nzeogwu", "obasanjo", "obi", "odili", "ohakim", "ojukwu", "okadigbo", "okafor", "okar", "okeke", "okereke",
                     "okilo", "okiro", "okonjo", "okonkwo", "okorie", "okotie-eboh", "okoye", "okpara", "olanrewaju", "omehia", "onobanjo",
                     "onwuatuegwu", "onwudiwe", "onyejekwe", "orji", "oyenusi", "oyinlola", "saro-wiwa", "sekibo", "solarin", "soyinka",
-                    "tinibu", "uba", "yar’adua"
+                    "tinibu", "uba", "yar'adua"
                 ]
             },
         },

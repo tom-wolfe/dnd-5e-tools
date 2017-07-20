@@ -31,10 +31,10 @@ export const FolkHero: Characters.Background = new Characters.Background({
     }],
     personalityTraits: [
         "I judge people by their actions, not their words.",
-        "If someone is in trouble, I’m always ready to lend help.",
+        "If someone is in trouble, I'm always ready to lend help.",
         "When I set my mind to something, I follow through no matter what gets in my way.",
         "I have a strong sense of fair play and always try to find the most equitable solution to arguments.",
-        "I’m confident in my own abilities and do what I can to instill confidence in others.",
+        "I'm confident in my own abilities and do what I can to instill confidence in others.",
         "Thinking is for other people. I prefer action.",
         "I misuse long words in an attempt to sound smarter.",
         "I get bored easily. When am I going to get on with my destiny?",
@@ -44,7 +44,7 @@ export const FolkHero: Characters.Background = new Characters.Background({
         "Fairness. No one should get preferential treatment before the law, and no one is above the law. (Lawful)",
         "Freedom. Tyrants must not be allowed to oppress the people. (Chaotic)",
         "Might. If I become strong, I can take what I want—what I deserve. (Evil)",
-        "Sincerity. There’s no good in pretending to be something I’m not. (Neutral)",
+        "Sincerity. There's no good in pretending to be something I'm not. (Neutral)",
         "Destiny. Nothing and no one can steer me away from my higher calling. (Any)",
     ],
     bonds: [
@@ -57,7 +57,7 @@ export const FolkHero: Characters.Background = new Characters.Background({
     ],
     flaws: [
         "The tyrant who rules my land will stop at nothing to see me killed.",
-        "I’m convinced of the significance of my destiny, and blind to my shortcomings and the risk of failure.",
+        "I'm convinced of the significance of my destiny, and blind to my shortcomings and the risk of failure.",
         "The people who knew me when I was young know my shameful secret, so I can never go home again.",
         "I have a weakness for the vices of the city, especially hard drink.",
         "Secretly, I believe that things would be better if I were a tyrant lording over the land.",
