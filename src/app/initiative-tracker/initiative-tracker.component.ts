@@ -1,7 +1,8 @@
-import { Component } from "@angular/core";
+import { Component, ViewChild } from "@angular/core";
 
 import * as _ from "lodash";
 
+import { InitiativeListComponent } from "./initiative-list/initiative-list.component";
 import { CreatureInitiative } from "./models/creature-initiative";
 
 @Component({
@@ -9,29 +10,28 @@ import { CreatureInitiative } from "./models/creature-initiative";
   templateUrl: "./initiative-tracker.component.html"
 })
 export class InitiativeTrackerComponent {
-  creatures: CreatureInitiative[] = [];
+  @ViewChild("list") initiativeList: InitiativeListComponent;
+
   currentInitiative: number;
   currentRound = 0;
 
   onResetClick() {
-    while (this.creatures.length > 0) {
-      this.creatures.pop();
-    }
+    this.initiativeList.clear();
     this.currentInitiative = undefined;
     this.currentRound = 0;
   }
 
   onNextClick() {
-    const sortedCreatures = _.orderBy(this.creatures, "initiative", "desc");
+    const creatures = this.initiativeList.creatures;
     if (!this.currentInitiative) {
-      this.currentInitiative = sortedCreatures[0].initiative;
+      this.currentInitiative = creatures[0].initiative;
       this.currentRound = 1;
     } else {
-      const nextCreatures = sortedCreatures.filter(c => c.initiative < this.currentInitiative && c.active);
+      const nextCreatures = creatures.filter(c => c.initiative < this.currentInitiative && c.active);
       if (nextCreatures.length > 0) {
         this.currentInitiative = nextCreatures[0].initiative;
       } else {
-        this.currentInitiative = sortedCreatures[0].initiative;
+        this.currentInitiative = creatures[0].initiative;
         this.currentRound++;
       }
     }

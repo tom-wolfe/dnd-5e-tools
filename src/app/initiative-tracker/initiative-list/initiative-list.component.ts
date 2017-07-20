@@ -12,12 +12,12 @@ import { CreatureInitiative } from "../models/creature-initiative";
   styleUrls: ["./initiative-list.component.scss"]
 })
 export class InitiativeListComponent {
-  @Input() creatures: CreatureInitiative[];
   @Input() currentInitiative: number;
 
   @ViewChild("count") countInput: ElementRef;
   @ViewChild("mdlHP") mdlHP: HpModalComponent
 
+  creatures: CreatureInitiative[] = [];
   newCreature: CreatureInitiative = new CreatureInitiative();
   newCreatureCount = 1;
   activeCreature: CreatureInitiative;
@@ -61,6 +61,10 @@ export class InitiativeListComponent {
     } catch (ex) {
       // Ignore.
     }
+  }
+
+  clear() {
+    this.creatures = [];
   }
 
   afterInitiativeChanged(e) {
