@@ -22,7 +22,7 @@
     position: fixed;
     right: 20px;
     bottom: 20px;
-    
+
     z-index: 200;
 }
 
@@ -32,4 +32,8 @@
         font-size: 1.4rem;
         vertical-align: middle;
     }
+}
+
+.btn-grey {
+    @include button-variant($btn-grey-color, $btn-grey-bg, $btn-grey-border);
 }

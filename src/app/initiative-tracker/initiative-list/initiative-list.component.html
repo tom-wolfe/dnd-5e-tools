@@ -23,7 +23,7 @@
           <dnd-inline-edit [(ngModel)]="creature.initiative" (beforeChange)="preProcessRoll($event)" (afterChange)="afterInitiativeChanged($event)"></dnd-inline-edit>
         </div>
         <div class="col-8 col-lg-2 offset-2 offset-lg-0 col-hp">
-          <button class="btn" [ngClass]="{'btn-primary': (creature.currentHp > 0 && creature.currentHp < creature.maximumHp), 'btn-success': creature.currentHp >= creature.maximumHp }"
+          <button class="btn" [ngClass]="{'btn-primary': (creature.currentHp > 0 && creature.currentHp < creature.maximumHp), 'btn-success': creature.currentHp >= creature.maximumHp, 'btn-grey': creature.currentHp === 0 }"
             (click)="onHPClick($event, creature)">
           {{creature.currentHp}} / {{creature.maximumHp}}
         </button>
