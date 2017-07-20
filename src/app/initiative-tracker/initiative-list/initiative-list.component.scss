@@ -68,6 +68,11 @@
 
 @include media-breakpoint-down(md) {
     .initiative {
+        .body {
+            .col-hp button {
+                width: 100%;
+            }
+        }
         .footer {
             .col-initiative,
             .col-hp {

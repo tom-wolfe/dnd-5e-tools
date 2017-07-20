@@ -1,34 +1,34 @@
 <div class="initiative">
   <div class="header">
     <div class="row">
-      <div class="col-md-1 col-2 col-active">Active?</div>
-      <div class="col-md-6 col-4 col-name">Name</div>
-      <div class="col-md-2 col-2 col-initiative">Initiative</div>
-      <div class="col-md-2 col-2 col-hp">HP</div>
-      <div class="col-md-1 col-2 col-remove">Remove</div>
+      <div class="col-2 col-lg-1 col-active">Active?</div>
+      <div class="col-4 col-md-8 col-lg-6">Name</div>
+      <div class="col-2 col-md-2 col-initiative">Initiative</div>
+      <div class="col-2 col-md-2 hidden-md-down col-hp">HP</div>
+      <div class="col-2 col-md-1 hidden-md-down col-remove">Remove</div>
     </div>
   </div>
   <div class="body">
     <div class="wrapper" *ngFor="let creature of creatures" [ngClass]="{disabled: !creature.active, active: currentInitiative === creature.initiative && creature.active}">
       <div class="row">
-        <div class="col-md-1 col-2 col-active">
+        <div class="col-2 col-lg-1 col-active">
           <dnd-slide-toggle [(ngModel)]="creature.active">
             <span class="sr-only">Active?</span>
           </dnd-slide-toggle>
         </div>
-        <div class="col-md-6 col-4 col-name">
+        <div class="col-8 col-lg-6 col-name">
           <dnd-inline-edit [(ngModel)]="creature.name"></dnd-inline-edit>
         </div>
-        <div class="ccol-md-2 col-2 col-initiative">
+        <div class="col-2 col-initiative">
           <dnd-inline-edit [(ngModel)]="creature.initiative" (beforeChange)="preProcessRoll($event)" (afterChange)="afterInitiativeChanged($event)"></dnd-inline-edit>
         </div>
-        <div class="col-md-2 col-2 col-hp">
+        <div class="col-8 col-lg-2 offset-2 offset-lg-0 col-hp">
           <button class="btn" [ngClass]="{'btn-primary': (creature.currentHp > 0 && creature.currentHp < creature.maximumHp), 'btn-success': creature.currentHp >= creature.maximumHp }"
             (click)="onHPClick($event, creature)">
           {{creature.currentHp}} / {{creature.maximumHp}}
         </button>
         </div>
-        <div class="col-md-1 col-2 col-remove"><a href="#" (click)="onRemoveClick($event, creature)"><i class="mdi mdi-minus-circle"></i></a></div>
+        <div class="col-2 col-lg-1 col-remove"><a href="#" (click)="onRemoveClick($event, creature)"><i class="mdi mdi-minus-circle"></i></a></div>
       </div>
       <div class="row notes small">
         <div class="offset-md-1 offset-2 col-md-11 col-10"><span class="note-title">Notes:</span>
