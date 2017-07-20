@@ -1,4 +1,6 @@
 @import "../../../styles/variables.scss";
+@import "~bootstrap/scss/bootstrap.scss";
+@import "../../../styles/buttons.scss";
 
 .initiative {
     margin-bottom: 0;
@@ -40,7 +42,6 @@
         }
     }
 
-
     .col-initiative {
         text-align: center;
     }
@@ -62,5 +63,19 @@
     .disabled {
         background: #eee;
         color: grey;
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .initiative {
+        .footer {
+            .col-initiative,
+            .col-hp {
+                margin-top: 8px;
+            }
+            .col-remove {
+                font-size: 48px;
+            }
+        }
     }
 }
