@@ -22,16 +22,16 @@ export class InitiativeTrackerComponent {
   }
 
   onNextClick() {
-    const creatures = this.initiativeList.creatures;
+    const activeCreatures = this.initiativeList.creatures.filter(c => c.active);
     if (!this.currentInitiative) {
-      this.currentInitiative = creatures[0].initiative;
+      this.currentInitiative = activeCreatures[0].initiative;
       this.currentRound = 1;
     } else {
-      const nextCreatures = creatures.filter(c => c.initiative < this.currentInitiative && c.active);
+      const nextCreatures = activeCreatures.filter(c => c.initiative < this.currentInitiative);
       if (nextCreatures.length > 0) {
         this.currentInitiative = nextCreatures[0].initiative;
       } else {
-        this.currentInitiative = creatures[0].initiative;
+        this.currentInitiative = activeCreatures[0].initiative;
         this.currentRound++;
       }
     }
