@@ -51,13 +51,13 @@
         <label class="sr-only" for="name">Name</label>
         <input type="text" class="form-control" id="name" placeholder="Goblin" [(ngModel)]="newCreature.name" (keydown.enter)="onAddToInitiativeClick()">
       </div>
-      <div class="col-lg-2 col-md-6 col-6 col-initiative">
+      <div class="col-lg-2 col-md-6 col-6 mt-2 mt-lg-0 col-initiative">
         <label class="sr-only" for="initiative">Initiative</label>
-        <input type="text" class="form-control" id="initiative" placeholder="1d20 + 2" [(ngModel)]="newCreature.initiative" (keydown.enter)="onAddToInitiativeClick()">
+        <input type="text" class="form-control" id="initiative" placeholder="1d20+2" [(ngModel)]="newCreature.initiative" (keydown.enter)="onAddToInitiativeClick()">
       </div>
-      <div class="col-lg-2 col-md-6 col-6 col-hp">
+      <div class="col-lg-2 col-md-6 mt-2 mt-lg-0 col-6 col-hp">
         <label class="sr-only" for="hp">HP</label>
-        <input type="text" class="form-control" id="hp" placeholder="HP" [(ngModel)]="newCreature.maximumHp" (keydown.enter)="onAddToInitiativeClick()">
+        <input type="text" class="form-control" id="hp" placeholder="HP (2d8+2)" [(ngModel)]="newCreature.maximumHp" (keydown.enter)="onAddToInitiativeClick()">
       </div>
       <div class="col-lg-1 col-md-12 col-12 col-remove">
         <a href="#" (click)="onAddToInitiativeClick($event)"><i class="mdi mdi-plus-circle"></i><label class="sr-only">Add to Initiative</label></a>

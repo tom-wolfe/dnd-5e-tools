@@ -1,19 +1,23 @@
 import { Component, ViewChild } from "@angular/core";
 
-import * as _ from "lodash";
+import { Dice } from "dice-typescript";
 
 import { InitiativeListComponent } from "./initiative-list/initiative-list.component";
-import { CreatureInitiative } from "./models/creature-initiative";
 
 @Component({
   selector: "dnd-initiative-tracker",
-  templateUrl: "./initiative-tracker.component.html"
+  templateUrl: "./initiative-tracker.component.html",
+  styleUrls: ["initiative-tracker.component.scss"]
 })
 export class InitiativeTrackerComponent {
   @ViewChild("list") initiativeList: InitiativeListComponent;
 
   currentInitiative: number;
   currentRound = 0;
+  diceRoll: string = null;
+  diceResult = 0;
+
+  private dice: Dice = new Dice();
 
   onResetClick() {
     this.initiativeList.clear();
@@ -35,5 +39,12 @@ export class InitiativeTrackerComponent {
         this.currentRound++;
       }
     }
+  }
+
+  onDiceRoll() {
+    console.log("Face!");
+    try {
+      this.diceResult = this.dice.roll(this.diceRoll).total;
+    } catch (ex) { }
   }
 };

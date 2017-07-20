@@ -2,7 +2,15 @@
   <div class="container">
     <h1>Initiative Tracker</h1>
     <div class="row">
-      <div class="col-12 text-right">
+      <div class="col-12 col-md-6">
+        <div class="input-group mb-2">
+          <div class="input-group-addon dice-symbol" tab-index="0" (click)="diceRollInput.select()"><i class="mdi mdi-dice-6"></i></div>
+          <input #diceRollInput type="text" class="form-control" placeholder="1d4 + 3" [(ngModel)]="diceRoll" (keydown.enter)="onDiceRoll()">
+          <div class="input-group-addon dice-equals" tab-index="0" (click)="onDiceRoll()"><i class="mdi mdi-equal"></i></div>
+          <div class="input-group-addon dice-result">{{diceResult}}</div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 text-right">
         <button type="button" class="btn btn-primary btn-lg" (click)="onResetClick()">Reset Tracker</button>
       </div>
     </div>
