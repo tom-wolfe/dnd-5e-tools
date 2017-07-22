@@ -16,3 +16,8 @@
         min-height: calc(100vh - 20px);
     }
 }
+
+
+input, textarea {
+    font-family: $font-family-sans-serif !important
+}
