@@ -90,6 +90,7 @@ export class InitiativeListComponent {
   }
 
   scrollToCreature(creature: CreatureInitiative) {
+    if (!creature) { return; }
     const index = this.creatures.indexOf(creature);
     const element = this.creatureRows.toArray()[index].nativeElement;
     window.scrollTo(0, element.offsetTop);

@@ -6,19 +6,13 @@ import { InitiativeListComponent } from "./initiative-list/initiative-list.compo
 
 @Component({
   selector: "dnd-initiative-tracker",
-  templateUrl: "./initiative-tracker.component.html",
-  styleUrls: ["initiative-tracker.component.scss"]
+  templateUrl: "./initiative-tracker.component.html"
 })
 export class InitiativeTrackerComponent {
   @ViewChild("list") initiativeList: InitiativeListComponent;
 
   activeCreature: CreatureInitiative;
   currentRound = 0;
-
-  diceRoll: string = null;
-  diceResult = 0;
-
-  private dice: Dice = new Dice();
 
   onResetClick() {
     this.initiativeList.clear();
@@ -55,9 +49,7 @@ export class InitiativeTrackerComponent {
     this.initiativeList.scrollToCreature(activeCreature);
   }
 
-  onDiceRoll() {
-    try {
-      this.diceResult = this.dice.roll(this.diceRoll).total;
-    } catch (ex) { }
+  onBackClick() {
+    // TODO: Implement.
   }
 };

@@ -7,6 +7,8 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
 export class InitiativeHeaderComponent {
   @Input() currentInitiative: number;
   @Input() currentRound: number
+
+  @Output() backClick: EventEmitter<any> = new EventEmitter();
   @Output() nextClick: EventEmitter<any> = new EventEmitter();
 
   get timePast(): string {

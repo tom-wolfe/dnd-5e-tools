@@ -9,3 +9,9 @@
 .dice-equals {
     cursor: pointer;
 }
+
+.bg-inverse {
+    .form-control {
+        border: 1px solid rgba(255, 255, 255, 0.70);
+    }
+}
