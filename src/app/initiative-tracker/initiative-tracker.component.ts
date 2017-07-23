@@ -12,8 +12,9 @@ import { InitiativeListComponent } from "./initiative-list/initiative-list.compo
 export class InitiativeTrackerComponent {
   @ViewChild("list") initiativeList: InitiativeListComponent;
 
-  currentInitiative: number;
+  activeCreature: CreatureInitiative;
   currentRound = 0;
+
   diceRoll: string = null;
   diceResult = 0;
 
@@ -21,18 +22,27 @@ export class InitiativeTrackerComponent {
 
   onResetClick() {
     this.initiativeList.clear();
-    this.currentInitiative = undefined;
+    this.activeCreature = undefined;
     this.currentRound = 0;
   }
 
   onNextClick() {
-    const activeCreatures = this.initiativeList.creatures.filter(c => c.active);
+    const creatures = this.initiativeList.creatures;
+    const activeCreatures = creatures.filter(c => c.active);
     let activeCreature: CreatureInitiative = null;
-    if (!this.currentInitiative) {
-      activeCreature = activeCreatures[0];
-      this.currentRound = 1;
+
+    if (!this.activeCreature) {
+      if (activeCreatures.length > 0) {
+        activeCreature = activeCreatures[0];
+        this.currentRound = 1;
+      }
     } else {
-      const nextCreatures = activeCreatures.filter(c => c.initiative < this.currentInitiative);
+      const nextCreatures = activeCreatures.filter(c => {
+        const cIndex = creatures.indexOf(c);
+        const aIndex = creatures.indexOf(this.activeCreature);
+        return cIndex > aIndex;
+      });
+
       if (nextCreatures.length > 0) {
         activeCreature = nextCreatures[0];
       } else {
@@ -40,7 +50,8 @@ export class InitiativeTrackerComponent {
         this.currentRound++;
       }
     }
-    this.currentInitiative = activeCreature.initiative;
+
+    this.activeCreature = activeCreature;
     this.initiativeList.scrollToCreature(activeCreature);
   }
 

@@ -11,7 +11,7 @@ import { CreatureInitiative } from "../models/creature-initiative";
   styleUrls: ["./initiative-list.component.scss"]
 })
 export class InitiativeListComponent {
-  @Input() currentInitiative: number;
+  @Input() activeCreature: CreatureInitiative;
 
   @ViewChild("count") countInput: ElementRef;
   @ViewChild("mdlCurHP") mdlCurHP: CurHpModalComponent
@@ -21,7 +21,6 @@ export class InitiativeListComponent {
   creatures: CreatureInitiative[] = [];
   newCreature: CreatureInitiative = new CreatureInitiative();
   newCreatureCount = 1;
-  activeCreature: CreatureInitiative;
   editingCreature: CreatureInitiative;
 
   private dice: Dice = new Dice();
@@ -43,9 +42,7 @@ export class InitiativeListComponent {
 
     for (let x = 1; x <= this.newCreatureCount; x++) {
       const creature = new CreatureInitiative(this.newCreature);
-      if (this.newCreatureCount > 1 || lastCreature > 0) {
-        creature.name += ` (#${x + lastCreature})`;
-      }
+      creature.name += ` (#${x + lastCreature})`;
       creature.maximumHp = this.dice.roll(creature.maximumHp || "10").total;
       creature.currentHp = creature.maximumHp;
       creature.initiative = this.dice.roll(init).total;
@@ -59,7 +56,6 @@ export class InitiativeListComponent {
   }
 
   onCurHPClick(e, creature): void {
-    this.activeCreature = creature;
     this.mdlCurHP.open(creature);
   }
 

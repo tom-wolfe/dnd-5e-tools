@@ -17,6 +17,6 @@
   </div>
 </div>
 <div class="container">
-  <dnd-initiative-header (nextClick)="onNextClick()" [currentInitiative]="currentInitiative" [currentRound]="currentRound"></dnd-initiative-header>
-  <dnd-initiative-list #list [currentInitiative]="currentInitiative"></dnd-initiative-list>
+  <dnd-initiative-header (nextClick)="onNextClick()" [currentInitiative]="activeCreature ? activeCreature.initiative : null" [currentRound]="currentRound"></dnd-initiative-header>
+  <dnd-initiative-list #list [activeCreature]="activeCreature"></dnd-initiative-list>
 </div>

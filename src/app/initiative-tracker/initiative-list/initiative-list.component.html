@@ -9,7 +9,7 @@
     </div>
   </div>
   <div class="body">
-    <div class="wrapper" *ngFor="let creature of creatures" [ngClass]="{disabled: !creature.active, active: currentInitiative === creature.initiative && creature.active}">
+    <div class="wrapper" *ngFor="let creature of creatures" [ngClass]="{disabled: !creature.active, active: activeCreature === creature && creature.active}">
       <div class="row" #creatureRow>
         <div class="col-2 col-lg-1 col-active">
           <dnd-slide-toggle [(ngModel)]="creature.active">
