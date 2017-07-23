@@ -53,7 +53,8 @@
       </div>
       <div class="col-lg-6 col-md-10 col-9">
         <label class="sr-only" for="name">Name</label>
-        <input type="text" class="form-control" id="name" placeholder="Goblin" [(ngModel)]="newCreature.name" (keydown.enter)="onAddToInitiativeClick()">
+        <input type="text" class="form-control" id="name" placeholder="Goblin" [(ngModel)]="newCreature.name" (keydown.enter)="onAddToInitiativeClick()"
+               autocorrect="off" autocapitalize="none" autocomplete="off">
       </div>
       <div class="col-lg-2 col-md-6 col-6 mt-2 mt-lg-0 col-initiative">
         <label class="sr-only" for="initiative">Initiative</label>

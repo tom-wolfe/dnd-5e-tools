@@ -6,8 +6,7 @@
       </div>
       <div class="col">
         <div class="input-group mb-2">
-          <div class="input-group-addon dice-symbol" tab-index="0" (click)="diceRollInput.select()"><i class="mdi mdi-dice-6"></i></div>
-          <input #diceRollInput type="text" class="form-control" placeholder="1d4 + 3" [(ngModel)]="diceRoll" (keydown.enter)="onDiceRoll()"
+          <input #diceRollInput type="text" class="form-control" placeholder="1d4 + 3" [(ngModel)]="diceRoll" (keydown.enter)="onDiceRoll()" (focus)="diceRollInput.select()"
             autocorrect="off" autocapitalize="none" autocomplete="off">
           <div class="input-group-addon dice-equals" tab-index="0" (click)="onDiceRoll()"><i class="mdi mdi-equal"></i></div>
           <div class="input-group-addon dice-result">{{diceResult}}</div>

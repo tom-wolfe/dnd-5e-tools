@@ -1,9 +1,14 @@
+@import "../../../styles/variables.scss";
+@import "~bootstrap/scss/bootstrap.scss";
+@import "../../../styles/buttons.scss";
+
 .hp-mod {
     height: 64px;
     font-size: 48px;
     button {
         height: 100%;
         font-size: 32px;
+        padding: 0;
     }
     .col-fifth {
         -webkit-box-flex: 0;
@@ -12,6 +17,10 @@
         max-width: 20%;
         padding-left: 10px;
         padding-right: 10px;
+        @include media-breakpoint-down(sm) {
+            padding-left: 1px;
+            padding-right: 1px;
+        }
     }
     .hp-input {
         height: 100%;
