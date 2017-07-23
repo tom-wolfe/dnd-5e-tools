@@ -50,6 +50,30 @@ export class InitiativeTrackerComponent {
   }
 
   onBackClick() {
-    // TODO: Implement.
+    const creatures = this.initiativeList.creatures;
+    const activeIndex = creatures.indexOf(this.activeCreature);
+    const activeCreatures = creatures.filter(c => c.active);
+
+    if (!this.activeCreature) { return; }
+    if (activeCreatures.length === 0) { return; }
+    if (this.currentRound === 0 && activeIndex === 0 || this.activeCreature === activeCreatures[0]) { return; }
+
+    let activeCreature: CreatureInitiative = null;
+
+    const previousCreatures = activeCreatures.filter(c => {
+      const cIndex = creatures.indexOf(c);
+      return cIndex < activeIndex;
+    });
+
+    if (previousCreatures.length > 0) {
+      activeCreature = previousCreatures[previousCreatures.length - 1];
+    } else {
+      activeCreature = activeCreatures[activeCreatures.length - 1];
+      this.currentRound--;
+    }
+
+    this.activeCreature = activeCreature;
+    this.initiativeList.scrollToCreature(activeCreature);
+
   }
 };
