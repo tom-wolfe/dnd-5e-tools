@@ -18,9 +18,11 @@ export class InlineEditComponent implements ControlValueAccessor, OnInit {
   @ViewChild("inlineEditControl") inlineEditControl: ElementRef;
 
   @Input() label = "";
+  @Input() placeholder = "";
   @Input() type = "text";
   @Input() required = false;
   @Input() disabled = false;
+  @Input() labelClasses = {};
 
   preValue = "";
   editing = false;
@@ -79,6 +81,15 @@ export class InlineEditComponent implements ControlValueAccessor, OnInit {
       this.inlineEditControl.nativeElement.focus();
       this.inlineEditControl.nativeElement.select();
     });
+  }
+
+  getLabelClasses(): { [key: string]: boolean } {
+    const base = {
+      "col-10": (!!this.label),
+      "col-12": (!this.label)
+    };
+    Object.assign(base, this.labelClasses);
+    return base;
   }
 
   ngOnInit() { }

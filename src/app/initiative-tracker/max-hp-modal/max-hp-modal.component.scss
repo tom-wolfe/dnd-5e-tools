@@ -1,0 +1,21 @@
+.hp-mod {
+    height: 64px;
+    font-size: 48px;
+    button {
+        height: 100%;
+        font-size: 32px;
+    }
+    .col-fifth {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 20%;
+        flex: 0 0 20%;
+        max-width: 20%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .hp-input {
+        height: 100%;
+        font-size: 32px;
+        text-align: center;
+    }
+}

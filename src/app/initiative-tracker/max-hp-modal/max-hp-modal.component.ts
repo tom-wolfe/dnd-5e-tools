@@ -7,12 +7,12 @@ import { NgbModalOptions } from "@ng-bootstrap/ng-bootstrap/modal/modal.module";
 import { CreatureInitiative } from "../models/creature-initiative";
 
 @Component({
-  selector: "dnd-hp-modal",
-  templateUrl: "./hp-modal.component.html",
-  styleUrls: ["./hp-modal.component.scss"]
+  selector: "dnd-max-hp-modal",
+  templateUrl: "./max-hp-modal.component.html",
+  styleUrls: ["./max-hp-modal.component.scss"]
 })
-export class HpModalComponent {
-  @Input() creature: CreatureInitiative;
+export class MaxHpModalComponent {
+  creature: CreatureInitiative;
 
   hitPoints = 0;
 
@@ -24,9 +24,11 @@ export class HpModalComponent {
 
   constructor(private modalService: NgbModal) { }
 
-  open() {
+  open(creature: CreatureInitiative) {
+    this.creature = creature;
     this.modalReference = this.modalService.open(this.content, this.options);
     this.modalReference.result.then(result => { }, () => { });
+    this.hitPoints = this.creature.maximumHp;
   }
 
   close() {
@@ -40,25 +42,18 @@ export class HpModalComponent {
   }
 
   modifyHp(amount: number) {
-    this.hitPoints += amount;
+    this.hitPoints = Math.max(0, this.hitPoints + amount);
   }
 
-  onHealClick() {
+  onOKClick() {
     this.applyHitPoints(this.hitPoints);
     this.close();
   }
 
-  onHarmClick() {
-    this.applyHitPoints(-this.hitPoints);
-    this.close();
-  }
-
   private applyHitPoints(amount: number) {
-    this.creature.currentHp = (this.creature.currentHp || 0) + amount;
+    this.creature.maximumHp = amount;
     this.creature.currentHp = Math.min(this.creature.currentHp, this.creature.maximumHp);
     this.creature.currentHp = Math.max(this.creature.currentHp, 0);
-    this.hitPoints = 0;
-    this.creature.active = this.creature.currentHp > 0 || this.creature.maximumHp === 0;
   }
 
   private getDismissReason(reason: any): string {

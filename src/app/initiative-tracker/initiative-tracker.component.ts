@@ -1,5 +1,5 @@
+import { CreatureInitiative } from "./models/creature-initiative";
 import { Component, ViewChild } from "@angular/core";
-
 import { Dice } from "dice-typescript";
 
 import { InitiativeListComponent } from "./initiative-list/initiative-list.component";
@@ -27,22 +27,24 @@ export class InitiativeTrackerComponent {
 
   onNextClick() {
     const activeCreatures = this.initiativeList.creatures.filter(c => c.active);
+    let activeCreature: CreatureInitiative = null;
     if (!this.currentInitiative) {
-      this.currentInitiative = activeCreatures[0].initiative;
+      activeCreature = activeCreatures[0];
       this.currentRound = 1;
     } else {
       const nextCreatures = activeCreatures.filter(c => c.initiative < this.currentInitiative);
       if (nextCreatures.length > 0) {
-        this.currentInitiative = nextCreatures[0].initiative;
+        activeCreature = nextCreatures[0];
       } else {
-        this.currentInitiative = activeCreatures[0].initiative;
+        activeCreature = activeCreatures[0];
         this.currentRound++;
       }
     }
+    this.currentInitiative = activeCreature.initiative;
+    this.initiativeList.scrollToCreature(activeCreature);
   }
 
   onDiceRoll() {
-    console.log("Face!");
     try {
       this.diceResult = this.dice.roll(this.diceRoll).total;
     } catch (ex) { }

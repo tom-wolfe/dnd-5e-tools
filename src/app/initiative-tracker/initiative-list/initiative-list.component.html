@@ -10,29 +10,33 @@
   </div>
   <div class="body">
     <div class="wrapper" *ngFor="let creature of creatures" [ngClass]="{disabled: !creature.active, active: currentInitiative === creature.initiative && creature.active}">
-      <div class="row">
+      <div class="row" #creatureRow>
         <div class="col-2 col-lg-1 col-active">
           <dnd-slide-toggle [(ngModel)]="creature.active">
             <span class="sr-only">Active?</span>
           </dnd-slide-toggle>
         </div>
         <div class="col-8 col-lg-6 col-name">
-          <dnd-inline-edit [(ngModel)]="creature.name"></dnd-inline-edit>
+          <dnd-inline-edit [(ngModel)]="creature.name" placeholder="Goblin"></dnd-inline-edit>
         </div>
         <div class="col-2 col-initiative">
-          <dnd-inline-edit [(ngModel)]="creature.initiative" (beforeChange)="preProcessRoll($event)" (afterChange)="afterInitiativeChanged($event)"></dnd-inline-edit>
+          <dnd-inline-edit [(ngModel)]="creature.initiative" placeholder="1d20+2" (beforeChange)="preProcessRoll($event)" (afterChange)="afterInitiativeChanged($event)"></dnd-inline-edit>
         </div>
         <div class="col-8 col-lg-2 offset-2 offset-lg-0 col-hp">
           <button class="btn" [ngClass]="{'btn-primary': (creature.currentHp > 0 && creature.currentHp < creature.maximumHp), 'btn-success': creature.currentHp >= creature.maximumHp, 'btn-grey': creature.currentHp === 0 }"
-            (click)="onHPClick($event, creature)">
-          {{creature.currentHp}} / {{creature.maximumHp}}
-        </button>
+            (click)="onCurHPClick($event, creature)">
+            {{creature.currentHp}}
+          </button> /
+          <button class="btn" [ngClass]="{'btn-primary': (creature.currentHp > 0 && creature.currentHp < creature.maximumHp), 'btn-success': creature.currentHp >= creature.maximumHp, 'btn-grey': creature.currentHp === 0 }"
+            (click)="onMaxHPClick($event, creature)">
+            {{creature.maximumHp}}
+          </button>
         </div>
         <div class="col-2 col-lg-1 col-remove"><a href="#" (click)="onRemoveClick($event, creature)"><i class="mdi mdi-minus-circle"></i></a></div>
       </div>
-      <div class="row notes small">
-        <div class="offset-md-1 offset-2 col-md-11 col-10"><span class="note-title">Notes:</span>
-          <dnd-inline-edit class="muted creature-notes" label="Add notes" [(ngModel)]="creature.notes"></dnd-inline-edit>
+      <div class="row">
+        <div class="offset-2 offset-sm-2 offset-lg-1 col-8 col-lg-6">
+          <dnd-inline-edit placeholder="Add notes" [(ngModel)]="creature.notes"></dnd-inline-edit>
         </div>
       </div>
     </div>
@@ -53,11 +57,13 @@
       </div>
       <div class="col-lg-2 col-md-6 col-6 mt-2 mt-lg-0 col-initiative">
         <label class="sr-only" for="initiative">Initiative</label>
-        <input type="text" class="form-control" id="initiative" placeholder="1d20+2" [(ngModel)]="newCreature.initiative" (keydown.enter)="onAddToInitiativeClick()" autocorrect="off" autocapitalize="none" autocomplete="off">
+        <input type="text" class="form-control" id="initiative" placeholder="1d20+2" [(ngModel)]="newCreature.initiative" (keydown.enter)="onAddToInitiativeClick()"
+          autocorrect="off" autocapitalize="none" autocomplete="off">
       </div>
       <div class="col-lg-2 col-md-6 mt-2 mt-lg-0 col-6 col-hp">
         <label class="sr-only" for="hp">HP</label>
-        <input type="text" class="form-control" id="hp" placeholder="HP (2d8+2)" [(ngModel)]="newCreature.maximumHp" (keydown.enter)="onAddToInitiativeClick()" autocorrect="off" autocapitalize="none" autocomplete="off">
+        <input type="text" class="form-control" id="hp" placeholder="HP (2d8+2)" [(ngModel)]="newCreature.maximumHp" (keydown.enter)="onAddToInitiativeClick()"
+          autocorrect="off" autocapitalize="none" autocomplete="off">
       </div>
       <div class="col-lg-1 col-md-12 col-12 col-remove">
         <a href="#" (click)="onAddToInitiativeClick($event)"><i class="mdi mdi-plus-circle"></i><label class="sr-only">Add to Initiative</label></a>
@@ -65,4 +71,5 @@
     </div>
   </div>
 </div>
-<dnd-hp-modal #mdlHP [creature]="activeCreature"></dnd-hp-modal>
+<dnd-cur-hp-modal #mdlCurHP></dnd-cur-hp-modal>
+<dnd-max-hp-modal #mdlMaxHP></dnd-max-hp-modal>

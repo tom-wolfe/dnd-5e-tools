@@ -1,11 +1,11 @@
-@import "../../../styles/variables.scss";
-
 label {
     cursor: text;
 }
 
-input {
-    font-family: $font-family-sans-serif !important;
-    margin-top: 10px !important;
-    margin-bottom: 10px !important;
+.form-group {
+    margin-bottom: 0;
+}
+
+.placeholder {
+    font-style: italic;
 }

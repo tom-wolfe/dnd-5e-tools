@@ -1,9 +1,8 @@
-import { Component, ElementRef, Input, ViewChild } from "@angular/core";
-
+import { Component, ElementRef, Input, QueryList, ViewChild, ViewChildren } from "@angular/core";
 import { Dice } from "dice-typescript";
 import * as _ from "lodash";
 
-import { HpModalComponent } from "../hp-modal/hp-modal.component";
+import { CurHpModalComponent } from "../cur-hp-modal/cur-hp-modal.component";
 import { CreatureInitiative } from "../models/creature-initiative";
 
 @Component({
@@ -15,7 +14,9 @@ export class InitiativeListComponent {
   @Input() currentInitiative: number;
 
   @ViewChild("count") countInput: ElementRef;
-  @ViewChild("mdlHP") mdlHP: HpModalComponent
+  @ViewChild("mdlCurHP") mdlCurHP: CurHpModalComponent
+  @ViewChild("mdlMaxHP") mdlMaxHP: CurHpModalComponent
+  @ViewChildren("creatureRow") creatureRows: QueryList<ElementRef>;
 
   creatures: CreatureInitiative[] = [];
   newCreature: CreatureInitiative = new CreatureInitiative();
@@ -27,10 +28,23 @@ export class InitiativeListComponent {
 
   onAddToInitiativeClick(e): void {
     const init = this.newCreature.initiative || "1d20";
+
+    let lastCreature = 0;
+    this.creatures.forEach(creature => {
+      const res = /(.+)\(#(\d+)\)/.exec(creature.name);
+      if (res) {
+        const number = Number(res[2]);
+        if (_.trim(res[1]) === _.trim(this.newCreature.name) && number > lastCreature) {
+          lastCreature = number;
+        }
+      }
+      return creature;
+    });
+
     for (let x = 1; x <= this.newCreatureCount; x++) {
       const creature = new CreatureInitiative(this.newCreature);
-      if (this.newCreatureCount > 1) {
-        creature.name += ` (#${x})`;
+      if (this.newCreatureCount > 1 || lastCreature > 0) {
+        creature.name += ` (#${x + lastCreature})`;
       }
       creature.maximumHp = this.dice.roll(creature.maximumHp || "10").total;
       creature.currentHp = creature.maximumHp;
@@ -44,9 +58,13 @@ export class InitiativeListComponent {
     if (e) { e.preventDefault(); }
   }
 
-  onHPClick(e, creature): void {
+  onCurHPClick(e, creature): void {
     this.activeCreature = creature;
-    this.mdlHP.open();
+    this.mdlCurHP.open(creature);
+  }
+
+  onMaxHPClick(e, creature): void {
+    this.mdlMaxHP.open(creature);
   }
 
   onRemoveClick(e, creature: CreatureInitiative) {
@@ -73,5 +91,11 @@ export class InitiativeListComponent {
 
   sortCreatures() {
     this.creatures = _.orderBy(this.creatures, ["initiative"], "desc");
+  }
+
+  scrollToCreature(creature: CreatureInitiative) {
+    const index = this.creatures.indexOf(creature);
+    const element = this.creatureRows.toArray()[index].nativeElement;
+    window.scrollTo(0, element.offsetTop);
   }
 };

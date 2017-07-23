@@ -1,6 +1,6 @@
 <ng-template #content>
   <div class="modal-header">
-    <h4 class="modal-title">{{creature.name}}</h4>
+    <h4 class="modal-title">{{creature.name}} Max HP</h4>
     <button type="button" class="close" aria-label="Close" (click)="dismiss()">
        <span aria-hidden="true">&times;</span>
      </button>
@@ -9,14 +9,13 @@
     <div class="hp-mod row">
       <div class="col-fifth"><button class="btn btn-block btn-grey" (click)="modifyHp(-10)">-10</button></div>
       <div class="col-fifth"><button class="btn btn-block btn-grey" (click)="modifyHp(-1)">-1</button></div>
-      <div class="col-fifth text-center"><span class="">{{hitPoints}}</span></div>
+      <div class="col-fifth text-center"><input type="number" class="form-control hp-input" [(ngModel)]="hitPoints"></div>
       <div class="col-fifth"><button class="btn btn-block btn-grey" (click)="modifyHp(1)">+1</button></div>
       <div class="col-fifth"><button class="btn btn-block btn-grey" (click)="modifyHp(10)">+10</button></div>
     </div>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-lg btn-grey" (click)="close()">Cancel</button>
-    <button type="button" class="btn btn-lg btn-success" (click)="onHealClick()">Heal</button>
-    <button type="button" class="btn btn-lg btn-primary" (click)="onHarmClick()">Harm</button>
+    <button type="button" class="btn btn-lg btn-primary" (click)="onOKClick()">OK</button>
   </div>
 </ng-template>
