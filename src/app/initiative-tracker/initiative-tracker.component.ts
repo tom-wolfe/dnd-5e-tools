@@ -56,7 +56,7 @@ export class InitiativeTrackerComponent {
 
     if (!this.activeCreature) { return; }
     if (activeCreatures.length === 0) { return; }
-    if (this.currentRound === 0 && activeIndex === 0 || this.activeCreature === activeCreatures[0]) { return; }
+    if (this.currentRound === 0 && (activeIndex === 0 || this.activeCreature === activeCreatures[0])) { return; }
 
     let activeCreature: CreatureInitiative = null;
 
