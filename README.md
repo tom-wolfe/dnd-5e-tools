@@ -1,5 +1,7 @@
 # D&amp;D 5th Edition Tools
 
+[See it running here](dnd-tools.azurewebsites.net)
+
 This is (eventually) going to be a set of simple tools for running or playing D&D 5th edition.
 
 Currently, the toolset includes a character generator for statistics based on the 5th edition Dungeons & Dragons ruleset.
