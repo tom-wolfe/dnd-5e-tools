@@ -1,6 +1,6 @@
 # D&amp;D 5th Edition Tools
 
-[See it running here](dnd-tools.azurewebsites.net)
+[See it running here](http://dnd-tools.azurewebsites.net)
 
 This is (eventually) going to be a set of simple tools for running or playing D&D 5th edition.
 
