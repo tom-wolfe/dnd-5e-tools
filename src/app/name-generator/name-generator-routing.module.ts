@@ -5,7 +5,7 @@ import { NameGeneratorComponent } from "./name-generator.component";
 
 const nameGeneratorRoutes: Routes = [
   {
-    path: "name-generator",
+    path: "names",
     children: [
       { path: "", component: NameGeneratorComponent },
     ]

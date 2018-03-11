@@ -20,5 +20,9 @@ export class Feature {
     toolProficiencies?: ProficiencyOption<Equipment.Item>[];
     otherProficiencies?: ProficiencyOption<Equipment.Weapon>[];
     apply?: (character: Character) => void;
+    prerequisite?: (character: Character) => boolean;
     reference: Reference;
+    constructor(feature?: Feature) {
+        Object.assign(this, feature);
+    }
 };

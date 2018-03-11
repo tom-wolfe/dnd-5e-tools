@@ -15,6 +15,7 @@ export const Warlock: ClassModels.Class = new ClassModels.Class({
     hitDie: 8,
     archetypeLevel: 1,
     savingThrows: ["WIS", "CHA"],
+    abilityScoreImprovements: [ 4, 8, 12, 16, 19 ],
     features: [
         {
             level: 1, name: "Pact Magic", type: FeatureType.Passive,

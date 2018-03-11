@@ -31,6 +31,7 @@ export class Character {
     readonly armorProficiencies: Proficiencies.Proficiency<Equipment.ArmorType>[] = [];
     background: Background;
     readonly baseAbilities: Abilities.AbilityScores = new Abilities.BasicAbilityScores();
+    readonly abilityBonuses: Abilities.AbilityScores = new Abilities.BasicAbilityScores();
     baseArmorClass = 10;
     baseHitPoints = 10;
     bond: string;

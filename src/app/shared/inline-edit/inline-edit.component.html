@@ -1,0 +1,15 @@
+<div class="form-group row">
+  <label class="col-2 col-form-label" *ngIf="label">{{label}}</label>
+  <div [ngClass]="getLabelClasses()">
+    <div *ngIf="editing">
+      <input #inlineEditControl class="form-control" [required]="required" (blur)="onBlur($event)" (keydown.enter)="onBlur($event)"
+        [name]="value" [(ngModel)]="preValue" [type]="type" [placeholder]="placeholder" />
+    </div>
+    <div *ngIf="!editing">
+      <p class="form-control-static" title="Click to edit" (click)="edit(value)" (focus)="edit(value);" tabindex="0">
+        <ng-template [ngIf]="!value"><span class="placeholder">{{placeholder}}</span></ng-template>
+        {{value}}&nbsp;
+      </p>
+    </div>
+  </div>
+</div>

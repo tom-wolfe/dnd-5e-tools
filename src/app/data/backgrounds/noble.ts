@@ -34,7 +34,7 @@ export const Noble: Characters.Background = new Characters.Background({
         "The common folk love me for my kindness and generosity.",
         "No one could doubt by looking at my regal bearing that I am a cut above the unwashed masses.",
         "I take great pains to always look my best and follow the latest fashions.",
-        "I don’t like to get my hands dirty, and I won’t be caught dead in unsuitable accommodations.",
+        "I don't like to get my hands dirty, and I won't be caught dead in unsuitable accommodations.",
         "Despite my noble birth, I do not place myself above other folk. We all have the same blood.",
         "My favor, once lost, is lost forever.",
         "If you do me an injury, I will crush you, ruin your name, and salt your fields.",
@@ -49,7 +49,7 @@ export const Noble: Characters.Background = new Characters.Background({
     ],
     bonds: [
         "I will face any challenge to win the approval of my family.",
-        "My house’s alliance with another noble family must be sustained at all costs.",
+        "My house's alliance with another noble family must be sustained at all costs.",
         "Nothing is more important than the other members of my family.",
         "I am in love with the heir of a family that my family despises.",
         "My loyalty to my sovereign is unwavering.",
@@ -58,7 +58,7 @@ export const Noble: Characters.Background = new Characters.Background({
     flaws: [
         "I secretly believe that everyone is beneath me.",
         "I hide a truly scandalous secret that could ruin my family forever.",
-        "I too often hear veiled insults and threats in every word addressed to me, and I’m quick to anger.",
+        "I too often hear veiled insults and threats in every word addressed to me, and I'm quick to anger.",
         "I have an insatiable desire for carnal pleasures.",
         "In fact, the world does revolve around me.",
         "By my words and actions, I often bring shame to my family.",

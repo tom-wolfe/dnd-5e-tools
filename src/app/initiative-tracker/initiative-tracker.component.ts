@@ -1,39 +1,79 @@
-import { Component } from "@angular/core";
-
-import * as _ from "lodash";
-
 import { CreatureInitiative } from "./models/creature-initiative";
+import { Component, ViewChild } from "@angular/core";
+import { Dice } from "dice-typescript";
+
+import { InitiativeListComponent } from "./initiative-list/initiative-list.component";
 
 @Component({
   selector: "dnd-initiative-tracker",
   templateUrl: "./initiative-tracker.component.html"
 })
 export class InitiativeTrackerComponent {
-  creatures: CreatureInitiative[] = [];
-  currentInitiative: number;
+  @ViewChild("list") initiativeList: InitiativeListComponent;
+
+  activeCreature: CreatureInitiative;
   currentRound = 0;
 
   onResetClick() {
-    while (this.creatures.length > 0) {
-      this.creatures.pop();
-    }
-    this.currentInitiative = undefined;
+    this.initiativeList.clear();
+    this.activeCreature = undefined;
     this.currentRound = 0;
   }
 
   onNextClick() {
-    const sortedCreatures = _.orderBy(this.creatures, "initiative", "desc");
-    if (!this.currentInitiative) {
-      this.currentInitiative = sortedCreatures[0].initiative;
-      this.currentRound = 1;
+    const creatures = this.initiativeList.creatures;
+    const activeCreatures = creatures.filter(c => c.active);
+    let activeCreature: CreatureInitiative = null;
+
+    if (!this.activeCreature) {
+      if (activeCreatures.length > 0) {
+        activeCreature = activeCreatures[0];
+        this.currentRound = 1;
+      }
     } else {
-      const nextCreatures = sortedCreatures.filter(c => c.initiative < this.currentInitiative && c.active);
+      const nextCreatures = activeCreatures.filter(c => {
+        const cIndex = creatures.indexOf(c);
+        const aIndex = creatures.indexOf(this.activeCreature);
+        return cIndex > aIndex;
+      });
+
       if (nextCreatures.length > 0) {
-        this.currentInitiative = nextCreatures[0].initiative;
+        activeCreature = nextCreatures[0];
       } else {
-        this.currentInitiative = sortedCreatures[0].initiative;
+        activeCreature = activeCreatures[0];
         this.currentRound++;
       }
     }
+
+    this.activeCreature = activeCreature;
+    this.initiativeList.scrollToCreature(activeCreature);
+  }
+
+  onBackClick() {
+    const creatures = this.initiativeList.creatures;
+    const activeIndex = creatures.indexOf(this.activeCreature);
+    const activeCreatures = creatures.filter(c => c.active);
+
+    if (!this.activeCreature) { return; }
+    if (activeCreatures.length === 0) { return; }
+    if (this.currentRound === 0 && (activeIndex === 0 || this.activeCreature === activeCreatures[0])) { return; }
+
+    let activeCreature: CreatureInitiative = null;
+
+    const previousCreatures = activeCreatures.filter(c => {
+      const cIndex = creatures.indexOf(c);
+      return cIndex < activeIndex;
+    });
+
+    if (previousCreatures.length > 0) {
+      activeCreature = previousCreatures[previousCreatures.length - 1];
+    } else {
+      activeCreature = activeCreatures[activeCreatures.length - 1];
+      this.currentRound--;
+    }
+
+    this.activeCreature = activeCreature;
+    this.initiativeList.scrollToCreature(activeCreature);
+
   }
 };

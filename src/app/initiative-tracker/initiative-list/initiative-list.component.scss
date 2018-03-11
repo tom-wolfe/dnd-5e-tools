@@ -1,12 +1,12 @@
 @import "../../../styles/variables.scss";
+@import "~bootstrap/scss/bootstrap.scss";
+@import "../../../styles/buttons.scss";
 
-.initiative {
+.initiative {  
     margin-bottom: 0;
-
     .row {
         line-height: 2.5;
     }
-
     .header {
         border-bottom: 1px solid $brand-primary;
         font-size: 14px;
@@ -14,16 +14,22 @@
         text-transform: uppercase;
     }
 
+    .col-name {
+        font-weight: bold;
+    }
+
     .col-active,
     .col-remove,
     .col-hp {
         text-align: center;
+        button {
+            line-height: 1.5;
+            width: 40%;
+        }
     }
-
     .col-initiative {
         text-align: center;
     }
-
     .body,
     .footer {
         .col-remove {
@@ -32,14 +38,27 @@
             line-height: 1.6;
         }
     }
-
     .active {
         background: rgba($brand-primary, 0.7) !important;
         color: white;
     }
-
     .disabled {
         background: #eee;
         color: grey;
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .initiative {
+        .body {
+            .col-hp button {
+                width: 45%;
+            }
+        }
+        .footer {
+            .col-remove {
+                font-size: 48px;
+            }
+        }
     }
 }

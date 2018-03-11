@@ -6,7 +6,7 @@ import { ExportComponent } from "./export";
 
 const characterGeneratorRoutes: Routes = [
   {
-    path: "character-generator",
+    path: "characters",
     children: [
       { path: "", component: CharacterGeneratorComponent },
       { path: "export", component: ExportComponent }

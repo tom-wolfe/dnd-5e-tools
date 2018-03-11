@@ -13,6 +13,7 @@ export const Barbarian: ClassModels.Class = new ClassModels.Class({
     primaryAbility: "STR",
     archetypeLevel: 3,
     hitDie: 12,
+    abilityScoreImprovements: [ 4, 8, 12, 16, 19 ],
     features: [
         {
             level: 1, name: "Rage", type: FeatureType.Passive,

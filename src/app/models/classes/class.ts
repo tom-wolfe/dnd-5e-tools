@@ -11,6 +11,7 @@ export class Class {
     reference: Reference;
     castingAbility?: string;
     hitDie: number;
+    abilityScoreImprovements: number[];
     features?: ClassFeature[]; // TODO: Make mandatory
     primaryAbility: string;
     savingThrows: string[];

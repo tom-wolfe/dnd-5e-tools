@@ -16,6 +16,7 @@ export const Monk: ClassModels.Class = new ClassModels.Class({
     hitDie: 8,
     archetypeLevel: 3,
     savingThrows: ["STR", "DEX"],
+    abilityScoreImprovements: [ 4, 8, 12, 16, 19 ],
     features: [
         {
             level: 1, name: "Unarmored Defense", type: FeatureType.Passive,

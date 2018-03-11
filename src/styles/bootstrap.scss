@@ -3,5 +3,21 @@
     font-family: $font-family-secondary;
     max-width: 300px;
     overflow: hidden;
-    white-space: nowrap;    
+    white-space: nowrap;
+}
+
+.modal-dialog {
+    min-height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: auto;
+    @media(max-width: 768px) {
+        min-height: calc(100vh - 20px);
+    }
+}
+
+
+input, textarea {
+    font-family: $font-family-sans-serif !important
 }

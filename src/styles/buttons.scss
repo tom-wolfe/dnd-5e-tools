@@ -9,21 +9,33 @@
     padding: 0;
     font-size: 20px;
     border-radius: 50%;
+    width: 32px;
+    height: 32px;
 }
 
+.btn-round.btn-lg {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-bottom-left,
 .btn-bottom-right {
     width: 56px;
     height: 56px;
-
     padding: 0;
     font-size: 20px;
     border-radius: 50%;
-
     position: fixed;
-    right: 20px;
     bottom: 20px;
-    
     z-index: 200;
+}
+
+.btn-bottom-left {
+    left: 20px;
+}
+
+.btn-bottom-right {
+    right: 20px;
 }
 
 .btn-icon {
@@ -32,4 +44,8 @@
         font-size: 1.4rem;
         vertical-align: middle;
     }
+}
+
+.btn-grey {
+    @include button-variant($btn-grey-color, $btn-grey-bg, $btn-grey-border);
 }
